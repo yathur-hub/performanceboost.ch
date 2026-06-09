@@ -13,6 +13,7 @@ import ResourcesView from './views/ResourcesView';
 import AboutView from './views/AboutView';
 import ContactView from './views/ContactView';
 import LegalView from './views/LegalView';
+import SEOHead from './components/SEOHead';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { pageTransitionVariants } from './lib/motion';
@@ -87,6 +88,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#f6f6f6] text-[#505050] flex flex-col justify-between selection:bg-[#686DF4] selection:text-white font-sans antialiased">
+      <SEOHead currentPath={currentPath} />
       
       {/* Top Advisory Information strip */}
       <div className="bg-[#686DF4] text-white text-[11px] font-mono font-bold tracking-wider py-2 text-center flex items-center justify-center gap-1 shadow-sm">
