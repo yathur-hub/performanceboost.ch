@@ -31,12 +31,12 @@ import {
 
 export default function ContactView() {
   const [formData, setFormData] = useState({
-    anrede: '',
-    vorname: '',
-    nachname: '',
+    salutation: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    tel: '',
-    currentRevenue: '',
+    phone: '',
+    annualRevenue: '',
     message: ''
   });
   
@@ -55,57 +55,52 @@ export default function ContactView() {
     setShowSuccess(false);
     setShowError(false);
 
-    const revenueMapping: Record<string, string> = {
-      'under-1m': 'under_1m',
-      '1m-5m': '1m_5m',
-      '5m-20m': '5m_20m',
-      'over-20m': 'over_20m',
-      'under_1m': 'under_1m',
-      '1m_5m': '1m_5m',
-      '5m_20m': '5m_20m',
-      'over_20m': 'over_20m',
-    };
-
     const payload = {
-      salutation: formData.anrede,
-      firstName: formData.vorname,
-      lastName: formData.nachname,
+      salutation: formData.salutation,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
       email: formData.email,
-      phone: formData.tel || '',
-      annualRevenue: revenueMapping[formData.currentRevenue] || formData.currentRevenue,
+      phone: formData.phone || "",
+      annualRevenue: formData.annualRevenue,
       message: formData.message,
-      source: 'Website',
-      website: 'performanceboost.ch',
+      source: "Website",
+      website: "performanceboost.ch",
       pageUrl: window.location.href,
-      formName: 'Kontaktformular',
+      formName: "Kontaktformular",
       submittedAt: new Date().toISOString()
     };
 
     try {
-      const response = await fetch('https://n8n.performanceboost.ch/webhook/performanceboost/contact', {
-        method: 'POST',
+      const response = await fetch("https://n8n.performanceboost.ch/webhook/performanceboost/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "text/plain"
         },
         body: JSON.stringify(payload)
       });
 
+      const responseText = await response.text();
+
+      console.log("n8n response status:", response.status);
+      console.log("n8n response text:", responseText);
+
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error(`n8n webhook failed with status ${response.status}`);
       }
 
       setShowSuccess(true);
       // Reset form fields
       setFormData({
-        anrede: '',
-        vorname: '',
-        nachname: '',
+        salutation: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        tel: '',
-        currentRevenue: '',
+        phone: '',
+        annualRevenue: '',
         message: ''
       });
     } catch (err) {
+      console.error("Form submission failed error details:", err);
       setShowError(true);
     } finally {
       setIsSubmitting(false);
@@ -209,9 +204,9 @@ export default function ContactView() {
               <div className="space-y-1.2">
                 <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">Anrede (Pflichtfeld)</label>
                 <select
-                  name="anrede"
+                  name="salutation"
                   required
-                  value={formData.anrede}
+                  value={formData.salutation}
                   onChange={handleInputChange}
                   className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-3 px-4 text-xs text-slate-500 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold cursor-pointer"
                 >
@@ -227,9 +222,9 @@ export default function ContactView() {
                   <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <input 
                     type="text" 
-                    name="vorname"
+                    name="firstName"
                     required
-                    value={formData.vorname}
+                    value={formData.firstName}
                     onChange={handleInputChange}
                     placeholder="Sven"
                     className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
@@ -245,9 +240,9 @@ export default function ContactView() {
                   <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <input 
                     type="text" 
-                    name="nachname"
+                    name="lastName"
                     required
-                    value={formData.nachname}
+                    value={formData.lastName}
                     onChange={handleInputChange}
                     placeholder="Meier"
                     className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
@@ -279,8 +274,8 @@ export default function ContactView() {
                   <Phone className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <input 
                     type="tel" 
-                    name="tel"
-                    value={formData.tel}
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="+41 79 123 45 67"
                     className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
@@ -291,9 +286,9 @@ export default function ContactView() {
               <div className="space-y-1.2">
                 <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">Jährlicher Umsatz (Pflichtfeld)</label>
                 <select
-                  name="currentRevenue"
+                  name="annualRevenue"
                   required
-                  value={formData.currentRevenue}
+                  value={formData.annualRevenue}
                   onChange={handleInputChange}
                   className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-3 px-4 text-xs text-slate-500 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold cursor-pointer"
                 >
