@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SkillsDirectory from './components/skills/SkillsDirectory';
 import HomeView from './views/HomeView';
 import SolutionsView from './views/SolutionsView';
 import ServicesView from './views/ServicesView';
@@ -56,6 +57,7 @@ export default function App() {
     const path = currentPath.replace(/\/$/, '') || '/';
     
     if (path === '/') return { view: 'home' };
+    if (path === '/skills') return { view: 'skills' };
     if (path === '/loesungen') return { view: 'loesungen' };
     if (path === '/ueber-uns') return { view: 'about' };
     if (path === '/kontakt') return { view: 'kontakt' };
@@ -122,6 +124,9 @@ export default function App() {
           >
             {parsed.view === 'home' && (
               <HomeView onNavigate={handleNavigate} />
+            )}
+            {parsed.view === 'skills' && (
+              <SkillsDirectory onNavigate={handleNavigate} />
             )}
             {parsed.view === 'loesungen' && (
               <SolutionsView onNavigate={handleNavigate} />

@@ -441,6 +441,29 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all" />
                       </a>
 
+                      {/* Skill Factory Link Card */}
+                      <a
+                        href="/skills"
+                        id="mega-menu-skills-link-card"
+                        onClick={(e) => handleLinkClick('/skills', e)}
+                        className="group flex items-center justify-between p-3 bg-white border border-slate-200/50 rounded-xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-[#EEEEFF] text-[#686DF4] flex items-center justify-center transition-colors shadow-xs">
+                            <Sparkles className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <span className="block text-xs font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">
+                              Skill Factory
+                            </span>
+                            <span className="block text-[9.5px] text-slate-400 font-medium mt-0.5">
+                              36 Diagnose-Frameworks
+                            </span>
+                          </div>
+                        </div>
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all" />
+                      </a>
+
                       {/* Contact Portrait Card with Yathur's picture */}
                       <a
                         href="/kontakt"
@@ -562,6 +585,15 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     className="flex justify-between items-center p-4 bg-white border border-slate-100 rounded-2xl hover:bg-slate-50 text-xs font-bold text-slate-900 shadow-xs"
                   >
                     <span>ÜBER UNS</span>
+                    <ChevronRight className="w-4 h-4 text-slate-400" />
+                  </a>
+
+                  <a
+                    href="/skills"
+                    onClick={(e) => handleLinkClick('/skills', e)}
+                    className="flex justify-between items-center p-4 bg-white border border-slate-100 rounded-2xl hover:bg-slate-50 text-xs font-bold text-slate-900 shadow-xs"
+                  >
+                    <span>SKILL FACTORY</span>
                     <ChevronRight className="w-4 h-4 text-slate-400" />
                   </a>
 
