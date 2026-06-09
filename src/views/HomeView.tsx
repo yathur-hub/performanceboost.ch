@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles, CheckCircle2, ShieldCheck, HelpCircle, Laptop, La
 import InteractiveGrowthCalculator from '../components/InteractiveGrowthCalculator';
 import RevenuePotenzialCheck from '../components/RevenuePotenzialCheck';
 import { motion, AnimatePresence } from 'motion/react';
+import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -114,26 +115,18 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       >
         <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center shadow-[var(--shadow-premium-md)] relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#686DF4]/2 rounded-full blur-xl pointer-events-none transition-transform duration-1000 group-hover:scale-150" />
-          <div className="lg:col-span-8 space-y-6">
+          <div className="lg:col-span-7 space-y-6">
             <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">POSITIONIERUNG</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">Du brauchst keine Marketingagentur.</h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-semibold">
+            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-semibold text-balance">
               Du brauchst einen Partner, der Wachstum systematisch aufbaut. Der Demand erzeugt, Leads qualifiziert, Marketing und Vertrieb verbindet — und Revenue planbar macht.
             </p>
-            <p className="text-slate-505 text-xs sm:text-sm leading-relaxed font-medium">
+            <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-medium text-balance">
               Genau das ist performanceboost. Wir arbeiten mit B2B-Unternehmen, die wachsen wollen. Nicht mit vagen Versprechungen, sondern mit erprobten Systemen, die funktionieren.
             </p>
           </div>
-          <div className="lg:col-span-4 flex justify-center">
-            <motion.div 
-              whileHover={{ y: -4, scale: 1.01 }}
-              transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="p-8 bg-[#f6f6f6]/80 border border-slate-200/60 rounded-2xl shadow-[var(--shadow-premium-sm)] text-center space-y-4 max-w-xs cursor-default"
-            >
-              <span className="text-3xl block">🤝</span>
-              <h4 className="text-xs font-bold text-slate-900 uppercase font-display tracking-wider">Gemeinsamer Fokus</h4>
-              <p className="text-[10.5px] text-slate-500 leading-relaxed font-semibold">Marketing & Sales vereint in einem einzigen Mess- und Steuerungssystem.</p>
-            </motion.div>
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full">
+            <RevenueSystemGraphic />
           </div>
         </div>
       </motion.section>
