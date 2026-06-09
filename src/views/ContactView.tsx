@@ -302,7 +302,7 @@ export default function ContactView() {
             </div>
 
             <div className="space-y-1.2">
-              <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">Ihre Nachricht (Pflichtfeld)</label>
+              <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">Deine Nachricht (Pflichtfeld)</label>
               <textarea 
                 name="message"
                 rows={4}
@@ -347,8 +347,8 @@ export default function ContactView() {
                 >
                   <CheckCircle2 className="w-4.5 h-4.5 shrink-0 mt-0.5 text-[#686DF4]" />
                   <div>
-                    <h5 className="font-bold font-display">✓ Vielen Dank. Ihre Anfrage wurde erfolgreich übermittelt.</h5>
-                    <p className="opacity-90 leading-relaxed mt-1">Yathur wird sich innerhalb der nächsten 24 Stunden persönlich bei Ihnen zur Hebel-Diagnose melden.</p>
+                    <h5 className="font-bold font-display">✓ Vielen Dank. Deine Anfrage wurde erfolgreich übermittelt.</h5>
+                    <p className="opacity-90 leading-relaxed mt-1">Yathur wird sich innerhalb der nächsten 24 Stunden persönlich bei dir zur Hebel-Diagnose melden.</p>
                   </div>
                 </motion.div>
               )}
@@ -364,7 +364,7 @@ export default function ContactView() {
                 >
                   <AlertCircle className="w-4.5 h-4.5 shrink-0 mt-0.5 text-red-500" />
                   <div>
-                    <h5 className="font-bold font-display">✕ Die Anfrage konnte nicht übermittelt werden. Bitte versuchen Sie es erneut.</h5>
+                    <h5 className="font-bold font-display">✕ Die Anfrage konnte nicht übermittelt werden. Bitte versuche es erneut.</h5>
                     <p className="opacity-90 leading-relaxed mt-1">Bitte prüfe deine Netzwerkverbindung oder versuche es direkt via hallo@performanceboost.ch.</p>
                   </div>
                 </motion.div>

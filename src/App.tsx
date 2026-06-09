@@ -14,6 +14,7 @@ import ResourcesView from './views/ResourcesView';
 import AboutView from './views/AboutView';
 import ContactView from './views/ContactView';
 import LegalView from './views/LegalView';
+import SolutionDetailView from './views/SolutionDetailView';
 import SEOHead from './components/SEOHead';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -59,6 +60,12 @@ export default function App() {
     if (path === '/') return { view: 'home' };
     if (path === '/skills') return { view: 'skills' };
     if (path === '/loesungen') return { view: 'loesungen' };
+    
+    if (path.startsWith('/loesungen/')) {
+      const slug = path.split('/loesungen/')[1];
+      return { view: 'loesungen_detail', slug };
+    }
+
     if (path === '/ueber-uns') return { view: 'about' };
     if (path === '/kontakt') return { view: 'kontakt' };
     if (path === '/impressum') return { view: 'impressum' };
@@ -130,6 +137,9 @@ export default function App() {
             )}
             {parsed.view === 'loesungen' && (
               <SolutionsView onNavigate={handleNavigate} />
+            )}
+            {parsed.view === 'loesungen_detail' && (
+              <SolutionDetailView slug={parsed.slug || ''} onNavigate={handleNavigate} />
             )}
             {parsed.view === 'leistungen' && (
               <ServicesView currentSlug={parsed.slug} onNavigate={handleNavigate} />

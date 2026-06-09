@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, CheckCircle2, ShieldCheck, HelpCircle, Laptop, Landmark, TrendingUp, Layers, Users, Cpu, FileText, Megaphone, AlertCircle, ChevronDown, Check } from 'lucide-react';
+import { 
+  ArrowRight, Sparkles, CheckCircle2, ShieldCheck, HelpCircle, Laptop, Landmark, TrendingUp, Layers, Users, Cpu, FileText, Megaphone, AlertCircle, ChevronDown, Check,
+  PiggyBank, Cloud, Home, Briefcase, Factory, Compass, GraduationCap, Stethoscope, Hammer, Scale, Truck, Hotel
+} from 'lucide-react';
 import InteractiveGrowthCalculator from '../components/InteractiveGrowthCalculator';
 import RevenuePotenzialCheck from '../components/RevenuePotenzialCheck';
 import { motion, AnimatePresence } from 'motion/react';
@@ -119,10 +122,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">POSITIONIERUNG</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">Du brauchst keine Marketingagentur.</h2>
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-semibold text-balance">
-              Du brauchst einen Partner, der Wachstum systematisch aufbaut. Der Demand erzeugt, Leads qualifiziert, Marketing und Vertrieb verbindet — und Revenue planbar macht.
+              Du brauchst einen Partner, der Wachstum systematisch aufbaut. Der Demand erzeugt, Leads qualifiziert, Marketing und Vertrieb verbindet und Revenue planbar macht.
             </p>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-medium text-balance">
-              Genau das ist performanceboost. Wir arbeiten mit B2B-Unternehmen, die wachsen wollen. Nicht mit vagen Versprechungen, sondern mit erprobten Systemen, die funktionieren.
+              Genau das ist performanceboost. Wir arbeiten mit Unternehmen, die wachsen wollen. Nicht mit vagen Versprechungen, sondern mit erprobten Systemen, die funktionieren.
             </p>
           </div>
           <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full">
@@ -209,7 +212,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         >
           <div className="space-y-2">
             <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">WIE WIR HELFEN</span>
-            <h2 className="text-3xl font-display font-semibold text-slate-900 tracking-tight">Was wir aufbauen — nutzenorientiert.</h2>
+            <h2 className="text-3xl font-display font-semibold text-slate-900 tracking-tight">& was wir nutzenorientiert aufbauen</h2>
           </div>
           <button
             onClick={() => {
@@ -310,15 +313,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-4">
             <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">WATHUR-TUNED ROI</span>
-            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Errechnen Sie Ihr Wachstumspotenzial</h2>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Errechne dein Wachstumspotenzial</h2>
             <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-              Passen Sie die Parameter an, um zu sehen, wie eine professionelle Trichter-Optimierung die Rentabilität Ihres gesamten Unternehmens vervielfacht.
+              Passe die Parameter an, um zu sehen, wie eine professionelle Trichter-Optimierung die Rentabilität deines gesamten Unternehmens vervielfacht.
             </p>
           </div>
           <InteractiveGrowthCalculator />
         </div>
       </motion.section>
-
       {/* ANSATZ-SEKTION */}
       <section className="bg-white border-y border-[#E2E8F0]/30 py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -463,28 +465,28 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
-            <div className="md:col-span-4 shrink-0 flex justify-center md:justify-start">
+        <div className="bg-white border border-[#E0E0E0]/65 p-10 md:p-14 rounded-[2rem] shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center text-left">
+            <div className="md:col-span-5 shrink-0 flex justify-center md:justify-start">
               <img 
                 src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
                 alt="Yathur Nathan" 
-                className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border border-slate-200 shadow-sm"
+                className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-[1.5rem] border border-slate-205 shadow-sm"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="md:col-span-8 space-y-4">
+            <div className="md:col-span-7 space-y-5">
               <div>
-                <h3 className="text-lg font-display font-semibold text-slate-900 leading-tight">Yathur Nathan</h3>
-                <p className="text-xs font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
+                <h3 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 leading-tight">Yathur Nathan</h3>
+                <p className="text-xs sm:text-sm font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
               </div>
-              <p className="text-xs text-slate-500 leading-relaxed font-semibold">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-semibold">
                 Ich unterstütze Schweizer Unternehmen dabei, Wachstumspotenziale sichtbar zu machen und in messbare Resultate zu übersetzen. Dabei verbinde ich Marketing, Technologie, Daten und Vertrieb zu einem System, das nicht auf Vermutungen, sondern auf Fakten basiert.
               </p>
-              <p className="text-xs text-[#686DF4] font-bold leading-relaxed pt-1.5 border-t border-slate-100 italic">
-                Als Ihr persönlicher Experte analysiere ich Ihre Customer Journey ganzheitlich und begleite Sie operativ bei der Umsetzung Ihrer Umsatzhebel im Neukunden-Erstgespräch.
+              <p className="text-sm sm:text-base text-[#686DF4] font-bold leading-relaxed pt-3 border-t border-slate-100 italic">
+                Als dein persönlicher Experte analysiere ich deine Customer Journey ganzheitlich und begleite dich operativ bei der Umsetzung deiner Umsatzhebel im Neukunden-Erstgespräch.
               </p>
             </div>
           </div>

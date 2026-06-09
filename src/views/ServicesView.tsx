@@ -3,8 +3,10 @@ import { SERVICES } from '../data/services';
 import { 
   TrendingUp, Megaphone, Users, Cpu, Layers, Sparkles, PieChart, ShieldAlert,
   ArrowRight, ArrowLeft, Check, CheckCircle2, Award, ChevronDown, ChevronUp, HelpCircle,
-  ShoppingCart, RefreshCcw
+  ShoppingCart, RefreshCcw,
+  PiggyBank, Cloud, Home, Briefcase, Factory, Compass, GraduationCap, Stethoscope, Hammer, Scale, Truck, Hotel
 } from 'lucide-react';
+import { motion } from 'motion/react';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
 
 import GrowthStrategyIndicator from '../components/GrowthStrategyIndicator';
@@ -365,7 +367,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Benefits */}
             <div className="space-y-6">
               <div className="border-l-4 border-[#686DF4] pl-4">
-                <h2 className="text-xl font-display font-semibold tracking-tight text-slate-900 text-left leading-none">Ihr konkreter Nutzen</h2>
+                <h2 className="text-xl font-display font-semibold tracking-tight text-slate-900 text-left leading-none">Dein konkreter Nutzen</h2>
                 <p className="text-xs text-slate-400 text-left mt-1.5 font-semibold">Warum sich diese Struktur für dein Vertriebsteam bezahlt macht.</p>
               </div>
               <div className="space-y-4 text-left">
@@ -457,19 +459,19 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   <p className="text-xs font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                  Als Gründer von performanceboost unterstütze ich Schweizer Unternehmen dabei, isolierte Massnahmen in messbare Revenue-Infrastrukturen zu transformieren. Mit fundiertem technologischem Know-how und strategischer Klarheit begleite ich Sie persönlich bei jedem Schritt zur Optimierung Ihrer Customer Journey.
+                  Als Gründer von performanceboost unterstütze ich Schweizer Unternehmen dabei, isolierte Massnahmen in messbare Revenue-Infrastrukturen zu transformieren. Mit fundiertem technologischem Know-how und strategischer Klarheit begleite ich dich persönlich bei jedem Schritt zur Optimierung deiner Customer Journey.
                 </p>
                 <p className="text-xs text-[#686DF4] font-bold leading-relaxed pt-1.5 border-t border-slate-100 italic">
                   {(() => {
                     const personalHighlights: { [key: string]: string } = {
-                      'growth-strategy': 'Gemeinsam schärfen wir Ihre Marktpositionierung und definieren die genauesten ICP-Kriterien, um Ihr Wachstum strategisch auf ein solides Fundament zu stellen.',
-                      'demand-generation': 'Wir konzipieren und steuern Ihre B2B-Paid-Kampagnen so, dass sie bei Ihrer Zielgruppe konsistent Relevanz erzeugen und messbare Pipeline aufbauen.',
+                      'growth-strategy': 'Gemeinsam schärfen wir deine Marktpositionierung und definieren die genauesten ICP-Kriterien, um dein Wachstum strategisch auf ein solides Fundament zu stellen.',
+                      'demand-generation': 'Wir konzipieren und steuern deine B2B-Paid-Kampagnen so, dass sie bei deiner Zielgruppe konsistent Relevanz erzeugen und messbare Pipeline aufbauen.',
                       'lead-generation': 'Mit intelligenten Inbound-Magneten und datenkonformem Outbound Prospecting etablieren wir ein Neukundensystem, das planbar Demo-Termine generiert.',
-                      'marketing-automation': 'Wir automatisieren Ihre Lead-Nurturing-Strecken und optimieren Ihre HubSpot-Datenhygiene, damit Ihr Vertrieb ohne Reibungsverluste abschliessen kann.',
-                      'sales-enablement': 'Ich statte Ihr Sales-Team mit psychologisch optimierten Verkaufsargumenten und Playbooks aus, die Ihre Abschlussquote nachweislich erhöhen.',
-                      'revenue-operations': 'Wir lösen Ihre abteilungsübergreifenden Datensilos auf und verknüpfen Marketing, Sales und Service zu einem hocheffizienten Gesamtsystem.',
-                      'ai-automation': 'Ich implementiere produktive KI-Workflows, die Routineaufgaben im Handumdrehen erledigen und die Kapazität Ihres Teams massgeblich vergrössern.',
-                      'data-analytics': 'Mit sauberem First-Party Server-Side Tracking und transparenten Attributionsmodellen machen wir Ihren Return on Ad Spend (ROAS) glasklar messbar.'
+                      'marketing-automation': 'Wir automatisieren deine Lead-Nurturing-Strecken und optimieren deine HubSpot-Datenhygiene, damit dein Vertrieb ohne Reibungsverluste abschliessen kann.',
+                      'sales-enablement': 'Ich statte dein Sales-Team mit psychologisch optimierten Verkaufsargumenten und Playbooks aus, die deine Abschlussquote nachweislich erhöhen.',
+                      'revenue-operations': 'Wir lösen deine abteilungsübergreifenden Datensilos auf und verknüpfen Marketing, Sales und Service zu einem hocheffizienten Gesamtsystem.',
+                      'ai-automation': 'Ich implementiere produktive KI-Workflows, die Routineaufgaben im Handumdrehen erledigen und die Kapazität deines Teams massgeblich vergrössern.',
+                      'data-analytics': 'Mit sauberem First-Party Server-Side Tracking und transparenten Attributionsmodellen machen wir deinen Return on Ad Spend (ROAS) glasklar messbar.'
                     };
                     return personalHighlights[service.slug] || '';
                   })()}
@@ -649,6 +651,169 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </div>
         </div>
       </section>
+
+      {/* BRANCHENLOESUNGEN CARDS SECTION */}
+      <motion.section 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="bg-[#fcfcfc] border-y border-[#E2E8F0]/30 py-24 md:py-32"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <div className="text-center max-w-xl mx-auto space-y-3">
+            <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">BRANCHENSPEZIFISCHE SYSTEME</span>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Schweizer Branchenlösungen</h2>
+            <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+              Wähle deinen Sektor und berechne dein ungenutztes Marge- und Pipeline-Potenzial mit unseren interaktiven Schnellrechnern.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 text-left">
+            {[
+              {
+                title: 'Finanzdienstleister',
+                slug: 'finanzdienstleister',
+                desc: 'Compliance-konforme Berater-Pipelines für Vermögensverwalter.',
+                icon: PiggyBank,
+                tool: 'Beratungs-Pipeline-Rechner'
+              },
+              {
+                title: 'SaaS & Software',
+                slug: 'saas-software',
+                desc: 'Schliesse das Umsatz-Leck zwischen Marketing-MQL und closed-won Deals.',
+                icon: Cloud,
+                tool: 'Revenue-Leck-Rechner'
+              },
+              {
+                title: 'Immobilien',
+                slug: 'immobilien',
+                desc: 'Verkürze die Vermarktungszeit für Neubauten und Gewerbeflächen drastisch.',
+                icon: Home,
+                tool: 'Leerstandskosten-Rechner'
+              },
+              {
+                title: 'Treuhand & UB',
+                slug: 'treuhand-unternehmensberatung',
+                desc: 'Befreie deine Kanzlei von Beleg-Reibung und gewinne lukrative A-Mandate.',
+                icon: Briefcase,
+                tool: 'Kanzlei-Wachstums-Check'
+              },
+              {
+                title: 'Industrie & KMU',
+                slug: 'b2b-industrie-kmu',
+                desc: 'Effiziente Angebots-Pipelines für anspruchsvolle B2B-Industriekunden.',
+                icon: Factory,
+                tool: 'Angebots-Pipeline-Rechner'
+              },
+              {
+                title: 'IT-Dienstleister & MSPs',
+                slug: 'it-dienstleister-msps',
+                desc: 'Skaliere deine wiederkehrenden Umsätze (MRR) mit verlässlicher MSP-Paketierung.',
+                icon: Cpu,
+                tool: 'Recurring Revenue Rechner'
+              },
+              {
+                title: 'Ingenieur- & Planungsbüros',
+                slug: 'ingenieur-planungsbuero',
+                desc: 'Beseitige Klumpenrisiken und sichere den Zugriff auf lukrative Bauträger.',
+                icon: Compass,
+                tool: 'Projektpipeline-Check'
+              },
+              {
+                title: 'Personalvermittler',
+                slug: 'personalvermittler-recruiting',
+                desc: 'Zweiseitiges Lead-Wachstum für exklusive Suchmandate auf Arbeitgeberseite.',
+                icon: Users,
+                tool: 'Placement-Effizienz-Rechner'
+              },
+              {
+                title: 'Bildung & Weiterbildung',
+                slug: 'bildung-weiterbildung',
+                desc: 'Fülle deine CAS-Lehrgänge, Seminare und Studiengänge systematisch aus.',
+                icon: GraduationCap,
+                tool: 'Kurs-Funnel-Rechner'
+              },
+              {
+                title: 'Gesundheitswesen',
+                slug: 'gesundheitswesen',
+                desc: 'Mediziner-Marketing für Kliniken zur Akquise von Zuweisern & Selbstzahlern.',
+                icon: Stethoscope,
+                tool: 'Neupatienten-Potenzial-Check'
+              },
+              {
+                title: 'Handwerk & Bau',
+                slug: 'handwerk',
+                desc: 'Beschleunige deine Angebotsschleifen und stoppe Papier-Engpässe.',
+                icon: Hammer,
+                tool: 'Auftrags-Pipeline-Rechner'
+              },
+              {
+                title: 'Rechtsanwälte',
+                slug: 'rechtsanwaelte',
+                desc: 'Gezielte Akquisition für Wirtschafts- und Spezialmandate ohne administrativen Aufwand.',
+                icon: Scale,
+                tool: 'Kanzlei-Auslastungs-Check'
+              },
+              {
+                title: 'Logistik & Transport',
+                slug: 'logistik-transport',
+                desc: 'Fülle die Kapazitäten deiner Rückfahrten und minimiere Spotmarkt-Verluste.',
+                icon: Truck,
+                tool: 'Flottenauslastungs-Rechner'
+              },
+              {
+                title: 'Hospitality & Hotels',
+                slug: 'hospitality',
+                desc: 'Steigere deine Direktbuchungsquote und spare hohe Booking-Gebühren.',
+                icon: Hotel,
+                tool: 'Direktbuchungs-Rechner'
+              }
+            ].map((ind) => {
+              const IconComp = ind.icon;
+              return (
+                <div 
+                  key={ind.slug}
+                  id={`industry-card-${ind.slug}`}
+                  onClick={() => {
+                    onNavigate(`/loesungen/${ind.slug}`);
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                  }}
+                  className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:border-[#686DF4]/25 transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-start">
+                      <div className="p-2.5 bg-[#f6f6f6] rounded-xl border border-slate-100 group-hover:bg-[#686DF4]/5 group-hover:border-[#686DF4]/25 group-hover:text-[#686DF4] transition-colors">
+                        <IconComp className="w-5 h-5 text-slate-400 group-hover:text-[#686DF4] transition-colors" />
+                      </div>
+                      <span className="text-[7.5px] font-mono font-bold tracking-widest text-[#686DF4] bg-[#686DF4]/5 border border-[#686DF4]/10 px-2 py-0.5 rounded uppercase">
+                        SEKTOR
+                      </span>
+                    </div>
+                    <div className="space-y-1.5">
+                      <h3 className="text-xs font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
+                        {ind.title}
+                      </h3>
+                      <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                        {ind.desc}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-[8.5px] font-mono font-bold text-[#686DF4]">
+                      {ind.tool}
+                    </span>
+                    <span className="text-xs text-[#686DF4] group-hover:translate-x-0.5 transition-transform">
+                      →
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </motion.section>
 
       {/* FINAL CALLOUT AND CTA */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 animate-fadeIn">

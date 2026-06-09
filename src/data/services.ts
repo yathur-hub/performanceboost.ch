@@ -6,7 +6,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Growth Strategy & Advisory',
     slug: 'growth-strategy',
     shortDesc: 'Strategisches Fundament für skalierbares Wachstum, Marktmodellierung und ICP-Optimierung.',
-    description: 'Erfolgreiches Wachstum überlässt man nicht dem Zufall. Wir analysieren Ihre Marktchancen, definieren Ihren idealen Kunden (Ideal Customer Profile) und bauen ein datenbasiertes Go-To-Market Playbook auf. Damit verringern wir Streuverluste und sichern nachhaltige Neugeschäftskanäle.',
+    description: 'Erfolgreiches Wachstum überlässt man nicht dem Zufall. Wir analysieren deine Marktchancen, definieren deinen idealen Kunden (Ideal Customer Profile) und bauen ein datenbasiertes Go-To-Market Playbook auf. Damit verringern wir Streuverluste und sichern nachhaltige Neugeschäftskanäle.',
     benefits: [
       'Genaue Definition des Ideal Customer Profile (ICP) für zielgerichtete Ansprache',
       'Wettbewerbsanalyse & Unique Selling Proposition (USP) Schärfung',
@@ -35,8 +35,8 @@ export const SERVICES: ServiceDetail[] = [
     id: 'demand-generation',
     title: 'Demand Generation & Paid Ads',
     slug: 'demand-generation',
-    shortDesc: 'Markenpräsenz und Nachfrageaufbau in Ihrer Zielgruppe durch hochpräzise Kampagnen.',
-    description: 'Im B2B-Umfeld kaufen 95% Ihrer potenziellen Kunden jetzt gerade nicht. Mit modernem Demand Generation Marketing erzeugen wir echtes Kaufinteresse bei Ihrer Zielgruppe, bevor diese aktiv sucht. Wir bündeln exzellenten Content mit Paid LinkedIn, Google Search/Display sowie Meta Kampagnen.',
+    shortDesc: 'Markenpräsenz und Nachfrageaufbau in deiner Zielgruppe durch hochpräzise Kampagnen.',
+    description: 'Im B2B-Umfeld kaufen 95% deiner potenziellen Kunden jetzt gerade nicht. Mit modernem Demand Generation Marketing erzeugen wir echtes Kaufinteresse bei deiner Zielgruppe, bevor diese aktiv sucht. Wir bündeln exzellenten Content mit Paid LinkedIn, Google Search/Display sowie Meta Kampagnen.',
     benefits: [
       'Kontinuierliche pipeline-füllende Brand Awareness in der relevanten Zielgruppe',
       'Optimierte Akquisitionskosten (CAC) durch Retargeting-Sequenzen',
@@ -66,7 +66,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Inbound & Outbound Lead Generation',
     slug: 'lead-generation',
     shortDesc: 'Systematische Gewinnung qualifizierter Leads durch Content Hubs, SEO & Prospecting.',
-    description: 'Wir bringen kaufbereite Leads direkt in Ihre Sales Pipeline. Durch zielgerichtete Inbound-Methoden wie suchmaschinenoptimierten SEO-Content, Whitepaper-Funnels und Outbound Prospecting (Cold Outreach Automation via E-Mail und LinkedIn) erschaffen wir ein stabiles Neukundensystem.',
+    description: 'Wir bringen kaufbereite Leads direkt in deine Sales Pipeline. Durch zielgerichtete Inbound-Methoden wie suchmaschinenoptimierten SEO-Content, Whitepaper-Funnels und Outbound Prospecting (Cold Outreach Automation via E-Mail und LinkedIn) erschaffen wir ein stabiles Neukundensystem.',
     benefits: [
       'Konsistenter Fluss von qualifizierten Demo- und Erstgesprächs-Buchungen',
       'Nachhaltige organische Sichtbarkeit (SEO) statt reiner Anzeigenabhängigkeit',
@@ -118,15 +118,15 @@ export const SERVICES: ServiceDetail[] = [
       { title: 'Journey Mapping', desc: 'Definition aller Kontaktpunkte und Daten-Trigger.' },
       { title: 'CRM-Architektur Design', desc: 'Aufbau der PipelineStufen, Deals und Kontakteigenschaften.' },
       { title: 'Workflow-Programmierung', desc: 'Technische Verpartnerung der Systeme und Test-Triggers.' },
-      { title: 'Schulung & Go-Live', desc: 'Onboarding Ihres Sales-Teams auf die neuen automatisierten Prozesse.' }
+      { title: 'Schulung & Go-Live', desc: 'Onboarding deines Sales-Teams auf die neuen automatisierten Prozesse.' }
     ]
   },
   {
     id: 'sales-enablement',
     title: 'Sales Enablement & Playbooks',
     slug: 'sales-enablement',
-    shortDesc: 'Werkzeuge, Argumentarien und Präsentationen, die Ihre Abschlussquote messbar steigern.',
-    description: 'Das beste Marketing verpufft, wenn das Sales-Team im Gespräch improvisieren muss. Wir statten Ihr Vertriebsteam mit erstklassigen Fallstudien, einwandfreien Einwandbehandlungs-Leitfäden, interaktiven Preiskalkulatoren und messerscharfen Präsentationen aus. Jedes Gespräch wird professioneller.',
+    shortDesc: 'Werkzeuge, Argumentarien und Präsentationen, die deine Abschlussquote messbar steigern.',
+    description: 'Das beste Marketing verpufft, wenn das Sales-Team im Gespräch improvisieren muss. Wir statten dein Vertriebsteam mit erstklassigen Fallstudien, einwandfreien Einwandbehandlungs-Leitfäden, interaktiven Preiskalkulatoren und messerscharfen Präsentationen aus. Jedes Gespräch wird professioneller.',
     benefits: [
       'Verkürzter Onboardingprozess für neue Sales-Mitarbeiter um über 50%',
       'Konsistentes, hochprofessionelles Auftreten beim Kunden (Corporate Identity)',
@@ -156,7 +156,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Revenue Operations (RevOps)',
     slug: 'revenue-operations',
     shortDesc: 'Zusammenführung von Marketing, Sales und Support zu einer hocheffizienten Wachstumsmaschine.',
-    description: 'Silos blockieren Ihren Umsatz. RevOps bricht die Barrieren zwischen Marketing, Vertrieb und Customer Success auf. Wir etablieren eine Single Source of Truth für Ihre Unternehmensdaten, vereinheitlichen KPIs und synchronisieren Tech-Stacks zur Maximierung der operativen Marge.',
+    description: 'Silos blockieren deinen Umsatz. RevOps bricht die Barrieren zwischen Marketing, Vertrieb und Customer Success auf. Wir etablieren eine Single Source of Truth für deine Unternehmensdaten, vereinheitlichen KPIs und synchronisieren Tech-Stacks zur Maximierung der operativen Marge.',
     benefits: [
       'Vollständige Transparenz über den gesamten Customer Lifetime Value (LTV)',
       'Keine doppelten Lizenzen oder fragmentierten "Silo-Tools"',
@@ -186,7 +186,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'AI & Inbound/Outbound Automation',
     slug: 'ai-automation',
     shortDesc: 'Automatisierte AI-Agenten für Datenanreicherung, Kundenservice & Smart Outreach.',
-    description: 'Manuelle Arbeit bremst Sie aus. Wir konzipieren und implementieren intelligente KI-Agenten, die administrative Aufgaben im Handumdrehen erledigen. Ob automatisierte Vorbereitung von Verkaufsgesprächen, AI-gestützte Daten-Anreicherung von LinkedIn-Profilen oder automatisierte E-Mail-Beantwortung – wir machen Ihr Team produktiver.',
+    description: 'Manuelle Arbeit bremst dich aus. Wir konzipieren und implementieren intelligente KI-Agenten, die administrative Aufgaben im Handumdrehen erledigen. Ob automatisierte Vorbereitung von Verkaufsgesprächen, AI-gestützte Daten-Anreicherung von LinkedIn-Profilen oder automatisierte E-Mail-Beantwortung – wir machen dein Team produktiver.',
     benefits: [
       'Enorme Zeitersparnis bei Routineaufgaben (Administration & Reporting)',
       'Skalierbarkeit: Mehr Termine vereinbaren, ohne das Headcount zu erhöhen',
@@ -216,7 +216,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Data, Analytics & Web Tracking',
     slug: 'data-analytics',
     shortDesc: 'Datenschutzkonformes First-Party Webtracking und glasklare Attributionsmodelle.',
-    description: 'Raten Sie nicht, wer für Ihren Umsatz sorgt. Wir implementieren datenschutzkonformes (GDPR/Swiss DSG-konformes) Server-Side Tagging, Google Analytics 4, Matomo und ausgeklügelte Lead-Attributionsmodelle, damit Sie genau sehen, über welche Marketingkanäle Ihre wertvollsten Kunden kamen.',
+    description: 'Rate nicht, wer für deinen Umsatz sorgt. Wir implementieren datenschutzkonformes (GDPR/Swiss DSG-konformes) Server-Side Tagging, Google Analytics 4, Matomo und ausgeklügelte Lead-Attributionsmodelle, damit du genau siehst, über welche Marketingkanäle deine wertvollsten Kunden kamen.',
     benefits: [
       'Umsatzbasierte Attributionsberichte statt "Last-Click"-Wahrsagerei',
       'Datenschutzkonformes Tracking (CH-DSG & DSGVO-kompatibel) gesichert',
@@ -367,13 +367,13 @@ export const SOLUTIONS: SolutionArea[] = [
   {
     id: 'b2b-saas-tech',
     title: 'B2B Software & Tech',
-    tagline: 'Von unbemerkt zu global skalierbar – der Turbo für Ihr Softwaregeschäft.',
+    tagline: 'Von unbemerkt zu global skalierbar – der Turbo für dein Softwaregeschäft.',
     targetGroup: 'B2B SaaS Gründer, CEOs & VP Sales',
     description: 'Im Technologie-Sektor reicht exzellente Software alleine nicht aus. Kunden müssen das Problem verstehen, bevor sie den Nutzen kaufen. Wir orchestrieren den gesamten Funnel: Lead Generation über technologische Insights, automatisierte Produktdemos und nahtloses HubSpot Pipeline Management.',
     idealFor: [
-      'Wiederkehrende Software-Umsätze steigern wollen',
-      'Den Vertriebszyklus (Sales Cycle) von Monaten auf Wochen verkürzen möchten',
-      'Vor dem Problem stehen, dass der Outbound-Erfolg nachgelassen hat'
+      'wiederkehrende Software-Umsätze steigern willst',
+      'den Vertriebszyklus (Sales Cycle) von Monaten auf Wochen verkürzen möchtest',
+      'vor dem Problem stehst, dass der Outbound-Erfolg nachgelassen hat'
     ],
     includedServices: ['growth-strategy', 'demand-generation', 'marketing-automation', 'sales-enablement'],
     recommendedCombo: 'Demand Generation (LinkedIn Content) kombiniert mit Sales Enablement Playbooks und automatisierten Nurturing-Sequenzen.',
@@ -384,11 +384,11 @@ export const SOLUTIONS: SolutionArea[] = [
     title: 'Consulting, Agency & Professional Services',
     tagline: 'Systematisch DACH-Marktführer anziehen statt reiner Mund-zu-Mund-Propaganda.',
     targetGroup: 'Unternehmensberater, Executive Search, IT-Dienstleister & Agenturen',
-    description: 'Dienstleistungs-Unternehmen leben oft von unregelmässigen Empfehlungen. Mit unserer integrierten B2B-Wachstumsarchitektur transformieren wir Ihr Empfehlungsgeschäft zu einer messbaren, kalkulierbaren Kundenpipeline. Wir positionieren Sie als anerkannte Thought Leader im Schweizer Markt.',
+    description: 'Dienstleistungs-Unternehmen leben oft von unregelmässigen Empfehlungen. Mit unserer integrierten B2B-Wachstumsarchitektur transformieren wir dein Empfehlungsgeschäft zu einer messbaren, kalkulierbaren Kundenpipeline. Wir positionieren dich als anerkannte Thought Leader im Schweizer Markt.',
     idealFor: [
-      'Sich aus der Abhängigkeit von reiner Kaltakquise und Empfehlungen befreien wollen',
-      'Systematisch Premium-Mandate (SFr. 25k+) abschliessen wollen',
-      'Ihre Beratungsexpertise digital skalierbar präsentieren möchten'
+      'dich aus der Abhängigkeit von reiner Kaltakquise und Empfehlungen befreien willst',
+      'systematisch Premium-Mandate (SFr. 25k+) abschliessen willst',
+      'deine Beratungsexpertise digital skalierbar präsentieren möchtest'
     ],
     includedServices: ['growth-strategy', 'lead-generation', 'ai-automation', 'data-analytics'],
     recommendedCombo: 'Lead Generation (Inbound Lead-Magneten wie Whitepapers) in Verbindung mit datenschutzkonformen Analytics und KI-Outbound Automation.',
@@ -399,11 +399,11 @@ export const SOLUTIONS: SolutionArea[] = [
     title: 'Verarbeitende Industrie & High-Tech Manufacturing',
     tagline: 'Verbindung traditioneller Schweizer Präzision mit modernster digitaler Lead-Pipeline.',
     targetGroup: 'Industrieunternehmen, Zulieferer, Elektronik- & Maschinenbau',
-    description: 'In der Industrie finden Geschäfte oft auf Fachmessen statt. Doch der moderne Einkäufer recherchiert digital: 84% des B2B-Einkaufsprozesses geschehen, bevor ein Verkäufer kontaktiert wird. Wir bauen Ihr digitales Ausstellungsfenster für nationale und internationale Leads.',
+    description: 'In der Industrie finden Geschäfte oft auf Fachmessen statt. Doch der moderne Einkäufer recherchiert digital: 84% des B2B-Einkaufsprozesses geschehen, bevor ein Verkäufer kontaktiert wird. Wir bauen dein digitales Ausstellungsfenster für nationale und internationale Leads.',
     idealFor: [
-      'Auf Messen immer weniger Neukontakte generieren',
-      'Komplexe, erklärungsbedürftige Industrieprodukte digital erfassbar machen wollen',
-      'Ihre globalen Händlernetze gezielt online unterstützen wollen'
+      'auf Messen immer weniger Neukontakte generierst',
+      'komplexe, erklärungsbedürftige Industrieprodukte digital erfassbar machen willst',
+      'deine globalen Händlernetze gezielt online unterstützen willst'
     ],
     includedServices: ['growth-strategy', 'demand-generation', 'sales-enablement', 'revenue-operations'],
     recommendedCombo: 'RevOps (zur Pipeline-Synchronisation) gekoppelt mit High-Quality Demand Generation (LinkedIn Ads für KMU-Chefs) und Sales Playbooks.',

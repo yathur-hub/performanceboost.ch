@@ -103,7 +103,7 @@ export default function InteractiveGrowthCalculator() {
           <div className="flex justify-between items-center pb-4 border-b border-slate-100">
             <div className="flex items-center gap-2.5">
               <Calculator className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
-              <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">B2B Revenue & Budget Simulator</h3>
+              <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Revenue & Budget Simulator</h3>
             </div>
             <button 
               onClick={handleReset} 
@@ -115,7 +115,7 @@ export default function InteractiveGrowthCalculator() {
           </div>
           
           <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-            Wie stark wirkt sich ein optimiertes Media-Budget auf deine echten Abschlüsse aus? Dieser Simulator kalibriert sich automatisch anhand realer B2B-Benchmarks für deinen Deal-Scope.
+            Wie stark wirkt sich ein optimiertes Media-Budget auf deine echten Abschlüsse aus? Dieser Simulator kalibriert sich automatisch anhand realer Benchmarks für deinen Deal-Scope.
           </p>
 
           <div className="space-y-6">
@@ -304,10 +304,10 @@ export default function InteractiveGrowthCalculator() {
             {/* B2B Calibrated indicator badge */}
             <div className="bg-amber-50 border border-amber-200/50 rounded-2xl p-4.5 space-y-1.5">
               <p className="text-[10px] font-mono tracking-wider font-bold text-amber-800 uppercase flex items-center gap-1">
-                🛡️ B2B REALITY CALIBRATION ACTIVE
+                🛡️ REALITY CALIBRATION ACTIVE
               </p>
               <p className="text-[11px] text-amber-900/80 leading-relaxed font-semibold">
-                Da teurere B2B-Deals (aktuell {formattedValue(dealValue)}) naturgemäss komplexere Vertriebszyklen haben, wurden deine Conversion-Raten automatisch konservativ für die B2B-Wirklichkeit tariert:
+                Da teurere Deals (aktuell {formattedValue(dealValue)}) naturgemäss komplexere Vertriebszyklen haben, wurden deine Conversion-Raten automatisch konservativ für die Wirklichkeit tariert:
               </p>
               <div className="flex gap-4 pt-1.5 text-[10px] font-mono text-amber-850 font-semibold border-t border-amber-200/40">
                 <div>Lead CR: <span className="font-bold text-slate-900">{currentMetrics.calibratedLeadCR}%</span> <span className="text-slate-400 text-[9px]">(Tariert)</span></div>
@@ -361,7 +361,7 @@ export default function InteractiveGrowthCalculator() {
 
           <div className="pt-6 border-t border-slate-200/80 mt-8 flex flex-col sm:flex-row gap-5 items-center justify-between">
             <div className="text-[10px] text-slate-450 leading-relaxed text-center sm:text-left font-semibold">
-              *Simulation berechnet auf Basis von Branchenstandards für B2B Lead-Verarbeitung, CRM-Automatisierung und Media-Buying-Optimierung von performanceboost.
+              *Simulation berechnet auf Basis von Branchenstandards für Lead-Verarbeitung, CRM-Automatisierung und Media-Buying-Optimierung von performanceboost.
             </div>
             <a 
               href="/kontakt"

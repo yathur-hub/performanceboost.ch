@@ -280,7 +280,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
         ) : (
           <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl text-slate-400 space-y-3 bg-[#f6f6f6]/50">
             <AlertCircle className="w-10 h-10 text-slate-300 mx-auto" />
-            <p className="text-xs font-semibold text-slate-500">Keine Ressourcen für Ihre Filter-Kombination gefunden.</p>
+            <p className="text-xs font-semibold text-slate-500">Keine Ressourcen für deine Filter-Kombination gefunden.</p>
             <button 
               onClick={() => { setSearchTerm(''); }}
               className="text-xs text-[#686DF4] underline font-extrabold cursor-pointer bg-transparent border-none"
