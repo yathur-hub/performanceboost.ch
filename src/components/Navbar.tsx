@@ -20,7 +20,8 @@ import {
   CheckCircle2,
   Clock,
   Phone,
-  ShoppingCart
+  ShoppingCart,
+  RefreshCcw
 } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { ServiceDetail } from '../types';
@@ -84,7 +85,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     'revenue-operations': Layers,
     'ai-automation': Sparkles,
     'data-analytics': PieChart,
-    'ecommerce-performance': ShoppingCart
+    'ecommerce-performance': ShoppingCart,
+    'dtc-growth-acquisition': TrendingUp,
+    'customer-retention': RefreshCcw,
+    'paid-social-ecommerce': TrendingUp
   };
 
   // Helper to safely get icon for a service
@@ -187,12 +191,12 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             </div>
 
             {/* CONTENTS CONTAINER (DESKTOP MODE) */}
-            <div className="hidden lg:block flex-grow max-w-7xl w-full mx-auto px-8 lg:px-10 py-16" id="desktop-menu-contents">
-              <div className="grid grid-cols-12 gap-10 items-stretch">
+            <div className="hidden lg:block flex-grow max-w-7xl w-full mx-auto px-8 lg:px-10 py-8" id="desktop-menu-contents">
+              <div className="grid grid-cols-12 gap-8 items-stretch">
                 
                 {/* Column 1: SPOTLIGHT PREVIEW CARD (DYNAMICS / DETAILS COMPONENT) */}
                 <div 
-                  className="col-span-4 bg-white border border-slate-200/80 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between overflow-hidden relative min-h-[500px]"
+                  className="col-span-4 bg-white border border-slate-200/80 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between overflow-hidden relative min-h-[460px]"
                   id="menu-spotlight-panel"
                 >
                   <AnimatePresence mode="wait">
@@ -203,10 +207,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -12 }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="space-y-6 flex flex-col h-full justify-between"
+                        className="space-y-4 flex flex-col h-full justify-between"
                         id={`spotlight-service-${hoveredService.slug}`}
                       >
-                        <div className="space-y-5">
+                        <div className="space-y-4">
                           {/* Service Indicator header label */}
                           <div className="flex items-center gap-2">
                             <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-slate-400">LEISTUNGS-SCHWERPUNKT</span>
@@ -214,13 +218,13 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           </div>
 
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#686DF4]/10 shadow-xs">
+                            <div className="w-9 h-9 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#686DF4]/10 shadow-xs">
                               {(() => {
                                 const IconC = getServiceIcon(hoveredService.slug);
-                                return <IconC className="w-5 h-5" />;
+                                return <IconC className="w-4.5 h-4.5" />;
                               })()}
                             </div>
-                            <h4 className="text-md font-display font-semibold text-slate-900 tracking-tight leading-snug">
+                            <h4 className="text-sm font-display font-semibold text-slate-900 tracking-tight leading-snug">
                               {hoveredService.title}
                             </h4>
                           </div>
@@ -230,9 +234,9 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           </p>
 
                           {/* Quick Deliverable Bullets */}
-                          <div className="space-y-2 pt-2">
+                          <div className="space-y-1.5 pt-1">
                             <span className="text-[9px] font-mono font-bold text-slate-450 uppercase tracking-wider block">UNSERE LIEFEROBJEKTE:</span>
-                            <ul className="space-y-1.5" id="spotlight-deliverables">
+                            <ul className="space-y-1" id="spotlight-deliverables">
                               {hoveredService.deliverables.slice(0, 2).map((del, idx) => (
                                 <li key={idx} className="flex items-start gap-2 text-xs text-slate-600 font-medium">
                                   <CheckCircle2 className="w-3.5 h-3.5 text-[#686DF4] shrink-0 mt-0.5" />
@@ -244,11 +248,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         </div>
 
                         {/* Impact stats dynamic layer */}
-                        <div className="pt-6 border-t border-slate-100 space-y-4">
-                          <div className="bg-slate-50 border border-slate-200/50 p-4.5 rounded-2xl flex items-center justify-between">
+                        <div className="pt-4 border-t border-slate-100 space-y-3">
+                          <div className="bg-slate-50 border border-slate-200/50 p-3.5 rounded-2xl flex items-center justify-between">
                             {hoveredService.metrics.map((m, mIdx) => (
                               <div key={mIdx} className="space-y-0.5">
-                                <span className="text-lg font-bold font-display text-[#686DF4] block leading-none">{m.value}</span>
+                                <span className="text-base font-bold font-display text-[#686DF4] block leading-none">{m.value}</span>
                                 <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">{m.label}</span>
                               </div>
                             ))}
@@ -257,7 +261,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           <a
                             href={`/leistungen/${hoveredService.slug}`}
                             onClick={(e) => handleLinkClick(`/leistungen/${hoveredService.slug}`, e)}
-                            className="w-full justify-between bg-slate-900 hover:bg-[#686DF4] text-white font-bold text-[10px] py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center gap-1 transition-all duration-300 group/spot"
+                            className="w-full justify-between bg-slate-900 hover:bg-[#686DF4] text-white font-bold text-[10px] py-3.5 px-4 rounded-xl uppercase tracking-wider inline-flex items-center gap-1 transition-all duration-300 group/spot"
                             id={`spotlight-cta-link-${hoveredService.slug}`}
                           >
                             <span>Hebel detailliert ansehen</span>
@@ -273,16 +277,16 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -12 }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="space-y-6 flex flex-col h-full justify-between"
+                        className="space-y-4 flex flex-col h-full justify-between"
                         id="spotlight-default-panel"
                       >
-                        <div className="space-y-5">
+                        <div className="space-y-4">
                           <div className="flex items-center gap-2">
                             <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">SYSTEMATIC GROWTH ARCHITECTURE</span>
                             <div className="h-px bg-slate-100 flex-grow"></div>
                           </div>
 
-                          <h4 className="text-md font-display font-semibold text-slate-900 tracking-tight leading-tight">
+                          <h4 className="text-sm font-display font-semibold text-slate-900 tracking-tight leading-tight">
                             Ergebnisse statt leere KPI-Konzepte.
                           </h4>
 
@@ -290,29 +294,29 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             performanceboost wurde gegründet, weil Schweizer B2B-Unternehmen keinen weiteren Anbieter für lose Facebook-Ads brauchen. Sie verlangen einen Partner, der Wachstum versteht, testet und schrittweise systemisiert.
                           </p>
 
-                          <div className="p-5 rounded-2xl bg-[#686DF4]/[0.02] border border-[#686DF4]/10 space-y-3.5">
+                          <div className="p-4 rounded-2xl bg-[#686DF4]/[0.02] border border-[#686DF4]/10 space-y-2.5">
                             <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#686DF4] block">KUMULIERTER MITTELWERT EXZELLENZ:</span>
                             
                             <div className="grid grid-cols-2 gap-4">
                               <div className="space-y-0.5">
-                                <span className="text-lg font-bold font-display text-slate-950 block leading-none">3.4x</span>
+                                <span className="text-base font-bold font-display text-slate-950 block leading-none">3.4x</span>
                                 <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">Pipeline-Volumen</span>
                               </div>
                               <div className="space-y-0.5">
-                                <span className="text-lg font-bold font-display text-slate-950 block leading-none">+35%</span>
+                                <span className="text-base font-bold font-display text-slate-950 block leading-none">+35%</span>
                                 <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">Close-Ratio</span>
                               </div>
                             </div>
                           </div>
                         </div>
 
-                        <div className="space-y-4 pt-6 border-t border-slate-100">
+                        <div className="space-y-3 pt-4 border-t border-slate-100">
                           <div className="flex items-start gap-3 text-xs text-slate-500 font-medium">
                             <MapPin className="w-4 h-4 text-[#686DF4] shrink-0 mt-0.5" />
                             <span>Schweiz (Graubünden) • Remote Standard</span>
                           </div>
                           
-                          <div className="flex justify-between items-center text-[10px] text-slate-400 font-mono tracking-wider uppercase border-t border-slate-100 pt-3">
+                          <div className="flex justify-between items-center text-[9px] text-slate-400 font-mono tracking-wider uppercase border-t border-slate-100 pt-2.5">
                             <span>SVEN-TUNED B2B SYSTEM</span>
                             <span className="text-slate-350">PRO-LEVEL v4.0</span>
                           </div>
@@ -322,10 +326,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   </AnimatePresence>
                 </div>
 
-                {/* Column 2: INTERACTIVE SERVICES MATRIX (8 HEBELS) */}
+                {/* Column 2: INTERACTIVE SERVICES MATRIX (12 HEBELS) */}
                 <div className="col-span-5 flex flex-col justify-between" id="menu-services-panel">
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-end">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-450">UNSERE WACHSTUMSHEBEL</span>
                       <a 
                         href="/leistungen" 
                         onClick={(e) => handleLinkClick('/leistungen', e)}
@@ -335,7 +340,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       </a>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3" id="services-interactive-grid">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2" id="services-interactive-grid">
                       {SERVICES.map((s) => {
                         const IconComp = getServiceIcon(s.slug);
                         const isHovered = hoveredService?.slug === s.slug;
@@ -347,40 +352,29 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             href={`/leistungen/${s.slug}`}
                             onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
                             onMouseEnter={() => setHoveredService(s)}
-                            className={`group flex flex-col justify-between p-4 rounded-2xl border text-left transition-all duration-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] h-32 relative overflow-hidden ${
+                            className={`group flex items-center gap-3 p-2.5 rounded-xl border text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] min-h-[50px] py-2 relative overflow-hidden ${
                               isHovered 
                                 ? 'bg-[#686DF4]/[0.03] border-[#686DF4]/25 shadow-xs' 
                                 : 'bg-white border-slate-200/50 hover:bg-[#686DF4]/[0.01] hover:border-slate-300'
                             }`}
                           >
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between">
-                                <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-400 ${
-                                  isHovered ? 'bg-[#686DF4] text-white shadow-xs' : 'bg-slate-50 text-slate-500 group-hover:bg-[#686DF4]/5 group-hover:text-[#686DF4]'
-                                }`}>
-                                  <IconComp className="w-4 h-4" />
-                                </div>
-                                <ChevronRight className={`w-3.5 h-3.5 transition-all duration-300 ${
-                                  isHovered ? 'text-[#686DF4] translate-x-0.5' : 'text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5'
-                                }`} />
-                              </div>
+                            <div className={`w-7.5 h-7.5 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
+                              isHovered ? 'bg-[#686DF4] text-white shadow-xs' : 'bg-slate-50 text-slate-500 group-hover:bg-[#686DF4]/5 group-hover:text-[#686DF4]'
+                            }`}>
+                              <IconComp className="w-3.5 h-3.5" />
+                            </div>
 
-                              <div>
-                                <span className={`block text-xs font-bold leading-tight transition-colors ${
-                                  isHovered ? 'text-[#686DF4]' : 'text-slate-900 group-hover:text-[#686DF4]'
-                                }`}>
-                                  {s.title.split('&')[0].split('/')[0].trim()}
-                                </span>
-                                <span className="block text-[10px] text-slate-400/90 font-medium group-hover:text-slate-500 transition-colors mt-0.5 truncate pr-2">
-                                  {s.shortDesc}
-                                </span>
-                              </div>
+                            <div className="flex-grow min-w-0">
+                              <span className={`block text-[11px] font-bold leading-tight transition-colors ${
+                                isHovered ? 'text-[#686DF4]' : 'text-slate-900 group-hover:text-[#686DF4]'
+                              }`}>
+                                {s.title}
+                              </span>
                             </div>
-                            
-                            {/* Subtle indicators */}
-                            <div className="absolute right-2 bottom-2 font-mono text-[8px] text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              impact metric
-                            </div>
+
+                            <ChevronRight className={`w-3 h-3 shrink-0 transition-all duration-300 ${
+                              isHovered ? 'text-[#686DF4] translate-x-0.5' : 'text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5'
+                            }`} />
                           </a>
                         );
                       })}
@@ -390,36 +384,36 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
                 {/* Column 3: HIGHLIGHT INTEGRATED CONVERSION & CONTACT */}
                 <div className="col-span-3 flex flex-col justify-between" id="menu-overview-panel">
-                  <div className="space-y-6">
-                    <div className="space-y-3.5" id="overview-links-col">
+                  <div className="space-y-4">
+                    <div className="space-y-2.5" id="overview-links-col">
                       {/* Interactive Conversion Card */}
                       <a
                         href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
                         id="mega-menu-audit-cta-card"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative overflow-hidden group block p-5 rounded-3xl bg-slate-900 text-white shadow-[0_12px_30px_rgba(0,0,0,0.06)] border border-slate-850 hover:shadow-[0_16px_40px_rgba(104,109,244,0.12)] transition-all duration-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        className="relative overflow-hidden group block p-4 rounded-2xl bg-slate-900 text-white shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-slate-850 hover:shadow-[0_12px_32px_rgba(104,109,244,0.12)] transition-all duration-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#686DF4]/15 to-transparent rounded-full blur-2xl group-hover:scale-130 transition-transform duration-500"></div>
                         
-                        <div className="flex items-center gap-2 mb-2.5">
+                        <div className="flex items-center gap-2 mb-1.5">
                           <span className="flex h-1.5 w-1.5 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
                           </span>
-                          <span className="text-[8.5px] font-mono font-bold tracking-widest text-emerald-400 uppercase">HEUTE VERFÜGBAR</span>
+                          <span className="text-[8px] font-mono font-bold tracking-widest text-emerald-400 uppercase">HEUTE VERFÜGBAR</span>
                         </div>
 
-                        <h5 className="text-[13px] font-bold font-display tracking-tight text-white mb-1 group-hover:text-[#686DF4] transition-colors flex items-center gap-1.5">
-                          Wachstums-Audit (30 min) <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        <h5 className="text-xs font-bold font-display tracking-tight text-white mb-0.5 group-hover:text-[#686DF4] transition-colors flex items-center gap-1.5">
+                          Wachstums-Audit (30 min) <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </h5>
 
-                        <p className="text-[9.5px] text-slate-400 leading-normal mb-4 font-mono uppercase">
+                        <p className="text-[9px] text-slate-400 leading-normal mb-3 font-mono uppercase">
                           *Kostenfreier Pipeline-Check für Schweizer KMU.
                         </p>
 
-                        <div className="flex items-center gap-2 text-[9.5px] font-mono font-bold uppercase tracking-wider text-[#686DF4] bg-[#686DF4]/10 w-fit px-3 py-1.5 rounded-full transition-all group-hover:bg-[#686DF4]/20">
-                          <Calendar className="w-3.5 h-3.5 text-[#686DF4]" />
+                        <div className="flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-[#686DF4] bg-[#686DF4]/10 w-fit px-2.5 py-1 rounded-full transition-all group-hover:bg-[#686DF4]/20">
+                          <Calendar className="w-3 h-3 text-[#686DF4]" />
                           Termin sichern
                         </div>
                       </a>
@@ -429,22 +423,22 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         href="/ueber-uns"
                         id="mega-menu-about-link-card"
                         onClick={(e) => handleLinkClick('/ueber-uns', e)}
-                        className="group flex items-center justify-between p-4 bg-white border border-slate-200/50 rounded-2xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        className="group flex items-center justify-between p-3 bg-white border border-slate-200/50 rounded-xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/5 transition-colors">
+                          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/5 transition-colors">
                             <Users className="w-4 h-4" />
                           </div>
                           <div>
-                            <span className="block text-xs font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
+                            <span className="block text-xs font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">
                               Über uns
                             </span>
-                            <span className="block text-[10px] text-slate-400 font-medium">
+                            <span className="block text-[9.5px] text-slate-400 font-medium mt-0.5">
                               Philosophie & Track Record
                             </span>
                           </div>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all" />
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all" />
                       </a>
 
                       {/* Contact Portrait Card with Yathur's picture */}
@@ -452,20 +446,20 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         href="/kontakt"
                         id="mega-menu-contact-link-card"
                         onClick={(e) => handleLinkClick('/kontakt', e)}
-                        className="group flex items-center gap-3.5 p-4 bg-white border border-slate-200/50 rounded-2xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        className="group flex items-center gap-3 p-3 bg-white border border-slate-200/50 rounded-xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
                         <img 
                           src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
                           alt="Yathur Nathan" 
-                          className="w-11 h-11 object-cover rounded-xl border border-slate-200 shrink-0 shadow-xs"
+                          className="w-9 h-9 object-cover rounded-lg border border-slate-200 shrink-0 shadow-xs"
                           referrerPolicy="no-referrer"
                         />
-                        <div className="text-left">
+                        <div className="text-left min-w-0">
                           <span className="block text-xs font-bold text-slate-950 group-hover:text-[#686DF4] transition-colors leading-tight">
                             Direktkontakt
                           </span>
-                          <span className="block text-[9.5px] text-slate-450 leading-normal mt-0.5 font-medium">
-                            Persönlich anfragen bei Yathur Nathan & Offerte erhalten
+                          <span className="block text-[9.5px] text-slate-400 leading-normal mt-0.5 font-medium truncate">
+                            Yathur Nathan, Inhaber & Konzepter
                           </span>
                         </div>
                       </a>

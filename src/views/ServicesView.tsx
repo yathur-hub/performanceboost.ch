@@ -3,7 +3,7 @@ import { SERVICES } from '../data/services';
 import { 
   TrendingUp, Megaphone, Users, Cpu, Layers, Sparkles, PieChart, ShieldAlert,
   ArrowRight, ArrowLeft, Check, CheckCircle2, Award, ChevronDown, ChevronUp, HelpCircle,
-  ShoppingCart
+  ShoppingCart, RefreshCcw
 } from 'lucide-react';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
 
@@ -16,6 +16,9 @@ import RevenueLeakDetector from '../components/RevenuLeakDetector';
 import AIReadinessCheck from '../components/AIReadinessCheck';
 import DataClarityCheck from '../components/DataClarityCheck';
 import ShopConversionRechner from '../components/ShopConversionRechner';
+import CacLtvCalculator from '../components/CacLtvCalculator';
+import RetentionRevenueRechner from '../components/RetentionRevenueRechner';
+import TrueROASRechner from '../components/TrueROASRechner';
 
 interface ServicesViewProps {
   currentSlug?: string;
@@ -33,7 +36,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     'revenue-operations': Layers,
     'ai-automation': Sparkles,
     'data-analytics': PieChart,
-    'ecommerce-performance': ShoppingCart
+    'ecommerce-performance': ShoppingCart,
+    'dtc-growth-acquisition': TrendingUp,
+    'customer-retention': RefreshCcw,
+    'paid-social-ecommerce': TrendingUp
   };
 
   const servicesCopyOverride: { [key: string]: { benefit: string, desc: string } } = {
@@ -55,7 +61,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     },
     'sales-enablement': {
       benefit: 'Dein Vertrieb schliesst schneller — mit besseren Tools.',
-      desc: 'Marketing und Sales sprechen dieselbe Sprache. Wir bauen Übergabeprozesse, Sales-Content und Enablement-Strukturen, die den Vertrieb produktiver machen.'
+      desc: 'Marketing und Sales sprechen dieselbe Sprache. Wir bauen Übergabeprozesse, Sales-Content and Enablement-Strukturen, die den Vertrieb produktiver machen.'
     },
     'revenue-operations': {
       benefit: 'Marketing, Sales und Customer Success arbeiten als System.',
@@ -68,6 +74,18 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     'data-analytics': {
       benefit: 'Du weisst jederzeit, was funktioniert — und wo Revenue verloren geht.',
       desc: 'Dashboards, Tracking-Strukturen und Reporting-Systeme, die Entscheidungen auf Fakten stützen. Von Funnel-Analytics bis Attribution. Daten als Wachstumssteuerung.'
+    },
+    'dtc-growth-acquisition': {
+      benefit: 'Skalierbare Kundengewinnung & CAC/LTV-Steuerung.',
+      desc: 'Viele Schweizer Online-Brands haben ein starkes Produkt – aber ein brüchiges Acquisition-System. Wir strukturieren deine Kampagnen, optimieren den Funnel und steigern die Performance.'
+    },
+    'customer-retention': {
+      benefit: 'Bestandskunden systematisch aktivieren und halten.',
+      desc: 'Ein Neukunde kostet das 5- bis 7-fache eines Bestandskunden. Wir etablieren automatisierte Kundenlebenszyklus-Flows, Win-Back-Schlaufen und Loyalitäts-Pipelines.'
+    },
+    'paid-social-ecommerce': {
+      benefit: 'Ads optimiert auf echten Deckungsbeitrag statt eitlen ROAS.',
+      desc: 'Die meisten E-Commerce-Shops optimieren auf Umsatz-ROAS. Wir rücken Datenpräzision runderherum in den Fokus und optimieren auf echten Deckungsbeitrag unter Abzug aller Logistikkosten.'
     }
   };
 
@@ -182,6 +200,12 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     return <DataClarityCheck />;
                   case 'ecommerce-performance':
                     return <ShopConversionRechner />;
+                  case 'dtc-growth-acquisition':
+                    return <CacLtvCalculator />;
+                  case 'customer-retention':
+                    return <RetentionRevenueRechner />;
+                  case 'paid-social-ecommerce':
+                    return <TrueROASRechner />;
                   default:
                     return null;
                 }

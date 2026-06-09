@@ -985,5 +985,281 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       subheadline: '30 Minuten — wir schauen gemeinsam auf deine Zahlen und zeigen dir, wo der grösste Hebel liegt.',
       buttonText: 'Shop-Gespräch buchen'
     }
+  },
+  {
+    slug: 'dtc-growth-acquisition',
+    hero: {
+      headline: 'Dein Produkt ist gut. Deine Kundengewinnung noch nicht.',
+      subheadline: 'Viele Schweizer Online-Brands haben ein starkes Produkt – aber ein brüchiges Acquisition-System. Zu viel Budget in Meta ohne Struktur, kein Funnel-Denken, organisch fast null. Wir ändern das: systematisch, messbar, profitabel.',
+      ctaText: 'Wachstumspotenzial jetzt berechnen'
+    },
+    problem: {
+      title: 'Was die meisten D2C-Brands bremst – bevor sie je richtig skalieren.',
+      paragraphs: [
+        'Das Problem ist selten das Produkt. Schweizer D2C-Brands mit CHF 200k–3M Umsatz kommen meistens über Mundpropaganda, einen glücklichen Viral-Post oder die ersten Meta-Kampagnen zu ersten Kunden. Aber wenn das Wachstum abflacht, liegt es fast immer an derselben Ursache: Es gibt kein System. Jeder Franken Ad-Budget landet ohne klare Attribution, ohne Funnel-Logik, ohne LTV-Grundlage in einem Black Box namens "Meta-Ads".',
+        'Der Customer Acquisition Cost klettert unbemerkt nach oben – weil niemand ihn sauber misst. Du weisst, was ein Neukunde kostet. Aber weisst du, was er über 12 Monate wert ist? Ohne LTV-Denken kaufst du Neukunden zu Preisen, die auf den ersten Blick funktionieren, aber auf den zweiten Blick deine Marge vernichten. Gleichzeitig wird der organische Kanal stiefmütterlich behandelt: kein SEO, kein strukturiertes Content-System, keine E-Mail-Strategie, die aus Erstkäufern echte Stammkunden macht.',
+        'Die Abhängigkeit von einem einzigen Kanal ist das grösste strukturelle Risiko für jede D2C-Brand. Eine iOS-Update, ein Meta-Algo-Shift, ein kurzes Ad-Account-Sperr-Ereignis – und der Umsatz bricht ein. Wir sehen das regelmässig bei Schweizer Brands, die seit Jahren profitabel liefen und dann über Nacht 40% Umsatz verlieren, weil ihr gesamtes Acquisition-System aus einem einzigen Schalter bestand. Unser Job: diesen Schalter ersetzen durch eine mehrspurige, attributierte, skalierbare Maschine.'
+      ]
+    },
+    leistet: {
+      title: 'WAS WIR FÜR DICH BAUEN',
+      items: [
+        {
+          title: 'Paid Acquisition Architektur',
+          desc: 'Wir strukturieren dein Paid-Setup von Grund auf: saubere Kampagnenarchitektur, getrennte Awareness- und Conversion-Layer, Frequency-Management, Creative-Rotation-System. Meta bleibt ein Kanal – aber er ist nicht mehr dein einziger Lebensnerv. Wir testen systematisch, was funktioniert, und skalieren nur, was sich rechnet.'
+        },
+        {
+          title: 'CAC/LTV-Steuerung',
+          desc: 'Jede Acquisition-Entscheidung basiert auf Zahlen, die du tatsächlich kennst. Wir implementieren ein einfaches, aber robustes Tracking-Framework: CAC nach Kanal und Kampagne, LTV nach Kohorte, Break-even-Punkt nach Produkt. Du siehst auf einen Blick, wo du Geld verdienst – und wo du es verbrennst.'
+        },
+        {
+          title: 'Funnel-Architektur & CRO',
+          desc: 'Clicks allein bringen keinen Umsatz. Wir analysieren deinen gesamten Funnel – Landing Pages, Produktseiten, Checkout – und identifizieren, wo Interessenten abspringen. Durch gezielte CRO-Massnahmen senken wir die Kosten pro Conversion, ohne das Ad-Budget zu erhöhen. Eine Verbesserung der Conversion Rate von 1% auf 2% halbiert deinen effektiven CAC.'
+        },
+        {
+          title: 'Organic & SEO-System',
+          desc: 'Paid bringt Volumen. Organic bringt Marge. Wir entwickeln eine SEO-Strategie, die auf echte Kaufabsicht ausgerichtet ist: nicht generische Blog-Posts, sondern Content, der Menschen abholt, die nach deinem Produkt oder deiner Kategorie suchen. Mittelfristig senkst du damit deinen Gesamt-CAC strukturell.'
+        },
+        {
+          title: 'E-Mail & Retention-Mechanik',
+          desc: 'Der günstigste Neukunde ist der, den du bereits hast. Wir bauen Flows, die aus Erstkäufern Wiederkäufer machen: Welcome Series, Post-Purchase-Sequenzen, Win-back-Kampagnen. Wiederkaufrate ist nicht Zufall – sie ist Ergebnis von Infrastruktur. Jeder Prozentpunkt mehr Wiederkaufrate erhöht deinen LTV und senkt deinen relativen CAC.'
+        },
+        {
+          title: 'Kanal-Diversifikation & Test-Roadmap',
+          desc: 'Kein Brand sollte 80% seines Acquisition-Budgets in einen einzigen Kanal investieren. Wir entwickeln eine priorisierte Test-Roadmap für Zusatzkanäle: Google Shopping, Pinterest, TikTok Ads, Influencer mit Performance-Komponente, SEA – je nach Produkt, Kategorie und Zielgruppe.'
+        }
+      ]
+    },
+    approach: {
+      title: 'VORGEHEN IN 4 PHASEN',
+      items: [
+        {
+          title: 'Phase 01 – Diagnose & Datengrundlage',
+          desc: 'Bevor wir einen Franken Budget bewegen, verstehen wir, was bereits vorhanden ist. Wir analysieren deine bestehenden Kampagnen, dein Tracking-Setup, deinen Funnel und deine Kundendaten. Dabei geht es nicht um Aktivismus, sondern um Klarheit: Was ist dein echter CAC nach Kanal? Was ist deine Wiederkaufrate? Wo verlierst du Kunden im Funnel?'
+        },
+        {
+          title: 'Phase 02 – Fundament legen',
+          desc: 'Tracking-Infrastruktur, saubere Kampagnenstruktur, erste CRO-Massnahmen, E-Mail-Flows aufsetzen oder reparieren. Diese Phase fühlt sich manchmal weniger spektakulär an als "einfach mehr Ads schalten" – aber sie ist die Voraussetzung dafür, dass Skalierung später tatsächlich funktioniert.'
+        },
+        {
+          title: 'Phase 03 – Testen & Validieren',
+          desc: 'Systematisches Creative-Testing, Kanal-Tests, Funnel-Varianten. Kein Bauchgefühl, sondern strukturierte Experimente mit definierten Metriken und Entscheidungsregeln. Wir testen günstig, lernen schnell, und skalieren nur, was den vordefinierten Schwellenwert überschreitet.'
+        },
+        {
+          title: 'Phase 04 – Skalieren & Optimieren',
+          desc: 'Was validiert ist, wird skaliert. Was nicht funktioniert, wird abgeschaltet. Monatliches Reporting mit klaren KPIs, regelmässige Strategiemeetings, und ein System, das sich selbst verbessert: Jede neue Kohorte liefert Daten, die die nächste Entscheidung besser machen.'
+        }
+      ]
+    },
+    extraSections: [
+      {
+        title: 'PRAXIS-CASE STUDY',
+        type: 'text',
+        text: 'Für ein Schweizer E-Commerce Brand (Consumer Goods) gelang uns über eine Neuausrichtung der Kampagnenarchitektur und Funnel-Checkout-Optimierung ein Sprung der Conversion-Rate von 0.9% auf 2.2% und ein um 61% gesteigerter ROAS. Durch den parallelen Aufbau automatisierter CRM-E-Mail-Flows sank der CAC nach 90 Tagen um 34% bei gleichzeitig 28% gesteigerter Wiederkaufrate.'
+      }
+    ],
+    faq: [
+      {
+        q: 'Wir machen bereits Meta-Ads. Was macht ihr anders?',
+        a: 'Wir bringen Struktur ins Setup, implementieren ein kanalübergreifendes Tracking, das Meta nicht selbst kontrolliert, und bauen ein Creative-Testing-System, das kontinuierlich neue Gewinner produziert. Das Ziel ist nicht, mehr Budget in Meta zu stecken, sondern aus jedem eingesetzten Franken mehr herauszuholen.'
+      },
+      {
+        q: 'Wie lange dauert es, bis wir Resultate sehen?',
+        a: 'Erste Verbesserungen auf Conversion-Rate-Ebene sind oft innerhalb von 4–6 Wochen sichtbar, wenn strukturelle Probleme im Funnel behoben werden. Paid-Optimierungen brauchen typischerweise 6–10 Wochen bis zur Stabilisierung. Organische Kanäle wie SEO entfalten nachhaltige Wirkung über 6–12 Monate.'
+      },
+      {
+        q: 'Wir haben ein kleines Team und wenig Zeit. Passt das überhaupt zu uns?',
+        a: 'Ja, wir übernehmen die operative Ausführung, das Monitoring und die Optimierungszyklen komplett. Du erhältst regelmässige Reportings und klare Entscheidungsvorlagen.'
+      }
+    ],
+    cta: {
+      headline: 'Dein nächstes Wachstumskapitel beginnt mit den richtigen Zahlen.',
+      subheadline: 'Die meisten Brands, die zu uns kommen, haben nie sauber gemessen, was ein Neukunde wirklich kostet – und was er wirklich wert ist. Das ändern wir im ersten Gespräch. Kein Pitch, kein Deck.',
+      buttonText: 'Kostenloses Erstgespräch buchen'
+    }
+  },
+  {
+    slug: 'customer-retention',
+    hero: {
+      headline: 'Dein teuerster Fehler: Kunden einmal kaufen lassen.',
+      subheadline: 'Ein Neukunde kostet 5 bis 7 Mal mehr als ein Bestandskunde. Trotzdem haben die meisten Unternehmen kein System, das Bestandskunden aktiviert, reaktiviert oder systematisch entwickelt. Wir bauen diese Infrastruktur — für E-Commerce-Shops, SaaS-Anbieter und B2B-Dienstleister.',
+      ctaText: 'Retention-Potenzial berechnen'
+    },
+    problem: {
+      title: 'Wachstum durch Neukundengewinnung ist das teuerste Modell, das es gibt.',
+      paragraphs: [
+        'Die meisten Unternehmen kennen ihre Cost per Acquisition auf den Franken genau. Aber sie haben keine Ahnung, was ein Bestandskunde über zwei, drei oder fünf Jahre tatsächlich wert ist — weil sie ihn nie systematisch entwickelt haben. Der Lifetime Value ist eine Theorie, keine Messgrösse.',
+        'Im E-Commerce bedeutet das: Ein Kunde kauft einmal, verschwindet, und das nächste Mal kostet es erneut CHF 40 bis 120, ihn über Paid Media zurückzuholen — wenn er überhaupt zurückkommt. Die Wiederkaufrate liegt bei vielen Shops unter 25%. Das ist kein Akzeptanzproblem, kein Produkt-Problem. Es ist ein Retention-Problem: keine Post-Purchase-Kommunikation, kein Anlass für den zweiten Kauf, kein System, das den Kunden im richtigen Moment zur richtigen Botschaft führt.',
+        'Im B2B ist das Muster dasselbe, nur teurer: Ein Kunde wird gewonnen, wird onboarded, und dann passiert — nichts. Kein strukturiertes Upsell. Kein Review-Gespräch. Kein Loyalty-Programm. Kein Warnsignal, bevor er abwandert. Churn wird erst sichtbar, wenn die Rechnung ausbleibt. Win-Back ist aufwendiger und teurer als Retention es je wäre.'
+      ]
+    },
+    leistet: {
+      title: 'WAS WIR FÜR DICH BAUEN',
+      items: [
+        {
+          title: 'Post-Purchase & Onboarding Flows',
+          desc: 'Der Moment nach dem Kauf ist der wichtigste im gesamten Lifecycle — und wird am häufigsten verschwendet. Wir bauen E-Mail- und SMS-Sequenzen, die nach dem Erstkauf aktivieren: Nutzungsanleitungen, Cross-Sells, Review-Anfragen und Onboarding.'
+        },
+        {
+          title: 'Win-Back-Kampagnen & Churn-Prävention',
+          desc: 'Abgewanderte Kunden sind kein verlorenes Spiel. Wir bauen Win-Back-Sequenzen, die inaktive Kunden reaktivieren. Für B2B ergänzen wir dies um Frühwarn-Systeme: verhaltensbasierte Signale, die Churn-Risiko anzeigen, bevor der Kunde kündigt.'
+        },
+        {
+          title: 'Loyalty- & Repeat-Purchase-Systeme',
+          desc: 'Loyalität entsteht durch systematische Erlebnisse. Wir konzipieren Loyalty-Programme, die zu deinem Geschäftsmodell passen: punkte- oder stufenbasiert für E-Commerce, Referral-Mechaniken für B2B oder VIP-Segmente für beste Sonderkonditionen.'
+        },
+        {
+          title: 'Upsell- & Cross-Sell-Automatisierung',
+          desc: 'Der einfachste Weg, den Kundenwert zu steigern, ist nicht ein Neukunde — es ist das richtige Angebot an den richtigen Bestandskunden zur richtigen Zeit. Wir bauen Upsell-Trigger auf Basis von Kaufhistorie, Nutzungsverhalten und Segmenten.'
+        },
+        {
+          title: 'LTV-Messung & Retention-Analytics',
+          desc: 'Wir bauen das Analytics-Fundament, das Retention sichtbar macht: Cohort-Analyse nach Kaufdatum, LTV-Berechnung nach Segment, Churn-Rate-Tracking und Wiederkaufrate. Zum ersten Mal siehst du, welche Kunden wirklich profitabel sind.'
+        },
+        {
+          title: 'E-Mail & CRM-Infrastruktur',
+          desc: 'Retention ist nur so gut wie die technische Basis, auf der sie läuft. Wir auditieren und verbessern eure E-Mail-Infrastruktur: Deliverability, Listsegmentierung, Automatisierungsarchitektur, CRM-Integration und Datenhygiene.'
+        }
+      ]
+    },
+    approach: {
+      title: 'WIE WIR VORGEHEN (4 PHASEN)',
+      items: [
+        {
+          title: 'Phase 01 — Retention-Audit & LTV-Analyse',
+          desc: 'Vollständige Analyse deiner Kundenbasis nach Kauffrequenz, LTV, Churn-Rate und Wiederkaufverhalten. Audit der bestehenden E-Mail-Kommunikation und Automationen.'
+        },
+        {
+          title: 'Phase 02 — Infrastruktur & Basis-Flows',
+          desc: 'Aufbau der Retention-Infrastruktur: CRM- und E-Mail-System konfigurieren, Segmentierungslogik implementieren, Analytics-Dashboard einrichten. Kern-Flows wie Welcome- und Post-Purchase-Szenarien aktivieren.'
+        },
+        {
+          title: 'Phase 03 — Optimierung & Lifecycle-Ausbau',
+          desc: 'Monatliche Iteration der bestehenden Flows auf Basis von Öffnungsraten, Klickraten und Conversion-Daten. Aufbau des Loyalty-Systems und der Upsell-Automatisierungen.'
+        },
+        {
+          title: 'Phase 04 — LTV-Skalierung & Kanalintegration',
+          desc: 'Wenn die Basis steht: Ausweitung auf weitere Kanäle und Touchpoints (z. B. WhatsApp oder SMS). Paid Retargeting auf Basis der LTV-Segmente. Quarterly-Reviews mit konkreten Retention-KPIs.'
+        }
+      ]
+    },
+    extraSections: [
+      {
+        title: 'E-COMMERCE RETENTION ERFOLG',
+        type: 'text',
+        text: 'Für ein Schweizer Handelsunternehmen im Haushalts-Bereich bauten wir auf Basis einer LTV-Cohort-Analyse eine Post-Purchase-Sequenz, eine 60/90/180-Tage-Win-Back-Kampagne und einen VIP-Zuteilungsfluss auf. Die Wiederkaufrate stieg von 9% auf 38%, was zu CHF 34\'000 monatlichem Mehrumsatz führte bei einer LTV-Erhöhung um das 2.8-fache.'
+      }
+    ],
+    faq: [
+      {
+        q: 'Für wen ist Retention Marketing relevant — ab welcher Kundenzahl lohnt es sich?',
+        a: 'Im E-Commerce empfehlen wir den Aufbau ab einer aktiven Kundenbasis von 500 bis 1\'000 Käufern. Im B2B ist die Schwelle niedriger: Bereits ab 30 bis 50 aktiven Kunden macht eine strukturierte Lifecycle-Kommunikation einen messbaren Unterschied, weil der Einzelwert pro Kunde hoch ist.'
+      },
+      {
+        q: 'Arbeitet ihr mit unserem bestehenden E-Mail-Tool, oder müssen wir wechseln?',
+        a: 'Wir arbeiten mit dem, was ihr habt. Die meisten Probleme entstehen nicht durch das falsche Tool, sondern durch fehlende Struktur und Segmentierung. Wir arbeiten produktiv mit Klaviyo, HubSpot, ActiveCampaign, Mailchimp und vergleichbaren Systemen.'
+      },
+      {
+        q: 'Was ist realistisch — welche Zahlen können wir erwarten?',
+        a: 'Bei Unternehmen ohne jegliche Retention-Infrastruktur sind Steigerungen der Wiederkaufrate von 10 bis 25 Prozentpunkten in den ersten sechs Monaten realistisch und dokumentiert — sofern Produktqualität und Grundzufriedenheit stimmen.'
+      }
+    ],
+    cta: {
+      headline: 'Deine Bestandskunden sind dein grösster ungenutzter Hebel.',
+      subheadline: 'In 30 Minuten berechnen wir gemeinsam, wie viel Umsatz in deiner bestehenden Kundenbasis liegt — und was es braucht, ihn zu aktivieren.',
+      buttonText: 'Retention-Potenzial besprechen'
+    }
+  },
+  {
+    slug: 'paid-social-ecommerce',
+    hero: {
+      headline: 'Dein ROAS sieht gut aus. Deine Marge nicht.',
+      subheadline: 'Die meisten E-Commerce-Shops optimieren ihre Meta- und TikTok-Kampagnen auf ROAS. Das Problem: ROAS berücksichtigt weder Produktmarge noch Versandkosten noch Rücksendungen. Wir optimieren auf echten Deckungsbeitrag — damit Paid Social nicht nur Traffic bringt, sondern Profit.',
+      ctaText: 'Kostenlosen Ads-Audit buchen'
+    },
+    problem: {
+      title: 'Ein ROAS von 4x kann dich trotzdem Geld kosten.',
+      paragraphs: [
+        'Stell dir vor: Du gibst CHF 10\'000 pro Monat für Meta Ads aus. Dein gemeldeter ROAS liegt bei 4x. Der Algorithmus gratuliert dir, deine Agentur schickt eine PowerPoint mit steigenden Balken — und trotzdem schaut am Monatsende weniger heraus als erwartet. Das ist kein Zufall. Das ist ein Messproblem.',
+        'ROAS misst Umsatz pro ausgegebenem Franken. Was ROAS nicht misst: wie hoch deine Produktmarge ist, was Versand und Rücksendungen kosten, was der Algorithmus bevorzugt — nämlich günstige Produkte mit hohem Durchklickverhalten, nicht deine margenstarken Artikel. Bei einer Produktmarge von 30% brauchst du allein schon einen ROAS von 3.3x, um den Ad-Spend zu decken — ohne Versand, ohne Retourenquote, ohne Fulfillment. Bei 20% Marge liegt der Break-Even bei 5x. Die meisten Shops wissen das nicht.',
+        'Dazu kommt das Skalierungsproblem: Was bei CHF 2\'000 Spend funktioniert, kollabiert bei CHF 10\'000, weil Meta in der Skalierung teurere Zielgruppen anspricht und der CPA steigt — aber nicht gleichmässig. Wer das nicht antizipiert, skaliert sich in die Unrentabilität. Und wer auf TikTok setzt ohne ein klares Creative-System, verbrennt Budget für Views, die nie konvertieren.'
+      ]
+    },
+    leistet: {
+      title: 'WAS WIR FÜR DICH BAUEN',
+      items: [
+        {
+          title: 'Marge-zentrierte Kampagnenstruktur',
+          desc: 'Bevor wir eine Kampagne aufsetzen, analysieren wir deine Produktmargen. Hochmargen-Produkte werden bevorzugt beworben, Kampagnen nach Margensegmenten getrennt, Budget nach Deckungsbeitragspotenzial alloziert.'
+        },
+        {
+          title: 'Meta Ads Aufbau & Management',
+          desc: 'Vollständiger Kampagnen-Aufbau auf Meta (Facebook & Instagram): Prospecting, Retargeting und Retention getrennt strukturiert. Kampagnenziele nach Funnel-Position gewählt. Creative-Tests systematisch geplant.'
+        },
+        {
+          title: 'TikTok Ads & Creative-Strategie',
+          desc: 'TikTok funktioniert nur mit dem richtigen Creative — nativer, authentischer Content, der nicht wie Werbung aussieht. Wir entwickeln Creative-Briefings, die für TikTok nativ sind, testen Hooks und Formate.'
+        },
+        {
+          title: 'Tracking & Attribution',
+          desc: 'Server-Side-Tracking über Meta Conversions API und TikTok Events API. Ziel: maximale Datenpräzision auch nach iOS-Tracking-Einschränkungen. Wir konfigurieren deine Datenströme optimal.'
+        },
+        {
+          title: 'Creative Testing System',
+          desc: 'Nicht jedes Creative funktioniert — und kein Creative funktioniert für immer. Wir bauen ein strukturiertes Testing-System: Klare Hypothesen, saubere Test-Setups, regelmässige Iterationen.'
+        },
+        {
+          title: 'Monatliche Profitabilitätsanalyse',
+          desc: 'Kein ROAS-Only-Reporting. Jeder Monat wird ausgewertet nach: Deckungsbeitrag pro Kampagne, echtem Profit nach Marge und Versandkosten, Break-Even-ROAS vs. erreichtem ROAS.'
+        }
+      ]
+    },
+    approach: {
+      title: 'WIE WIR VORGEHEN (4 PHASEN)',
+      items: [
+        {
+          title: 'Phase 01 — Audit & Profitabilitätsanalyse',
+          desc: 'Wir prüfen bestehende Kampagnen auf Marge und echte Profitabilität. Tracking-Audit und Produktmargen-Analyse, um sofortige Potenziale aufzudecken.'
+        },
+        {
+          title: 'Phase 02 — Struktur & Tracking-Fundament',
+          desc: 'Neuaufbau oder Umbau der Kampagnenstruktur nach Marge und Funnel-Position. Server-Side-Tracking via Meta Conversions API und TikTok Events API implementieren oder reparieren.'
+        },
+        {
+          title: 'Phase 03 — Launch & erste Iteration',
+          desc: 'Kampagnen live schalten mit Initial-Budget. Erste Creative-Tests aufsetzen. Wöchentliche Analyse und Budget-Allokation nach Deckungsbeitrags-Mittelwert.'
+        },
+        {
+          title: 'Phase 04 — Skalierung & Optimierung',
+          desc: 'Wenn Kampagnen profitabel laufen und das Tracking zuverlässig ist: kontrollierte Skalierung. Neue Creatives auf Basis gewonnener Erkenntnisse kontinuierlich einspielen.'
+        }
+      ]
+    },
+    extraSections: [
+      {
+        title: 'ECHTES ERGEBNIS-PROFITBEISPIEL',
+        type: 'text',
+        text: 'Ein Schweizer Handelsunternehmen bewarb bevorzugt Produkte mit hoher Klickrate aber niedriger Marge. Nach Umstrukturierung der Kampagnen auf Deckungsbeitrag (Fokus auf Artikel mit über 45% Marge) und CAPI Setup stieg der effektive Deckungsbeitrags-ROAS von unprofitabel auf 4.8x. Der monatliche Netto-Profit verbesserte sich um CHF 34\'000.'
+      }
+    ],
+    faq: [
+      {
+        q: 'Was ist der Unterschied zwischen eurem Ansatz und dem einer klassischen Performance-Agentur?',
+        a: 'Klassische Performance-Agenturen optimieren auf ROAS, weil das einfach zu berichten ist. Wir berücksichtigen deine Produktmargen und optimieren auf echten Deckungsbeitrag in den Werbekampagnen.'
+      },
+      {
+        q: 'Müssen wir bestehende Kampagnen komplett neu aufbauen, oder können wir aufbauen?',
+        a: 'Das hängt vom Audit ab. Manchmal optimieren wir funktionierende Setups. Wenn die historische Ausrichtung jedoch falsche Signale aufweist, ist ein sauberer, strategischer Neuaufbau oft wirksamer.'
+      },
+      {
+        q: 'Wie lange dauert es, bis Paid Social profitabel ist — und was kostet es?',
+        a: 'In den ersten 4-8 Wochen sammeln wir Daten, testen Creatives und optimieren Algorithmen (oft auf Break-Even-Niveau). Profitables Skalieren greift ab Woche 8-12. Wir empfehlen ab CHF 3\'000–5\'000 Spend pro Monat.'
+      }
+    ],
+    cta: {
+      headline: 'Wie profitabel sind deine Ads wirklich?',
+      subheadline: 'Wir analysieren deine Kampagnen kostenlos auf echte Profitabilität — inklusive Deckungsbeitrag. 30 Minuten, keine Verkaufsshow.',
+      buttonText: 'Kostenlosen Ads-Audit buchen'
+    }
   }
 ];

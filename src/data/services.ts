@@ -270,6 +270,96 @@ export const SERVICES: ServiceDetail[] = [
       { title: 'Testen & Optimieren', desc: 'Systematische CRO-A/B-Tests auf Shop- und Checkout-Seiten.' },
       { title: 'Skalieren & Vertiefen', desc: 'Budget-Skalierung, Expansion und Einbindung neuer Shop-Kategorien.' }
     ]
+  },
+  {
+    id: 'dtc-growth-acquisition',
+    title: 'D2C Growth & Acquisition',
+    slug: 'dtc-growth-acquisition',
+    shortDesc: 'Skalierbare Kundengewinnung, CAC/LTV-Steuerung, Funnel-Optimierung und organische Marge für Schweizer Brands.',
+    description: 'Viele Schweizer Online-Brands haben ein starkes Produkt – aber ein brüchiges Acquisition-System. Zu viel Budget in Meta ohne Struktur, kein Funnel-Denken, organisch fast null. Wir ändern das: systematisch, messbar, profitabel.',
+    benefits: [
+      'Messbarer CAC nach Kanal – kein Schätzen mehr, kein Bauchgefühl',
+      'LTV-Tracking nach Kohorte: du weisst, welche Kampagne profitable Kunden bringt',
+      'Conversion Rate auf Produktseiten und im Checkout verbessert',
+      'Reduktion der Meta-Abhängigkeit auf unter 60% des Acquisition-Budgets'
+    ],
+    deliverables: [
+      'Paid Acquisition Multi-Channel Architektur',
+      'Live CAC/LTV Analyse-Framework',
+      'Funnel-Optimierung & Checkout CRO',
+      'Suchmaschinenoptimierung (SEO) für Kauf-Keywords'
+    ],
+    iconName: 'TrendingUp',
+    metrics: [
+      { label: 'Conversion Rate', value: '2.2%' },
+      { label: 'ROAS-Steigerung', value: '+61%' }
+    ],
+    processSteps: [
+      { title: 'Diagnose & Daten', desc: 'Echter CAC nach Kanal und Wiederkaufrate ermitteln. Roadmap entwerfen.' },
+      { title: 'Wachstums-Fundament', desc: 'Tracking reparieren, CRO initial aufsetzen, Flows einrichten.' },
+      { title: 'Hypothesen-Testing', desc: 'Systematisches Creative- und Kanäle-Testing mit klaren KPIs.' },
+      { title: 'Profitabler Rollout', desc: 'Validiertes Werbebudget skalieren, Verlierer-Ads stoppen.' }
+    ]
+  },
+  {
+    id: 'customer-retention',
+    title: 'Customer Retention & Lifecycle Marketing',
+    slug: 'customer-retention',
+    shortDesc: 'Automatisierte Flows, Win-Back-Kampagnen, Loyalty-Programme und Churn-Prävention für E-Commerce & B2B.',
+    description: 'Ein Neukunde kostet 5 bis 7 Mal mehr als ein Bestandskunde. Trotzdem haben die meisten Unternehmen kein System, das Bestandskunden aktiviert, reaktiviert oder systematisch entwickelt. Wir bauen diese Infrastruktur — für E-Commerce-Shops, SaaS-Anbieter und B2B-Dienstleister.',
+    benefits: [
+      'Wiederkaufrate steigt messbar durch automatisierte Post-Purchase-Flüsse',
+      'LTV ist keine Schätzung mehr, sondern basiert auf präzisen Kohorten',
+      'Abgewanderte Kunden werden reaktiviert, bevor sie teuer neu gekauft werden müssen',
+      'B2B Churn wird frühzeitig anhand verhaltensbasierter Signale entschärft'
+    ],
+    deliverables: [
+      'Post-Purchase & Onboarding E-Mail/SMS Flows',
+      'Dauerhafte Reaktivierungs- & Win-Back-Programme',
+      'Custom Loyalty- & Empfehlungssysteme',
+      'Live LTV-Retention-Analytics Dashboard'
+    ],
+    iconName: 'RefreshCcw',
+    metrics: [
+      { label: 'Wiederkaufrate', value: '38%' },
+      { label: 'Monatlicher Mehrumsatz', value: '+CHF 34k' }
+    ],
+    processSteps: [
+      { title: 'Retention-Analyse', desc: 'Vollständiger Kohorten-Audit des Kundenverhaltens der letzten 12–24 Monate.' },
+      { title: 'Basis-Flows Launch', desc: 'Welcomes, Post-Purchase & Reaktivierungs-Flows gehen direkt scharf.' },
+      { title: 'LTV Optimierung', desc: 'Automatisierte Upsell-Trigger auf Basis von Kaufhistorie implementieren.' },
+      { title: 'Kanal-Integration', desc: 'WhatsApp/SMS Ergänzungen und personalisierte Lifecycle-Szenarien.' }
+    ]
+  },
+  {
+    id: 'paid-social-ecommerce',
+    title: 'Paid Social für E-Commerce',
+    slug: 'paid-social-ecommerce',
+    shortDesc: 'Meta & TikTok Ads optimiert auf echten Deckungsbeitrag, nicht auf geschönten ROAS. Volle Marge-Transparenz.',
+    description: 'Die meisten E-Commerce-Shops optimieren ihre Meta- und TikTok-Kampagnen auf ROAS. Das Problem: ROAS berücksichtigt weder Produktmarge noch Versandkosten noch Rücksendungen. Wir optimieren auf echten Deckungsbeitrag — damit Paid Social nicht nur Traffic bringt, sondern Profit.',
+    benefits: [
+      'Volle Kostenkontrolle: du weisst genau, welcher ROAS Break-Even bedeutet',
+      'Paid-Kampagnen sind strikt auf Deckungsbeitrag optimiert, nicht Vanity-Metriken',
+      'Systematisches Creative-Testing sorgt für anhaltend rentable Conversionen',
+      'Optimale Multi-Channel Aufteilung zwischen Meta- und TikTok-Ads'
+    ],
+    deliverables: [
+      'Marge-zentrierte Kampagnenarchitektur',
+      'Creative Testing Framework & Briefings',
+      'Server-Side CAPI Tracking (Meta, TikTok)',
+      'Profitabilitäts- & Deckungsbeitrags-Reporting'
+    ],
+    iconName: 'TrendingUp',
+    metrics: [
+      { label: 'High-Margin ROAS', value: '+61%' },
+      { label: 'Netto-Profit', value: '+34%' }
+    ],
+    processSteps: [
+      { title: 'Marge-Audit', desc: 'Analyse der echten Marge je Artikel und Tracking-Feeds-Verifikation.' },
+      { title: 'Tracking & CAPI', desc: 'Implementierung hochpräziser Server-Side Event-Meldungen zu Verkäufen.' },
+      { title: 'Launch & Testen', desc: 'Aktivierung der budgetierten Margen-Kampagnen und Creative-Tests.' },
+      { title: 'Kontrollierte Skalierung', desc: 'Mehr Budget schrittweise einspielen, ohne die Marge zu gefährden.' }
+    ]
   }
 ];
 
