@@ -240,6 +240,36 @@ export const SERVICES: ServiceDetail[] = [
       { title: 'Umsatz-Attribution', desc: 'Verknüpfung der CRM-Verkäufe mit den Klick-IDs (GCLID, MSCLKID, GLID).' },
       { title: 'Dashboard-Erstellung', desc: 'Visualisierung in ansprechenden Looker Studio Reports.' }
     ]
+  },
+  {
+    id: 'ecommerce-performance',
+    title: 'E-Commerce Performance',
+    slug: 'ecommerce-performance',
+    shortDesc: 'Systematische Optimierung von Conversion-Rate, Retention & Paid Media für Online-Shops.',
+    description: 'Wir optimieren deinen Online-Shop für Conversion, Retention und skalierbares Wachstum. Weniger Abbrüche, höherer Warenkorb, mehr Wiederholkäufer — messbar.',
+    benefits: [
+      'Conversion-Rate steigt messbar durch datenbasierte Optimierung',
+      'Paid Budget arbeitet effizienter — mehr Umsatz pro eingesetztem Franken',
+      'Bestandskunden kaufen häufiger (höhere Wiederkaufrate & LTV)',
+      'Optimierte Core Web Vitals für blitzschnelle Ladezeiten'
+    ],
+    deliverables: [
+      'Conversion-Rate & Checkout-Fluss Optimierung (CRO)',
+      'Automatisierte Retention Flows & E-Mail-Marketing',
+      'Paid Media & Google Shopping Kampagnen-Management',
+      'Server-Side Analytics & E-Commerce Attributions-Setup'
+    ],
+    iconName: 'ShoppingCart',
+    metrics: [
+      { label: 'Conversion-Rate', value: '+2.4x' },
+      { label: 'Umsatz aus Retention', value: '38%' }
+    ],
+    processSteps: [
+      { title: 'Diagnose & Audit', desc: 'Identifikation aller Schwachstellen und Conversion-Bremsen im Shop.' },
+      { title: 'Fundament legen', desc: 'Tracking-Reparatur, Bereinigung von Feeds und Aufbau der ersten Flows.' },
+      { title: 'Testen & Optimieren', desc: 'Systematische CRO-A/B-Tests auf Shop- und Checkout-Seiten.' },
+      { title: 'Skalieren & Vertiefen', desc: 'Budget-Skalierung, Expansion und Einbindung neuer Shop-Kategorien.' }
+    ]
   }
 ];
 

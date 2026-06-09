@@ -887,5 +887,103 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       subheadline: '30 Minuten. Wir besprechen, wo bei euch die grössten Reibungspunkte liegen.',
       buttonText: 'Sales-Gespräch buchen (kostenlos)'
     }
+  },
+  {
+    slug: 'ecommerce-performance',
+    hero: {
+      headline: 'Dein Shop hat Besucher. Er braucht Käufer.',
+      subheadline: 'Wir optimieren, was zwischen Traffic und Umsatz liegt: Conversion-Rate, Retention, Paid-Effizienz und die Daten, die dir zeigen, wo du Geld lässt. Keine Agentur-Kosmetik — sondern strukturiertes Wachstum.',
+      ctaText: 'Shop-Gespräch buchen'
+    },
+    problem: {
+      title: 'Die meisten Shops wachsen nicht — sie lecken.',
+      paragraphs: [
+        'Der durchschnittliche E-Commerce-Shop konvertiert zwischen 1% und 3% seines Traffics. Das bedeutet: Für jede 100 Personen, die du bezahlt oder organisch in deinen Shop holst, kaufen 97 bis 99 nichts. Das ist kein Algorithmus-Problem. Das ist kein Traffic-Problem. Es ist ein System-Problem.',
+        'Zu viele Shops investieren fast ihr gesamtes Budget in Traffic-Generierung — Google Ads, Meta, Influencer — und lassen den eigentlichen Hebel unangetastet: Was passiert, wenn jemand ankommt? Warum verlassen 80% den Warenkorb? Warum kauft ein Kunde einmal und verschwindet? Warum ist der Paid ROAS unter Druck, obwohl der Traffic stimmt?',
+        'E-Commerce-Wachstum, das hält, kommt nicht aus mehr Budget. Es kommt aus besseren Systemen: Conversion-Optimierung, die auf Daten basiert. Retention, die Bestandskunden aktiviert. Attribution, die zeigt, welcher Kanal wirklich rentiert. Und Paid-Strategien, die mit Marge — nicht mit Hoffnung — arbeiten.'
+      ]
+    },
+    leistet: {
+      title: 'WAS WIR FÜR DICH BAUEN',
+      items: [
+        {
+          title: 'Conversion-Rate-Optimierung (CRO)',
+          desc: 'Wir analysieren deinen Shop systematisch: Heatmaps, Session-Recordings, Funnel-Analyse und qualitative Nutzerbefragungen. Daraus entstehen priorisierte Hypothesen, die wir testen — A/B-Tests auf Produktseiten, Checkout-Optimierung, mobile UX, Vertrauenselemente und Seitenstruktur.'
+        },
+        {
+          title: 'Retention & E-Mail-Marketing',
+          desc: 'Wiederholungskäufer sind dein profitabelstes Marketing. Wir bauen automatisierte Flows: Welcome-Serie, Post-Purchase-Sequenzen, Win-Back-Kampagnen, Loyalty-Trigger und segmentierte Newsletter für höheren Customer Lifetime Value.'
+        },
+        {
+          title: 'Paid Media — Performance mit Marge',
+          desc: 'Kampagnensteuerung für Google Shopping, Meta und Performance Max. Wir optimieren auf echten Deckungsbeitrag, strukturieren Kampagnen nach Produktmargen und skalieren nur, was wirklich rentiert.'
+        },
+        {
+          title: 'Shop-Analytics & Attribution',
+          desc: 'Welcher Kanal bringt profitable Kunden? Wo springt der Funnel ab? Wir bauen das Analytics-Fundament: GA4-Setup, Server-Side-Tracking, Attribution-Modell, COGS-Integration und verständliche Daten-Dashboards.'
+        },
+        {
+          title: 'Produktfeed- & Katalog-Optimierung',
+          desc: 'Optimierung von Titeln, Beschreibungen, Kategorisierung und Feed-Struktur für das Google Merchant Center und den Meta Catalog, um maximale Sichtbarkeit bei hoher Kaufbereitschaft zu sichern.'
+        },
+        {
+          title: 'Technische Shop-Optimierung',
+          desc: 'Ladezeit entscheidet über deine Conversion-Rate. Wir analysieren und verbessern Core Web Vitals, Mobile Performance, Checkout-Flow-Technik und strukturierte Daten für technische Höchstleistung.'
+        }
+      ]
+    },
+    approach: {
+      title: 'VORGEHEN IN 4 PHASEN',
+      items: [
+        {
+          title: 'Phase 01 — Diagnose & Audit (Dauer: 1–2 Wochen)',
+          desc: 'Umfassender Check von Conversion-Schwächen, Paid-Performance, Tracking-Lücken und Funnel-Absprüngen für einen priorisierten Massnahmenplan.'
+        },
+        {
+          title: 'Phase 02 — Fundament legen (Dauer: 2–4 Wochen)',
+          desc: 'Reparatur der Analytics-Infrastruktur, Bereinigung der Produktfeeds und Aufsetzen essenzieller Retention-Flows (Warenkorb-Abbrecher, Welcome).'
+        },
+        {
+          title: 'Phase 03 — Testen & Optimieren (Dauer: laufend, ab Woche 5)',
+          desc: 'Systematische A/B-Tests auf Produktseiten/Checkout, monatliche Iteration der Flows und Kampagnen-Steuerung auf echten Deckungsbeitrag.'
+        },
+        {
+          title: 'Phase 04 — Skalieren & Vertiefen (Dauer: ab Monat 3)',
+          desc: 'Nachhaltiges Hochskalieren profitabler Kanäle, Erschliessung neuer Segmente oder internationaler Märkte mit voll optimiertem Fundament.'
+        }
+      ]
+    },
+    extraSections: [
+      {
+        title: 'WAS SICH ÄNDERT',
+        type: 'list',
+        bullets: [
+          'Dein Shop konvertiert mehr Besucher zu Käufern — bei gleichem Mediabudget.',
+          'Deine Kundenbindungsrate (Retention Rate) steigt messbar an.',
+          'Deine Attributions- und Umsatzdaten sind 100 % vertrauenswürdig.',
+          'Deine Ladezeiten und Core Web Vitals liegen im grünen Bereich.',
+          'Deine Performance-Kampagnen laufen margen- statt hoffnungsgesteuert.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        q: 'Arbeitet ihr nur mit bestimmten Shop-Systemen?',
+        a: 'Wir arbeiten mit Shopify, WooCommerce, Shopware und anderen gängigen Systemen. Der grösste Teil unserer Arbeit ist system-unabhängig — Analytics, Paid, Retention und CRO-Strategie funktionieren auf jeder Plattform. Für technische Umsetzungen direkt im Shop-Backend arbeiten wir mit verifizierten Entwicklern zusammen.'
+      },
+      {
+        q: 'Übernehmt ihr das Paid-Management komplett, oder macht ihr nur Strategie?',
+        a: 'Beides ist möglich. Wir können Kampagnen vollständig übernehmen und operativ führen, oder wir auditieren und coachen euer internes Team bzw. eure bestehende Agentur.'
+      },
+      {
+        q: 'Was ist ein realistischer Zeitrahmen bis zu ersten Ergebnissen?',
+        a: 'Erste messbare Verbesserungen durch Quick-Wins im Checkout oder erste E-Mail-Automationen sind oft schon nach 4–6 Wochen sichtbar. Strukturelle A/B-Tests für verifizierbare CRO-Steigerungen beanspruchen meist 2–3 Monate.'
+      }
+    ],
+    cta: {
+      headline: 'Dein Shop hat Potenzial. Wir holen es raus.',
+      subheadline: '30 Minuten — wir schauen gemeinsam auf deine Zahlen und zeigen dir, wo der grösste Hebel liegt.',
+      buttonText: 'Shop-Gespräch buchen'
+    }
   }
 ];

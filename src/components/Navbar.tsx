@@ -19,7 +19,8 @@ import {
   ArrowUpRight,
   CheckCircle2,
   Clock,
-  Phone
+  Phone,
+  ShoppingCart
 } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { ServiceDetail } from '../types';
@@ -82,7 +83,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     'sales-enablement': ShieldAlert,
     'revenue-operations': Layers,
     'ai-automation': Sparkles,
-    'data-analytics': PieChart
+    'data-analytics': PieChart,
+    'ecommerce-performance': ShoppingCart
   };
 
   // Helper to safely get icon for a service
@@ -323,8 +325,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 {/* Column 2: INTERACTIVE SERVICES MATRIX (8 HEBELS) */}
                 <div className="col-span-5 flex flex-col justify-between" id="menu-services-panel">
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">UNSERE WACHSTUMSHEBEL (DIAGNOSE-BASIERT)</span>
+                    <div className="flex items-center justify-end">
                       <a 
                         href="/leistungen" 
                         onClick={(e) => handleLinkClick('/leistungen', e)}
@@ -390,10 +391,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 {/* Column 3: HIGHLIGHT INTEGRATED CONVERSION & CONTACT */}
                 <div className="col-span-3 flex flex-col justify-between" id="menu-overview-panel">
                   <div className="space-y-6">
-                    <div>
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">YIELD & KONTAKT KAPAZITÄT</span>
-                    </div>
-
                     <div className="space-y-3.5" id="overview-links-col">
                       {/* Interactive Conversion Card */}
                       <a

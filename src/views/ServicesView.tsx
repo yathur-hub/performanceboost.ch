@@ -2,7 +2,8 @@ import React from 'react';
 import { SERVICES } from '../data/services';
 import { 
   TrendingUp, Megaphone, Users, Cpu, Layers, Sparkles, PieChart, ShieldAlert,
-  ArrowRight, ArrowLeft, Check, CheckCircle2, Award, ChevronDown, ChevronUp, HelpCircle
+  ArrowRight, ArrowLeft, Check, CheckCircle2, Award, ChevronDown, ChevronUp, HelpCircle,
+  ShoppingCart
 } from 'lucide-react';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
 
@@ -14,6 +15,7 @@ import SalesAlignmentCheck from '../components/SalesAlignmentCheck';
 import RevenueLeakDetector from '../components/RevenuLeakDetector';
 import AIReadinessCheck from '../components/AIReadinessCheck';
 import DataClarityCheck from '../components/DataClarityCheck';
+import ShopConversionRechner from '../components/ShopConversionRechner';
 
 interface ServicesViewProps {
   currentSlug?: string;
@@ -30,7 +32,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     'sales-enablement': ShieldAlert,
     'revenue-operations': Layers,
     'ai-automation': Sparkles,
-    'data-analytics': PieChart
+    'data-analytics': PieChart,
+    'ecommerce-performance': ShoppingCart
   };
 
   const servicesCopyOverride: { [key: string]: { benefit: string, desc: string } } = {
@@ -177,6 +180,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     return <AIReadinessCheck />;
                   case 'data-analytics':
                     return <DataClarityCheck />;
+                  case 'ecommerce-performance':
+                    return <ShopConversionRechner />;
                   default:
                     return null;
                 }

@@ -98,21 +98,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </button>
             </motion.div>
 
-            {/* Swiss Trust Strip */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { delay: 0.4, duration: 0.8 } }
-              }}
-              className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 pt-12 text-[10px] text-slate-400 font-mono uppercase tracking-widest font-bold"
-            >
-              <span className="flex items-center gap-1.5 px-3 py-1 bg-slate-50/80 border border-slate-200 rounded-md select-none">
-                <ShieldCheck className="w-4 h-4 text-[#686DF4]" /> 100% DSG & DSGVO konform
-              </span>
-              <span className="flex items-center gap-1.5 px-3 py-1 bg-slate-50/80 border border-slate-200 rounded-md select-none">
-                <CheckCircle2 className="w-4 h-4 text-[#686DF4]" /> Schweizer Rechenzentrum
-              </span>
-            </motion.div>
+
 
           </motion.div>
         </div>
