@@ -96,6 +96,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     return servicesIcons[slug] || TrendingUp;
   };
 
+  const navServices = SERVICES.filter(
+    (s) => s.slug !== 'marketing-automation' && s.slug !== 'revenue-operations'
+  );
+
   return (
     <>
       {/* HEADER SECTION */}
@@ -341,7 +345,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2" id="services-interactive-grid">
-                      {SERVICES.map((s) => {
+                      {navServices.map((s) => {
                         const IconComp = getServiceIcon(s.slug);
                         const isHovered = hoveredService?.slug === s.slug;
                         
@@ -556,7 +560,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           className="border-t border-slate-50 overflow-hidden bg-slate-50/50"
                         >
                           <div className="p-3 grid grid-cols-1 gap-2">
-                            {SERVICES.map((s) => {
+                            {navServices.map((s) => {
                               const IconComp = getServiceIcon(s.slug);
                               return (
                                 <a

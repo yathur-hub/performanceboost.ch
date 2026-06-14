@@ -19,7 +19,7 @@ export default function Footer({ onNavigate }: FooterProps) {
   };
 
   const b2bServices = SERVICES.filter((s) => 
-    ['growth-strategy', 'demand-generation', 'lead-generation', 'marketing-automation', 'sales-enablement', 'revenue-operations', 'ai-automation', 'data-analytics'].includes(s.slug)
+    ['growth-strategy', 'demand-generation', 'lead-generation', 'sales-enablement', 'ai-automation', 'data-analytics'].includes(s.slug)
   );
 
   const ecommerceServices = SERVICES.filter((s) => 
