@@ -214,6 +214,25 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         </div>
       </section>
 
+      {/* PROOF POINTS / CASES */}
+      {sector.proofPoints && sector.proofPoints.length > 0 && (
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-2 mb-10">
+            <span className="text-[9px] font-mono text-[#686DF4] font-black uppercase tracking-widest">ERFOLG IST MESSBAR</span>
+            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Ergebnisse aus der Praxis</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {sector.proofPoints.map((point, idx) => (
+              <div key={idx} className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 shadow-sm flex flex-col items-center text-center gap-2">
+                <span className="text-3xl font-black text-[#686DF4] tracking-tight">{point.value}</span>
+                <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest">{point.unit}</span>
+                <p className="text-xs text-slate-600 font-semibold leading-relaxed">{point.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* FAQ ACCORDIAN */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2">

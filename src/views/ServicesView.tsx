@@ -690,7 +690,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 slug: 'immobilien',
                 desc: 'Verkürze die Vermarktungszeit für Neubauten und Gewerbeflächen drastisch.',
                 icon: Home,
-                tool: 'Leerstandskosten-Rechner'
+                tool: 'Leerstands- & ROI-Rechner'
               },
               {
                 title: 'Treuhand & UB',

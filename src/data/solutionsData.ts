@@ -23,6 +23,11 @@ export interface SolutionSector {
     q: string;
     a: string;
   }[];
+  proofPoints?: {
+    value: string;
+    unit: string;
+    desc: string;
+  }[];
 }
 
 export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
@@ -175,7 +180,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Signifikante Verkürzung der Leerstandszeit um bis zu 40%',
       'Höhere Lead-Qualität durch digitale Vorqualifizierung der Interessenten',
       'Automatisches Einladen zu Besichtigungsterminen per SMS/E-Mail',
-      'Erhöhung der Exklusiv-Aufträge für Makler dank digitaler Kompetenz'
+      'Erhöhung der Exklusiv-Aufträge für Makler dank digitaler Kompetenz',
+      'Wöchentliches KPI-Reporting zu Time-to-Rent und Cost-per-Lease statt Blindflug'
     ],
     faqs: [
       {
@@ -185,7 +191,16 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Können bestehende Immobilien-Softwaren wie FlowFact oder CAS connected werden?',
         a: 'Ja. Wir binden bewährte Branchenwerkzeuge und CRMs über Schnittstellen an, damit Daten nahtlos synchronisiert werden.'
+      },
+      {
+        q: 'Kann ich auch die Rendite meines Werbebudgets simulieren, nicht nur die Leerstandskosten?',
+        a: 'Ja. Im Rechner oben kannst du zwischen dem Leerstandskosten-Modus und dem ROI-Simulator wechseln, der Budget, Lead- und Abschlussquoten bis zum erwarteten Mietumsatz durchrechnet.'
       }
+    ],
+    proofPoints: [
+      { value: '22', unit: 'Einheiten', desc: 'in 6 Wochen vollvermietet trotz Preissensitivität.' },
+      { value: '+40%', unit: 'Besichtigungen', desc: 'in 30 Tagen durch psychologisches Messaging.' },
+      { value: '-50%', unit: 'Cost-per-Lead', desc: 'durch progressive Funnel-Optimierung.' }
     ]
   },
   'treuhand-unternehmensberatung': {
