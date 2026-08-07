@@ -295,19 +295,21 @@ export default function KanzleiWachstumsCheck() {
           <div className="text-left font-semibold text-slate-550 text-xs max-w-md">
             <strong>Wie unabhängig ist Ihre Kanzlei von Empfehlungen?</strong> In einem 30-minütigen Gespräch analysieren wir Ihre Sichtbarkeit live und ehrlich — ohne Verkaufsdruck.
           </div>
-          <a
-            href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track('hero_tool_cta_primary_clicked', {
-              page: 'treuhand-unternehmensberatung',
-              element_id: 'kanzlei-wachstums-check',
-              stufe: results.stufe,
-            })}
-            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors"
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              track('hero_tool_cta_primary_clicked', {
+                page: 'treuhand-unternehmensberatung',
+                element_id: 'kanzlei-wachstums-check',
+                stufe: results.stufe,
+              });
+              window.dispatchEvent(new CustomEvent('open-contact-modal'));
+            }}
+            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors cursor-pointer border-0"
           >
             Kostenloses Erstgespräch buchen
-          </a>
+          </button>
         </div>
 
         {/* Lead Capture for high dependency levels */}

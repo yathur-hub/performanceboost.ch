@@ -318,18 +318,21 @@ export default function KanzleiAuslastungsCheck() {
             <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
               <strong>Möchtest du Zeit für strategische Fälle gewinnen?</strong> In einem 30-minütigen Gespräch zeigen wir konkrete Optionen zur Kanzlei-Automatisierung.
             </div>
-            <a
-              href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-              target="_blank"
-              onClick={() => track('hero_tool_cta_clicked', {
-                page: 'rechtsanwaelte',
-                cta_type: 'primary',
-                umsatz_gap: results.umsatz_gap
-              })}
-              className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer"
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                track('hero_tool_cta_clicked', {
+                  page: 'rechtsanwaelte',
+                  cta_type: 'primary',
+                  umsatz_gap: results.umsatz_gap
+                });
+                window.dispatchEvent(new CustomEvent('open-contact-modal'));
+              }}
+              className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Kanzlei-Gespräch buchen
-            </a>
+            </button>
           </div>
 
           <div className="border border-slate-150 rounded-2xl overflow-hidden text-left bg-slate-50/40">

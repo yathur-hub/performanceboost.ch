@@ -318,18 +318,18 @@ export default function ShopConversionRechner() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-200/50">
-                  <a
-                    href="/kontakt"
+                  <button
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault();
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
-                      window.location.href = "/kontakt";
+                      window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all"
+                    className="w-full bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Wie erhöht ihr euren LTV und Wiederholkaufanteil?</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
-                  </a>
+                  </button>
                 </div>
               </motion.div>
             ) : (
@@ -399,18 +399,18 @@ export default function ShopConversionRechner() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-200/50 space-y-1">
-                  <a
-                    href="/kontakt"
+                  <button
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault();
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
-                      window.location.href = "/kontakt";
+                      window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#686DF4] hover:bg-slate-905 bg-slate-900 text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5"
+                    className="w-full text-center bg-[#686DF4] hover:bg-slate-905 bg-slate-900 text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
                   >
                     <span>Shop-Gespräch buchen — kostenlos, 30 Min</span>
                     <ArrowRight className="w-4 h-4 text-white" />
-                  </a>
+                  </button>
                   <p className="text-[9px] text-slate-400 text-center font-mono mt-2">
                     Wir analysieren eure Zahlen und zeigen dir die 3 grössten Conversion-Hebel in deiner spezifischen Situation.
                   </p>

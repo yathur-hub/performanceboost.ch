@@ -345,15 +345,13 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             Entscheide nach 30 Minuten, ob du mit uns den Hebel ansetzen willst. Kein Druck, kein aggressiver Vertrieb — nur echte Analysen für dein Wachstum.
           </p>
 
-          <motion.a
+          <motion.button
             {...buttonPressProps}
-            href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center"
+            onClick={() => onNavigate('/kontakt')}
+            className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
           >
             Wachstumsgespräch buchen
-          </motion.a>
+          </motion.button>
         </div>
       </motion.section>
 

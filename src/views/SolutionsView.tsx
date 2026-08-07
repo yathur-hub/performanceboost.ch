@@ -172,7 +172,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
-            className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
+            className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium"
           >
             Wir bauen Revenue-Systeme für B2B-Unternehmen. Kein Vollservice-Chaos — sondern fokussierte Strategien, die dein spezifisches Problem direkt anpacken.
           </motion.p>
@@ -182,15 +182,13 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.3 }}
             className="pt-6"
           >
-            <motion.a
+            <motion.button
               {...buttonPressProps}
-              href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center"
+              onClick={() => onNavigate('/kontakt')}
+              className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
             >
               Wachstumsgespräch buchen
-            </motion.a>
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -206,7 +204,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
           <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
           <span className="text-[9px] font-mono font-bold tracking-widest text-[#686DF4] uppercase">DIAGNOSE ZUERST</span>
-          <blockquote className="text-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
+          <blockquote className="text-body-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
             "Die meisten Unternehmen suchen nach einem Kanal. Einer Plattform. Einem Tool. Das ist die falsche Frage. Die richtige Frage ist: Wo verlieren wir qualifizierte Leads? Warum konvertiert unsere Pipeline nicht? Wie machen wir Wachstum planbar?"
           </blockquote>
           <p className="text-[10px] text-slate-400 font-mono tracking-wide uppercase">
@@ -257,8 +255,8 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                     Details →
                   </button>
                 </div>
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">{item.title}</h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-semibold">{item.desc}</p>
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">{item.title}</h3>
+                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
               </div>
 
               <div className="mt-8 pt-5 border-t border-slate-100 space-y-3.5">
@@ -289,7 +287,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           >
             <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">SYNERGIEN MAXIMIEREN</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
-            <p className="text-xs text-slate-500 leading-relaxed max-w-lg mx-auto font-semibold">
+            <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
               Einzelne Leistungen haben Wirkung. Intelligent verknüpft entfalten sie ihre volle Hebelwirkung.
             </p>
           </motion.div>
@@ -313,7 +311,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                     <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">{c.combo}</span>
                     <h3 className="text-lg font-bold text-slate-900 font-display">{c.title}</h3>
                   </div>
-                  <p className="text-xs text-slate-500 leading-relaxed font-semibold">{c.desc}</p>
+                  <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{c.desc}</p>
                 </div>
                 <div className="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
                   <span className="text-[11px] font-mono text-slate-500 font-semibold tracking-wide bg-slate-50 border border-slate-150 px-3 py-1.5 rounded-lg">
@@ -351,7 +349,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             <div key={index} className="border-b border-slate-100 last:border-0 pb-4 last:pb-0 pt-4 first:pt-4">
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-xs sm:text-sm hover:text-[#686DF4] transition-colors cursor-pointer"
+                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer"
               >
                 <span className="flex items-center gap-2.5">
                   <HelpCircle className="w-4.5 h-4.5 text-[#686DF4] shrink-0" /> {faq.q}
@@ -367,7 +365,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                     transition={{ duration: DURATIONS.medium, ease: PREMIUM_EASE }}
                     className="overflow-hidden"
                   >
-                    <p className="mt-3 text-xs text-slate-500 leading-relaxed pl-7 font-medium">
+                    <p className="mt-3 text-body-sm text-slate-500 leading-relaxed pl-7 font-medium">
                       {faq.a}
                     </p>
                   </motion.div>
@@ -390,19 +388,17 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
           <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">MEHR ERFAHREN</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Lösung braucht dein Unternehmen?</h2>
-          <p className="text-xs text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
+          <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
             30 Minuten unverbindliches Gespräch. Wir hören zu, stellen die richtigen strategischen Fragen — und empfehlen die wirkungsvollsten Hebel für dein Geschäftsmodell.
           </p>
 
-          <motion.a
+          <motion.button
             {...buttonPressProps}
-            href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center"
+            onClick={() => onNavigate('/kontakt')}
+            className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
           >
             Wachstumsgespräch buchen
-          </motion.a>
+          </motion.button>
         </div>
       </motion.section>
 

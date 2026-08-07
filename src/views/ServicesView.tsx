@@ -153,7 +153,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               <h1 className="text-3xl sm:text-5xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1] text-left">
                 {extendedContent.hero.headline}
               </h1>
-              <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-semibold text-left">
+              <p className="text-slate-500 text-body-lg leading-relaxed font-medium text-left">
                 {extendedContent.hero.subheadline}
               </p>
               
@@ -226,7 +226,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               </h2>
               <div className="space-y-6 max-w-2xl mx-auto">
                 {extendedContent.problem.paragraphs.map((p, idx) => (
-                  <p key={idx} className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold">
+                  <p key={idx} className="text-slate-500 text-body leading-relaxed font-medium">
                     {p}
                   </p>
                 ))}
@@ -248,10 +248,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 border border-slate-150 font-mono text-xs font-bold text-slate-400 group-hover:bg-[#686DF4] group-hover:text-white group-hover:border-transparent transition-colors duration-300">
                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                   </div>
-                  <h3 className="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#686DF4] transition-colors leading-tight">
+                  <h3 className="font-bold text-slate-900 text-base group-hover:text-[#686DF4] transition-colors leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed font-semibold">
+                  <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </div>
@@ -273,10 +273,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   <div className="bg-[#686DF4]/10 text-[#686DF4] text-[9px] tracking-widest font-mono font-bold px-2.5 py-1 rounded-md w-fit border border-[#CACCFB]/20">
                     PHASE {idx + 1}
                   </div>
-                  <h3 className="font-bold text-slate-900 text-xs sm:text-sm pt-1 border-b border-slate-100 pb-3 leading-tight">
+                  <h3 className="font-bold text-slate-900 text-sm sm:text-base pt-1 border-b border-slate-100 pb-3 leading-tight">
                     {item.title.replace(/^Phase \d+:\s*/, '')}
                   </h3>
-                  <p className="text-[11px] text-slate-500 leading-relaxed font-semibold">
+                  <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </div>
@@ -376,7 +376,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     <div className="w-5 h-5 rounded-full bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center shrink-0 mt-0.5 border border-[#CACCFB]/25">
                       <Check className="w-3 h-3" />
                     </div>
-                    <p className="text-xs text-slate-600 font-semibold leading-relaxed">{ben}</p>
+                    <p className="text-body-sm text-slate-600 font-medium leading-relaxed">{ben}</p>
                   </div>
                 ))}
               </div>
@@ -394,7 +394,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     <span className="w-6 h-6 bg-[#f6f6f6] text-slate-400 rounded-lg flex items-center justify-center shrink-0 text-xs font-mono font-bold border border-slate-100">
                       0{idx + 1}
                     </span>
-                    <p className="text-xs font-bold text-slate-805 leading-snug">{del}</p>
+                    <p className="text-body-sm font-semibold text-slate-805 leading-snug">{del}</p>
                   </div>
                 ))}
               </div>
@@ -420,7 +420,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                         onClick={() => setIsOpen(!isOpen)}
                         className="w-full text-left p-5 flex justify-between items-center bg-transparent cursor-pointer border-none outline-none"
                       >
-                        <h4 className="font-bold text-xs sm:text-sm text-slate-900 pr-4 leading-snug">
+                        <h4 className="font-bold text-sm sm:text-base text-slate-900 pr-4 leading-snug">
                           {fq.q}
                         </h4>
                         <span className="text-[#686DF4] shrink-0">
@@ -430,7 +430,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       
                       {isOpen && (
                         <div className="p-6 pt-0 border-t border-slate-100/50 bg-slate-50/20 text-left animate-fadeIn">
-                          <p className="text-xs text-slate-500 leading-relaxed font-semibold">
+                          <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                             {fq.a}
                           </p>
                         </div>
@@ -455,13 +455,13 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               </div>
               <div className="md:col-span-8 space-y-4">
                 <div>
-                  <h3 className="text-lg font-display font-semibold text-slate-900 leading-tight">Yathur Nathan</h3>
+                  <h3 className="text-[#686DF4] text-xl font-display font-bold leading-tight">Yathur Nathan</h3>
                   <p className="text-xs font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
                 </div>
-                <p className="text-xs text-slate-500 leading-relaxed font-semibold">
+                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Als Gründer von performanceboost unterstütze ich Schweizer Unternehmen dabei, isolierte Massnahmen in messbare Revenue-Infrastrukturen zu transformieren. Mit fundiertem technologischem Know-how und strategischer Klarheit begleite ich dich persönlich bei jedem Schritt zur Optimierung deiner Customer Journey.
                 </p>
-                <p className="text-xs text-[#686DF4] font-bold leading-relaxed pt-1.5 border-t border-slate-100 italic">
+                <p className="text-body-sm text-[#686DF4] font-semibold leading-relaxed pt-1.5 border-t border-slate-100 italic">
                   {(() => {
                     const personalHighlights: { [key: string]: string } = {
                       'growth-strategy': 'Gemeinsam schärfen wir deine Marktpositionierung und definieren die genauesten ICP-Kriterien, um dein Wachstum strategisch auf ein solides Fundament zu stellen.',
@@ -521,7 +521,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
             Leistungen, die Revenue erzeugen.
           </h1>
-          <p className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold">
+          <p className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium">
             Wir beschreiben unsere Lösungen nicht als nackte Tätigkeiten — sondern als valide Resultate, die wir für dich errichten.
           </p>
         </div>
@@ -548,9 +548,9 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     <IconComp className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">{s.title}</h3>
+                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">{s.title}</h3>
                     <p className="text-[10px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
-                    <p className="text-xs text-slate-500 leading-relaxed mt-3.5 line-clamp-4 font-semibold">{localized.desc}</p>
+                    <p className="text-body-sm text-slate-500 leading-relaxed mt-3.5 line-clamp-4 font-medium">{localized.desc}</p>
                   </div>
                 </div>
 
@@ -592,8 +592,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
                 <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SCHNELLE PIPELINE</span>
-                <h3 className="text-sm font-bold text-slate-900 leading-tight">Demand Generation + Lead Generation</h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-semibold">
+                <h3 className="text-base font-bold text-slate-900 leading-tight">Demand Generation + Lead Generation</h3>
+                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Sofort Leads in die vertriebliche Pipeline leiten. Organische Suchmaschinenoptimierung und intelligente Paid Kampagnen exakt orchestriert. Erste Resultate in 2-4 Wochen.
                 </p>
               </div>
@@ -612,8 +612,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
                 <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SKALIERBARE WACHSTUMS-MASCHINE</span>
-                <h3 className="text-sm font-bold text-slate-900 leading-tight">Demand Gen + Automation + CRM</h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-semibold">
+                <h3 className="text-base font-bold text-slate-900 leading-tight">Demand Gen + Automation + CRM</h3>
+                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Moderne Nachfrageerzeugung gekoppelt mit systematischem Lead Nurturing und synchronisierter CRM-Übergabe. Keine manuellen Reibungsverluste im B2B Funnel.
                 </p>
               </div>
@@ -632,8 +632,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
                 <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">REVENUE Operations</span>
-                <h3 className="text-sm font-bold text-slate-900 leading-tight">RevOps + Sales Enablement + Analytics</h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-semibold">
+                <h3 className="text-base font-bold text-slate-900 leading-tight">RevOps + Sales Enablement + Analytics</h3>
+                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Marketing und Sales auf aufeinander abgestützte Ziele ausrichten. Silos auflösen, so dass alle Abteilungen auf gemeinsamen Daten-Dashboards arbeiten.
                 </p>
               </div>
@@ -664,7 +664,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <div className="text-center max-w-xl mx-auto space-y-3">
             <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">BRANCHENSPEZIFISCHE SYSTEME</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Schweizer Branchenlösungen</h2>
-            <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+            <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
               Wähle deinen Sektor und berechne dein ungenutztes Marge- und Pipeline-Potenzial mit unseren interaktiven Schnellrechnern.
             </p>
           </div>
@@ -690,7 +690,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 slug: 'immobilien',
                 desc: 'Verkürze die Vermarktungszeit für Neubauten und Gewerbeflächen drastisch.',
                 icon: Home,
-                tool: 'Leerstands- & ROI-Rechner'
+                tool: 'Leerstandskosten-Rechner'
               },
               {
                 title: 'Treuhand & UB',
@@ -791,10 +791,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       </span>
                     </div>
                     <div className="space-y-1.5">
-                      <h3 className="text-xs font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
+                      <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
                         {ind.title}
                       </h3>
-                      <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                      <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
                         {ind.desc}
                       </p>
                     </div>
@@ -821,18 +821,17 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
           <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">STRATEGISCHE PRIORITÄT</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Leistung braucht dein Unternehmen?</h2>
-          <p className="text-xs text-slate-300 leading-relaxed max-w-xl mx-auto opacity-95 font-medium">
+          <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-95 font-medium">
             Wir unterstützen dich unkompliziert dabei, die wirksamsten Prioritäten zu isolieren — in einem unverbindlichen 30-minütigen Gespräch.
           </p>
 
-          <a
-            href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer"
+          <button
+            type="button"
+            onClick={() => onNavigate('/kontakt')}
+            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer border-0"
           >
             Wachstumsgespräch buchen
-          </a>
+          </button>
         </div>
       </section>
 

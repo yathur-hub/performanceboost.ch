@@ -204,7 +204,7 @@ export default function AIReadinessCheck() {
   };
 
   const handleBooking = () => {
-    window.open('https://calendar.app.google/7oGfyaAEKsdWRTFW8', '_blank', 'noopener,noreferrer');
+    window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 
   const handleReset = () => {

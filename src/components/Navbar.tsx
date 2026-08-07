@@ -195,12 +195,12 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             </div>
 
             {/* CONTENTS CONTAINER (DESKTOP MODE) */}
-            <div className="hidden lg:block flex-grow max-w-7xl w-full mx-auto px-8 lg:px-10 py-8" id="desktop-menu-contents">
-              <div className="grid grid-cols-12 gap-8 items-stretch">
+            <div className="hidden lg:block flex-grow max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-10 py-6 lg:py-8" id="desktop-menu-contents">
+              <div className="grid grid-cols-12 gap-6 xl:gap-8 items-stretch">
                 
                 {/* Column 1: SPOTLIGHT PREVIEW CARD (DYNAMICS / DETAILS COMPONENT) */}
                 <div 
-                  className="col-span-4 bg-white border border-slate-200/80 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between overflow-hidden relative min-h-[460px]"
+                  className="col-span-4 bg-white border border-slate-200/80 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between overflow-hidden relative min-h-[480px]"
                   id="menu-spotlight-panel"
                 >
                   <AnimatePresence mode="wait">
@@ -217,33 +217,33 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         <div className="space-y-4">
                           {/* Service Indicator header label */}
                           <div className="flex items-center gap-2">
-                            <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-slate-400">LEISTUNGS-SCHWERPUNKT</span>
+                            <span className="mega-menu-meta font-mono font-bold uppercase tracking-widest text-slate-500">LEISTUNGS-SCHWERPUNKT</span>
                             <div className="h-px bg-slate-200 flex-grow"></div>
                           </div>
 
                           <div className="flex items-center gap-3">
-                            <div className="w-9 h-9 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#686DF4]/10 shadow-xs">
+                            <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#686DF4]/10 shadow-xs shrink-0">
                               {(() => {
                                 const IconC = getServiceIcon(hoveredService.slug);
-                                return <IconC className="w-4.5 h-4.5" />;
+                                return <IconC className="w-5 h-5" />;
                               })()}
                             </div>
-                            <h4 className="text-sm font-display font-semibold text-slate-900 tracking-tight leading-snug">
+                            <h4 className="mega-menu-heading font-display text-slate-900 tracking-tight leading-snug">
                               {hoveredService.title}
                             </h4>
                           </div>
 
-                          <p className="text-xs text-slate-500 leading-relaxed">
+                          <p className="mega-menu-desc text-slate-500 font-medium leading-relaxed">
                             {hoveredService.description}
                           </p>
 
                           {/* Quick Deliverable Bullets */}
-                          <div className="space-y-1.5 pt-1">
-                            <span className="text-[9px] font-mono font-bold text-slate-450 uppercase tracking-wider block">UNSERE LIEFEROBJEKTE:</span>
-                            <ul className="space-y-1" id="spotlight-deliverables">
+                          <div className="space-y-2 pt-1">
+                            <span className="mega-menu-meta font-mono font-bold text-slate-500 uppercase tracking-wider block">UNSERE LIEFEROBJEKTE:</span>
+                            <ul className="space-y-1.5" id="spotlight-deliverables">
                               {hoveredService.deliverables.slice(0, 2).map((del, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-xs text-slate-600 font-medium">
-                                  <CheckCircle2 className="w-3.5 h-3.5 text-[#686DF4] shrink-0 mt-0.5" />
+                                <li key={idx} className="flex items-start gap-2 mega-menu-desc text-slate-650 font-medium">
+                                  <CheckCircle2 className="w-4 h-4 text-[#686DF4] shrink-0 mt-0.5" />
                                   <span>{del}</span>
                                 </li>
                               ))}
@@ -256,8 +256,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           <div className="bg-slate-50 border border-slate-200/50 p-3.5 rounded-2xl flex items-center justify-between">
                             {hoveredService.metrics.map((m, mIdx) => (
                               <div key={mIdx} className="space-y-0.5">
-                                <span className="text-base font-bold font-display text-[#686DF4] block leading-none">{m.value}</span>
-                                <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">{m.label}</span>
+                                <span className="text-lg font-bold font-display text-[#686DF4] block leading-none">{m.value}</span>
+                                <span className="mega-menu-meta text-slate-500 font-bold uppercase font-mono tracking-wider block">{m.label}</span>
                               </div>
                             ))}
                           </div>
@@ -265,7 +265,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           <a
                             href={`/leistungen/${hoveredService.slug}`}
                             onClick={(e) => handleLinkClick(`/leistungen/${hoveredService.slug}`, e)}
-                            className="w-full justify-between bg-slate-900 hover:bg-[#686DF4] text-white font-bold text-[10px] py-3.5 px-4 rounded-xl uppercase tracking-wider inline-flex items-center gap-1 transition-all duration-300 group/spot"
+                            className="w-full justify-between bg-slate-900 hover:bg-[#686DF4] text-white font-bold mega-menu-link py-3.5 px-4.5 rounded-xl uppercase tracking-wider inline-flex items-center gap-2 transition-all duration-300 group/spot"
                             id={`spotlight-cta-link-${hoveredService.slug}`}
                           >
                             <span>Hebel detailliert ansehen</span>
@@ -286,43 +286,43 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       >
                         <div className="space-y-4">
                           <div className="flex items-center gap-2">
-                            <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">SYSTEMATIC GROWTH ARCHITECTURE</span>
+                            <span className="mega-menu-meta font-mono font-bold uppercase tracking-widest text-[#686DF4]">SYSTEMATIC GROWTH ARCHITECTURE</span>
                             <div className="h-px bg-slate-100 flex-grow"></div>
                           </div>
 
-                          <h4 className="text-sm font-display font-semibold text-slate-900 tracking-tight leading-tight">
+                          <h4 className="mega-menu-heading font-display text-slate-900 tracking-tight leading-tight">
                             Ergebnisse statt leere KPI-Konzepte.
                           </h4>
 
-                          <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                          <p className="mega-menu-desc text-slate-500 font-medium leading-relaxed">
                             performanceboost wurde gegründet, weil Schweizer B2B-Unternehmen keinen weiteren Anbieter für lose Facebook-Ads brauchen. Sie verlangen einen Partner, der Wachstum versteht, testet und schrittweise systemisiert.
                           </p>
 
                           <div className="p-4 rounded-2xl bg-[#686DF4]/[0.02] border border-[#686DF4]/10 space-y-2.5">
-                            <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#686DF4] block">KUMULIERTER MITTELWERT EXZELLENZ:</span>
+                            <span className="mega-menu-meta font-mono font-bold uppercase tracking-wider text-[#686DF4] block">KUMULIERTER MITTELWERT EXZELLENZ:</span>
                             
                             <div className="grid grid-cols-2 gap-4">
                               <div className="space-y-0.5">
-                                <span className="text-base font-bold font-display text-slate-950 block leading-none">3.4x</span>
-                                <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">Pipeline-Volumen</span>
+                                <span className="text-xl font-bold font-display text-slate-950 block leading-none">3.4x</span>
+                                <span className="mega-menu-meta text-slate-500 font-bold uppercase font-mono tracking-wider block">Pipeline-Volumen</span>
                               </div>
                               <div className="space-y-0.5">
-                                <span className="text-base font-bold font-display text-slate-950 block leading-none">+35%</span>
-                                <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">Close-Ratio</span>
+                                <span className="text-xl font-bold font-display text-slate-950 block leading-none">+35%</span>
+                                <span className="mega-menu-meta text-slate-500 font-bold uppercase font-mono tracking-wider block">Close-Ratio</span>
                               </div>
                             </div>
                           </div>
                         </div>
 
                         <div className="space-y-3 pt-4 border-t border-slate-100">
-                          <div className="flex items-start gap-3 text-xs text-slate-500 font-medium">
-                            <MapPin className="w-4 h-4 text-[#686DF4] shrink-0 mt-0.5" />
+                          <div className="flex items-start gap-3 mega-menu-desc text-slate-600 font-medium">
+                            <MapPin className="w-4.5 h-4.5 text-[#686DF4] shrink-0 mt-0.5" />
                             <span>Schweiz (Graubünden) • Remote Standard</span>
                           </div>
                           
-                          <div className="flex justify-between items-center text-[9px] text-slate-400 font-mono tracking-wider uppercase border-t border-slate-100 pt-2.5">
+                          <div className="flex justify-between items-center mega-menu-meta text-slate-500 font-mono tracking-wider uppercase border-t border-slate-100 pt-2.5">
                             <span>SVEN-TUNED B2B SYSTEM</span>
-                            <span className="text-slate-350">PRO-LEVEL v4.0</span>
+                            <span className="text-slate-400">PRO-LEVEL v4.0</span>
                           </div>
                         </div>
                       </motion.div>
@@ -332,19 +332,19 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
                 {/* Column 2: INTERACTIVE SERVICES MATRIX (12 HEBELS) */}
                 <div className="col-span-5 flex flex-col justify-between" id="menu-services-panel">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-450">UNSERE WACHSTUMSHEBEL</span>
+                  <div className="space-y-3.5">
+                    <div className="flex items-center justify-between pb-1">
+                      <span className="mega-menu-subheading font-mono font-bold uppercase tracking-wider text-slate-500">UNSERE WACHSTUMSHEBEL</span>
                       <a 
                         href="/leistungen" 
                         onClick={(e) => handleLinkClick('/leistungen', e)}
-                        className="text-[11px] font-bold text-[#686DF4] hover:text-slate-900 transition-colors flex items-center gap-1 group/all font-display focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        className="mega-menu-link font-bold text-[#686DF4] hover:text-slate-900 transition-colors flex items-center gap-1 group/all font-display focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
-                        Übersicht <ArrowRight className="w-3.5 h-3.5 group-hover/all:translate-x-0.5 transition-transform" />
+                        Übersicht <ArrowRight className="w-4 h-4 group-hover/all:translate-x-0.5 transition-transform" />
                       </a>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2" id="services-interactive-grid">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5" id="services-interactive-grid">
                       {navServices.map((s) => {
                         const IconComp = getServiceIcon(s.slug);
                         const isHovered = hoveredService?.slug === s.slug;
@@ -356,28 +356,28 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             href={`/leistungen/${s.slug}`}
                             onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
                             onMouseEnter={() => setHoveredService(s)}
-                            className={`group flex items-center gap-3 p-2.5 rounded-xl border text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] min-h-[50px] py-2 relative overflow-hidden ${
+                            className={`group flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] min-h-[54px] relative overflow-hidden ${
                               isHovered 
-                                ? 'bg-[#686DF4]/[0.03] border-[#686DF4]/25 shadow-xs' 
-                                : 'bg-white border-slate-200/50 hover:bg-[#686DF4]/[0.01] hover:border-slate-300'
+                                ? 'bg-[#686DF4]/[0.04] border-[#686DF4]/30 shadow-xs' 
+                                : 'bg-white border-slate-200/60 hover:bg-[#686DF4]/[0.015] hover:border-slate-300'
                             }`}
                           >
-                            <div className={`w-7.5 h-7.5 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
-                              isHovered ? 'bg-[#686DF4] text-white shadow-xs' : 'bg-slate-50 text-slate-500 group-hover:bg-[#686DF4]/5 group-hover:text-[#686DF4]'
+                            <div className={`w-8.5 h-8.5 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
+                              isHovered ? 'bg-[#686DF4] text-white shadow-xs' : 'bg-slate-50 text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4]'
                             }`}>
-                              <IconComp className="w-3.5 h-3.5" />
+                              <IconComp className="w-4 h-4" />
                             </div>
 
                             <div className="flex-grow min-w-0">
-                              <span className={`block text-[11px] font-bold leading-tight transition-colors ${
+                              <span className={`block mega-menu-link font-bold transition-colors ${
                                 isHovered ? 'text-[#686DF4]' : 'text-slate-900 group-hover:text-[#686DF4]'
                               }`}>
                                 {s.title}
                               </span>
                             </div>
 
-                            <ChevronRight className={`w-3 h-3 shrink-0 transition-all duration-300 ${
-                              isHovered ? 'text-[#686DF4] translate-x-0.5' : 'text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5'
+                            <ChevronRight className={`w-4 h-4 shrink-0 transition-all duration-300 ${
+                              isHovered ? 'text-[#686DF4] translate-x-0.5' : 'text-slate-350 group-hover:text-[#686DF4] group-hover:translate-x-0.5'
                             }`} />
                           </a>
                         );
@@ -389,35 +389,34 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 {/* Column 3: HIGHLIGHT INTEGRATED CONVERSION & CONTACT */}
                 <div className="col-span-3 flex flex-col justify-between" id="menu-overview-panel">
                   <div className="space-y-4">
-                    <div className="space-y-2.5" id="overview-links-col">
+                    <div className="space-y-3" id="overview-links-col">
                       {/* Interactive Conversion Card */}
                       <a
-                        href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
+                        href="/kontakt"
                         id="mega-menu-audit-cta-card"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative overflow-hidden group block p-4 rounded-2xl bg-slate-900 text-white shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-slate-850 hover:shadow-[0_12px_32px_rgba(104,109,244,0.12)] transition-all duration-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        onClick={(e) => handleLinkClick('/kontakt', e)}
+                        className="relative overflow-hidden group block p-4.5 rounded-2xl bg-slate-900 text-white shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-slate-850 hover:shadow-[0_12px_32px_rgba(104,109,244,0.12)] transition-all duration-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#686DF4]/15 to-transparent rounded-full blur-2xl group-hover:scale-130 transition-transform duration-500"></div>
                         
-                        <div className="flex items-center gap-2 mb-1.5">
-                          <span className="flex h-1.5 w-1.5 relative">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="flex h-2 w-2 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                           </span>
-                          <span className="text-[8px] font-mono font-bold tracking-widest text-emerald-400 uppercase">HEUTE VERFÜGBAR</span>
+                          <span className="mega-menu-meta font-mono font-bold tracking-widest text-emerald-400 uppercase">HEUTE VERFÜGBAR</span>
                         </div>
 
-                        <h5 className="text-xs font-bold font-display tracking-tight text-white mb-0.5 group-hover:text-[#686DF4] transition-colors flex items-center gap-1.5">
-                          Wachstums-Audit (30 min) <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                        <h5 className="mega-menu-heading font-display tracking-tight text-white mb-1 group-hover:text-[#686DF4] transition-colors flex items-center gap-1.5">
+                          Wachstums-Audit (30 min) <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </h5>
 
-                        <p className="text-[9px] text-slate-400 leading-normal mb-3 font-mono uppercase">
-                          *Kostenfreier Pipeline-Check für Schweizer KMU.
+                        <p className="mega-menu-desc text-slate-300 leading-relaxed mb-3">
+                          Kostenfreier Pipeline-Check für Schweizer KMU.
                         </p>
 
-                        <div className="flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-[#686DF4] bg-[#686DF4]/10 w-fit px-2.5 py-1 rounded-full transition-all group-hover:bg-[#686DF4]/20">
-                          <Calendar className="w-3 h-3 text-[#686DF4]" />
+                        <div className="flex items-center gap-2 mega-menu-link font-mono font-bold uppercase tracking-wider text-[#686DF4] bg-[#686DF4]/10 w-fit px-3 py-1.5 rounded-full transition-all group-hover:bg-[#686DF4]/20">
+                          <Calendar className="w-4 h-4 text-[#686DF4]" />
                           Termin sichern
                         </div>
                       </a>
@@ -427,22 +426,22 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         href="/ueber-uns"
                         id="mega-menu-about-link-card"
                         onClick={(e) => handleLinkClick('/ueber-uns', e)}
-                        className="group flex items-center justify-between p-3 bg-white border border-slate-200/50 rounded-xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        className="group flex items-center justify-between p-3.5 bg-white border border-slate-200/60 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/5 transition-colors">
-                            <Users className="w-4 h-4" />
+                          <div className="w-8.5 h-8.5 rounded-lg bg-slate-50 flex items-center justify-center text-slate-500 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/10 transition-colors shrink-0">
+                            <Users className="w-4.5 h-4.5" />
                           </div>
                           <div>
-                            <span className="block text-xs font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">
+                            <span className="block mega-menu-link font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
                               Über uns
                             </span>
-                            <span className="block text-[9.5px] text-slate-400 font-medium mt-0.5">
+                            <span className="block mega-menu-desc text-slate-500 font-medium mt-0.5">
                               Philosophie & Track Record
                             </span>
                           </div>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all" />
+                        <ChevronRight className="w-4 h-4 text-slate-350 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0" />
                       </a>
 
                       {/* Skill Factory Link Card */}
@@ -450,22 +449,22 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         href="/skills"
                         id="mega-menu-skills-link-card"
                         onClick={(e) => handleLinkClick('/skills', e)}
-                        className="group flex items-center justify-between p-3 bg-white border border-slate-200/50 rounded-xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        className="group flex items-center justify-between p-3.5 bg-white border border-slate-200/60 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-[#EEEEFF] text-[#686DF4] flex items-center justify-center transition-colors shadow-xs">
-                            <Sparkles className="w-4 h-4" />
+                          <div className="w-8.5 h-8.5 rounded-lg bg-[#EEEEFF] text-[#686DF4] flex items-center justify-center transition-colors shadow-xs shrink-0">
+                            <Sparkles className="w-4.5 h-4.5" />
                           </div>
                           <div>
-                            <span className="block text-xs font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">
+                            <span className="block mega-menu-link font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
                               Skill Factory
                             </span>
-                            <span className="block text-[9.5px] text-slate-400 font-medium mt-0.5">
+                            <span className="block mega-menu-desc text-slate-500 font-medium mt-0.5">
                               36 Diagnose-Frameworks
                             </span>
                           </div>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all" />
+                        <ChevronRight className="w-4 h-4 text-slate-350 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0" />
                       </a>
 
                       {/* Contact Portrait Card with Yathur's picture */}
@@ -473,20 +472,20 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         href="/kontakt"
                         id="mega-menu-contact-link-card"
                         onClick={(e) => handleLinkClick('/kontakt', e)}
-                        className="group flex items-center gap-3 p-3 bg-white border border-slate-200/50 rounded-xl hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                        className="group flex items-center gap-3 p-3.5 bg-white border border-slate-200/60 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.015] shadow-xs hover:shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
                       >
                         <img 
                           src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
                           alt="Yathur Nathan" 
-                          className="w-9 h-9 object-cover rounded-lg border border-slate-200 shrink-0 shadow-xs"
+                          className="w-10 h-10 object-cover rounded-lg border border-slate-200 shrink-0 shadow-xs"
                           referrerPolicy="no-referrer"
                         />
                         <div className="text-left min-w-0">
-                          <span className="block text-xs font-bold text-slate-950 group-hover:text-[#686DF4] transition-colors leading-tight">
+                          <span className="block mega-menu-link font-bold text-slate-950 group-hover:text-[#686DF4] transition-colors">
                             Direktkontakt
                           </span>
-                          <span className="block text-[9.5px] text-slate-400 leading-normal mt-0.5 font-medium truncate">
-                            Yathur Nathan, Inhaber & Konzepter
+                          <span className="block mega-menu-desc text-slate-500 font-medium mt-0.5 truncate">
+                            Yathur Nathan, Inhaber
                           </span>
                         </div>
                       </a>
@@ -494,14 +493,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   </div>
 
                   {/* Reachability block */}
-                  <div className="pt-6 border-t border-slate-200/55 space-y-3">
+                  <div className="pt-5 border-t border-slate-200/60 space-y-3">
                     <a 
                       href="mailto:hallo@performanceboost.ch"
-                      className="flex items-center gap-3 text-xs text-slate-600 hover:text-[#686DF4] font-bold group w-fit transition-colors"
+                      className="flex items-center gap-3 mega-menu-link text-slate-700 hover:text-[#686DF4] font-bold group w-fit transition-colors"
                       id="desktop-email-footer"
                     >
-                      <div className="w-7 h-7 rounded-lg bg-slate-150 flex items-center justify-center text-slate-550 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors">
-                        <Mail className="w-3.5 h-3.5" />
+                      <div className="w-8 h-8 rounded-lg bg-slate-150 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
+                        <Mail className="w-4 h-4" />
                       </div>
                       <span>hallo@performanceboost.ch</span>
                     </a>
@@ -510,11 +509,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       href="https://linkedin.com/company/performanceboost"
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-3 text-xs text-slate-600 hover:text-[#686DF4] font-bold group w-fit transition-colors"
+                      className="flex items-center gap-3 mega-menu-link text-slate-700 hover:text-[#686DF4] font-bold group w-fit transition-colors"
                       id="desktop-linkedin-footer"
                     >
-                      <div className="w-7 h-7 rounded-lg bg-slate-150 flex items-center justify-center text-slate-550 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors">
-                        <Linkedin className="w-3.5 h-3.5" />
+                      <div className="w-8 h-8 rounded-lg bg-slate-150 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
+                        <Linkedin className="w-4 h-4" />
                       </div>
                       <span>company/performanceboost</span>
                     </a>
@@ -525,12 +524,12 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             </div>
 
             {/* CONTENTS CONTAINER (MOBILE VERSION) */}
-            <div className="block lg:hidden flex-grow px-6 py-8 overflow-y-auto" id="mobile-menu-contents">
-              <div className="space-y-8">
+            <div className="block lg:hidden flex-grow px-5 sm:px-6 py-6 sm:py-8 overflow-y-auto" id="mobile-menu-contents">
+              <div className="space-y-6">
                 
                 {/* Brand description header block */}
-                <div className="bg-white border border-slate-200/60 p-5 rounded-2xl space-y-2">
-                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                <div className="bg-white border border-slate-200/80 p-4.5 rounded-2xl space-y-2">
+                  <p className="mega-menu-desc text-slate-600 font-medium leading-relaxed">
                     Systematische B2B Wachstumsmaschinen für Schweizer KMU & Tech-Unternehmen.
                   </p>
                 </div>
@@ -539,14 +538,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 <div className="space-y-3" id="mobile-navigation-links">
                   
                   {/* Leistungen Accordion */}
-                  <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-xs">
+                  <div className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs">
                     <button
                       onClick={() => setMobileLeistungenOpen(!mobileLeistungenOpen)}
-                      className="w-full flex justify-between items-center p-4 text-xs font-bold text-slate-900 hover:text-[#686DF4] cursor-pointer"
+                      className="w-full flex justify-between items-center p-4.5 mega-menu-subheading font-bold text-slate-900 hover:text-[#686DF4] cursor-pointer"
                       aria-expanded={mobileLeistungenOpen}
                     >
                       <span>UNSERE LEISTUNGEN</span>
-                      <ChevronRight className={`w-4.5 h-4.5 text-slate-400 transition-transform duration-300 ${mobileLeistungenOpen ? 'rotate-90 text-[#686DF4]' : ''}`} />
+                      <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${mobileLeistungenOpen ? 'rotate-90 text-[#686DF4]' : ''}`} />
                     </button>
                     
                     {/* Collapsible details for Leistungen */}
@@ -557,9 +556,9 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                          className="border-t border-slate-50 overflow-hidden bg-slate-50/50"
+                          className="border-t border-slate-100 overflow-hidden bg-slate-50/50"
                         >
-                          <div className="p-3 grid grid-cols-1 gap-2">
+                          <div className="p-3 grid grid-cols-1 gap-2.5">
                             {navServices.map((s) => {
                               const IconComp = getServiceIcon(s.slug);
                               return (
@@ -567,12 +566,12 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                   key={s.slug}
                                   href={`/leistungen/${s.slug}`}
                                   onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
-                                  className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-100 hover:bg-slate-50 focus:outline-none"
+                                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200/60 hover:bg-slate-50 focus:outline-none"
                                 >
-                                  <div className="w-8 h-8 rounded-lg bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center shrink-0">
-                                    <IconComp className="w-4 h-4" />
+                                  <div className="w-8.5 h-8.5 rounded-lg bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center shrink-0">
+                                    <IconComp className="w-4.5 h-4.5" />
                                   </div>
-                                  <span className="text-xs font-bold text-slate-800 tracking-tight">{s.title.split('&')[0].split('/')[0].trim()}</span>
+                                  <span className="mega-menu-link font-bold text-slate-900 tracking-tight">{s.title}</span>
                                 </a>
                               );
                             })}
@@ -586,59 +585,59 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   <a
                     href="/ueber-uns"
                     onClick={(e) => handleLinkClick('/ueber-uns', e)}
-                    className="flex justify-between items-center p-4 bg-white border border-slate-100 rounded-2xl hover:bg-slate-50 text-xs font-bold text-slate-900 shadow-xs"
+                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
                   >
                     <span>ÜBER UNS</span>
-                    <ChevronRight className="w-4 h-4 text-slate-400" />
+                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
                   </a>
 
                   <a
                     href="/skills"
                     onClick={(e) => handleLinkClick('/skills', e)}
-                    className="flex justify-between items-center p-4 bg-white border border-slate-100 rounded-2xl hover:bg-slate-50 text-xs font-bold text-slate-900 shadow-xs"
+                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
                   >
                     <span>SKILL FACTORY</span>
-                    <ChevronRight className="w-4 h-4 text-slate-400" />
+                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
                   </a>
 
                   <a
                     href="/kontakt"
                     onClick={(e) => handleLinkClick('/kontakt', e)}
-                    className="flex justify-between items-center p-4 bg-white border border-slate-100 rounded-2xl hover:bg-slate-50 text-xs font-bold text-slate-900 shadow-xs"
+                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
                   >
                     <span>KONTAKT</span>
-                    <ChevronRight className="w-4 h-4 text-slate-400" />
+                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
                   </a>
 
                 </div>
 
                 {/* Audit Booking block in the bottom area */}
-                <div className="space-y-4 pt-4">
+                <div className="space-y-4 pt-2">
                   <a
                     href="/kontakt"
                     onClick={(e) => handleLinkClick('/kontakt', e)}
                     className="flex items-center justify-between p-5 bg-[#686DF4] text-white rounded-2xl shadow-md group border border-[#686DF4]/30 hover:bg-slate-900 transition-all focus:outline-none"
                     id="mobile-audit-btn"
                   >
-                    <div className="flex items-center gap-3">
-                      <Calendar className="w-5 h-5 text-white animate-pulse" />
+                    <div className="flex items-center gap-3.5">
+                      <Calendar className="w-5.5 h-5.5 text-white animate-pulse shrink-0" />
                       <div className="text-left">
-                        <span className="block text-xs font-bold leading-tight">Wachstums-Audit (30 min)</span>
-                        <span className="block text-[10px] text-white/80 leading-snug mt-0.5">Sichere dir einen Schweizer Zeit-Slot und Hebel-Analyse</span>
+                        <span className="block mega-menu-heading font-bold text-white leading-tight">Wachstums-Audit (30 min)</span>
+                        <span className="block mega-menu-desc text-white/90 leading-snug mt-0.5 font-medium">Sichere dir einen Schweizer Zeit-Slot</span>
                       </div>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4.5 h-4.5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
                   </a>
 
                   {/* Contact channels footer block */}
-                  <div className="bg-slate-100/70 border border-slate-200/50 p-5 rounded-2xl space-y-3.5">
-                    <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400 block">KONTAKT ADRESSEN</span>
+                  <div className="bg-slate-100/80 border border-slate-200/60 p-5 rounded-2xl space-y-3.5">
+                    <span className="mega-menu-meta font-mono font-bold uppercase tracking-wider text-slate-500 block">KONTAKT ADRESSEN</span>
                     
                     <a 
                       href="mailto:hallo@performanceboost.ch"
-                      className="flex items-center gap-2.5 text-xs text-slate-650 hover:text-[#686DF4] font-semibold"
+                      className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
                     >
-                      <Mail className="w-4.5 h-4.5 text-[#686DF4]" />
+                      <Mail className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
                       <span>hallo@performanceboost.ch</span>
                     </a>
 
@@ -646,9 +645,9 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       href="https://linkedin.com/company/performanceboost"
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2.5 text-xs text-slate-650 hover:text-[#686DF4] font-semibold"
+                      className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
                     >
-                      <Linkedin className="w-4.5 h-4.5 text-[#686DF4]" />
+                      <Linkedin className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
                       <span>company/performanceboost</span>
                     </a>
                   </div>

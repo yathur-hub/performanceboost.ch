@@ -318,19 +318,21 @@ export default function AngebotsPipelineRechner() {
           <div className="text-left font-semibold text-slate-500 text-[10.5px] leading-relaxed max-w-md">
             <strong>Wie viel Umsatz liegt in deiner Angebots-Pipeline gerade brach?</strong> In 30 Minuten zeigen wir, welcher Hebel bei dir den grössten Impact erzielt. Ohne Standardpitch.
           </div>
-          <a
-            href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track('hero_tool_cta_clicked', {
-              page: 'b2b-industrie-kmu',
-              cta_type: 'primary',
-              leck_jahr: results.leck_jahr
-            })}
-            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer"
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              track('hero_tool_cta_clicked', {
+                page: 'b2b-industrie-kmu',
+                cta_type: 'primary',
+                leck_jahr: results.leck_jahr
+              });
+              window.dispatchEvent(new CustomEvent('open-contact-modal'));
+            }}
+            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
           >
             Pipeline-Gespräch buchen
-          </a>
+          </button>
         </div>
 
         {/* Lead Capture */}

@@ -42,13 +42,98 @@
   --shadow-premium-lg: 0 20px 50px -16px rgba(104, 109, 244, 0.08), 0 1px 10px 0 rgba(0, 0, 0, 0.01);
 }
 
-html, body {
-  font-family: var(--font-sans);
-  background-color: var(--color-brand-white2);
-  color: var(--color-brand-font);
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --font-size-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-body-sm: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --font-size-body-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --line-height-body: 1.65;
+  --line-height-relaxed: 1.7;
+  --content-reading-width: 68ch;
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-white2);
+    color: var(--color-brand-font);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    font-weight: 400;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+  }
+
+  /* List items running text */
+  li {
+    line-height: var(--line-height-body);
+  }
+}
+
+/* Custom typography classes for running copy & cards */
+.text-body {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem) !important;
+  line-height: 1.65 !important;
+}
+
+.text-body-sm {
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem) !important;
+  line-height: 1.6 !important;
+}
+
+.text-body-lg {
+  font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem) !important;
+  line-height: 1.6 !important;
+}
+
+.prose-reading {
+  max-width: 68ch;
+}
+
+/* Central Mega-Menu Typography Tokens & Utility Classes */
+:root {
+  --font-size-mega-menu-heading: clamp(1.0625rem, 1rem + 0.3vw, 1.125rem);
+  --font-size-mega-menu-subheading: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --font-size-mega-menu-link: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --font-size-mega-menu-description: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --font-size-mega-menu-meta: clamp(0.8125rem, 0.8rem + 0.1vw, 0.875rem);
+  --line-height-mega-menu-heading: 1.35;
+  --line-height-mega-menu-link: 1.4;
+  --line-height-mega-menu-description: 1.45;
+}
+
+.mega-menu-heading {
+  font-size: var(--font-size-mega-menu-heading) !important;
+  line-height: var(--line-height-mega-menu-heading) !important;
+  font-weight: 700 !important;
+}
+
+.mega-menu-subheading {
+  font-size: var(--font-size-mega-menu-subheading) !important;
+  line-height: var(--line-height-mega-menu-link) !important;
+  font-weight: 600 !important;
+}
+
+.mega-menu-link {
+  font-size: var(--font-size-mega-menu-link) !important;
+  line-height: var(--line-height-mega-menu-link) !important;
+  font-weight: 600 !important;
+}
+
+.mega-menu-desc {
+  font-size: var(--font-size-mega-menu-description) !important;
+  line-height: var(--line-height-mega-menu-description) !important;
+  font-weight: 500 !important;
+}
+
+.mega-menu-meta {
+  font-size: var(--font-size-mega-menu-meta) !important;
+  line-height: 1.35 !important;
 }
 
 /* Beautiful fading entering utilities for smooth transitions */

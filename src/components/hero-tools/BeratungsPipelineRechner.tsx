@@ -300,19 +300,21 @@ export default function BeratungsPipelineRechner() {
             <span><strong>Gut aufgestellt — jetzt den nächsten Kanal erschliessen.</strong> Mit einer effizienten Abschluss-Pipeline ist der Aufbau eines digitalen Inbound-Kanals der natürliche nächste Schritt. 30 Minuten reichen, um die Optionen zu besprechen.</span>
           )}
         </div>
-        <a
-          href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => track('pipeline_rechner_cta_click', {
-            cta_text: currentStufe.btnText,
-            effizienz_score: results.effizienz_score,
-            status_stufe: results.score_stufe,
-          })}
-          className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer transition-colors shadow-sm"
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            track('pipeline_rechner_cta_click', {
+              cta_text: currentStufe.btnText,
+              effizienz_score: results.effizienz_score,
+              status_stufe: results.score_stufe,
+            });
+            window.dispatchEvent(new CustomEvent('open-contact-modal'));
+          }}
+          className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer transition-colors shadow-sm border-0"
         >
           {currentStufe.btnText}
-        </a>
+        </button>
       </div>
       <p className="text-[8.5px] text-slate-400 font-mono text-center">
         *Diese Berechnung basiert auf deinen Eingaben und einem vereinfachten Branchenbenchmark. Sie dient der Orientierung, nicht der betriebswirtschaftlichen Planung.

@@ -73,7 +73,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 hidden: { opacity: 0, y: 12 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
               }}
-              className="text-slate-500 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-medium"
+              className="text-slate-500 text-body-lg leading-relaxed max-w-2xl mx-auto font-medium"
             >
               performanceboost ist dein Revenue Growth Partner. Wir verbinden Growth Strategy, Demand Generation und Revenue Operations zu messbarem Wachstum — frei von Agentur-Theater.
             </motion.p>
@@ -85,14 +85,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
             >
-              <a
-                href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => onNavigate('/kontakt')}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-display font-bold px-8 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-center cursor-pointer text-xs sm:text-sm tracking-wide"
               >
                 Wachstumsgespräch buchen <span className="text-xs font-normal text-slate-100 opacity-90">(30 Min, kostenlos)</span> <ArrowRight className="w-5 h-5 text-white" />
-              </a>
+              </button>
               <button
                 type="button"
                 onClick={() => setShowPotenzialCheck(true)}
@@ -116,19 +115,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center shadow-[var(--shadow-premium-md)] relative overflow-hidden group">
+        <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center shadow-[var(--shadow-premium-md)] relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#686DF4]/2 rounded-full blur-xl pointer-events-none transition-transform duration-1000 group-hover:scale-150" />
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-6 xl:col-span-7 space-y-6">
             <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">POSITIONIERUNG</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">Du brauchst keine Marketingagentur.</h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-semibold text-balance">
+            <p className="text-slate-700 text-body font-semibold text-balance">
               Du brauchst einen Partner, der Wachstum systematisch aufbaut. Der Demand erzeugt, Leads qualifiziert, Marketing und Vertrieb verbindet und Revenue planbar macht.
             </p>
-            <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-medium text-balance">
+            <p className="text-slate-500 text-body-sm leading-relaxed font-medium text-balance">
               Genau das ist performanceboost. Wir arbeiten mit Unternehmen, die wachsen wollen. Nicht mit vagen Versprechungen, sondern mit erprobten Systemen, die funktionieren.
             </p>
           </div>
-          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full">
+          <div className="lg:col-span-6 xl:col-span-5 flex items-center justify-center lg:justify-end w-full min-w-0">
             <RevenueSystemGraphic />
           </div>
         </div>
@@ -178,7 +177,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             >
               <span className="w-6 h-6 rounded-lg bg-red-50 border border-red-100 text-red-650 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5 font-mono">!</span>
               <div>
-                <p className="text-xs font-bold text-slate-850 leading-relaxed">{prob}</p>
+                <p className="text-body-sm font-semibold text-slate-850 leading-relaxed">{prob}</p>
               </div>
             </motion.div>
           ))}
@@ -190,7 +189,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             className="bg-red-50/10 border border-dashed border-red-200 p-6 md:p-8 rounded-2xl flex flex-col justify-center items-center text-center space-y-2 select-none"
           >
             <span className="text-xs font-bold uppercase text-red-650 tracking-wider font-display">Das Fazit</span>
-            <p className="text-xs text-slate-750 font-bold leading-relaxed font-semibold">Das sind keine reinen Marketing-Probleme.<br/>Das sind fundamentale Revenue-Probleme.</p>
+            <p className="text-body-sm text-slate-750 font-semibold leading-relaxed">Das sind keine reinen Marketing-Probleme.<br/>Das sind fundamentale Revenue-Probleme.</p>
           </motion.div>
         </motion.div>
       </section>
@@ -272,8 +271,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center font-mono font-bold text-xs text-slate-400 group-hover:bg-[#686DF4] group-hover:text-white transition-colors duration-300">
                 0{idx + 1}
               </div>
-              <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">{item.title}</h3>
-              <p className="text-xs text-slate-500 leading-relaxed font-semibold">{item.desc}</p>
+              <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">{item.title}</h3>
+              <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
             </motion.div>
           ))}
           
@@ -287,7 +286,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           >
             <div className="space-y-3">
               <h4 className="text-xs font-bold text-[#686DF4] uppercase font-display tracking-wider">DEINE PRIORITÄT?</h4>
-              <p className="text-[11px] text-slate-600 leading-relaxed font-semibold">Wir kombinieren unsere Bausteine passend zu deiner individuellen Struktur und deinen Ressourcen.</p>
+              <p className="text-body-sm text-slate-600 leading-relaxed font-medium">Wir kombinieren unsere Bausteine passend zu deiner individuellen Struktur und deinen Ressourcen.</p>
             </div>
             <button
               onClick={() => {
@@ -314,7 +313,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="text-center max-w-xl mx-auto space-y-4">
             <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">WATHUR-TUNED ROI</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Errechne dein Wachstumspotenzial</h2>
-            <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+            <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
               Passe die Parameter an, um zu sehen, wie eine professionelle Trichter-Optimierung die Rentabilität deines gesamten Unternehmens vervielfacht.
             </p>
           </div>
@@ -383,8 +382,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <span className="absolute top-5 left-8 text-[11px] font-bold font-mono bg-[#686DF4]/5 text-[#686DF4] px-3 py-1 rounded-lg border border-[#CACCFB]/30 shadow-xs">
                   0{step.num}
                 </span>
-                <h4 className="text-sm font-bold text-slate-900 font-display leading-tight">{step.title}</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-semibold">{step.desc}</p>
+                <h4 className="text-base font-bold text-slate-900 font-display leading-tight">{step.title}</h4>
+                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{step.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -451,8 +450,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             >
               <Check className="w-5 h-5 text-[#686DF4] shrink-0 mt-1" />
               <div className="space-y-2">
-                <h4 className="text-xs font-bold text-slate-900 font-display leading-[1.3]">{diff.title}</h4>
-                <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">{diff.desc}</p>
+                <h4 className="text-sm font-bold text-slate-900 font-display leading-[1.3]">{diff.title}</h4>
+                <p className="text-body-sm text-slate-500 font-medium leading-relaxed">{diff.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -482,10 +481,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <h3 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 leading-tight">Yathur Nathan</h3>
                 <p className="text-xs sm:text-sm font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
               </div>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-semibold">
+              <p className="text-body text-slate-600 leading-relaxed font-medium">
                 Ich unterstütze Schweizer Unternehmen dabei, Wachstumspotenziale sichtbar zu machen und in messbare Resultate zu übersetzen. Dabei verbinde ich Marketing, Technologie, Daten und Vertrieb zu einem System, das nicht auf Vermutungen, sondern auf Fakten basiert.
               </p>
-              <p className="text-sm sm:text-base text-[#686DF4] font-bold leading-relaxed pt-3 border-t border-slate-100 italic">
+              <p className="text-body text-[#686DF4] font-semibold leading-relaxed pt-3 border-t border-slate-100 italic">
                 Als dein persönlicher Experte analysiere ich deine Customer Journey ganzheitlich und begleite dich operativ bei der Umsetzung deiner Umsatzhebel im Neukunden-Erstgespräch.
               </p>
             </div>
@@ -534,7 +533,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <div key={index} className="border-b border-slate-100 last:border-0 pb-4 last:pb-0 pt-4 first:pt-4">
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-xs sm:text-sm hover:text-[#686DF4] transition-colors cursor-pointer"
+                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer"
               >
                 <span className="flex items-center gap-2.5">
                   <HelpCircle className="w-4.5 h-4.5 text-[#686DF4] shrink-0" /> {faq.q}
@@ -542,7 +541,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-[#686DF4]' : ''}`} />
               </button>
               {openFaq === index && (
-                <p className="mt-3 text-xs text-slate-500 leading-relaxed pl-7 font-medium animate-fadeIn">
+                <p className="mt-3 text-body-sm text-slate-500 leading-relaxed pl-7 font-medium animate-fadeIn">
                   {faq.a}
                 </p>
               )}
@@ -565,19 +564,18 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="space-y-4 relative z-10 max-w-2xl">
             <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">JETZT STARTEN</span>
             <h3 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">Bereit, Wachstum planbar zu machen?</h3>
-            <p className="text-xs text-slate-300 leading-relaxed font-medium opacity-90">
+            <p className="text-body text-slate-300 leading-relaxed font-medium opacity-90">
               30 Minuten. Keine Verpflichtung. Konkrete Diagnose. Wir schauen gemeinsam, wo deine grössten Wachstumshebel liegen — und ob wir der richtige Partner dafür sind.
             </p>
           </div>
 
-          <a
-            href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => onNavigate('/kontakt')}
             className="w-full md:w-auto bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 text-center inline-block cursor-pointer shrink-0 z-10"
           >
             Wachstumsgespräch buchen
-          </a>
+          </button>
         </motion.div>
       </section>
 

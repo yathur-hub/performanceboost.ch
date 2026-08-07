@@ -348,20 +348,22 @@ export default function SaasRevenueLeckRechner() {
                 In einem 30-minütigen Gespräch analysieren wir eure Zahlen strukturiert. Kein Pitch, kein Theater.
               </p>
             </div>
-            <a
-              href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => track('hero_tool_cta_clicked', {
-                page: 'saas-software',
-                element_id: 'saas-revenue-leck-rechner',
-                stufe: results.stufe,
-                cta: 'primary',
-              })}
-              className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer"
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                track('hero_tool_cta_clicked', {
+                  page: 'saas-software',
+                  element_id: 'saas-revenue-leck-rechner',
+                  stufe: results.stufe,
+                  cta: 'primary',
+                });
+                window.dispatchEvent(new CustomEvent('open-contact-modal'));
+              }}
+              className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               {config.btnText}
-            </a>
+            </button>
           </div>
 
           {/* E-mail capture collapsible */}

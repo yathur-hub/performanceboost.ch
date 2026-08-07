@@ -105,7 +105,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               <h1 className="text-3xl sm:text-4.5xl font-display font-medium text-slate-955 tracking-tight leading-[1.1]">
                 {sector.subtitle}
               </h1>
-              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold">
+              <p className="text-slate-500 text-body-lg leading-relaxed font-medium">
                 {sector.heroDesc}
               </p>
               
@@ -160,8 +160,8 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               <div className="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center font-bold font-mono text-xs mx-auto border border-red-100/40">
                 !
               </div>
-              <h3 className="text-xs font-bold text-slate-900 leading-tight">{problem.title}</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-semibold">{problem.desc}</p>
+              <h3 className="text-sm font-bold text-slate-900 leading-tight">{problem.title}</h3>
+              <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{problem.desc}</p>
             </div>
           ))}
         </div>
@@ -173,7 +173,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <div className="text-center space-y-2">
             <span className="text-[9px] font-mono text-[#686DF4] tracking-widest uppercase font-black">DER MASSNAHMENPLAN</span>
             <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">& was wir nutzenorientiert aufbauen</h2>
-            <p className="text-xs text-slate-300 font-semibold max-w-md mx-auto">
+            <p className="text-body-sm text-slate-300 font-medium max-w-md mx-auto">
               Ein lückenloser, systematischer Prozess zur Skalierung deiner Marktpositionierung in der Schweiz.
             </p>
           </div>
@@ -187,8 +187,8 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
                 <span className="text-[10px] font-semibold text-[#686DF4] uppercase font-mono tracking-widest">
                   PHASE {step.step}
                 </span>
-                <h3 className="text-xs font-bold text-white tracking-tight">{step.title}</h3>
-                <p className="text-[11.5px] text-slate-300 leading-relaxed font-medium">
+                <h3 className="text-sm font-bold text-white tracking-tight">{step.title}</h3>
+                <p className="text-body-sm text-slate-300 leading-relaxed font-medium">
                   {step.desc}
                 </p>
               </div>
@@ -208,30 +208,11 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           {sector.benefits.map((benefit, idx) => (
             <div key={idx} className="flex gap-3 items-start">
               <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-              <p className="text-xs text-slate-800 font-bold leading-relaxed">{benefit}</p>
+              <p className="text-body-sm text-slate-800 font-semibold leading-relaxed">{benefit}</p>
             </div>
           ))}
         </div>
       </section>
-
-      {/* PROOF POINTS / CASES */}
-      {sector.proofPoints && sector.proofPoints.length > 0 && (
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-2 mb-10">
-            <span className="text-[9px] font-mono text-[#686DF4] font-black uppercase tracking-widest">ERFOLG IST MESSBAR</span>
-            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Ergebnisse aus der Praxis</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {sector.proofPoints.map((point, idx) => (
-              <div key={idx} className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 shadow-sm flex flex-col items-center text-center gap-2">
-                <span className="text-3xl font-black text-[#686DF4] tracking-tight">{point.value}</span>
-                <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest">{point.unit}</span>
-                <p className="text-xs text-slate-600 font-semibold leading-relaxed">{point.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* FAQ ACCORDIAN */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -245,7 +226,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             <div key={idx} className="border-b border-slate-100 last:border-none pb-4 last:pb-0 pt-3">
               <button
                 onClick={() => toggleFaq(idx)}
-                className="w-full flex justify-between items-center text-left font-bold text-slate-900 text-xs sm:text-sm hover:text-[#686DF4] transition-colors cursor-pointer bg-transparent border-none py-1"
+                className="w-full flex justify-between items-center text-left font-bold text-slate-900 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer bg-transparent border-none py-1"
               >
                 <span className="flex items-center gap-2.5">
                   <HelpCircle className="w-4 h-4 text-[#686DF4] shrink-0" /> {faq.q}
@@ -260,7 +241,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
                     exit={{ height: 0, opacity: 0 }}
                     className="overflow-hidden"
                   >
-                    <p className="mt-2.5 text-xs text-slate-500 leading-relaxed pl-6.5 font-semibold">
+                    <p className="mt-2.5 text-body-sm text-slate-500 leading-relaxed pl-6.5 font-medium">
                       {faq.a}
                     </p>
                   </motion.div>
@@ -287,27 +268,27 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               <span className="absolute bottom-1 right-1 w-4.5 h-4.5 bg-green-500 border-2 border-white rounded-full" />
             </div>
             <div className="text-center">
-              <h4 className="text-sm font-bold text-slate-900 leading-none">Yathur Nathan</h4>
-              <p className="text-[10px] text-slate-500 font-bold tracking-wide mt-1 uppercase">Inhaber & Experte</p>
+              <h4 className="text-base font-bold text-slate-900 leading-none">Yathur Nathan</h4>
+              <p className="text-[10px] text-[#686DF4] font-bold tracking-wide mt-1 uppercase font-mono">Inhaber & Experte</p>
             </div>
           </div>
 
           <div className="md:col-span-8 space-y-5">
             <span className="text-[9px] font-mono text-[#686DF4] font-black tracking-widest uppercase">PERSÖNLICHE BEGLEITUNG</span>
-            <p className="text-[12.5px] font-medium leading-relaxed text-slate-600">
+            <p className="text-body-sm font-medium leading-relaxed text-slate-600">
               Als dein persönlicher Experte analysiere ich deine Customer Journey ganzheitlich und begleite dich operativ bei der Umsetzung deiner Umsatzhebel im Neukunden-Erstgespräch. Ich unterstütze Schweizer Unternehmen dabei, Wachstumspotenziale sichtbar zu machen und in messbare Resultate zu übersetzen.
             </p>
             <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <span className="text-[10px] font-bold text-slate-500 font-mono">
                 📞 Telefon-Audit & Strategieentwurf (30 Min.)
               </span>
-              <a
-                href="https://calendar.app.google/7oGfyaAEKsdWRTFW8"
-                target="_blank"
-                className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all inline-block text-center shadow-sm shrink-0 w-full sm:w-auto"
+              <button
+                type="button"
+                onClick={() => onNavigate('/kontakt')}
+                className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all inline-block text-center shadow-sm shrink-0 w-full sm:w-auto border-0"
               >
                 Termin buchen
-              </a>
+              </button>
             </div>
           </div>
         </div>

@@ -19,8 +19,10 @@ import SEOHead from './components/SEOHead';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { pageTransitionVariants } from './lib/motion';
+import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
 
-export default function App() {
+function AppContent() {
+  const { openContactModal } = useContactModal();
   const [currentPath, setCurrentPath] = useState<string>(() => {
     return window.location.pathname || '/';
   });
@@ -36,18 +38,33 @@ export default function App() {
     const handleNavigationChange = (e: Event) => {
       const customEvent = e as CustomEvent<string>;
       if (customEvent.detail) {
-        handleNavigate(customEvent.detail);
+        if (customEvent.detail === '/kontakt' || customEvent.detail === '#kontakt') {
+          openContactModal();
+        } else {
+          handleNavigate(customEvent.detail);
+        }
       }
     };
     window.addEventListener('navigation-change', handleNavigationChange);
 
+    // Custom event to open contact modal from any non-React script or deep child
+    const handleOpenModal = () => {
+      openContactModal();
+    };
+    window.addEventListener('open-contact-modal', handleOpenModal);
+
     return () => {
       window.removeEventListener('popstate', handlePopState);
       window.removeEventListener('navigation-change', handleNavigationChange);
+      window.removeEventListener('open-contact-modal', handleOpenModal);
     };
-  }, []);
+  }, [openContactModal]);
 
   const handleNavigate = (path: string) => {
+    if (path === '/kontakt' || path === '#kontakt') {
+      openContactModal();
+      return;
+    }
     window.history.pushState(null, '', path);
     setCurrentPath(path);
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -103,16 +120,12 @@ export default function App() {
       <div className="bg-[#686DF4] text-white text-[11px] font-mono font-bold tracking-wider py-2 text-center flex items-center justify-center gap-1 shadow-sm">
         <Sparkles className="w-3.5 h-3.5 text-white/80" /> 
         <span>REVENUE ADVISORY FOR HIGH-VALUE B2B KMUs & SAAS • GRAUBÜNDEN</span>
-        <a 
-          href="/kontakt"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavigate('/kontakt');
-          }}
-          className="underline hover:text-white/90 inline-flex items-center gap-0.5 ml-1"
+        <button 
+          onClick={openContactModal}
+          className="underline hover:text-white/90 inline-flex items-center gap-0.5 ml-1 bg-transparent border-0 cursor-pointer text-white font-mono font-bold text-[11px]"
         >
           Audit buchen <ArrowUpRight className="w-3 h-3" />
-        </a>
+        </button>
       </div>
 
       {/* Main Responsive Header */}
@@ -170,3 +183,12 @@ export default function App() {
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <ContactModalProvider>
+      <AppContent />
+    </ContactModalProvider>
+  );
+}
+

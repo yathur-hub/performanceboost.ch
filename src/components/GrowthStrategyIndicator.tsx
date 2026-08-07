@@ -111,7 +111,7 @@ export default function GrowthStrategyIndicator() {
   const texts = getOutputTexts();
 
   const handleBooking = () => {
-    window.open('https://calendar.app.google/7oGfyaAEKsdWRTFW8', '_blank', 'noopener,noreferrer');
+    window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 
   return (

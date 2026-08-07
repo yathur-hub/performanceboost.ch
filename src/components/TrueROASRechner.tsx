@@ -362,18 +362,18 @@ export default function TrueROASRechner() {
                 )}
 
                 <div className="pt-4 border-t border-slate-200/50">
-                  <a
-                    href="/kontakt"
+                  <button
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault();
                       track("hero_tool_cta_click", { page: "paid-social-ecommerce", variant: "booking" });
-                      window.location.href = "/kontakt";
+                      window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all"
+                    className="w-full text-center bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Kostenlosen Ads-Audit buchen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
-                  </a>
+                  </button>
                   <p className="text-[9px] text-slate-400 text-center font-mono mt-2">
                     Wir analysieren deine Kampagnen kostenlos auf echte Profitabilität — inklusive Deckungsbeitrag. 30 Minuten, keine Verkaufsshow.
                   </p>
