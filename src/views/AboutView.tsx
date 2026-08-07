@@ -296,8 +296,8 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3 animate-fadeIn"
           >
-            <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">WERTE, DIE REVENUE BESTIMMEN</span>
-            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight">Unsere inneren Leitwerte</h2>
+            <span className="text-[10px] font-mono text-[#8185F8] font-bold uppercase tracking-widest">WERTE, DIE REVENUE BESTIMMEN</span>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight text-white">Unsere inneren Leitwerte</h2>
           </motion.div>
 
           <motion.div 
@@ -313,14 +313,14 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 <motion.div 
                   key={k} 
                   variants={staggeredChildVariants}
-                  whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.45)" }}
-                  className="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-sm"
+                  whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.55)" }}
+                  className="bg-slate-900 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-md"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-[#686DF4]/10 text-[#686DF4] flex items-center justify-center border border-slate-800">
-                    <IconComp className="w-4.5 h-4.5" />
+                  <div className="w-10 h-10 rounded-xl bg-[#686DF4]/20 text-[#A0A3F9] flex items-center justify-center border border-slate-700/70">
+                    <IconComp className="w-5 h-5 text-[#A0A3F9]" />
                   </div>
-                  <h3 className="text-sm font-bold tracking-tight">{val.title}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed font-semibold opacity-90">{val.desc}</p>
+                  <h3 className="text-base font-bold tracking-tight text-white">{val.title}</h3>
+                  <p className="text-xs text-slate-200 leading-relaxed font-normal">{val.desc}</p>
                 </motion.div>
               );
             })}

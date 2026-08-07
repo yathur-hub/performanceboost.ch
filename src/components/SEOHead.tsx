@@ -14,7 +14,7 @@ export default function SEOHead({ currentPath }: SEOHeadProps) {
     const canonicalUrl = `${baseUrl}${path}`;
 
     // Metadata definition based on current active route
-    let seoTitle = 'Performance Boost - B2B & SaaS Growth Strategy & RevOps';
+    let seoTitle = 'Performance Boost - Growth Strategy & RevOps';
     let seoDesc = 'Ihr Revenue Growth Partner in der Schweiz. Wir verbinden B2B Growth Strategy, Demand Generation und Revenue Operations (RevOps) zu messbarem & planbarem Wachstum — frei von Agentur-Theater.';
     let keywords = 'B2B Growth, Revenue Operations, RevOps Schweiz, Demand Generation, B2B Marketing Agentur Schweiz, SaaS Growth Consulting, HubSpot CRM Integration, Lead Generation, n8n Automation';
     let schemaMarkup: any = null;
@@ -22,7 +22,7 @@ export default function SEOHead({ currentPath }: SEOHeadProps) {
 
     // 1. Home Page
     if (path === '/') {
-      seoTitle = 'B2B Growth Strategy & Revenue Systems Schweiz | performanceboost';
+      seoTitle = 'Growth Strategy & Revenue Systems Schweiz | performanceboost';
       seoDesc = 'B2B & SaaS Growth Partner in der Schweiz. Wir vereinen Growth Strategy, Demand Generation & RevOps für planbares, messbares Wachstum. Buchen Sie Ihr kostenloses Wachstumsgespräch.';
       keywords = 'B2B Marketing Schweiz, Revenue Growth Partner, Growth Consulting Graubünden, Demand Gen B2B, Revenue Operations Partner, B2B SaaS Beratung, Leads generieren Schweiz, HubSpot Partner';
       
@@ -81,7 +81,7 @@ export default function SEOHead({ currentPath }: SEOHeadProps) {
     }
     // 2. Solutions View
     else if (path === '/loesungen') {
-      seoTitle = 'Ehem. zufälliges B2B-Wachstum automatisieren | Lösungen | performanceboost';
+      seoTitle = 'Ehem. zufälliges Wachstum automatisieren | Lösungen | performanceboost';
       seoDesc = 'Wir konzipieren branchenspezifische B2B-Wachstumssysteme für B2B Software & Tech (SaaS), Consulting & Professional Services sowie die High-Tech verarbeitende Industrie. Massgeschneidert.';
       keywords = 'B2B SaaS GTM Playbook, Consulting Neukundengewinnung, Industrie Lead Generierung, Schweizer Industrie Digitalisierung, B2B Verkaufstrichter';
       
@@ -124,7 +124,7 @@ export default function SEOHead({ currentPath }: SEOHeadProps) {
     }
     // 4. Contact View
     else if (path === '/kontakt') {
-      seoTitle = 'Kostenloses B2B-Wachstumsgespräch buchen | performanceboost';
+      seoTitle = 'Kostenloses Wachstumsgespräch buchen | performanceboost';
       seoDesc = 'Vereinbaren Sie Ihren unverbindlichen 15-minütigen Growth Audit oder Ihr 30-minütiges Wachstumsgespräch mit Yathur Nathan. Wir analysieren Ihre B2B & SaaS Pipeline live.';
       keywords = 'B2B Growth Audit, Erstgespräch performanceboost, Calendly Buchung, Growthsgespräch, HubSpot Audit Schweiz, Marketing Beratung Chur, RevOps Audit';
       
@@ -157,7 +157,7 @@ export default function SEOHead({ currentPath }: SEOHeadProps) {
 
       if (service) {
         // Individual Service SEO
-        seoTitle = `${service.title} | B2B Services Schweiz | performanceboost`;
+        seoTitle = `${service.title} | Services Schweiz | performanceboost`;
         seoDesc = `${service.shortDesc} ${service.description.substring(0, 110)}... Entdecken Sie deliverables, Metriken und unseren 4-Schritt-Prozess.`;
         keywords = `${service.title}, B2B ${service.title} Schweiz, ${service.id} consulting, HubSpot RevOps, Lead Generation DACH`;
         
@@ -179,7 +179,7 @@ export default function SEOHead({ currentPath }: SEOHeadProps) {
         };
       } else {
         // Services Overview Page
-        seoTitle = 'B2B Marketing & Sales Operations Services | performanceboost';
+        seoTitle = 'Marketing & Sales Operations Services | performanceboost';
         seoDesc = 'Unser Leistungsspektrum für B2B & SaaS: Growth Strategy, Demand Generation, Marketing Automation, Sales Playbooks, RevOps, KI n8n-Automation und DSG Tracking.';
         keywords = 'B2B-Leistungen, RevOps Beratung, Demand Generation Agentur, Lead Generation, CRM Automation, Marketing Automation Graubünden, Server-Side Tracking CH';
         
@@ -235,7 +235,7 @@ export default function SEOHead({ currentPath }: SEOHeadProps) {
         }
       } else {
         // Resources Overview Page
-        seoTitle = 'B2B Playbooks, Guides & Inbound Ressourcen | performanceboost';
+        seoTitle = 'Playbooks, Guides & Inbound Ressourcen | performanceboost';
         seoDesc = 'Holen Sie sich erprobte B2B Growth Playbooks, detaillierte Marketing-Guides und DSG-Informationen völlig ungegated. Von Growth Strategen für KMU.';
         keywords = 'B2B Whitepaper, Growth Guides, GTM Tutorials, n8n Automation Vorlagen, LinkedIn Ads Blueprint, Server-Side Tracking Guide, Schweizer DSG-Regeln';
         

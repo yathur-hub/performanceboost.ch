@@ -11,7 +11,6 @@ import {
   Megaphone, 
   ShieldAlert, 
   PieChart, 
-  Linkedin, 
   Mail, 
   Calendar, 
   MapPin,
@@ -321,7 +320,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           </div>
                           
                           <div className="flex justify-between items-center mega-menu-meta text-slate-500 font-mono tracking-wider uppercase border-t border-slate-100 pt-2.5">
-                            <span>SVEN-TUNED B2B SYSTEM</span>
+                            <span>SWISS-TUNED REVENUE SYSTEM</span>
                             <span className="text-slate-400">PRO-LEVEL v4.0</span>
                           </div>
                         </div>
@@ -493,29 +492,27 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   </div>
 
                   {/* Reachability block */}
-                  <div className="pt-5 border-t border-slate-200/60 space-y-3">
+                  <div className="pt-5 border-t border-slate-200/60 space-y-2.5">
                     <a 
-                      href="mailto:hallo@performanceboost.ch"
+                      href="mailto:yathur@performanceboost.ch"
                       className="flex items-center gap-3 mega-menu-link text-slate-700 hover:text-[#686DF4] font-bold group w-fit transition-colors"
                       id="desktop-email-footer"
                     >
                       <div className="w-8 h-8 rounded-lg bg-slate-150 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
                         <Mail className="w-4 h-4" />
                       </div>
-                      <span>hallo@performanceboost.ch</span>
+                      <span>yathur@performanceboost.ch</span>
                     </a>
 
                     <a 
-                      href="https://linkedin.com/company/performanceboost"
-                      target="_blank"
-                      rel="noreferrer"
+                      href="tel:+41786754097"
                       className="flex items-center gap-3 mega-menu-link text-slate-700 hover:text-[#686DF4] font-bold group w-fit transition-colors"
-                      id="desktop-linkedin-footer"
+                      id="desktop-phone-footer"
                     >
                       <div className="w-8 h-8 rounded-lg bg-slate-150 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
-                        <Linkedin className="w-4 h-4" />
+                        <Phone className="w-4 h-4" />
                       </div>
-                      <span>company/performanceboost</span>
+                      <span>+41 78 675 4097</span>
                     </a>
                   </div>
                 </div>
@@ -631,24 +628,22 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
                   {/* Contact channels footer block */}
                   <div className="bg-slate-100/80 border border-slate-200/60 p-5 rounded-2xl space-y-3.5">
-                    <span className="mega-menu-meta font-mono font-bold uppercase tracking-wider text-slate-500 block">KONTAKT ADRESSEN</span>
+                    <span className="mega-menu-meta font-mono font-bold uppercase tracking-wider text-slate-500 block">DIREKTKONTAKT</span>
                     
                     <a 
-                      href="mailto:hallo@performanceboost.ch"
+                      href="mailto:yathur@performanceboost.ch"
                       className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
                     >
                       <Mail className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
-                      <span>hallo@performanceboost.ch</span>
+                      <span>yathur@performanceboost.ch</span>
                     </a>
 
                     <a 
-                      href="https://linkedin.com/company/performanceboost"
-                      target="_blank"
-                      rel="noreferrer"
+                      href="tel:+41786754097"
                       className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
                     >
-                      <Linkedin className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
-                      <span>company/performanceboost</span>
+                      <Phone className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
+                      <span>+41 78 675 4097</span>
                     </a>
                   </div>
                 </div>
@@ -658,7 +653,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
             {/* STATIC FOOTER RETAINED */}
             <div className="bg-slate-100 border-t border-slate-200/80 py-6 px-6 sm:px-8 lg:px-10 z-15 text-center text-[10px] text-slate-400/90 font-mono tracking-widest uppercase mt-auto">
-              © {new Date().getFullYear()} performanceboost • graubünden • swiss-tuned b2b systemization
+              © {new Date().getFullYear()} performanceboost • graubünden • swiss-tuned revenue systemization
             </div>
 
           </motion.div>
