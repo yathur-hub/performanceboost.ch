@@ -97,43 +97,43 @@
 
 /* Central Mega-Menu Typography Tokens & Utility Classes */
 :root {
-  --font-size-mega-menu-heading: clamp(1.0625rem, 1rem + 0.3vw, 1.125rem);
-  --font-size-mega-menu-subheading: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
-  --font-size-mega-menu-link: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
-  --font-size-mega-menu-description: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
-  --font-size-mega-menu-meta: clamp(0.8125rem, 0.8rem + 0.1vw, 0.875rem);
+  --font-size-mega-menu-heading: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --font-size-mega-menu-subheading: 0.875rem;
+  --font-size-mega-menu-link: 0.8125rem;
+  --font-size-mega-menu-description: 0.75rem;
+  --font-size-mega-menu-meta: 0.6875rem;
   --line-height-mega-menu-heading: 1.35;
   --line-height-mega-menu-link: 1.4;
   --line-height-mega-menu-description: 1.45;
 }
 
 .mega-menu-heading {
-  font-size: var(--font-size-mega-menu-heading) !important;
-  line-height: var(--line-height-mega-menu-heading) !important;
-  font-weight: 700 !important;
+  font-size: var(--font-size-mega-menu-heading);
+  line-height: var(--line-height-mega-menu-heading);
+  font-weight: 700;
 }
 
 .mega-menu-subheading {
-  font-size: var(--font-size-mega-menu-subheading) !important;
-  line-height: var(--line-height-mega-menu-link) !important;
-  font-weight: 600 !important;
+  font-size: var(--font-size-mega-menu-subheading);
+  line-height: var(--line-height-mega-menu-link);
+  font-weight: 600;
 }
 
 .mega-menu-link {
-  font-size: var(--font-size-mega-menu-link) !important;
-  line-height: var(--line-height-mega-menu-link) !important;
-  font-weight: 600 !important;
+  font-size: var(--font-size-mega-menu-link);
+  line-height: var(--line-height-mega-menu-link);
+  font-weight: 600;
 }
 
 .mega-menu-desc {
-  font-size: var(--font-size-mega-menu-description) !important;
-  line-height: var(--line-height-mega-menu-description) !important;
-  font-weight: 500 !important;
+  font-size: var(--font-size-mega-menu-description);
+  line-height: var(--line-height-mega-menu-description);
+  font-weight: 400;
 }
 
 .mega-menu-meta {
-  font-size: var(--font-size-mega-menu-meta) !important;
-  line-height: 1.35 !important;
+  font-size: var(--font-size-mega-menu-meta);
+  line-height: 1.35;
 }
 
 /* Beautiful fading entering utilities for smooth transitions */

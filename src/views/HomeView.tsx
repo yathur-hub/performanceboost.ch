@@ -68,15 +68,23 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               Planbares <span className="text-[#686DF4] italic font-serif">Wachstum statt Zufall.</span>
             </motion.h1>
 
-            <motion.p 
+            <motion.div 
               variants={{
                 hidden: { opacity: 0, y: 12 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
               }}
-              className="text-slate-500 text-body-lg leading-relaxed max-w-2xl mx-auto font-medium"
+              className="text-slate-600 text-body-lg leading-relaxed max-w-2xl mx-auto font-medium space-y-3.5"
             >
-              performanceboost ist dein Revenue Growth Partner. Wir verbinden Growth Strategy, Demand Generation und Revenue Operations zu messbarem Wachstum — frei von Agentur-Theater.
-            </motion.p>
+              <p className="font-semibold text-slate-800 tracking-tight">
+                Kein Coaching. Kein Guru-Gehabe. Kein endloses Strategie-Gerede.
+              </p>
+              <p className="text-slate-600">
+                <span className="font-extrabold text-[#686DF4]">performanceboost</span> entwickelt funktionierende Wachstumsstrategien, setzt Marketing und Vertrieb konsequent um und misst sich an dem, was am Ende zählt: qualifizierte Anfragen, Umsatz und Wachstum.
+              </p>
+              <p className="font-serif italic font-extrabold text-[#686DF4] tracking-tight">
+                Substanz statt Lärm. Für pure Performance.
+              </p>
+            </motion.div>
 
             <motion.div 
               variants={{
@@ -118,7 +126,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center shadow-[var(--shadow-premium-md)] relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#686DF4]/2 rounded-full blur-xl pointer-events-none transition-transform duration-1000 group-hover:scale-150" />
           <div className="lg:col-span-6 xl:col-span-7 space-y-6">
-            <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">POSITIONIERUNG</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">Du brauchst keine Marketingagentur.</h2>
             <p className="text-slate-700 text-body font-semibold text-balance">
               Du brauchst einen Partner, der Wachstum systematisch aufbaut. Der Demand erzeugt, Leads qualifiziert, Marketing und Vertrieb verbindet und Revenue planbar macht.
@@ -311,7 +318,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-4">
-            <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">WATHUR-TUNED ROI</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Errechne dein Wachstumspotenzial</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
               Passe die Parameter an, um zu sehen, wie eine professionelle Trichter-Optimierung die Rentabilität deines gesamten Unternehmens vervielfacht.
