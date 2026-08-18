@@ -7,6 +7,7 @@ import InteractiveGrowthCalculator from '../components/InteractiveGrowthCalculat
 import RevenuePotenzialCheck from '../components/RevenuePotenzialCheck';
 import { motion, AnimatePresence } from 'motion/react';
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
+import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -31,17 +32,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       
       {/* HERO SECTION */}
       <section className="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden bg-white/60 backdrop-blur-xs">
-        {/* Soft background glows with elegant animated breathing scale effect */}
-        <motion.div 
-          animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
-          transition={{ duration: 12, ease: "easeInOut", repeat: Infinity }}
-          className="absolute top-20 left-10 w-80 h-80 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" 
-        />
-        <motion.div 
-          animate={{ scale: [1, 1.08, 1], opacity: [0.8, 1, 0.8] }}
-          transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, delay: 2 }}
-          className="absolute bottom-10 right-10 w-110 h-110 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" 
-        />
+        {/* Subtles, high-end multi-layered growth & data background visual */}
+        <HeroGrowthLayer />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
