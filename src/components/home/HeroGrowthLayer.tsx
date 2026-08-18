@@ -36,17 +36,126 @@ export const HeroGrowthLayer: React.FC = () => {
         <rect width="100%" height="100%" fill="url(#hero-fine-grid)" />
       </svg>
 
-      {/* LAYER 2: Abstract Signal Path System (Routed around periphery) */}
+      {/* LAYER 2: Abstract Signal Path System */}
       <div className="absolute inset-0 flex items-center justify-center">
+        {/* MOBILE VECTOR (Optimized for portrait smartphone screens < 640px) */}
         <svg
-          className="w-full h-full min-w-[1000px] max-w-[1600px] mx-auto opacity-100"
+          className="w-full h-full sm:hidden opacity-100"
+          viewBox="0 0 400 680"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <defs>
+            <linearGradient id="mobileSignalGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#C9CCFD" stopOpacity="0.40" />
+              <stop offset="30%" stopColor="#686DF4" stopOpacity="0.80" />
+              <stop offset="70%" stopColor="#656BEF" stopOpacity="1" />
+              <stop offset="92%" stopColor="#686DF4" stopOpacity="0.75" />
+              <stop offset="100%" stopColor="#C9CCFD" stopOpacity="0.30" />
+            </linearGradient>
+
+            <linearGradient id="mobileEchoGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#505050" stopOpacity="0.10" />
+              <stop offset="50%" stopColor="#C9CCFD" stopOpacity="0.45" />
+              <stop offset="100%" stopColor="#686DF4" stopOpacity="0.15" />
+            </linearGradient>
+
+            <filter id="mobileSignalGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+
+            <filter id="mobileDepthBlur" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="14" />
+            </filter>
+          </defs>
+
+          {/* Deep Ambient Glow Ribbon under mobile ascent */}
+          <path
+            d="M 15 610 C 110 600, 200 550, 270 420 C 330 310, 355 190, 385 75"
+            fill="none"
+            stroke="#686DF4"
+            strokeWidth="14"
+            strokeOpacity="0.16"
+            filter="url(#mobileDepthBlur)"
+          />
+
+          {/* Mobile Secondary Echo Path */}
+          <path
+            d="M 15 630 C 110 620, 200 570, 270 440 C 330 330, 355 210, 385 95"
+            fill="none"
+            stroke="url(#mobileEchoGradient)"
+            strokeWidth="1.6"
+            strokeDasharray="4 6"
+          />
+
+          {/* Mobile Main Performance Signal Line */}
+          <motion.path
+            d="M 15 610 C 110 600, 200 550, 270 420 C 330 310, 355 190, 385 75"
+            fill="none"
+            stroke="url(#mobileSignalGradient)"
+            strokeWidth="3.2"
+            strokeLinecap="round"
+            filter="url(#mobileSignalGlow)"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
+          />
+
+          {/* Mobile Traveling Pulse Dot */}
+          <motion.circle
+            r="3.5"
+            fill="#FFFFFF"
+            filter="url(#mobileSignalGlow)"
+            animate={{
+              cx: [15, 160, 270, 385],
+              cy: [610, 580, 420, 75],
+              opacity: [0, 0.9, 0.95, 0],
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          {/* Mobile Anchor Nodes */}
+          <g transform="translate(270, 420)">
+            <circle r="3" fill="#686DF4" opacity="0.85" />
+            <motion.circle
+              r="8"
+              fill="none"
+              stroke="#686DF4"
+              strokeWidth="0.8"
+              animate={{ scale: [0.85, 1.25, 0.85], opacity: [0.5, 0, 0.5] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </g>
+
+          <g transform="translate(355, 190)">
+            <circle r="3" fill="#656BEF" opacity="0.85" />
+            <motion.circle
+              r="10"
+              fill="none"
+              stroke="#C9CCFD"
+              strokeWidth="0.8"
+              animate={{ scale: [0.9, 1.2, 0.9], opacity: [0.4, 0.05, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+            />
+          </g>
+        </svg>
+
+        {/* DESKTOP / TABLET VECTOR (Optimized for widescreen >= 640px) */}
+        <svg
+          className="hidden sm:block w-full h-full max-w-[1600px] mx-auto opacity-100"
           viewBox="0 0 1200 600"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
-            {/* Primary Signal Gradient: Defined at left origin, rich mid-ascent, soft finish at top right (+25% visibility) */}
+            {/* Primary Signal Gradient: Defined at left origin, rich mid-ascent, soft finish at top right */}
             <linearGradient id="abstractSignalGradient" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#C9CCFD" stopOpacity="0.30" />
               <stop offset="35%" stopColor="#686DF4" stopOpacity="0.70" />
@@ -154,9 +263,15 @@ export const HeroGrowthLayer: React.FC = () => {
 
       {/* LAYER 4: Radial Text Overlay Mask - Ensures 100% clean legibility across central text */}
       <div 
-        className="absolute inset-0 pointer-events-none" 
+        className="absolute inset-0 pointer-events-none hidden sm:block" 
         style={{
           background: 'radial-gradient(circle at 50% 40%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.62) 48%, rgba(255,255,255,0) 86%)'
+        }}
+      />
+      <div 
+        className="absolute inset-0 pointer-events-none sm:hidden" 
+        style={{
+          background: 'radial-gradient(circle at 50% 45%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.45) 55%, rgba(255,255,255,0) 88%)'
         }}
       />
     </div>

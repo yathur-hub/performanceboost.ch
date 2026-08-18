@@ -8,6 +8,7 @@ import RevenuePotenzialCheck from '../components/RevenuePotenzialCheck';
 import { motion, AnimatePresence } from 'motion/react';
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
+import { RevenueNavigator } from '../components/home/RevenueNavigator';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -15,6 +16,7 @@ interface HomeViewProps {
 
 export default function HomeView({ onNavigate }: HomeViewProps) {
   const [showPotenzialCheck, setShowPotenzialCheck] = useState(false);
+  const [showRevenueNavigator, setShowRevenueNavigator] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleConsultationClick = (e: React.MouseEvent) => {
@@ -87,17 +89,18 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             >
               <button
                 type="button"
-                onClick={() => onNavigate('/kontakt')}
+                onClick={() => setShowPotenzialCheck(true)}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-display font-bold px-8 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-center cursor-pointer text-xs sm:text-sm tracking-wide"
               >
-                Wachstumsgespräch buchen <span className="text-xs font-normal text-slate-100 opacity-90">(30 Min, kostenlos)</span> <ArrowRight className="w-5 h-5 text-white" />
+                Potenzial-Check <span className="text-xs font-normal text-slate-100 opacity-90">(unter 60 Sek)</span> <ArrowRight className="w-5 h-5 text-white" />
               </button>
               <button
                 type="button"
-                onClick={() => setShowPotenzialCheck(true)}
+                onClick={() => setShowRevenueNavigator(true)}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-bold px-8 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-center cursor-pointer text-xs sm:text-sm tracking-wide select-none outline-none"
               >
-                Potenzial-Check <span className="text-xs font-normal text-slate-450 opacity-90">(unter 60 Sek)</span>
+                <Compass className="w-4 h-4 text-[#686DF4]" />
+                <span>Revenue Navigator</span>
               </button>
             </motion.div>
 
@@ -582,6 +585,16 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <RevenuePotenzialCheck 
             onClose={() => setShowPotenzialCheck(false)} 
             onNavigate={onNavigate}
+          />
+        )}
+        {showRevenueNavigator && (
+          <RevenueNavigator 
+            isModal={true}
+            onClose={() => setShowRevenueNavigator(false)} 
+            onNavigate={(path) => {
+              setShowRevenueNavigator(false);
+              onNavigate(path);
+            }}
           />
         )}
       </AnimatePresence>
