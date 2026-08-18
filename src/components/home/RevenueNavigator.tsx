@@ -22,6 +22,9 @@ import {
   Compass
 } from 'lucide-react';
 import { PREMIUM_EASE } from '../../lib/motion';
+import { trackEvent } from '../../lib/analytics';
+
+const TOOL_NAME = 'revenue_navigator';
 
 // Types
 export type ProblemId = 
@@ -267,6 +270,8 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
   const [selectedProblem, setSelectedProblem] = useState<ProblemId | null>(null);
   const [selectedSetup, setSelectedSetup] = useState<SetupId | null>(null);
 
+  useEffect(() => { trackEvent('tool_view', { tool_name: TOOL_NAME, is_modal: isModal }) }, [isModal]);
+
   // Close on Escape key if in modal mode
   useEffect(() => {
     if (!isModal && !onClose) return;
@@ -290,6 +295,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
 
   const handleSelectProblem = (id: ProblemId) => {
     setSelectedProblem(id);
+    trackEvent('tool_step', { tool_name: TOOL_NAME, step: 1, step_id: 'problem', value: id });
     // Smooth auto-advance to step 2
     setTimeout(() => {
       setCurrentStep(2);
@@ -298,6 +304,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
 
   const handleSelectSetup = (id: SetupId) => {
     setSelectedSetup(id);
+    trackEvent('tool_step', { tool_name: TOOL_NAME, step: 2, step_id: 'setup', value: id });
     // Smooth auto-advance to step 3
     setTimeout(() => {
       setCurrentStep(3);
@@ -325,6 +332,12 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
         ...SERVICE_META[RECOMMENDATION_MATRIX[selectedProblem][selectedSetup].slug],
       }
     : null;
+
+  useEffect(() => {
+    if (recommendation) {
+      trackEvent('tool_complete', { tool_name: TOOL_NAME, result_label: recommendation.slug });
+    }
+  }, [recommendation?.slug]);
 
   const cardContent = (
     <div className={`bg-white border border-[#E0E0E0] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[var(--shadow-premium-md)] max-w-4xl mx-auto relative overflow-hidden ${isModal ? 'w-full max-h-[88vh] overflow-y-auto' : ''}`}>
@@ -577,7 +590,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
                 <button
                   type="button"
-                  onClick={() => navigateTo(`/leistungen/${recommendation.slug}`)}
+                  onClick={() => { trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'mehr_erfahren', result_label: recommendation.slug }); navigateTo(`/leistungen/${recommendation.slug}`) }}
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-display font-bold px-6 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
                 >
                   <span>Mehr zu {recommendation.title.split('&')[0].trim()} erfahren</span>
@@ -586,7 +599,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
 
                 <button
                   type="button"
-                  onClick={() => navigateTo('/kontakt')}
+                  onClick={() => { trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'gespraech_buchen', result_label: recommendation.slug }); navigateTo('/kontakt') }}
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-semibold px-6 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
                 >
                   <span>Direkt unverbindliches Gespräch buchen</span>

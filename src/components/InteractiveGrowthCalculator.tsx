@@ -3,9 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Sparkles, ArrowRight, TrendingUp, Calculator, RefreshCw, HelpCircle, Layers, Settings2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { trackEvent } from '../lib/analytics';
+
+const TOOL_NAME = 'revenue_budget_simulator';
 
 export default function InteractiveGrowthCalculator() {
   // Input States
@@ -15,6 +18,17 @@ export default function InteractiveGrowthCalculator() {
   const [leadConversion, setLeadConversion] = useState<number>(1.2); // Inbound-zu-Lead in %
   const [salesConversion, setSalesConversion] = useState<number>(8.0); // Lead-zu-Deal Close-Rate in %
   const [dealValue, setDealValue] = useState<number>(15000); // Ø Auftragsvolumen / Deal (ACV) in CHF
+
+  useEffect(() => { trackEvent('tool_view', { tool_name: TOOL_NAME }) }, []);
+
+  const hasInteractedRef = useRef(false);
+  function commitStep(stepId: string, value: number) {
+    trackEvent('tool_step', { tool_name: TOOL_NAME, step_id: stepId, value });
+    if (!hasInteractedRef.current) {
+      hasInteractedRef.current = true;
+      trackEvent('tool_complete', { tool_name: TOOL_NAME });
+    }
+  }
 
   // Current calculated metrics with B2B Calibration Engine
   const currentMetrics = useMemo(() => {
@@ -83,6 +97,7 @@ export default function InteractiveGrowthCalculator() {
   };
 
   const handleReset = () => {
+    trackEvent('tool_reset', { tool_name: TOOL_NAME });
     setBudget(2500);
     setOrganic(500);
     setCpc(1.50);
@@ -139,6 +154,9 @@ export default function InteractiveGrowthCalculator() {
                   step="250"
                   value={budget}
                   onChange={(e) => setBudget(Number(e.target.value))}
+                  onMouseUp={(e) => commitStep('ads_budget', Number(e.currentTarget.value))}
+                  onTouchEnd={(e) => commitStep('ads_budget', Number(e.currentTarget.value))}
+                  onKeyUp={(e) => commitStep('ads_budget', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-250 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
                 <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
@@ -161,6 +179,9 @@ export default function InteractiveGrowthCalculator() {
                   step="0.10"
                   value={cpc}
                   onChange={(e) => setCpc(Number(e.target.value))}
+                  onMouseUp={(e) => commitStep('cpc', Number(e.currentTarget.value))}
+                  onTouchEnd={(e) => commitStep('cpc', Number(e.currentTarget.value))}
+                  onKeyUp={(e) => commitStep('cpc', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
                 <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
@@ -183,6 +204,9 @@ export default function InteractiveGrowthCalculator() {
                   step="100"
                   value={organic}
                   onChange={(e) => setOrganic(Number(e.target.value))}
+                  onMouseUp={(e) => commitStep('organic_sessions', Number(e.currentTarget.value))}
+                  onTouchEnd={(e) => commitStep('organic_sessions', Number(e.currentTarget.value))}
+                  onKeyUp={(e) => commitStep('organic_sessions', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-slate-800"
                 />
                 <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
@@ -232,6 +256,9 @@ export default function InteractiveGrowthCalculator() {
                   step="0.1"
                   value={leadConversion}
                   onChange={(e) => setLeadConversion(Number(e.target.value))}
+                  onMouseUp={(e) => commitStep('lead_conversion_rate', Number(e.currentTarget.value))}
+                  onTouchEnd={(e) => commitStep('lead_conversion_rate', Number(e.currentTarget.value))}
+                  onKeyUp={(e) => commitStep('lead_conversion_rate', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
                 <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
@@ -257,6 +284,9 @@ export default function InteractiveGrowthCalculator() {
                   step="0.5"
                   value={salesConversion}
                   onChange={(e) => setSalesConversion(Number(e.target.value))}
+                  onMouseUp={(e) => commitStep('sales_close_rate', Number(e.currentTarget.value))}
+                  onTouchEnd={(e) => commitStep('sales_close_rate', Number(e.currentTarget.value))}
+                  onKeyUp={(e) => commitStep('sales_close_rate', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
                 <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
@@ -279,6 +309,9 @@ export default function InteractiveGrowthCalculator() {
                   step="2000"
                   value={dealValue}
                   onChange={(e) => setDealValue(Number(e.target.value))}
+                  onMouseUp={(e) => commitStep('deal_value', Number(e.currentTarget.value))}
+                  onTouchEnd={(e) => commitStep('deal_value', Number(e.currentTarget.value))}
+                  onKeyUp={(e) => commitStep('deal_value', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
                 <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
@@ -367,6 +400,7 @@ export default function InteractiveGrowthCalculator() {
               href="/kontakt"
               onClick={(e) => {
                 e.preventDefault();
+                trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'Umsatz heben' });
                 window.dispatchEvent(new CustomEvent('navigation-change', { detail: '/kontakt' }));
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}

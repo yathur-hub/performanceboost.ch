@@ -3,17 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { 
-  User, 
-  Mail, 
-  Phone, 
-  ArrowRight, 
-  CheckCircle2, 
-  AlertCircle 
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  User,
+  Mail,
+  Phone,
+  ArrowRight,
+  CheckCircle2,
+  AlertCircle
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PREMIUM_EASE, DURATIONS, buttonPressProps } from '../lib/motion';
+import { trackEvent } from '../lib/analytics';
 
 interface ContactFormProps {
   onSuccess?: () => void;
@@ -44,9 +45,28 @@ export default function ContactForm({
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
 
+  useEffect(() => {
+    trackEvent('form_view', { form_name: formName, source });
+  }, [formName, source]);
+
+  const touchedFieldsRef = useRef<Set<string>>(new Set());
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFieldBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    if (touchedFieldsRef.current.has(name)) return;
+    touchedFieldsRef.current.add(name);
+    // Never log the raw value for free-text/PII fields — only completion + non-PII selects.
+    const isPii = ['firstName', 'lastName', 'email', 'phone', 'message'].includes(name);
+    trackEvent('form_field_complete', {
+      form_name: formName,
+      field: name,
+      value: isPii ? (value !== '' ? 'filled' : 'empty') : value,
+    });
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -54,6 +74,7 @@ export default function ContactForm({
     setIsSubmitting(true);
     setShowSuccess(false);
     setShowError(false);
+    trackEvent('form_submit_attempt', { form_name: formName, source, annual_revenue: formData.annualRevenue });
 
     const payload = {
       salutation: formData.salutation,
@@ -88,6 +109,13 @@ export default function ContactForm({
         throw new Error(`n8n webhook failed with status ${response.status}`);
       }
 
+      trackEvent('generate_lead', {
+        form_name: formName,
+        source,
+        annual_revenue: payload.annualRevenue,
+        salutation: payload.salutation,
+      });
+
       setShowSuccess(true);
       // Reset form fields
       setFormData({
@@ -105,6 +133,7 @@ export default function ContactForm({
       }
     } catch (err) {
       console.error("Form submission failed error details:", err);
+      trackEvent('form_submit_error', { form_name: formName, source });
       setShowError(true);
     } finally {
       setIsSubmitting(false);
@@ -123,6 +152,7 @@ export default function ContactForm({
             required
             value={formData.salutation}
             onChange={handleInputChange}
+            onBlur={handleFieldBlur}
             className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold cursor-pointer"
           >
             <option value="">Bitte wählen...</option>
@@ -143,6 +173,7 @@ export default function ContactForm({
               required
               value={formData.firstName}
               onChange={handleInputChange}
+              onBlur={handleFieldBlur}
               placeholder="Sven"
               className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
             />
@@ -163,6 +194,7 @@ export default function ContactForm({
               required
               value={formData.lastName}
               onChange={handleInputChange}
+              onBlur={handleFieldBlur}
               placeholder="Meier"
               className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
             />
@@ -181,6 +213,7 @@ export default function ContactForm({
               required
               value={formData.email}
               onChange={handleInputChange}
+              onBlur={handleFieldBlur}
               placeholder="sven@firma.ch"
               className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
             />
@@ -200,6 +233,7 @@ export default function ContactForm({
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
+              onBlur={handleFieldBlur}
               placeholder="+41 79 123 45 67"
               className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
             />
@@ -215,6 +249,7 @@ export default function ContactForm({
             required
             value={formData.annualRevenue}
             onChange={handleInputChange}
+            onBlur={handleFieldBlur}
             className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold cursor-pointer"
           >
             <option value="">Bitte wählen...</option>
@@ -236,6 +271,7 @@ export default function ContactForm({
           required
           value={formData.message}
           onChange={handleInputChange}
+          onBlur={handleFieldBlur}
           placeholder="Bitte skizziere kurz dein Anliegen — wo hängst du z.B. bei der Lead-Gen oder HubSpot-Automation?"
           className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 px-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold resize-y"
         />

@@ -190,6 +190,7 @@ export default function DataClarityCheck() {
   };
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "data-analytics", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 

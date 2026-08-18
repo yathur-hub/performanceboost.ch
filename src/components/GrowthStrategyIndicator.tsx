@@ -111,6 +111,7 @@ export default function GrowthStrategyIndicator() {
   const texts = getOutputTexts();
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "growth-strategy", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 

@@ -88,6 +88,7 @@ export default function RevenuLeakDetector() {
   }, [results]);
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "revenue-operations", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 

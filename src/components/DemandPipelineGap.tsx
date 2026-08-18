@@ -65,6 +65,7 @@ export default function DemandPipelineGap() {
   }, [results]);
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "demand-generation", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 

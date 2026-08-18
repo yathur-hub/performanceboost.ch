@@ -148,6 +148,7 @@ export default function LeadGenerationScore() {
   };
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "lead-generation", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 

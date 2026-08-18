@@ -24,15 +24,13 @@ export function formatNumber(value: number, decimals: number = 0): string {
   return parts.join('.');
 }
 
-// Unified tracking function with fallback logging
+// Unified tracking function — pushes to the GTM dataLayer (GTM-PJ9FBZ4V is loaded in index.html).
+// Never pass PII (email, name, phone, company, free-text) in props — GA4 prohibits it.
 export function track(event: string, props: Record<string, any>) {
-  if (typeof window !== "undefined") {
-    const win = window as any;
-    if (win.analytics && typeof win.analytics.track === "function") {
-      win.analytics.track(event, props);
-    }
-  }
-  console.log("[track]", event, props);
+  if (typeof window === "undefined") return;
+  const win = window as any;
+  win.dataLayer = win.dataLayer || [];
+  win.dataLayer.push({ event, ...props });
 }
 
 export interface AdditionalField {
@@ -73,10 +71,12 @@ export function LeadCaptureForm({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Tracking call based on capture
+    // Tracking call based on capture — never send raw PII (email/name/company) as event params.
     track("hero_tool_lead_captured", {
       page: pageId,
-      ...formData
+      has_email: !!formData.email,
+      has_firstname: !!formData.firstname,
+      has_company: !!formData.company,
     });
 
     // CRM Post Mock placeholder as specified in system instructions

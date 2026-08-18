@@ -204,6 +204,7 @@ export default function AIReadinessCheck() {
   };
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "ai-automation", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 

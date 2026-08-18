@@ -160,6 +160,7 @@ const HEBEL_LIB: Record<string, { title: string; text: string }> = {
 
 // 5. Navigation Change Event Helper
 const handleContactNavigation = (onNavigate?: (path: string) => void) => {
+  track('hero_tool_cta_click', { page: 'revenue-potenzial-check', variant: 'booking' });
   if (onNavigate) {
     onNavigate('/kontakt');
   } else {

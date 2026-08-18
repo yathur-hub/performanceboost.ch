@@ -191,6 +191,7 @@ export default function AutomationMaturityCheck() {
   }, [stufe, allSet, jaCount, naechsterStepKey]);
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "marketing-automation", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 

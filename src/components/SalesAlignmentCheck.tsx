@@ -126,6 +126,7 @@ export default function SalesAlignmentCheck() {
   }, [score, allSet, levelInfo.key, topFrictionKeys]);
 
   const handleBooking = () => {
+    track("hero_tool_cta_click", { page: "sales-enablement", variant: "booking" });
     window.dispatchEvent(new CustomEvent('open-contact-modal'));
   };
 
