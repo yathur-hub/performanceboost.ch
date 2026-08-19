@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Quote, ChevronLeft, ChevronRight, Building2, Sparkles } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Sparkles, Pause, Play } from 'lucide-react';
 import { PREMIUM_EASE } from '../../lib/motion';
 
 export interface TestimonialItem {
@@ -84,11 +84,13 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
   }
 ];
 
+const AUTOPLAY_INTERVAL_MS = 30000; // 30 seconds
+
 const slideVariants = {
   enter: (direction: number) => ({
-    x: direction > 0 ? 40 : -40,
+    x: direction > 0 ? 30 : -30,
     opacity: 0,
-    scale: 0.98
+    scale: 0.99
   }),
   center: {
     x: 0,
@@ -100,9 +102,9 @@ const slideVariants = {
     }
   },
   exit: (direction: number) => ({
-    x: direction < 0 ? 40 : -40,
+    x: direction < 0 ? 30 : -30,
     opacity: 0,
-    scale: 0.98,
+    scale: 0.99,
     transition: {
       duration: 0.35,
       ease: PREMIUM_EASE
@@ -112,6 +114,7 @@ const slideVariants = {
 
 export function ClientTestimonials() {
   const [[currentIndex, direction], setPage] = useState<[number, number]>([0, 0]);
+  const [isPaused, setIsPaused] = useState(false);
   const [imgError, setImgError] = useState<Record<string, boolean>>({});
 
   const total = TESTIMONIALS_DATA.length;
@@ -132,7 +135,18 @@ export function ClientTestimonials() {
     setPage([targetIndex, newDir]);
   };
 
-  // Keyboard navigation
+  // 30-second automatic cycle (pauses when user hovers over card)
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      paginate(1);
+    }, AUTOPLAY_INTERVAL_MS);
+
+    return () => clearInterval(timer);
+  }, [isPaused, paginate, currentIndex]);
+
+  // Keyboard navigation (Left / Right arrow keys)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
@@ -158,7 +172,7 @@ export function ClientTestimonials() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: PREMIUM_EASE }}
-      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12"
+      className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10"
       id="kundenreferenzen"
     >
       {/* Header with Navigation Controls */}
@@ -175,9 +189,9 @@ export function ClientTestimonials() {
           </p>
         </div>
 
-        {/* Carousel Navigation Buttons */}
+        {/* Carousel Navigation Buttons & Counter */}
         <div className="flex items-center gap-3 self-start md:self-end shrink-0">
-          <span className="text-xs font-mono font-bold text-slate-400 mr-2">
+          <span className="text-xs font-mono font-bold text-slate-400 mr-1.5 select-none">
             <span className="text-slate-900 font-semibold">{String(currentIndex + 1).padStart(2, '0')}</span> / {String(total).padStart(2, '0')}
           </span>
 
@@ -201,29 +215,12 @@ export function ClientTestimonials() {
         </div>
       </div>
 
-      {/* Company Selector Pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
-        {TESTIMONIALS_DATA.map((item, idx) => {
-          const isActive = idx === currentIndex;
-          return (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => goToIndex(idx)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-display font-bold transition-all shrink-0 cursor-pointer ${
-                isActive
-                  ? 'bg-[#686DF4] text-white shadow-sm shadow-[#686DF4]/20 scale-102'
-                  : 'bg-white hover:bg-slate-100/80 text-slate-600 border border-slate-200/80 hover:text-slate-900'
-              }`}
-            >
-              {item.company}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Single Carousel Card Container */}
-      <div className="relative min-h-[380px] sm:min-h-[340px] flex items-center">
+      {/* Single Carousel Card Container with Hover-Pause */}
+      <div 
+        className="relative min-h-[380px] sm:min-h-[340px] flex items-center"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={current.id}
@@ -237,7 +234,21 @@ export function ClientTestimonials() {
             {/* Subtle decorative background glow */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-[#686DF4]/3 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="relative z-10 space-y-8">
+            {/* 30-second progress bar line at the top */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100 overflow-hidden">
+              <motion.div
+                key={`progress-${current.id}-${isPaused ? 'paused' : 'running'}`}
+                initial={{ width: '0%' }}
+                animate={{ width: isPaused ? undefined : '100%' }}
+                transition={{
+                  duration: AUTOPLAY_INTERVAL_MS / 1000,
+                  ease: 'linear'
+                }}
+                className="h-full bg-[#686DF4]/40"
+              />
+            </div>
+
+            <div className="relative z-10 space-y-8 pt-1">
               {/* Header inside Card: Quote mark, Company & Highlight */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
                 <div className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#686DF4] font-display">
@@ -260,7 +271,7 @@ export function ClientTestimonials() {
                 «{current.quote}»
               </blockquote>
 
-              {/* Author Info Bar */}
+              {/* Author Info Bar & Micro-Dots */}
               <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-slate-100">
                 <div className="flex items-center gap-4">
                   {/* Portrait Avatar */}
@@ -295,7 +306,7 @@ export function ClientTestimonials() {
                 </div>
 
                 {/* Micro pagination dots for direct navigation */}
-                <div className="hidden sm:flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5">
                   {TESTIMONIALS_DATA.map((_, dotIdx) => (
                     <button
                       key={dotIdx}
