@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
 import { RevenueNavigator } from '../components/home/RevenueNavigator';
+import { ClientTestimonials } from '../components/home/ClientTestimonials';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -134,6 +135,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
         </div>
       </motion.section>
+
+      {/* CLIENT TESTIMONIALS SECTION */}
+      <ClientTestimonials />
 
       {/* PROBLEM SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
