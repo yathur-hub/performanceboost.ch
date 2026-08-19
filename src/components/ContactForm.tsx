@@ -10,7 +10,8 @@ import {
   Phone,
   ArrowRight,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  ChevronDown
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PREMIUM_EASE, DURATIONS, buttonPressProps } from '../lib/motion';
@@ -141,157 +142,194 @@ export default function ContactForm({
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className={`space-y-4 ${className}`}>
+    <form onSubmit={handleFormSubmit} className={`space-y-4 sm:space-y-5 ${className}`}>
+      {/* ROW 1: Anrede & Vorname */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.2">
-          <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">
-            Anrede (Pflichtfeld)
-          </label>
-          <select
-            name="salutation"
-            required
-            value={formData.salutation}
-            onChange={handleInputChange}
-            onBlur={handleFieldBlur}
-            className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold cursor-pointer"
-          >
-            <option value="">Bitte wählen...</option>
-            <option value="Herr">Herr</option>
-            <option value="Frau">Frau</option>
-          </select>
-        </div>
-
-        <div className="space-y-1.2">
-          <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">
-            Vorname (Pflichtfeld)
+        {/* Anrede */}
+        <div className="space-y-1.5">
+          <label htmlFor="form-salutation" className="block text-xs font-semibold text-slate-800 tracking-tight">
+            <span>Anrede</span>
+            <span className="text-[#686DF4] ml-1 font-bold" aria-hidden="true">*</span>
           </label>
           <div className="relative">
-            <User className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+            <select
+              id="form-salutation"
+              name="salutation"
+              required
+              value={formData.salutation}
+              onChange={handleInputChange}
+              onBlur={handleFieldBlur}
+              className={`w-full appearance-none bg-slate-50/80 hover:bg-slate-50/95 focus:bg-white border border-slate-200/90 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/12 rounded-xl py-2.5 sm:py-3 px-3.5 pr-10 text-xs sm:text-sm font-medium transition-all cursor-pointer outline-none ${
+                formData.salutation ? 'text-slate-900' : 'text-slate-400 font-normal'
+              }`}
+            >
+              <option value="" disabled>Bitte wählen...</option>
+              <option value="Herr" className="text-slate-900 font-medium">Herr</option>
+              <option value="Frau" className="text-slate-900 font-medium">Frau</option>
+            </select>
+            <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Vorname */}
+        <div className="space-y-1.5">
+          <label htmlFor="form-firstName" className="block text-xs font-semibold text-slate-800 tracking-tight">
+            <span>Vorname</span>
+            <span className="text-[#686DF4] ml-1 font-bold" aria-hidden="true">*</span>
+          </label>
+          <div className="relative group">
+            <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-[#686DF4] transition-colors pointer-events-none" />
             <input 
+              id="form-firstName"
               type="text" 
               name="firstName"
               required
               value={formData.firstName}
               onChange={handleInputChange}
               onBlur={handleFieldBlur}
-              placeholder="Sven"
-              className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
+              placeholder="z.B. Sven"
+              className="w-full bg-slate-50/80 hover:bg-slate-50/95 focus:bg-white border border-slate-200/90 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/12 rounded-xl py-2.5 sm:py-3 pl-10 pr-3.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400/80 placeholder:font-normal font-medium transition-all outline-none"
             />
           </div>
         </div>
       </div>
 
+      {/* ROW 2: Nachname & E-Mail */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.2">
-          <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">
-            Nachname (Pflichtfeld)
+        {/* Nachname */}
+        <div className="space-y-1.5">
+          <label htmlFor="form-lastName" className="block text-xs font-semibold text-slate-800 tracking-tight">
+            <span>Nachname</span>
+            <span className="text-[#686DF4] ml-1 font-bold" aria-hidden="true">*</span>
           </label>
-          <div className="relative">
-            <User className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+          <div className="relative group">
+            <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-[#686DF4] transition-colors pointer-events-none" />
             <input 
+              id="form-lastName"
               type="text" 
               name="lastName"
               required
               value={formData.lastName}
               onChange={handleInputChange}
               onBlur={handleFieldBlur}
-              placeholder="Meier"
-              className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
+              placeholder="z.B. Meier"
+              className="w-full bg-slate-50/80 hover:bg-slate-50/95 focus:bg-white border border-slate-200/90 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/12 rounded-xl py-2.5 sm:py-3 pl-10 pr-3.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400/80 placeholder:font-normal font-medium transition-all outline-none"
             />
           </div>
         </div>
 
-        <div className="space-y-1.2">
-          <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">
-            E-Mail-Adresse (Pflichtfeld)
+        {/* E-Mail */}
+        <div className="space-y-1.5">
+          <label htmlFor="form-email" className="block text-xs font-semibold text-slate-800 tracking-tight">
+            <span>E-Mail-Adresse</span>
+            <span className="text-[#686DF4] ml-1 font-bold" aria-hidden="true">*</span>
           </label>
-          <div className="relative">
-            <Mail className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+          <div className="relative group">
+            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-[#686DF4] transition-colors pointer-events-none" />
             <input 
+              id="form-email"
               type="email" 
               name="email"
               required
               value={formData.email}
               onChange={handleInputChange}
               onBlur={handleFieldBlur}
-              placeholder="sven@firma.ch"
-              className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
+              placeholder="sven.meier@unternehmen.ch"
+              className="w-full bg-slate-50/80 hover:bg-slate-50/95 focus:bg-white border border-slate-200/90 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/12 rounded-xl py-2.5 sm:py-3 pl-10 pr-3.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400/80 placeholder:font-normal font-medium transition-all outline-none"
             />
           </div>
         </div>
       </div>
 
+      {/* ROW 3: Telefonnummer & Jahresumsatz */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.2">
-          <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">
-            Telefonnummer (optional)
+        {/* Telefonnummer (Pflichtfeld) */}
+        <div className="space-y-1.5">
+          <label htmlFor="form-phone" className="block text-xs font-semibold text-slate-800 tracking-tight">
+            <span>Telefonnummer</span>
+            <span className="text-[#686DF4] ml-1 font-bold" aria-hidden="true">*</span>
           </label>
-          <div className="relative">
-            <Phone className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+          <div className="relative group">
+            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-[#686DF4] transition-colors pointer-events-none" />
             <input 
+              id="form-phone"
               type="tel" 
               name="phone"
+              required
               value={formData.phone}
               onChange={handleInputChange}
               onBlur={handleFieldBlur}
               placeholder="+41 79 123 45 67"
-              className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 pl-9 pr-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
+              className="w-full bg-slate-50/80 hover:bg-slate-50/95 focus:bg-white border border-slate-200/90 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/12 rounded-xl py-2.5 sm:py-3 pl-10 pr-3.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400/80 placeholder:font-normal font-medium transition-all outline-none"
             />
           </div>
         </div>
 
-        <div className="space-y-1.2">
-          <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">
-            Jährlicher Umsatz (Pflichtfeld)
+        {/* Jahresumsatz */}
+        <div className="space-y-1.5">
+          <label htmlFor="form-revenue" className="block text-xs font-semibold text-slate-800 tracking-tight">
+            <span>Jährlicher Umsatz</span>
+            <span className="text-[#686DF4] ml-1 font-bold" aria-hidden="true">*</span>
           </label>
-          <select
-            name="annualRevenue"
-            required
-            value={formData.annualRevenue}
-            onChange={handleInputChange}
-            onBlur={handleFieldBlur}
-            className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold cursor-pointer"
-          >
-            <option value="">Bitte wählen...</option>
-            <option value="under_1m">Unter CHF 1 Mio.</option>
-            <option value="1m_5m">CHF 1 Mio. – CHF 5 Mio.</option>
-            <option value="5m_20m">CHF 5 Mio. – CHF 20 Mio.</option>
-            <option value="over_20m">Über CHF 20 Mio.</option>
-          </select>
+          <div className="relative">
+            <select
+              id="form-revenue"
+              name="annualRevenue"
+              required
+              value={formData.annualRevenue}
+              onChange={handleInputChange}
+              onBlur={handleFieldBlur}
+              className={`w-full appearance-none bg-slate-50/80 hover:bg-slate-50/95 focus:bg-white border border-slate-200/90 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/12 rounded-xl py-2.5 sm:py-3 px-3.5 pr-10 text-xs sm:text-sm font-medium transition-all cursor-pointer outline-none ${
+                formData.annualRevenue ? 'text-slate-900' : 'text-slate-400 font-normal'
+              }`}
+            >
+              <option value="" disabled>Grössenordnung wählen...</option>
+              <option value="under_1m" className="text-slate-900 font-medium">Unter CHF 1 Mio.</option>
+              <option value="1m_5m" className="text-slate-900 font-medium">CHF 1 Mio. – CHF 5 Mio.</option>
+              <option value="5m_20m" className="text-slate-900 font-medium">CHF 5 Mio. – CHF 20 Mio.</option>
+              <option value="over_20m" className="text-slate-900 font-medium">Über CHF 20 Mio.</option>
+            </select>
+            <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+          </div>
         </div>
       </div>
 
-      <div className="space-y-1.2">
-        <label className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wider">
-          Deine Nachricht (Pflichtfeld)
+      {/* ROW 4: Nachricht */}
+      <div className="space-y-1.5">
+        <label htmlFor="form-message" className="block text-xs font-semibold text-slate-800 tracking-tight">
+          <span>Deine Nachricht</span>
+          <span className="text-[#686DF4] ml-1 font-bold" aria-hidden="true">*</span>
         </label>
         <textarea 
+          id="form-message"
           name="message"
           rows={3}
           required
           value={formData.message}
           onChange={handleInputChange}
           onBlur={handleFieldBlur}
-          placeholder="Bitte skizziere kurz dein Anliegen — wo hängst du z.B. bei der Lead-Gen oder HubSpot-Automation?"
-          className="w-full bg-[#f6f6f6]/80 border border-slate-205 rounded-xl py-2.5 px-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold resize-y"
+          placeholder="Skizziere kurz euer Anliegen oder die größte Hürde (z.B. Lead-Generierung, Sales Pipeline oder Marketing-Automation)..."
+          className="w-full bg-slate-50/80 hover:bg-slate-50/95 focus:bg-white border border-slate-200/90 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/12 rounded-xl py-3 px-3.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400/80 placeholder:font-normal font-medium transition-all outline-none resize-y min-h-[95px]"
         />
       </div>
 
+      {/* SUBMIT BUTTON */}
       <div className="pt-2">
         <motion.button 
           type="submit"
           {...buttonPressProps}
           disabled={isSubmitting}
-          className="w-full bg-slate-950 text-white font-bold text-xs py-3.5 px-6 rounded-xl uppercase tracking-widest hover:bg-[#686DF4] transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-sm"
+          className="w-full bg-slate-950 text-white font-bold text-xs sm:text-sm py-3.5 sm:py-4 px-6 rounded-xl tracking-wider uppercase hover:bg-[#686DF4] transition-all cursor-pointer flex items-center justify-center gap-2 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>
               <div className="w-4 h-4 border-2 border-white/35 border-t-white rounded-full animate-spin"></div>
-              Sende Nachricht...
+              <span>Wird übermittelt...</span>
             </>
           ) : (
             <>
-              {submitButtonText} <ArrowRight className="w-4 h-4" />
+              <span>{submitButtonText}</span> 
+              <ArrowRight className="w-4 h-4" />
             </>
           )}
         </motion.button>
@@ -305,13 +343,13 @@ export default function ContactForm({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: DURATIONS.medium, ease: PREMIUM_EASE }}
-            className="bg-[#686DF4]/5 border border-[#CACCFB]/45 rounded-xl p-4 text-xs text-[#686DF4] font-semibold flex items-start gap-2.5"
+            className="bg-[#686DF4]/8 border border-[#686DF4]/25 rounded-xl p-4 text-xs sm:text-sm text-slate-900 font-medium flex items-start gap-3"
             id="form-feedback-success"
           >
-            <CheckCircle2 className="w-4.5 h-4.5 shrink-0 mt-0.5 text-[#686DF4]" />
-            <div>
-              <h5 className="font-bold font-display">✓ Vielen Dank. Deine Anfrage wurde erfolgreich übermittelt.</h5>
-              <p className="opacity-90 leading-relaxed mt-1">Yathur wird sich innerhalb der nächsten 24 Stunden persönlich bei dir zur Hebel-Diagnose melden.</p>
+            <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-[#686DF4]" />
+            <div className="space-y-1">
+              <h5 className="font-bold text-slate-950 font-display">Vielen Dank. Deine Anfrage wurde erfolgreich übermittelt.</h5>
+              <p className="text-slate-600 text-xs leading-relaxed">Yathur wird sich innerhalb der nächsten 24 Stunden persönlich bei dir zur Hebel-Diagnose melden.</p>
             </div>
           </motion.div>
         )}
@@ -322,13 +360,13 @@ export default function ContactForm({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: DURATIONS.medium, ease: PREMIUM_EASE }}
-            className="bg-red-50 border border-red-150 rounded-xl p-4 text-xs text-red-650 font-semibold flex items-start gap-2.5"
+            className="bg-red-50 border border-red-200 rounded-xl p-4 text-xs sm:text-sm text-red-900 font-medium flex items-start gap-3"
             id="form-feedback-error"
           >
-            <AlertCircle className="w-4.5 h-4.5 shrink-0 mt-0.5 text-red-500" />
-            <div>
-              <h5 className="font-bold font-display">✕ Die Anfrage konnte nicht übermittelt werden. Bitte versuche es erneut.</h5>
-              <p className="opacity-90 leading-relaxed mt-1">Bitte prüfe deine Netzwerkverbindung oder versuche es direkt via hallo@performanceboost.ch.</p>
+            <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-500" />
+            <div className="space-y-1">
+              <h5 className="font-bold text-red-950 font-display">Die Anfrage konnte nicht übermittelt werden.</h5>
+              <p className="text-red-700 text-xs leading-relaxed">Bitte prüfe deine Eingaben oder kontaktiere uns direkt via hallo@performanceboost.ch.</p>
             </div>
           </motion.div>
         )}
