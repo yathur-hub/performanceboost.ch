@@ -144,7 +144,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#686DF4]/20 rounded-full blur-2xl pointer-events-none" />
 
                     <div className="relative z-10 flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center text-center sm:text-left lg:text-center gap-4">
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg"
                         alt="Yathur Nathan"
                         className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-2xl object-cover border-2 border-white/20 shadow-lg shrink-0"

@@ -448,7 +448,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <section className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
               <div className="md:col-span-4 shrink-0 flex justify-center md:justify-start">
-                <img 
+                <img loading="lazy" decoding="async" 
                   src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
                   alt="Yathur Nathan" 
                   className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border border-slate-200 shadow-sm"

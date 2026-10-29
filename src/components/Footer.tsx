@@ -39,7 +39,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               onClick={(e) => handleLinkClick('/', e)}
               className="flex items-center gap-2 group cursor-pointer"
             >
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
                 alt="performanceboost Logo" 
                 className="h-[74px] w-auto object-contain -mt-3 transition-transform duration-300 group-hover:scale-103"

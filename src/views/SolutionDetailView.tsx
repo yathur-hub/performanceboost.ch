@@ -257,7 +257,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-[var(--shadow-premium-md)] grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
           <div className="md:col-span-4 flex flex-col items-center justify-center space-y-3">
             <div className="relative">
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=350&fit=crop&q=80";

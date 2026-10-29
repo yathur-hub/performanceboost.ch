@@ -277,7 +277,7 @@ export function ClientTestimonials() {
                   {/* Portrait Avatar */}
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden shrink-0 border border-slate-200/90 bg-slate-100 flex items-center justify-center shadow-sm">
                     {current.imageUrl && !imgError[current.id] ? (
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={current.imageUrl}
                         alt={current.name}
                         className="w-full h-full object-cover object-center"

@@ -147,7 +147,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           className="md:col-span-5 relative group"
         >
           <div className="absolute -inset-2 bg-[#686DF4]/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-          <img 
+          <img loading="lazy" decoding="async" 
             src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
             alt="Yathur Nathan" 
             className="w-full h-auto aspect-[4/5] object-cover rounded-3xl border border-[#E0E0E0]/65 shadow-[var(--shadow-premium-md)] relative z-10"

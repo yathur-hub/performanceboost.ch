@@ -66,8 +66,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             <motion.div 
               variants={{
-                hidden: { opacity: 0, y: 12 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                hidden: { opacity: 1, y: 0 },
+                visible: { opacity: 1, y: 0 }
               }}
               className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
             >
@@ -490,7 +490,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <div className="bg-white border border-[#E0E0E0]/65 p-10 md:p-14 rounded-[2rem] shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center text-left">
             <div className="md:col-span-5 shrink-0 flex justify-center md:justify-start">
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
                 alt="Yathur Nathan" 
                 className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-[1.5rem] border border-slate-205 shadow-sm"
