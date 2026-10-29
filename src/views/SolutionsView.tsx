@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, CheckCircle2, ChevronDown, Check, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import { 
   PREMIUM_EASE, 
   DURATIONS, 
@@ -35,113 +36,113 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
   const WACHSTUMSBEREICHE = [
     {
       num: '01',
-      title: 'Growth Strategy',
-      desc: 'Bevor Massnahmen umgesetzt werden, braucht es eine Richtung. Wir definieren, wo dein Wachstum herkommt — welche Kanäle, welche Zielgruppen, welche Hebel.',
-      notText: '"Wir machen eine Kampagne."',
-      butText: '"Das ist dein Go-to-Market-Plan für die nächsten 12 Monate."',
+      title: 'Wachstumsstrategie',
+      desc: 'Bevor wir Massnahmen umsetzen, legen wir die Richtung fest: über welche Kanäle, bei welchen Zielkunden und mit welchem Angebot Ihre neuen Kunden kommen sollen.',
+      notText: '«Wir machen eine Kampagne.»',
+      butText: '«Das ist Ihr Plan für die Vermarktung in den nächsten 12 Monaten.»',
       path: 'growth-strategy'
     },
     {
       num: '02',
-      title: 'Demand Generation',
-      desc: 'Qualifizierte Nachfrage erzeugen, bevor der Vertrieb anruft. Multi-Channel Strategien, die deine Zielgruppe systematisch auf dich aufmerksam machen und durch den Funnel begleiten.',
-      notText: '"Wir schalten Ads."',
-      butText: '"Wir bauen eine Maschine, die konstant qualifizierte Pipeline liefert."',
+      title: 'Nachfrage aufbauen',
+      desc: 'Ihre Zielkunden sollen Sie kennen, bevor der Vertrieb anruft. Wir machen Ihr Angebot über mehrere Kanäle sichtbar und begleiten Interessenten bis zur Anfrage.',
+      notText: '«Wir schalten Anzeigen.»',
+      butText: '«Wir sorgen für einen stetigen Eingang passender Anfragen.»',
       path: 'demand-generation'
     },
     {
       num: '03',
-      title: 'Lead Generation',
-      desc: 'Aus Interesse Anfragen machen. Aus Anonymen Qualifizierten. Strategien und Systeme, die Leads erfassen, bewerten und entwickeln — automatisiert.',
-      notText: '"Wir erstellen Content."',
-      butText: '"Wir bauen Content-Systeme, die messbar Leads erzeugen."',
+      title: 'Lead-Generierung',
+      desc: 'Aus Interesse werden Anfragen. Wir richten Formulare, Landingpages und Abläufe ein, die Anfragen erfassen, bewerten und automatisch weiterbearbeiten.',
+      notText: '«Wir erstellen Inhalte.»',
+      butText: '«Wir erstellen Inhalte, die messbar zu Anfragen führen.»',
       path: 'lead-generation'
     },
     {
       num: '04',
-      title: 'Marketing Automation & CRM',
-      desc: 'Manuelle Prozesse kosten Zeit und erzeugen Fehler. Wir implementieren Automation-Workflows und CRM-Strukturen, die dein Team entlasten und Lead-Nurturing skalieren.',
-      notText: '"Wir richten HubSpot ein."',
-      butText: '"Wir bauen ein System, das Leads automatisch entwickelt und übergabebereit macht."',
+      title: 'Marketing-Automation & CRM',
+      desc: 'Manuelle Abläufe kosten Zeit und führen zu Fehlern. Wir richten Ihr CRM und automatische Abläufe so ein, dass Ihr Team entlastet wird und Interessenten nicht vergessen gehen.',
+      notText: '«Wir richten HubSpot ein.»',
+      butText: '«Wir sorgen dafür, dass Interessenten automatisch weiterbegleitet und rechtzeitig an den Vertrieb übergeben werden.»',
       path: 'marketing-automation'
     },
     {
       num: '05',
-      title: 'Sales Enablement',
-      desc: 'Vertrieb und Marketing müssen zusammenarbeiten. Wir bauen die Brücke: Gemeinsame Metriken, Übergabeprozesse, Content für jede Phase des Sales-Zyklus.',
-      notText: '"Wir schreiben Verkaufsunterlagen."',
-      butText: '"Wir machen deinen Vertrieb effektiver — mit Systemen, nicht mit mehr Aufwand."',
+      title: 'Vertriebsunterstützung',
+      desc: 'Vertrieb und Marketing müssen zusammenarbeiten. Wir schaffen gemeinsame Kennzahlen, eine klare Übergabe von Anfragen und Unterlagen für jede Phase des Verkaufs.',
+      notText: '«Wir schreiben Verkaufsunterlagen.»',
+      butText: '«Wir machen Ihren Vertrieb wirksamer, mit klaren Abläufen statt mehr Aufwand.»',
       path: 'sales-enablement'
     },
     {
       num: '06',
-      title: 'Revenue Operations',
-      desc: 'Wenn Marketing, Sales und Customer Success nicht koordiniert sind, verlierst du Revenue. Wir bauen die operativen Grundlagen: Prozesse, Daten, Systeme, die alle Teams verbinden.',
-      notText: '"Wir optimieren Prozesse."',
-      butText: '"Wir bauen das Betriebssystem für dein Revenue-Wachstum."',
+      title: 'Marketing, Vertrieb & Daten verbinden',
+      desc: 'Wenn Marketing, Vertrieb und Kundenbetreuung nicht abgestimmt sind, geht Umsatz verloren. Wir schaffen gemeinsame Abläufe, Daten und Systeme für alle Teams.',
+      notText: '«Wir optimieren Prozesse.»',
+      butText: '«Wir schaffen die Grundlage, auf der Ihr Umsatz planbar wachsen kann.»',
       path: 'revenue-operations'
     },
     {
       num: '07',
-      title: 'AI & Automation',
-      desc: 'AI ist kein Hype — es ist ein Produktivitätshebel. Wir implementieren AI-gestützte Workflows, die Recherche, Personalisierung, Content und Analyse beschleunigen. Sinnvoll eingesetzt, nicht wahllos.',
-      notText: '"Wir nutzen ChatGPT."',
-      butText: '"Wir integrieren AI dort, wo sie messbaren Einfluss auf dein Wachstum hat."',
+      title: 'KI & Automatisierung',
+      desc: 'Richtig eingesetzt spart KI Zeit. Wir richten KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen ein, dort, wo sie sich lohnen.',
+      notText: '«Wir nutzen ChatGPT.»',
+      butText: '«Wir setzen KI dort ein, wo sie Ihrem Geschäft messbar hilft.»',
       path: 'ai-automation'
     },
     {
       num: '08',
-      title: 'Data & Analytics',
-      desc: 'Entscheidungen auf Basis von Daten treffen. Wir bauen Dashboards, Tracking-Strukturen und Reporting-Systeme, die dir genau zeigen, was funktioniert — und wo Revenue verloren geht.',
-      notText: '"Wir erstellen Reports."',
-      butText: '"Wir bauen die Datenbasis, die Wachstum steuerbar macht."',
+      title: 'Daten & Auswertung',
+      desc: 'Entscheidungen auf Basis von Zahlen statt Bauchgefühl. Wir richten Tracking, Dashboards und Berichte ein, die Ihnen zeigen, was funktioniert und wo Umsatz verloren geht.',
+      notText: '«Wir erstellen Berichte.»',
+      butText: '«Wir schaffen die Datengrundlage, mit der Sie Wachstum steuern können.»',
       path: 'data-analytics'
     }
   ];
 
   const COMBINATIONS = [
     {
-      title: 'Schnelle Pipeline-Generierung',
-      combo: 'Demand Generation + Lead Generation',
-      desc: 'Sofort Leads in die Pipeline bringen. Organisch und Paid kombiniert.',
-      timeline: 'Timeline: Erste Leads in 2-4 Wochen.'
+      title: 'Rasch zu ersten Anfragen',
+      combo: 'Nachfrage aufbauen + Lead-Generierung',
+      desc: 'Möglichst rasch erste Anfragen gewinnen, mit bezahlten Kampagnen und organischer Sichtbarkeit.',
+      timeline: 'Richtwert: erste Daten nach 2–4 Wochen.'
     },
     {
-      title: 'Skalierbare Wachstumsmaschine',
-      combo: 'Demand Generation + Marketing Automation + CRM',
-      desc: 'Demand erzeugen, Leads nurturen, automatisch qualifizieren und übergeben.',
-      timeline: 'Timeline: Vollständig operativ in 8-12 Wochen.'
+      title: 'Anfragen gewinnen und weiterbegleiten',
+      combo: 'Nachfrage aufbauen + Marketing-Automation + CRM',
+      desc: 'Nachfrage aufbauen, Interessenten weiterbegleiten, automatisch bewerten und an den Vertrieb übergeben.',
+      timeline: 'Richtwert: Aufbau in rund 8–12 Wochen.'
     },
     {
-      title: 'Revenue-Alignment',
-      combo: 'Revenue Operations + Sales Enablement + Data & Analytics',
-      desc: 'Marketing und Sales auf gemeinsame Ziele ausrichten. Aus zwei Silos ein System.',
-      timeline: 'Timeline: Grundstruktur in 6-8 Wochen, Optimierung laufend.'
+      title: 'Marketing und Vertrieb auf einer Linie',
+      combo: 'Marketing, Vertrieb & Daten + Vertriebsunterstützung + Auswertung',
+      desc: 'Marketing und Vertrieb arbeiten mit gemeinsamen Zielen, Zahlen und Abläufen.',
+      timeline: 'Richtwert: Grundstruktur in rund 6–8 Wochen, danach laufende Optimierung.'
     },
     {
-      title: 'Komplettes Go-to-Market System',
-      combo: 'Growth Strategy + alle relevanten Leistungen kombiniert',
-      desc: 'Strategie zu Umsetzung. Von der Diagnose bis zur skalierbaren Pipeline.',
-      timeline: 'Timeline: 12+ Monate kontinuierliche Zusammenarbeit.'
+      title: 'Gesamte Vermarktung aus einer Hand',
+      combo: 'Wachstumsstrategie + die passenden Leistungen',
+      desc: 'Von der Analyse über die Strategie bis zur Umsetzung und laufenden Betreuung.',
+      timeline: 'Richtwert: Zusammenarbeit über 12 Monate oder länger.'
     }
   ];
 
   const FAQS = [
     {
       q: 'Können wir mit einer einzigen Leistung starten?',
-      a: 'Ja. Wir empfehlen aber, mit einer klaren Diagnose zu beginnen — damit wir die richtige Priorität setzen. Nicht alle Leistungen haben für jedes Unternehmen die gleiche Wirkung.'
+      a: 'Ja. Wir empfehlen aber, mit einer kurzen Analyse zu beginnen, damit wir die richtige Priorität setzen. Nicht jede Leistung bringt jedem Unternehmen gleich viel.'
     },
     {
       q: 'Wie lange dauert es, bis wir Resultate sehen?',
-      a: 'Das hängt von der Leistung ab. Demand Generation mit Paid Media zeigt erste Daten in 2-4 Wochen. Marketing Automation und Revenue Operations brauchen 6-12 Wochen für vollen Impact. Wir setzen realistische Erwartungen — immer.'
+      a: 'Das hängt von der Leistung ab. Bei bezahlten Kampagnen sehen Sie meist nach 2–4 Wochen erste Daten und nach 4–8 Wochen belastbare Zahlen. Automatisierung und CRM-Aufbau brauchen in der Regel 6–12 Wochen, bis sie ihre Wirkung zeigen.'
     },
     {
-      q: 'Arbeitet ihr mit unserem bestehenden Tech-Stack?',
-      a: 'Ja. Wir integrieren uns in deine bestehende Infrastruktur — HubSpot, Salesforce, Pipedrive, Google Workspace oder was du verwendest. Kein erzwungener Tool-Wechsel.'
+      q: 'Arbeiten Sie mit unseren bestehenden Tools?',
+      a: 'Ja. Wir arbeiten mit Ihren bestehenden Tools, etwa HubSpot, Salesforce, Pipedrive oder Google Workspace. Einen Wechsel empfehlen wir nur, wenn er Ihnen wirklich etwas bringt.'
     },
     {
       q: 'Was kostet eine Zusammenarbeit?',
-      a: 'Das klären wir im ersten Gespräch. Transparent, keine versteckten Kosten. Wir arbeiten mit projekt- und retainerbasiertem Modell — je nach Bedarf.'
+      a: 'Das klären wir im Erstgespräch. Sie erhalten danach eine klare Offerte. Wir arbeiten je nach Bedarf mit Projektpreisen oder einem monatlichen Pauschalbetrag.'
     }
   ];
 
@@ -158,7 +159,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
           >
-            UNSER LÖSUNGS-FRAMEWORK
+            Branchen und Leistungen
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
@@ -166,7 +167,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Dein Wachstumsproblem bestimmt die Lösung — nicht andersrum.
+            Neue Kunden gewinnen, abgestimmt auf Ihre Branche
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -174,7 +175,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium"
           >
-            Wir bauen Revenue-Systeme für B2B-Unternehmen. Kein Vollservice-Chaos — sondern fokussierte Strategien, die dein spezifisches Problem direkt anpacken.
+            Ob Treuhand, Industrie, IT, Immobilien, Gesundheitswesen, Handwerk oder Hotellerie: Wir stellen Ihre Lösung aus den Leistungen zusammen, die in Ihrer Branche wirken. Unten sehen Sie die einzelnen Bausteine und sinnvolle Kombinationen.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -187,10 +188,44 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               onClick={() => onNavigate('/kontakt')}
               className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
             >
-              Wachstumsgespräch buchen
+              Erstgespräch vereinbaren
             </motion.button>
           </motion.div>
         </div>
+      </section>
+
+      {/* BRANCHEN-ÜBERSICHT */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" aria-labelledby="branchen-heading">
+        <div className="space-y-3 max-w-2xl">
+          <h2 id="branchen-heading" className="text-2xl sm:text-3xl font-display font-semibold tracking-tight text-slate-950">
+            Ihre Branche
+          </h2>
+          <p className="text-slate-600 leading-relaxed">
+            Neukundengewinnung funktioniert in einer Treuhandkanzlei anders als in einem Handwerksbetrieb. Wählen Sie Ihre Branche,
+            um typische Hürden, unser Vorgehen und einen passenden Rechner zu sehen.
+          </p>
+        </div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {Object.values(SOLUTIONS_SECTORS).map((sector) => (
+            <li key={sector.slug}>
+              <a
+                href={`/loesungen/${sector.slug}`}
+                onClick={(e) => {
+                  if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+                  e.preventDefault();
+                  onNavigate(`/loesungen/${sector.slug}`);
+                }}
+                className="group flex h-full items-start justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#686DF4]/50 hover:shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+              >
+                <span className="space-y-1">
+                  <span className="block font-display font-semibold text-slate-950 group-hover:text-[#4f54d6]">{sector.title}</span>
+                  <span className="block text-sm text-slate-600 leading-snug">{sector.subtitle}</span>
+                </span>
+                <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-slate-400 group-hover:text-[#686DF4]" aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* POSITIONIERUNGS-SEKTION */}
@@ -203,12 +238,12 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
           <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] uppercase">DIAGNOSE ZUERST</span>
+          <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] uppercase">Zuerst die Analyse</span>
           <blockquote className="text-body-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
-            "Die meisten Unternehmen suchen nach einem Kanal. Einer Plattform. Einem Tool. Das ist die falsche Frage. Die richtige Frage ist: Wo verlieren wir qualifizierte Leads? Warum konvertiert unsere Pipeline nicht? Wie machen wir Wachstum planbar?"
+            «Viele Unternehmen fragen zuerst nach dem richtigen Kanal oder Tool. Wichtiger ist, wo heute passende Anfragen verloren gehen, warum Interessenten nicht zu Kunden werden und wie Wachstum planbar wird.»
           </blockquote>
           <p className="text-[11px] text-slate-400 font-mono tracking-wide uppercase">
-            Wir starten genau dort — nicht mit einem Pauschalangebot, sondern mit einer professionellen Diagnose.
+            Darum beginnen wir mit einer Analyse Ihrer Situation, nicht mit einem Pauschalangebot.
           </p>
         </div>
       </motion.section>
@@ -222,8 +257,8 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">DIE SYSTEMBAUSTEINE</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Wachstumsbereiche</h2>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Leistungen</span>
+          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Leistungsbereiche</h2>
         </motion.div>
 
         <motion.div 
@@ -261,11 +296,11 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
 
               <div className="mt-8 pt-5 border-t border-slate-100 space-y-3.5">
                 <div className="text-[11px]">
-                  <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">NICHT:</span>
+                  <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">Nicht:</span>
                   <span className="text-red-600 font-bold block bg-red-50/40 px-2 py-1 rounded border border-red-100/30 line-through">{item.notText}</span>
                 </div>
                 <div className="text-[11px]">
-                  <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">SONDERN:</span>
+                  <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">Sondern:</span>
                   <span className="text-[#686DF4] font-bold block bg-[#686DF4]/5 px-2 py-1 rounded border border-[#CACCFB]/20">{item.butText}</span>
                 </div>
               </div>
@@ -285,10 +320,10 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3"
           >
-            <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">SYNERGIEN MAXIMIEREN</span>
+            <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Kombinationen</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
             <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
-              Einzelne Leistungen haben Wirkung. Intelligent verknüpft entfalten sie ihre volle Hebelwirkung.
+              Einzelne Leistungen wirken für sich. Sinnvoll kombiniert verstärken sie sich gegenseitig.
             </p>
           </motion.div>
 
@@ -334,7 +369,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">FRAGEN & ANTWORTEN</span>
+          <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Fragen und Antworten</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Häufig gestellte Fragen</h2>
         </motion.div>
 
@@ -386,10 +421,10 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">MEHR ERFAHREN</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Lösung braucht dein Unternehmen?</h2>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Erstgespräch</span>
+          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Lösung passt zu Ihrem Unternehmen?</h2>
           <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
-            30 Minuten unverbindliches Gespräch. Wir hören zu, stellen die richtigen strategischen Fragen — und empfehlen die wirkungsvollsten Hebel für dein Geschäftsmodell.
+            In einem unverbindlichen Gespräch von 30 Minuten klären wir Ihre Ausgangslage und Ziele. Danach wissen Sie, welche Massnahmen für Ihr Unternehmen am meisten bringen.
           </p>
 
           <motion.button
@@ -397,7 +432,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             onClick={() => onNavigate('/kontakt')}
             className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
           >
-            Wachstumsgespräch buchen
+            Erstgespräch vereinbaren
           </motion.button>
         </div>
       </motion.section>

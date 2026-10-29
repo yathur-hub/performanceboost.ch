@@ -29,756 +29,756 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'finanzdienstleister': {
     slug: 'finanzdienstleister',
     title: 'Finanzdienstleister',
-    subtitle: 'Beratungs-Systeme für bankenunabhängige Vermögensverwalter & Finanzberatungen',
-    heroDesc: 'Generiere erstklassige Beratungsanfragen solventer Schweizer Privat- und Geschäftskunden. Messbar, compliance-konform und planbar ohne Kaltakquise.',
+    subtitle: 'Mehr Beratungsanfragen für unabhängige Vermögensverwalter',
+    heroDesc: 'Wir helfen Vermögensverwaltern und Finanzberatungen, über LinkedIn, Google und die eigene Website passende Privat- und Unternehmerkunden zu erreichen. Die Werbevorschriften Ihrer Branche berücksichtigen wir von Anfang an.',
     calculatorComponent: 'BeratungsPipelineRechner',
     problems: [
       {
-        title: 'Verlust stromabwärts über klassische Akquise',
-        desc: 'Weiterempfehlungen stossen an geografische Grenzen und reichen für stabiles Wachstum nicht aus. Traditionelle Werbung verpufft oft wirkungslos.'
+        title: 'Empfehlungen allein reichen nicht mehr',
+        desc: 'Weiterempfehlungen bleiben wichtig, kommen aber unregelmässig und meist aus dem bestehenden Umfeld. Klassische Inserate lassen sich kaum messen.'
       },
       {
-        title: 'Mangelnde digitale Vorqualifizierung',
-        desc: 'Viele Online-Anfragen haben unzureichendes Anlagevermögen oder falsche Vorstellungen. Wertvolle Beratungszeit wird an unproduktive Leads verloren.'
+        title: 'Online-Anfragen passen oft nicht',
+        desc: 'Ein Teil der Anfragen bringt nicht das Vermögen oder die Erwartungen mit, die zu Ihrem Angebot passen. Das kostet Beratungszeit.'
       },
       {
-        title: 'Heftige regulatorische Hürden (FIDLEG)',
-        desc: 'Werbemassnahmen müssen absolut compliant sein. Unüberlegte Slogans führen rasch zu Abmahnungen oder rechtlichen Reibungspunkten.'
+        title: 'Strenge Regeln für Werbung (FIDLEG)',
+        desc: 'Werbung für Finanzdienstleistungen muss als solche erkennbar sein und darf keine falschen Erwartungen wecken. Unbedachte Formulierungen schaffen unnötige Risiken.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Zielgruppenpräzise Positionierung',
-        desc: 'Wir schärfen deine Spezialisierung (z.B. Pensionierungsplanung oder KMU-Unternehmervermögen) und formulieren ein unschlagbares Nutzenversprechen.'
+        title: 'Klare Positionierung',
+        desc: 'Wir schärfen Ihre Spezialisierung, etwa Pensionierungsplanung oder Vermögen von Unternehmern, und formulieren ein verständliches Nutzenversprechen.'
       },
       {
         step: '02',
-        title: 'Qualifizierende Trichter (Funnels)',
-        desc: 'Interessenten durchlaufen vorab einen digitalen Check, der das frei verfügbare Anlagekapital sowie steuerliche Rahmendaten diskret abfragt.'
+        title: 'Anfrageprozess mit Vorqualifizierung',
+        desc: 'Interessenten beantworten vor dem Erstgespräch einige diskrete Fragen, zum Beispiel zu Anlagehorizont und Vermögensgrösse. So wissen Sie vorab, ob ein Gespräch passt.'
       },
       {
         step: '03',
-        title: 'Regelkonformer digitaler Multi-Channel-Aufbau',
-        desc: 'Wir etablieren compliant Kampagnen auf Premiumkanälen wie LinkedIn und Google Ads, die nachhaltig Vertrauen bei Wohlhabenden aufbauen.'
+        title: 'Kampagnen auf LinkedIn und Google',
+        desc: 'Wir setzen sachliche Kampagnen auf, die Vertrauen aufbauen. Texte, Hinweise und Disclaimer stimmen wir mit Ihnen bzw. Ihrer Compliance ab.'
       }
     ],
     benefits: [
-      'Konstante Pipeline an hochqualifizierten Erstgesprächsterminen',
-      'Minimierung unproduktiver Beratungsstunden durch strenge Vorqualifizierung',
-      'Vollständig FIDLEG-konformer Werbe- und Aufklärungskanal',
-      'Stärkung der regionalen Dominanz als Vertrauensperson'
+      'Regelmässiger Eingang von Anfragen für Erstgespräche',
+      'Weniger Beratungszeit für Interessenten, die nicht zu Ihnen passen',
+      'Kampagnen, die die Werbevorschriften Ihrer Branche berücksichtigen',
+      'Mehr Sichtbarkeit als Ansprechperson in Ihrer Region'
     ],
     faqs: [
       {
-        q: 'Funktioniert Online-Marketing für wohlhabende Kunden (HNWIs)?',
-        a: 'Absolut. Wohlhabende Privatpersonen und Unternehmer nutzen LinkedIn und Suchmaschinen aktiv zur Recherche nach Nachfolgelösungen und Steueroptimierungen.'
+        q: 'Funktioniert Online-Marketing auch für vermögende Kunden?',
+        a: 'Ja, wenn es sachlich und diskret aufgesetzt ist. Vermögende Privatpersonen und Unternehmer recherchieren zu Themen wie Nachfolge, Pensionierung oder Steuern ebenfalls online, oft auf Google und LinkedIn.'
       },
       {
-        q: 'Sind die Funnels und Kampagnen mit FIDLEG vereinbar?',
-        a: 'Ja. Wir arbeiten eng mit Compliance-Richtlinien zusammen. Alle Texte, Disclaimer und Abfragen werden so konzipiert, dass sie den strengen Schweizer Anforderungen genügen.'
+        q: 'Wie gehen Sie mit FIDLEG und den Werbevorschriften um?',
+        a: 'Wir berücksichtigen die Werbevorschriften Ihrer Branche bei Texten, Formularen und Disclaimern und stimmen alles mit Ihnen ab. Die rechtliche Freigabe liegt bei Ihnen bzw. Ihrer Compliance-Stelle; eine Rechtsberatung ersetzen wir nicht.'
       }
     ]
   },
   'saas-software': {
     slug: 'saas-software',
     title: 'SaaS & Software',
-    subtitle: 'B2B Revenue-Attribution & Customer Acquisition für Software-Häuser',
-    heroDesc: 'Schliesse die Lücke zwischen Marketing-Ausgaben und echtem Contract Value (ACV/ARR). Minimiere dein Revenue-Leck im B2B-Sales Cycle.',
+    subtitle: 'Mehr qualifizierte Demo-Anfragen für Schweizer Softwarefirmen',
+    heroDesc: 'Wir verbinden Kampagnen, Website und CRM so, dass Sie sehen, welche Kanäle zu Abschlüssen führen und nicht nur zu Klicks. So investieren Sie Ihr Marketingbudget dort, wo es Umsatz bringt.',
     calculatorComponent: 'SaasRevenueLeckRechner',
     problems: [
       {
-        title: 'Das klassische Daten-Silogefälle',
-        desc: 'Marketing feiert "MQLs" (Lead-Zahlen), während der Sales unqualifizierte Kontakte beklagt. Es fehlt eine durchgängige Brücke bis zum Closed-Won.'
+        title: 'Marketing und Vertrieb zählen verschieden',
+        desc: 'Das Marketing meldet viele Leads, der Vertrieb beklagt unpassende Kontakte. Es fehlt eine durchgehende Sicht von der ersten Anfrage bis zum Abschluss.'
       },
       {
-        title: 'Inkonsistente Churn-Gefahren',
-        desc: 'Hohe Akquisitionskosten (CAC) lohnen sich nur bei langem Kundenwert (LTV). Ein Mangel an systematischem Onboarding treibt den Churn in die Höhe.'
+        title: 'Hohe Kosten pro Neukunde',
+        desc: 'Neukunden zu gewinnen ist teuer. Das lohnt sich nur, wenn Kunden lange bleiben. Ohne gutes Onboarding kündigen sie früher als nötig.'
       },
       {
-        title: 'Zu lange Entscheidungszyklen',
-        desc: 'B2B-SaaS-Produkte erfordern die Zustimmung von IT, Finanzen und Fachbereich. Ohne gezielte Inhalte für jeden Entscheider schläft der Deal ein.'
+        title: 'Lange Entscheidungswege',
+        desc: 'Bei B2B-Software reden IT, Finanzen und Fachabteilung mit. Fehlen Unterlagen für jede dieser Personen, bleibt der Entscheid liegen.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Unified Lead-to-Revenue-Mapping',
-        desc: 'Wir verbinden Web-Tracking, CRM und Abrechnungssysteme zu einer absolut verlässlichen Datenquelle (Single Source of Truth).'
+        title: 'Durchgehende Messung bis zum Abschluss',
+        desc: 'Wir verbinden Website-Tracking und CRM, damit Sie Anfragen, Verkaufschancen und Umsatz an einem Ort sehen.'
       },
       {
         step: '02',
-        title: 'Buying Center Enablement',
-        desc: 'Wir erstellen zielgerichtete Ressourcen (wie ROI-Kalkulatoren, Sicherheits-Dossiers), mit denen dein interner Champion den Kauf beschleunigen kann.'
+        title: 'Unterlagen für alle Entscheider',
+        desc: 'Wir erstellen Material wie Nutzenrechnungen oder Sicherheitsübersichten, mit dem Ihr Ansprechpartner beim Kunden intern überzeugen kann.'
       },
       {
         step: '03',
-        title: 'Automatisierte Nurturing-Sequenzen',
-        desc: 'Trial-User und Demo-Anfragen werden verhaltensbasiert bespielt, um die Aktivierungsrate direkt im Produkt messbar zu erhöhen.'
+        title: 'Automatische Begleitung von Interessenten',
+        desc: 'Testnutzer und Demo-Anfragen erhalten passende E-Mails je nach ihrem Verhalten, damit mehr von ihnen das Produkt tatsächlich nutzen.'
       }
     ],
     benefits: [
-      'Verkürzung der B2B-Sales-Zyklen um durchschnittlich 25-30%',
-      'Volle Transparenz über die profitabelsten Marketingkanäle nach ROI statt Klicks',
-      'Höhere Aktivierungsraten in Product-Led Funnels',
-      'Nahtlos synchronisierte Marketing- und Vertriebsprozesse'
+      'Klare Sicht, welche Kanäle zu Abschlüssen führen',
+      'Marketingbudget nach Umsatz statt nach Klicks steuern',
+      'Mehr Testnutzer, die das Produkt aktiv verwenden',
+      'Marketing und Vertrieb arbeiten mit denselben Zahlen'
     ],
     faqs: [
       {
-        q: 'Unterstützt ihr auch internationale GTM-Kampagnen?',
-        a: 'Ja. Wir optimieren und skalieren deine GTM-Modelle sowohl für den Schweizer Heimmarkt (D-CH, Romandie) als auch für die gesamte DACH-Region und Europa.'
+        q: 'Unterstützen Sie auch Kampagnen ausserhalb der Schweiz?',
+        a: 'Ja. Wir betreuen Kampagnen für die Deutschschweiz, die Romandie und den übrigen DACH-Raum. Für weitere Märkte klären wir im Erstgespräch, was sinnvoll ist.'
       },
       {
-        q: 'Welche CRMs und Attributions-Tools bindest du an?',
-        a: 'Wir haben weitreichende Erfahrung mit HubSpot, Salesforce, Pipedrive sowie modernen Analyseplattformen wie Mixpanel, Segment und Google Analytics 4.'
+        q: 'Mit welchen CRM- und Analyse-Tools arbeiten Sie?',
+        a: 'Unter anderem mit HubSpot, Salesforce, Pipedrive und Google Analytics 4. Wenn Sie andere Tools einsetzen, prüfen wir die Anbindung im Einzelfall.'
       }
     ]
   },
   'immobilien': {
     slug: 'immobilien',
     title: 'Immobilien',
-    subtitle: 'Digitale Vermarktungs-Systeme für Projektentwickler, Makler & Verwalter',
-    heroDesc: 'Verkürze die Vermarktungsdauer deiner Neubauprojekte, Gewerbeflächen und Bestandsimmobilien. Systematische Lead-Gewinnung statt Leerstand.',
+    subtitle: 'Passende Miet- und Kaufinteressenten für Ihre Immobilien',
+    heroDesc: 'Für Projektentwickler, Makler und Verwaltungen gewinnen wir Interessenten für Neubauprojekte, Gewerbeflächen und Bestandsobjekte. Mit eigenen Projektseiten, regionalen Kampagnen und einer Vorqualifizierung, die Ihr Team entlastet.',
     calculatorComponent: 'LeerstandskostenRechner',
     problems: [
       {
-        title: 'Hohe Opportunitätskosten durch Leerstand',
-        desc: 'Jeder Monat, in dem ein Gewerbe- oder Wohnobjekt leer steht, vernichtet unweigerlich Rendite. Klassische Portale allein greifen oft zu kurz.'
+        title: 'Leerstand kostet jeden Monat',
+        desc: 'Jeder Monat ohne Mieter oder Käufer schmälert die Rendite. Die grossen Portale allein reichen dafür oft nicht.'
       },
       {
-        title: 'Mangel an verifizierten Miet-/Kaufinteressenten',
-        desc: 'Exposé-Jäger verstopfen das Postfach, bringen aber keine echten Bonitätsnachweise mit. Das bindet enorme Kapazitäten im Vertrieb.'
+        title: 'Viele Anfragen, wenige ernsthafte',
+        desc: 'Viele fordern nur das Exposé an, ohne konkrete Absicht oder passende Finanzierung. Das bindet Zeit im Vertrieb.'
       },
       {
-        title: 'Ineffiziente Erstbemusterung & Koordination',
-        desc: 'Manuelle Terminabsprachen, zeitraubende Besichtigungen mit unentschlossenen Interessenten und unvollständige Bewerbungsunterlagen.'
+        title: 'Aufwendige Besichtigungen',
+        desc: 'Termine werden von Hand abgestimmt, Interessenten sind unentschlossen und Bewerbungsunterlagen kommen unvollständig an.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Zielgruppenorientierte Microsites',
-        desc: 'Wir erstellen hochkonvertierende Projekt-Landingpages mit ausdrucksstarken Grundrissen, interaktiven Rundgängen und digitaler Reservierung.'
+        title: 'Eigene Projektseiten',
+        desc: 'Wir erstellen Landingpages pro Projekt mit Grundrissen, Bildern, auf Wunsch virtuellem Rundgang und einfacher Kontakt- oder Reservationsmöglichkeit.'
       },
       {
         step: '02',
-        title: 'Automatisierter Bonitäts- & Match-Check',
-        desc: 'Interessenten qualifizieren sich über Online-Checks hinsichtlich Haushaltsbudget, gewünschtem Einzugstermin und Haustierhaltung vor.'
+        title: 'Vorqualifizierung online',
+        desc: 'Interessenten geben vorab Budget, gewünschten Einzugstermin und weitere relevante Angaben an. Sie sehen auf einen Blick, wer passt.'
       },
       {
         step: '03',
-        title: 'Lokales Performance-Marketing',
-        desc: 'Über Geotargeting auf Social Media und Google Ads sprechen wir exakt die Pendler, Familien oder Firmen an, die im Suchkreis suchen.'
+        title: 'Regionale Kampagnen',
+        desc: 'Über Google Ads und Social Media sprechen wir gezielt Personen und Firmen an, die in der Region suchen.'
       }
     ],
     benefits: [
-      'Signifikante Verkürzung der Leerstandszeit um bis zu 40%',
-      'Höhere Lead-Qualität durch digitale Vorqualifizierung der Interessenten',
-      'Automatisches Einladen zu Besichtigungsterminen per SMS/E-Mail',
-      'Erhöhung der Exklusiv-Aufträge für Makler dank digitaler Kompetenz'
+      'Mehr passende Interessenten pro Objekt',
+      'Weniger Aufwand mit unpassenden Anfragen dank Vorqualifizierung',
+      'Automatische Einladungen zu Besichtigungen per E-Mail oder SMS',
+      'Ein digitaler Auftritt, der Sie bei Eigentümern als kompetenten Makler zeigt'
     ],
     faqs: [
       {
         q: 'Lohnt sich das auch für kleinere, regionale Makler?',
-        a: 'Gerade für diese. Durch digitale Dominanz im regionalen Einzugsgebiet behauptest du dich erfolgreich gegen grosse Ketten und gewinnst mehr Alleinaufträge.'
+        a: 'Ja. Gerade regional können Sie mit gezielter Sichtbarkeit gegen grössere Anbieter bestehen und bei Eigentümern als lokale Ansprechperson auffallen.'
       },
       {
-        q: 'Können bestehende Immobilien-Softwaren wie FlowFact oder CAS connected werden?',
-        a: 'Ja. Wir binden bewährte Branchenwerkzeuge und CRMs über Schnittstellen an, damit Daten nahtlos synchronisiert werden.'
+        q: 'Lässt sich bestehende Immobiliensoftware wie FlowFact oder CAS anbinden?',
+        a: 'In vielen Fällen ja, über vorhandene Schnittstellen. Wir prüfen im Erstgespräch, was mit Ihrer Software möglich ist.'
       }
     ]
   },
   'treuhand-unternehmensberatung': {
     slug: 'treuhand-unternehmensberatung',
     title: 'Treuhand & Unternehmensberatung',
-    subtitle: 'Kanzleiwachstum, Neukundengewinnung & digitale Mandats-Vorqualifizierung',
-    heroDesc: 'Ziehe die lukrativsten KMU-Mandate und Steuerberatungskunden der Schweiz an. Planbares Kanzleiwachstum bei maximaler Prozessentlastung.',
+    subtitle: 'Mehr Mandatsanfragen für Treuhand- und Beratungsbüros',
+    heroDesc: 'Wir helfen Treuhand- und Beratungsbüros, gezielt die KMU-Mandate zu gewinnen, die fachlich und wirtschaftlich zu ihnen passen. Mit klarer Positionierung, Vorqualifizierung und weniger Aufwand im Erstkontakt.',
     calculatorComponent: 'KanzleiWachstumsCheck',
     problems: [
       {
-        title: 'Kollaps im Tagesgeschäft durch "Zwergen-Mandate"',
-        desc: 'Kleine Mandate mit hohem Beleg-Reibungsaufwand verstopfen das Kanzlei-Team, während komplexe Beratungsmandate zu kurz kommen.'
+        title: 'Viele kleine Mandate binden das Team',
+        desc: 'Kleine Mandate mit viel Belegaufwand füllen den Alltag, während anspruchsvolle Beratungsmandate zu kurz kommen.'
       },
       {
-        title: 'Klassische Empfehlungs-Stagnation',
-        desc: 'Empfehlungen sind grossartig, kommen aber unregelmässig vor. Ein planbares, steuerbares Kanzlei-Wachstum ist so unmöglich.'
+        title: 'Empfehlungen kommen unregelmässig',
+        desc: 'Empfehlungen sind wertvoll, aber nicht planbar. Wachstum lässt sich so kaum steuern.'
       },
       {
-        title: 'Fehlende Schnittstellen & Mandanten-Disziplin',
-        desc: 'Belege werden ungeordnet, unvollständig oder verspätet eingereicht. Das führt zu permanentem Termindruck am Quartalsende.'
+        title: 'Unvollständige Unterlagen von Mandanten',
+        desc: 'Belege kommen ungeordnet, unvollständig oder zu spät. Das erzeugt Druck vor Abschlüssen und Fristen.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Schärfung des Kanzlei-Profils',
-        desc: 'Wir schärfen deine Zielgruppe (z.B. Ärzte, KMUs ab 2M Umsatz) und rücken deine digitale Beratungskompetenz ins Zentrum.'
+        title: 'Klares Profil für Ihr Büro',
+        desc: 'Wir schärfen Ihre Zielgruppe, zum Beispiel Arztpraxen oder KMU ab einer bestimmten Grösse, und stellen Ihre Beratungskompetenz in den Vordergrund.'
       },
       {
         step: '02',
-        title: 'Mandats-Qualifizierungs-Trichter',
-        desc: 'Ein digitaler Check erfasst wesentliche Daten (Umsatzgrösse, Mitarbeiterzahl, Buchhaltungs-Tool) noch vor dem Erstgespräch.'
+        title: 'Vorqualifizierung neuer Mandate',
+        desc: 'Ein kurzer Online-Fragebogen erfasst vor dem Erstgespräch Eckdaten wie Umsatzgrösse, Mitarbeiterzahl und eingesetzte Buchhaltungssoftware.'
       },
       {
         step: '03',
-        title: 'Autoritäts-Aufbau auf LinkedIn',
-        desc: 'Wir positionieren deine Partner und Kanzlei-Inhaber als profilierte Experten für Steuerthemen, Vorsorge und Unternehmensnachfolge.'
+        title: 'Sichtbarkeit auf LinkedIn',
+        desc: 'Wir machen Ihre Partner und Inhaber als Fachleute für Steuern, Vorsorge und Nachfolge sichtbar.'
       }
     ],
     benefits: [
-      'Gezielte Akquisition von lukrativen A-Mandaten (KMUs, Holdingstrukturen)',
-      'Minimierung zeitfressender Erstgespräche mit nicht passenden Interessenten',
-      'Automatisierung des Onboarding-Prozesses für Neumandate',
-      'Entlastung des gesamten Kanzlei-Teams durch vordefinierte Workflows'
+      'Gezielte Anfragen von Mandaten, die zu Ihrem Büro passen',
+      'Weniger Erstgespräche mit Interessenten, die nicht passen',
+      'Ein geordneter, teilweise automatisierter Ablauf für neue Mandate',
+      'Entlastung des Teams durch klare Abläufe'
     ],
     faqs: [
       {
-        q: 'Unsere Mandanten suchen uns für unsere Vertrauenswürdigkeit. Passt digitales Marketing da überhaupt?',
-        a: 'Ja, absolut. Professionelles B2B-Marketing im Treuhandwesen baut Vertrauen auf, indem es Fachkompetenz, Fallstudien und klares Branchenwissen digital sichtbar macht.'
+        q: 'Unsere Mandanten wählen uns wegen des Vertrauens. Passt digitales Marketing dazu?',
+        a: 'Ja, wenn es Ihr Fachwissen zeigt statt laut zu werben. Fachbeiträge, verständliche Erklärungen und ein klares Profil schaffen online genau dieses Vertrauen.'
       },
       {
-        q: 'Unterstützt du Kanzleien auch bei der Rekrutierung von Fachkräften?',
-        a: 'Ja. Kanzlei-Wachstum benötigt qualifizierte Treuhänder und Sachbearbeiter. Wir nutzen dieselben digitalen Funnels erfolgreich für das Employer Branding.'
+        q: 'Unterstützen Sie Büros auch bei der Suche nach Fachkräften?',
+        a: 'Ja. Mit denselben Mitteln, also Kampagnen und einfachen Bewerbungsseiten, erreichen wir auch Treuhänderinnen und Sachbearbeiter.'
       }
     ]
   },
   'b2b-industrie-kmu': {
     slug: 'b2b-industrie-kmu',
     title: 'Industrie & KMU',
-    subtitle: 'Systematische Angebots-Pipelines für Industrie, Produktion & B2B-KMU',
-    heroDesc: 'Digitalisere deinen B2B-Vertrieb. Schaffe eine lückenlose Pipeline von der digitalen Erst-Anfrage bis zum unterschriebenen Angebot.',
+    subtitle: 'Mehr qualifizierte Anfragen für Industrie- und B2B-Unternehmen',
+    heroDesc: 'Wir helfen Produktions- und B2B-Unternehmen, online von Einkäufern und Technikern gefunden zu werden. Und wir sorgen dafür, dass Offerten nachgefasst werden, bis ein Entscheid vorliegt.',
     calculatorComponent: 'AngebotsPipelineRechner',
     problems: [
       {
-        title: 'Die Abhängigkeit vom "Messe-Vertrieb"',
-        desc: 'Klassische B2B-Messen verlieren an Zugkraft. Bleiben sie aus, bricht die Neukundenpipeline rasch ein. Der Aussendienst arbeitet ohne digitale Flankierung.'
+        title: 'Abhängigkeit von Messen und Aussendienst',
+        desc: 'Messen bringen weniger als früher. Fallen sie aus, fehlen neue Kontakte, und der Aussendienst arbeitet ohne digitale Unterstützung.'
       },
       {
-        title: 'Zu hohe technische Erklärungsbedürftigkeit',
-        desc: 'Komplexe Produkte werden auf der Website so kompliziert erklärt, dass potenzielle Kunden die Navigation frustriert abbrechen.'
+        title: 'Produkte sind schwer verständlich erklärt',
+        desc: 'Komplexe Produkte werden auf der Website oft so technisch beschrieben, dass Interessenten abbrechen, bevor sie anfragen.'
       },
       {
-        title: 'Hohe Angebotsschreib-Verluste (Umsatzleck)',
-        desc: 'Es werden aufwendig Angebote kalkuliert, die danach im Sande verlaufen, weil ein strukturierter Nachfass-Prozess komplett fehlt.'
+        title: 'Offerten versanden',
+        desc: 'Offerten werden aufwendig kalkuliert und dann nicht nachgefasst, weil ein fester Ablauf dafür fehlt.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Einfache visuelle Customer Journeys',
-        desc: 'Wir strukturieren komplexe Industrieprodukte so, dass B2B-Einkäufer den Nutzen in Sekundenschnelle verstehen.'
+        title: 'Verständliche Produktseiten',
+        desc: 'Wir strukturieren Ihre Produkte und Leistungen so, dass Einkäufer schnell erkennen, welchen Nutzen sie haben.'
       },
       {
         step: '02',
-        title: 'Digitaler Produkt-Konfigurator / Check',
-        desc: 'Interessenten können ihre Spezifikationen und Anforderungen spielerisch online konfigurieren und qualifiziert anfragen.'
+        title: 'Anfrage mit Konfigurator oder Check',
+        desc: 'Interessenten geben ihre Anforderungen online strukturiert ein. Sie erhalten Anfragen mit den Angaben, die Sie für eine Offerte brauchen.'
       },
       {
         step: '03',
-        title: 'CRM-gestütztes Pipeline-Management',
-        desc: 'Wir führen glasklare Phasen und automatisierte Wiedervorlagen für Angebote ein, um die Abschlussquote im Vertrieb massiv zu erhöhen.'
+        title: 'Nachfassen im CRM',
+        desc: 'Wir richten klare Verkaufsphasen und automatische Wiedervorlagen für Offerten ein, damit keine offene Offerte vergessen geht.'
       }
     ],
     benefits: [
-      'Konstante Ströme qualifizierter Erstanfragen von B2B-Einkäufern & Ingenieuren',
-      'Signifikante Verringerung ungehörter Angebote dank automatischem Follow-Up',
-      'Entlastung des technischen Vertriebsaußendienstes bei der Kaltakquise',
-      'Transparente Nachverfolgung aller Deal-Volumen im zentralen CRM'
+      'Regelmässige Anfragen von Einkäufern und Technikern',
+      'Weniger Offerten ohne Rückmeldung dank systematischem Nachfassen',
+      'Entlastung des Aussendiensts bei der Neukundensuche',
+      'Alle offenen Offerten und Verkaufschancen übersichtlich im CRM'
     ],
     faqs: [
       {
-        q: 'Funktioniert das auch bei hochspezialisierten Nischenprodukten?',
-        a: 'Gerade dort. Einkäufer und Konstrukteure googeln heute nach Lösungen. Wer digital präzise gefunden wird, gewinnt den Ausschreibungs-Vorsprung.'
+        q: 'Funktioniert das auch bei sehr spezialisierten Nischenprodukten?',
+        a: 'Oft besonders gut. Einkäufer und Konstrukteure suchen online nach Lösungen für konkrete Probleme. Wer dort mit den richtigen Begriffen auftaucht, wird früh in die Auswahl einbezogen.'
       },
       {
-        q: 'Wie binden wir den bestehenden Vertriebs-Aussendienst ein?',
-        a: 'Wir schulen dein Team und binden CRM-Dashboards so an, dass deine Aussendienstmitarbeiter exakt sehen, wer auf der Website welche Broschüre geladen hat.'
+        q: 'Wie binden wir den bestehenden Aussendienst ein?',
+        a: 'Wir richten das CRM so ein, dass Ihr Aussendienst sieht, welche Firmen sich für welche Produkte interessiert haben, und schulen das Team in der Nutzung.'
       }
     ]
   },
   'it-dienstleister-msps': {
     slug: 'it-dienstleister-msps',
     title: 'IT-Dienstleister & MSPs',
-    subtitle: 'Skalierung von Managed Services (MRR) & IT-Projektvolumen',
-    heroDesc: 'Generiere planbar Anfragen für Managed Services, IT-Security und Cloud-Migrationen bei Schweizer KMUs. Weg von Einmal-Projekten hin zu planbarem Recurring Revenue.',
+    subtitle: 'Mehr Anfragen für Managed Services von Schweizer KMU',
+    heroDesc: 'Wir helfen IT-Dienstleistern, Anfragen für Managed Services, IT-Sicherheit und Cloud-Projekte von Schweizer KMU zu gewinnen. Ziel sind mehr laufende Serviceverträge statt einzelner Einsätze.',
     calculatorComponent: 'RecurringRevenuePotenzialRechner',
     problems: [
       {
-        title: 'Das klassische "Feuerwehr-Modell"',
-        desc: 'Du wirst gerufen, wenn es brennt — erzielst dann einmalig Umsatz, hast aber keine wiederkehrende Einnahmenbasis im Folgemonat.'
+        title: 'Gerufen wird erst, wenn es brennt',
+        desc: 'Sie lösen ein akutes Problem und verrechnen den Einsatz. Danach fehlt oft ein laufender Vertrag, der für den nächsten Monat planbaren Umsatz bringt.'
       },
       {
-        title: 'Vergleichbarkeit & Preiskampf',
-        desc: 'Ohne scharfes, nutzenorientiertes Angebot werden Angebote als austauschbare "Hardware- und Stundensätze" wahrgenommen.'
+        title: 'Vergleich über Stundensätze',
+        desc: 'Ohne klares Angebot werden IT-Leistungen über Stundensätze und Hardwarepreise verglichen und wirken austauschbar.'
       },
       {
-        title: 'Mangelnde Erreichbarkeit von Entscheidern',
-        desc: 'Geschäftsführer von KMUs blocken klassische Telefonakquise ab. Deine Botschaft gelangt nicht an die relevanten Entscheiderköpfe.'
+        title: 'Entscheider sind schwer erreichbar',
+        desc: 'Geschäftsführer von KMU blocken Telefonakquise meist ab. Ihre Botschaft kommt bei den Entscheidern nicht an.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Strukturierung des MSP-Angebots',
-        desc: 'Wir paketieren deine IT-Dienstleistungen in glasklare Flatrate- und Service-Level-Pakete mit unwiderstehlichem Return on Investment.'
+        title: 'Klare Servicepakete',
+        desc: 'Wir helfen Ihnen, Ihre Leistungen in verständliche Pakete mit festen Preisen und Servicezeiten zu bündeln, deren Nutzen ein Geschäftsführer sofort versteht.'
       },
       {
         step: '02',
-        title: 'Digitaler IT-Security- & Servercheck',
-        desc: 'Über interaktive Schnelldiagnose-Tools qualifizieren sich KMUs bezüglich DSGVO, Cyber-Sicherheit und Backup-Infrastruktur.'
+        title: 'Online-Check zu Sicherheit und Infrastruktur',
+        desc: 'Ein kurzer Online-Check zu Datenschutz, IT-Sicherheit und Backups zeigt KMU ihren Handlungsbedarf und liefert Ihnen qualifizierte Anfragen.'
       },
       {
         step: '03',
-        title: 'Gezielles B2B-LinkedIn-Marketing',
-        desc: 'Wir sprechen Geschäftsführer und CFOs gezielt in ihrer Sprache an: Kostensicherheit, Ausfallsicherheit, Mitarbeitereffizienz.'
+        title: 'Gezielte LinkedIn-Kampagnen',
+        desc: 'Wir sprechen Geschäftsführer und Finanzverantwortliche in ihrer Sprache an: planbare Kosten, Ausfallsicherheit und ein Team, das ungestört arbeiten kann.'
       }
     ],
     benefits: [
-      'Kontinuierlicher Zuwachs an monatlich wiederkehrendem Umsatz (MRR)',
-      'Scharfe Positionierung als strategischer IT-Partner statt billiger Turn-Key-Lieferant',
-      'Systematischer Anlauf qualifizierter B2B-Sicherheitsberatungen',
-      'Planbarkeit bei der Personaleinsatz- und Ressourcenplanung'
+      'Mehr Anfragen für laufende Serviceverträge',
+      'Positionierung als IT-Partner statt als austauschbarer Lieferant',
+      'Regelmässige Anfragen für Sicherheitsberatungen',
+      'Bessere Planbarkeit bei Personal und Ressourcen'
     ],
     faqs: [
       {
-        q: 'Wie grenzen wir uns von den unzähligen Mitbewerbern am Markt ab?',
-        a: 'Durch klare Package-Strukturen und eine radikal nutzenorientierte Ansprache. Wir verkaufen nicht "Cloud", sondern "Null Datenverlust & maximale Standort-Flexibilität".'
+        q: 'Wie heben wir uns von den vielen Mitbewerbern ab?',
+        a: 'Mit klaren Paketen und einer Sprache, die vom Nutzen ausgeht. Ein Geschäftsführer kauft nicht «Cloud», sondern die Sicherheit, dass Daten geschützt sind und das Team von überall arbeiten kann.'
       },
       {
-        q: 'Hilfst du uns, bestehende Kunden in Abo-Modelle (MSPs) zu überführen?',
-        a: 'Ja. Wir entwickeln Umschichtungs-Konzepte und die passenden Vertriebsargumente, mit denen du Projektkunden schrittweise in Retainer überführst.'
+        q: 'Helfen Sie uns, bestehende Projektkunden in Serviceverträge zu überführen?',
+        a: 'Ja. Wir entwickeln mit Ihnen ein Vorgehen und passende Argumente, um Projektkunden schrittweise für einen laufenden Vertrag zu gewinnen.'
       }
     ]
   },
   'ingenieur-planungsbuero': {
     slug: 'ingenieur-planungsbuero',
     title: 'Ingenieur- & Planungsbüros',
-    subtitle: 'Systematisches Projektpipeline-Wachstum & Employer Branding',
-    heroDesc: 'Sichere dir den Zugriff auf lukrative private und öffentliche Bauprojekte. Kontinuierliches Sichtbarkeits-System für führende Ingenieurdienstleistungen.',
+    subtitle: 'Mehr private Aufträge und Bewerbungen für Ihr Planungsbüro',
+    heroDesc: 'Wir helfen Ingenieur- und Planungsbüros, neben Ausschreibungen auch private Bauherren und Gewerbekunden direkt zu erreichen. Und wir machen Ihr Büro für Fachkräfte sichtbar.',
     calculatorComponent: 'ProjektpipelineCheck',
     problems: [
       {
-        title: 'Fatale Abhängigkeit von wenigen Schlüsselkunden',
-        desc: 'Bricht ein grosser Bauträger oder eine Gemeinde als Auftraggeber weg, steht die gesamte Büroauslastung plötzlich vor einer existentiellen Klippe.'
+        title: 'Abhängigkeit von wenigen Auftraggebern',
+        desc: 'Fällt ein grosser Bauherr oder eine Gemeinde als Auftraggeber weg, ist die Auslastung des Büros schnell in Gefahr.'
       },
       {
-        title: 'Völlig ungenutzte Proaktiv-Akquise',
-        desc: 'Viele Büros agieren rein reaktiv auf Ausschreibungen. Lukrative Direktaufträge von Industrie- und Gewerbebauherren gehen ungesehen an die Konkurrenz.'
+        title: 'Nur reagieren auf Ausschreibungen',
+        desc: 'Viele Büros warten auf Ausschreibungen. Direktaufträge von Industrie- und Gewerbebauherren gehen so an andere.'
       },
       {
-        title: 'Gravierender Fachkräftemangel',
-        desc: 'Erstklassige Bauingenieure, Zeichner und Projektleiter sind rar. Ohne moderne digitale Bürosichtbarkeit verpufft das Employer Branding.'
+        title: 'Fachkräfte sind knapp',
+        desc: 'Bauingenieure, Zeichnerinnen und Projektleiter sind schwer zu finden. Ohne sichtbaren Auftritt als Arbeitgeber gehen Bewerbungen an andere Büros.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Visualisierung der Referenz-Power',
-        desc: 'Wir bereiten deine Leuchtturm-Projekte digital als packende Fallstudien auf, die Kompetenz und Termintreue unmissverständlich beweisen.'
+        title: 'Referenzprojekte sichtbar machen',
+        desc: 'Wir bereiten Ihre wichtigsten Projekte als verständliche Fallbeispiele auf, die Ihre Kompetenz und Zuverlässigkeit zeigen.'
       },
       {
         step: '02',
-        title: 'Targeting von privaten Gewerbe-Bauherren',
-        desc: 'Über LinkedIn und Google Ads sprechen wir Expansionsentscheider, Fabrikationsleiter und institutionelle Investoren gezielt an.'
+        title: 'Private und gewerbliche Bauherren ansprechen',
+        desc: 'Über LinkedIn und Google Ads erreichen wir Verantwortliche für Bau- und Erweiterungsprojekte in Unternehmen sowie Investoren.'
       },
       {
         step: '03',
-        title: 'Digitaler Bewerbungs-Funnel',
-        desc: 'Wir etablieren einen 60-Sekunden-Bewerbungsprozess ohne Anschreiben, der passiven Fachkräften den Wechsel spielerisch leicht macht.'
+        title: 'Einfache Bewerbung',
+        desc: 'Wir richten einen kurzen Bewerbungsprozess ohne Anschreiben ein, der auch Fachkräften den ersten Schritt erleichtert, die nicht aktiv suchen.'
       }
     ],
     benefits: [
-      'Gezielte Erschliessung neuer, privater Industrie- und Gewerbe-Bauprojekte',
-      'Breiter diversifizierte Pipeline, die das Klumpenrisiko drastisch senkt',
-      'Nachhaltiger Zustrom von Initiativ-Bewerbungen qualifizierter Ingenieure',
-      'Sichtbare Positionierung als wegweisendes, modernes Planungsbüro der Region'
+      'Neue Kontakte zu privaten Industrie- und Gewerbebauherren',
+      'Breiter abgestützte Auftragslage mit weniger Abhängigkeit von einzelnen Kunden',
+      'Mehr Bewerbungen von qualifizierten Fachkräften',
+      'Ein zeitgemässer Auftritt als Planungsbüro in Ihrer Region'
     ],
     faqs: [
       {
-        q: 'Dürfen wir als Ingenieure überhaupt proaktiv akquirieren?',
-        a: 'Natürlich. Solange es professionell und sachlich abläuft. Wir richten die Ansprache exakt auf technische Expertise, Energieeffizienz und Schweizer Qualitätsstandards aus.'
+        q: 'Passt aktive Kundengewinnung zu einem Ingenieurbüro?',
+        a: 'Ja, solange sie sachlich bleibt. Wir stellen Ihre technische Kompetenz, Referenzen und Themen wie Energieeffizienz in den Vordergrund, nicht laute Werbung.'
       },
       {
-        q: 'Wie funktioniert ein digitaler Bewerbungs-Funnel für Ingenieure?',
-        a: 'Passive Kandidaten haben meist keinen Lebenslauf auf dem Handy bereitliegen. Unser Funnel fragt Fachkompetenzen ab und ermöglicht den Erstkontakt via Klick.'
+        q: 'Wie funktioniert eine einfache Bewerbung für Ingenieure?',
+        a: 'Wer nicht aktiv sucht, hat selten einen aktuellen Lebenslauf bereit. Darum fragen wir zuerst nur einige Eckdaten und Fachkenntnisse ab und ermöglichen den Erstkontakt mit wenigen Klicks.'
       }
     ]
   },
   'personalvermittler-recruiting': {
     slug: 'personalvermittler-recruiting',
     title: 'Personalvermittler & Recruiting',
-    subtitle: 'Zweiseitiges Skalierungs-System für Such-Mandate (Kanten & Kandidaten)',
-    heroDesc: 'Beschleunige deinen Placement-Zyklus. Gewinne exklusive Suchmandate auf Arbeitgeberseite und qualifizierte Fachkräfte im Gleichschritt.',
+    subtitle: 'Mehr Suchmandate und passende Kandidaten für Ihre Vermittlung',
+    heroDesc: 'Wir helfen Personalvermittlern, auf beiden Seiten zu gewinnen: Suchaufträge von Arbeitgebern und passende Kandidaten für diese Stellen. So besetzen Sie schneller und arbeiten weniger auf gut Glück.',
     calculatorComponent: 'PlacementEffizienzRechner',
     problems: [
       {
-        title: 'Verlust von Exklusivität bei Suchmandaten',
-        desc: 'Arbeitgeber streuen Mandate an fünf Vermittler gleichzeitig. Du leistest viel Arbeit auf Erfolgsbasis, gehst am Ende aber leer aus.'
+        title: 'Mandate ohne Exklusivität',
+        desc: 'Arbeitgeber geben dieselbe Stelle oft mehreren Vermittlern. Sie investieren viel Arbeit auf Erfolgsbasis und gehen am Ende leer aus.'
       },
       {
-        title: 'Die leere Kandidatendatenbank',
-        desc: 'Klassische Stellenportale liefern kaum noch brauchbare Bewerbungen. Qualifizierte Kandidaten müssen dort abgeholt werden, wo sie sich aufhalten.'
+        title: 'Zu wenige passende Kandidaten',
+        desc: 'Stellenportale liefern immer weniger brauchbare Bewerbungen. Gute Kandidaten müssen dort erreicht werden, wo sie sich ohnehin aufhalten.'
       },
       {
-        title: 'Extrem langwieriger Bewerbungsprozess',
-        desc: 'Unstrukturierte Lebenslaufprüfungen und langwierige Abstimmungsschleifen mit dem Kunden verzögern den Placement-Umsatz.'
+        title: 'Langsamer Besetzungsprozess',
+        desc: 'Unstrukturierte Prüfung von Lebensläufen und lange Abstimmungsschleifen mit dem Kunden verzögern die Besetzung und damit Ihr Honorar.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Positionierungs-Spezialisierung',
-        desc: 'Wir heben dich aus der Masse der Allgemeinvermittler heraus und machen dich zur unangefochtenen Kanzlei-/Branchen-Anlaufstelle.'
+        title: 'Klare Spezialisierung',
+        desc: 'Wir heben Sie von allgemeinen Vermittlern ab und positionieren Sie als Anlaufstelle für Ihre Branche oder Ihr Berufsfeld.'
       },
       {
         step: '02',
-        title: 'Zweiseitiges Trichter-Marketing',
-        desc: 'Wir bauen parallel laufende Funnel: Einen für exklusive Suchaufträge von HR-Leitern, einen für wechselwillige Top-Spezialisten.'
+        title: 'Zwei getrennte Anfragewege',
+        desc: 'Wir bauen zwei parallele Wege auf: einen für Suchaufträge von HR-Verantwortlichen, einen für wechselbereite Fachkräfte.'
       },
       {
         step: '03',
-        title: 'Automatisierte Talent-Nurturing-Sequenzen',
-        desc: 'Kandidaten in deiner Pipeline werden fortlaufend mit Markt-insights versorgt, damit du im entscheidenden Moment "Top of Mind" bist.'
+        title: 'Kandidaten in Kontakt halten',
+        desc: 'Kandidaten in Ihrer Datenbank erhalten regelmässig nützliche Informationen zum Arbeitsmarkt, damit Sie im richtigen Moment präsent sind.'
       }
     ],
     benefits: [
-      'Signifikant höherer Anteil an exklusiven Suchmandaten gegen Vorauszahlung',
-      'Automatisierte Gewinnung von wechselwilligen Top-Spezialisten per Social Ads',
-      'Verkürzung der Time-to-Fill (Besetzungszeit) um durchschnittlich 30%',
-      'Höhere Wiedereinstellungs-Raten und nachhaltige HR-Partnerschaften'
+      'Mehr Suchaufträge mit Exklusivität oder Anzahlung',
+      'Regelmässige Bewerbungen wechselbereiter Fachkräfte über Social Ads',
+      'Kürzere Wege von der Anfrage bis zur Besetzung',
+      'Längerfristige Zusammenarbeit mit Ihren Arbeitgeberkunden'
     ],
     faqs: [
       {
         q: 'Wie sprechen wir passive Kandidaten an, ohne unseriös zu wirken?',
-        a: 'Mit erstklassiger Brand-Kompetenz und nützlichem Content (z.B. Gehaltsstudien). Seriosität und Diskretion bilden das Zentrum unserer Ansprache.'
+        a: 'Mit einem professionellen Auftritt und nützlichen Inhalten, zum Beispiel Lohnvergleichen oder Marktberichten. Diskretion steht dabei an erster Stelle.'
       },
       {
-        q: 'Funktioniert das System auch für Executive Search (C-Level)?',
-        a: 'Ja. Für das Top-Segment nutzen wir hochgradig personalisierte Video-Ansprachen, fundiertes Executive-Nurturing und exklusiven Netzwerk-Ausbau.'
+        q: 'Funktioniert das auch für Executive Search?',
+        a: 'Ja, mit angepasstem Vorgehen. Für Führungspositionen setzen wir stärker auf persönliche Ansprache, etwa mit kurzen Videos, und auf den gezielten Ausbau Ihres Netzwerks.'
       }
     ]
   },
   'bildung-weiterbildung': {
     slug: 'bildung-weiterbildung',
     title: 'Bildung & Weiterbildung',
-    subtitle: 'Kurs-Funnel-Systeme für Akademien, Institute & Erwachsenenbildung',
-    heroDesc: 'Fülle deine Lehrgänge, Seminare und CAS-Studiengänge systematisch mit direkt buchenden Teilnehmern. Planbare Teilnehmergewinnung ohne Reibungsverlust.',
+    subtitle: 'Mehr Anmeldungen für Ihre Lehrgänge, Kurse und Seminare',
+    heroDesc: 'Wir helfen Akademien, Instituten und Weiterbildungsanbietern, Lehrgänge, Seminare und CAS-Studiengänge mit passenden Teilnehmenden zu füllen. Mit gezielten Kampagnen und einem einfachen Weg zur Anmeldung.',
     calculatorComponent: 'KursFunnelRechner',
     problems: [
       {
-        title: 'Hohe Akquisitionskosten (CAC) pro Studiengast',
-        desc: 'Klassische Broschüren drucken und Messeteilnahmen sind teuer, aber die Nachvollziehbarkeit auf tatsächliche Buchungen fehlt vollständig.'
+        title: 'Hohe Werbekosten ohne klare Wirkung',
+        desc: 'Broschüren und Messeauftritte kosten viel. Welche Massnahme zu wie vielen Anmeldungen führt, bleibt meist unklar.'
       },
       {
-        title: 'Enormer Beratungsaufwand im Vorfeld',
-        desc: 'Das Sekretariat führt unzählige Beratungsgespräche mit Personen, die am Ende die formalen Zulassungsvoraussetzungen gar nicht erfüllen.'
+        title: 'Viel Beratungsaufwand im Vorfeld',
+        desc: 'Das Sekretariat führt viele Gespräche mit Personen, die die Zulassungsvoraussetzungen am Ende nicht erfüllen.'
       },
       {
-        title: 'Frustrierende Abbrecherquoten auf Info-Landingpages',
-        desc: 'Interessenten besuchen zwar die Kursseite, springen dann aber ab, weil der Buchungs- oder Infoabend-Anmelder-Prozess zu komplex ist.'
+        title: 'Interessenten springen auf der Kursseite ab',
+        desc: 'Viele besuchen die Kursseite, melden sich aber nicht an, weil die Anmeldung zum Kurs oder Infoabend zu kompliziert ist.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Interaktiver Zulassungs- und Eignungs-Check',
-        desc: 'Wir etablieren einen Online-Check, bei dem Teilnehmer in 3 Schritten prüfen können, ob sie für den Lehrgang qualifiziert sind.'
+        title: 'Online-Check zur Eignung',
+        desc: 'Interessenten prüfen in wenigen Schritten selbst, ob sie die Voraussetzungen für den Lehrgang erfüllen.'
       },
       {
         step: '02',
-        title: 'Infoabend-Automations-Workflows',
-        desc: 'Anmeldungen zu Infoabenden erhalten automatisierte SMS-Erinnerungen und vorbereitende Mailings, was die Erscheinquote drastisch steigert.'
+        title: 'Automatische Erinnerungen zum Infoabend',
+        desc: 'Wer sich für einen Infoabend anmeldet, erhält automatisch Erinnerungen und vorbereitende Informationen. So erscheinen mehr Angemeldete tatsächlich.'
       },
       {
         step: '03',
-        title: 'Verhaltensbasiertes Retargeting',
-        desc: 'Wer sich die Modulübersicht ansieht, wird gezielt mit Testimonials ehemaliger Absolventen bespielt, um Vertrauen aufzubauen.'
+        title: 'Gezielte Erinnerungswerbung',
+        desc: 'Wer sich die Kursdetails angesehen hat, sieht später zum Beispiel Erfahrungsberichte von Absolventinnen und Absolventen.'
       }
     ],
     benefits: [
-      'Konstant hohe Auslastung aller Seminare, Lehrgänge und Studiengänge',
-      'Automatisches Aussortieren ungeeigneter Bewerber im Vorfeld',
-      'Deutliche Zeitentlastung der Studienberatung durch qualifizierten Erstkontakt',
-      'Messbare Reduktion der Werbekosten pro eingeschriebenem Student'
+      'Bessere Auslastung Ihrer Kurse, Lehrgänge und Studiengänge',
+      'Weniger Beratungsgespräche mit Personen, die die Voraussetzungen nicht erfüllen',
+      'Mehr Zeit für die Studienberatung dank vorqualifizierter Anfragen',
+      'Klare Sicht auf die Werbekosten pro Anmeldung'
     ],
     faqs: [
       {
-        q: 'Kann unser bestehendes ERP/Lernmanagement-System angebunden werden?',
-        a: 'Ja. Wir binden die Lead-Erfassung nahtlos an gängige Systeme an, damit Kursdaten und Teilnehmerlisten synchron bleiben.'
+        q: 'Lässt sich unser bestehendes Kursverwaltungs- oder Lernsystem anbinden?',
+        a: 'In den meisten Fällen ja. Wir verbinden die Anfrageformulare mit gängigen Systemen, damit Kursdaten und Teilnehmerlisten übereinstimmen. Die Details prüfen wir im Erstgespräch.'
       },
       {
-        q: 'Wir bieten Nischenkurse an. Finden wir dafür online genug Teilnehmer?',
-        a: 'Absolut. Gerade spezifische Fachthemen eignen sich hervorragend für Suchmaschinen-Anzeigen (Google Ads), da die Suchabsicht bereits extrem hoch ist.'
+        q: 'Wir bieten Nischenkurse an. Finden wir online genug Teilnehmende?',
+        a: 'Oft ja. Wer gezielt nach einem bestimmten Fachthema sucht, hat meist schon eine konkrete Absicht. Dafür eignen sich Google Ads besonders.'
       }
     ]
   },
   'gesundheitswesen': {
     slug: 'gesundheitswesen',
     title: 'Gesundheitswesen',
-    subtitle: 'Umsatzhebel & Neupatienten-Marketing für Fachkliniken & Spezialpraxen',
-    heroDesc: 'Gewinne gezielt Selbstzahler, Privatpatienten und Zuweiser für deine medizinischen Schwerpunkte. Ethikkonform, digital und hochprofessionell.',
+    subtitle: 'Mehr Neupatienten für Ihre Praxis oder Fachklinik',
+    heroDesc: 'Wir helfen Spezialpraxen und Fachkliniken, mit sachlicher Patienteninformation online gefunden zu werden, zum Beispiel für Selbstzahler-Leistungen. Die Werbevorschriften Ihrer Branche berücksichtigen wir dabei von Anfang an.',
     calculatorComponent: 'NeupatientenPotenzialCheck',
     problems: [
       {
-        title: 'Überlastung durch "Kassen-Routine"',
-        desc: 'Klassische Behandlungen decken kaum noch die Praxiskosten. Lukrative Selbstzahler-Leistungen oder Privatpatienten-Mandate kommen zu kurz.'
+        title: 'Der Alltag lässt keinen Raum für Schwerpunkte',
+        desc: 'Grundversorgung füllt den Kalender. Für Ihre Schwerpunkte und Selbstzahler-Leistungen bleibt wenig Raum, und sie sind online kaum sichtbar.'
       },
       {
-        title: 'Mangelnde digitale Sichtbarkeit bei Spezialthemen',
-        desc: 'Patienten recherchieren Symptome und Therapien online. Wer dort nicht erstklassig auftaucht, überlässt die lukrativen Fälle anderen Kliniken.'
+        title: 'Wenig Sichtbarkeit bei spezifischen Themen',
+        desc: 'Patientinnen und Patienten informieren sich online über Beschwerden und Behandlungen. Wer dort nicht auftaucht, wird nicht gefunden.'
       },
       {
-        title: 'Zeitraubende administrative Patientenaufnahme',
-        desc: 'Unvollständige medizinische Vorkenntnisse, telefonische Termin-Schleifen und fehlende digitale Anamnese-Optionen kosten Zeit.'
+        title: 'Aufwendige Terminvergabe und Aufnahme',
+        desc: 'Telefonische Terminschleifen und fehlende Angaben vor dem ersten Termin kosten das Praxisteam viel Zeit.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Themenspezifische Patienten-Landingpages',
-        desc: 'Wir erstellen äusserst seriöse, verständliche Informationsseiten für spezifische Behandlungen (z.B. Implantologie, Gelenkchirurgie).'
+        title: 'Informationsseiten zu Behandlungen',
+        desc: 'Wir erstellen sachliche, verständliche Seiten zu einzelnen Behandlungen, zum Beispiel Implantologie oder Gelenkchirurgie.'
       },
       {
         step: '02',
-        title: 'Eignungs- & Symptom-Check',
-        desc: 'Patienten beantworten anonym spezifische Fragen (z.B. Leidensdruck, Vorbehandlungen), um die Indikation abzuklären.'
+        title: 'Kurzer Vorab-Fragebogen',
+        desc: 'Patienten beantworten vor der Terminanfrage einige Fragen, etwa zu Beschwerden und bisherigen Behandlungen. Das erleichtert die Vorbereitung auf das Erstgespräch.'
       },
       {
         step: '03',
-        title: 'Digitale Online-Terminkontrolle',
-        desc: 'Direkte Anbindung von Kalenderschnittstellen für die bequeme 24/7-Buchung von Erst- und Beratungsgesprächen.'
+        title: 'Online-Terminbuchung',
+        desc: 'Wir binden Ihren Kalender an, damit Erst- und Beratungstermine jederzeit online gebucht werden können.'
       }
     ],
     benefits: [
-      'Gezielte Steigerung von lukrativen Selbstzahler- & Privatpatienten-Anteilen',
-      'Vollständig standes- und werberechtskonformes Mediziner-Marketing',
-      'Signifikante Zeitersparnis für das Praxis-Sekretariat bei der Terminvereinbarung',
-      'Erhöhter Vertrauensaufbau im Vorfeld durch seriöse Aufklärung'
+      'Mehr Anfragen für Ihre Schwerpunkte und Selbstzahler-Leistungen',
+      'Inhalte, die die Werbevorschriften Ihrer Branche berücksichtigen',
+      'Weniger Telefonaufwand für das Praxisteam bei der Terminvergabe',
+      'Besser informierte Patientinnen und Patienten schon vor dem ersten Termin'
     ],
     faqs: [
       {
-        q: 'Ist proaktive Werbung für Ärzte in der Schweiz nicht stark eingeschränkt?',
-        a: 'Ja. Wir setzen daher auf seriöses "Educational Marketing" (Patientenaufklärung). Sachliche Information, ansprechend aufbereitet, ist rechtlich absolut zulässig und hochwirksam.'
+        q: 'Ist Werbung für Ärztinnen und Ärzte in der Schweiz nicht stark eingeschränkt?',
+        a: 'Ja, es gelten enge Regeln, etwa aus den kantonalen Gesundheitsgesetzen, den Standesregeln und dem Heilmittelwerberecht. Wir setzen deshalb auf sachliche Patienteninformation statt auf Werbeversprechen und berücksichtigen die Werbevorschriften Ihrer Branche. Die abschliessende Prüfung liegt bei Ihnen; eine Rechtsberatung ersetzen wir nicht.'
       },
       {
-        q: 'Unterstützt du auch die Gewinnung von medizinischem Fachpersonal (MFA / Pflege)?',
-        a: 'Ja. Ein funktionierendes Praxisteam ist das Rückgrat jeder Klinik. Wir konzipieren auch digitale Recruitingfunnels zur Personalgewinnung.'
+        q: 'Unterstützen Sie auch die Suche nach Fachpersonal (MPA, Pflege)?',
+        a: 'Ja. Mit Kampagnen und einfachen Bewerbungsseiten erreichen wir auch medizinisches Fachpersonal.'
       }
     ]
   },
   'handwerk': {
     slug: 'handwerk',
     title: 'Handwerk & Bauwesen',
-    subtitle: 'Auftrags-Pipeline & Büroautomation für Schweizer Handwerksbetriebe',
-    heroDesc: 'Gewinnen über planbar margenstarke Bauprojekte und Wunsch-Aufträge in deiner Region. Beschleunige deine Angebotserstellung durch intelligente Automation.',
+    subtitle: 'Mehr Direktaufträge aus Ihrer Region für Ihren Handwerksbetrieb',
+    heroDesc: 'Wir helfen Handwerks- und Baubetrieben, mehr passende Aufträge von Privat- und Gewerbekunden in ihrer Region zu gewinnen. Und wir vereinfachen den Weg von der Anfrage bis zur Offerte.',
     calculatorComponent: 'AuftragsPipelineRechner',
     problems: [
       {
-        title: 'Zeitfressender "Zettelkram" im Büro',
-        desc: 'Kundenanfragen kommen per Mail, Telefon und Whatsapp rein. Die Übersicht geht verloren, Offerten dauern Wochen und Kunden springen ab.'
+        title: 'Anfragen auf allen Kanälen',
+        desc: 'Anfragen kommen per E-Mail, Telefon und WhatsApp. Die Übersicht geht verloren, Offerten dauern lange und Kunden springen ab.'
       },
       {
-        title: 'Fatale Preisschlachten bei Standard-Ausschreibungen',
-        desc: 'Wer sich nur auf öffentliche Portale verlässt, muss über den günstigsten Preis gehen. Lukrative Direkt-Umbauprojekte von Privatleuten fehlen.'
+        title: 'Preiskampf bei Ausschreibungen',
+        desc: 'Wer nur auf Ausschreibungen setzt, muss über den Preis gewinnen. Direktaufträge von privaten Bauherren fehlen.'
       },
       {
-        title: 'Der ständige Baustellen-Fachkräftemangel',
-        desc: 'Aufträge müssen abgelehnt werden, weil Monteure und Poliere fehlen. Das Recruiting läuft unstrukturiert über veraltete Zeitungsinserate.'
+        title: 'Zu wenige Fachkräfte',
+        desc: 'Aufträge müssen abgelehnt werden, weil Monteure und Poliere fehlen. Die Personalsuche läuft nebenher und ohne klares Vorgehen.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Regionale Markt-Dominanz',
-        desc: 'Wir positionieren deinen Betrieb digital als erste Anlaufstelle für anspruchsvolle Privat- und Gewerbebauvorhaben in deinem Kanton.'
+        title: 'Sichtbar in Ihrer Region',
+        desc: 'Wir machen Ihren Betrieb online zur ersten Anlaufstelle für Privat- und Gewerbeprojekte in Ihrem Kanton.'
       },
       {
         step: '02',
-        title: 'Digitaler Angebots-Konfigurator',
-        desc: 'Bauherren fragen ihre Wunschprojekte (z.B. Badsanierung, PV-Anlage, Holzanbau) mit allen Eckdaten digital über deine Website an.'
+        title: 'Strukturierte Online-Anfrage',
+        desc: 'Bauherren beschreiben ihr Vorhaben, zum Beispiel Badsanierung, PV-Anlage oder Holzanbau, mit allen wichtigen Eckdaten direkt über Ihre Website.'
       },
       {
         step: '03',
-        title: 'Büro-Automation & CRM-Anbindung',
-        desc: 'Wir etablieren schlanke Prozesse zur Angebotserfassung und automatische Erinnerungsschlaufen für ausstehende Offerten.'
+        title: 'Weniger Büroarbeit dank CRM',
+        desc: 'Wir richten einfache Abläufe für die Erfassung von Anfragen ein und automatische Erinnerungen für offene Offerten.'
       }
     ],
     benefits: [
-      'Laufender Zufluss von margenstarken Direktaufträgen von Bauherren',
-      'Drastische Verkürzung der Offert-Erstellungsdauer um bis zu 50%',
-      'Effektives Nachfassen aller Angebote ohne manuellen Mehraufwand',
-      'Sichtbarkeit bei Fachkräften der Region für unkomplizierte Bewerbungen'
+      'Mehr Direktaufträge von Bauherren aus Ihrer Region',
+      'Schnellere Offerten, weil die Angaben vollständig vorliegen',
+      'Offerten werden nachgefasst, ohne dass jemand daran denken muss',
+      'Mehr Sichtbarkeit bei Fachkräften in Ihrer Region'
     ],
     faqs: [
       {
-        q: 'Müssen wir für diese Automation unsere gesamte Software umstellen?',
-        a: 'Nein. Wir binden bewährte Handwerkersoftwaren (z.B. Abacus, Bexio, SORBA) über Schnittstellen an, um Daten synchron zu halten.'
+        q: 'Müssen wir dafür unsere Software umstellen?',
+        a: 'In der Regel nicht. Wir prüfen, wie sich Ihre bestehende Software, etwa Abacus, Bexio oder SORBA, über Schnittstellen anbinden lässt.'
       },
       {
-        q: 'Lohnt sich das auch für kleinere Familienbetriebe (5-10 Mitarbeiter)?',
-        a: 'Gerade dort. Wenn der Chef selbst auf der Baustelle steht, ist Zeit im Büro Mangelware. Unser System hält ihm den Rücken vom Papierkram frei.'
+        q: 'Lohnt sich das auch für kleinere Familienbetriebe?',
+        a: 'Ja. Wenn der Chef selbst auf der Baustelle steht, ist Zeit im Büro knapp. Klare Abläufe für Anfragen und Offerten nehmen ihm einen Teil dieser Arbeit ab.'
       }
     ]
   },
   'rechtsanwaelte': {
     slug: 'rechtsanwaelte',
     title: 'Rechtsanwälte',
-    subtitle: 'Digitale Kanzleiprozesse & gezielte Gewinnung von Wirtschafts-Mandaten',
-    heroDesc: 'Gewinne planbar erstklassige Wirtschafts- und Spezialmandate. Reduziere deinen administrativen Beiback durch hocheffiziente Vorqualifizierung.',
+    subtitle: 'Mehr passende Mandatsanfragen für Anwaltskanzleien',
+    heroDesc: 'Wir helfen Kanzleien, gezielt Mandate in ihren Fachgebieten zu gewinnen und unpassende Anfragen früh auszusortieren. Die Standes- und Werberegeln für Anwältinnen und Anwälte berücksichtigen wir dabei.',
     calculatorComponent: 'KanzleiAuslastungsCheck',
     problems: [
       {
-        title: 'Flugstunden-Verlust durch "Telefon-Tourismus"',
-        desc: 'Das Sekretariat führt unzählige unproduktive Erstgespräche mit Personen, deren Fälle juristisch aussichtslos oder schlicht unrentabel sind.'
+        title: 'Viele unpassende Erstanfragen',
+        desc: 'Das Sekretariat führt viele Gespräche zu Fällen, die nicht ins Fachgebiet passen oder wirtschaftlich nicht tragbar sind.'
       },
       {
-        title: 'Hoher administrativer Overhead bei der Aufnahme',
-        desc: 'Die Einholung von Mandatsdaten, Vollmachten und ersten Akten läuft zäh, was wertvolle Billable-Stunden auf Partner-Ebene vernichtet.'
+        title: 'Aufwendige Mandatsaufnahme',
+        desc: 'Angaben, Vollmachten und erste Unterlagen einzuholen dauert lange und kostet verrechenbare Zeit.'
       },
       {
-        title: 'Fehlende digitale Kanzleipositionierung',
-        desc: 'Unternehmer suchen Anwälte heute vermehrt über Suchmaschinen und LinkedIn. Wer dort unsichtbar ist, existiert bei der Mandatsvergabe oft nicht.'
+        title: 'Wenig sichtbar im Netz',
+        desc: 'Unternehmer suchen Anwälte vermehrt über Google und LinkedIn. Wer dort nicht auftaucht, wird bei der Auswahl oft nicht berücksichtigt.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Schnittscharfe Online-Positionierung',
-        desc: 'Wir positionieren deine Kanzlei-Partner als profilierte Branchenexperten für dein Kerngebiet (z.B. SME-IP-Recht, Arbeitsrecht, Nachfolge).'
+        title: 'Klare Positionierung online',
+        desc: 'Wir machen Ihre Partnerinnen und Partner als Fachleute für Ihre Schwerpunkte sichtbar, zum Beispiel Arbeitsrecht, Immaterialgüterrecht oder Nachfolge.'
       },
       {
         step: '02',
-        title: 'Mandats-Vorqualifizierungs-Check',
-        desc: 'Ein diskreter digitaler Check klärt Streitsumme, gegnerische Partei (Kollisionsprüfung) und Rechtsschutzdeckung ab.'
+        title: 'Vorab-Fragebogen für neue Mandate',
+        desc: 'Ein diskreter Online-Fragebogen erfasst vorab Rechtsgebiet, Gegenpartei für die Konfliktprüfung und eine allfällige Rechtsschutzversicherung.'
       },
       {
         step: '03',
-        title: 'Automatisierte Dokumenten-Anforderung',
-        desc: 'Nach dem Erstkontakt fordert das System relevante Dokumente automatisch an, sodass dein Juristen-Team optimal vorbereitet startet.'
+        title: 'Automatische Anforderung von Unterlagen',
+        desc: 'Nach dem Erstkontakt werden die nötigen Unterlagen automatisch angefordert, damit Ihr Team gut vorbereitet ins Mandat startet.'
       }
     ],
     benefits: [
-      'Messbare Steigerung der abrechenbaren Mandatsstunden (Billable Hours)',
-      'Drastische Verringerung unproduktiven administrativen Overheads um bis zu 40%',
-      'Lückenlose Einhaltung aller anwaltsrechtlichen Standesregeln',
-      'Systematisches Gewinnen von lukrativen Dauermandaten von Unternehmen'
+      'Mehr Anfragen in Ihren Fachgebieten',
+      'Weniger Zeitaufwand für unpassende Erstanfragen',
+      'Auftritt, der die Standes- und Werberegeln berücksichtigt',
+      'Gezielte Ansprache von Unternehmen für längerfristige Mandate'
     ],
     faqs: [
       {
-        q: 'Wie verhält sich das mit der anwaltlichen Schweigepflicht bei Online-Tools?',
-        a: 'Sicherheit steht an erster Stelle. Wir nutzen ausschliesslich Schweizer Server, DSGVO-konforme Datenwege und SSL-verschlüsselte Abfragen.'
+        q: 'Wie passt das zum Berufsgeheimnis bei Online-Formularen?',
+        a: 'Wir fragen im Erstkontakt nur das Nötigste ab, nutzen verschlüsselte Übertragung und wählen Tools mit Datenhaltung in der Schweiz oder der EU, soweit möglich. Die Einzelheiten legen wir mit Ihnen fest.'
       },
       {
-        q: 'Dürfen Anwälte in der Schweiz aktiv werben?',
-        a: 'Ja. Die Erläuterung der eigenen Fachkompetenz und das Aufbereiten von Fachbeiträgen gelten als absolut standesrechtskonform.'
+        q: 'Dürfen Anwältinnen und Anwälte in der Schweiz werben?',
+        a: 'Ja, in einem engen Rahmen: Werbung muss sachlich sein und dem Informationsbedürfnis der Öffentlichkeit dienen (Art. 12 lit. d BGFA). Wir setzen auf Fachbeiträge und sachliche Darstellung Ihrer Schwerpunkte. Die standesrechtliche Beurteilung bleibt bei Ihnen.'
       }
     ]
   },
   'logistik-transport': {
     slug: 'logistik-transport',
     title: 'Logistik & Transport',
-    subtitle: 'Flottenauslastung & Direktkunden-Gewinnung für Logistik-Dienstleister',
-    heroDesc: 'Minimiere Leerfahrten auf deinen Stammrelationen. Gewinne planbar lohnende Direktkunden (C-Teile, Industrie, Handel) statt billige Spotmarkt-Frachten.',
+    subtitle: 'Mehr Direktkunden und weniger Leerfahrten für Ihr Transportunternehmen',
+    heroDesc: 'Wir helfen Transport- und Logistikunternehmen, Direktkunden aus Industrie und Handel auf ihren Stammstrecken zu gewinnen. So sind Sie weniger auf Frachtenbörsen angewiesen.',
     calculatorComponent: 'FlottenauslastungsRechner',
     problems: [
       {
-        title: 'Preiserpressung auf dem Spotmarkt',
-        desc: 'Der kurzfristige Frachtenverkauf über Frachtenbörsen deckt kaum noch die variablen Kosten. Du bist am Ende der Nahrungskette.'
+        title: 'Preisdruck auf Frachtenbörsen',
+        desc: 'Kurzfristige Frachten über Frachtenbörsen decken oft kaum die Kosten. Sie haben wenig Einfluss auf den Preis.'
       },
       {
-        title: 'Inkonsistente Auslastung der Stammstrecken',
-        desc: 'Die Hinfahrt läuft gut ausprozessiert — doch die Rückfahrt erfolgt oft leer oder mit dramatisch unterbezahlten Beiladungen.'
+        title: 'Leere Rückfahrten',
+        desc: 'Die Hinfahrt ist ausgelastet, die Rückfahrt erfolgt oft leer oder mit schlecht bezahlten Beiladungen.'
       },
       {
-        title: 'Permanent fehlende Lkw-Fahrer',
-        desc: 'Fahrzeuge stehen ungenutzt auf dem Hof, weil qualifizierte Chauffeure (Kat. C/CE) fehlen. Herkömmliche Stellenportale liefern keine Bewerber mehr.'
+        title: 'Fehlende Chauffeure',
+        desc: 'Fahrzeuge bleiben stehen, weil Chauffeure der Kategorie C/CE fehlen. Stellenportale bringen kaum noch Bewerbungen.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Sichtbarkeit auf Schlüsselrelationen',
-        desc: 'Wir schalten zielgerichtete B2B-Anzeigen exakt im Postleitzahlkreis deiner Stammstrecken, um Versender direkt zu erreichen.'
+        title: 'Sichtbar auf Ihren Stammstrecken',
+        desc: 'Wir schalten Anzeigen gezielt in den Regionen entlang Ihrer Stammstrecken, um Versender direkt zu erreichen.'
       },
       {
         step: '02',
-        title: 'Direktkunden-Anfrage-Funnels',
-        desc: 'Handel- und Industrieunternehmen können Frachtvolumen, Regeltausch und Terminvorgaben mit wenigen Klicks qualifiziert anfordern.'
+        title: 'Einfache Transportanfrage',
+        desc: 'Handels- und Industriefirmen geben Frachtvolumen, Rhythmus und Termine mit wenigen Klicks an. Sie erhalten Anfragen, die Sie direkt offerieren können.'
       },
       {
         step: '03',
-        title: 'Chauffeur-Blitz-Recruiting',
-        desc: 'Wir bauen 60-Sekunden-Bewerbungsprozesse ohne Lebenslauf auf, um wechselwillige Fahrer in deiner Reichweite direkt zu kontaktieren.'
+        title: 'Schnelle Bewerbung für Chauffeure',
+        desc: 'Wir richten eine kurze Bewerbung ohne Lebenslauf ein und sprechen wechselbereite Fahrer in Ihrer Region gezielt an.'
       }
     ],
     benefits: [
-      'Signifikante Reduktion von Leerfahrten auf deinen Stammrelationen',
-      'Erhöhung der Margensicherheit durch direkten Kontakt zu verladenden Industrie-KMUs',
-      'Stabiler Eingang qualifizierter Berufskraftfahrer-Bewerbungen',
-      'Unabhängigkeit von ruinösen Frachtenbörsen-Plattformen'
+      'Weniger Leerfahrten auf Ihren Stammstrecken',
+      'Bessere Margen durch direkten Kontakt zu Versendern',
+      'Regelmässige Bewerbungen von Berufschauffeuren',
+      'Weniger Abhängigkeit von Frachtenbörsen'
     ],
     faqs: [
       {
-        q: 'Unterstützt du uns auch bei der Neukundenaquise im Ausland?',
-        a: 'Ja. Wir optimieren B2B-Auftragskampagnen entlang deiner Transitrouten (e.g., Schweiz - Deutschland - Italien) zur optimalen Ausnutzung aller Leerwege.'
+        q: 'Unterstützen Sie uns auch bei der Kundengewinnung im Ausland?',
+        a: 'Ja. Wir können Kampagnen entlang Ihrer Transitrouten ausrichten, zum Beispiel Schweiz–Deutschland–Italien, um Rückfahrten besser auszulasten.'
       },
       {
-        q: 'Welche Plattformen eignen sich am besten zur Gewinnung von Berufskraftfahrern?',
-        a: 'Für Chauffeure nutzen wir zielgruppengerechte Social Media Funnels auf Facebook und Instagram, da Berufskraftfahrer dort sehr aktiv sind.'
+        q: 'Wo erreichen wir Berufschauffeure am besten?',
+        a: 'Häufig über Facebook und Instagram, wo viele Chauffeure aktiv sind. Welche Kanäle für Ihre Region am besten funktionieren, testen wir mit kleinen Budgets.'
       }
     ]
   },
   'hospitality': {
     slug: 'hospitality',
     title: 'Hospitality',
-    subtitle: 'Direktbuchungs-Systeme & Provisions-Reduktion für Hotels & Resorts',
-    heroDesc: 'Befreie dich aus der Zwingzange von Booking.com & Co. Steigere deine Direktbuchungsquote systematisch durch emotionales digitales Marketing.',
+    subtitle: 'Mehr Direktbuchungen für Ihr Hotel, weniger Provisionen',
+    heroDesc: 'Wir helfen Hotels und Resorts, mehr Gäste direkt über die eigene Website buchen zu lassen statt über Buchungsplattformen. Das spart Provisionen und Sie behalten den direkten Kontakt zum Gast.',
     calculatorComponent: 'DirektbuchungsRechner',
     problems: [
       {
-        title: 'Enorme Provisionszahlungen an OTAs',
-        desc: 'Booking.com, Expedia & Co. behalten bis zu 15-22% deines harten Zimmerumsatzes ein. Das schmälert deinen Gewinn substantiell.'
+        title: 'Hohe Provisionen an Buchungsplattformen',
+        desc: 'Booking.com, Expedia und andere Plattformen behalten pro Buchung eine Provision ein. Bei einem hohen Anteil an Plattformbuchungen kostet das viel Marge.'
       },
       {
-        title: 'Der Gast "gehört" der Buchungsplattform',
-        desc: 'OTAs halten die E-Mail-Adressen deiner Gäste zurück. Du kannst den Gast für zukünftige Aufenthalte kaum noch direkt kontaktieren.'
+        title: 'Der Kontakt zum Gast fehlt',
+        desc: 'Bei Plattformbuchungen erhalten Sie oft keine direkte E-Mail-Adresse des Gastes. Ihn für einen nächsten Aufenthalt anzusprechen, wird schwierig.'
       },
       {
-        title: 'Austauschbarkeit auf Portalen',
-        desc: 'In der App bist du nur eines von 50 Hotels, sortiert nach Rabatt. Deine einzigartige Identität und Gastgeber-Qualität geht völlig verloren.'
+        title: 'Austauschbar auf Portalen',
+        desc: 'Auf den Portalen erscheinen Sie als eines von vielen Hotels, sortiert nach Preis. Was Ihr Haus besonders macht, geht unter.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Emotionales Digital-Branding',
-        desc: 'Wir laden deine Marke auf: Mit faszinierendem Bildmaterial, Storytelling und dem unverwechselbaren Lebensgefühl deines Hauses.'
+        title: 'Ihr Haus überzeugend zeigen',
+        desc: 'Mit guten Bildern und Texten zeigen wir, was Ihr Haus und Ihre Gastgeberqualität ausmacht.'
       },
       {
         step: '02',
-        title: 'Optimierte Website-Conversion',
-        desc: 'Wir strukturieren deine Hotelwebsite radikal auf Buchungsfreundlichkeit um. Direktbuchen muss schneller gehen als bei Booking.com.'
+        title: 'Einfacher buchen auf der Website',
+        desc: 'Wir gestalten Ihre Website so, dass eine Direktbuchung mindestens so einfach ist wie auf einer Plattform.'
       },
       {
         step: '03',
-        title: 'Intelligente Direktbucher-Vorteile',
-        desc: 'Wir etablieren klare Anreize für Direktbucher (e.g. Wellness-Gutschein, Welcome-Drink, Late Checkout), die glasklar sichtbar sind.'
+        title: 'Klare Vorteile für Direktbucher',
+        desc: 'Wir machen Vorteile für Direktbuchungen gut sichtbar, zum Beispiel Wellness-Gutschein, Begrüssungsgetränk oder späten Check-out.'
       }
     ],
     benefits: [
-      'Spürbare Senkung der Provisionsausgaben an OTA-Plattformen',
-      'Direkter, persönlicher Kontakt zum Gast ab der ersten Sekunde',
-      'Höhere Umsätze pro Buchung (ADR) durch gezieltes Up-Selling von Zusatzleistungen',
-      'Exzellente Kundenbindung und signifikante Steigerung der Stammgäste-Quote'
+      'Weniger Provisionen an Buchungsplattformen',
+      'Direkter Kontakt zum Gast ab der Buchung',
+      'Mehr Umsatz pro Aufenthalt durch passende Zusatzangebote',
+      'Mehr wiederkehrende Gäste dank direkter Ansprache'
     ],
     faqs: [
       {
         q: 'Dürfen wir auf unserer Website tiefere Preise anbieten als auf Booking.com?',
-        a: 'Ja. Die Schweizer Ratenparitätsklauseln wurden gelockert. Du darfst auf deinem Direktkanal bessere Konditionen, exklusive Packages und Zusatzvorteile anbieten.'
+        a: 'Seit Dezember 2022 verbietet das Schweizer Lauterkeitsrecht (Art. 8a UWG) Buchungsplattformen, Hotels Preisparitätsklauseln aufzuerlegen. Sie dürfen auf Ihrer Website also grundsätzlich bessere Preise, eigene Pakete und Zusatzvorteile anbieten. Prüfen Sie im Zweifel Ihre Verträge.'
       },
       {
-        q: 'Können wir unsere Hotelsoftware (PMS) wie Protel, PMS Mews verbinden?',
-        a: 'Selbstverständlich. Wir binden die Booking-Engine Ihres Hauses nahtlos ein, damit Verfügbarkeiten und Preise live synchronisiert werden.'
+        q: 'Können wir unser Hotelsystem (PMS) wie Protel oder Mews anbinden?',
+        a: 'In der Regel ja. Wir binden die Buchungsmaschine Ihres Hauses so ein, dass Verfügbarkeiten und Preise aktuell bleiben. Die Details hängen von Ihrem System ab.'
       }
     ]
   }

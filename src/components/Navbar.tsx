@@ -25,6 +25,7 @@ import {
 import { SERVICES } from '../data/services';
 import { ServiceDetail } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
+import { SITE } from '../config/site';
 
 interface NavbarProps {
   currentPath: string;
@@ -95,6 +96,13 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     return servicesIcons[slug] || TrendingUp;
   };
 
+  const PRIMARY_LINKS = [
+    { href: '/leistungen', label: 'Leistungen' },
+    { href: '/loesungen', label: 'Branchen' },
+    { href: '/ueber-uns', label: 'Über uns' },
+    { href: '/ressourcen', label: 'Ratgeber' },
+  ];
+
   const navServices = SERVICES.filter(
     (s) => s.slug !== 'marketing-automation' && s.slug !== 'revenue-operations'
   );
@@ -129,8 +137,37 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               />
             </a>
 
-            {/* Menu Open/Close trigger button */}
-            <div className="flex items-center gap-3">
+            {/* Persistente Hauptnavigation (Desktop) */}
+            <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-1">
+              {PRIMARY_LINKS.map((link) => {
+                const active = currentPath === link.href || currentPath.startsWith(`${link.href}/`);
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(link.href, e)}
+                    aria-current={active ? 'page' : undefined}
+                    className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                      active ? 'text-[#4f54d6] bg-[#686DF4]/8' : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+            </nav>
+
+            {/* CTA + Menü */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <a
+                href="/kontakt"
+                onClick={(e) => handleLinkClick('/kontakt', e)}
+                id="header-cta"
+                className="inline-flex items-center gap-1.5 min-h-11 px-4 sm:px-5 rounded-full bg-slate-950 text-white text-sm font-semibold hover:bg-[#4f54d6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors"
+              >
+                <span className="sm:hidden">Kontakt</span>
+                <span className="hidden sm:inline">Erstgespräch vereinbaren</span>
+              </a>
               <button
                 id="nav-toggle-button"
                 onClick={() => setIsOpen(!isOpen)}
@@ -216,7 +253,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         <div className="space-y-3.5">
                           {/* Service Indicator header label */}
                           <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">LEISTUNGS-SCHWERPUNKT</span>
+                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">Leistung</span>
                             <div className="h-px bg-slate-100 flex-grow"></div>
                           </div>
 
@@ -238,7 +275,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
                           {/* Quick Deliverable Bullets */}
                           <div className="space-y-2 pt-1">
-                            <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">KERNERGEBNISSE:</span>
+                            <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Was Sie erhalten:</span>
                             <ul className="space-y-1.5" id="spotlight-deliverables">
                               {hoveredService.deliverables.slice(0, 2).map((del, idx) => (
                                 <li key={idx} className="flex items-start gap-2 text-xs text-slate-700 font-medium leading-snug">
@@ -252,14 +289,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
                         {/* Impact stats dynamic layer */}
                         <div className="pt-3.5 border-t border-slate-100 space-y-3">
-                          <div className="bg-slate-50 border border-slate-200/60 p-3 rounded-xl flex items-center justify-between">
+                          {hoveredService.metrics.length > 0 && <div className="bg-slate-50 border border-slate-200/60 p-3 rounded-xl flex items-center justify-between">
                             {hoveredService.metrics.map((m, mIdx) => (
                               <div key={mIdx} className="space-y-0.5">
                                 <span className="text-base font-bold font-display text-[#686DF4] block leading-none">{m.value}</span>
                                 <span className="text-[11px] text-slate-500 font-semibold uppercase font-mono tracking-wider block">{m.label}</span>
                               </div>
                             ))}
-                          </div>
+                          </div>}
 
                           <a
                             href={`/leistungen/${hoveredService.slug}`}
@@ -267,7 +304,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             className="w-full justify-between bg-slate-900 hover:bg-[#686DF4] text-white font-semibold text-xs py-3 px-4 rounded-xl tracking-wider uppercase inline-flex items-center gap-2 transition-colors duration-200 group/spot"
                             id={`spotlight-cta-link-${hoveredService.slug}`}
                           >
-                            <span>Hebel detailliert ansehen</span>
+                            <span>Mehr zu dieser Leistung</span>
                             <ArrowRight className="w-3.5 h-3.5 text-white group-hover/spot:translate-x-1 transition-transform duration-200" />
                           </a>
                         </div>
@@ -285,44 +322,28 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       >
                         <div className="space-y-3.5">
                           <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">SYSTEMATIC GROWTH ARCHITECTURE</span>
+                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">performanceboost</span>
                             <div className="h-px bg-slate-100 flex-grow"></div>
                           </div>
 
                           <h4 className="text-lg font-display font-bold text-slate-900 tracking-tight leading-snug">
-                            Ergebnisse statt leere KPI-Konzepte.
+                            Mehr passende Anfragen statt mehr Klicks.
                           </h4>
 
                           <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                            performanceboost wurde gegründet, weil Schweizer B2B-Unternehmen keinen weiteren Anbieter für lose Facebook-Ads brauchen. Sie verlangen einen Partner, der Wachstum versteht, testet und schrittweise systemisiert.
+                            Kampagnen, Landingpages, Tracking und Automatisierung aus einer Hand, damit aus Werbebudget messbar Kundenanfragen werden.
                           </p>
 
-                          <div className="p-3.5 rounded-xl bg-[#686DF4]/[0.03] border border-[#686DF4]/10 space-y-2">
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#686DF4] block">KUMULIERTER MITTELWERT EXZELLENZ:</span>
-                            
-                            <div className="grid grid-cols-2 gap-3">
-                              <div className="space-y-0.5">
-                                <span className="text-lg font-bold font-display text-slate-900 block leading-none">3.4x</span>
-                                <span className="text-[11px] text-slate-500 font-medium uppercase font-mono tracking-wider block">Pipeline-Volumen</span>
-                              </div>
-                              <div className="space-y-0.5">
-                                <span className="text-lg font-bold font-display text-slate-900 block leading-none">+35%</span>
-                                <span className="text-[11px] text-slate-500 font-medium uppercase font-mono tracking-wider block">Close-Ratio</span>
-                              </div>
-                            </div>
-                          </div>
+                          
                         </div>
 
                         <div className="space-y-2.5 pt-3 border-t border-slate-100">
                           <div className="flex items-center gap-2 text-xs text-slate-600 font-medium">
                             <MapPin className="w-3.5 h-3.5 text-[#686DF4] shrink-0" />
-                            <span>Schweiz (Graubünden) • Remote Standard</span>
+                            <span>Fläsch (GR) · Zusammenarbeit vor Ort oder remote</span>
                           </div>
                           
-                          <div className="flex justify-between items-center text-[11px] text-slate-400 font-mono tracking-wider uppercase border-t border-slate-100 pt-2">
-                            <span>SWISS-TUNED REVENUE SYSTEM</span>
-                            <span>PRO-LEVEL v4.0</span>
-                          </div>
+                          
                         </div>
                       </motion.div>
                     )}
@@ -333,7 +354,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 <div className="col-span-5 flex flex-col justify-between" id="menu-services-panel">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between pb-0.5">
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">UNSERE WACHSTUMSHEBEL</span>
+                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">Leistungen</span>
                       <a 
                         href="/leistungen" 
                         onClick={(e) => handleLinkClick('/leistungen', e)}
@@ -403,20 +424,20 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                           </span>
-                          <span className="text-[11px] font-mono font-bold tracking-widest text-emerald-400 uppercase">HEUTE VERFÜGBAR</span>
+                          <span className="text-[11px] font-mono font-bold tracking-widest text-emerald-400 uppercase">Kostenlos & unverbindlich</span>
                         </div>
 
                         <h5 className="text-sm font-bold tracking-tight text-white mb-1 group-hover:text-[#8185F8] transition-colors flex items-center justify-between">
-                          Wachstums-Audit (30 min) <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          Erstgespräch (30 Min.) <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                         </h5>
 
                         <p className="text-[11px] text-slate-300 font-normal leading-snug mb-3">
-                          Kostenfreier Pipeline-Check für Schweizer Unternehmen.
+                          Wir schauen gemeinsam auf Ihre heutige Kundengewinnung.
                         </p>
 
                         <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-white bg-[#686DF4] group-hover:bg-[#575cdb] px-3 py-1.5 rounded-lg transition-colors">
                           <Calendar className="w-3.5 h-3.5" />
-                          Termin sichern
+                          Anfrage senden
                         </div>
                       </a>
 
@@ -436,14 +457,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                               Über uns
                             </span>
                             <span className="block text-[11px] text-slate-500 font-normal truncate">
-                              Philosophie & Track Record
+                              Wer hinter performanceboost steht
                             </span>
                           </div>
                         </div>
                         <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
                       </a>
 
-                      {/* Skill Factory Link Card */}
+                      {/* Selbst-Checks Link Card */}
                       <a
                         href="/skills"
                         id="mega-menu-skills-link-card"
@@ -456,10 +477,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           </div>
                           <div className="min-w-0">
                             <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
-                              Skill Factory
+                              Selbst-Checks
                             </span>
                             <span className="block text-[11px] text-slate-500 font-normal truncate">
-                              36 Diagnose-Frameworks
+                              Rechner & Checks für Ihre Analyse
                             </span>
                           </div>
                         </div>
@@ -494,25 +515,25 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   {/* Reachability block */}
                   <div className="pt-3.5 border-t border-slate-200/60 space-y-2">
                     <a 
-                      href="mailto:yathur@performanceboost.ch"
+                      href={`mailto:${SITE.email}`}
                       className="flex items-center gap-2.5 text-xs text-slate-700 hover:text-[#686DF4] font-semibold group transition-colors"
                       id="desktop-email-footer"
                     >
                       <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
                         <Mail className="w-3.5 h-3.5" />
                       </div>
-                      <span className="truncate">yathur@performanceboost.ch</span>
+                      <span className="truncate">{SITE.email}</span>
                     </a>
 
                     <a 
-                      href="tel:+41786754097"
+                      href={SITE.phoneHref}
                       className="flex items-center gap-2.5 text-xs text-slate-700 hover:text-[#686DF4] font-semibold group transition-colors"
                       id="desktop-phone-footer"
                     >
                       <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
                         <Phone className="w-3.5 h-3.5" />
                       </div>
-                      <span>+41 78 675 4097</span>
+                      <span>{SITE.phoneDisplay}</span>
                     </a>
                   </div>
                 </div>
@@ -527,7 +548,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 {/* Brand description header block */}
                 <div className="bg-white border border-slate-200/80 p-4.5 rounded-2xl space-y-2">
                   <p className="mega-menu-desc text-slate-600 font-medium leading-relaxed">
-                    Systematische B2B Wachstumsmaschinen für Schweizer KMU & Tech-Unternehmen.
+                    Planbare Neukundengewinnung für Schweizer KMU.
                   </p>
                 </div>
 
@@ -541,7 +562,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       className="w-full flex justify-between items-center p-4.5 mega-menu-subheading font-bold text-slate-900 hover:text-[#686DF4] cursor-pointer"
                       aria-expanded={mobileLeistungenOpen}
                     >
-                      <span>UNSERE LEISTUNGEN</span>
+                      <span>LEISTUNGEN</span>
                       <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${mobileLeistungenOpen ? 'rotate-90 text-[#686DF4]' : ''}`} />
                     </button>
                     
@@ -580,6 +601,22 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
                   {/* General Overview links */}
                   <a
+                    href="/loesungen"
+                    onClick={(e) => handleLinkClick('/loesungen', e)}
+                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
+                  >
+                    <span>BRANCHEN</span>
+                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
+                  </a>
+                  <a
+                    href="/ressourcen"
+                    onClick={(e) => handleLinkClick('/ressourcen', e)}
+                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
+                  >
+                    <span>RATGEBER</span>
+                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
+                  </a>
+                  <a
                     href="/ueber-uns"
                     onClick={(e) => handleLinkClick('/ueber-uns', e)}
                     className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
@@ -593,7 +630,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     onClick={(e) => handleLinkClick('/skills', e)}
                     className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
                   >
-                    <span>SKILL FACTORY</span>
+                    <span>SELBST-CHECKS</span>
                     <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
                   </a>
 
@@ -619,8 +656,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     <div className="flex items-center gap-3.5">
                       <Calendar className="w-5.5 h-5.5 text-white animate-pulse shrink-0" />
                       <div className="text-left">
-                        <span className="block mega-menu-heading font-bold text-white leading-tight">Wachstums-Audit (30 min)</span>
-                        <span className="block mega-menu-desc text-white/90 leading-snug mt-0.5 font-medium">Sichere dir einen Schweizer Zeit-Slot</span>
+                        <span className="block mega-menu-heading font-bold text-white leading-tight">Erstgespräch (30 Min.)</span>
+                        <span className="block mega-menu-desc text-white/90 leading-snug mt-0.5 font-medium">Kostenlos und unverbindlich</span>
                       </div>
                     </div>
                     <ArrowRight className="w-4.5 h-4.5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
@@ -631,19 +668,19 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     <span className="mega-menu-meta font-mono font-bold uppercase tracking-wider text-slate-500 block">DIREKTKONTAKT</span>
                     
                     <a 
-                      href="mailto:yathur@performanceboost.ch"
+                      href={`mailto:${SITE.email}`}
                       className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
                     >
                       <Mail className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
-                      <span>yathur@performanceboost.ch</span>
+                      <span>{SITE.email}</span>
                     </a>
 
                     <a 
-                      href="tel:+41786754097"
+                      href={SITE.phoneHref}
                       className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
                     >
                       <Phone className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
-                      <span>+41 78 675 4097</span>
+                      <span>{SITE.phoneDisplay}</span>
                     </a>
                   </div>
                 </div>
@@ -653,7 +690,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
             {/* STATIC FOOTER RETAINED */}
             <div className="bg-slate-100 border-t border-slate-200/80 py-6 px-6 sm:px-8 lg:px-10 z-15 text-center text-[11px] text-slate-400/90 font-mono tracking-widest uppercase mt-auto">
-              © {new Date().getFullYear()} performanceboost • graubünden • swiss-tuned revenue systemization
+              © {new Date().getFullYear()} performanceboost · Fläsch, Graubünden
             </div>
 
           </motion.div>

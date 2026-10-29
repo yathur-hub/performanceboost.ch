@@ -10,6 +10,7 @@ import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
 import { RevenueNavigator } from '../components/home/RevenueNavigator';
 import { ClientTestimonials } from '../components/home/ClientTestimonials';
+import { SITE } from '../config/site';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -21,9 +22,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleConsultationClick = (e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
     onNavigate('/kontakt');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleFaq = (index: number) => {
@@ -31,10 +32,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   };
 
   return (
-    <div className="space-y-32 md:space-y-48 pb-24 text-slate-800" id="home-view">
+    <div className="space-y-24 md:space-y-36 pb-24 text-slate-800" id="home-view">
       
       {/* HERO SECTION */}
-      <section className="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden bg-white/60 backdrop-blur-xs">
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-28 overflow-hidden bg-white/60 backdrop-blur-xs">
         {/* Subtles, high-end multi-layered growth & data background visual */}
         <HeroGrowthLayer />
 
@@ -49,64 +50,79 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 transition: { staggerChildren: 0.15 }
               }
             }}
-            className="text-center space-y-8 max-w-4xl mx-auto"
+            className="text-center space-y-6 sm:space-y-8 max-w-4xl mx-auto"
           >
             
             <motion.h1 
               variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                hidden: { opacity: 1, y: 0 },
+                visible: { opacity: 1, y: 0 }
               }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-display font-semibold tracking-tight text-slate-900 leading-[1.08] max-w-3xl mx-auto select-none"
+              className="text-[2.1rem] sm:text-5xl lg:text-6xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] max-w-3xl mx-auto"
             >
-              Mehr qualifizierte Anfragen.<br/>
-              Planbares <span className="text-[#686DF4] italic font-serif">Wachstum statt Zufall.</span>
+              Mehr passende Kundenanfragen für Ihr KMU.{' '}
+              <span className="text-[#686DF4] italic font-serif">Planbar statt zufällig.</span>
             </motion.h1>
 
             <motion.div 
               variants={{
                 hidden: { opacity: 0, y: 12 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
               }}
-              className="text-slate-600 text-body-lg leading-relaxed max-w-2xl mx-auto font-medium space-y-3.5"
+              className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
             >
-              <p className="font-semibold text-slate-800 tracking-tight">
-                Kein Coaching. Kein Guru-Gehabe. Kein endloses Strategie-Gerede.
-              </p>
-              <p className="text-slate-600">
-                <span className="font-extrabold text-[#686DF4]">performanceboost</span> entwickelt funktionierende Wachstumsstrategien, setzt Marketing und Vertrieb konsequent um und misst sich an dem, was am Ende zählt: qualifizierte Anfragen, Umsatz und Wachstum.
-              </p>
-              <p className="font-serif italic font-extrabold text-[#686DF4] tracking-tight">
-                Substanz statt Lärm. Für pure Performance.
+              <p>
+                Wir planen, bauen und betreuen Ihre digitale Neukundengewinnung: Kampagnen auf Google, Meta und LinkedIn,
+                Landingpages, die Anfragen auslösen, und ein Tracking, das zeigt, was Ihr Werbebudget einbringt.
+                Persönlich umgesetzt von Inhaber Yathur Nathan.
               </p>
             </motion.div>
 
             <motion.div 
               variants={{
                 hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
               }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+              className="flex flex-col sm:flex-row gap-3 justify-center items-center"
             >
+              <a
+                href="/kontakt"
+                onClick={handleConsultationClick}
+                data-cta="hero_primary"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-slate-950 hover:bg-[#4f54d6] text-white font-display font-semibold px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40"
+              >
+                Erstgespräch vereinbaren <ArrowRight className="w-5 h-5" aria-hidden="true" />
+              </a>
               <button
                 type="button"
                 onClick={() => setShowPotenzialCheck(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-display font-bold px-8 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-center cursor-pointer text-xs sm:text-sm tracking-wide"
+                data-cta="hero_secondary"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
               >
-                Potenzial-Check <span className="text-xs font-normal text-slate-100 opacity-90">(unter 60 Sek)</span> <ArrowRight className="w-5 h-5 text-white" />
-              </button>
-              <button
-                type="button"
-                onClick={() => setShowRevenueNavigator(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-bold px-8 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-center cursor-pointer text-xs sm:text-sm tracking-wide select-none outline-none"
-              >
-                <Compass className="w-4 h-4 text-[#686DF4]" />
-                <span>Revenue Navigator</span>
+                Potenzial-Check starten <span className="text-sm font-normal text-slate-500">(unter 1 Min.)</span>
               </button>
             </motion.div>
 
-
-
+            <motion.div
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { duration: 0.6 } }
+              }}
+              className="space-y-2 text-sm text-slate-600"
+            >
+              <p>Für KMU ab rund CHF 1 Mio. Umsatz · Antwort innert eines Arbeitstags</p>
+              <p>
+                Kundenstimmen u.a. von Mission13, CUIRA Partners und Marigin ·{' '}
+                <button
+                  type="button"
+                  onClick={() => setShowRevenueNavigator(true)}
+                  className="underline underline-offset-2 hover:text-slate-900 cursor-pointer bg-transparent border-0 p-0 text-sm text-slate-600"
+                >
+                  <Compass className="inline w-3.5 h-3.5 mr-1 -mt-0.5 text-[#686DF4]" aria-hidden="true" />
+                  Wegweiser: Wo stehen Sie?
+                </button>
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -122,12 +138,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center shadow-[var(--shadow-premium-md)] relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#686DF4]/2 rounded-full blur-xl pointer-events-none transition-transform duration-1000 group-hover:scale-150" />
           <div className="lg:col-span-6 xl:col-span-7 space-y-6">
-            <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">Du brauchst keine Marketingagentur.</h2>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">Mehr Klicks allein bringen keine neuen Kunden.</h2>
             <p className="text-slate-700 text-body font-semibold text-balance">
-              Du brauchst einen Partner, der Wachstum systematisch aufbaut. Der Demand erzeugt, Leads qualifiziert, Marketing und Vertrieb verbindet und Revenue planbar macht.
+              Wenn die Landingpage nicht überzeugt, Anfragen im Postfach liegen bleiben oder niemand weiss, welche Kampagne welchen Auftrag gebracht hat, verpufft auch ein gutes Werbebudget. Deshalb betrachten wir die ganze Strecke: von der Anzeige über die Website bis zur Anfrage in Ihrem CRM.
             </p>
             <p className="text-slate-500 text-body-sm leading-relaxed font-medium text-balance">
-              Genau das ist performanceboost. Wir arbeiten mit Unternehmen, die wachsen wollen. Nicht mit vagen Versprechungen, sondern mit erprobten Systemen, die funktionieren.
+              So sehen Sie, was Ihr Marketing tatsächlich einbringt, und wir können gezielt dort nachbessern, wo heute Anfragen verloren gehen.
             </p>
           </div>
           <div className="lg:col-span-6 xl:col-span-5 flex items-center justify-center lg:justify-end w-full min-w-0">
@@ -148,8 +164,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">REALITÄTSCHECK</span>
-          <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 tracking-tight">Erkennst du das wieder?</h2>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Typische Ausgangslage</span>
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 tracking-tight">Kommt Ihnen das bekannt vor?</h2>
         </motion.div>
 
         <motion.div 
@@ -166,11 +182,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {[
-            'Dein Vertrieb hat zu wenig qualifizierte Pipeline.',
-            'Marketing und Sales arbeiten aneinander vorbei.',
-            'Leads kommen rein — aber nur wenige werden zu Kunden.',
-            'Kein funktionierendes System für Demand Generation und Lead Nurturing.',
-            'Revenue-Zahlen sind schwer vorhersagbar.'
+            'Sie investieren in Werbung, wissen aber nicht genau, welche Anfragen daraus entstehen.',
+            'Es kommen Anfragen, aber viele passen nicht zu Ihrem Angebot.',
+            'Die Website sieht gut aus, bringt aber kaum Kontaktanfragen.',
+            'Neue Kunden kommen vor allem über Empfehlungen, und das lässt sich schlecht planen.',
+            'Marketing läuft nebenbei, weil intern niemand richtig Zeit dafür hat.'
           ].map((prob, idx) => (
             <motion.div 
               key={idx} 
@@ -194,8 +210,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             }}
             className="bg-red-50/10 border border-dashed border-red-200 p-6 md:p-8 rounded-2xl flex flex-col justify-center items-center text-center space-y-2 select-none"
           >
-            <span className="text-xs font-bold uppercase text-red-650 tracking-wider font-display">Das Fazit</span>
-            <p className="text-body-sm text-slate-750 font-semibold leading-relaxed">Das sind keine reinen Marketing-Probleme.<br/>Das sind fundamentale Revenue-Probleme.</p>
+            <span className="text-xs font-bold uppercase text-red-650 tracking-wider font-display">Unsere Erfahrung</span>
+            <p className="text-body-sm text-slate-750 font-semibold leading-relaxed">Meist liegt es nicht an einem einzelnen Kanal, sondern daran, dass Anzeigen, Website und Nachbearbeitung nicht zusammenspielen.</p>
           </motion.div>
         </motion.div>
       </section>
@@ -216,8 +232,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6"
         >
           <div className="space-y-2">
-            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">WIE WIR HELFEN</span>
-            <h2 className="text-3xl font-display font-semibold text-slate-900 tracking-tight">& was wir nutzenorientiert aufbauen</h2>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Was wir übernehmen</span>
+            <h2 className="text-3xl font-display font-semibold text-slate-900 tracking-tight">Von der Anzeige bis zur Anfrage im Postfach</h2>
           </div>
           <button
             onClick={() => {
@@ -245,24 +261,24 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         >
           {[
             {
-              title: 'Mehr qualifizierte Pipeline generieren',
-              desc: 'Demand Strategies, die systematisch Interesse erzeugen und kaufbereite Leads in den Vertrieb liefern. Nicht Klicks. Echte Pipeline.'
+              title: 'Kampagnen auf Google, Meta und LinkedIn',
+              desc: 'Wir planen, schalten und optimieren Ihre Anzeigen laufend. Ziel sind passende Anfragen, nicht möglichst viele Klicks.'
             },
             {
-              title: 'Nachfrage systematisch aufbauen',
-              desc: 'Multi-Channel Demand Generation, die deine Zielgruppe dort trifft, wo sie ist — und sie konsequent durch den Funnel begleitet.'
+              title: 'Landingpages und Website',
+              desc: 'Seiten, die in wenigen Sekunden erklären, was Sie anbieten und für wen, und den Weg zur Anfrage einfach machen.'
             },
             {
-              title: 'Leads automatisiert entwickeln',
-              desc: 'Marketing Automation und Lead Nurturing, die dein Team entlasten und Konversionsraten erhöhen. Ohne manuelle Prozesse.'
+              title: 'Tracking und Reporting',
+              desc: 'Saubere Messung mit Google Analytics und Tag Manager. Sie sehen, welcher Kanal welche Anfragen bringt und was eine Anfrage kostet.'
             },
             {
-              title: 'Marketing und Vertrieb verbinden',
-              desc: 'Revenue Operations, die aus zwei Silos ein gemeinsames System machen. Gemeinsame Metriken. Gemeinsamer Fokus.'
+              title: 'Marketing Automation und CRM',
+              desc: 'Anfragen landen automatisch im CRM, werden vorqualifiziert und rechtzeitig nachgefasst. Weniger Handarbeit, weniger verlorene Interessenten.'
             },
             {
-              title: 'Wachstum planbar machen',
-              desc: 'Data & Analytics, die Entscheidungen auf Fakten stützen — nicht auf Bauchgefühl. Du weisst jederzeit, was wirkt.'
+              title: 'Strategie und Positionierung',
+              desc: 'Wen wollen Sie gewinnen, mit welcher Botschaft und welchem Budget? Das klären wir, bevor Geld in Werbung fliesst.'
             }
           ].map((item, idx) => (
             <motion.div 
@@ -291,8 +307,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             className="bg-[#686DF4]/5 border border-[#CACCFB]/50 p-8 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:border-[#686DF4]/20 transition-all duration-300"
           >
             <div className="space-y-3">
-              <h4 className="text-xs font-bold text-[#686DF4] uppercase font-display tracking-wider">DEINE PRIORITÄT?</h4>
-              <p className="text-body-sm text-slate-600 leading-relaxed font-medium">Wir kombinieren unsere Bausteine passend zu deiner individuellen Struktur und deinen Ressourcen.</p>
+              <h4 className="text-xs font-bold text-[#686DF4] uppercase font-display tracking-wider">Nicht sicher, was Sie brauchen?</h4>
+              <p className="text-body-sm text-slate-600 leading-relaxed font-medium">Im Erstgespräch finden wir heraus, wo der grösste Hebel liegt. Oft ist es nicht der Kanal, an den man zuerst denkt.</p>
             </div>
             <button
               onClick={() => {
@@ -301,7 +317,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               }}
               className="text-xs text-[#686DF4] font-bold flex items-center gap-1.5 group mt-4 cursor-pointer hover:text-[#686DF4]/80"
             >
-              Zu den Einzelleistungen <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              Leistungen im Detail <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </button>
           </motion.div>
         </motion.div>
@@ -317,9 +333,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Errechne dein Wachstumspotenzial</h2>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Was eine bessere Anfragequote bringen kann</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
-              Passe die Parameter an, um zu sehen, wie eine professionelle Trichter-Optimierung die Rentabilität deines gesamten Unternehmens vervielfacht.
+              Tragen Sie Ihre eigenen Werte ein. Der Rechner zeigt grob, wie sich höhere Anfrage- und Abschlussquoten auf Ihren Umsatz auswirken. Eine Schätzung, keine Prognose.
             </p>
           </div>
           <InteractiveGrowthCalculator />
@@ -336,8 +352,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center space-y-3"
           >
-            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">DAS WACHSTUMSSYSTEM</span>
-            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-905 tracking-tight">Wie wir arbeiten</h2>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Vorgehen</span>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-905 tracking-tight">So arbeiten wir zusammen</h2>
           </motion.div>
 
           <motion.div 
@@ -356,23 +372,23 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             {[
               {
                 num: '1',
-                title: 'Diagnose — Wo verlierst du Revenue?',
-                desc: 'Erste Session: Wir schauen genau hin. Welche Hebel sind ungenutzt? Wo bricht deise Pipeline ab? Echte Zahlen, echte Probleme.'
+                title: 'Erstgespräch und Analyse',
+                desc: 'Wir schauen uns Ihre heutige Kundengewinnung an: Website, Kampagnen, Tracking und Zahlen. Danach wissen Sie, wo Anfragen verloren gehen.'
               },
               {
                 num: '2',
-                title: 'Strategie — Partner mit grösster Wirkung',
-                desc: 'Nicht alles zeitgleich. Wir priorisieren die 20% Massnahmen, die 80% des Wachstums liefern. Fokus statt Gieskannen-Prinzip.'
+                title: 'Plan mit klaren Prioritäten',
+                desc: 'Sie erhalten einen konkreten Massnahmenplan mit Aufwand, Budget und Zielen. Wir beginnen mit dem, was am meisten bewirkt.'
               },
               {
                 num: '3',
-                title: 'Umsetzung — Schnell und messbar',
-                desc: 'Wöchentlicher Fortschritt. Transparente Kommunikation in Echtzeit auf Slack. Keine bösen Überraschungen.'
+                title: 'Umsetzung',
+                desc: 'Wir setzen um: Kampagnen, Seiten, Tracking und Automatisierungen. Sie erhalten regelmässig einen kurzen Zwischenstand, ohne Fachchinesisch.'
               },
               {
                 num: '4',
-                title: 'Datengesteuerte Optimierung',
-                desc: 'Was funktioniert, skalieren wir. Was nicht funktioniert, stellen wir ab. Entscheidungen auf Basis von Daten, nicht Bauchgefühl.'
+                title: 'Messen und verbessern',
+                desc: 'Jeden Monat schauen wir gemeinsam auf die Zahlen. Was funktioniert, bauen wir aus. Was nicht funktioniert, passen wir an oder stoppen es.'
               }
             ].map((step, idx) => (
               <motion.div 
@@ -405,8 +421,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">ALLEINGANGS-MERKMAL</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900">Warum performanceboost, nicht eine Agentur?</h2>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Der Unterschied</span>
+          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900">Was die Zusammenarbeit mit uns ausmacht</h2>
         </motion.div>
 
         <motion.div 
@@ -424,24 +440,24 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         >
           {[
             {
-              title: 'Wir denken in Revenue, nicht in Kampagnen.',
-              desc: 'Erfolg ist kein Klick, sondern direkter Erlös.'
+              title: 'Gemessen wird an Anfragen und Umsatz, nicht an Klicks.',
+              desc: 'Unsere Auswertungen zeigen, was für Ihr Geschäft zählt.'
             },
             {
-              title: 'Wir verbinden Marketing, Sales und Daten — nicht nur einen Kanal.',
-              desc: 'Aus einem Patchwork an Insellösungen bauen wir ein stimmiges Gesamtsystem'
+              title: 'Kampagnen, Website, Tracking und CRM aus einer Hand.',
+              desc: 'Keine Abstimmung zwischen drei Dienstleistern und keine Lücken an den Schnittstellen.'
             },
             {
-              title: 'Du sprichst mit uns direkt — kein Account Manager dazwischen.',
-              desc: 'Wir arbeiten persönlich an deinem Projekt, ohne Reibungsverluste.'
+              title: 'Sie sprechen direkt mit dem Inhaber.',
+              desc: 'Yathur Nathan betreut Ihr Projekt persönlich, ohne Account Manager dazwischen.'
             },
             {
-              title: 'Wir arbeiten mit deinen Zahlen — Erfolg ist messbar, nicht gefühlt.',
-              desc: 'Integrierte Attributionsmodelle zeigen dir den direkten ROI.'
+              title: 'Sie sehen jederzeit, was passiert.',
+              desc: 'Sie haben Einblick in Werbekonten und Auswertungen und wissen, wofür Ihr Budget eingesetzt wird.'
             },
             {
-              title: 'KMU und Mid-Market sind unsere Welt — nicht Konzerne.',
-              desc: 'Wir kennen deine Budgetrestriktionen und Handlungsbedarfe genau.'
+              title: 'Auf KMU ausgerichtet.',
+              desc: 'Lösungen müssen zu Ihren Budgets, Abläufen und Ressourcen passen, nicht zu denen eines Konzerns.'
             }
           ].map((diff, idx) => (
             <motion.div 
@@ -487,10 +503,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <p className="text-xs sm:text-sm font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
               </div>
               <p className="text-body text-slate-600 leading-relaxed font-medium">
-                Ich unterstütze Schweizer Unternehmen dabei, Wachstumspotenziale sichtbar zu machen und in messbare Resultate zu übersetzen. Dabei verbinde ich Marketing, Technologie, Daten und Vertrieb zu einem System, das nicht auf Vermutungen, sondern auf Fakten basiert.
+                Ich unterstütze Schweizer KMU dabei, aus Werbebudget messbar Kundenanfragen zu machen. Dafür verbinde ich Performance Marketing, Webentwicklung, Tracking und Automatisierung, also Aufgaben, die sonst oft auf mehrere Dienstleister verteilt sind.
               </p>
               <p className="text-body text-[#686DF4] font-semibold leading-relaxed pt-3 border-t border-slate-100 italic">
-                Als dein persönlicher Experte analysiere ich deine Customer Journey ganzheitlich und begleite dich operativ bei der Umsetzung deiner Umsatzhebel im Neukunden-Erstgespräch.
+                Wenn Sie mit performanceboost arbeiten, arbeiten Sie mit mir: vom Erstgespräch über die Umsetzung bis zur monatlichen Auswertung.
               </p>
             </div>
           </div>
@@ -506,7 +522,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">FRAGEN & ANTWORTEN</span>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Häufige Fragen</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900">FAQ</h2>
         </motion.div>
 
@@ -519,25 +535,34 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         >
           {[
             {
-              q: 'Sind das Marketing- oder Vertriebsleistungen?',
-              a: 'Beides. Wachstum entsteht, wenn Marketing und Sales zusammen funktionieren. Wir bauen genau das auf — Revenue Operations, die beide Seiten verbinden.'
+              q: 'Für welche Unternehmen eignet sich performanceboost?',
+              a: 'Für Schweizer KMU, meist ab rund CHF 1 Mio. Jahresumsatz, die mehr Neukunden über digitale Kanäle gewinnen möchten: Dienstleister, B2B-Unternehmen und Onlineshops. Wichtig ist ein klares Angebot und die Kapazität, zusätzliche Kunden auch bedienen zu können.'
             },
             {
-              q: 'Für wen ist performanceboost richtig?',
-              a: 'B2B-Unternehmen, die planbar wachsen wollen. KMU und Mid-Market. Unternehmen mit konkretem Pipeline-Problem, nicht mit diffusem "Marketing-Bedarf".'
+              q: 'Was unterscheidet Sie von einer klassischen Marketingagentur?',
+              a: 'Viele Agenturen betreuen einen einzelnen Kanal. Wir betrachten die ganze Strecke von der Anzeige bis zur Anfrage im CRM und setzen Website, Tracking und Automatisierung selbst um. Und Sie arbeiten direkt mit dem Inhaber.'
             },
             {
-              q: 'Wie schnell sehen wir erste Resultate?',
-              a: 'Bei Paid Demand Generation oft in 2-4 Wochen. Bei organischen Strategien und Marketing Automation: 3-6 Monate bis messbare Wirkung. Wir setzen realistische Erwartungen — keine Versprechen.'
+              q: 'Wie schnell sehen wir erste Ergebnisse?',
+              a: 'Bei Google Ads und Meta Ads liegen meist nach vier bis acht Wochen belastbare Zahlen vor. Suchmaschinenoptimierung und Automatisierungen brauchen länger, oft drei bis sechs Monate. Was in Ihrem Fall realistisch ist, sagen wir Ihnen im Erstgespräch offen.'
+            },
+            {
+              q: 'Wie messen Sie den Erfolg?',
+              a: 'An der Zahl und Qualität der Anfragen, an den Kosten pro Anfrage und, wo möglich, am daraus entstandenen Umsatz. Dafür richten wir das Tracking so ein, dass jede Anfrage ihrer Quelle zugeordnet werden kann.'
+            },
+            {
+              q: 'Wie viel Aufwand habe ich als Kunde?',
+              a: 'Zu Beginn brauchen wir Ihr Wissen über Angebot, Kunden und Abläufe sowie die nötigen Zugänge. Danach genügt in der Regel ein kurzer regelmässiger Austausch. Die Umsetzung übernehmen wir.'
             },
             {
               q: 'Was kostet eine Zusammenarbeit?',
-              a: 'Das hängt vom Umfang ab. Wir reden darüber im ersten Gespräch. Transparent, keine Überraschungen.'
+              a: 'Das hängt vom Umfang ab: Eine einmalige Analyse ist etwas anderes als die laufende Betreuung mehrerer Kanäle. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit klar definiertem Umfang. Das Erstgespräch selbst ist kostenlos.'
             }
           ].map((faq, index) => (
             <div key={index} className="border-b border-slate-100 last:border-0 pb-4 last:pb-0 pt-4 first:pt-4">
               <button
                 onClick={() => toggleFaq(index)}
+                aria-expanded={openFaq === index}
                 className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer"
               >
                 <span className="flex items-center gap-2.5">
@@ -567,19 +592,23 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="space-y-4 relative z-10 max-w-2xl">
-            <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">JETZT STARTEN</span>
-            <h3 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">Bereit, Wachstum planbar zu machen?</h3>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Nächster Schritt</span>
+            <h3 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">Lassen Sie uns über Ihre Neukundengewinnung sprechen.</h3>
             <p className="text-body text-slate-300 leading-relaxed font-medium opacity-90">
-              30 Minuten. Keine Verpflichtung. Konkrete Diagnose. Wir schauen gemeinsam, wo deine grössten Wachstumshebel liegen — und ob wir der richtige Partner dafür sind.
+              30 Minuten, kostenlos und unverbindlich. Sie schildern Ihre Ausgangslage, wir sagen Ihnen offen, wo wir Potenzial sehen und ob wir der richtige Partner dafür sind.
+            </p>
+            <p className="text-sm text-slate-300">
+              Lieber direkt telefonieren?{' '}
+              <a href={SITE.phoneHref} className="font-semibold text-white underline underline-offset-2">{SITE.phoneDisplay}</a>
             </p>
           </div>
 
           <button
             type="button"
             onClick={() => onNavigate('/kontakt')}
-            className="w-full md:w-auto bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 text-center inline-block cursor-pointer shrink-0 z-10"
+            className="w-full md:w-auto min-h-12 bg-[#686DF4] hover:bg-[#5a5fe6] text-white font-semibold text-sm px-8 py-4 rounded-full transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 text-center inline-block cursor-pointer shrink-0 z-10"
           >
-            Wachstumsgespräch buchen
+            Erstgespräch vereinbaren
           </button>
         </motion.div>
       </section>

@@ -66,7 +66,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       <div className="pt-32 pb-24 text-center max-w-md mx-auto space-y-6">
         <h2 className="text-xl font-bold text-slate-900">Lösung nicht gefunden</h2>
         <p className="text-xs text-slate-500">
-          Die gesuchte Branchenlösung existiert leider nicht oder wurde verschoben.
+          Diese Branchenseite gibt es nicht oder sie wurde verschoben.
         </p>
         <button
           onClick={() => onNavigate('/')}
@@ -91,10 +91,10 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       <section className="px-4 sm:px-6 lg:px-8 bg-white py-16 border-b border-slate-100">
         <div className="max-w-7xl mx-auto space-y-6">
           <button
-            onClick={() => onNavigate('/')}
+            onClick={() => onNavigate('/loesungen')}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686DF4] hover:text-[#686DF4]/80 transition-colors uppercase tracking-widest cursor-pointer mb-2 bg-transparent border-none"
           >
-            <ArrowLeft className="w-4 h-4" /> Zurück zur Übersicht
+            <ArrowLeft className="w-4 h-4" /> Alle Branchen
           </button>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -110,19 +110,19 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               </p>
               
               <div className="pt-4 border-t border-slate-100 space-y-3.5">
-                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">WAS DICH ERWARTET:</span>
+                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">Was Sie hier erhalten:</span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
                     <Check className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Echtzeit-Potenzial-Prüfung</span>
+                    <span>Grobe Potenzialschätzung für Ihre Situation</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
                     <Check className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Transparente Benchmarks</span>
+                    <span>Nachvollziehbare Annahmen</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
                     <Check className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Keine Kaltakquise nötig</span>
+                    <span>Ergebnis im Erstgespräch besprechen</span>
                   </div>
                 </div>
               </div>
@@ -145,12 +145,12 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       {/* TYPISCHE ENGPAESSE SEKTION */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="text-center space-y-2">
-          <span className="text-[11px] font-mono text-red-651 font-bold uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100/40">DIE DILEMMATA</span>
+          <span className="text-[11px] font-mono text-red-651 font-bold uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100/40">Ausgangslage</span>
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-900 tracking-tight">
-            Typische Wachstums-Engpässe bei {sector.title}
+            Typische Hürden in der Branche {sector.title}
           </h2>
           <p className="text-xs text-slate-500 font-semibold max-w-sm mx-auto">
-            Warum herkömmliche Vermarktungsversuche in diesem Sektor oft verpuffen.
+            Warum klassische Werbung in dieser Branche oft wenig bringt.
           </p>
         </div>
 
@@ -171,10 +171,10 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-8 sm:p-12 space-y-12 shadow-[var(--shadow-premium-lg)]">
           <div className="text-center space-y-2">
-            <span className="text-[11px] font-mono text-[#686DF4] tracking-widest uppercase font-black">DER MASSNAHMENPLAN</span>
-            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">& was wir nutzenorientiert aufbauen</h2>
+            <span className="text-[11px] font-mono text-[#686DF4] tracking-widest uppercase font-black">Vorgehen</span>
+            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir für Sie aufbauen</h2>
             <p className="text-body-sm text-slate-300 font-medium max-w-md mx-auto">
-              Ein lückenloser, systematischer Prozess zur Skalierung deiner Marktpositionierung in der Schweiz.
+              In drei Schritten, abgestimmt auf Ihre Branche und Ihren Markt in der Schweiz.
             </p>
           </div>
 
@@ -185,7 +185,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
                   {step.step}
                 </span>
                 <span className="text-[11px] font-semibold text-[#686DF4] uppercase font-mono tracking-widest">
-                  PHASE {step.step}
+                  Schritt {step.step}
                 </span>
                 <h3 className="text-sm font-bold text-white tracking-tight">{step.title}</h3>
                 <p className="text-body-sm text-slate-300 leading-relaxed font-medium">
@@ -200,8 +200,8 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       {/* BENEFITS CHECKLIST */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2">
-          <span className="text-[11px] font-mono text-[#686DF4] font-black uppercase tracking-widest">IHR PROFIT</span>
-          <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Die messbaren Vorzüge</h2>
+          <span className="text-[11px] font-mono text-[#686DF4] font-black uppercase tracking-widest">Ihr Nutzen</span>
+          <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Was Sie davon haben</h2>
         </div>
 
         <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-5 shadow-sm text-left">
@@ -217,8 +217,8 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       {/* FAQ ACCORDIAN */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2">
-          <span className="text-[11px] font-mono text-slate-400 font-bold tracking-widest uppercase">DETAILFRAGEN</span>
-          <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">FAQ zum Ablauf</h2>
+          <span className="text-[11px] font-mono text-slate-400 font-bold tracking-widest uppercase">Fragen</span>
+          <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Häufige Fragen</h2>
         </div>
 
         <div className="bg-white border border-[#E0E0E0]/65 rounded-2xl p-5 sm:p-8 space-y-3 shadow-sm text-left">
@@ -269,25 +269,25 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             </div>
             <div className="text-center">
               <h4 className="text-base font-bold text-slate-900 leading-none">Yathur Nathan</h4>
-              <p className="text-[11px] text-[#686DF4] font-bold tracking-wide mt-1 uppercase font-mono">Inhaber & Experte</p>
+              <p className="text-[11px] text-[#686DF4] font-bold tracking-wide mt-1 uppercase font-mono">Inhaber performanceboost</p>
             </div>
           </div>
 
           <div className="md:col-span-8 space-y-5">
-            <span className="text-[11px] font-mono text-[#686DF4] font-black tracking-widest uppercase">PERSÖNLICHE BEGLEITUNG</span>
+            <span className="text-[11px] font-mono text-[#686DF4] font-black tracking-widest uppercase">Persönliche Begleitung</span>
             <p className="text-body-sm font-medium leading-relaxed text-slate-600">
-              Als dein persönlicher Experte analysiere ich deine Customer Journey ganzheitlich und begleite dich operativ bei der Umsetzung deiner Umsatzhebel im Neukunden-Erstgespräch. Ich unterstütze Schweizer Unternehmen dabei, Wachstumspotenziale sichtbar zu machen und in messbare Resultate zu übersetzen.
+              Ich bin Ihr direkter Ansprechpartner. Im Erstgespräch schauen wir gemeinsam an, wie Ihre Kunden heute zu Ihnen finden und wo Anfragen verloren gehen. Danach begleite ich die Umsetzung persönlich, von den Kampagnen bis zur sauberen Messung.
             </p>
             <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <span className="text-[11px] font-bold text-slate-500 font-mono">
-                📞 Telefon-Audit & Strategieentwurf (30 Min.)
+                Erstgespräch per Telefon oder Video, 30 Minuten
               </span>
               <button
                 type="button"
                 onClick={() => onNavigate('/kontakt')}
                 className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all inline-block text-center shadow-sm shrink-0 w-full sm:w-auto border-0"
               >
-                Termin buchen
+                Erstgespräch vereinbaren
               </button>
             </div>
           </div>
