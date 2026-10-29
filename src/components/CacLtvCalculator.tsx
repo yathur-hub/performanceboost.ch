@@ -136,10 +136,10 @@ export default function CacLtvCalculator() {
         </div>
         <div>
           <h3 className="text-md sm:text-lg font-display font-semibold text-slate-900 tracking-tight leading-snug">
-            CAC/LTV-Rechner
+            Rechner: Kundenwert und Akquisekosten
           </h3>
           <p className="text-xs text-slate-500 leading-normal mt-1 font-medium select-none">
-            Ist dein Acquisition-System gesund oder kritisch? Berechne dein LTV:CAC-Verhältnis in 30 Sekunden.
+            Bringt ein Neukunde mehr ein, als seine Gewinnung kostet? Berechnen Sie Ihr Verhältnis von Kundenwert (LTV) zu Akquisekosten (CAC).
           </p>
         </div>
       </div>
@@ -150,7 +150,7 @@ export default function CacLtvCalculator() {
           {/* Field 1: Monatliches Ad-Budget */}
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-800 uppercase tracking-wide">
-              Monatliches Ad-Budget (CHF)
+              Monatliches Werbebudget (CHF)
             </label>
             <div className="relative">
               <input
@@ -167,7 +167,7 @@ export default function CacLtvCalculator() {
               </span>
             </div>
             <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
-              Gesamtes Paid-Media-Budget pro Monat (Meta, Google, TikTok etc.)
+              Gesamtes Budget für bezahlte Anzeigen pro Monat (Meta, Google, TikTok usw.)
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default function CacLtvCalculator() {
               </span>
             </div>
             <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
-              Neue zahlende Kunden, die durch Paid-Media gewonnen wurden
+              Neue zahlende Kunden, die über bezahlte Anzeigen gewonnen wurden
             </p>
           </div>
 
@@ -211,7 +211,7 @@ export default function CacLtvCalculator() {
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
-                CHF / AOV
+                CHF / Bestellung
               </span>
             </div>
             <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
@@ -236,7 +236,7 @@ export default function CacLtvCalculator() {
               <option value="ueber_30">Über 30% (Mittelwert 37.5%)</option>
             </select>
             <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
-              Wie viel % deiner Neukunden kaufen innerhalb eines Jahres erneut?
+              Wie viel Prozent Ihrer Neukunden kaufen innert eines Jahres erneut?
             </p>
           </div>
         </div>
@@ -255,7 +255,7 @@ export default function CacLtvCalculator() {
               >
                 <div className="space-y-4 opacity-40 select-none pointer-events-none">
                   <div className="text-center py-4">
-                    <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">LTV : CAC Verhältnis</span>
+                    <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Verhältnis LTV : CAC</span>
                     <span className="text-4xl sm:text-5xl font-bold font-display text-slate-400 block tracking-tight my-1">
                       3.4 : 1
                     </span>
@@ -265,17 +265,17 @@ export default function CacLtvCalculator() {
                   </div>
 
                   <div className="border-t border-b border-slate-250 py-3 grid grid-cols-2 gap-4 text-xs">
-                    <div className="text-left font-medium">Dein CAC: <strong className="text-slate-900">CHF 50</strong></div>
-                    <div className="text-left font-medium">Dein LTV: <strong className="text-slate-900">CHF 170</strong></div>
+                    <div className="text-left font-medium">Ihr CAC: <strong className="text-slate-900">CHF 50</strong></div>
+                    <div className="text-left font-medium">Ihr LTV: <strong className="text-slate-900">CHF 170</strong></div>
                   </div>
                 </div>
 
                 <div className="pt-4 text-center space-y-1.5 self-center w-full">
                   <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
-                    <Sparkles className="w-3.5 h-3.5" /> Gib deine Zahlen ein
+                    <Sparkles className="w-3.5 h-3.5" /> Ihre Zahlen eingeben
                   </div>
                   <p className="text-[11px] text-slate-400/90 font-mono">
-                    Beispielrechnung · Wir vergleichen deinen Kundenwert mit deinen Kosten.
+                    Beispielrechnung · Wir vergleichen Ihren Kundenwert mit Ihren Akquisekosten.
                   </p>
                 </div>
               </motion.div>
@@ -294,13 +294,13 @@ export default function CacLtvCalculator() {
                       <div className="bg-red-50 border border-red-200/60 rounded-xl p-3 flex gap-2 items-start text-left">
                         <AlertTriangle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                         <p className="text-[11px] text-red-700 leading-snug font-bold">
-                          Achtung: Dein CAC ({formatCHF(result.cac)}) übersteigt deinen durchschnittlichen Bestellwert ({formatCHF(vAvgOrderValue)}). Du verlierst mit jedem Neukunden sofort Geld!
+                          Achtung: Ihre Akquisekosten ({formatCHF(result.cac)}) liegen über Ihrem durchschnittlichen Bestellwert ({formatCHF(vAvgOrderValue)}). Die erste Bestellung deckt die Gewinnung eines Neukunden also nicht.
                         </p>
                       </div>
                     )}
 
                     <div className="text-center py-2">
-                      <span className="text-[11px] font-mono font-bold text-slate-450 block uppercase">LTV : CAC VERHÄLTNIS</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-450 block uppercase">Verhältnis LTV : CAC</span>
                       <span className={`text-4xl sm:text-5xl font-bold font-display tracking-tight my-1 block ${levelStyle?.text}`}>
                         {result.ratio.toFixed(1)} : 1
                       </span>
@@ -311,11 +311,11 @@ export default function CacLtvCalculator() {
 
                     <div className="border-t border-b border-slate-200/60 py-3 grid grid-cols-2 gap-4 text-xs font-semibold text-slate-750">
                       <div className="text-left">
-                        <span className="text-[11px] text-slate-400 block font-mono uppercase">Dein CAC:</span>
+                        <span className="text-[11px] text-slate-400 block font-mono uppercase">Ihr CAC:</span>
                         <span className="text-sm font-bold text-slate-850 text-slate-800">{formatCHF(result.cac)}</span>
                       </div>
                       <div className="text-left">
-                        <span className="text-[11px] text-slate-400 block font-mono uppercase">Dein LTV:</span>
+                        <span className="text-[11px] text-slate-400 block font-mono uppercase">Ihr LTV:</span>
                         <span className="text-sm font-bold text-slate-850 text-slate-800">{formatCHF(result.ltv)}</span>
                       </div>
                     </div>
@@ -323,8 +323,8 @@ export default function CacLtvCalculator() {
                     {/* Jährliches Retention Revenue */}
                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-center justify-between">
                       <div className="text-left">
-                        <span className="text-[11px] font-mono text-slate-400 block uppercase font-bold">Retention-Umsatz pro Jahr:</span>
-                        <span className="text-xs text-slate-500 font-semibold italic">aus bestehenden Neukunden gerechnet</span>
+                        <span className="text-[11px] font-mono text-slate-400 block uppercase font-bold">Umsatz aus Wiederkäufen pro Jahr:</span>
+                        <span className="text-xs text-slate-500 font-semibold italic">grobe Schätzung auf Basis Ihrer Neukunden</span>
                       </div>
                       <span className="text-sm font-bold text-slate-900 font-display">
                         {formatCHF(result.annualRetentionRevenue)}
@@ -335,22 +335,22 @@ export default function CacLtvCalculator() {
                     <div className={`p-4 rounded-xl border italic text-xs leading-relaxed font-semibold text-slate-700 ${levelStyle?.bg}`}>
                       {result.level === 'KRITISCH' && (
                         <span>
-                          Dein CAC liegt gefährlich nah am LTV. Jeder Neukunde kostet dich fast so viel, wie er einbringt — nach Produktkosten und Logistik machst du mit grösster Wahrscheinlichkeit Verlust. Das ist kein Skalierungsproblem, das ist ein Systemfehler. Ohne Korrekturen auf CAC- oder LTV-Ebene wird mehr Werbebudget die Situation nur verschlimmern.
+                          Ihre Akquisekosten liegen sehr nah am Kundenwert. Ein Neukunde kostet Sie fast so viel, wie er einbringt. Nach Produkt- und Versandkosten bleibt so wahrscheinlich ein Verlust. Mehr Werbebudget würde das eher verschärfen. Zuerst sollten die Akquisekosten sinken oder der Kundenwert steigen.
                         </span>
                       )}
                       {result.level === 'AKZEPTABEL' && (
                         <span>
-                          Dein Verhältnis ist noch im vertretbaren Bereich, aber die Marge ist dünn. Bei jedem Algo-Shift, jeder Preiserhöhung in der Auktion wird es schnell eng. Hier gibt es konkrete Hebel — auf CAC-Seite (Funnel-Effizienz, Creative-Testing) und auf LTV-Seite (Wiederkaufrate, AOV). Beides zusammen kann deine Ratio innerhalb von 90 Tagen merklich verbessern.
+                          Ihr Verhältnis ist noch vertretbar, aber der Spielraum ist klein. Steigen die Klickpreise oder ändern die Plattformen ihre Auslieferung, wird es schnell eng. Ansatzpunkte gibt es auf beiden Seiten: bei den Akquisekosten (Anfrageprozess, Tests von Anzeigenmotiven) und beim Kundenwert (Wiederkaufrate, Warenkorbwert).
                         </span>
                       )}
                       {result.level === 'GESUND' && (
                         <span>
-                          Solide Grundlage. Dein Acquisition-System funktioniert — jetzt geht es darum, es zu skalieren ohne die Ratio zu verschlechtern. Das ist die entscheidende Herausforderung beim nächsten Wachstumsschritt: Mehr Budget bedeutet teurere Zielgruppen und steigenden CPA. Wer das nicht antizipiert, skaliert sich in die Akzeptabel-Zone zurück.
+                          Eine solide Grundlage. Ihre Neukundengewinnung funktioniert. Jetzt geht es darum, das Budget zu erhöhen, ohne dass das Verhältnis kippt. Mehr Budget heisst meist teurere Zielgruppen und höhere Kosten pro Kunde. Wer das nicht einplant, landet schnell wieder im knappen Bereich.
                         </span>
                       )}
                       {result.level === 'SKALIERUNGSKANDIDAT' && (
                         <span>
-                          Deine Zahlen zeigen einen echten Skalierungskandidaten. Dein LTV rechtfertigt deutlich höhere Acquisition-Ausgaben, als du aktuell tätigst. Die Frage ist nicht ob du skalieren kannst — sondern wie schnell und über welche Kanäle, ohne die Ratio zu gefährden. Das ist exakt die Arbeit, die wir machen.
+                          Ihre Zahlen sprechen dafür, mehr in die Neukundengewinnung zu investieren. Ihr Kundenwert würde höhere Akquisekosten tragen, als Sie heute ausgeben. Offen ist vor allem, wie schnell und über welche Kanäle Sie das Budget erhöhen, ohne das Verhältnis zu gefährden.
                         </span>
                       )}
                     </div>
@@ -367,11 +367,11 @@ export default function CacLtvCalculator() {
                     }}
                     className="w-full text-center bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
-                    <span>Kostenloses Erstgespräch buchen →</span>
+                    <span>Erstgespräch vereinbaren</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
                   <p className="text-[11px] text-slate-400 text-center font-mono mt-2">
-                    Wir schauen uns deine Zahlen an — konkret, nicht generisch. 30 Minuten, kein Deck, kein Pitch.
+                    Wir schauen uns Ihre Zahlen gemeinsam an und besprechen konkrete nächste Schritte. 30 Minuten, kostenlos.
                   </p>
                 </div>
               </motion.div>
@@ -385,14 +385,14 @@ export default function CacLtvCalculator() {
         <div className="mt-4">
           <LeadCaptureForm
             pageId="dtc-growth-acquisition"
-            secondaryCTAText="Welche drei Massnahmen senken deinen CAC am schnellsten? →"
-            danachText="Vielen Dank! Wir schicken dir in Kürze eine strukturierte, datenbasierte Einschätzung dazu, mit welchen Hebeln du deine CAC/LTV-Ratio optimieren kannst."
+            secondaryCTAText="Wie senken Sie Ihre Akquisekosten? Einschätzung per E-Mail →"
+            danachText="Vielen Dank! Wir senden Ihnen in Kürze eine Einschätzung, wie Sie das Verhältnis von Kundenwert zu Akquisekosten verbessern können."
             additionalFields={[
               {
                 type: 'select',
                 name: 'companySize',
-                placeholder: 'Unternehmensgrösse *',
-                options: ['Unter CHF 200k', 'CHF 200k–1M', 'CHF 1M–3M', 'Über CHF 3M'],
+                placeholder: 'Jahresumsatz *',
+                options: ['Unter CHF 200\'000', 'CHF 200\'000–1 Mio.', 'CHF 1–3 Mio.', 'Über CHF 3 Mio.'],
                 required: true
               }
             ]}

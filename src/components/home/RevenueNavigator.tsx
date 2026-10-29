@@ -64,38 +64,38 @@ const PROBLEM_OPTIONS: {
 }[] = [
   {
     id: 'pipeline',
-    label: 'Zu wenig qualifizierte Pipeline',
-    subtext: 'Vertrieb hat zu wenig Termine mit echten, kaufbereiten Entscheidern.',
+    label: 'Zu wenig passende Anfragen',
+    subtext: 'Der Vertrieb hat zu wenige Termine mit Entscheidern, die wirklich kaufen wollen.',
     icon: TrendingDown,
   },
   {
     id: 'alignment',
     label: 'Marketing und Vertrieb arbeiten aneinander vorbei',
-    subtext: 'MQLs konvertieren nicht zu Kunden, interne Silos bremsen den Umsatz.',
+    subtext: 'Anfragen aus dem Marketing werden selten zu Kunden, jeder arbeitet für sich.',
     icon: Users,
   },
   {
     id: 'conversion',
-    label: 'Leads kommen rein, werden aber nicht zu Kunden',
-    subtext: 'Conversion-Lecks und fehlendes Lead Nurturing im Sales-Funnel.',
+    label: 'Anfragen kommen rein, werden aber nicht zu Kunden',
+    subtext: 'Interessenten springen unterwegs ab, und niemand fasst systematisch nach.',
     icon: Filter,
   },
   {
     id: 'manual',
     label: 'Zu viele manuelle Prozesse',
-    subtext: 'Repetitive Aufgaben im Vertrieb & Marketing fressen wertvolle Zeit.',
+    subtext: 'Wiederkehrende Aufgaben in Vertrieb und Marketing kosten viel Zeit.',
     icon: Settings,
   },
   {
     id: 'data',
-    label: 'Keine klare Datenbasis / Entscheidungen aus dem Bauch',
-    subtext: 'Unklares Tracking, fehlende Attribution und Blindflug bei zentralen KPIs.',
+    label: 'Keine verlässlichen Zahlen, Entscheide aus dem Bauch',
+    subtext: 'Unklar, welcher Kanal welche Anfrage bringt und wie sich die wichtigsten Kennzahlen entwickeln.',
     icon: BarChart3,
   },
   {
     id: 'strategy',
-    label: 'Keine klare Go-to-Market-Strategie',
-    subtext: 'Fehlendes ICP, unklare Positionierung und unstrukturierte Kanäle.',
+    label: 'Keine klare Vermarktungsstrategie',
+    subtext: 'Wunschkunde nicht definiert, Positionierung unklar, Kanäle ohne Plan.',
     icon: Map,
   },
 ];
@@ -108,17 +108,17 @@ const SETUP_OPTIONS: {
 }[] = [
   {
     id: 'greenfield',
-    label: 'Wir starten quasi bei null — kein System vorhanden',
-    subtext: 'Noch keine festen Prozesse, Tools oder erprobten Funnels etabliert.',
+    label: 'Wir starten praktisch bei null',
+    subtext: 'Noch keine festen Abläufe, Tools oder erprobten Anfragewege.',
   },
   {
     id: 'fragmented',
     label: 'Wir haben einzelne Tools, aber sie sprechen nicht miteinander',
-    subtext: 'Fragmentierter Stack (CRM, Ads, Mail) ohne durchgängige Datenbrücke.',
+    subtext: 'CRM, Werbekonten und E-Mail-Tool laufen getrennt, Daten fliessen nicht durch.',
   },
   {
     id: 'scaling',
-    label: 'Wir haben ein System, aber es skaliert nicht wie gewünscht',
+    label: 'Wir haben ein System, aber es wächst nicht wie gewünscht mit',
     subtext: 'Grundlagen stehen, aber das Wachstum stagniert oder wird zu teuer.',
   },
 ];
@@ -126,35 +126,35 @@ const SETUP_OPTIONS: {
 // 3. Service Definitions & Meta
 const SERVICE_META: Record<string, { title: string; icon: React.ComponentType<{ className?: string }> }> = {
   'growth-strategy': {
-    title: 'Growth Strategy & Advisory',
+    title: 'Strategie & Beratung',
     icon: TrendingUp,
   },
   'demand-generation': {
-    title: 'Demand Generation & Paid Ads',
+    title: 'Werbekampagnen & Nachfrageaufbau',
     icon: Megaphone,
   },
   'lead-generation': {
-    title: 'Inbound & Outbound Lead Generation',
+    title: 'Neukundengewinnung & Direktansprache',
     icon: Users,
   },
   'marketing-automation': {
-    title: 'Marketing Automation & CRM',
+    title: 'Marketing-Automatisierung & CRM',
     icon: Cpu,
   },
   'sales-enablement': {
-    title: 'Sales Enablement & Playbooks',
+    title: 'Vertriebsunterstützung & Leitfäden',
     icon: ShieldAlert,
   },
   'revenue-operations': {
-    title: 'Revenue Operations (RevOps)',
+    title: 'Prozess- und Datenintegration',
     icon: Layers,
   },
   'ai-automation': {
-    title: 'AI & Inbound/Outbound Automation',
+    title: 'KI-Automatisierung',
     icon: Sparkles,
   },
   'data-analytics': {
-    title: 'Data, Analytics & Web Tracking',
+    title: 'Tracking & Datenanalyse',
     icon: PieChart,
   },
 };
@@ -164,103 +164,103 @@ const RECOMMENDATION_MATRIX: Record<ProblemId, Record<SetupId, { slug: string; r
   pipeline: {
     greenfield: {
       slug: 'growth-strategy',
-      reasoning: 'Ohne bestehendes Fundament musst du zuerst dein Ideal Customer Profile (ICP) und Go-to-Market-Messaging schärfen, bevor du Budget in Kampagnen investierst.',
-      deliverablesSummary: 'ICP-Definition, Go-to-Market Playbook & 12-Monats-Wachstums-Roadmap.',
+      reasoning: 'Ohne bestehendes Fundament lohnt es sich, zuerst Ihren Wunschkunden und Ihre Kernbotschaft zu klären, bevor Budget in Kampagnen fliesst.',
+      deliverablesSummary: 'Zielkundenprofil, Vermarktungsleitfaden und Massnahmenplan für 12 Monate.',
     },
     fragmented: {
       slug: 'demand-generation',
-      reasoning: 'Deine Kanäle müssen koordiniert nachfrageorientiert bespielt werden, um echte Kaufbereitschaft bei deiner Zielgruppe vor dem ersten Kontakt zu erzeugen.',
-      deliverablesSummary: 'Multi-Channel Paid Ads (LinkedIn & Google), ABM-Kampagnen & Pipeline-Tracking.',
+      reasoning: 'Ihre Kanäle brauchen eine gemeinsame Linie, damit Ihre Zielgruppe Sie schon vor dem ersten Kontakt kennt und Interesse aufbaut.',
+      deliverablesSummary: 'Kampagnen auf LinkedIn und Google, gezielte Ansprache von Wunschkunden und Messung der Anfragen.',
     },
     scaling: {
       slug: 'lead-generation',
-      reasoning: 'Um deine bestehende Pipeline auf das nächste Level zu heben, etablieren wir systematische Inbound- und Outbound-Engines mit präziser Vorqualifizierung.',
-      deliverablesSummary: 'SEO-Content Funnel, Schweizer Outbound-Sequenzen & automatisches Lead-Scoring.',
+      reasoning: 'Damit mehr passende Anfragen kommen, bauen wir neben Ihren bestehenden Kanälen gezielte Wege über Google, Inhalte und Direktansprache auf, mit klarer Vorqualifizierung.',
+      deliverablesSummary: 'SEO-Inhalte, Direktansprache im Schweizer Markt und automatische Bewertung von Anfragen.',
     },
   },
   alignment: {
     greenfield: {
       slug: 'sales-enablement',
-      reasoning: 'Bevor komplexe Systeme gebaut werden, müssen Vertrieb und Marketing dieselbe Sprache sprechen und einheitliche Übergabekriterien (MQL zu SQL) definieren.',
-      deliverablesSummary: 'Sales Playbook, standardisierte Einwandbehandlung & interaktive Decks.',
+      reasoning: 'Bevor Systeme gebaut werden, sollten Marketing und Vertrieb dieselbe Sprache sprechen und gemeinsam festlegen, ab wann eine Anfrage an den Vertrieb geht.',
+      deliverablesSummary: 'Vertriebsleitfaden, Antworten auf typische Einwände und Präsentationsunterlagen.',
     },
     fragmented: {
       slug: 'revenue-operations',
-      reasoning: 'RevOps bricht die Datensilos zwischen Marketing-Tools, CRM und Vertrieb auf und schafft eine verlässliche Single Source of Truth.',
-      deliverablesSummary: 'Tech-Stack Harmonisierung, einheitliche Pipeline-Phasen & C-Level KPI Dashboards.',
+      reasoning: 'Wir verbinden Marketing-Tools, CRM und Vertrieb, damit alle mit denselben Daten arbeiten.',
+      deliverablesSummary: 'Abgestimmte Tools, einheitliche Verkaufsphasen und ein Kennzahlen-Dashboard für die Geschäftsleitung.',
     },
     scaling: {
       slug: 'sales-enablement',
-      reasoning: 'Mit schlüsselfertigen Sales Playbooks, interaktiven Decks und klarer Nutzenargumentation machen wir die Übergabe nahtlos und steigern eure Abschlussquote.',
-      deliverablesSummary: 'Verkürzung der Sales Cycles, Battle-Cards & praxiserprobte Verkaufsunterlagen.',
+      reasoning: 'Mit Vertriebsleitfäden, Präsentationsunterlagen und einer klaren Nutzenargumentation sorgen wir für eine saubere Übergabe, damit mehr Anfragen zu Aufträgen werden können.',
+      deliverablesSummary: 'Klarere Verkaufsabläufe, Argumentationshilfen gegenüber Mitbewerbern und Verkaufsunterlagen.',
     },
   },
   conversion: {
     greenfield: {
       slug: 'sales-enablement',
-      reasoning: 'Um Erstkontakte verlässlich in zahlende Kunden zu verwandeln, benötigt dein Team professionelle Gesprächsleitfäden und überzeugende Präsentations-Assets.',
-      deliverablesSummary: 'Kompakte Argumentationsketten, ROI-Rechner für Kunden & Einwandbehandlung.',
+      reasoning: 'Damit aus Erstkontakten zahlende Kunden werden, braucht Ihr Team klare Gesprächsleitfäden und überzeugende Präsentationsunterlagen.',
+      deliverablesSummary: 'Kompakte Argumentation, Nutzenrechner für Ihre Kunden und Antworten auf typische Einwände.',
     },
     fragmented: {
       slug: 'marketing-automation',
-      reasoning: 'Mit automatisierten Nurturing-Strecken und CRM-Workflows begleiten wir unentschlossene Kontakte systematisch, bis sie abschlussbereit beim Vertrieb ankommen.',
-      deliverablesSummary: 'Automatisierte E-Mail-Workflows, Lead-Scoring & CRM-Pipeline-Architektur.',
+      reasoning: 'Mit automatisierten E-Mail-Strecken und CRM-Abläufen begleiten wir unentschlossene Kontakte weiter, bis sie bereit für ein Gespräch mit dem Vertrieb sind.',
+      deliverablesSummary: 'Automatisierte E-Mail-Abläufe, Bewertung von Anfragen und saubere Verkaufsphasen im CRM.',
     },
     scaling: {
       slug: 'revenue-operations',
-      reasoning: 'Wir identifizieren und beheben die genauen Reibungspunkte und Conversion-Lecks entlang des gesamten Übergabeprozesses von Marketing zu Sales.',
-      deliverablesSummary: 'Funnel-Leak Audit, Prozess-Optimierung & LTV-gestützte Pipeline-Steuerung.',
+      reasoning: 'Wir finden heraus, an welchen Stellen zwischen Marketing und Vertrieb Interessenten verloren gehen, und beheben diese Schwachstellen.',
+      deliverablesSummary: 'Analyse des Anfrageprozesses, verbesserte Abläufe und Steuerung nach Kundenwert.',
     },
   },
   manual: {
     greenfield: {
       slug: 'marketing-automation',
-      reasoning: 'Wir bauen von Grund auf saubere Standard-Workflows und CRM-Automationen auf, die manuelle Routineaufgaben sofort eliminieren.',
-      deliverablesSummary: 'Lead-Routing Regeln, automatisierte Follow-ups & HubSpot/CRM-Setup.',
+      reasoning: 'Wir bauen saubere Standardabläufe und CRM-Automatisierungen auf, die Ihrem Team wiederkehrende Routineaufgaben abnehmen.',
+      deliverablesSummary: 'Regeln für die Verteilung von Anfragen, automatisches Nachfassen und Einrichtung von HubSpot oder einem anderen CRM.',
     },
     fragmented: {
       slug: 'revenue-operations',
-      reasoning: 'Wir verknüpfen deine isolierten Tools über intelligente Schnittstellen und synchronisieren deine Datenflüsse vollautomatisch.',
-      deliverablesSummary: 'Tool-Konsolidierung, automatisierte Datenhygiene & Prozess-Dokumentation.',
+      reasoning: 'Wir verbinden Ihre bisher getrennten Tools über Schnittstellen, damit Daten automatisch dort ankommen, wo sie gebraucht werden.',
+      deliverablesSummary: 'Weniger, besser verbundene Tools, automatische Datenpflege und dokumentierte Abläufe.',
     },
     scaling: {
       slug: 'ai-automation',
-      reasoning: 'Intelligente AI-Agenten übernehmen Lead-Recherche, Datenanreicherung und Routine-Kommunikation, damit dein Team ohne personelle Engpässe skaliert.',
-      deliverablesSummary: 'Make/n8n AI-Workflows, automatisierte Lead-Anreicherung & KI-Qualifizierer.',
+      reasoning: 'KI-gestützte Abläufe übernehmen Recherche, Datenergänzung und Routinekommunikation, damit Ihr Team mehr bewältigen kann, ohne sofort neue Stellen zu schaffen.',
+      deliverablesSummary: 'KI-Abläufe mit Make oder n8n, automatische Ergänzung von Kontaktdaten und Vorqualifizierung von Anfragen.',
     },
   },
   data: {
     greenfield: {
       slug: 'data-analytics',
-      reasoning: 'Wir etablieren ein sauberes First-Party Webtracking und ein zentrales KPI-Dashboard, damit du von Tag 1 an datengestützte Entscheidungen triffst.',
-      deliverablesSummary: 'Server-Side GTM Setup, GA4/Matomo Konfiguration & DSG-konformes Tracking.',
+      reasoning: 'Wir richten ein sauberes Website-Tracking und ein zentrales Kennzahlen-Dashboard ein, damit Sie von Anfang an auf Basis von Daten entscheiden können.',
+      deliverablesSummary: 'Serverseitiges Google Tag Manager Setup, Konfiguration von GA4 oder Matomo und Tracking mit Blick auf das Schweizer Datenschutzgesetz.',
     },
     fragmented: {
       slug: 'data-analytics',
-      reasoning: 'Wir führen deine verstreuten Tool-Daten in einheitlichen Attributions-Modellen zusammen, damit du genau siehst, welcher Kanal echten Umsatz bringt.',
-      deliverablesSummary: 'Conversion APIs (CAPI), Multi-Touch Attribution & Looker Studio Dashboards.',
+      reasoning: 'Wir führen die Daten aus Ihren verschiedenen Tools zusammen, damit Sie sehen, welcher Kanal tatsächlich Umsatz bringt.',
+      deliverablesSummary: 'Serverseitige Datenübermittlung an Werbeplattformen, Auswertung über mehrere Kontaktpunkte und Dashboards in Looker Studio.',
     },
     scaling: {
       slug: 'revenue-operations',
-      reasoning: 'Wir transformieren deine fragmentierten Kennzahlen in ein ganzheitliches Revenue-Dashboard mit verlässlichem Umsatz-Forecasting.',
-      deliverablesSummary: 'Customer Lifetime Value (LTV) Modelle, Forecasting-System & KPI-Harmonisierung.',
+      reasoning: 'Wir bringen Ihre verstreuten Kennzahlen in ein gemeinsames Umsatz-Dashboard mit einer nachvollziehbaren Umsatzprognose.',
+      deliverablesSummary: 'Berechnung des Kundenwerts über die gesamte Kundenbeziehung, Umsatzprognose und einheitliche Kennzahlen.',
     },
   },
   strategy: {
     greenfield: {
       slug: 'growth-strategy',
-      reasoning: 'Gemeinsam erarbeiten wir dein Ideal Customer Profile (ICP), schärfen dein Nutzenversprechen und erstellen eine 12-Monats-Wachstums-Roadmap.',
-      deliverablesSummary: 'ICP- & Buyer-Persona-Matrizen, Positionierung & Kanal-Allokation.',
+      reasoning: 'Gemeinsam definieren wir Ihren Wunschkunden, schärfen Ihr Nutzenversprechen und erstellen einen Massnahmenplan für die nächsten 12 Monate.',
+      deliverablesSummary: 'Zielkundenprofile, Positionierung und Verteilung des Budgets auf die Kanäle.',
     },
     fragmented: {
       slug: 'growth-strategy',
-      reasoning: 'Wir richten deine vorhandenen Kanäle und Tools strategisch auf die ertragreichsten Kundensegmente und Marktchancen aus.',
-      deliverablesSummary: 'Go-to-Market Neuausrichtung, Wertversprechen-Framework & Budget-Modellierung.',
+      reasoning: 'Wir richten Ihre vorhandenen Kanäle und Tools auf die Kundengruppen und Marktchancen aus, die für Sie am meisten Ertrag versprechen.',
+      deliverablesSummary: 'Neuausrichtung der Vermarktung, geschärftes Nutzenversprechen und Budgetplanung.',
     },
     scaling: {
       slug: 'demand-generation',
-      reasoning: 'Wir übersetzen deine Strategie in eine zielgerichtete Multi-Channel Demand Engine, die planbar hochwertige B2B-Kaufanfragen erzeugt.',
-      deliverablesSummary: 'Skalierbare Paid Acquisition, Demand Capture & Full-Funnel Content.',
+      reasoning: 'Wir setzen Ihre Strategie in abgestimmte Kampagnen über mehrere Kanäle um, mit dem Ziel, regelmässig passende B2B-Anfragen zu gewinnen.',
+      deliverablesSummary: 'Bezahlte Kampagnen, die mit dem Budget mitwachsen, Abholen bestehender Nachfrage und Inhalte für jede Phase der Kaufentscheidung.',
     },
   },
 };
@@ -362,7 +362,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
             <div className="inline-flex items-center gap-2">
               <Compass className="w-3.5 h-3.5 text-[#686DF4]" />
               <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500">
-                Revenue Navigator
+                Wegweiser: Wo stehen Sie?
               </span>
             </div>
           )}
@@ -401,7 +401,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
               type="button"
               onClick={onClose}
               className="p-1.5 text-slate-400 hover:text-slate-800 bg-slate-100/80 hover:bg-slate-200/80 rounded-full transition-colors cursor-pointer outline-none ml-1"
-              aria-label="Modal schliessen"
+              aria-label="Fenster schliessen"
             >
               <X className="w-4 h-4" />
             </button>
@@ -424,13 +424,13 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
             >
               <div className="space-y-1.5">
                 <span className="text-[11.5px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">
-                  SCHRITT 1 VON 2
+                  Schritt 1 von 2
                 </span>
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 tracking-tight">
-                  Was ist aktuell euer grösstes Wachstumsproblem?
+                  Was bremst Ihr Wachstum derzeit am meisten?
                 </h3>
                 <p className="text-slate-500 text-body-sm">
-                  Wähle die Option, die euren aktuellen Engpass am genauesten beschreibt.
+                  Wählen Sie die Option, die Ihre Situation am besten beschreibt.
                 </p>
               </div>
 
@@ -484,13 +484,13 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
             >
               <div className="space-y-1.5">
                 <span className="text-[11.5px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">
-                  SCHRITT 2 VON 2
+                  Schritt 2 von 2
                 </span>
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 tracking-tight">
-                  Wie sieht euer aktuelles Setup aus?
+                  Wie sind Sie heute aufgestellt?
                 </h3>
                 <p className="text-slate-500 text-body-sm">
-                  Damit bestimmen wir die exakte Flughöhe und den optimalen Einstiegspunkt.
+                  Daraus ergibt sich, wo ein sinnvoller Einstieg liegt.
                 </p>
               </div>
 
@@ -545,11 +545,11 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#686DF4]/10 border border-[#686DF4]/25">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#686DF4]" />
                   <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">
-                    DEINE EMPFEHLUNG
+                    Ihre Empfehlung
                   </span>
                 </div>
                 <span className="text-xs font-medium text-slate-400">
-                  Basiert auf deinen 2 Angaben
+                  Basiert auf Ihren 2 Angaben
                 </span>
               </div>
 
@@ -581,7 +581,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                     {recommendation.reasoning}
                   </p>
                   <p className="text-xs sm:text-body-sm text-slate-500 leading-relaxed font-medium">
-                    <span className="font-semibold text-slate-700">Fokus-Ergebnisse:</span> {recommendation.deliverablesSummary}
+                    <span className="font-semibold text-slate-700">Typische Bausteine:</span> {recommendation.deliverablesSummary}
                   </p>
                 </div>
               </div>
@@ -602,7 +602,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                   onClick={() => { trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'gespraech_buchen', result_label: recommendation.slug }); navigateTo('/kontakt') }}
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-semibold px-6 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
                 >
-                  <span>Direkt unverbindliches Gespräch buchen</span>
+                  <span>Erstgespräch vereinbaren</span>
                 </button>
               </div>
 
@@ -614,7 +614,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-[#686DF4] transition-colors cursor-pointer select-none"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                  <span>Nochmal von vorne starten</span>
+                  <span>Neu starten</span>
                 </button>
               </div>
             </motion.div>
@@ -665,14 +665,14 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#686DF4]/8 border border-[#686DF4]/20">
           <Sparkles className="w-3.5 h-3.5 text-[#686DF4]" />
           <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">
-            IN 60 SEKUNDEN
+            Rund 1 Minute
           </span>
         </div>
         <h2 className="text-2xl sm:text-3.5xl md:text-4xl font-display font-bold text-slate-900 tracking-tight">
-          Finde in 3 Fragen deinen grössten Hebel
+          In zwei Fragen zum passenden Ansatzpunkt
         </h2>
         <p className="text-slate-600 text-body font-medium max-w-xl mx-auto">
-          Kein Rätselraten. Wir zeigen dir sofort, wo du ansetzen solltest.
+          Sie sehen direkt, wo es sich bei Ihnen am ehesten lohnt anzusetzen.
         </p>
       </div>
 

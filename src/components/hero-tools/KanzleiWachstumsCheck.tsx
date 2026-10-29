@@ -121,25 +121,25 @@ export default function KanzleiWachstumsCheck() {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-100 text-red-800 border-red-250',
       label: 'Hohes Klumpenrisiko',
-      desc: `Über 90% Ihrer neuen Mandate kommen über persönliche Empfehlungen. Das ist ein erhebliches Konzentrationsrisiko: Ein verändertes Netzwerk, eine Pensionierung, ein aktiver Wettbewerber — und der Zufluss bricht ein. Kanzleien mit dieser Abhängigkeit wachsen nicht planbar. Sie hoffen. Der Aufbau eines zweiten Kanals dauert 3–6 Monate. Die beste Zeit, damit anzufangen, war vor einem Jahr — die zweitbeste ist jetzt.`,
+      desc: `Über 90% Ihrer neuen Mandate kommen über persönliche Empfehlungen. Das ist ein Klumpenrisiko: Verändert sich Ihr Netzwerk, geht ein wichtiger Empfehlungsgeber in Pension oder wird ein Mitbewerber aktiver, kann der Zufluss deutlich zurückgehen. Planbares Wachstum ist so schwierig. Ein zweiter Kanal braucht Zeit, bis er trägt. Darum lohnt es sich, früh damit zu beginnen.`,
     },
     strukturell: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-100 text-orange-800 border-orange-250',
       label: 'Strukturelle Abhängigkeit',
-      desc: 'Empfehlungen tragen Ihr Wachstum — aber der digitale Kanal fehlt fast vollständig. Das funktioniert in stabilen Phasen. Es bremst Sie aber, wenn Sie aktiv wachsen wollen oder wenn das Netzwerk einmal stiller wird. Mit LinkedIn-Präsenz, lokalem SEO und einem Mandanten-Newsletter wäre innerhalb von 6 Monaten ein spürbarer zweiter Kanal aufgebaut.',
+      desc: 'Empfehlungen tragen Ihr Wachstum, ein digitaler Kanal fehlt aber fast vollständig. In stabilen Phasen funktioniert das. Es bremst Sie jedoch, wenn Sie aktiv wachsen wollen oder das Netzwerk einmal ruhiger wird. Mit einer Präsenz auf LinkedIn, guter lokaler Auffindbarkeit bei Google und einem Newsletter für Mandanten lässt sich schrittweise ein zweiter Kanal aufbauen.',
     },
     ausgewogen: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-100 text-green-800 border-green-250',
       label: 'Ausgewogen, aber ausbaufähig',
-      desc: 'Sie haben bereits eine gewisse Diversifizierung. Der digitale Kanal trägt messbar — aber das Potenzial liegt noch brach. Systematisierung und Ausbau würden den digitalen Anteil innert 3–4 Monaten verdoppeln können.',
+      desc: 'Ihre Mandate kommen bereits aus mehreren Quellen, und der digitale Kanal trägt etwas bei. Hier ist noch Potenzial vorhanden: Wenn Sie den digitalen Kanal systematisch ausbauen, kann sein Anteil weiter wachsen.',
     },
     diversifiziert: {
       color: 'text-indigo-700 bg-[#686DF4]/5 border-[#686DF4]/10',
       badgeBg: 'bg-[#686DF4]/10 text-[#686DF4] border-[#686DF4]/20',
-      label: 'Diversifizierter Kanal-Mix',
-      desc: 'Ihr Kanal-Mix ist überdurchschnittlich gut diversifiziert. Der nächste Hebel liegt in der Qualifizierung: bessere Conversion aus bestehendem Traffic, LinkedIn-Inbound für hochwertige Mandate und systematisches Cross-Selling im bestehenden Kundenstamm.',
+      label: 'Breit abgestützt',
+      desc: 'Ihre neuen Mandate kommen aus mehreren Kanälen. Der nächste Schritt liegt in der Qualität: mehr Anfragen aus den bestehenden Website-Besuchern, LinkedIn für anspruchsvolle Mandate und zusätzliche Leistungen für bestehende Mandanten.',
     },
   };
 
@@ -161,10 +161,10 @@ export default function KanzleiWachstumsCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">KANZLEI-DIAGNOSE</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Treuhand & Beratung</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kanzlei-Wachstums-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
-          Analysieren Sie Ihre Kanzlei-Abhängigkeiten und berechnen Sie Ihre digitale Wachstumslücke.
+          Schätzen Sie, wie stark Ihre Kanzlei von Empfehlungen abhängt und wie viele Mandate digital dazukommen müssten. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -201,7 +201,7 @@ export default function KanzleiWachstumsCheck() {
               onChange={(e) => handleInputChange('empfehlungsanteil', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[11px] text-slate-400 font-medium font-mono">Anteil Mandate über Kontakte</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Anteil Mandate über Empfehlungen und Kontakte</p>
           </div>
 
           <div className="space-y-1">
@@ -236,7 +236,7 @@ export default function KanzleiWachstumsCheck() {
             />
             {inputs.ziel_mandate < inputs.neue_mandate && (
               <p className="text-amber-600 text-[11px] font-bold mt-1">
-                Ihr Ziel liegt unter dem Vorjahr — wir berechnen trotzdem den aktuellen Kanal-Mix.
+                Ihr Ziel liegt unter dem Vorjahr. Wir zeigen trotzdem Ihren aktuellen Kanal-Mix.
               </p>
             )}
           </div>
@@ -247,7 +247,7 @@ export default function KanzleiWachstumsCheck() {
           <div className="p-5 bg-slate-950 text-white rounded-2xl flex flex-col justify-between space-y-4">
             <div className="flex justify-between items-center pb-2 border-b border-slate-850">
               <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 uppercase">
-                DIAGNORSTIZIERTER DIVERSIFIKATIONS-SCORE
+                Unabhängigkeit von Empfehlungen
               </span>
               <span className={`px-2 py-0.5 rounded text-[11px] font-mono font-black ${results.stufe === 'klumpenrisiko' ? 'bg-red-800 text-red-100' : 'bg-[#686DF4] text-white'}`}>
                 {currentStufe.label}
@@ -270,15 +270,15 @@ export default function KanzleiWachstumsCheck() {
               <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Wachstumslücke</span>
               <h4 className="text-lg font-bold text-slate-900">{formatCHFCompact(results.chf_potenzial_digital)}</h4>
               <p className="text-[11px] text-slate-450 font-semibold leading-normal pt-1">
-                {results.digital_gap} Mandate fehlen digital bis zum Ziel ({inputs.ziel_mandate} Mandate Zuwachs)
+                {results.digital_gap} Mandate fehlen digital bis zum Ziel von {inputs.ziel_mandate} Mandaten (Annahme: Empfehlungen wachsen um 5%)
               </p>
             </div>
 
             <div className="bg-slate-50/50 border border-slate-200 rounded-xl p-4 space-y-1">
-              <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Dringlichkeit digitaler Beitrag</span>
+              <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Nötiger digitaler Beitrag</span>
               <h4 className="text-lg font-bold text-[#686DF4]">{results.notwendiger_digitaler_beitrag_n} Mandat(e)</h4>
               <p className="text-[11px] text-slate-450 font-semibold leading-normal pt-1">
-                entspricht {formatCHFCompact(results.notwendiger_digitaler_beitrag_chf)} Honorarpipeline
+                entspricht rund {formatCHFCompact(results.notwendiger_digitaler_beitrag_chf)} Honorar
               </p>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function KanzleiWachstumsCheck() {
       <div className="border-t border-slate-100 pt-6 space-y-6">
         <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
           <div className="text-left font-semibold text-slate-550 text-xs max-w-md">
-            <strong>Wie unabhängig ist Ihre Kanzlei von Empfehlungen?</strong> In einem 30-minütigen Gespräch analysieren wir Ihre Sichtbarkeit live und ehrlich — ohne Verkaufsdruck.
+            <strong>Ergebnis gemeinsam einordnen.</strong> In einem kostenlosen Erstgespräch von 30 Minuten schauen wir Ihre Zahlen an und besprechen, wo bei Ihnen der grösste Hebel liegt.
           </div>
           <button
             type="button"
@@ -304,86 +304,10 @@ export default function KanzleiWachstumsCheck() {
             }}
             className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors cursor-pointer border-0"
           >
-            Kostenloses Erstgespräch buchen
+            Ergebnis besprechen
           </button>
         </div>
 
-        {/* Lead Capture for high dependency levels */}
-        {(results.stufe === 'klumpenrisiko' || results.stufe === 'strukturell') && (
-          <div className="border border-slate-150 rounded-2xl overflow-hidden text-left bg-slate-50/40">
-            <button
-              onClick={() => {
-                setAccordionOpen(!accordionOpen);
-                track('hero_tool_lead_capture_opened', {
-                  page: 'treuhand-unternehmensberatung',
-                  element_id: 'kanzlei-wachstums-check',
-                  stufe: results.stufe,
-                });
-              }}
-              className="w-full p-4 flex justify-between items-center text-xs font-bold text-slate-800 hover:bg-slate-50 transition-colors"
-            >
-              <span>Analyse per E-Mail erhalten — mit konkretem Massnahmenplan →</span>
-              {accordionOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-slate-450" />}
-            </button>
-
-            {accordionOpen && (
-              <div className="p-4 border-t border-slate-150 bg-white space-y-4 animate-fadeIn">
-                {!formSubmitted ? (
-                  <form onSubmit={handleFormSubmission} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
-                      <input
-                        type="email"
-                        required
-                        value={emailSub}
-                        onChange={(e) => setEmailSub(e.target.value)}
-                        placeholder="kanzlei@firma.ch"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Dein Name</label>
-                      <input
-                        type="text"
-                        value={nameSub}
-                        onChange={(e) => setNameSub(e.target.value)}
-                        placeholder="z.B. Müller"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="sm:col-span-2 space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Kanzleityp</label>
-                      <select
-                        value={kanzleiTyp}
-                        onChange={(e) => setKanzleiTyp(e.target.value)}
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none"
-                      >
-                        <option>Treuhandbüro / Buchhaltung</option>
-                        <option>Steuerberatung / Wirtschaftsprüfung</option>
-                        <option>Unternehmensberatung (Strategy/Operations)</option>
-                        <option>Nachlassplanung / Family Office</option>
-                        <option>Anderes / gemischt</option>
-                      </select>
-                    </div>
-                    <button
-                      type="submit"
-                      className="sm:col-span-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest py-3 rounded-lg text-center"
-                    >
-                      Analyse jetzt anfordern
-                    </button>
-                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
-                      Kein Newsletter. Einmalige, personalisierte Einschätzung auf Basis Ihrer Eingaben — innert 48 Stunden.
-                    </p>
-                  </form>
-                ) : (
-                  <div className="p-4 text-center text-green-700 bg-green-50 border border-green-150 rounded-xl font-semibold text-xs">
-                    Vielen Dank! Wir senden Ihnen Ihre personalisierte Kanzlei-Analyse und drei konkrete Massnahmen-Ideen innert Kürze per E-Mail zu.
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );

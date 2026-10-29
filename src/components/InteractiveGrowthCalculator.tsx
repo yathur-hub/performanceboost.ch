@@ -118,19 +118,19 @@ export default function InteractiveGrowthCalculator() {
           <div className="flex justify-between items-center pb-4 border-b border-slate-100">
             <div className="flex items-center gap-2.5">
               <Calculator className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
-              <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Revenue & Budget Simulator</h3>
+              <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Umsatz- und Budgetrechner</h3>
             </div>
             <button 
               onClick={handleReset} 
               className="text-xs text-slate-400 hover:text-slate-950 flex items-center gap-1.5 transition-colors bg-slate-50 hover:bg-slate-100 border border-slate-200/60 px-3 py-1.5 rounded-xl font-bold font-mono cursor-pointer"
-              title="Simulator zurücksetzen"
+              title="Rechner zurücksetzen"
             >
-              <RefreshCw className="w-3 h-3" /> RESET
+              <RefreshCw className="w-3 h-3" /> Zurücksetzen
             </button>
           </div>
           
           <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-            Wie stark wirkt sich ein optimiertes Media-Budget auf deine echten Abschlüsse aus? Dieser Simulator kalibriert sich automatisch anhand realer Benchmarks für deinen Deal-Scope.
+            Rechnen Sie durch, wie sich Werbebudget, Klickkosten und Abschlussquoten auf Ihre Aufträge auswirken. Die Werte sind Beispiele: Passen Sie sie an Ihre eigenen Zahlen an.
           </p>
 
           <div className="space-y-6">
@@ -138,13 +138,13 @@ export default function InteractiveGrowthCalculator() {
             {/* --- Section 1: Akquisition & Traffic --- */}
             <div className="space-y-4 pt-1">
               <span className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest font-bold text-[#686DF4] uppercase bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md w-fit">
-                <Settings2 className="w-3 h-3 text-[#686DF4]" /> 1. AKQUISITION &amp; ACQUISITION DRIVERS
+                <Settings2 className="w-3 h-3 text-[#686DF4]" /> 1. Besucher und Werbung
               </span>
 
               {/* Marketing budget Slider */}
               <div className="space-y-2 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-700 font-bold font-display">Monatl. Ads-Budget (Google/LinkedIn)</span>
+                  <span className="text-slate-700 font-bold font-display">Werbebudget pro Monat (Google, LinkedIn)</span>
                   <span className="font-bold text-[#686DF4] font-mono">{formattedValue(budget)} / Mt.</span>
                 </div>
                 <input
@@ -194,8 +194,8 @@ export default function InteractiveGrowthCalculator() {
               {/* Organic/Direct Visitors slider */}
               <div className="space-y-2 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-700 font-bold font-display">Organische Sessions / Direct-Traffic</span>
-                  <span className="font-bold text-slate-800 font-mono">{organic.toLocaleString('de-CH')} Sessions</span>
+                  <span className="text-slate-700 font-bold font-display">Besuche ohne Werbung (Google-Suche, direkt)</span>
+                  <span className="font-bold text-slate-800 font-mono">{organic.toLocaleString('de-CH')} Besuche</span>
                 </div>
                 <input
                   type="range"
@@ -219,16 +219,16 @@ export default function InteractiveGrowthCalculator() {
               {/* Resulting aggregate Traffic Display */}
               <div className="bg-slate-900 text-white rounded-2xl p-4 flex justify-between items-center shadow-xs">
                 <div className="space-y-0.5">
-                  <span className="text-[11px] text-[#686DF4] font-mono font-bold uppercase tracking-wider block">BERECHNETE INBOUND SESSIONS</span>
+                  <span className="text-[11px] text-[#686DF4] font-mono font-bold uppercase tracking-wider block">Besuche pro Monat (berechnet)</span>
                   <p className="text-[11px] text-slate-400 font-semibold leading-relaxed">
-                    Aus {organic.toLocaleString('de-CH')} SEO-Visits + {Math.round(budget/cpc).toLocaleString('de-CH')} paid Clicks (Ads)
+                    Aus {organic.toLocaleString('de-CH')} Besuchen ohne Werbung + {Math.round(budget/cpc).toLocaleString('de-CH')} Klicks aus Anzeigen
                   </p>
                 </div>
                 <div className="text-right">
                   <span className="text-base sm:text-lg font-display font-bold text-white block">
                     {currentMetrics.traffic.toLocaleString('de-CH')}
                   </span>
-                  <span className="text-[11px] text-[#686DF4] font-mono font-bold block uppercase">sessions / mt.</span>
+                  <span className="text-[11px] text-[#686DF4] font-mono font-bold block uppercase">Besuche / Mt.</span>
                 </div>
               </div>
 
@@ -237,14 +237,14 @@ export default function InteractiveGrowthCalculator() {
             {/* --- Section 2: Conversions & ACV --- */}
             <div className="space-y-4 pt-2">
               <span className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest font-bold text-[#686DF4] uppercase bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md w-fit">
-                <Layers className="w-3 h-3 text-[#686DF4]" /> 2. TRICHTER-EFFIZIENZ &amp; DEALS
+                <Layers className="w-3 h-3 text-[#686DF4]" /> 2. Anfragen und Aufträge
               </span>
 
               {/* Lead Conversion slider */}
               <div className="space-y-2 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
                 <div className="flex justify-between items-center text-xs">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-slate-750 text-slate-700 font-bold font-display">Inbound-zu-Lead Konvertierung</span>
+                    <span className="text-slate-750 text-slate-700 font-bold font-display">Anteil Besucher, die anfragen</span>
                     <HelpCircle className="w-3.5 h-3.5 text-slate-400 shrink-0" title="Prozentsatz der Besucher, die ein Formular ausfüllen oder Kontakt aufnehmen." />
                   </div>
                   <span className="font-bold text-[#686DF4] font-mono">{leadConversion.toFixed(1)}%</span>
@@ -272,8 +272,8 @@ export default function InteractiveGrowthCalculator() {
               <div className="space-y-2 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
                 <div className="flex justify-between items-center text-xs">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-slate-700 font-bold font-display">Lead-zu-Deal Abschlussrate (Sales)</span>
-                    <HelpCircle className="w-3.5 h-3.5 text-slate-400 shrink-0" title="Prozentsatz der qualifizierten Leads, die erfolgreich zum Abschluss geführt werden." />
+                    <span className="text-slate-700 font-bold font-display">Abschlussquote (Anfrage zu Auftrag)</span>
+                    <HelpCircle className="w-3.5 h-3.5 text-slate-400 shrink-0" title="Anteil der Anfragen, aus denen ein Auftrag wird." />
                   </div>
                   <span className="font-bold text-[#686DF4] font-mono">{salesConversion.toFixed(1)}%</span>
                 </div>
@@ -299,7 +299,7 @@ export default function InteractiveGrowthCalculator() {
               {/* Deal Value Slider */}
               <div className="space-y-2 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-700 font-bold font-display">Ø Auftragswert pro Neukunde (ACV)</span>
+                  <span className="text-slate-700 font-bold font-display">Ø Auftragswert pro Neukunde</span>
                   <span className="font-bold text-[#686DF4] font-mono">{formattedValue(dealValue)}</span>
                 </div>
                 <input
@@ -331,34 +331,34 @@ export default function InteractiveGrowthCalculator() {
           
           <div className="space-y-6">
             <span className="inline-flex items-center gap-1.5 bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-bold px-3.5 py-1 rounded-full border border-[#CACCFB]/25 uppercase tracking-widest font-mono">
-              <Sparkles className="w-3.5 h-3.5" /> EFFEKT-ANALYSE &amp; UPLIFT
+              <Sparkles className="w-3.5 h-3.5" /> Rechenbeispiel
             </span>
 
             {/* B2B Calibrated indicator badge */}
             <div className="bg-amber-50 border border-amber-200/50 rounded-2xl p-4.5 space-y-1.5">
               <p className="text-[11px] font-mono tracking-wider font-bold text-amber-800 uppercase flex items-center gap-1">
-                🛡️ REALITY CALIBRATION ACTIVE
+                Anpassung an den Auftragswert
               </p>
               <p className="text-[11px] text-amber-900/80 leading-relaxed font-semibold">
-                Da teurere Deals (aktuell {formattedValue(dealValue)}) naturgemäss komplexere Vertriebszyklen haben, wurden deine Conversion-Raten automatisch konservativ für die Wirklichkeit tariert:
+                Bei höheren Auftragswerten (aktuell {formattedValue(dealValue)}) dauert der Verkauf meist länger. Der Rechner senkt Ihre Quoten deshalb mit einer vereinfachten Annahme etwas ab:
               </p>
               <div className="flex gap-4 pt-1.5 text-[11px] font-mono text-amber-850 font-semibold border-t border-amber-200/40">
-                <div>Lead CR: <span className="font-bold text-slate-900">{currentMetrics.calibratedLeadCR}%</span> <span className="text-slate-400 text-[11px]">(Tariert)</span></div>
-                <div>Sales CR: <span className="font-bold text-slate-900">{currentMetrics.calibratedSalesCR}%</span> <span className="text-slate-400 text-[11px]">(Tariert)</span></div>
+                <div>Anfragequote: <span className="font-bold text-slate-900">{currentMetrics.calibratedLeadCR}%</span> <span className="text-slate-400 text-[11px]">(angepasst)</span></div>
+                <div>Abschlussquote: <span className="font-bold text-slate-900">{currentMetrics.calibratedSalesCR}%</span> <span className="text-slate-400 text-[11px]">(angepasst)</span></div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Box Current */}
               <div className="bg-white p-5 rounded-2xl border border-slate-200">
-                <p className="text-[11px] text-slate-400 tracking-widest uppercase mb-2 font-bold font-mono">STATUS QUO (MONATLICH)</p>
+                <p className="text-[11px] text-slate-400 tracking-widest uppercase mb-2 font-bold font-mono">Heute (pro Monat)</p>
                 <div className="space-y-2">
                   <div className="text-lg sm:text-xl font-bold text-slate-800 font-display">
                     {formattedValue(currentMetrics.monthlyRevenue)} <span className="text-[11px] text-slate-400 font-normal">/ Mt.</span>
                   </div>
                   <div className="text-[11px] text-slate-500 font-semibold leading-relaxed border-t border-slate-50 pt-2 space-y-0.5">
-                    <div>Qual. Leads: <strong className="text-slate-800">{currentMetrics.leads} / Mt.</strong></div>
-                    <div>Geschlossene Deals: <strong className="text-slate-800">{currentMetrics.sales} / Mt.</strong></div>
+                    <div>Anfragen: <strong className="text-slate-800">{currentMetrics.leads} / Mt.</strong></div>
+                    <div>Aufträge: <strong className="text-slate-800">{currentMetrics.sales} / Mt.</strong></div>
                   </div>
                 </div>
               </div>
@@ -366,15 +366,15 @@ export default function InteractiveGrowthCalculator() {
               {/* Box Boosted */}
               <div className="bg-[#686DF4]/5 p-5 rounded-2xl border border-[#CACCFB]/35 shadow-xs">
                 <p className="text-[11px] text-[#686DF4] tracking-widest uppercase mb-2 flex items-center gap-1 font-bold font-mono">
-                  <TrendingUp className="w-3 h-3 text-[#686DF4]" /> OPTIMIERT (MIT BENCHMARKS)
+                  <TrendingUp className="w-3 h-3 text-[#686DF4]" /> Mit Annahmen (Richtwerte)
                 </p>
                 <div className="space-y-2">
                   <div className="text-lg sm:text-xl font-extrabold text-[#686DF4] font-display">
                     {formattedValue(boostedMetrics.monthlyRevenue)} <span className="text-[11px] text-slate-450 font-normal">/ Mt.</span>
                   </div>
                   <div className="text-[11px] text-slate-600 font-semibold leading-relaxed border-t border-[#686DF4]/10 pt-2 space-y-0.5">
-                    <div>Qual. Leads: <strong className="text-[#686DF4]">{boostedMetrics.leads} / Mt.</strong></div>
-                    <div>Geschlossene Deals: <strong className="text-[#686DF4]">{boostedMetrics.sales} / Mt.</strong></div>
+                    <div>Anfragen: <strong className="text-[#686DF4]">{boostedMetrics.leads} / Mt.</strong></div>
+                    <div>Aufträge: <strong className="text-[#686DF4]">{boostedMetrics.sales} / Mt.</strong></div>
                   </div>
                 </div>
               </div>
@@ -382,19 +382,19 @@ export default function InteractiveGrowthCalculator() {
 
             {/* Total Uplift representation */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center shadow-xs">
-              <p className="text-[11px] text-slate-400 mb-1.5 font-bold uppercase tracking-widest font-mono">ZUSÄTZLICHES REVENUE-POTENZIAL / JAHR</p>
+              <p className="text-[11px] text-slate-400 mb-1.5 font-bold uppercase tracking-widest font-mono">Mögliches zusätzliches Umsatzpotenzial pro Jahr</p>
               <div className="text-2xl sm:text-3.5xl font-display font-extrabold text-[#686DF4] tracking-tight">
                 +{formattedValue((boostedMetrics.monthlyRevenue - currentMetrics.monthlyRevenue) * 12)}
               </div>
               <p className="text-xs text-slate-600 font-semibold mt-3 flex items-center justify-center gap-1.5 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-100">
-                <span>🚀 Planbarer <strong>+{revenueUpliftPercentage}%</strong> Umsatzaufbau durch Beseitigung von Werbebudget-Verschwendung (-15% CPC) und optimiertes Lead-Nurturing.</span>
+                <span>Rechnerisch <strong>+{revenueUpliftPercentage}%</strong>, wenn alle Annahmen eintreffen: 15% tiefere Klickkosten, 30% mehr Besuche ohne Werbung, 40% höhere Anfragequote und 25% höhere Abschlussquote. Das sind Richtwerte für ein Rechenbeispiel, kein Versprechen.</span>
               </p>
             </div>
           </div>
 
           <div className="pt-6 border-t border-slate-200/80 mt-8 flex flex-col sm:flex-row gap-5 items-center justify-between">
             <div className="text-[11px] text-slate-450 leading-relaxed text-center sm:text-left font-semibold">
-              *Simulation berechnet auf Basis von Branchenstandards für Lead-Verarbeitung, CRM-Automatisierung und Media-Buying-Optimierung von performanceboost.
+              *Grobe Schätzung mit vereinfachten Annahmen. Wie viel davon in Ihrem Fall realistisch ist, klären wir gerne im Erstgespräch.
             </div>
             <a 
               href="/kontakt"
@@ -406,7 +406,7 @@ export default function InteractiveGrowthCalculator() {
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-[#686DF4] text-white text-xs font-bold px-7 py-4 rounded-full transition-all cursor-pointer uppercase tracking-wider text-[#f6f6f6]"
             >
-              Umsatz heben <ArrowRight className="w-4 h-4 text-white" />
+              Ergebnis besprechen <ArrowRight className="w-4 h-4 text-white" />
             </a>
           </div>
 

@@ -3,18 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+const SkillsDirectory = lazy(() => import('./components/skills/SkillsDirectory'));
+const SolutionsView = lazy(() => import('./views/SolutionsView'));
+const ServicesView = lazy(() => import('./views/ServicesView'));
+const ResourcesView = lazy(() => import('./views/ResourcesView'));
+const AboutView = lazy(() => import('./views/AboutView'));
+const ContactView = lazy(() => import('./views/ContactView'));
+const LegalView = lazy(() => import('./views/LegalView'));
+const SolutionDetailView = lazy(() => import('./views/SolutionDetailView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SkillsDirectory from './components/skills/SkillsDirectory';
 import HomeView from './views/HomeView';
-import SolutionsView from './views/SolutionsView';
-import ServicesView from './views/ServicesView';
-import ResourcesView from './views/ResourcesView';
-import AboutView from './views/AboutView';
-import ContactView from './views/ContactView';
-import LegalView from './views/LegalView';
-import SolutionDetailView from './views/SolutionDetailView';
 import NotFoundView from './views/NotFoundView';
 import { parseRoute } from './lib/routes';
 import { captureAttribution } from './lib/attribution';
@@ -87,6 +87,7 @@ function AppContent() {
 
       {/* Main responsive viewport routing */}
       <main className="flex-grow overflow-hidden relative">
+        <Suspense fallback={<div className="min-h-[80vh]" aria-busy="true" />}>
         <AnimatePresence mode="wait">
           <motion.div
             key={parsed.view + (parsed.slug || '') + (parsed.subSection || '')}
@@ -132,6 +133,7 @@ function AppContent() {
             )}
           </motion.div>
         </AnimatePresence>
+        </Suspense>
       </main>
 
       {/* Global Sitemapped Footer */}

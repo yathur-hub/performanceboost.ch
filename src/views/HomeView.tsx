@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { 
   ArrowRight, Sparkles, CheckCircle2, ShieldCheck, HelpCircle, Laptop, Landmark, TrendingUp, Layers, Users, Cpu, FileText, Megaphone, AlertCircle, ChevronDown, Check,
   PiggyBank, Cloud, Home, Briefcase, Factory, Compass, GraduationCap, Stethoscope, Hammer, Scale, Truck, Hotel
 } from 'lucide-react';
 import InteractiveGrowthCalculator from '../components/InteractiveGrowthCalculator';
-import RevenuePotenzialCheck from '../components/RevenuePotenzialCheck';
+const RevenuePotenzialCheck = lazy(() => import('../components/RevenuePotenzialCheck'));
 import { motion, AnimatePresence } from 'motion/react';
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
-import { RevenueNavigator } from '../components/home/RevenueNavigator';
+const RevenueNavigator = lazy(() => import('../components/home/RevenueNavigator').then((m) => ({ default: m.RevenueNavigator })));
 import { ClientTestimonials } from '../components/home/ClientTestimonials';
 import { SITE } from '../config/site';
 
@@ -613,6 +613,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </motion.div>
       </section>
 
+      <Suspense fallback={null}>
       <AnimatePresence>
         {showPotenzialCheck && (
           <RevenuePotenzialCheck 
@@ -631,7 +632,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           />
         )}
       </AnimatePresence>
-
+      </Suspense>
     </div>
   );
 }

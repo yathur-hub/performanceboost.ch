@@ -129,30 +129,30 @@ export default function FlottenauslastungsRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Geringe Auslastung / Hoher Leerstand',
-      desc: 'Deine Flottenauslastung liegt spürbar unter dem soliden Richtwert (85%). Das bedeutet ungenutzte Ladebühnen und Lkw, die Fixkosten verursachen, aber keine Deckungsbeiträge einfahren. Durch gezieltes digitales Marketing (z.B. Sichtbarkeit für Teilladungsverkehre, B2B-Auftrags-Akquise) lässt sich dieser Hebel rasch drehen.',
-      rec: 'Aufbau eines digitalen Direktvertriebskanals, um Leerfahrten und Spotmarkt-Abhängigkeit zu senken.',
+      label: 'Tiefe Auslastung',
+      desc: 'Ihre Auslastung liegt spürbar unter dem angenommenen Richtwert von 85%. Das heisst: Fahrzeuge verursachen Fixkosten, ohne genug Deckungsbeitrag zu bringen. Mit gezielter digitaler Neukundengewinnung, etwa für Teilladungen oder direkte Geschäftskunden, lässt sich hier ansetzen.',
+      rec: 'Einen digitalen Kanal für Direktkunden aufbauen, um Leerfahrten und die Abhängigkeit vom Spotmarkt zu senken.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-500 text-white',
-      label: 'Spürbares Potenzial',
-      desc: 'Deine Flotte läuft ordentlich — doch das verdeckte Marge-Leck ist echt und bezifferbar. Schon kleine Effizienzsteigerungen bei der Auslastung von nur +5% würden dir erhebliche Direct-Revenues einbringen.',
-      rec: 'Laufende Sichtbarkeit bei Bestandskunden optimieren, regelmässiges B2B-Outreach für Frachtkapazitäten.',
+      label: 'Potenzial vorhanden',
+      desc: 'Ihre Flotte läuft ordentlich, es bleibt aber Umsatz liegen. Was schon 5 Prozentpunkte mehr Auslastung bringen könnten, sehen Sie oben in der Schätzung.',
+      rec: 'Bei bestehenden Kunden präsent bleiben und freie Kapazitäten regelmässig direkt bei Geschäftskunden anbieten.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-500 text-white',
       label: 'Solide Auslastung',
-      desc: 'Deine Werte liegen nahe an den Benchmarks. Das ist ein gesundes Transportgeschäft. Die Herausforderung liegt nun darin, die Betriebskosten zu minimieren oder den durchschnittlichen Frachtsatz pro Kilometer durch strategischere Tourengestaltung zu steigern.',
-      rec: 'Fokus auf margenstärkere Direktkunden statt reiner Subunternehmer-Verkehre.',
+      desc: 'Ihre Werte liegen nahe an den angenommenen Richtwerten. Das ist eine gesunde Basis. Weiteres Potenzial liegt bei den Betriebskosten oder einem höheren Frachtsatz pro Kilometer durch eine bessere Tourenplanung.',
+      rec: 'Mehr margenstarke Direktkunden gewinnen statt nur als Subunternehmer zu fahren.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686DF4] text-white',
-      label: 'Spitzen-Performer',
-      desc: 'Deine Flotte fährt auf exzellentem Niveau — hervorragende Toureneffizienz und tiefe Leerstands-Verluste. Du solltest über eine gezielte Expansion der Flottengrösse nachdenken, da du die Kapazitäten offenbar erstklassig auslastest.',
-      rec: 'Strategische Kundengewinnung für Flottenerweiterung und Erschliessung neuer Linienverkehre.',
+      label: 'Sehr gut aufgestellt',
+      desc: 'Ihre Flotte ist nach Ihren Angaben sehr gut ausgelastet, mit wenig Leerlauf. Damit kann es sinnvoll sein, über zusätzliche Fahrzeuge nachzudenken, sofern genug neue Aufträge in Sicht sind.',
+      rec: 'Gezielt Neukunden gewinnen, um eine grössere Flotte und neue Linienverkehre auszulasten.',
     },
   };
 
@@ -161,10 +161,10 @@ export default function FlottenauslastungsRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">LOGISTICS OPTIMIZER</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Logistik</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Flottenauslastungs-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
-          Kalkuliere das verdeckte Umsatz-Potenzial ungenutzter Ladeflächen und Leerfahrten in deiner Transportflotte.
+          Schätzen Sie, wie viel Umsatz durch ungenutzte Ladefläche und Leerfahrten in Ihrer Flotte verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -184,7 +184,7 @@ export default function FlottenauslastungsRechner() {
               onChange={(e) => handleInputChange('flottengroesse', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[11px] text-slate-400 font-medium font-mono">Anzahl Lkws, Lieferwagen oder Frachteinheiten</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Anzahl Lkw, Lieferwagen oder Frachteinheiten</p>
           </div>
 
           <div className="space-y-1">
@@ -204,7 +204,7 @@ export default function FlottenauslastungsRechner() {
               />
               <CircleDollarSign className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[11px] text-slate-400 font-medium font-mono">Durschnittlicher Bruttoumsatz bei 100% Auslastung</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Durchschnittlicher Bruttoumsatz bei 100% Auslastung</p>
           </div>
 
           <div className="space-y-1">
@@ -221,7 +221,7 @@ export default function FlottenauslastungsRechner() {
               onChange={(e) => handleInputChange('auslastung', parseInt(e.target.value) || 40)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[11px] text-slate-400 font-medium font-mono">Ladevolumen- / Toureneffizienz im Jahresdurchschnitt</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Genutztes Ladevolumen bzw. Tourenauslastung im Jahresdurchschnitt</p>
           </div>
 
           <div className="space-y-1">
@@ -250,7 +250,7 @@ export default function FlottenauslastungsRechner() {
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
                   <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
-                    FLOTTEN EFFIZIENZ SCORE
+                    Effizienz-Wert
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
@@ -262,7 +262,7 @@ export default function FlottenauslastungsRechner() {
               {/* Cards column */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Bestehender Flottenumsatz</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Flottenumsatz heute</span>
                   <h4 className="text-base font-black text-slate-900 mt-1">{formatCHF(results.aktueller_umsatz_jahr)} / J.</h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     (Auslastungsverlust: {formatCHF(results.leerstands_verlust_jahr)} / Jahr)
@@ -270,19 +270,19 @@ export default function FlottenauslastungsRechner() {
                 </div>
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
-                  <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Umsatzverlust vs. 85% Soll-Schnitt</span>
+                  <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Abstand zum Richtwert</span>
                   <h4 className="text-base font-black text-red-600 mt-1">
                     {results.optimierungs_marge_jahr > 0 ? `-${formatCHF(results.optimierungs_marge_jahr)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
-                    Soll-Tourenauslastung nationaler Benchmark: 85%
+                    Annahme: 85% Auslastung als Richtwert
                   </p>
                 </div>
 
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Zusatzpotenzial bei +5% Auslastung</span>
-                    <p className="text-[11px] text-slate-500 font-semibold">Durch strukturierten B2B-Direktvertrieb gefüllte Touren</p>
+                    <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich bei 5 Prozentpunkten mehr Auslastung</span>
+                    <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung, z.B. durch zusätzliche Direktkunden</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.plus_5_umsatz)} / J.</h4>
                 </div>
@@ -294,13 +294,13 @@ export default function FlottenauslastungsRechner() {
                   {currentStufe.desc}
                 </p>
                 <p className="text-xs font-bold text-slate-900 pt-1 border-t border-slate-100/50 font-mono">
-                  Flotten-Hebel: {currentStufe.rec}
+                  Empfehlung: {currentStufe.rec}
                 </p>
               </div>
             </>
           ) : (
             <div className="p-8 text-center text-slate-400 border border-dashed border-slate-200 rounded-3xl">
-              Bitte qualifiziere deine Eingaben (mind. 1 Fahrzeug).
+              Bitte geben Sie mindestens 1 Fahrzeug und einen Umsatz ab CHF 500 ein.
             </div>
           )}
         </div>
@@ -311,7 +311,7 @@ export default function FlottenauslastungsRechner() {
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
             <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
-              <strong>Möchtest du Leerfahrten auf lukrativen Strecken minimieren?</strong> In 30 Minuten analysieren wir deinen Direktvertrieb und deine digitale Präsenz.
+              <strong>Ergebnis gemeinsam einordnen.</strong> In einem kostenlosen Erstgespräch von 30 Minuten schauen wir Ihre Zahlen an und besprechen, wo bei Ihnen der grösste Hebel liegt.
             </div>
             <button
               type="button"
@@ -326,94 +326,11 @@ export default function FlottenauslastungsRechner() {
               }}
               className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
-              Touren-Gespräch buchen
+              Ergebnis besprechen
             </button>
           </div>
 
-          <div className="border border-slate-150 rounded-2xl overflow-hidden text-left bg-slate-50/40">
-            <button
-              onClick={() => {
-                setAccordionOpen(!accordionOpen);
-                track('hero_tool_lead_form_opened', {
-                  page: 'logistik-transport',
-                  optimierungs_marge_jahr: results.optimierungs_marge_jahr,
-                  score: results.score,
-                });
-              }}
-              className="w-full p-4 flex justify-between items-center text-xs font-bold text-slate-800 hover:bg-slate-50 transition-colors"
-            >
-              <span>Umfassende Flottenauswertungs-Report per E-Mail erhalten →</span>
-              {accordionOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-slate-440" />}
-            </button>
 
-            {accordionOpen && (
-              <div className="p-4 border-t border-slate-150 bg-white space-y-4 animate-fadeIn">
-                {!formSubmitted ? (
-                  <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
-                      <input
-                        type="email"
-                        required
-                        value={emailSub}
-                        onChange={(e) => setEmailSub(e.target.value)}
-                        placeholder="logistik@firma.ch"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Dein Name *</label>
-                      <input
-                        type="text"
-                        required
-                        value={nameSub}
-                        onChange={(e) => setNameSub(e.target.value)}
-                        placeholder="Vorname"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
-                      <input
-                        type="text"
-                        value={companySub}
-                        onChange={(e) => setCompanySub(e.target.value)}
-                        placeholder="Müller Transporte AG"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Logistik-Schwerpunkt</label>
-                      <select
-                        value={logistikTyp}
-                        onChange={(e) => setLogistikTyp(e.target.value)}
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none"
-                      >
-                        <option>Strassentransport / Fracht (national)</option>
-                        <option>Internationale Spedition / Luft- & Seefracht</option>
-                        <option>Express- / Kurierdienstleistungen</option>
-                        <option>Kühllogistik / Pharma-Transporte</option>
-                        <option>Lager- & Umzugslogistik</option>
-                      </select>
-                    </div>
-                    <button
-                      type="submit"
-                      className="sm:col-span-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest py-3 rounded-lg text-center"
-                    >
-                      Report anfordern
-                    </button>
-                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
-                      Keine Werbeflut. Einmaliger, personalisierter Report samt Schweizer Transportbenchmarks im Logistiksektor.
-                    </p>
-                  </form>
-                ) : (
-                  <div className="p-4 text-center text-green-700 bg-green-50 border border-green-150 rounded-xl font-bold text-xs">
-                    Vielen Dank! Die PDF-Auswertung ist in Kürze in Ihrem Posteingang.
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
         </div>
       )}
     </div>

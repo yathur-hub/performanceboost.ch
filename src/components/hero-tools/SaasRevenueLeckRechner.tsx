@@ -141,30 +141,30 @@ export default function SaasRevenueLeckRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-100 text-red-800 border-red-200',
-      label: 'KRITISCH',
-      desc: 'Euer Funnel verliert auf beiden Fronten: Conversion und Retention.',
-      btnText: 'Revenue-Leck beheben — Strategy-Call buchen',
+      label: 'Grosses Potenzial',
+      desc: 'Nach Ihren Angaben geht an zwei Stellen Umsatz verloren: bei der Umwandlung von Tests in zahlende Kunden und bei Kündigungen.',
+      btnText: 'Ergebnis besprechen',
     },
     aufbauphase: {
       color: 'text-amber-700 bg-amber-50 border-amber-200/50',
       badgeBg: 'bg-amber-100 text-amber-800 border-amber-200',
-      label: 'AUFBAUPHASE',
-      desc: 'Euer Funnel ist in der Aufbauphase — Grundstrukturen sind da.',
-      btnText: 'ARR-Potenzial ausschöpfen — Strategy-Call buchen',
+      label: 'Aufbauphase',
+      desc: 'Die Grundlagen sind da, es bleibt aber noch spürbar Potenzial.',
+      btnText: 'Ergebnis besprechen',
     },
     wachstumsmodus: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-100 text-green-800 border-green-200',
-      label: 'WACHSTUMSMODUS',
-      desc: 'Euer Funnel funktioniert gut — ihr seid nahe am Benchmark.',
-      btnText: 'Skalierungsstrategie besprechen',
+      label: 'Gut aufgestellt',
+      desc: 'Ihr Anfrageprozess funktioniert gut und liegt nahe an den angenommenen Richtwerten.',
+      btnText: 'Ergebnis besprechen',
     },
     scale_ready: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-      label: 'SCALE-READY',
-      desc: 'Starke Funnel-Gesundheit. Conversion und Retention über Benchmark.',
-      btnText: 'Skalierungspfad besprechen — Strategy-Call buchen',
+      label: 'Bereit für Wachstum',
+      desc: 'Umwandlung und Kundenbindung liegen über den angenommenen Richtwerten.',
+      btnText: 'Ergebnis besprechen',
     },
   };
 
@@ -173,9 +173,9 @@ export default function SaasRevenueLeckRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800">
       <div className="border-b border-slate-100 pb-5">
-        <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">SaaS Revenue-Leck-Rechner</h3>
+        <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Umsatzverlust-Rechner für Software-Anbieter</h3>
         <p className="text-xs text-slate-500 mt-1 font-semibold leading-relaxed">
-          Berechne monatliche und jährliche Verluste durch schlechte Trial-to-Paid Conversion und Churn.
+          Schätzen Sie, wie viel Umsatz durch wenige Abschlüsse nach dem Test und durch Kündigungen verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -184,7 +184,7 @@ export default function SaasRevenueLeckRechner() {
         <div className="md:col-span-5 space-y-5">
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
-              <span>Trials/Monat</span>
+              <span>Tests (Trials) / Monat</span>
               <span className="text-[#686DF4]">{inputs.trials}</span>
             </label>
             <input
@@ -195,12 +195,12 @@ export default function SaasRevenueLeckRechner() {
               onChange={(e) => handleInputChange('trials', parseInt(e.target.value) || 5)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686DF4]"
             />
-            <p className="text-[11px] text-slate-400 font-medium">Alle Trial-Signups und Demo-Requests kombiniert</p>
+            <p className="text-[11px] text-slate-400 font-medium">Alle Testanmeldungen und Demo-Anfragen zusammen</p>
           </div>
 
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
-              <span>Trial-to-Paid CR</span>
+              <span>Umwandlung Test → zahlend</span>
               <span className="text-[#686DF4] font-mono">{inputs.conversion}%</span>
             </label>
             <input
@@ -212,14 +212,14 @@ export default function SaasRevenueLeckRechner() {
               className="w-full accent-[#686DF4]"
             />
             <p className="text-[11px] text-slate-400 font-medium flex justify-between">
-              <span>B2B-SaaS Benchmark: 18–25%</span>
-              <span className="font-mono text-[#686DF4]/80">Marker: 22%</span>
+              <span>Richtwert (Annahme): 18–25%</span>
+              <span className="font-mono text-[#686DF4]/80">Annahme: 22%</span>
             </p>
           </div>
 
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
-              <span>Ø MRR pro Account</span>
+              <span>Ø MRR pro Kunde</span>
               <span className="text-[#686DF4]">{formatCHF(inputs.mrr_pro_account)}</span>
             </label>
             <input
@@ -231,12 +231,12 @@ export default function SaasRevenueLeckRechner() {
               onChange={(e) => handleInputChange('mrr_pro_account', parseInt(e.target.value) || 50)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686DF4]"
             />
-            <p className="text-[11px] text-slate-400 font-medium">Durchschnittlicher MRR je zahlendem Kunden</p>
+            <p className="text-[11px] text-slate-400 font-medium">Durchschnittlicher monatlicher Umsatz je zahlendem Kunden</p>
           </div>
 
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
-              <span>Monatliche Churn Rate</span>
+              <span>Monatliche Kündigungsrate</span>
               <span className="text-[#686DF4] font-mono">{inputs.churn}%</span>
             </label>
             <input
@@ -249,8 +249,8 @@ export default function SaasRevenueLeckRechner() {
               className="w-full accent-[#686DF4]"
             />
             <p className="text-[11px] text-slate-400 font-medium flex justify-between">
-              <span>Schnitt: 1–2%</span>
-              <span className="font-mono text-[#686DF4]/80">Marker: 2%</span>
+              <span>Richtwert (Annahme): 1–2%</span>
+              <span className="font-mono text-[#686DF4]/80">Annahme: 2%</span>
             </p>
           </div>
         </div>
@@ -262,7 +262,7 @@ export default function SaasRevenueLeckRechner() {
               {/* Score Header */}
               <div className="p-4 bg-slate-50 border border-slate-150 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">FUNNEL SCORE</span>
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">Effizienz-Wert</span>
                   <div className="text-3xl font-black text-slate-900 leading-none mt-1">{results.gesamt_score} <span className="text-xs text-slate-400 font-bold">/ 100</span></div>
                 </div>
                 <div className={`px-3 py-1 rounded-full text-[11px] font-mono font-black border ${config.badgeBg}`}>
@@ -273,19 +273,19 @@ export default function SaasRevenueLeckRechner() {
               {/* Kacheln */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50/50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Conversion-Leck (ARR)</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Verlust bei Umwandlung</span>
                   <h4 className="text-sm font-bold text-red-600 mt-1">{formatCHFKompakt(results.conversion_leck_arr)} / Jahr</h4>
                 </div>
 
                 <div className="bg-slate-50/50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Retention-Leck (ARR)</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Verlust durch Kündigungen</span>
                   <h4 className="text-sm font-bold text-red-600 mt-1">{formatCHFKompakt(results.churn_leck_arr)} / Jahr</h4>
                 </div>
 
                 <div className="sm:col-span-2 bg-[#686DF4]/5 border border-[#CACCFB]/40 rounded-xl p-4 flex items-center justify-between">
                   <div>
-                    <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Gesamtes ARR-Potenzial</span>
-                    <p className="text-[11px] text-slate-400 font-semibold mb-1">Bei Benchmark-Niveau (22% Conv, 2% Churn)</p>
+                    <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Mögliches Potenzial pro Jahr</span>
+                    <p className="text-[11px] text-slate-400 font-semibold mb-1">Annahme: 22% Umwandlung, 2% Kündigungen</p>
                   </div>
                   <h4 className="text-xl font-black text-[#686DF4]">{formatCHFKompakt(results.arr_potenzial)} / Jahr</h4>
                 </div>
@@ -293,11 +293,11 @@ export default function SaasRevenueLeckRechner() {
 
               {/* Benchmark bars */}
               <div className="space-y-2 pt-2">
-                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Benchmark-Vergleich</span>
+                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Vergleich mit Richtwert</span>
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between font-semibold">
-                    <span>Conversion Rate</span>
-                    <span>{inputs.conversion}% <span className="text-slate-400 text-[11px]">(vs 22% Bench)</span></span>
+                    <span>Umwandlung</span>
+                    <span>{inputs.conversion}% <span className="text-slate-400 text-[11px]">(Richtwert 22%)</span></span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                     <div className="bg-[#686DF4] h-full" style={{ width: `${Math.min(100, (inputs.conversion / 22) * 100)}%` }} />
@@ -305,8 +305,8 @@ export default function SaasRevenueLeckRechner() {
                 </div>
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between font-semibold">
-                    <span>Churn Rate</span>
-                    <span>{inputs.churn}% <span className="text-slate-400 text-[11px]">(vs 2% Bench)</span></span>
+                    <span>Kündigungsrate</span>
+                    <span>{inputs.churn}% <span className="text-slate-400 text-[11px]">(Richtwert 2%)</span></span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                     {/* Higher churn is worse, so fill gets colored red if high */}
@@ -319,16 +319,16 @@ export default function SaasRevenueLeckRechner() {
               <div className={`p-4 sm:p-5 rounded-2xl border ${config.color} space-y-2`}>
                 <h5 className="text-xs font-bold text-slate-900">{config.desc}</h5>
                 <p className="text-xs text-slate-650 leading-relaxed font-semibold">
-                  {results.stufe === 'kritisch' && `Bei ${inputs.conversion}% Trial-to-Paid und ${inputs.churn}% monatlichem Churn liegt das jährliche Revenue-Leck bei ${formatCHF(results.total_leck_arr)}. Das ist ein strukturelles Go-to-Market-Problem: Nurturing, Lead Scoring und CRM-Setup sind eure stärksten Hebel.`}
-                  {results.stufe === 'aufbauphase' && `Bei Benchmark-Werten wäre ein ARR-Potenzial von ${formatCHFKompakt(results.arr_potenzial)} zusätzlich erreichbar. Die grössten Hebel: Nurturing-Sequenzen und Churn-Analyse.`}
-                  {results.stufe === 'wachstumsmodus' && `Mit ${inputs.conversion}% Conversion und ${inputs.churn}% Churn arbeitet ihr nahe am Optimum. Das nächste Level ist die Skalierung des Inputs (mehr qualifizierte Trials durch ABM).`}
-                  {results.stufe === 'scale_ready' && `Euer Funnel ist voll skalierungsfähig. Jetzt könnt ihr euer Demand-Gen Budget erhöhen, ohne Angst vor Churn-Leaks.`}
+                  {results.stufe === 'kritisch' && `Bei ${inputs.conversion}% Umwandlung und ${inputs.churn}% monatlicher Kündigungsrate liegt der jährliche Verlust grob geschätzt bei ${formatCHF(results.total_leck_arr)}. Das deutet auf ein grundsätzliches Problem in der Vermarktung hin. Am meisten bringen meist: Interessenten nach dem Test weiterbegleiten, Anfragen nach Abschlusschance bewerten und ein sauberes CRM.`}
+                  {results.stufe === 'aufbauphase' && `Mit den angenommenen Richtwerten wären grob geschätzt ${formatCHFKompakt(results.arr_potenzial)} mehr Jahresumsatz möglich. Ansatzpunkte: E-Mail-Serien, die Testnutzer weiterbegleiten, und eine genaue Analyse der Kündigungen.`}
+                  {results.stufe === 'wachstumsmodus' && `Mit ${inputs.conversion}% Umwandlung und ${inputs.churn}% Kündigungsrate liegen Sie nahe an den angenommenen Richtwerten. Der nächste Schritt: mehr qualifizierte Testanmeldungen, etwa durch gezielte Ansprache von Wunschkunden.`}
+                  {results.stufe === 'scale_ready' && `Ihre Werte liegen über den angenommenen Richtwerten. Damit kann es sich lohnen, mehr Budget in die Gewinnung neuer Interessenten zu stecken.`}
                 </p>
               </div>
             </>
           ) : (
             <div className="p-8 text-center text-slate-400 border border-dashed border-slate-200 rounded-3xl">
-              Bitte gib gültige Werte für Trials und MRR ein.
+              Bitte geben Sie mindestens 5 Tests und einen MRR ab CHF 50 ein.
             </div>
           )}
         </div>
@@ -339,9 +339,9 @@ export default function SaasRevenueLeckRechner() {
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
             <div className="text-left max-w-md">
-              <h5 className="text-xs font-bold text-slate-900 leading-tight">Wie viel Pipeline verliert ihr gerade?</h5>
+              <h5 className="text-xs font-bold text-slate-900 leading-tight">Ergebnis gemeinsam einordnen.</h5>
               <p className="text-[11px] text-slate-450 leading-relaxed mt-0.5 font-semibold">
-                In einem 30-minütigen Gespräch analysieren wir eure Zahlen strukturiert. Kein Pitch, kein Theater.
+                In einem kostenlosen Erstgespräch von 30 Minuten schauen wir Ihre Zahlen an und besprechen, wo bei Ihnen der grösste Hebel liegt.
               </p>
             </div>
             <button
@@ -363,81 +363,7 @@ export default function SaasRevenueLeckRechner() {
           </div>
 
           {/* E-mail capture collapsible */}
-          <div className="border border-slate-150 rounded-2xl overflow-hidden text-left bg-slate-50/30">
-            <button
-              onClick={() => setOpenAccordion(!accordionOpen)}
-              className="w-full p-4 flex justify-between items-center text-xs font-bold text-slate-800 hover:bg-slate-50 transition-colors"
-            >
-              <span>Ergebnisse &amp; konkrete nächste Schritte per E-Mail erhalten</span>
-              {accordionOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-slate-450" />}
-            </button>
 
-            {accordionOpen && (
-              <div className="p-4 border-t border-slate-150 bg-white space-y-4 animate-fadeIn">
-                {!formSubmitted ? (
-                  <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
-                      <input
-                        type="email"
-                        required
-                        value={emailSub}
-                        onChange={(e) => setEmailSub(e.target.value)}
-                        placeholder="deine.mail@firma.ch"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Vorname</label>
-                      <input
-                        type="text"
-                        value={nameSub}
-                        onChange={(e) => setNameSub(e.target.value)}
-                        placeholder="Vorname"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Aktueller ARR</label>
-                      <select
-                        value={arrBucket}
-                        onChange={(e) => setArrBucket(e.target.value)}
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none"
-                      >
-                        <option>Unter CHF 100k</option>
-                        <option>CHF 100k–500k</option>
-                        <option>CHF 500k–2M</option>
-                        <option>Über CHF 2M</option>
-                      </select>
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
-                      <input
-                        type="text"
-                        value={companySub}
-                        onChange={(e) => setCompanySub(e.target.value)}
-                        placeholder="Firma AG"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="sm:col-span-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest py-3 rounded-lg text-center"
-                    >
-                      Ergebnisse jetzt zusenden
-                    </button>
-                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
-                      Kein Newsletter. Einmalige Zusendung eurer berechneten Zahlen mit konkreten Analyse-Ideen.
-                    </p>
-                  </form>
-                ) : (
-                  <div className="p-4 text-center text-green-700 bg-green-50 border border-green-150 rounded-xl font-bold text-xs">
-                    Vielen Dank! Die Auswertung mit deinen individuellen Werten wird zusammengestellt und ist in Kürze in deinem Posteingang.
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
         </div>
       )}
     </div>

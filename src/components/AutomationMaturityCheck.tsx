@@ -21,29 +21,29 @@ const QUESTIONS: Question[] = [
   },
   {
     id: 'f2',
-    text: "Gibt es automatische Follow-up-Sequenzen nach Lead-Eingang?",
-    subtext: "Z. B. eine E-Mail-Sequenz, die automatisch startet wenn ein Lead reinkommt",
+    text: "Gibt es automatische Nachfass-E-Mails, wenn eine Anfrage eingeht?",
+    subtext: "Z. B. eine E-Mail-Serie, die automatisch startet, sobald eine Anfrage eingeht",
     priority: 1,
     label: "follow_up"
   },
   {
     id: 'f3',
-    text: "Wird Lead-Scoring eingesetzt?",
+    text: "Werden Leads automatisch bewertet (Lead-Scoring)?",
     subtext: "Automatische Bewertung, wie kaufbereit ein Lead ist",
     priority: 2,
     label: "scoring"
   },
   {
     id: 'f4',
-    text: "Ist der Übergabeprozess von Marketing an Sales klar definiert?",
+    text: "Ist die Übergabe von Marketing an den Vertrieb klar geregelt?",
     subtext: "Mit schriftlichen Kriterien, wann ein Lead an den Vertrieb übergeben wird",
     priority: 4,
     label: "uebergabe"
   },
   {
     id: 'f5',
-    text: "Wird Nurturing auf Nutzerverhalten angepasst?",
-    subtext: "Z. B. andere E-Mail-Sequenz wenn jemand eine Preisseite besucht vs. einen Blogpost liest",
+    text: "Passen sich Ihre E-Mails an das Verhalten der Interessenten an?",
+    subtext: "Z. B. eine andere E-Mail, wenn jemand die Preisseite besucht, als wenn er einen Blogbeitrag liest",
     priority: 5,
     label: "verhalten"
   }
@@ -51,29 +51,29 @@ const QUESTIONS: Question[] = [
 
 const naechsteSchritte = {
   follow_up: {
-    titel: "Nächster Schritt: Automatische Follow-up-Sequenz",
-    text: "Das ist der höchste ROI-Schritt im B2B-Marketing-Automation. 70% der Leads, die nicht sofort nachgefasst werden, kaufen nie. Eine einfache 3-E-Mail-Sequenz kann das in 2 Wochen lösen — in deinem bestehenden CRM oder E-Mail-Tool.",
-    zeitrahmen: "Operational in: ~2 Wochen"
+    titel: "Nächster Schritt: Automatische Nachfass-E-Mails",
+    text: "Dieser Schritt bringt meist am schnellsten etwas. Wer nach einer Anfrage nichts mehr hört, wendet sich oft einem anderen Anbieter zu. Eine einfache Serie aus drei E-Mails lässt sich in Ihrem bestehenden CRM oder E-Mail-Tool einrichten.",
+    zeitrahmen: "Richtwert: ca. 2 Wochen"
   },
   scoring: {
     titel: "Nächster Schritt: Lead-Scoring einrichten",
-    text: "Dein Vertrieb behandelt alle Leads gleich — auch wenn manche 10x kaufbereiter sind als andere. Lead-Scoring gibt deinem Team ein Prioritätssignal. Einfaches Setup: Punkte für Seitenbesuche, E-Mail-Öffnungen, Downloads.",
-    zeitrahmen: "Operational in: ~3 Wochen"
+    text: "Ihr Vertrieb behandelt alle Leads gleich, obwohl manche deutlich kaufbereiter sind als andere. Lead-Scoring zeigt Ihrem Team, wen es zuerst kontaktieren sollte. Ein einfacher Einstieg: Punkte für Seitenbesuche, E-Mail-Öffnungen und Downloads.",
+    zeitrahmen: "Richtwert: ca. 3 Wochen"
   },
   crm_erfassung: {
     titel: "Nächster Schritt: Automatische CRM-Erfassung",
     text: "Manuelle Dateneingabe ist fehleranfällig und zeitraubend. Jedes Kontaktformular, jede Buchung sollte automatisch im CRM landen. Das ist das Fundament für alles andere.",
-    zeitrahmen: "Operational in: ~1 Woche"
+    zeitrahmen: "Richtwert: ca. 1 Woche"
   },
   uebergabe: {
     titel: "Nächster Schritt: Übergabeprozess definieren",
-    text: "Ohne klare Übergabekriterien bekommen Sales-Teams entweder zu früh übergebene (unqualifizierte) oder vergessene Leads. Ein einfaches SLA-Dokument und eine CRM-Statusänderung als Trigger löst das.",
-    zeitrahmen: "Operational in: ~1–2 Wochen"
+    text: "Ohne klare Kriterien erhält der Vertrieb Leads entweder zu früh, also noch unqualifiziert, oder sie gehen ganz vergessen. Eine schriftliche Vereinbarung und ein Statuswechsel im CRM als Auslöser schaffen hier Klarheit.",
+    zeitrahmen: "Richtwert: ca. 1–2 Wochen"
   },
   verhalten: {
-    titel: "Nächster Schritt: Verhaltensbasiertes Nurturing",
-    text: "Statische Sequenzen behandeln alle gleich. Verhaltensbasiertes Nurturing erkennt: Hat jemand die Preisseite besucht? Hat er ein Case Study gelesen? Und sendet entsprechend. Erhöht Conversion in der Regel um 20–40%.",
-    zeitrahmen: "Operational in: ~4–6 Wochen"
+    titel: "Nächster Schritt: E-Mails nach Verhalten steuern",
+    text: "Starre E-Mail-Serien behandeln alle gleich. Verhaltensbasierte E-Mails berücksichtigen, ob jemand die Preisseite besucht oder ein Fallbeispiel gelesen hat, und reagieren passend darauf. So erhalten Interessenten Inhalte, die zu ihrem Stand passen.",
+    zeitrahmen: "Richtwert: ca. 4–6 Wochen"
   }
 };
 
@@ -125,38 +125,38 @@ export default function AutomationMaturityCheck() {
     switch (stufe) {
       case 1:
         return {
-          title: "Stufe 1 — Manuell",
+          title: "Stufe 1: Manuell",
           color: "#E63946",
-          main: "Fast alles läuft manuell. Das bedeutet: Leads fallen durch die Ritzen. Follow-ups werden vergessen. Und dein Team investiert Zeit in Aufgaben, die ein System übernehmen kann.",
-          context: "Teams ohne Automation verlieren durchschnittlich 60–70% ihrer Leads — weil kein Follow-up stattfindet."
+          main: "Fast alles läuft von Hand. Dabei gehen leicht Anfragen verloren, Nachfassen wird vergessen, und Ihr Team verbringt Zeit mit Aufgaben, die ein System übernehmen könnte.",
+          context: "Ohne Automatisierung hängt es vom Tagesgeschäft ab, ob eine Anfrage nachgefasst wird."
         };
       case 2:
         return {
-          title: "Stufe 2 — Erste Ansätze",
+          title: "Stufe 2: Erste Ansätze",
           color: "#F4A261",
-          main: "Du hast begonnen — aber die kritischen Lücken sind noch offen. Zwei Dinge funktionieren bereits. Das ist mehr als die meisten. Aber die grössten Revenue-Verluste entstehen wahrscheinlich durch das, was noch fehlt.",
+          main: "Sie haben begonnen, aber wichtige Lücken sind noch offen. Zwei Punkte funktionieren bereits. Die grössten Umsatzverluste entstehen wahrscheinlich bei dem, was noch fehlt.",
           context: ""
         };
       case 3:
         return {
-          title: "Stufe 3 — Grundstruktur vorhanden",
+          title: "Stufe 3: Grundstruktur vorhanden",
           color: "#E9C46A",
-          main: "Solide Basis — die Grundstruktur steht. Du hast mehr als die meisten B2B-Unternehmen. Die verbleibenden Lücken kosten dich Qualität und Skalierbarkeit — keine einzelnen Leads mehr, sondern systematische Ineffizienz.",
+          main: "Die Grundstruktur steht. Die verbleibenden Lücken kosten Sie weniger einzelne Leads, sondern eher Qualität und Effizienz, wenn die Zahl der Anfragen wächst.",
           context: ""
         };
       case 4:
         return {
-          title: "Stufe 4 — Fortgeschritten",
+          title: "Stufe 4: Fortgeschritten",
           color: "#57CC99",
-          main: "Stark aufgestellt — ein wichtiger Hebel fehlt noch. Dein System definiert Prozesse gut. Der letzte offene Punkt ist keine Grundvoraussetzung mehr — sondern ein grosser Qualitäts- und Effizienzgewinn.",
+          main: "Sie sind gut aufgestellt, ein wichtiger Punkt fehlt noch. Ihre Abläufe sind klar geregelt. Der letzte offene Punkt ist keine Grundvoraussetzung mehr, bringt aber spürbar mehr Qualität und Effizienz.",
           context: ""
         };
       default:
         return {
-          title: "Stufe 5 — Reif",
+          title: "Stufe 5: Reif",
           color: "#2A9D8F",
-          main: "Best-in-Class Automation-Setup. Du hast alles, was ein modernes B2B-Marketing-System braucht. Jetzt geht es um Optimierung und Skalierung — nicht mehr um Grundlagen.",
-          context: "Glückwunsch! Deine Automatisierung ist operativ hervorragend abgestimmt."
+          main: "Ihre Automatisierung deckt alle fünf Grundlagen ab. Jetzt geht es um laufende Verbesserung und den Ausbau, nicht mehr um die Basis.",
+          context: "Ihre Automatisierung ist im Alltag gut eingespielt."
         };
     }
   }, [stufe]);
@@ -214,7 +214,7 @@ export default function AutomationMaturityCheck() {
         <div className="flex items-center gap-2.5">
           <Cpu className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            Automation-Reifegrad-Check
+            Check: Wie weit ist Ihre Automatisierung?
           </h3>
         </div>
         <button
@@ -222,12 +222,12 @@ export default function AutomationMaturityCheck() {
           className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
           title="Prüfung zurücksetzen"
         >
-          <RefreshCw className="w-3 h-3" /> Reset
+          <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
       </div>
 
       <p className="text-xs text-slate-500 leading-relaxed mt-2 mb-8 font-semibold">
-        In 60 Sekunden: Wie weit ist euer Marketing-Automation-Setup wirklich? Beantworte alle 5 Fragen mit Ja oder Nein.
+        In rund einer Minute: Wie weit ist Ihre Marketing-Automatisierung? Beantworten Sie alle 5 Fragen mit Ja oder Nein.
       </p>
 
       {/* Toggle Survey Questions Stack */}
@@ -243,7 +243,7 @@ export default function AutomationMaturityCheck() {
             >
               <div className="space-y-1">
                 <span className="text-[11px] text-[#686DF4] font-bold font-mono uppercase tracking-wider block leading-none">
-                  Faktor #{q.priority}
+                  Frage {q.priority}
                 </span>
                 <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-tight">
                   {q.text}
@@ -287,7 +287,7 @@ export default function AutomationMaturityCheck() {
       {/* Horizontal Maturity level scale */}
       <div className="mt-10 pt-6 border-t border-slate-100">
         <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block mb-4">
-          REIFEGRAD-FORTSCHRITT
+          Reifegrad
         </span>
         <div className="flex items-center justify-between gap-2 max-w-sm">
           {[1, 2, 3, 4, 5].map((lvl) => {
@@ -307,7 +307,7 @@ export default function AutomationMaturityCheck() {
                   {lvl}
                 </div>
                 <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest">
-                  {isCurrent ? "STAT" : isPassed ? "DONE" : "WAIT"}
+                  {isCurrent ? "Jetzt" : isPassed ? "Erreicht" : "Offen"}
                 </span>
               </div>
             );
@@ -317,7 +317,7 @@ export default function AutomationMaturityCheck() {
         {/* Helper prompt below check */}
         {!allSet && (
           <div className="text-[11px] text-slate-405 text-slate-400 mt-4 leading-none font-semibold">
-            *Beantworte noch {5 - completedQuestions} Frage(n) für das vollständige Audit.
+            *Beantworten Sie noch {5 - completedQuestions} Frage(n) für die vollständige Auswertung.
           </div>
         )}
       </div>
@@ -336,7 +336,7 @@ export default function AutomationMaturityCheck() {
             <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-5">
               <div className="flex items-center gap-3">
                 <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
-                  AUDIT ERGEBNISSE
+                  Ihre Auswertung
                 </span>
                 <span className="w-1.5 h-1.5 bg-[#686DF4] rounded-full shrink-0" />
                 <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
@@ -388,20 +388,20 @@ export default function AutomationMaturityCheck() {
                 onClick={handleBooking}
                 className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
-                {stufe === 5 ? "Wie skalierst du dein System auf das nächste Level?" : "Automation-Gespräch buchen — kostenlos, 30 Min"} <ArrowRight className="w-4 h-4 text-white" />
+                {stufe === 5 ? "Nächste Schritte besprechen" : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
 
             {/* Lead capture form */}
             <LeadCaptureForm
-              secondaryCTAText="Automation-Roadmap per E-Mail erhalten →"
-              danachText="Wir schicken dir eine priorisierte Automation-Roadmap passend zu deinem Reifegrad und deinem Tool-Setup."
+              secondaryCTAText="Fahrplan per E-Mail erhalten →"
+              danachText="Wir senden Ihnen einen Fahrplan mit den nächsten Schritten, passend zu Ihrem Stand und Ihren Tools."
               pageId="marketing-automation"
               additionalFields={[
                 {
                   type: 'select',
                   name: 'crmUsed',
-                  placeholder: 'Welches CRM verwendet ihr?',
+                  placeholder: 'Welches CRM verwenden Sie?',
                   options: ['HubSpot', 'Salesforce', 'Pipedrive', 'ActiveCampaign', 'Anderes', 'Keines / Excel']
                 }
               ]}

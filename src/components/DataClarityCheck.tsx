@@ -16,56 +16,56 @@ interface BlindspotDetails {
 const blindspotStore: Record<string, BlindspotDetails> = {
   f5: {
     key: "f5",
-    titel: "Fehlende Revenue-Attribution",
+    titel: "Umsatz lässt sich keinem Kanal zuordnen",
     severity_label: "Kritisch",
     severity_color: "#E63946",
-    erklaerung: "Du weisst nicht, welche Kampagne oder welcher Kanal zu welchem Abschluss geführt hat. Attribution ist das schwierigste — aber wertvollste — Datenproblem im B2B-Marketing.",
-    konsequenz: "Konsequenz: Du optimierst Budget auf Basis von Annahmen statt Fakten. Kampagnen, die gut aussehen (Klicks, Leads), können schlechte Revenue-Ergebnisse haben — und umgekehrt.",
-    naechster_schritt: "→ Nächster Schritt: Multi-Touch-Attribution einrichten. HubSpot oder GA4 mit CRM verbinden, Closed-Loop-Reporting aufbauen."
+    erklaerung: "Sie wissen nicht, welche Kampagne oder welcher Kanal zu welchem Auftrag geführt hat. Diese Zuordnung ist im B2B-Marketing anspruchsvoll, aber besonders wertvoll.",
+    konsequenz: "Folge: Budget wird nach Annahmen statt nach Fakten verteilt. Kampagnen mit vielen Klicks und Anfragen können wenig Umsatz bringen, und umgekehrt.",
+    naechster_schritt: "→ Nächster Schritt: Kontaktpunkte bis zum Auftrag erfassen. HubSpot oder GA4 mit dem CRM verbinden, damit Aufträge an die Marketingdaten zurückgemeldet werden."
   },
   f2: {
     key: "f2",
-    titel: "ROI einzelner Massnahmen nicht messbar",
+    titel: "Ertrag einzelner Massnahmen nicht messbar",
     severity_label: "Kritisch",
     severity_color: "#E63946",
-    erklaerung: "Du kannst nicht in CHF ausdrücken, was eine Kampagne, ein Kanal oder eine Massnahme gebracht hat. Alles wird in Aktivitäts-Metriken gemessen — nicht in tatsächlichen Ergebnissen.",
-    konsequenz: "Konsequenz: Budgetentscheidungen basieren im Alltag auf reiner Intuition. Es ist unmöglich zu argumentieren, warum Budget erhöht oder umgeschichtet werden sollte.",
-    naechster_schritt: "→ Nächster Schritt: Revenue-Tracking vom Lead bis zum Abschluss. CRM-Daten mit Marketing-Daten verbinden."
+    erklaerung: "Sie können nicht in CHF sagen, was eine Kampagne, ein Kanal oder eine Massnahme gebracht hat. Gemessen werden Aktivitäten wie Klicks, nicht die tatsächlichen Ergebnisse.",
+    konsequenz: "Folge: Budgetentscheide beruhen im Alltag auf Bauchgefühl. Es lässt sich kaum begründen, warum Budget erhöht oder umgeschichtet werden sollte.",
+    naechster_schritt: "→ Nächster Schritt: Umsatz von der ersten Anfrage bis zum Auftrag nachverfolgen. CRM-Daten mit Marketingdaten verbinden."
   },
   f4: {
     key: "f4",
-    titel: "Conversion-Tracking fehlerhaft oder unvollständig",
+    titel: "Tracking von Anfragen fehlerhaft oder unvollständig",
     severity_label: "Kritisch",
     severity_color: "#E63946",
-    erklaerung: "Wenn Conversion-Events nicht korrekt erfasst werden, sind alle darauf aufbauenden Metriken falsch — Cost-per-Lead, Attribution, ROAS, alles. Schlechtes Tracking ist schlimmer als kein Tracking, weil es falsche Sicherheit erzeugt.",
-    konsequenz: "Konsequenz: Optimierungsentscheidungen basieren auf falschen Daten. AI-Bidding (Google, Meta) optimiert auf die falschen Signale.",
-    naechster_schritt: "→ Nächster Schritt: Tracking-Audit. GA4 Events, Conversion-Bestätigungsseiten, CRM-Integration gründlich prüfen."
+    erklaerung: "Werden Anfragen und andere Ziele nicht korrekt erfasst, stimmen alle Kennzahlen nicht, die darauf aufbauen: Kosten pro Anfrage, Zuordnung zu Kanälen, Werbeertrag. Fehlerhaftes Tracking ist heikel, weil es falsche Sicherheit gibt.",
+    konsequenz: "Folge: Entscheide beruhen auf falschen Daten. Die automatische Gebotssteuerung von Google und Meta richtet sich nach den falschen Signalen.",
+    naechster_schritt: "→ Nächster Schritt: Tracking prüfen lassen. GA4-Ereignisse, Bestätigungsseiten und die Anbindung ans CRM sorgfältig kontrollieren."
   },
   f1: {
     key: "f1",
-    titel: "Kanal-Attribution unklar",
+    titel: "Unklar, welcher Kanal die besten Anfragen bringt",
     severity_label: "Hoch",
     severity_color: "#F4A261",
-    erklaerung: "Du weisst nicht verlässlich, welcher Kanal die qualifiziertesten Leads bringt — nicht nur die meisten. Volume und Qualität sind oft in ganz verschiedenen Kanälen.",
-    konsequenz: "Konsequenz: Budget-Allokation nach 'wir haben immer so investiert' statt nach Daten. Der am Ende ertragreichste Kanal ist wahrscheinlich drastisch unterskaliert.",
-    naechster_schritt: "→ Nächster Schritt: Lead-Qualitäts-Tracking nach Kanal einrichten. SQL-Rate und Abschlussrate nach Quelle auswerten."
+    erklaerung: "Sie wissen nicht verlässlich, welcher Kanal die passendsten Anfragen bringt, nicht nur die meisten. Menge und Qualität kommen oft aus ganz unterschiedlichen Kanälen.",
+    konsequenz: "Folge: Budget wird verteilt wie bisher, nicht nach Daten. Gut möglich, dass der ertragreichste Kanal zu wenig Budget bekommt.",
+    naechster_schritt: "→ Nächster Schritt: Qualität der Anfragen nach Kanal erfassen. Auswerten, wie viele Anfragen pro Quelle zu Verkaufsgesprächen und Aufträgen werden."
   },
   f3: {
     key: "f3",
     titel: "Kein aktiv genutztes Dashboard",
     severity_label: "Mittel",
     severity_color: "#E9C46A",
-    erklaerung: "Selbst wenn Daten vorhanden sind, fehlt oft die Routine, Entscheidungen datenbasiert zu treffen. Ein Dashboard, das nicht genutzt wird, ist ein teures Datengrab.",
-    konsequenz: "Konsequenz: Daten werden nur in Krisenzeiten konsultiert, nicht als regelmässige strategische Steuerungsgrundlage.",
-    naechster_schritt: "→ Nächster Schritt: Ein einfaches wöchentliches Dashboard mit 5 Kern-KPIs einrichten. Nicht mehr — Einfachheit fördert die tatsächliche Nutzung."
+    erklaerung: "Selbst wenn Daten vorhanden sind, fehlt oft die Routine, auf ihrer Basis zu entscheiden. Ein Dashboard, das niemand anschaut, kostet Geld und bringt nichts.",
+    konsequenz: "Folge: Die Zahlen werden erst angeschaut, wenn es brennt, statt regelmässig für die Steuerung.",
+    naechster_schritt: "→ Nächster Schritt: Ein einfaches wöchentliches Dashboard mit rund 5 wichtigen Kennzahlen einrichten. Je einfacher, desto eher wird es genutzt."
   }
 };
 
 const SURVEY_FIELDS = [
-  { id: 'f5', text: "Wir können Revenue konkret auf Kampagnen oder Kanäle zurückführen.", prio: 1, severity: "kritisch" },
-  { id: 'f2', text: "Ich kann den ROI einzelner Marketing-Massnahmen in CHF messen.", prio: 2, severity: "kritisch" },
-  { id: 'f4', text: "Unser Conversion-Tracking ist korrekt und vollständig eingerichtet.", prio: 3, severity: "kritisch" },
-  { id: 'f1', text: "Ich weiss jederzeit, welcher Kanal die meisten qualifizierten Leads bringt.", prio: 4, severity: "hoch" },
+  { id: 'f5', text: "Wir können unseren Umsatz konkret einzelnen Kampagnen oder Kanälen zuordnen.", prio: 1, severity: "kritisch" },
+  { id: 'f2', text: "Ich kann den Ertrag einzelner Marketingmassnahmen in CHF messen.", prio: 2, severity: "kritisch" },
+  { id: 'f4', text: "Unser Tracking von Anfragen ist korrekt und vollständig eingerichtet.", prio: 3, severity: "kritisch" },
+  { id: 'f1', text: "Ich weiss jederzeit, welcher Kanal die meisten passenden Anfragen bringt.", prio: 4, severity: "hoch" },
   { id: 'f3', text: "Unser Team nutzt ein Dashboard mindestens wöchentlich für Entscheidungen.", prio: 5, severity: "mittel" }
 ];
 
@@ -111,35 +111,35 @@ export default function DataClarityCheck() {
         key: "dunkel",
         color: "#E63946",
         label: "Keine messbare Entscheidungsgrundlage",
-        desc: "Du triffst Entscheidungen über Budget, Kanäle und Prioritäten ohne verlässliche Daten. Das ist nicht ungewöhnlich für wachsende Unternehmen — aber es ist der Zustand, der am Ende am teuersten ist."
+        desc: "Sie entscheiden über Budget, Kanäle und Prioritäten ohne verlässliche Daten. Das ist bei wachsenden Unternehmen nicht ungewöhnlich, wird mit der Zeit aber teuer."
       };
     } else if (score <= 40) {
       return {
         key: "lueckenhaft",
         color: "#E63946",
-        label: "Lückenhaft — an kritischen Stellen fehlt Klarheit",
-        desc: "Du hast Teildaten. Aber genau dort wo schwere Budget-Entscheidungen getroffen werden — Attribution, ROI, Conversion — fehlt die grundlegende Basis."
+        label: "Lückenhaft, an wichtigen Stellen fehlt Klarheit",
+        desc: "Teilweise sind Daten vorhanden. Aber gerade dort, wo grosse Budgetentscheide fallen, also bei der Zuordnung zu Kanälen, beim Ertrag und beim Tracking von Anfragen, fehlt die Grundlage."
       };
     } else if (score <= 60) {
       return {
         key: "teilweise",
         color: "#F4A261",
-        label: "Teilweise klar — Grundlage vorhanden",
-        desc: "Du hast ein solides Fundament. Die verbleibenden Blindspots betreffen meistens die 'letzten Meter' — wie viel bringt eine Marketingmassnahme wirklich, und welchem Kanal ist ein Abschluss zweifelsfrei zuzuschreiben?"
+        label: "Teilweise klar, Grundlage vorhanden",
+        desc: "Das Fundament steht. Die offenen Punkte betreffen meist die letzten Meter: Wie viel bringt eine Massnahme wirklich, und welchem Kanal ist ein Auftrag zuzuordnen?"
       };
     } else if (score <= 80) {
       return {
         key: "gut",
         color: "#57CC99",
-        label: "Gut aufgestellt — ein Blindspot verbleibt",
-        desc: "Du bist besser aufgestellt als die meisten Schweizer B2B-Unternehmen. Der letzte offene Punkt ist Feinschliff — kann aber an Entscheidungsqualität einen riesigen Unterschied machen."
+        label: "Gut aufgestellt, ein offener Punkt",
+        desc: "Sie sind gut aufgestellt. Der letzte offene Punkt ist Feinschliff, kann für die Qualität Ihrer Entscheide aber viel ausmachen."
       };
     } else {
       return {
         key: "exzellent",
         color: "#2A9D8F",
-        label: "Best-in-Class Daten-Klarheit",
-        desc: "Du hast die Grundlage, die andere fieberhaft suchen. Jetzt geht es um die Vertiefung: bessere Attribution, prädiktive Analytik, und eine saubere A/B-Testing-Infrastruktur."
+        label: "Sehr gute Datenbasis",
+        desc: "Die Grundlage ist vorhanden. Jetzt geht es um Vertiefung: genauere Zuordnung zu Kanälen, Prognosen und saubere A/B-Tests."
       };
     }
   }, [score]);
@@ -219,19 +219,19 @@ export default function DataClarityCheck() {
         <div className="flex items-center gap-2.5">
           <PieChart className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            Data-Clarity-Check
+            Daten-Check: Wie gut kennen Sie Ihre Zahlen?
           </h3>
         </div>
         <button
           onClick={handleReset}
           className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
-          <RefreshCw className="w-3 h-3" /> Reset
+          <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
       </div>
 
       <p className="text-xs text-slate-500 leading-relaxed mt-2 mb-8 font-semibold">
-        Wie viele Entscheidungen triffst du auf Basis lückenhafter Daten? Beantworte diese 5 Aussagen ehrlich.
+        Wie viele Ihrer Entscheide beruhen auf lückenhaften Daten? Beantworten Sie die fünf Aussagen ehrlich.
       </p>
 
       {/* Survey controls layout - first person claims */}
@@ -257,7 +257,7 @@ export default function DataClarityCheck() {
                       ? 'bg-amber-50 text-[#F4A261] border-amber-100/10'
                       : 'bg-yellow-50 text-yellow-600 border-yellow-100/10'
                   }`}>
-                    Prio {field.prio} • Severity: {field.severity}
+                    Priorität {field.prio} • Dringlichkeit: {field.severity}
                   </span>
                 </div>
               </div>
@@ -328,20 +328,20 @@ export default function DataClarityCheck() {
               {score}%
             </span>
             <span className="text-[11px] font-mono font-bold text-slate-400 mt-1 uppercase tracking-widest">
-              CLARITY
+              Klarheit
             </span>
           </div>
         </div>
 
         <div className="space-y-1.5 text-center sm:text-left">
           <h4 className="text-xs font-mono font-black uppercase text-slate-400 tracking-wider">
-            RECHTEN SCHWIERIGKEITS-INDEX
+            Ihre Datenbasis
           </h4>
           <p className="text-lg font-bold font-display leading-tight" style={{ color: levelInfo.color }}>
             {levelInfo.label}
           </p>
           <p className="text-[11px] text-slate-400 font-medium">
-            Beantworte alle 5 Hebel-Aussagen für deine personalisierten Blindspots. ({completedQuestions}/5 abgeschlossen)
+            Beantworten Sie alle 5 Aussagen, um Ihre Lücken zu sehen. ({completedQuestions}/5 beantwortet)
           </p>
         </div>
 
@@ -370,10 +370,10 @@ export default function DataClarityCheck() {
                 <AlertTriangle className="w-6 h-6 text-[#E63946] shrink-0" />
                 <div>
                   <h5 className="text-xs sm:text-sm font-bold text-[#E63946] font-display">
-                    Drei hochgradig abhängige Defizite identifiziert
+                    Drei zusammenhängende Lücken
                   </h5>
                   <p className="text-[11px] text-[#E63946] font-semibold leading-relaxed mt-1">
-                    ⚠ Alle drei sind abhängig voneinander — starte mit dem Tracking-Fundament (F4). Ohne saubere Conversion-Aktivitäten sind Attributionen (F5) und Hebelberechnungen (F2) unzuverlässig und führen zu falschen Ad-Budgets.
+                    Diese drei Punkte hängen zusammen. Beginnen Sie mit dem Tracking. Solange Anfragen nicht sauber erfasst werden, sind die Zuordnung zu Kanälen und die Ertragsberechnung unzuverlässig, und Werbebudget wird falsch verteilt.
                   </p>
                 </div>
               </div>
@@ -383,7 +383,7 @@ export default function DataClarityCheck() {
             {activeBlindspots.length > 0 ? (
               <div className="space-y-4">
                 <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
-                  Identifizierte Daten-Blindspots:
+                  Ihre Lücken in den Daten:
                 </span>
 
                 {activeBlindspots.map((bs) => {
@@ -423,7 +423,7 @@ export default function DataClarityCheck() {
                             onClick={() => toggleNextStepExpanded(bs.key)}
                             className="text-[11px] font-mono uppercase tracking-wider font-bold text-slate-400 hover:text-slate-905 bg-transparent border-none outline-none cursor-pointer flex items-center gap-1"
                           >
-                            {isNSExpanded ? 'Schritt verbergen ▲' : 'Nächster Schritt einsehen ▼'}
+                            {isNSExpanded ? 'Schritt ausblenden ▲' : 'Nächsten Schritt anzeigen ▼'}
                           </button>
 
                           <AnimatePresence>
@@ -454,10 +454,10 @@ export default function DataClarityCheck() {
                 <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                 <div>
                   <h5 className="text-xs sm:text-sm font-bold text-emerald-805 font-display text-emerald-800">
-                    Hervorragend! Keine Blindspots im Datenbestand gefunden
+                    Keine Lücken gefunden
                   </h5>
                   <p className="text-xs text-emerald-700 leading-relaxed font-semibold mt-1">
-                    Ihr habt die volle Daten-Klarheit, die andere B2B-Unternehmen suchen. Eure Go-to-Market-Systeme können datengesteuert exzellent skaliert werden.
+                    Nach Ihren Angaben ist Ihre Datenbasis vollständig. Damit können Sie Marketing und Vertrieb gezielt nach Zahlen steuern.
                   </p>
                 </div>
               </div>
@@ -469,20 +469,20 @@ export default function DataClarityCheck() {
                 onClick={handleBooking}
                 className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
-                {activeBlindspots.length === 0 ? "Wie bringst du deine Daten-Infrastruktur auf das nächste Level?" : "Daten-Gespräch buchen — kostenlos, 30 Min"} <ArrowRight className="w-4 h-4 text-white" />
+                {activeBlindspots.length === 0 ? "Ergebnis besprechen" : "Erstgespräch vereinbaren"} <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
 
             {/* Customizable tool select checkboxes on lead capture */}
             <LeadCaptureForm
-              secondaryCTAText="Data-Audit-Bericht per E-Mail erhalten →"
-              danachText="Wir schicken dir eine Einschätzung deiner Daten-Situation und eine priorisierte Liste der Quick Wins."
+              secondaryCTAText="Auswertung per E-Mail erhalten →"
+              danachText="Wir senden Ihnen eine Einschätzung Ihrer Datensituation und eine Liste der Schritte, die sich schnell umsetzen lassen."
               pageId="data-analytics"
               additionalFields={[
                 {
                   type: 'checkbox-group',
                   name: 'activeTools',
-                  placeholder: 'Welche Daten-Tools verwendet ihr aktuell?',
+                  placeholder: 'Welche Tools nutzen Sie heute?',
                   options: ['Google Analytics 4', 'HubSpot', 'Salesforce', 'Looker Studio / Data Studio', 'Anderes / Keines']
                 }
               ]}

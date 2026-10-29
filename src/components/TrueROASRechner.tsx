@@ -146,10 +146,10 @@ export default function TrueROASRechner() {
         </div>
         <div>
           <h3 className="text-md sm:text-lg font-display font-semibold text-slate-900 tracking-tight leading-snug">
-            True-ROAS-Rechner
+            Rechner: Lohnen sich Ihre Anzeigen?
           </h3>
           <p className="text-xs text-slate-500 leading-normal mt-1 font-medium select-none">
-            Wie profitabel sind deine Paid-Ads wirklich? Berechne deinen echten Profit und Break-Even-ROAS.
+            Wie profitabel sind Ihre Social-Media-Anzeigen wirklich? Berechnen Sie den Gewinn nach Marge und den ROAS, ab dem sich Ihre Anzeigen lohnen.
           </p>
         </div>
       </div>
@@ -160,7 +160,7 @@ export default function TrueROASRechner() {
           {/* Field 1: Ad-Spend */}
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-800 uppercase tracking-wide">
-              Monatlicher Ad-Spend (CHF) *
+              Monatliches Werbebudget (CHF) *
             </label>
             <div className="relative">
               <input
@@ -174,11 +174,11 @@ export default function TrueROASRechner() {
                 required
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
-                CHF / Spend
+                CHF / Budget
               </span>
             </div>
             <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
-              Gesamtes Paid-Social-Budget pro Monat (Meta + TikTok kombiniert)
+              Gesamtes Budget für Social-Media-Anzeigen pro Monat (Meta und TikTok zusammen)
             </p>
           </div>
 
@@ -203,7 +203,7 @@ export default function TrueROASRechner() {
               </span>
             </div>
             <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
-              Umsatz aus Ads (aus Meta / TikTok Ads Manager attribuiert)
+              Umsatz, den Meta bzw. TikTok Ihren Anzeigen zuordnet
             </p>
           </div>
 
@@ -246,11 +246,11 @@ export default function TrueROASRechner() {
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
-                CHF / Order
+                CHF / Bestellung
               </span>
             </div>
             <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
-              Leer lassen, wenn Versand bereits im Produktpreis kalkuliert ist
+              Leer lassen, wenn der Versand bereits im Produktpreis einkalkuliert ist. Annahme für die Rechnung: Ø Bestellwert CHF 80.
             </p>
           </div>
         </div>
@@ -274,23 +274,23 @@ export default function TrueROASRechner() {
                       <strong className="text-xl font-display text-slate-900 block leading-tight">3.6x</strong>
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Echter Profit:</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Gewinn nach Marge:</span>
                       <strong className="text-xl font-display text-slate-900 block leading-tight">CHF 4'200</strong>
                     </div>
                   </div>
 
                   <div className="space-y-1 text-center py-2">
                     <span className="text-xs font-semibold block text-slate-500">Break-Even-ROAS: 2.9x</span>
-                    <span className="text-[11px] text-slate-400 block">Ab diesem Wert arbeiten deine Social Ads im grünen Bereich.</span>
+                    <span className="text-[11px] text-slate-400 block">Beispielwerte. Ab diesem Wert decken Ihre Anzeigen ihre Kosten.</span>
                   </div>
                 </div>
 
                 <div className="pt-4 text-center space-y-1.5 self-center w-full">
                   <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider animate-pulse">
-                    <Sparkles className="w-3.5 h-3.5" /> Gib deine Zahlen ein
+                    <Sparkles className="w-3.5 h-3.5" /> Ihre Zahlen eingeben
                   </div>
                   <p className="text-[11px] text-slate-400/90 font-mono">
-                    Wir vergleichen deinen echten Warenertrag mit den Media-Ausgaben.
+                    Wir stellen Ihren Ertrag nach Warenkosten den Werbeausgaben gegenüber.
                   </p>
                 </div>
               </motion.div>
@@ -307,19 +307,19 @@ export default function TrueROASRechner() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4 border-b border-slate-200/50 pb-4">
                       <div>
-                        <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">GEMELDETER ROAS:</span>
+                        <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Gemeldeter ROAS:</span>
                         <strong className="text-xl sm:text-2xl font-display text-slate-900 block">
                           {result.reportedROAS ? `${result.reportedROAS.toFixed(1)}x` : '—'}
                         </strong>
-                        <span className="text-[11px] text-slate-400 font-medium block mt-0.5">Umsatz / Spend</span>
+                        <span className="text-[11px] text-slate-400 font-medium block mt-0.5">Umsatz / Budget</span>
                       </div>
                       <div>
-                        <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">ECHTER PROFIT:</span>
+                        <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Gewinn nach Marge:</span>
                         <strong className={`text-xl sm:text-2xl font-display select-none block ${result.trueProfit < 0 ? 'text-red-500 animate-pulse' : 'text-emerald-600'}`}>
                           {result.trueProfit < 0 ? 'CHF −' : 'CHF +'}
                           {Math.abs(Math.round(result.trueProfit)).toLocaleString('de-CH')}
                         </strong>
-                        <span className="text-[11px] text-slate-450 block mt-0.5">nach Marge & Logistik</span>
+                        <span className="text-[11px] text-slate-450 block mt-0.5">nach Marge und Versand (Schätzung)</span>
                       </div>
                     </div>
 
@@ -328,7 +328,7 @@ export default function TrueROASRechner() {
                         Break-Even-ROAS: <strong className="text-indigo-600 font-extrabold">{result.breakEvenROAS ? `${result.breakEvenROAS.toFixed(1)}x` : '—'}</strong>
                       </span>
                       <p className="text-[11px] text-slate-400 leading-normal select-none">
-                        Das ist der ROAS, ab dem deine Ads profitabel sind.
+                        Ab diesem ROAS decken Ihre Anzeigen ihre Kosten.
                       </p>
                     </div>
 
@@ -336,17 +336,17 @@ export default function TrueROASRechner() {
                     <div className={`p-4 rounded-xl border italic text-xs leading-relaxed font-semibold ${statusStyle?.banner}`}>
                       {result.status === 'profitable' && (
                         <span>
-                          ✅ Echte Profitabilität erreicht. Reported ROAS von {result.reportedROAS?.toFixed(1)}x liegt über deinem Break-Even-Wert von {result.breakEvenROAS?.toFixed(1)}x. Potenzial: Kontrollierte Skalierung ist möglich — aber nur solange der CPA beim Hochskalieren nicht über die Break-Even-Grenze steigt.
+                          ✅ Ihre Anzeigen arbeiten nach dieser Rechnung profitabel. Der gemeldete ROAS von {result.reportedROAS?.toFixed(1)}x liegt über Ihrem Break-Even-Wert von {result.breakEvenROAS?.toFixed(1)}x. Mehr Budget ist möglich, solange die Kosten pro Bestellung dabei nicht über diese Grenze steigen.
                         </span>
                       )}
                       {result.status === 'break_even' && (
                         <span>
-                          ⚠️ Deine Ads laufen an der Profitabilitätsgrenze. Bei leicht steigendem CPA oder einer höheren Retouren-Quote wirst du unprofitabel — ohne es sofort zu merken. Eine Optimierung auf Deckungsbeitrag lohnt sich jetzt.
+                          ⚠️ Ihre Anzeigen bewegen sich an der Gewinnschwelle. Steigen die Kosten pro Bestellung leicht oder kommen mehr Retouren zurück, rutschen Sie ins Minus, oft ohne es sofort zu bemerken. Es lohnt sich, die Kampagnen auf den Deckungsbeitrag auszurichten.
                         </span>
                       )}
                       {result.status === 'unprofitable' && (
                         <span>
-                          🔴 Deine Ads verlieren Geld — trotz ROAS von {result.reportedROAS?.toFixed(1)}x. Dein gemeldeter ROAS berücksichtigt deine Marge nicht. Break-Even liegt bei {result.breakEvenROAS?.toFixed(1)}x. Du bist zu weit unten. Jeden Monat verlierst du {formatCHF(Math.abs(result.trueProfit))} an Werbebudget.
+                          🔴 Nach dieser Rechnung verlieren Ihre Anzeigen Geld, trotz eines ROAS von {result.reportedROAS?.toFixed(1)}x. Der gemeldete ROAS berücksichtigt Ihre Marge nicht. Ihr Break-Even liegt bei {result.breakEvenROAS?.toFixed(1)}x. Geschätzter Verlust: rund {formatCHF(Math.abs(result.trueProfit))} pro Monat.
                         </span>
                       )}
                     </div>
@@ -354,8 +354,8 @@ export default function TrueROASRechner() {
                     {/* Margin Warning */}
                     {result.lowMarginWarning && (
                       <div className="p-4 rounded-xl border border-orange-200 bg-orange-50/50 text-orange-900 text-xs leading-relaxed font-semibold">
-                        <span className="block font-bold text-[11px] font-mono tracking-wider uppercase mb-1">⚠️ Strukturelle Margen-Warnung:</span>
-                        Bei einer Produktmarge unter 20% ist profitables Paid Social strukturell schwierig. Dein Break-Even-ROAS liegt über 5x — ein Wert, den Meta und TikTok-Ads in wettbewerbsintensiven Märkten selten dauerhaft erreichen. Wir empfehlen, Preiskalkulationen anzupassen, bevor du Budgets vergrösserst.
+                        <span className="block font-bold text-[11px] font-mono tracking-wider uppercase mb-1">⚠️ Hinweis zur Marge:</span>
+                        Bei einer Produktmarge unter 20% ist es schwierig, mit Social-Media-Anzeigen Gewinn zu machen. Ihr Break-Even-ROAS liegt dann über 5x, ein Wert, der in umkämpften Märkten nur schwer dauerhaft zu halten ist. Prüfen Sie Ihre Preiskalkulation, bevor Sie das Budget erhöhen.
                       </div>
                     )}
                   </div>
@@ -371,11 +371,11 @@ export default function TrueROASRechner() {
                     }}
                     className="w-full text-center bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
-                    <span>Kostenlosen Ads-Audit buchen</span>
+                    <span>Ergebnis besprechen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
                   <p className="text-[11px] text-slate-400 text-center font-mono mt-2">
-                    Wir analysieren deine Kampagnen kostenlos auf echte Profitabilität — inklusive Deckungsbeitrag. 30 Minuten, keine Verkaufsshow.
+                    Im kostenlosen Erstgespräch (30 Min.) prüfen wir gemeinsam, ob Ihre Kampagnen nach Marge und Deckungsbeitrag tatsächlich Gewinn bringen.
                   </p>
                 </div>
               </motion.div>
@@ -390,12 +390,12 @@ export default function TrueROASRechner() {
           <LeadCaptureForm
             pageId="paid-social-ecommerce"
             secondaryCTAText="Ergebnis per E-Mail erhalten →"
-            danachText="Vielen Dank! Wir schicken dir in Kürze deien individuellen Bericht über deine Paid-Hebel per E-Mail."
+            danachText="Vielen Dank! Wir senden Ihnen in Kürze Ihre persönliche Auswertung per E-Mail."
             additionalFields={[
               {
                 type: 'select',
                 name: 'spendRange',
-                placeholder: 'Aktueller monatlicher Spend *',
+                placeholder: 'Aktuelles monatliches Werbebudget *',
                 options: ['Unter CHF 2\'000', 'CHF 2\'000–5\'000', 'CHF 5\'000–15\'000', 'Über CHF 15\'000'],
                 required: true
               }

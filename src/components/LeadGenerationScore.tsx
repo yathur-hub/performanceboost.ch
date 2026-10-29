@@ -8,20 +8,20 @@ const BENCHMARK_TOP    = 0.035;  // 3.5% Top-Performer
 
 const diagnoseDetails = {
   null_leads: {
-    titel: "Keine Lead-Erfassung aktiv",
-    text: "Es gibt keinen messbaren Conversion-Pfad auf deiner Website. Besucher haben keine Möglichkeit, ihr Interesse zu signalisieren — ausser dich direkt zu kontaktieren. Das ist die höchste Hürde, die du setzen kannst."
+    titel: "Keine Anfragen über die Website",
+    text: "Auf Ihrer Website gibt es keinen messbaren Weg, Interesse zu zeigen, ausser Sie direkt anzurufen oder anzuschreiben. Für viele Besucher ist das eine zu hohe Hürde."
   },
   keine_magnete: {
-    titel: "Kein Lead-Magnet vorhanden",
-    text: "Ein einzelnes Kontaktformular konvertiert nur die Besucher, die bereits kaufbereit sind — das sind 2–5% deines Traffics. Ein Lead-Magnet (Guide, Tool, Analyse) spricht auch Besucher in früheren Kaufphasen an."
+    titel: "Kein Angebot für frühe Interessenten",
+    text: "Ein einzelnes Kontaktformular erreicht vor allem Besucher, die bereits kaufbereit sind. Ein zusätzliches Angebot wie ein Leitfaden, ein Rechner oder eine kurze Analyse spricht auch Besucher an, die sich erst informieren."
   },
   wenig_magnete: {
-    titel: "Zu wenige Conversion-Pfade",
-    text: "Du hast 1–2 Angebote — aber Besucher sind in unterschiedlichen Kaufphasen. Jemand, der zum ersten Mal auf deine Website kommt, möchte nicht sofort buchen. Ein gestuftes System (Awareness → Interest → Decision) erhöht die Gesamtkonversion."
+    titel: "Wenige Möglichkeiten, Kontakt aufzunehmen",
+    text: "Sie haben 1–2 Angebote, aber Ihre Besucher stehen an unterschiedlichen Punkten. Wer zum ersten Mal auf Ihre Website kommt, möchte meist noch keinen Termin buchen. Abgestufte Angebote, vom Leitfaden bis zum Gespräch, holen mehr Besucher ab."
   },
   cr_unter_benchmark: {
-    titel: "Conversion Rate unter B2B-Benchmark (1.5%)",
-    text: "Der B2B-Median liegt bei ~1.5%. Das bedeutet: Bei gleichem Traffic generieren bessere Websites mehr als doppelt so viele Leads. Die Ursachen sind meistens: unklare CTAs, fehlende Lead-Magnete, oder Landing Pages ohne klaren nächsten Schritt."
+    titel: "Anfragequote unter dem Richtwert (1.5%)",
+    text: "Als groben Richtwert für B2B-Websites nehmen wir hier 1.5% an. Liegt Ihre Quote darunter, sind die Ursachen häufig: unklare Handlungsaufrufe, kein Angebot für frühe Interessenten oder Landingpages ohne klaren nächsten Schritt."
   }
 };
 
@@ -73,28 +73,28 @@ export default function LeadGenerationScore() {
     if (cr >= 0.03 && magnets >= 3) {
       note = "A";
       color = "#2A9D8F"; // Grün
-      title = "Starke Performance — du bist im oberen Quartil.";
-      benefitText = "Deine Conversion Rate liegt über dem B2B-Benchmark. Jetzt geht es um Qualität: Sind die Leads auch wirklich qualifiziert? Und welche Inhalte bringen die besten?";
+      title = "Gute Werte, deutlich über dem Richtwert.";
+      benefitText = "Ihre Anfragequote liegt über unserem Richtwert. Jetzt geht es um Qualität: Passen die Anfragen wirklich zu Ihrem Angebot? Und welche Inhalte bringen die besten?";
     } else if (cr >= 0.02 || (cr >= 0.015 && magnets >= 3)) {
       note = "B";
       color = "#57CC99"; // Hellgrün
-      title = "Überdurchschnittlich — mit Luft nach oben.";
-      benefitText = "Du performst besser als der B2B-Median. Top-Performer erreichen 3–5% — da ist noch weiteres Potenzial verborgen.";
+      title = "Über dem Richtwert, mit Luft nach oben.";
+      benefitText = "Ihre Website liegt über dem angenommenen Richtwert. Mit gezielten Verbesserungen ist oft noch mehr möglich.";
     } else if (cr >= 0.01) {
       note = "C";
       color = "#F4A261"; // Orange
-      title = "Durchschnittlich — aber du verlierst wertvolle Leads.";
-      benefitText = "Du bist im soliden Mittelfeld — aber B2B-Mittelfeld bedeutet eben auch, dass du jeden Monat potenzielle Abschlüsse vergisst.";
+      title = "Im Mittelfeld, mit ungenutztem Potenzial.";
+      benefitText = "Sie liegen im Bereich des Richtwerts. Das heisst aber auch: Jeden Monat gehen Besucher verloren, die mit dem passenden Angebot angefragt hätten.";
     } else if (cr >= 0.005) {
       note = "D";
       color = "#E9C46A"; // Gelb-Orange
-      title = "Unter B2B-Benchmark — erhebliches Potenzial ungenutzt.";
-      benefitText = "Fast jeder Besucher verlässt deine Website, ohne einen nächsten konkreten Schritt zu machen. Das ist fast nie ein Traffic-Problem — sondern ein Erfassungsproblem.";
+      title = "Unter dem Richtwert, viel Potenzial ungenutzt.";
+      benefitText = "Fast alle Besucher verlassen Ihre Website, ohne einen nächsten Schritt zu machen. Das liegt meist weniger an zu wenigen Besuchern als daran, wie Anfragen auf der Website ermöglicht werden.";
     } else {
       note = "F";
       color = "#E63946"; // Rot
-      title = "Kritisch — deine Website konvertiert kaum Leads.";
-      benefitText = "Deine Website hat Traffic — aber kein System, diesen Traffic in Leads zu verwandeln. Das ist das Problem, das zuerst gelöst werden muss.";
+      title = "Ihre Website bringt kaum Anfragen.";
+      benefitText = "Ihre Website hat Besucher, aber kaum Möglichkeiten, daraus Anfragen zu machen. Hier lohnt es sich zuerst anzusetzen.";
     }
 
     // Lost leads at benchmarks
@@ -160,16 +160,16 @@ export default function LeadGenerationScore() {
         <div className="flex items-center gap-2.5">
           <Users className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            Content-to-Lead-Score
+            Anfrage-Check für Ihre Website
           </h3>
         </div>
         <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
-          CONVERSION AUDIT
+          Website-Check
         </span>
       </div>
 
       <p className="text-xs text-slate-500 leading-relaxed mt-2 mb-8 font-semibold">
-        Wie effektiv verwandelt eure Website Besucher in qualifizierte Leads? Beantworte diese 3 kurzen Fragen.
+        Wie gut macht Ihre Website aus Besuchern Anfragen? Beantworten Sie drei kurze Fragen.
       </p>
 
       {/* Input controls layout */}
@@ -179,7 +179,7 @@ export default function LeadGenerationScore() {
         <div className="space-y-1.5">
           <div className="flex justify-between items-center">
             <label className="text-xs font-bold text-slate-800 leading-snug flex items-center gap-2">
-              <span>Wie viele Besucher hat eure Website pro Monat?</span>
+              <span>Wie viele Besucher hat Ihre Website pro Monat?</span>
               {isTrafficSelected && (
                 <span className="text-emerald-500 text-xs flex items-center font-bold" title="Ausgefüllt">
                   <Check className="w-3.5 h-3.5" />
@@ -203,7 +203,7 @@ export default function LeadGenerationScore() {
         {/* Input F2 */}
         <div className="space-y-1.5">
           <label className="text-xs font-bold text-slate-800 leading-snug flex items-center gap-2">
-            <span>Wie viele Leads erfasst ihr monatlich über die Website?</span>
+            <span>Wie viele Anfragen erhalten Sie monatlich über die Website?</span>
             {isLeadsSet && !hasValidationError && (
               <span className="text-emerald-500 text-xs flex items-center font-bold">
                 <Check className="w-3.5 h-3.5" />
@@ -222,14 +222,14 @@ export default function LeadGenerationScore() {
             }`}
           />
           <p className="text-[11px] text-slate-400 leading-snug font-medium">
-            Kontaktformulare, Downloads, Demobuchungen, Newsletter-Anmeldungen — was auch immer ihr als Lead zählt.
+            Kontaktformulare, Downloads, Terminbuchungen, Newsletter-Anmeldungen: alles, was Sie als Anfrage zählen.
           </p>
 
           {/* Inline Validation Alert */}
           {hasValidationError && (
             <div className="bg-red-50 text-[#E63946] p-3 rounded-lg flex items-center gap-2 text-[11px] font-bold border border-red-100/30">
               <AlertCircle className="w-4 h-4 shrink-0" />
-              <span>Leads können nicht mehr als Besucher sein</span>
+              <span>Es kann nicht mehr Anfragen als Besucher geben.</span>
             </div>
           )}
         </div>
@@ -237,7 +237,7 @@ export default function LeadGenerationScore() {
         {/* Input F3 */}
         <div className="space-y-1.5">
           <label className="text-xs font-bold text-slate-800 leading-snug flex items-center gap-2">
-            <span>Wie viele Conversion-Angebote hat eure Website?</span>
+            <span>Wie viele Möglichkeiten zur Kontaktaufnahme bietet Ihre Website?</span>
             {isMagneteSelected && (
               <span className="text-emerald-500 text-xs flex items-center font-bold">
                 <Check className="w-3.5 h-3.5" />
@@ -250,13 +250,13 @@ export default function LeadGenerationScore() {
             className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
           >
             <option value="">Bitte wählen...</option>
-            <option value="0">Keines (nur standard Kontaktformular)</option>
-            <option value="1">1–2 (z. B. Kontakt + Case Study/PDF-Download)</option>
-            <option value="3">3–5 Conversion-Pfade</option>
-            <option value="5">Mehr als 5 Conversion-Pfade im Funnel</option>
+            <option value="0">Nur das Standard-Kontaktformular</option>
+            <option value="1">1–2 (z. B. Kontaktformular und PDF-Download)</option>
+            <option value="3">3–5 Angebote</option>
+            <option value="5">Mehr als 5 Angebote</option>
           </select>
           <p className="text-[11px] text-slate-400 leading-snug font-medium">
-            Z. B. Kontaktformular, PDF-Inhalte, Tools, Newsletter, Demo-Buchung, Gratis-Analyse...
+            Z. B. Kontaktformular, PDF-Leitfaden, Rechner, Newsletter, Terminbuchung, kostenlose Analyse.
           </p>
         </div>
 
@@ -267,7 +267,7 @@ export default function LeadGenerationScore() {
         {!calculatedOutput ? (
           <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
             <p className="text-xs text-slate-400 font-medium uppercase tracking-wider font-mono">
-              Fülle alle Felder aus um deinen Score zu berechnen
+              Füllen Sie alle Felder aus, um Ihre Bewertung zu sehen
             </p>
           </div>
         ) : (
@@ -297,13 +297,13 @@ export default function LeadGenerationScore() {
                 {/* Score Meta text info */}
                 <div className="space-y-2 text-center sm:text-left">
                   <span className="text-[11px] font-mono text-slate-450 text-slate-400 font-bold uppercase tracking-widest block">
-                    ERMITTELTES LEADERGEBNIS
+                    Ihre Bewertung
                   </span>
                   <h4 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug font-display">
                     {calculatedOutput.title}
                   </h4>
                   <p className="text-xs text-slate-500 font-bold font-mono">
-                    Deine Conversion Rate: <span className="text-slate-800 font-extrabold">{(calculatedOutput.cr * 100).toFixed(2)}%</span>
+                    Ihre Anfragequote: <span className="text-slate-800 font-extrabold">{(calculatedOutput.cr * 100).toFixed(2)}%</span>
                   </p>
                 </div>
               </div>
@@ -311,14 +311,14 @@ export default function LeadGenerationScore() {
               {/* Proportional Benchmark Double/Triple Horizontal bars */}
               <div className="space-y-4">
                 <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block mb-2">
-                  B2B BENCHMARK-VERGLEICH
+                  Vergleich mit Richtwerten (Annahmen)
                 </span>
 
                 <div className="space-y-3">
                   {/* Your CR bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-[11px] font-semibold text-slate-650">
-                      <span>Deine Konversionsrate</span>
+                      <span>Ihre Anfragequote</span>
                       <span className="font-bold font-mono">{(calculatedOutput.cr * 100).toFixed(2)}%</span>
                     </div>
                     <div className="h-2 w-full bg-slate-200 rounded-lg overflow-hidden relative">
@@ -335,7 +335,7 @@ export default function LeadGenerationScore() {
                   {/* Median B2B CR Bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-[11px] text-slate-450 font-bold">
-                      <span className="text-slate-400 font-mono">B2B-Median</span>
+                      <span className="text-slate-400 font-mono">Richtwert B2B (Annahme)</span>
                       <span className="font-mono text-slate-500">1.50%</span>
                     </div>
                     <div className="h-2 w-full bg-slate-200 rounded-lg overflow-hidden">
@@ -349,7 +349,7 @@ export default function LeadGenerationScore() {
                   {/* Top-Performer B2B CR Bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-[11px] text-slate-450 font-bold">
-                      <span className="text-slate-400 font-mono">Top-Performer (Best-in-Class)</span>
+                      <span className="text-slate-400 font-mono">Sehr gute Websites (Annahme)</span>
                       <span className="font-mono text-slate-550 text-slate-600">3.50%</span>
                     </div>
                     <div className="h-2 w-full bg-slate-200 rounded-lg overflow-hidden">
@@ -371,13 +371,13 @@ export default function LeadGenerationScore() {
               {calculatedOutput.verloreneLeads_median > 0 && (
                 <div className="bg-red-50 p-5 rounded-xl border border-red-100/30 text-left space-y-1">
                   <p className="text-[11px] text-[#E63946] font-bold uppercase tracking-widest font-mono">
-                    UNGENUTZTES POTENZIAL IM VERGLEICH ZUM MEDIAN
+                    Mögliches Potenzial gegenüber dem Richtwert
                   </p>
                   <div className="text-2xl sm:text-3xl font-black font-display text-[#E63946]">
-                    {formatNumber(calculatedOutput.verloreneLeads_median)} Leads / Monat verloren
+                    ca. {formatNumber(calculatedOutput.verloreneLeads_median)} Anfragen / Monat möglich
                   </div>
                   <p className="text-[11px] text-slate-550 text-slate-500 leading-normal font-semibold">
-                    Diese Kontakte besuchen zwar die Webseite, verlassen sie jedoch, ohne ein Zeichen zu hinterlassen, weil die passenden Handlungsaufrufe fehlen.
+                    Grobe Schätzung: So viele zusätzliche Anfragen ergäben sich rechnerisch, wenn Ihre Website den Richtwert von 1.5% erreichen würde. Ob das in Ihrem Markt realistisch ist, hängt von Angebot und Zielgruppe ab.
                   </p>
                 </div>
               )}
@@ -389,7 +389,7 @@ export default function LeadGenerationScore() {
                     onClick={toggleDiagnose}
                     className="w-full flex justify-between items-center py-2 bg-transparent border-none cursor-pointer outline-none font-bold text-xs hover:text-[#686DF4] transition-colors"
                   >
-                    <span className="font-display font-semibold tracking-tight text-slate-800">Warum habe ich diesen Score? Diagnose anzeigen</span>
+                    <span className="font-display font-semibold tracking-tight text-slate-800">Woran liegt das? Mögliche Ursachen anzeigen</span>
                     <span>
                       {diagnoseOpen ? <ChevronUp className="w-4 h-4 text-[#686DF4]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
                     </span>
@@ -433,14 +433,14 @@ export default function LeadGenerationScore() {
                 onClick={handleBooking}
                 className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
-                Lead-Gespräch buchen — kostenlos, 30 Min <ArrowRight className="w-4 h-4 text-white" />
+                Ergebnis besprechen <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
 
             {/* Accordion lead capture form */}
             <LeadCaptureForm
               secondaryCTAText="Website-Analyse per E-Mail erhalten →"
-              danachText="Wir schauen uns deine Website an und schicken dir eine persönliche Einschätzung zu den grössten Conversion-Hebeln."
+              danachText="Wir schauen uns Ihre Website an und senden Ihnen eine persönliche Einschätzung, wo Sie am meisten verbessern können."
               pageId="lead-generation"
               additionalFields={[
                 { type: 'text', name: 'websiteUrl', placeholder: 'Website-URL', required: false }

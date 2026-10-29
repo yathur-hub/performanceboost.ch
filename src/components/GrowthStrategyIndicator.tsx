@@ -59,51 +59,51 @@ export default function GrowthStrategyIndicator() {
     if (level.key === "reaktiv") {
       let hebel = "";
       if (weakest === "icp") {
-        hebel = "→ ICP definieren: Erst wenn klar ist, wer dein idealer Kunde ist, kann jede Massnahme auf ihn ausgerichtet werden. Das ist der erste Schritt.";
+        hebel = "→ Wunschkunden festlegen: Erst wenn klar ist, wer Ihr idealer Kunde ist, lässt sich jede Massnahme auf ihn ausrichten. Das ist der erste Schritt.";
       } else if (weakest === "pipeline") {
-        hebel = "→ Pipeline-Quellen identifizieren: Woher kommen Leads heute wirklich? Erst wenn das klar ist, kann Wachstum gesteuert werden.";
+        hebel = "→ Herkunft der Anfragen klären: Woher kommen Ihre Leads heute tatsächlich? Erst wenn das klar ist, lässt sich Wachstum steuern.";
       } else {
-        hebel = "→ Marketing und Sales auf ein Ziel ausrichten: Getrennte Ziele bedeuten verlorene Revenue. Ein gemeinsames ICP, ein gemeinsames Reporting.";
+        hebel = "→ Marketing und Vertrieb auf ein Ziel ausrichten: Getrennte Ziele kosten Umsatz. Ein gemeinsames Zielkundenprofil und ein gemeinsames Reporting schaffen Klarheit.";
       }
       return {
-        main: "Dein Wachstum hängt von Zufall ab. Kein ICP, keine Vorhersehbarkeit, keine koordinierten Teams — das sind die drei Voraussetzungen für planbares Wachstum. Ohne sie ist jede Massnahme ein Experiment ohne System.",
-        hebelTitle: "Deine grössten Wachstumshebel:",
+        main: "Ihr Wachstum hängt heute stark vom Zufall ab. Für planbares Wachstum braucht es ein klares Bild der Wunschkunden, verlässliche Quellen für Anfragen und abgestimmte Teams. Fehlen diese Grundlagen, bleibt jede Massnahme ein Versuch.",
+        hebelTitle: "Hier sollten Sie ansetzen:",
         hebelText: hebel
       };
     } else if (level.key === "teilstrukturiert") {
       let hebel = "";
       if (weakest === "icp") {
-        hebel = "→ ICP präzisieren: Du hast eine Vorstellung deiner Zielgruppe — aber noch keine messerscharfe Definition. Präzisiertes ICP verbessert Kampagnen-Performance sofort und verkürzt Sales-Zyklen.";
+        hebel = "→ Wunschkunden genauer beschreiben: Sie haben eine Vorstellung Ihrer Zielgruppe, aber noch keine klare Definition. Ein genaueres Zielkundenprofil hilft, Kampagnen gezielter auszurichten und Verkaufsgespräche zu verkürzen.";
       } else if (weakest === "pipeline") {
-        hebel = "→ Pipeline-Vorhersage aufbauen: Wachstum ohne Vorhersehbarkeit ist nicht steuerbar. Welche Kanäle liefern verlässlich? Ein einfaches Tracking-Setup beantwortet das.";
+        hebel = "→ Anfragen planbar machen: Ohne Prognose lässt sich Wachstum kaum steuern. Welche Kanäle liefern verlässlich Anfragen? Ein einfaches Tracking zeigt das.";
       } else {
-        hebel = "→ Alignment strukturieren: Marketing und Sales haben unterschiedliche Ziele — das erklärt den Reibungsverlust. Ein gemeinsames Meeting-Format und ein SLA-Dokument lösen das häufig.";
+        hebel = "→ Zusammenarbeit regeln: Marketing und Vertrieb verfolgen unterschiedliche Ziele, daher die Reibung. Ein regelmässiger gemeinsamer Termin und klare schriftliche Vereinbarungen helfen oft schon viel.";
       }
       return {
-        main: "Du hast Ansätze, die funktionieren — aber kein System dahinter. Wachstum hängt noch zu stark von einzelnen Aktionen ab. Wenn eine Kampagne gut läuft, wächst du. Wenn nicht, stagnierst du. Das ist kein Fehler — aber auch nicht skalierbar.",
-        hebelTitle: "Wo du als nächstes ansetzen solltest:",
+        main: "Sie haben Ansätze, die funktionieren, aber noch kein System dahinter. Ihr Wachstum hängt stark von einzelnen Aktionen ab: Läuft eine Kampagne gut, wachsen Sie, sonst nicht. Das ist normal, lässt sich so aber schwer ausbauen.",
+        hebelTitle: "Wo Sie als Nächstes ansetzen sollten:",
         hebelText: hebel
       };
     } else if (level.key === "strukturiert") {
       let hebel = "";
       if (weakest === "icp") {
-        hebel = "→ ICP verfeinern: Dein ICP ist gut — aber gibt es ein Tier-1-Segment, das signifikant besser konvertiert? Dieser Fokus ist der Unterschied zwischen Wachstum und exponentiellem Wachstum.";
+        hebel = "→ Zielkundenprofil verfeinern: Ihr Profil ist gut. Gibt es darin ein Segment, das deutlich besser abschliesst? Ein klarer Fokus darauf kann viel bewirken.";
       } else if (weakest === "pipeline") {
-        hebel = "→ Attribution schärfen: Du weisst grob, woher Leads kommen. Aber welcher Kanal bringt die qualifiziertesten Leads? Das ist die Zahl, die Budget-Entscheidungen steuert.";
+        hebel = "→ Kanäle genauer messen: Sie wissen ungefähr, woher Ihre Leads kommen. Aber welcher Kanal bringt die besten? Diese Zahl sollte Ihre Budgetentscheide leiten.";
       } else {
-        hebel = "→ Gemeinsame Revenue-Metriken: Marketing und Sales funktionieren — aber messen sie dasselbe? Pipeline-Velocity und gemeinsames Revenue-Forecasting als nächster Schritt.";
+        hebel = "→ Gemeinsame Umsatzkennzahlen: Marketing und Vertrieb arbeiten gut zusammen, aber messen sie dasselbe? Als nächster Schritt lohnt sich eine gemeinsame Umsatzprognose.";
       }
       return {
-        main: "Gute Basis. Du hast Strukturen, die funktionieren. Was jetzt fehlt: koordinierte Priorisierung. Welche 20% der Massnahmen bringen 80% des Wachstums? Das ist die nächste Frage — und oft die schwierigste.",
+        main: "Eine gute Basis. Ihre Strukturen funktionieren. Was jetzt fehlt, ist eine klare Priorisierung: Welche wenigen Massnahmen bringen den grössten Teil Ihres Wachstums? Diese Frage ist oft die schwierigste.",
         hebelTitle: "Nächste Wachstumsstufe:",
         hebelText: hebel
       };
     } else {
       // strategisch
       return {
-        main: "Starke Grundlage. Du hast das, was die meisten Unternehmen suchen. Jetzt geht es um Skalierung: Wie wächst du auf das nächste Level, ohne die Qualität zu verlieren? Welche Kanäle oder Segmente sind noch ungenutzt?",
+        main: "Eine starke Grundlage. Jetzt geht es um den Ausbau: Wie wachsen Sie weiter, ohne an Qualität zu verlieren, und welche Kanäle oder Segmente nutzen Sie noch nicht?",
         hebelTitle: "Nächster Wachstumsschritt:",
-        hebelText: "→ Neue Marktsegmente: Dein Kern-ICP ist erschlossen. Zeit für einen zweiten ICP oder eine geografische Expansion.\n→ Skalierungsmodell: Wie wächst du bei gleichbleibendem oder sinkendem CAC? Das ist die strategische Frage."
+        hebelText: "→ Neue Segmente: Ihre wichtigste Zielgruppe ist erschlossen. Prüfen Sie ein zweites Zielkundenprofil oder eine neue Region.\n→ Wachstum mit stabilen Kosten: Wie wachsen Sie, ohne dass die Kosten pro Neukunde steigen?"
       };
     }
   };
@@ -123,16 +123,16 @@ export default function GrowthStrategyIndicator() {
         <div className="flex items-center gap-2.5">
           <TrendingUp className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            Wachstumspotenzial-Indikator
+            Check: Wie planbar ist Ihr Wachstum?
           </h3>
         </div>
         <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
-          30-SEC DIAGNOSE
+          Kurz-Check
         </span>
       </div>
 
       <p className="text-xs text-slate-500 leading-relaxed mt-4 mb-8 font-semibold">
-        Wie planbar ist dein Wachstum heute? Drei Fragen. Schiebe die Regler unten entsprechend deiner aktuellen Einschätzung.
+        Wie planbar ist Ihr Wachstum heute? Stellen Sie die drei Regler unten nach Ihrer aktuellen Einschätzung ein.
       </p>
 
       {/* Sliders Section */}
@@ -142,7 +142,7 @@ export default function GrowthStrategyIndicator() {
         <div className="space-y-3">
           <div className="flex justify-between items-start gap-4">
             <label className="text-xs sm:text-sm text-slate-805 font-bold text-slate-800 leading-snug">
-              Wie klar ist euer Ideal Customer Profile definiert?
+              Wie klar ist Ihr Zielkundenprofil definiert?
             </label>
             <span className="font-extrabold text-[#686DF4] font-mono text-sm bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md border border-[#686DF4]/10 shrink-0">
               {s1}/5
@@ -159,7 +159,7 @@ export default function GrowthStrategyIndicator() {
           />
           <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
             <span className="max-w-[40%] text-left">Vage Vorstellung</span>
-            <span className="max-w-[40%] text-right text-slate-500 font-medium">Dokumentiert & mit Sales aligned</span>
+            <span className="max-w-[40%] text-right text-slate-500 font-medium">Schriftlich festgehalten und mit dem Vertrieb abgestimmt</span>
           </div>
         </div>
 
@@ -167,7 +167,7 @@ export default function GrowthStrategyIndicator() {
         <div className="space-y-3">
           <div className="flex justify-between items-start gap-4">
             <label className="text-xs sm:text-sm text-slate-805 font-bold text-slate-800 leading-snug">
-              Wie gut könnt ihr vorhersagen, woher nächsten Monat Leads kommen?
+              Wie gut können Sie vorhersagen, woher nächsten Monat Ihre Leads kommen?
             </label>
             <span className="font-extrabold text-[#686DF4] font-mono text-sm bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md border border-[#686DF4]/10 shrink-0">
               {s2}/5
@@ -192,7 +192,7 @@ export default function GrowthStrategyIndicator() {
         <div className="space-y-3">
           <div className="flex justify-between items-start gap-4">
             <label className="text-xs sm:text-sm text-slate-805 font-bold text-slate-800 leading-snug">
-              Wie koordiniert arbeiten Marketing und Sales auf gemeinsame Ziele?
+              Wie gut arbeiten Marketing und Vertrieb auf gemeinsame Ziele hin?
             </label>
             <span className="font-extrabold text-[#686DF4] font-mono text-sm bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md border border-[#686DF4]/10 shrink-0">
               {s3}/5
@@ -208,8 +208,8 @@ export default function GrowthStrategyIndicator() {
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
           <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
-            <span className="max-w-[40%] text-left">Silos, kaum Austausch</span>
-            <span className="max-w-[40%] text-right text-slate-500 font-medium">Gemeinsame KPIs, wöchentlicher Sync</span>
+            <span className="max-w-[40%] text-left">Getrennt, kaum Austausch</span>
+            <span className="max-w-[40%] text-right text-slate-500 font-medium">Gemeinsame Kennzahlen, wöchentlicher Austausch</span>
           </div>
         </div>
 
@@ -220,7 +220,7 @@ export default function GrowthStrategyIndicator() {
         {!hasInteracted ? (
           <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
             <p className="text-xs text-slate-400 font-medium uppercase tracking-wider font-mono">
-              Schiebe die Regler, um deinen Score zu sehen
+              Bewegen Sie die Regler, um Ihre Auswertung zu sehen
             </p>
           </div>
         ) : (
@@ -246,7 +246,7 @@ export default function GrowthStrategyIndicator() {
               {/* Header with Score and Badge */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-1">
                 <div>
-                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">DEIN POSITIONSMUSTER</span>
+                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Ihr Ergebnis</span>
                   <div className="flex items-baseline gap-2.5 mt-1">
                     <span 
                       className="text-3xl font-bold font-display"
@@ -292,14 +292,14 @@ export default function GrowthStrategyIndicator() {
                 onClick={handleBooking}
                 className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
-                Strategiegespräch buchen — kostenlos, 30 Min <ArrowRight className="w-4 h-4 text-white" />
+                Ergebnis besprechen: kostenlos, 30 Min. <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
 
             {/* Accordion form logic */}
             <LeadCaptureForm
-              secondaryCTAText="Vollständige Analyse per E-Mail erhalten →"
-              danachText={`Danke — du erhältst die Analyse in den nächsten Minuten.\nOder buche direkt ein Gespräch: https://calendar.app.google/7oGfyaAEKsdWRTFW8`}
+              secondaryCTAText="Ausführliche Auswertung per E-Mail erhalten →"
+              danachText={`Vielen Dank! Sie erhalten die Auswertung in Kürze.\nOder vereinbaren Sie direkt ein Erstgespräch: https://calendar.app.google/7oGfyaAEKsdWRTFW8`}
               pageId="growth-strategy"
             />
 

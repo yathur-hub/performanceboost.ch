@@ -5,24 +5,24 @@ import { formatCHF, formatNumber, track, LeadCaptureForm } from './heroUtils';
 
 const frictionDetails = {
   s1: {
-    titel: "Lead-Definition: Marketing und Sales sprechen nicht dieselbe Sprache",
-    text: "Wenn Marketing und Sales unterschiedliche Vorstellungen haben, wer ein qualifizierter Lead ist, bekommt der Vertrieb Leads, die er nicht bearbeiten kann — und Marketing wundert sich warum.",
-    impact: "→ Wirkung: Sales verschwendet Zeit auf falsche Leads. Marketing fühlt sich nicht wertgeschätzt. Frustration auf beiden Seiten."
+    titel: "Marketing und Vertrieb verstehen unter einem guten Lead nicht dasselbe",
+    text: "Wenn Marketing und Vertrieb unterschiedliche Vorstellungen davon haben, wer ein qualifizierter Lead ist, erhält der Vertrieb Anfragen, mit denen er wenig anfangen kann. Das Marketing wiederum versteht nicht, warum seine Leads liegen bleiben.",
+    impact: "→ Folge: Der Vertrieb verliert Zeit mit unpassenden Anfragen, und auf beiden Seiten wächst der Frust."
   },
   s2: {
     titel: "Marketing-Content landet nicht im Vertrieb",
-    text: "Wenn Sales eigene Unterlagen baut, fehlt Konsistenz. Messaging in Gesprächen weicht vom Markenversprechen ab. Und Marketing investiert Zeit in Content, den niemand nutzt.",
-    impact: "→ Wirkung: Inkonsistente Kundenkommunikation, verschwendetes Marketing-Budget, doppelte Arbeit."
+    text: "Wenn der Vertrieb eigene Unterlagen erstellt, wirkt der Auftritt uneinheitlich. Was im Kundengespräch gesagt wird, passt nicht immer zum Markenversprechen, und das Marketing erstellt Inhalte, die kaum jemand nutzt.",
+    impact: "→ Folge: Uneinheitliche Kommunikation gegenüber Kunden und doppelte Arbeit im Team."
   },
   s3: {
-    titel: "Keine gemeinsamen Revenue-KPIs",
-    text: "Marketing misst Leads. Sales misst Deals. Niemand misst Revenue. Das ist das strukturelle Problem hinter fast jeder Marketing-Sales-Spannung. Wer unterschiedliche Ziele hat, kann nicht als Team funktionieren.",
-    impact: "→ Wirkung: Budget wird in die falsche Richtung alloziert, weil niemand gemeinsam auf Revenue optimiert."
+    titel: "Keine gemeinsamen Umsatzkennzahlen",
+    text: "Das Marketing zählt Leads, der Vertrieb zählt Abschlüsse, aber niemand schaut gemeinsam auf den Umsatz. Das steckt oft hinter Spannungen zwischen den beiden Teams, denn mit unterschiedlichen Zielen arbeitet man schwer zusammen.",
+    impact: "→ Folge: Budget fliesst in Massnahmen, die zwar Leads bringen, aber wenig Umsatz."
   },
   s4: {
-    titel: "Keine SLAs für Lead-Follow-up",
-    text: "Ohne definierten Zeitrahmen für das Follow-up entscheidet Tagesgeschäft, wann ein Lead kontaktiert wird. Aber: Die Kontaktchance sinkt um den Faktor 100 wenn mehr als 30 Minuten vergehen.",
-    impact: "→ Wirkung: Qualifizierte Leads verlieren Kaufinteresse, bevor Sales sie je kontaktiert hat."
+    titel: "Keine verbindliche Reaktionszeit für neue Anfragen",
+    text: "Ohne vereinbarte Reaktionszeit entscheidet das Tagesgeschäft, wann eine Anfrage beantwortet wird. Je länger es dauert, desto eher hat sich der Interessent bereits anderswo gemeldet.",
+    impact: "→ Folge: Gute Anfragen verlieren an Interesse, bevor der Vertrieb sich meldet."
   }
 };
 
@@ -64,28 +64,28 @@ export default function SalesAlignmentCheck() {
         key: "kritisch",
         label: "Kritische Reibung",
         color: "#E63946",
-        desc: "Marketing und Sales arbeiten gegeneinander — nicht zusammen. Das ist keine Kommunikations-Frage. Es ist eine Struktur-Frage. Ohne gemeinsame Sprache, gemeinsame Metriken und klare Prozesse kostet jede Woche Deals, die schliessbar wären."
+        desc: "Marketing und Vertrieb arbeiten eher nebeneinander als miteinander. Das liegt selten an der Kommunikation, sondern meist an der Struktur. Ohne gemeinsame Begriffe, gemeinsame Kennzahlen und klare Abläufe gehen Abschlüsse verloren, die möglich wären."
       };
     } else if (score <= 12) {
       return {
         key: "spuerbar",
         label: "Spürbare Reibung",
         color: "#F4A261",
-        desc: "Marketing und Sales arbeiten — aber nicht als eingespieltes Team. Es gibt zwar oberflächliche Zusammenarbeit, aber an kritischen Übergabepunkten entstehen spürbare Verluste. Leads werden zu spät bearbeitet, Content nicht ausreichend genutzt, oder Handoffs laufen nicht sauber."
+        desc: "Marketing und Vertrieb arbeiten zusammen, aber noch nicht als eingespieltes Team. An den Übergaben geht etwas verloren: Anfragen werden zu spät bearbeitet, Unterlagen zu wenig genutzt oder die Übergabe vom Marketing an den Vertrieb ist nicht klar geregelt."
       };
     } else if (score <= 16) {
       return {
         key: "teilweise",
-        label: "Teilweise aligned",
+        label: "Teilweise abgestimmt",
         color: "#E9C46A",
-        desc: "Gute Grundlage — mit verbesserungswürdigen Stellen. Du bist besser aligned als die meisten B2B-Unternehmen. Die verbleibenden Reibungspunkte verhindern aber noch, dass dein Go-to-Market-System sein volles Potenzial entfaltet."
+        desc: "Eine gute Grundlage mit einzelnen Schwachstellen. Die verbleibenden Reibungspunkte bremsen aber noch, wie gut Marketing und Vertrieb gemeinsam neue Kunden gewinnen."
       };
     } else {
       return {
         key: "gut",
-        label: "Gut aligned",
+        label: "Gut abgestimmt",
         color: "#2A9D8F",
-        desc: "Starkes Alignment zwischen Marketing und Sales. Du hast die strukturellen Voraussetzungen, die die meisten Schweizer B2B-Unternehmen suchen. Jetzt geht es um die kontinuierliche Feinoptimierung und Skalierung des Systems."
+        desc: "Marketing und Vertrieb sind gut aufeinander abgestimmt. Die Grundlagen stehen. Jetzt geht es um laufende Verbesserungen und darum, das Vorgehen auf mehr Anfragen auszubauen."
       };
     }
   }, [score]);
@@ -151,19 +151,19 @@ export default function SalesAlignmentCheck() {
         <div className="flex items-center gap-2.5">
           <ShieldAlert className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            Marketing-Sales Alignment-Check
+            Check: Marketing und Vertrieb
           </h3>
         </div>
         <button
           onClick={handleReset}
           className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
-          <RefreshCw className="w-3 h-3" /> Reset
+          <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
       </div>
 
       <p className="text-xs text-slate-500 leading-relaxed mt-2 mb-8 font-semibold">
-        Wo geht Lead-Potenzial zwischen Marketing und Sales verloren? Bewege jeden der 4 Schieberegler mindestens einmal.
+        Wo gehen Anfragen zwischen Marketing und Vertrieb verloren? Bewegen Sie jeden der 4 Schieberegler mindestens einmal.
       </p>
 
       {/* Sliders Area */}
@@ -192,7 +192,7 @@ export default function SalesAlignmentCheck() {
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Jeder versteht es anders</span>
-            <span className="text-slate-500 font-medium font-sans">Schriftlich dokumentiert, beide aligned</span>
+            <span className="text-slate-500 font-medium font-sans">Schriftlich festgehalten, beide einig</span>
           </div>
         </div>
 
@@ -218,7 +218,7 @@ export default function SalesAlignmentCheck() {
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-            <span>Sales macht eigene Unterlagen</span>
+            <span>Vertrieb macht eigene Unterlagen</span>
             <span className="text-slate-500 font-medium font-sans">Marketing-Content aktiv im Einsatz</span>
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function SalesAlignmentCheck() {
         <div className="space-y-2">
           <div className="flex justify-between items-start gap-4">
             <label className="text-xs sm:text-sm text-slate-800 font-bold leading-snug">
-              Haben Marketing und Sales gemeinsame Erfolgsmetriken?
+              Haben Marketing und Vertrieb gemeinsame Erfolgskennzahlen?
             </label>
             <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded-lg shrink-0 ${
               touched.s3 ? 'bg-[#686DF4]/5 text-[#686DF4] border border-[#686DF4]/10' : 'bg-slate-100 text-slate-400'
@@ -245,8 +245,8 @@ export default function SalesAlignmentCheck() {
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-            <span>Verschiedene Metriken</span>
-            <span className="text-slate-500 font-medium font-sans">Gemeinsame Revenue-KPIs, regelmässiges Sync</span>
+            <span>Verschiedene Kennzahlen</span>
+            <span className="text-slate-500 font-medium font-sans">Gemeinsame Umsatzkennzahlen, regelmässiger Austausch</span>
           </div>
         </div>
 
@@ -272,8 +272,8 @@ export default function SalesAlignmentCheck() {
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-            <span>Kein SLA — manchmal Tage</span>
-            <span className="text-slate-500 font-medium font-sans">SLA definiert, meistens &lt; 1 Stunde</span>
+            <span>Keine Vorgabe, manchmal Tage</span>
+            <span className="text-slate-500 font-medium font-sans">Reaktionszeit vereinbart, meist &lt; 1 Stunde</span>
           </div>
         </div>
 
@@ -284,10 +284,10 @@ export default function SalesAlignmentCheck() {
         {!allSet ? (
           <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
-              Statusvorbereitung
+              Auswertung folgt
             </h4>
             <p className="text-xs text-slate-450 leading-relaxed font-semibold text-slate-500 max-w-sm mx-auto">
-              Slide alle Regler um deinen Score zu sehen. (Noch {Object.values(touched).filter(t => !t).length} Schieber unbewegt)
+              Bewegen Sie alle Regler, um Ihre Auswertung zu sehen. (Noch {Object.values(touched).filter(t => !t).length} Regler offen)
             </p>
           </div>
         ) : (
@@ -314,7 +314,7 @@ export default function SalesAlignmentCheck() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
                 <div>
                   <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
-                    AUSWERTUNG MARKETING-SALES-ALIGNMENT
+                    Auswertung Marketing und Vertrieb
                   </span>
                   <p className="text-2xl font-bold font-display mt-2 leading-none" style={{ color: levelInfo.color }}>
                     {levelInfo.label}
@@ -324,7 +324,7 @@ export default function SalesAlignmentCheck() {
                   className="px-4 py-1.5 rounded-full text-xs font-black font-mono tracking-wider uppercase text-white shadow-xs w-fit"
                   style={{ backgroundColor: levelInfo.color }}
                 >
-                  {score} / 20 PUNKTE
+                  {score} / 20 Punkte
                 </div>
               </div>
 
@@ -338,7 +338,7 @@ export default function SalesAlignmentCheck() {
             {levelInfo.key !== 'gut' && topFrictionKeys.length > 0 && (
               <div className="space-y-4">
                 <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
-                  Top-2 Reibungspunkte (Priorisiert):
+                  Die 2 wichtigsten Reibungspunkte:
                 </span>
 
                 {topFrictionKeys.map((key, index) => {
@@ -379,7 +379,7 @@ export default function SalesAlignmentCheck() {
                     Keine kritischen Reibungspunkte gefunden
                   </h5>
                   <p className="text-[11px] text-emerald-700 font-semibold leading-relaxed">
-                    Euer Go-To-Market-Schnittpunkt ist sauber dokumentiert und eure Teams arbeiten synchronisiert. Hervorragende Arbeit!
+                    Die Übergabe zwischen Marketing und Vertrieb ist klar geregelt, und Ihre Teams arbeiten abgestimmt.
                   </p>
                 </div>
               </div>
@@ -391,20 +391,20 @@ export default function SalesAlignmentCheck() {
                 onClick={handleBooking}
                 className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
-                {levelInfo.key === 'gut' ? "Wie skalierst du die Pipeline weiter?" : "Sales-Gespräch buchen — kostenlos, 30 Min"} <ArrowRight className="w-4 h-4 text-white" />
+                {levelInfo.key === 'gut' ? "Nächste Schritte besprechen" : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
 
             {/* Reusable capture form alignment setup */}
             <LeadCaptureForm
-              secondaryCTAText="Alignment-Report per E-Mail erhalten →"
-              danachText="Wir schicken dir eine personalisierte Einschätzung der 2 grössten Alignment-Hebel für dein Unternehmen."
+              secondaryCTAText="Auswertung per E-Mail erhalten →"
+              danachText="Wir senden Ihnen eine persönliche Einschätzung, wo Marketing und Vertrieb in Ihrem Unternehmen am meisten gewinnen können."
               pageId="sales-enablement"
               additionalFields={[
                 {
                   type: 'select',
                   name: 'teamSize',
-                  placeholder: 'Grösse des Sales-Teams',
+                  placeholder: 'Grösse des Vertriebsteams',
                   options: ['1 Person', '2–5 Personen', '6–15 Personen', 'Mehr als 15 Personen']
                 }
               ]}

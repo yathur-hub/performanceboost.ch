@@ -117,29 +117,29 @@ export default function LeerstandskostenRechner() {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
       accent: 'border-red-500',
-      label: 'Hohes Optimierungspotenzial',
-      desc: `Ihr Portfolio verliert aktuell über ${formatCHF(100000)} pro Jahr durch Leerstand. Mit systematischer Vermarktung ist das direkt angehbar.`,
+      label: 'Grosses Potenzial',
+      desc: `Nach Ihren Angaben liessen sich über ${formatCHF(100000)} pro Jahr an Leerstandskosten einsparen. Eine systematische Vermarktung ist hier ein naheliegender Ansatzpunkt.`,
     },
     B: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-500 text-white',
       accent: 'border-orange-500',
-      label: 'Spürbares Potenzial',
-      desc: `Eine Optimierung der Vermarktungsdauer um ${results?.diff_tage} Tage pro Objekt spart Ihnen ${results ? formatCHF(results.einsparung_jahr) : ''}/Jahr.`,
+      label: 'Potenzial vorhanden',
+      desc: `Wenn Sie die Vermarktungsdauer um rund ${results?.diff_tage} Tage pro Objekt verkürzen, sind grob geschätzt ${results ? formatCHF(results.einsparung_jahr) : ''} pro Jahr Einsparung möglich.`,
     },
     C: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-500 text-white',
       accent: 'border-green-500',
       label: 'Solide Basis',
-      desc: 'Sie sind schon gut aufgestellt. Systematisches Follow-up und Qualifizierung können dieses Potenzial noch heben.',
+      desc: 'Sie sind schon gut aufgestellt. Konsequentes Nachfassen bei Interessenten und eine gute Vorauswahl können das restliche Potenzial noch heben.',
     },
     D: {
       color: 'text-[#686DF4] bg-[#686DF4]/5 border-[#686DF4]/10',
       badgeBg: 'bg-[#686DF4] text-white',
       accent: 'border-[#686DF4]',
-      label: 'Schon effizient',
-      desc: 'Ihr Vermarktungsprozess ist bereits nah am Optimum. Der nächste Hebel liegt in der Lead-Qualität, nicht in der Dauer.',
+      label: 'Bereits effizient',
+      desc: 'Ihre Vermarktung läuft bereits zügig. Mehr bringt jetzt eher die Qualität der Anfragen als eine noch kürzere Dauer.',
     },
   };
 
@@ -148,10 +148,10 @@ export default function LeerstandskostenRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">HERO DIAGNOSE-TOOL</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Immobilien</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Leerstandskosten-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
-          In 30 Sekunden — berechnen Sie die genauen Leerstandskosten Ihres Immobilien-Portfolios.
+          Schätzen Sie in wenigen Sekunden, was Leerstand Ihr Immobilienportfolio kostet. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -176,7 +176,7 @@ export default function LeerstandskostenRechner() {
 
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
-              <span>Ø Miete oder Provision / Objekt</span>
+              <span>Ø Miete oder Provision pro Objekt</span>
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.miete_pro_monat)}</span>
             </label>
             <input
@@ -188,7 +188,7 @@ export default function LeerstandskostenRechner() {
               onChange={(e) => handleInputChange('miete_pro_monat', parseInt(e.target.value) || 500)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[11px] text-slate-400 font-medium">Feste monatliche Nettomiete oder Provision</p>
+            <p className="text-[11px] text-slate-400 font-medium">Monatliche Nettomiete oder Provision</p>
           </div>
 
           <div className="space-y-1">
@@ -236,11 +236,11 @@ export default function LeerstandskostenRechner() {
               {/* Three cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-3.5 space-y-1">
-                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Leerstand aktuell</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Leerstandskosten heute</span>
                   <h4 className="text-sm font-black text-slate-900">{formatCHF(results.leerstand_aktuell)} / J.</h4>
                 </div>
                 <div className="bg-green-50 border border-green-150 rounded-xl p-3.5 space-y-1">
-                  <span className="text-[11px] font-mono font-bold text-green-700 uppercase tracking-wider block">Mögl. Einsparung</span>
+                  <span className="text-[11px] font-mono font-bold text-green-700 uppercase tracking-wider block">Mögliche Einsparung</span>
                   <h4 className="text-sm font-black text-green-700">+{formatCHF(results.einsparung_jahr)} / J.</h4>
                 </div>
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-3.5 space-y-1">
@@ -252,7 +252,7 @@ export default function LeerstandskostenRechner() {
               {/* Progress and score */}
               <div className="space-y-1 text-xs">
                 <div className="flex justify-between font-bold">
-                  <span>Efficiency-Score</span>
+                  <span>Effizienz-Wert</span>
                   <span>{results.score} / 100</span>
                 </div>
                 <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden relative">
@@ -266,7 +266,7 @@ export default function LeerstandskostenRechner() {
               {/* Benchmark marker */}
               <div className="text-[11px] text-slate-500 font-semibold flex items-center gap-1.5 pt-1">
                 <Clock className="w-4 h-4 text-[#686DF4]" />
-                <span>Schweizer Benchmark-Durchschnitt: 2.8 Monate. Ihraktueller Schnitt liegt {results.abweichung_pct > 0 ? `${results.abweichung_pct}% über` : `${Math.abs(results.abweichung_pct)}% unter`} dem Benchmark.</span>
+                <span>Angenommener Richtwert: 2.8 Monate. Ihr aktueller Schnitt liegt {results.abweichung_pct > 0 ? `${results.abweichung_pct}% über` : `${Math.abs(results.abweichung_pct)}% unter`} diesem Richtwert.</span>
               </div>
 
               {/* Diagnostics */}
@@ -291,7 +291,7 @@ export default function LeerstandskostenRechner() {
       {results && results.isValid && (
         <div className="border-t border-slate-100 pt-6 flex flex-col sm:flex-row gap-5 items-center justify-between">
           <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-md">
-            <strong>Möchten Sie das konkret angehen?</strong> Yathur schaut sich Ihre aktuelle Vermarktungssituation an und zeigt, welche Hebel den schnellsten Effekt haben.
+            <strong>Ergebnis gemeinsam einordnen.</strong> In einem kostenlosen Erstgespräch von 30 Minuten schauen wir Ihre Zahlen an und besprechen, wo bei Ihnen der grösste Hebel liegt.
           </div>
           <button
             type="button"
@@ -305,12 +305,12 @@ export default function LeerstandskostenRechner() {
             }}
             className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors cursor-pointer border-0"
           >
-            Kostenloses Erstgespräch buchen
+            Ergebnis besprechen
           </button>
         </div>
       )}
       <p className="text-[11px] text-slate-400 font-mono text-center">
-        *Keine Verpflichtung. 30 Minuten, konkrete Einschätzung.
+        *Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
       </p>
     </div>
   );
