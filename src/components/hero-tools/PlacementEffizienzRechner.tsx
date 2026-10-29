@@ -144,14 +144,14 @@ export default function PlacementEffizienzRechner() {
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Sie haben eine funktionierende Basis, es bleibt aber spürbar Umsatz liegen. Häufig fehlt ein systematisches Nachfassen oder ein Kanal für neue Mandate, der über das persönliche Netzwerk hinausgeht.',
       rec: 'Nach Offerten systematisch nachfassen, Inhalte aufbauen, die Anfragen bringen, und das CRM einheitlich nutzen.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
       desc: 'Ihre Werte liegen nahe an den angenommenen Richtwerten oder darüber. Als Nächstes geht es darum, mehr Mandate zu gewinnen und die Vermittlungsquote weiter zu verbessern.',
       rec: 'Mit Inhalten und LinkedIn mehr Mandate gewinnen und die Direktansprache auf neue Zielbranchen ausweiten.',
@@ -186,7 +186,7 @@ export default function PlacementEffizienzRechner() {
               <span className="text-[#686DF4] font-semibold">{inputs.mandate}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Aktive Mandate pro Monat"
                 type="number"
                 min={1}
                 max={100}
@@ -204,7 +204,7 @@ export default function PlacementEffizienzRechner() {
               <span>Erfolgreiche Vermittlungen / Monat</span>
               <span className="text-[#686DF4] font-semibold">{inputs.placements}</span>
             </label>
-            <input
+            <input aria-label="Erfolgreiche Vermittlungen / Monat"
               type="number"
               min={0}
               max={55}
@@ -225,7 +225,7 @@ export default function PlacementEffizienzRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.provision)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Provision pro Vermittlung (CHF)"
                 type="number"
                 min={2000}
                 max={80000}
@@ -243,7 +243,7 @@ export default function PlacementEffizienzRechner() {
               <span>Anteil Mandate aus digitalen Kanälen</span>
               <span className="text-[#686DF4] font-semibold">{inputs.marketing_anteil}%</span>
             </label>
-            <input
+            <input aria-label="Anteil Mandate aus digitalen Kanälen"
               type="range"
               min={0}
               max={80}
@@ -285,7 +285,7 @@ export default function PlacementEffizienzRechner() {
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-red-650 block uppercase">Abstand zum Richtwert</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.placement_leck_jahr > 0 ? `-${formatCHF(results.placement_leck_jahr)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">

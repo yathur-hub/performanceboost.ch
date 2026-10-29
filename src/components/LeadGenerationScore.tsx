@@ -187,7 +187,7 @@ export default function LeadGenerationScore() {
               )}
             </label>
           </div>
-          <select
+          <select aria-label="Wie viele Besucher hat Ihre Website pro Monat?"
             value={trafficMid}
             onChange={e => handleFieldSet('traffic', e.target.value)}
             className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
@@ -210,7 +210,7 @@ export default function LeadGenerationScore() {
               </span>
             )}
           </label>
-          <input
+          <input aria-label="Wie viele Anfragen erhalten Sie monatlich über die Website?"
             type="number"
             min="0"
             max="10000"
@@ -244,7 +244,7 @@ export default function LeadGenerationScore() {
               </span>
             )}
           </label>
-          <select
+          <select aria-label="Wie viele Möglichkeiten zur Kontaktaufnahme bietet Ihre Website?"
             value={leadMagnete}
             onChange={e => handleFieldSet('leadMagnete', e.target.value)}
             className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"

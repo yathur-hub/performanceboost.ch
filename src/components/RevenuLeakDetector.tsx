@@ -122,7 +122,7 @@ export default function RevenuLeakDetector() {
           {/* Field 1 */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-850 block">Qualifizierte Anfragen pro Monat</label>
-            <input
+            <input aria-label="Qualifizierte Anfragen pro Monat"
               type="number"
               min="1"
               max="100000"
@@ -137,7 +137,7 @@ export default function RevenuLeakDetector() {
           {/* Field 2 */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-850 block">Anteil Anfragen, aus denen ein Verkaufsgespräch wird (%)</label>
-            <select
+            <select aria-label="Anteil Anfragen, aus denen ein Verkaufsgespräch wird (%)"
               value={mqlToOpp}
               onChange={e => handleFieldChange('mqlToOpp', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
@@ -155,7 +155,7 @@ export default function RevenuLeakDetector() {
           {/* Field 3 */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-850 block">Abschlussquote (%)</label>
-            <select
+            <select aria-label="Abschlussquote (%)"
               value={oppToClose}
               onChange={e => handleFieldChange('oppToClose', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
@@ -172,7 +172,7 @@ export default function RevenuLeakDetector() {
           {/* Field 4 */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-850 block">Durchschnittlicher Auftragswert (CHF)</label>
-            <input
+            <input aria-label="Durchschnittlicher Auftragswert (CHF)"
               type="number"
               min="100"
               max="10000000"

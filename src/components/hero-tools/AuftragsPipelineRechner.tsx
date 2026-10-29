@@ -136,14 +136,14 @@ export default function AuftragsPipelineRechner() {
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Ihr Weg von der Anfrage zum Auftrag läuft solide, es bleibt aber noch Umsatz liegen. Häufige Ursachen sind fehlendes Nachfassen bei Offerten oder eine unklare erste Einschätzung der Anfragen.',
       rec: 'Offerten einheitlich aufbauen, das Nachfassen klar regeln und offene Offerten in einem CRM im Blick behalten.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
       desc: 'Ihre Quoten liegen nahe an den angenommenen Richtwerten oder darüber. Das ist eine solide Basis. Um weiter zu wachsen, brauchen Sie vor allem mehr passende Anfragen aus Ihrer Region.',
       rec: 'Lokale Sichtbarkeit bei Google ausbauen und gezielte Suchanzeigen für Ihre margenstärksten Arbeiten schalten.',
@@ -177,7 +177,7 @@ export default function AuftragsPipelineRechner() {
               <span>Anfragen pro Monat</span>
               <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
             </label>
-            <input
+            <input aria-label="Anfragen pro Monat"
               type="number"
               min={1}
               max={200}
@@ -193,7 +193,7 @@ export default function AuftragsPipelineRechner() {
               <span>Angebotsquote (Offerten / Anfragen)</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.offerten_quote}%</span>
             </label>
-            <input
+            <input aria-label="Angebotsquote (Offerten / Anfragen)"
               type="range"
               min={10}
               max={100}
@@ -210,7 +210,7 @@ export default function AuftragsPipelineRechner() {
               <span>Zuschlagsquote (Aufträge / Offerten)</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.zuschlag_quote}%</span>
             </label>
-            <input
+            <input aria-label="Zuschlagsquote (Aufträge / Offerten)"
               type="range"
               min={5}
               max={80}
@@ -228,7 +228,7 @@ export default function AuftragsPipelineRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.projektwert)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Projektwert (CHF)"
                 type="number"
                 min={1000}
                 max={500000}
@@ -271,7 +271,7 @@ export default function AuftragsPipelineRechner() {
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Abstand zum Richtwert</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.leck_jahr > 0 ? `-${formatCHF(results.leck_jahr)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">

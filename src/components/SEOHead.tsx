@@ -170,7 +170,8 @@ export function buildMeta(route: ParsedRoute): Meta {
           },
         };
       }
-      const title = 'Ratgeber & Fachbeiträge | performanceboost';
+      const section = route.subSection === 'blog' ? 'Fachbeiträge' : route.subSection === 'guides' ? 'Leitfäden' : 'Ratgeber & Fachbeiträge';
+      const title = `${section} | performanceboost`;
       const description = 'Praxisbeiträge zu Neukundengewinnung, Tracking, Datenschutz und Marketing Automation für Schweizer KMU.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }

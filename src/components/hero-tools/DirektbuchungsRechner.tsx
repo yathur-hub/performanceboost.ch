@@ -129,14 +129,14 @@ export default function DirektbuchungsRechner() {
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Sie gewinnen bereits Gäste direkt, ein grosser Teil der Buchungen läuft aber weiterhin über Portale. Schon wenn ein kleiner Teil davon direkt bucht, sparen Sie Provision. Wie viel, sehen Sie oben in der Schätzung.',
       rec: 'Frühere Gäste nach der Abreise per E-Mail wieder ansprechen und Landingpages für Pauschalen verbessern.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gesunde Buchungs-Verteilung',
       desc: 'Ihr Portal-Anteil liegt im Bereich des angenommenen Richtwerts. Das ist eine gute Basis. Den Direktanteil können Sie mit besserer Sichtbarkeit bei Ihren Wunschgästen und gezielten Anzeigen auf Google (z.B. Google Hotel Ads) weiter ausbauen.',
       rec: 'Google-Unternehmensprofil pflegen, Google Hotel Ads schalten und auf Social Media sichtbar bleiben.',
@@ -171,7 +171,7 @@ export default function DirektbuchungsRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.zimmerumsatz)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Unterkunfts-Umsatz pro Monat"
                 type="number"
                 min={1000}
                 max={500000}
@@ -190,7 +190,7 @@ export default function DirektbuchungsRechner() {
               <span>Anteil Buchungsportale (Booking & Co.)</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.ota_anteil}%</span>
             </label>
-            <input
+            <input aria-label="Anteil Buchungsportale (Booking &amp; Co.)"
               type="range"
               min={10}
               max={100}
@@ -207,7 +207,7 @@ export default function DirektbuchungsRechner() {
               <span>Portal-Provision</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.commission_fee}%</span>
             </label>
-            <input
+            <input aria-label="Portal-Provision"
               type="range"
               min={5}
               max={25}
@@ -224,7 +224,7 @@ export default function DirektbuchungsRechner() {
               <span>Ziel: Anteil, der direkt bucht</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.direkt_ziel}%</span>
             </label>
-            <input
+            <input aria-label="Ziel: Anteil, der direkt bucht"
               type="range"
               min={10}
               max={80}
@@ -266,7 +266,7 @@ export default function DirektbuchungsRechner() {
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-red-655 block uppercase font-mono">Abstand zum Richtwert</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.provisions_marge_leck_jahr > 0 ? `-${formatCHF(results.provisions_marge_leck_jahr)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">

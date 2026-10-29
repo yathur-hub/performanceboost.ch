@@ -137,14 +137,14 @@ export default function KanzleiAuslastungsCheck() {
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Ihre Kanzlei arbeitet solide, administrative Aufgaben binden aber noch juristische Kapazität. Wie viel eine Entlastung bei der Administration bringen könnte, sehen Sie oben in der Schätzung.',
       rec: 'Dokumentvorlagen ordnen, Fristen digital kontrollieren und wiederkehrende Sekretariatsarbeiten automatisieren.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
       desc: 'Ihre Werte liegen nahe am angenommenen Richtwert. Das ist eine gute Basis. Weiteres Wachstum ist meist über eine klarere Spezialisierung möglich, die höhere Stundensätze und passendere Mandate ermöglicht.',
       rec: 'Positionierung schärfen und auf LinkedIn gezielt bei Wirtschaftsmandanten sichtbar werden.',
@@ -178,7 +178,7 @@ export default function KanzleiAuslastungsCheck() {
               <span>Juristen / Partner (Vollzeit)</span>
               <span className="text-[#686DF4] font-semibold">{inputs.anwaelte}</span>
             </label>
-            <input
+            <input aria-label="Juristen / Partner (Vollzeit)"
               type="number"
               min={1}
               max={50}
@@ -194,7 +194,7 @@ export default function KanzleiAuslastungsCheck() {
               <span>Ø abrechenbare Stunden / Woche</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.billable_stunden}h</span>
             </label>
-            <input
+            <input aria-label="Ø abrechenbare Stunden / Woche"
               type="range"
               min={10}
               max={50}
@@ -211,7 +211,7 @@ export default function KanzleiAuslastungsCheck() {
               <span>Ø Administration / Woche</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.admin_stunden}h</span>
             </label>
-            <input
+            <input aria-label="Ø Administration / Woche"
               type="range"
               min={2}
               max={25}
@@ -229,7 +229,7 @@ export default function KanzleiAuslastungsCheck() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.stundensatz)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Stundensatz (CHF)"
                 type="number"
                 min={150}
                 max={600}
@@ -272,7 +272,7 @@ export default function KanzleiAuslastungsCheck() {
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Abstand zum Richtwert</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.umsatz_gap > 0 ? `-${formatCHF(results.umsatz_gap)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">

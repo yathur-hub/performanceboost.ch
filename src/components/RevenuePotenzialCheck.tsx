@@ -445,7 +445,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
                       : `${state.aktuelleNeukunden} Neukunden`} / Monat
                 </span>
               </div>
-              <input
+              <input aria-label="Neukunden pro Monat"
                 type="range"
                 min="0"
                 max="20"

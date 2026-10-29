@@ -137,14 +137,14 @@ export default function ProjektpipelineCheck() {
     },
     orange: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Ihr Auftragseingang funktioniert, bei Umsatz und Stabilität ist aber noch Potenzial vorhanden. Entweder liegt die Zuschlagsquote unter dem angenommenen Richtwert, oder zu viel Umsatz hängt an wenigen Auftraggebern.',
       rec: 'Beim schwächeren Wert ansetzen: Zuschlagsquote verbessern oder die Auftraggeberbasis verbreitern.',
     },
     gruen: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
       desc: 'Ihre Zuschlagsquote und die Verteilung auf Ihre Auftraggeber sehen nach Ihren Angaben gut aus. Das ist eine solide Ausgangslage. Weiteres Wachstum kommt vor allem über mehr passende Anfragen.',
       rec: 'Sichtbarkeit ausbauen, frühere Auftraggeber wieder ansprechen und neue Zielgruppen definieren.',
@@ -179,7 +179,7 @@ export default function ProjektpipelineCheck() {
               <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Projektanfragen pro Jahr"
                 type="number"
                 min={1}
                 max={200}
@@ -197,7 +197,7 @@ export default function ProjektpipelineCheck() {
               <span>Zuschlagsquote</span>
               <span className="text-[#686DF4] font-semibold">{inputs.win_rate}%</span>
             </label>
-            <input
+            <input aria-label="Zuschlagsquote"
               type="range"
               min={5}
               max={90}
@@ -215,7 +215,7 @@ export default function ProjektpipelineCheck() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.projektvolumen)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Projektvolumen (Honorar)"
                 type="number"
                 min={500}
                 max={2000000}
@@ -233,7 +233,7 @@ export default function ProjektpipelineCheck() {
               <span>Anteil Top-3-Auftraggeber</span>
               <span className="text-[#686DF4] font-semibold">{inputs.top3_anteil}%</span>
             </label>
-            <input
+            <input aria-label="Anteil Top-3-Auftraggeber"
               type="range"
               min={10}
               max={100}

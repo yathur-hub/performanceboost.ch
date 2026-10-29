@@ -140,14 +140,14 @@ export default function KursFunnelRechner() {
     },
     orange: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Ihr Anfrageprozess funktioniert, unterwegs gehen aber Interessenten verloren. Häufige Ursache: Wer eine Beratung oder Infos angefragt hat, wird danach nicht konsequent weiterbegleitet.',
       rec: 'Nachfassen systematisch regeln: Teilnehmende des Infoabends innert 48 Stunden kontaktieren und mit einer E-Mail-Serie weiterbegleiten.',
     },
     gruen: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
       desc: 'Ihre Website bringt gute Anfragen, und Ihre Buchungsquote liegt nahe am angenommenen Richtwert. Sie holen bereits viel aus Ihren Besuchern heraus. Als Nächstes geht es um mehr passende Besucher.',
       rec: 'Mehr passende Besucher gewinnen: bessere Auffindbarkeit bei Google für Ihre Lehrgänge und LinkedIn-Kampagnen für Fachkräfte und HR.',
@@ -182,7 +182,7 @@ export default function KursFunnelRechner() {
               <span className="text-[#686DF4] font-semibold">{inputs.visits.toLocaleString('de-CH')}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Website-Besucher / Monat"
                 type="number"
                 min={100}
                 max={50000}
@@ -201,7 +201,7 @@ export default function KursFunnelRechner() {
               <span>Anfragequote (Info / Beratung)</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.info_conversion}%</span>
             </label>
-            <input
+            <input aria-label="Anfragequote (Info / Beratung)"
               type="range"
               min={0.5}
               max={15}
@@ -218,7 +218,7 @@ export default function KursFunnelRechner() {
               <span>Buchungsquote (von Anfrage zu Buchung)</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.booking_rate}%</span>
             </label>
-            <input
+            <input aria-label="Buchungsquote (von Anfrage zu Buchung)"
               type="range"
               min={5}
               max={70}
@@ -236,7 +236,7 @@ export default function KursFunnelRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.kursgebuehr)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Kursgebühr pro Person"
                 type="number"
                 min={200}
                 max={50000}
@@ -279,7 +279,7 @@ export default function KursFunnelRechner() {
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Abstand zum Richtwert</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.leck_jahr > 0 ? `-${formatCHF(results.leck_jahr)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">

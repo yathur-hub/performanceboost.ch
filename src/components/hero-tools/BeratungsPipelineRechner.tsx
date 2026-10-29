@@ -165,7 +165,7 @@ export default function BeratungsPipelineRechner() {
               <span>Aktive Berater</span>
               <span className="text-[#686DF4]">{inputs.berater}</span>
             </label>
-            <input
+            <input aria-label="Aktive Berater"
               type="number"
               min={1}
               max={50}
@@ -181,7 +181,7 @@ export default function BeratungsPipelineRechner() {
               <span>Gespräche / Monat (je Berater)</span>
               <span className="text-[#686DF4]">{inputs.gespraeche}</span>
             </label>
-            <input
+            <input aria-label="Gespräche / Monat (je Berater)"
               type="number"
               min={1}
               max={30}
@@ -198,7 +198,7 @@ export default function BeratungsPipelineRechner() {
               <span className="text-[#686DF4] font-mono">{inputs.abschlussquote}%</span>
             </label>
             <div className="flex items-center gap-4">
-              <input
+              <input aria-label="Abschlussquote"
                 type="range"
                 min={5}
                 max={60}
@@ -215,7 +215,7 @@ export default function BeratungsPipelineRechner() {
               <span>Ø Jahresvolumen pro Abschluss</span>
               <span className="text-[#686DF4]">{formatCHF(inputs.jahresvolumen)}</span>
             </label>
-            <input
+            <input aria-label="Ø Jahresvolumen pro Abschluss"
               type="number"
               min={5000}
               max={500000}

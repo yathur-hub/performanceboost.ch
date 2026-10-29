@@ -187,7 +187,7 @@ export default function SaasRevenueLeckRechner() {
               <span>Tests (Trials) / Monat</span>
               <span className="text-[#686DF4]">{inputs.trials}</span>
             </label>
-            <input
+            <input aria-label="Tests (Trials) / Monat"
               type="number"
               min={5}
               max={2000}
@@ -203,7 +203,7 @@ export default function SaasRevenueLeckRechner() {
               <span>Umwandlung Test → zahlend</span>
               <span className="text-[#686DF4] font-mono">{inputs.conversion}%</span>
             </label>
-            <input
+            <input aria-label="Umwandlung Test → zahlend"
               type="range"
               min={1}
               max={60}
@@ -222,7 +222,7 @@ export default function SaasRevenueLeckRechner() {
               <span>Ø MRR pro Kunde</span>
               <span className="text-[#686DF4]">{formatCHF(inputs.mrr_pro_account)}</span>
             </label>
-            <input
+            <input aria-label="Ø MRR pro Kunde"
               type="number"
               min={50}
               max={5000}
@@ -239,7 +239,7 @@ export default function SaasRevenueLeckRechner() {
               <span>Monatliche Kündigungsrate</span>
               <span className="text-[#686DF4] font-mono">{inputs.churn}%</span>
             </label>
-            <input
+            <input aria-label="Monatliche Kündigungsrate"
               type="range"
               min={0.5}
               max={15}
@@ -274,12 +274,12 @@ export default function SaasRevenueLeckRechner() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50/50 border border-slate-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Verlust bei Umwandlung</span>
-                  <h4 className="text-sm font-bold text-red-600 mt-1">{formatCHFKompakt(results.conversion_leck_arr)} / Jahr</h4>
+                  <h4 className="text-sm font-bold text-red-700 mt-1">{formatCHFKompakt(results.conversion_leck_arr)} / Jahr</h4>
                 </div>
 
                 <div className="bg-slate-50/50 border border-slate-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Verlust durch Kündigungen</span>
-                  <h4 className="text-sm font-bold text-red-600 mt-1">{formatCHFKompakt(results.churn_leck_arr)} / Jahr</h4>
+                  <h4 className="text-sm font-bold text-red-700 mt-1">{formatCHFKompakt(results.churn_leck_arr)} / Jahr</h4>
                 </div>
 
                 <div className="sm:col-span-2 bg-[#686DF4]/5 border border-[#CACCFB]/40 rounded-xl p-4 flex items-center justify-between">

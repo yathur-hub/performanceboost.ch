@@ -148,7 +148,7 @@ export default function GrowthStrategyIndicator() {
               {s1}/5
             </span>
           </div>
-          <input
+          <input aria-label="Wie klar ist Ihr Zielkundenprofil definiert?"
             type="range"
             min="1"
             max="5"
@@ -173,7 +173,7 @@ export default function GrowthStrategyIndicator() {
               {s2}/5
             </span>
           </div>
-          <input
+          <input aria-label="Wie gut können Sie vorhersagen, woher nächsten Monat Ihre Leads kommen?"
             type="range"
             min="1"
             max="5"
@@ -198,7 +198,7 @@ export default function GrowthStrategyIndicator() {
               {s3}/5
             </span>
           </div>
-          <input
+          <input aria-label="Wie gut arbeiten Marketing und Vertrieb auf gemeinsame Ziele hin?"
             type="range"
             min="1"
             max="5"

@@ -173,7 +173,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           <Mail className="w-3.5 h-3.5" />
                         </div>
                         <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[11px] font-mono font-bold text-slate-400 uppercase">Direkte E-Mail</span>
+                          <span className="text-[11px] font-mono font-bold text-white/65 uppercase">E-Mail</span>
                           <span className="font-semibold text-xs truncate">{SITE.email}</span>
                         </div>
                       </a>
@@ -186,7 +186,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           <Phone className="w-3.5 h-3.5" />
                         </div>
                         <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[11px] font-mono font-bold text-slate-400 uppercase">Telefonische Rückfrage</span>
+                          <span className="text-[11px] font-mono font-bold text-white/65 uppercase">Telefon</span>
                           <span className="font-semibold text-xs">{SITE.phoneDisplay}</span>
                         </div>
                       </a>
@@ -196,7 +196,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           <MapPin className="w-3.5 h-3.5" />
                         </div>
                         <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[11px] font-mono font-bold text-slate-400 uppercase">Standort Schweiz</span>
+                          <span className="text-[11px] font-mono font-bold text-white/65 uppercase">Adresse</span>
                           <span className="font-semibold text-xs">Patschär 4 • 7306 Fläsch (Graubünden)</span>
                         </div>
                       </div>

@@ -359,7 +359,7 @@ export default function AIReadinessCheck() {
           <label className="text-xs sm:text-sm text-slate-800 font-bold block leading-snug">
             Was ist Ihr wichtigstes Ziel für die nächsten 6 Monate?
           </label>
-          <select
+          <select aria-label="Was ist Ihr wichtigstes Ziel für die nächsten 6 Monate?"
             value={f5}
             onChange={e => handleFieldSet('f5', e.target.value)}
             className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"

@@ -176,7 +176,7 @@ export default function KanzleiWachstumsCheck() {
               <span>Neue Mandate / 12 Mt.</span>
               <span className="text-[#686DF4] font-semibold">{inputs.neue_mandate}</span>
             </label>
-            <input
+            <input aria-label="Neue Mandate / 12 Mt."
               type="number"
               min={1}
               max={200}
@@ -192,7 +192,7 @@ export default function KanzleiWachstumsCheck() {
               <span>Empfehlungsanteil</span>
               <span className="text-[#686DF4] font-semibold">{inputs.empfehlungsanteil}%</span>
             </label>
-            <input
+            <input aria-label="Empfehlungsanteil"
               type="range"
               min={10}
               max={100}
@@ -209,7 +209,7 @@ export default function KanzleiWachstumsCheck() {
               <span>Ø Jahresumsatz pro Mandat</span>
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.ø_mandat)}</span>
             </label>
-            <input
+            <input aria-label="Ø Jahresumsatz pro Mandat"
               type="number"
               min={1000}
               max={200000}
@@ -226,7 +226,7 @@ export default function KanzleiWachstumsCheck() {
               <span>Wachstumsziel (Mandate)</span>
               <span className="text-[#686DF4] font-semibold">{inputs.ziel_mandate}</span>
             </label>
-            <input
+            <input aria-label="Wachstumsziel (Mandate)"
               type="number"
               min={1}
               max={500}

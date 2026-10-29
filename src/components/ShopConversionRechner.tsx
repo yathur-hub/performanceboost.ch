@@ -154,7 +154,7 @@ export default function ShopConversionRechner() {
               Monatliche Besucher im Shop
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Monatliche Besucher im Shop"
                 type="number"
                 min="100"
                 max="10000000"
@@ -177,7 +177,7 @@ export default function ShopConversionRechner() {
             <label className="block text-xs font-bold text-slate-800 uppercase tracking-wide">
               Aktuelle Conversion-Rate
             </label>
-            <select
+            <select aria-label="Aktuelle Conversion-Rate"
               value={aktuellerCR}
               onChange={(e) => handleInputChange('cr', e.target.value)}
               className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 text-slate-705 transition-all font-semibold cursor-pointer"
@@ -201,7 +201,7 @@ export default function ShopConversionRechner() {
               Ø Warenkorbwert (CHF)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Warenkorbwert (CHF)"
                 type="number"
                 min="1"
                 max="100000"

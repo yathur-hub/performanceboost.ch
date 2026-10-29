@@ -144,14 +144,14 @@ export default function AngebotsPipelineRechner() {
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Ihr Weg von der Anfrage zum Auftrag funktioniert, es bleibt aber spürbar Umsatz liegen. Häufige Ursachen sind Lücken beim Nachfassen oder eine unklare erste Einschätzung der Anfragen. Hier lohnt es sich, gezielt anzusetzen.',
       rec: 'Nachfassen systematisch regeln, Interessenten bei langen Entscheidungszeiten weiterbegleiten und das CRM konsequenter nutzen.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/60',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut, aber ausbaufähig',
       desc: 'Ihre Quoten liegen nahe an den angenommenen Richtwerten oder darüber. Das ist eine solide Basis. Als Nächstes geht es darum, mehr passende Anfragen zu gewinnen und die Abschlussquote weiter zu verbessern.',
       rec: 'Mehr qualifizierte Anfragen gewinnen, Wunschkunden gezielt ansprechen und Interessenten weiterbegleiten.',
@@ -186,7 +186,7 @@ export default function AngebotsPipelineRechner() {
               <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Anfragen pro Monat"
                 type="number"
                 min={1}
                 max={500}
@@ -204,7 +204,7 @@ export default function AngebotsPipelineRechner() {
               <span>Angebotsquote</span>
               <span className="text-[#686DF4] font-semibold">{inputs.angebotsquote}%</span>
             </label>
-            <input
+            <input aria-label="Angebotsquote"
               type="range"
               min={10}
               max={100}
@@ -221,7 +221,7 @@ export default function AngebotsPipelineRechner() {
               <span>Abschlussquote</span>
               <span className="text-[#686DF4] font-semibold">{inputs.abschlussquote}%</span>
             </label>
-            <input
+            <input aria-label="Abschlussquote"
               type="range"
               min={5}
               max={80}
@@ -239,7 +239,7 @@ export default function AngebotsPipelineRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.auftragswert)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Auftragswert (CHF)"
                 type="number"
                 min={1000}
                 max={2000000}
@@ -279,7 +279,7 @@ export default function AngebotsPipelineRechner() {
 
             <div className={`border rounded-xl p-4 ${results.leck_jahr > 0 ? 'bg-red-50 border-red-100' : 'bg-green-50 border-green-150'}`}>
               <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Abstand zum Richtwert</span>
-              <h4 className={`text-lg font-black mt-1 ${results.leck_jahr > 0 ? 'text-red-600' : 'text-green-700'}`}>
+              <h4 className={`text-lg font-black mt-1 ${results.leck_jahr > 0 ? 'text-red-700' : 'text-green-700'}`}>
                 {results.leck_jahr > 0 ? `-${formatCHF(results.leck_jahr)} / J.` : 'Auf oder über Richtwert'}
               </h4>
               <p className="text-[11px] text-slate-450 font-semibold leading-relaxed">

@@ -181,7 +181,7 @@ export default function SalesAlignmentCheck() {
               {s1}/5
             </span>
           </div>
-          <input
+          <input aria-label="Wie klar ist die gemeinsame Definition eines qualifizierten Leads?"
             type="range"
             min="1"
             max="5"
@@ -208,7 +208,7 @@ export default function SalesAlignmentCheck() {
               {s2}/5
             </span>
           </div>
-          <input
+          <input aria-label="Wie viel des Marketing-Contents wird vom Vertrieb tatsächlich genutzt?"
             type="range"
             min="1"
             max="5"
@@ -235,7 +235,7 @@ export default function SalesAlignmentCheck() {
               {s3}/5
             </span>
           </div>
-          <input
+          <input aria-label="Haben Marketing und Vertrieb gemeinsame Erfolgskennzahlen?"
             type="range"
             min="1"
             max="5"
@@ -262,7 +262,7 @@ export default function SalesAlignmentCheck() {
               {s4}/5
             </span>
           </div>
-          <input
+          <input aria-label="Wie schnell werden übergebene Leads vom Vertrieb kontaktiert?"
             type="range"
             min="1"
             max="5"
@@ -371,7 +371,7 @@ export default function SalesAlignmentCheck() {
             {/* Glückwunsch State when good aligned */}
             {levelInfo.key === 'gut' && (
               <div className="bg-emerald-50/40 p-5 sm:p-6 border border-emerald-100 rounded-xl space-y-2 flex gap-4 items-start text-left shadow-2xs">
-                <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-display font-extrabold text-sm shrink-0">
+                <div className="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-display font-extrabold text-sm shrink-0">
                   ✓
                 </div>
                 <div>

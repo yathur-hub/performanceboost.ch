@@ -117,7 +117,7 @@ export default function RetentionRevenueRechner() {
               Aktive Kunden (letzte 12 Monate)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Aktive Kunden (letzte 12 Monate)"
                 type="number"
                 min="1"
                 max="10000000"
@@ -141,7 +141,7 @@ export default function RetentionRevenueRechner() {
               Ø Jahresumsatz pro Kunde (CHF)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Jahresumsatz pro Kunde (CHF)"
                 type="number"
                 min="1"
                 max="1000000"
@@ -164,7 +164,7 @@ export default function RetentionRevenueRechner() {
             <label className="block text-xs font-bold text-slate-800 uppercase tracking-wide">
               Aktuelle Wiederkaufrate
             </label>
-            <select
+            <select aria-label="Aktuelle Wiederkaufrate"
               value={retentionKey}
               onChange={(e) => handleInputChange('retention', e.target.value)}
               className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 transition-all font-semibold cursor-pointer text-slate-800"

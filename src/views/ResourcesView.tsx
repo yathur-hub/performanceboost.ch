@@ -207,7 +207,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
           {/* Search container */}
           <div className="relative w-full md:w-80 shrink-0">
             <Search className="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
-            <input
+            <input aria-label="Beiträge durchsuchen"
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}

@@ -269,7 +269,7 @@ export default function DataClarityCheck() {
                   onClick={() => handleToggle(field.id, true)}
                   className={`flex-1 sm:flex-none text-xs font-bold font-mono tracking-wider uppercase px-4.5 py-2.5 rounded-xl border transition-all cursor-pointer ${
                     cAns === true
-                      ? 'bg-emerald-500 text-white border-transparent shadow-xs'
+                      ? 'bg-emerald-700 text-white border-transparent shadow-xs'
                       : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                   }`}
                 >

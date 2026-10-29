@@ -122,14 +122,14 @@ export default function LeerstandskostenRechner() {
     },
     B: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       accent: 'border-orange-500',
       label: 'Potenzial vorhanden',
       desc: `Wenn Sie die Vermarktungsdauer um rund ${results?.diff_tage} Tage pro Objekt verkürzen, sind grob geschätzt ${results ? formatCHF(results.einsparung_jahr) : ''} pro Jahr Einsparung möglich.`,
     },
     C: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       accent: 'border-green-500',
       label: 'Solide Basis',
       desc: 'Sie sind schon gut aufgestellt. Konsequentes Nachfassen bei Interessenten und eine gute Vorauswahl können das restliche Potenzial noch heben.',
@@ -163,7 +163,7 @@ export default function LeerstandskostenRechner() {
               <span>Objekte zur Vermarktung pro Jahr</span>
               <span className="text-[#686DF4] font-semibold">{inputs.objekte}</span>
             </label>
-            <input
+            <input aria-label="Objekte zur Vermarktung pro Jahr"
               type="number"
               min={1}
               max={200}
@@ -179,7 +179,7 @@ export default function LeerstandskostenRechner() {
               <span>Ø Miete oder Provision pro Objekt</span>
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.miete_pro_monat)}</span>
             </label>
-            <input
+            <input aria-label="Ø Miete oder Provision pro Objekt"
               type="number"
               min={500}
               max={50000}
@@ -196,7 +196,7 @@ export default function LeerstandskostenRechner() {
               <span>Aktuelle Vermarktungsdauer</span>
               <span className="text-[#686DF4] font-semibold">{formatMonate(inputs.vermarktung_aktuell)}</span>
             </label>
-            <input
+            <input aria-label="Aktuelle Vermarktungsdauer"
               type="range"
               min={1}
               max={18}
@@ -212,7 +212,7 @@ export default function LeerstandskostenRechner() {
               <span>Ziel-Vermarktungsdauer</span>
               <span className="text-[#686DF4] font-semibold">{formatMonate(inputs.vermarktung_ziel)}</span>
             </label>
-            <input
+            <input aria-label="Ziel-Vermarktungsdauer"
               type="range"
               min={0.5}
               max={12}
@@ -245,7 +245,7 @@ export default function LeerstandskostenRechner() {
                 </div>
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-3.5 space-y-1">
                   <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Verlust pro Tag</span>
-                  <h4 className="text-sm font-black text-red-600">{formatCHF(results.kosten_pro_tag)}</h4>
+                  <h4 className="text-sm font-black text-red-700">{formatCHF(results.kosten_pro_tag)}</h4>
                 </div>
               </div>
 

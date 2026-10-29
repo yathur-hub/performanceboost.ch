@@ -288,7 +288,7 @@ export default function ContactForm({
             role="alert"
             id="form-feedback-error"
           >
-            <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" aria-hidden="true" />
+            <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-700" aria-hidden="true" />
             <div className="space-y-1">
               <p className="font-semibold">Ihre Anfrage konnte leider nicht gesendet werden.</p>
               <p className="text-red-800">

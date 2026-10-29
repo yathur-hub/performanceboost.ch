@@ -494,7 +494,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
           </div>
 
           {/* Horizontally scrolling Category Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto scroller-hidden pt-3.5 pb-0.5 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div role="tablist" aria-label="Kategorien" className="flex items-center gap-1.5 overflow-x-auto scroller-hidden pt-3.5 pb-0.5 -mx-4 px-4 sm:mx-0 sm:px-0">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.value;
               return (

@@ -137,14 +137,14 @@ export default function NeupatientenPotenzialCheck() {
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Sie gewinnen bereits Patienten online, auf dem Weg zum Termin gehen aber noch einige verloren. Häufige Gründe sind ein unvollständiges Google-Profil oder ein umständlicher Buchungsweg auf der Website.',
       rec: 'Den Buchungsbutton sichtbarer platzieren, die Ladezeit der Website verkürzen und Patienten aktiv um Google-Bewertungen bitten.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
       desc: 'Aus Ihren Website-Besuchern werden bereits viele Patienten, und die Online-Buchung wird gut genutzt. Um weiter zu wachsen, brauchen Sie vor allem mehr passende Besucher auf Ihrer Website.',
       rec: 'Mehr Besucher gewinnen: lokale Auffindbarkeit bei Google und Google Ads für die Fachbereiche, die Sie ausbauen möchten.',
@@ -178,7 +178,7 @@ export default function NeupatientenPotenzialCheck() {
               <span>Web-Besucher pro Monat</span>
               <span className="text-[#686DF4] font-semibold">{inputs.visits.toLocaleString('de-CH')}</span>
             </label>
-            <input
+            <input aria-label="Web-Besucher pro Monat"
               type="number"
               min={50}
               max={15000}
@@ -195,7 +195,7 @@ export default function NeupatientenPotenzialCheck() {
               <span>Neupatienten pro Monat (Schnitt)</span>
               <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
             </label>
-            <input
+            <input aria-label="Neupatienten pro Monat (Schnitt)"
               type="number"
               min={1}
               max={500}
@@ -211,7 +211,7 @@ export default function NeupatientenPotenzialCheck() {
               <span>Anteil Online-Terminbuchungen</span>
               <span className="text-[#686DF4] font-semibold">{inputs.online_quote}%</span>
             </label>
-            <input
+            <input aria-label="Anteil Online-Terminbuchungen"
               type="range"
               min={0}
               max={100}
@@ -229,7 +229,7 @@ export default function NeupatientenPotenzialCheck() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.patient_wert)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Patientenwert / Jahr (CHF)"
                 type="number"
                 min={100}
                 max={25000}
@@ -273,7 +273,7 @@ export default function NeupatientenPotenzialCheck() {
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Abstand zum Richtwert</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.umsatz_gap > 0 ? `-${formatCHF(results.umsatz_gap)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">

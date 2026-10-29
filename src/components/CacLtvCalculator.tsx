@@ -118,7 +118,7 @@ export default function CacLtvCalculator() {
         };
       default:
         return {
-          text: 'text-red-600',
+          text: 'text-red-700',
           bg: 'bg-red-50 border-red-200/50',
           badgeText: 'text-red-700 font-bold',
           badgeBg: 'bg-red-105 bg-red-100',
@@ -153,7 +153,7 @@ export default function CacLtvCalculator() {
               Monatliches Werbebudget (CHF)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Monatliches Werbebudget (CHF)"
                 type="number"
                 min="100"
                 max="10000000"
@@ -177,7 +177,7 @@ export default function CacLtvCalculator() {
               Neukunden pro Monat
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Neukunden pro Monat"
                 type="number"
                 min="1"
                 max="100000"
@@ -201,7 +201,7 @@ export default function CacLtvCalculator() {
               Ø Bestellwert (CHF)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Bestellwert (CHF)"
                 type="number"
                 min="1"
                 max="100000"
@@ -224,7 +224,7 @@ export default function CacLtvCalculator() {
             <label className="block text-xs font-bold text-slate-800 uppercase tracking-wide">
               Wiederkaufrate (in den nächsten 12 Monaten)
             </label>
-            <select
+            <select aria-label="Wiederkaufrate (in den nächsten 12 Monaten)"
               value={repurchaseRateKey}
               onChange={(e) => handleInputChange('rate', e.target.value)}
               className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 transition-all font-semibold cursor-pointer text-slate-800"

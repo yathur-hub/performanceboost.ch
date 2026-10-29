@@ -137,14 +137,14 @@ export default function RecurringRevenuePotenzialRechner() {
     },
     'aufbauphase': {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Aufbauphase',
       desc: 'Sie haben eine Basis, aber noch deutlich Luft nach oben. Entweder liegt die Vertragsquote unter dem angenommenen Richtwert von 75%, oder die Kündigungsrate ist hoch, oder beides. Am meisten bringt es meist, sich zuerst auf einen dieser Punkte zu konzentrieren.',
       rec: 'Vertragsquote Richtung 75% entwickeln, regelmässige Jahresgespräche einführen und Kündigungen früh sichtbar machen.',
     },
     'gutes-fundament': {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gutes Fundament',
       desc: 'Ihr wiederkehrender Umsatz steht auf einer soliden Basis, nahe am angenommenen Richtwert oder darüber. Weiteres Wachstum kommt aus zwei Quellen: neue Kunden und zusätzliche Leistungen für bestehende Vertragskunden.',
       rec: 'Neukundengewinnung planbar machen, LinkedIn und Fachinhalte nutzen und einen Leitfaden für Zusatzverkäufe erstellen.',
@@ -179,7 +179,7 @@ export default function RecurringRevenuePotenzialRechner() {
               <span className="text-[#686DF4] font-semibold">{inputs.kunden}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Aktive Kunden"
                 type="number"
                 min={5}
                 max={500}
@@ -198,7 +198,7 @@ export default function RecurringRevenuePotenzialRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.mrr_pro_kunde)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø MRR pro Vertragskunde"
                 type="number"
                 min={200}
                 max={20000}
@@ -217,7 +217,7 @@ export default function RecurringRevenuePotenzialRechner() {
               <span>Vertragsquote</span>
               <span className="text-[#686DF4] font-semibold">{inputs.vertragsanteil}%</span>
             </label>
-            <input
+            <input aria-label="Vertragsquote"
               type="range"
               min={10}
               max={100}
@@ -234,7 +234,7 @@ export default function RecurringRevenuePotenzialRechner() {
               <span>Monatliche Kündigungsrate</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.churn}%</span>
             </label>
-            <input
+            <input aria-label="Monatliche Kündigungsrate"
               type="range"
               min={0.5}
               max={10}
@@ -287,7 +287,7 @@ export default function RecurringRevenuePotenzialRechner() {
                     <span className="text-[11px] font-mono font-bold text-slate-500 block uppercase">Umsatzverlust durch Kündigungen pro Jahr</span>
                     <p className="text-[11px] text-slate-400">Vereinfachte Schätzung bei {inputs.churn}% Kündigungsrate pro Monat</p>
                   </div>
-                  <h4 className="text-base font-black text-red-600">-{formatCHF(results.churn_verlust_arr)} / J.</h4>
+                  <h4 className="text-base font-black text-red-700">-{formatCHF(results.churn_verlust_arr)} / J.</h4>
                 </div>
               </div>
 

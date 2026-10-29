@@ -100,7 +100,7 @@ export default function DemandPipelineGap() {
               Wie viele Neukunden brauchen Sie pro Monat?
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Wie viele Neukunden brauchen Sie pro Monat?"
                 type="number"
                 min="1"
                 max="1000"
@@ -123,7 +123,7 @@ export default function DemandPipelineGap() {
               </label>
               <HoverHelp text="Anteil der vom Vertrieb angenommenen Leads, die am Ende unterschreiben." />
             </div>
-            <select
+            <select aria-label="Wie hoch ist Ihre Abschlussquote (Lead → Kunde)?"
               value={abschlussrate}
               onChange={e => handleFieldChange('abschlussrate', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-750 text-slate-800 transition-colors cursor-pointer shadow-xs"
@@ -146,7 +146,7 @@ export default function DemandPipelineGap() {
               Wie viele qualifizierte Leads erhält Ihr Vertrieb heute pro Monat?
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Wie viele qualifizierte Leads erhält Ihr Vertrieb heute pro Monat?"
                 type="number"
                 min="0"
                 max="10000"
@@ -167,7 +167,7 @@ export default function DemandPipelineGap() {
               Durchschnittlicher Auftragswert (CHF)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Durchschnittlicher Auftragswert (CHF)"
                 type="number"
                 min="100"
                 max="1000000"

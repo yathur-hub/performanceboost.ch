@@ -135,14 +135,14 @@ export default function FlottenauslastungsRechner() {
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
       desc: 'Ihre Flotte läuft ordentlich, es bleibt aber Umsatz liegen. Was schon 5 Prozentpunkte mehr Auslastung bringen könnten, sehen Sie oben in der Schätzung.',
       rec: 'Bei bestehenden Kunden präsent bleiben und freie Kapazitäten regelmässig direkt bei Geschäftskunden anbieten.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Solide Auslastung',
       desc: 'Ihre Werte liegen nahe an den angenommenen Richtwerten. Das ist eine gesunde Basis. Weiteres Potenzial liegt bei den Betriebskosten oder einem höheren Frachtsatz pro Kilometer durch eine bessere Tourenplanung.',
       rec: 'Mehr margenstarke Direktkunden gewinnen statt nur als Subunternehmer zu fahren.',
@@ -176,7 +176,7 @@ export default function FlottenauslastungsRechner() {
               <span>Flottengrösse (Fahrzeuge)</span>
               <span className="text-[#686DF4] font-semibold">{inputs.flottengroesse}</span>
             </label>
-            <input
+            <input aria-label="Flottengrösse (Fahrzeuge)"
               type="number"
               min={1}
               max={500}
@@ -193,7 +193,7 @@ export default function FlottenauslastungsRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.umsatz_fahrzeug)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Umsatz pro Fahrzeug / Monat"
                 type="number"
                 min={500}
                 max={100000}
@@ -212,7 +212,7 @@ export default function FlottenauslastungsRechner() {
               <span>Aktuelle Flottenauslastung</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.auslastung}%</span>
             </label>
-            <input
+            <input aria-label="Aktuelle Flottenauslastung"
               type="range"
               min={40}
               max={100}
@@ -229,7 +229,7 @@ export default function FlottenauslastungsRechner() {
               <span>Variable Betriebs- & Dieselkosten</span>
               <span className="text-[#686DF4] font-semibold font-mono">{inputs.betriebskosten}%</span>
             </label>
-            <input
+            <input aria-label="Variable Betriebs- &amp; Dieselkosten"
               type="range"
               min={15}
               max={70}
@@ -271,7 +271,7 @@ export default function FlottenauslastungsRechner() {
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
                   <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Abstand zum Richtwert</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.optimierungs_marge_jahr > 0 ? `-${formatCHF(results.optimierungs_marge_jahr)} / J.` : 'CHF 0'}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">

@@ -300,7 +300,7 @@ export default function AutomationMaturityCheck() {
                     isCurrent
                       ? 'bg-[#686DF4] text-white ring-4 ring-indigo-100'
                       : isPassed
-                      ? 'bg-emerald-500 text-white'
+                      ? 'bg-emerald-700 text-white'
                       : 'bg-white border border-slate-200 text-slate-400'
                   }`}
                 >
@@ -357,7 +357,7 @@ export default function AutomationMaturityCheck() {
               </div>
 
               {levelInfo.context && (
-                <div className="text-[11px] text-red-650 text-red-600 bg-red-50/50 p-3.5 rounded-xl border border-red-100/10 font-bold">
+                <div className="text-[11px] text-red-650 text-red-700 bg-red-50/50 p-3.5 rounded-xl border border-red-100/10 font-bold">
                   {levelInfo.context}
                 </div>
               )}

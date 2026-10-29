@@ -147,7 +147,7 @@ export default function InteractiveGrowthCalculator() {
                   <span className="text-slate-700 font-bold font-display">Werbebudget pro Monat (Google, LinkedIn)</span>
                   <span className="font-bold text-[#686DF4] font-mono">{formattedValue(budget)} / Mt.</span>
                 </div>
-                <input
+                <input aria-label="Werbebudget pro Monat (Google, LinkedIn)"
                   type="range"
                   min="0"
                   max="15000"
@@ -172,7 +172,7 @@ export default function InteractiveGrowthCalculator() {
                   <span className="text-slate-705 text-slate-700 font-bold font-display">Ø Kosten pro Klick (CPC)</span>
                   <span className="font-bold text-amber-600 font-mono">CHF {cpc.toFixed(2)}</span>
                 </div>
-                <input
+                <input aria-label="Ø Kosten pro Klick (CPC)"
                   type="range"
                   min="0.50"
                   max="4.00"
@@ -197,7 +197,7 @@ export default function InteractiveGrowthCalculator() {
                   <span className="text-slate-700 font-bold font-display">Besuche ohne Werbung (Google-Suche, direkt)</span>
                   <span className="font-bold text-slate-800 font-mono">{organic.toLocaleString('de-CH')} Besuche</span>
                 </div>
-                <input
+                <input aria-label="Besuche ohne Werbung (Google-Suche, direkt)"
                   type="range"
                   min="100"
                   max="5000"
@@ -249,7 +249,7 @@ export default function InteractiveGrowthCalculator() {
                   </div>
                   <span className="font-bold text-[#686DF4] font-mono">{leadConversion.toFixed(1)}%</span>
                 </div>
-                <input
+                <input aria-label="Anteil Besucher, die anfragen"
                   type="range"
                   min="0.2"
                   max="4.0"
@@ -277,7 +277,7 @@ export default function InteractiveGrowthCalculator() {
                   </div>
                   <span className="font-bold text-[#686DF4] font-mono">{salesConversion.toFixed(1)}%</span>
                 </div>
-                <input
+                <input aria-label="Abschlussquote (Anfrage zu Auftrag)"
                   type="range"
                   min="1.0"
                   max="25.0"
@@ -302,7 +302,7 @@ export default function InteractiveGrowthCalculator() {
                   <span className="text-slate-700 font-bold font-display">Ø Auftragswert pro Neukunde</span>
                   <span className="font-bold text-[#686DF4] font-mono">{formattedValue(dealValue)}</span>
                 </div>
-                <input
+                <input aria-label="Ø Auftragswert pro Neukunde"
                   type="range"
                   min="2000"
                   max="80000"

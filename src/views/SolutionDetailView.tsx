@@ -157,7 +157,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {sector.problems.map((problem, idx) => (
             <div key={idx} className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl space-y-3.5 shadow-sm text-center">
-              <div className="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center font-bold font-mono text-xs mx-auto border border-red-100/40">
+              <div className="w-8 h-8 rounded-full bg-red-50 text-red-700 flex items-center justify-center font-bold font-mono text-xs mx-auto border border-red-100/40">
                 !
               </div>
               <h3 className="text-sm font-bold text-slate-900 leading-tight">{problem.title}</h3>
@@ -181,7 +181,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-8 text-left">
             {sector.approach.map((step, idx) => (
               <div key={idx} className="space-y-3 relative">
-                <span className="absolute -top-3 right-0 text-3xl font-black font-mono text-[#686DF4]/20">
+                <span aria-hidden="true" className="absolute -top-3 right-0 text-3xl font-black font-mono text-[#686DF4]/20">
                   {step.step}
                 </span>
                 <span className="text-[11px] font-semibold text-[#686DF4] uppercase font-mono tracking-widest">

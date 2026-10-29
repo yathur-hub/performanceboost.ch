@@ -128,7 +128,7 @@ export default function TrueROASRechner() {
       default:
         return {
           banner: 'bg-red-50 border-red-200 text-red-800',
-          profitText: 'text-red-600 font-bold',
+          profitText: 'text-red-700 font-bold',
           iconColor: 'text-red-500',
           badgeText: 'text-red-700',
           bg: 'bg-red-50 text-red-700'
@@ -163,7 +163,7 @@ export default function TrueROASRechner() {
               Monatliches Werbebudget (CHF) *
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Monatliches Werbebudget (CHF)"
                 type="number"
                 min="1"
                 max="10000000"
@@ -188,7 +188,7 @@ export default function TrueROASRechner() {
               Monatlicher Umsatz aus Ads (CHF) *
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Monatlicher Umsatz aus Ads (CHF)"
                 type="number"
                 min="0"
                 max="1000000000"
@@ -212,7 +212,7 @@ export default function TrueROASRechner() {
             <label className="block text-xs font-bold text-slate-800 uppercase tracking-wide">
               Durchschnittliche Produktmarge *
             </label>
-            <select
+            <select aria-label="Durchschnittliche Produktmarge"
               value={marginKey}
               onChange={(e) => handleInputChange('margin', e.target.value)}
               className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 transition-all font-semibold cursor-pointer text-slate-800"
@@ -236,7 +236,7 @@ export default function TrueROASRechner() {
               Versandkosten pro Bestellung (CHF, optional)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Versandkosten pro Bestellung (CHF, optional)"
                 type="number"
                 min="0"
                 max="1000"

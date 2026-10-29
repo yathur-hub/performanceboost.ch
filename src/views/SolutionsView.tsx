@@ -297,7 +297,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               <div className="mt-8 pt-5 border-t border-slate-100 space-y-3.5">
                 <div className="text-[11px]">
                   <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">Nicht:</span>
-                  <span className="text-red-600 font-bold block bg-red-50/40 px-2 py-1 rounded border border-red-100/30 line-through">{item.notText}</span>
+                  <span className="text-red-700 font-bold block bg-red-50/40 px-2 py-1 rounded border border-red-100/30 line-through">{item.notText}</span>
                 </div>
                 <div className="text-[11px]">
                   <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">Sondern:</span>
