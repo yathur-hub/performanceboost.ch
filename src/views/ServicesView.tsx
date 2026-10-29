@@ -146,7 +146,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 <div className="w-12 h-12 rounded-xl bg-[#686DF4] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <IconComponent className="w-5.5 h-5.5" />
                 </div>
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-3 py-1 rounded-lg">
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-3 py-1 rounded-lg">
                   DIAGNOSTIZIERTER HEBEL
                 </span>
               </div>
@@ -159,12 +159,12 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               
               {/* Secondary block with metrics info */}
               <div className="bg-slate-50/70 border border-slate-200/50 p-6 rounded-2xl text-left space-y-3.5">
-                <h4 className="text-[9px] font-mono font-bold uppercase tracking-widest text-slate-400">PROGNOSTIZIERTER IMPACT:</h4>
+                <h4 className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">PROGNOSTIZIERTER IMPACT:</h4>
                 <div className="grid grid-cols-2 gap-4">
                   {service.metrics.map((met, index) => (
                     <div key={index} className="space-y-0.5">
                       <span className="text-lg font-bold font-display text-[#686DF4] block leading-none">{met.value}</span>
-                      <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">{met.label}</span>
+                      <span className="text-[11px] text-slate-400 font-bold uppercase font-mono tracking-wider block">{met.label}</span>
                     </div>
                   ))}
                 </div>
@@ -218,7 +218,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* PROBLEM SECTION */}
           <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center animate-fadeIn">
-              <span className="text-[10px] font-mono text-red-650 font-bold uppercase tracking-widest bg-red-50/50 px-3 py-1.5 rounded-lg border border-red-100/20">
+              <span className="text-[11px] font-mono text-red-650 font-bold uppercase tracking-widest bg-red-50/50 px-3 py-1.5 rounded-lg border border-red-100/20">
                 IST-SITUATION
               </span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">
@@ -237,7 +237,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* LEISTET SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">WIRKUNGSBEREICH</span>
+              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">WIRKUNGSBEREICH</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.leistet.title}
               </h2>
@@ -262,7 +262,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* APPROACH SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">IMPLEMENTIERUNGSFLOW</span>
+              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">IMPLEMENTIERUNGSFLOW</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.approach.title}
               </h2>
@@ -270,7 +270,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {extendedContent.approach.items.map((item, idx) => (
                 <div key={idx} className="bg-[#f6f6f6]/55 border border-[#E0E0E0]/80 p-8 rounded-3xl space-y-4 relative shadow-[var(--shadow-premium-sm)]">
-                  <div className="bg-[#686DF4]/10 text-[#686DF4] text-[9px] tracking-widest font-mono font-bold px-2.5 py-1 rounded-md w-fit border border-[#CACCFB]/20">
+                  <div className="bg-[#686DF4]/10 text-[#686DF4] text-[11px] tracking-widest font-mono font-bold px-2.5 py-1 rounded-md w-fit border border-[#CACCFB]/20">
                     PHASE {idx + 1}
                   </div>
                   <h3 className="font-bold text-slate-900 text-sm sm:text-base pt-1 border-b border-slate-100 pb-3 leading-tight">
@@ -344,7 +344,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     {sec.items.map((it, iIdx) => (
                       <div key={iIdx} className="bg-white border-2 border-slate-100 hover:border-[#686DF4] p-8 rounded-3xl space-y-4 transition-colors flex flex-col justify-between shadow-[var(--shadow-premium-sm)] text-left">
                         <div className="space-y-2">
-                          <h4 className="font-bold text-slate-900 text-[10px] uppercase tracking-widest pb-2 border-b border-slate-100 font-mono">
+                          <h4 className="font-bold text-slate-900 text-[11px] uppercase tracking-widest pb-2 border-b border-slate-100 font-mono">
                             {it.title}
                           </h4>
                           <p className="text-[#686DF4] font-display font-medium text-2xl">
@@ -405,7 +405,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="text-center space-y-3">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">PROZESSQUALITÄT</span>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">PROZESSQUALITÄT</span>
                 <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                   Fragen zur Umsetzung
                 </h2>
@@ -530,7 +530,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       {/* Services Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 animate-fadeIn">
         <div className="text-center space-y-3">
-          <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">UNSER PORTFOLIO</span>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">UNSER PORTFOLIO</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Leistungsbereiche</h2>
         </div>
 
@@ -549,13 +549,13 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   </div>
                   <div>
                     <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">{s.title}</h3>
-                    <p className="text-[10px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
+                    <p className="text-[11px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
                     <p className="text-body-sm text-slate-500 leading-relaxed mt-3.5 line-clamp-4 font-medium">{localized.desc}</p>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-slate-100 mt-8 flex justify-between items-center">
-                  <span className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider">
+                  <span className="text-[11px] text-slate-400 font-mono font-bold uppercase tracking-wider">
                     PROGNOSTIZIERBAR
                   </span>
                   <button
@@ -579,7 +579,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-center">
           
           <div className="space-y-3">
-            <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">SYNERGIEEFFEKTE</span>
+            <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">SYNERGIEEFFEKTE</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir Leistungen kombinieren</h2>
             <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed font-semibold">
               Einzelne Leistungen verändern vieles. Integrierte Gesamtsysteme skalieren dein gesamtes Wachstum.
@@ -591,7 +591,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 1 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SCHNELLE PIPELINE</span>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SCHNELLE PIPELINE</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">Demand Generation + Lead Generation</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Sofort Leads in die vertriebliche Pipeline leiten. Organische Suchmaschinenoptimierung und intelligente Paid Kampagnen exakt orchestriert. Erste Resultate in 2-4 Wochen.
@@ -611,7 +611,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 2 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SKALIERBARE WACHSTUMS-MASCHINE</span>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SKALIERBARE WACHSTUMS-MASCHINE</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">Demand Gen + Automation + CRM</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Moderne Nachfrageerzeugung gekoppelt mit systematischem Lead Nurturing und synchronisierter CRM-Übergabe. Keine manuellen Reibungsverluste im B2B Funnel.
@@ -631,7 +631,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 3 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">REVENUE Operations</span>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">REVENUE Operations</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">RevOps + Sales Enablement + Analytics</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Marketing und Sales auf aufeinander abgestützte Ziele ausrichten. Silos auflösen, so dass alle Abteilungen auf gemeinsamen Daten-Dashboards arbeiten.
@@ -662,7 +662,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-3">
-            <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">BRANCHENSPEZIFISCHE SYSTEME</span>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">BRANCHENSPEZIFISCHE SYSTEME</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Schweizer Branchenlösungen</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
               Wähle deinen Sektor und berechne dein ungenutztes Marge- und Pipeline-Potenzial mit unseren interaktiven Schnellrechnern.
@@ -786,7 +786,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       <div className="p-2.5 bg-[#f6f6f6] rounded-xl border border-slate-100 group-hover:bg-[#686DF4]/5 group-hover:border-[#686DF4]/25 group-hover:text-[#686DF4] transition-colors">
                         <IconComp className="w-5 h-5 text-slate-400 group-hover:text-[#686DF4] transition-colors" />
                       </div>
-                      <span className="text-[7.5px] font-mono font-bold tracking-widest text-[#686DF4] bg-[#686DF4]/5 border border-[#686DF4]/10 px-2 py-0.5 rounded uppercase">
+                      <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] bg-[#686DF4]/5 border border-[#686DF4]/10 px-2 py-0.5 rounded uppercase">
                         SEKTOR
                       </span>
                     </div>
@@ -801,7 +801,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   </div>
                   
                   <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[8.5px] font-mono font-bold text-[#686DF4]">
+                    <span className="text-[11px] font-mono font-bold text-[#686DF4]">
                       {ind.tool}
                     </span>
                     <span className="text-xs text-[#686DF4] group-hover:translate-x-0.5 transition-transform">
@@ -819,7 +819,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 animate-fadeIn">
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">STRATEGISCHE PRIORITÄT</span>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">STRATEGISCHE PRIORITÄT</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Leistung braucht dein Unternehmen?</h2>
           <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-95 font-medium">
             Wir unterstützen dich unkompliziert dabei, die wirksamsten Prioritäten zu isolieren — in einem unverbindlichen 30-minütigen Gespräch.

@@ -126,7 +126,7 @@ export default function GrowthStrategyIndicator() {
             Wachstumspotenzial-Indikator
           </h3>
         </div>
-        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
+        <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
           30-SEC DIAGNOSE
         </span>
       </div>
@@ -157,7 +157,7 @@ export default function GrowthStrategyIndicator() {
             onChange={(e) => handleSliderChange(1, Number(e.target.value))}
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
-          <div className="flex justify-between text-[10px] text-slate-450 text-slate-400 font-mono leading-tight">
+          <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
             <span className="max-w-[40%] text-left">Vage Vorstellung</span>
             <span className="max-w-[40%] text-right text-slate-500 font-medium">Dokumentiert & mit Sales aligned</span>
           </div>
@@ -182,7 +182,7 @@ export default function GrowthStrategyIndicator() {
             onChange={(e) => handleSliderChange(2, Number(e.target.value))}
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
-          <div className="flex justify-between text-[10px] text-slate-450 text-slate-400 font-mono leading-tight">
+          <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
             <span className="max-w-[40%] text-left">Keine Ahnung</span>
             <span className="max-w-[40%] text-right text-slate-500 font-medium">Verlässliche Prognose</span>
           </div>
@@ -207,7 +207,7 @@ export default function GrowthStrategyIndicator() {
             onChange={(e) => handleSliderChange(3, Number(e.target.value))}
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
-          <div className="flex justify-between text-[10px] text-slate-450 text-slate-400 font-mono leading-tight">
+          <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
             <span className="max-w-[40%] text-left">Silos, kaum Austausch</span>
             <span className="max-w-[40%] text-right text-slate-500 font-medium">Gemeinsame KPIs, wöchentlicher Sync</span>
           </div>
@@ -246,7 +246,7 @@ export default function GrowthStrategyIndicator() {
               {/* Header with Score and Badge */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-1">
                 <div>
-                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">DEIN POSITIONSMUSTER</span>
+                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">DEIN POSITIONSMUSTER</span>
                   <div className="flex items-baseline gap-2.5 mt-1">
                     <span 
                       className="text-3xl font-bold font-display"

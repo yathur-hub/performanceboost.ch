@@ -70,7 +70,7 @@ export default function ContactView() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[10px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full animate-fadeIn"
+            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full animate-fadeIn"
           >
             LET'S CONVERT
           </motion.span>
@@ -143,7 +143,7 @@ export default function ContactView() {
                       <IconComp className="w-4 h-4" />
                     </div>
                     <div className="space-y-1">
-                      <span className="block text-[8px] font-mono font-bold text-slate-400 uppercase tracking-widest">{ch.label}</span>
+                      <span className="block text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest">{ch.label}</span>
                       <span className="block text-xs font-bold text-slate-805 group-hover:text-[#686DF4] transition-colors">{ch.value}</span>
                     </div>
                   </a>
@@ -166,7 +166,7 @@ export default function ContactView() {
               {NEXT_STEPS.map((ns, idx) => (
                 <div key={idx} className="relative space-y-1.5" id={`next-step-${ns.step}`}>
                   {/* Absolute positioning of step dot badge */}
-                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-slate-950 border-2 border-[#686DF4] rounded-full flex items-center justify-center text-[8px] font-bold text-white font-mono">
+                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-slate-950 border-2 border-[#686DF4] rounded-full flex items-center justify-center text-[11px] font-bold text-white font-mono">
                     {idx + 1}
                   </div>
                   

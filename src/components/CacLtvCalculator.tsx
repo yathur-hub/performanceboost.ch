@@ -162,11 +162,11 @@ export default function CacLtvCalculator() {
                 onChange={(e) => handleInputChange('budget', e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Monat
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Gesamtes Paid-Media-Budget pro Monat (Meta, Google, TikTok etc.)
             </p>
           </div>
@@ -186,11 +186,11 @@ export default function CacLtvCalculator() {
                 onChange={(e) => handleInputChange('customers', e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 Kunden
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Neue zahlende Kunden, die durch Paid-Media gewonnen wurden
             </p>
           </div>
@@ -210,11 +210,11 @@ export default function CacLtvCalculator() {
                 onChange={(e) => handleInputChange('aov', e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / AOV
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Durchschnittlicher Warenkorb eines Neukunden
             </p>
           </div>
@@ -235,7 +235,7 @@ export default function CacLtvCalculator() {
               <option value="15_30">15–30% (Mittelwert 22.5%)</option>
               <option value="ueber_30">Über 30% (Mittelwert 37.5%)</option>
             </select>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Wie viel % deiner Neukunden kaufen innerhalb eines Jahres erneut?
             </p>
           </div>
@@ -255,11 +255,11 @@ export default function CacLtvCalculator() {
               >
                 <div className="space-y-4 opacity-40 select-none pointer-events-none">
                   <div className="text-center py-4">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">LTV : CAC Verhältnis</span>
+                    <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">LTV : CAC Verhältnis</span>
                     <span className="text-4xl sm:text-5xl font-bold font-display text-slate-400 block tracking-tight my-1">
                       3.4 : 1
                     </span>
-                    <span className="inline-flex px-3 py-1 text-[9px] font-bold font-mono uppercase bg-slate-200 text-slate-500 rounded-md">
+                    <span className="inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-slate-200 text-slate-500 rounded-md">
                       GESUND
                     </span>
                   </div>
@@ -274,7 +274,7 @@ export default function CacLtvCalculator() {
                   <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" /> Gib deine Zahlen ein
                   </div>
-                  <p className="text-[9.5px] text-slate-400/90 font-mono">
+                  <p className="text-[11px] text-slate-400/90 font-mono">
                     Beispielrechnung · Wir vergleichen deinen Kundenwert mit deinen Kosten.
                   </p>
                 </div>
@@ -293,29 +293,29 @@ export default function CacLtvCalculator() {
                     {result.cacAboveAov && (
                       <div className="bg-red-50 border border-red-200/60 rounded-xl p-3 flex gap-2 items-start text-left">
                         <AlertTriangle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                        <p className="text-[10px] text-red-700 leading-snug font-bold">
+                        <p className="text-[11px] text-red-700 leading-snug font-bold">
                           Achtung: Dein CAC ({formatCHF(result.cac)}) übersteigt deinen durchschnittlichen Bestellwert ({formatCHF(vAvgOrderValue)}). Du verlierst mit jedem Neukunden sofort Geld!
                         </p>
                       </div>
                     )}
 
                     <div className="text-center py-2">
-                      <span className="text-[10px] font-mono font-bold text-slate-450 block uppercase">LTV : CAC VERHÄLTNIS</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-450 block uppercase">LTV : CAC VERHÄLTNIS</span>
                       <span className={`text-4xl sm:text-5xl font-bold font-display tracking-tight my-1 block ${levelStyle?.text}`}>
                         {result.ratio.toFixed(1)} : 1
                       </span>
-                      <span className={`inline-flex px-3 py-1 text-[9px] font-bold font-mono uppercase bg-white border rounded-md ${levelStyle?.badgeText} ${levelStyle?.badgeBg}`}>
+                      <span className={`inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-white border rounded-md ${levelStyle?.badgeText} ${levelStyle?.badgeBg}`}>
                         {result.level}
                       </span>
                     </div>
 
                     <div className="border-t border-b border-slate-200/60 py-3 grid grid-cols-2 gap-4 text-xs font-semibold text-slate-750">
                       <div className="text-left">
-                        <span className="text-[9px] text-slate-400 block font-mono uppercase">Dein CAC:</span>
+                        <span className="text-[11px] text-slate-400 block font-mono uppercase">Dein CAC:</span>
                         <span className="text-sm font-bold text-slate-850 text-slate-800">{formatCHF(result.cac)}</span>
                       </div>
                       <div className="text-left">
-                        <span className="text-[9px] text-slate-400 block font-mono uppercase">Dein LTV:</span>
+                        <span className="text-[11px] text-slate-400 block font-mono uppercase">Dein LTV:</span>
                         <span className="text-sm font-bold text-slate-850 text-slate-800">{formatCHF(result.ltv)}</span>
                       </div>
                     </div>
@@ -323,7 +323,7 @@ export default function CacLtvCalculator() {
                     {/* Jährliches Retention Revenue */}
                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-center justify-between">
                       <div className="text-left">
-                        <span className="text-[9px] font-mono text-slate-400 block uppercase font-bold">Retention-Umsatz pro Jahr:</span>
+                        <span className="text-[11px] font-mono text-slate-400 block uppercase font-bold">Retention-Umsatz pro Jahr:</span>
                         <span className="text-xs text-slate-500 font-semibold italic">aus bestehenden Neukunden gerechnet</span>
                       </div>
                       <span className="text-sm font-bold text-slate-900 font-display">
@@ -370,7 +370,7 @@ export default function CacLtvCalculator() {
                     <span>Kostenloses Erstgespräch buchen →</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
-                  <p className="text-[9px] text-slate-400 text-center font-mono mt-2">
+                  <p className="text-[11px] text-slate-400 text-center font-mono mt-2">
                     Wir schauen uns deine Zahlen an — konkret, nicht generisch. 30 Minuten, kein Deck, kein Pitch.
                   </p>
                 </div>

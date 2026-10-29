@@ -148,7 +148,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-3"
         >
-          <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">REALITÄTSCHECK</span>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">REALITÄTSCHECK</span>
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 tracking-tight">Erkennst du das wieder?</h2>
         </motion.div>
 
@@ -216,7 +216,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6"
         >
           <div className="space-y-2">
-            <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">WIE WIR HELFEN</span>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">WIE WIR HELFEN</span>
             <h2 className="text-3xl font-display font-semibold text-slate-900 tracking-tight">& was wir nutzenorientiert aufbauen</h2>
           </div>
           <button
@@ -336,7 +336,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center space-y-3"
           >
-            <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">DAS WACHSTUMSSYSTEM</span>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">DAS WACHSTUMSSYSTEM</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-905 tracking-tight">Wie wir arbeiten</h2>
           </motion.div>
 
@@ -405,7 +405,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-3"
         >
-          <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">ALLEINGANGS-MERKMAL</span>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">ALLEINGANGS-MERKMAL</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900">Warum performanceboost, nicht eine Agentur?</h2>
         </motion.div>
 
@@ -506,7 +506,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-3"
         >
-          <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">FRAGEN & ANTWORTEN</span>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">FRAGEN & ANTWORTEN</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900">FAQ</h2>
         </motion.div>
 
@@ -567,7 +567,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="space-y-4 relative z-10 max-w-2xl">
-            <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">JETZT STARTEN</span>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">JETZT STARTEN</span>
             <h3 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">Bereit, Wachstum planbar zu machen?</h3>
             <p className="text-body text-slate-300 leading-relaxed font-medium opacity-90">
               30 Minuten. Keine Verpflichtung. Konkrete Diagnose. Wir schauen gemeinsam, wo deine grössten Wachstumshebel liegen — und ob wir der richtige Partner dafür sind.

@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Eye, ChevronUp, ChevronDown, CircleDollarSign } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   visits: number;
@@ -16,12 +17,7 @@ interface Inputs {
   kursgebuehr: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function KursFunnelRechner() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -170,7 +166,7 @@ export default function KursFunnelRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">EDUCATIONAL FUNNEL</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">EDUCATIONAL FUNNEL</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kurs-Funnel-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Kalkulieren Sie Konvertierungsverluste vom Web-Besucher bis zur Kursbuchung für Weiterbildungsstudien.
@@ -197,7 +193,7 @@ export default function KursFunnelRechner() {
               />
               <Eye className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Monatliche Besucher der Kursunterseiten</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Monatliche Besucher der Kursunterseiten</p>
           </div>
 
           <div className="space-y-1">
@@ -214,7 +210,7 @@ export default function KursFunnelRechner() {
               onChange={(e) => handleInputChange('info_conversion', parseFloat(e.target.value) || 0.5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Richtwert: 4.5% fragen Info-E-Mails, Dossier Downloads o.ö. an</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert: 4.5% fragen Info-E-Mails, Dossier Downloads o.ö. an</p>
           </div>
 
           <div className="space-y-1">
@@ -231,7 +227,7 @@ export default function KursFunnelRechner() {
               onChange={(e) => handleInputChange('booking_rate', parseInt(e.target.value) || 5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Richtwert: 30% der Lead-Interessenten buchen den Kurs</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert: 30% der Lead-Interessenten buchen den Kurs</p>
           </div>
 
           <div className="space-y-1">
@@ -261,12 +257,12 @@ export default function KursFunnelRechner() {
               {/* Score header */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
                     FUNNEL EFFIZIENZ SCORE
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
-                <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+                <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
                   {currentStufe.label}
                 </span>
               </div>
@@ -274,27 +270,27 @@ export default function KursFunnelRechner() {
               {/* Cards column */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">Bestehender Jahresumsatz</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Bestehender Jahresumsatz</span>
                   <h4 className="text-base font-black text-slate-900 mt-1">{formatCHF(results.revenue_jahr)}</h4>
-                  <p className="text-[9.5px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     ({Math.round(results.leads_monat)} Beratungskontakte & {results.buchung_monat.toFixed(1)} Buchungen / Monat)
                   </p>
                 </div>
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-red-655 block uppercase">Umsatz-Verlust vs. Benchmark</span>
+                  <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Umsatz-Verlust vs. Benchmark</span>
                   <h4 className="text-base font-black text-red-600 mt-1">
                     {results.leck_jahr > 0 ? `-${formatCHF(results.leck_jahr)} / J.` : 'CHF 0'}
                   </h4>
-                  <p className="text-[9.5px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     Soll-Benchmark-Verluste (4.5% CR / 30% Booking)
                   </p>
                 </div>
 
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <span className="text-[9px] font-mono font-bold text-green-700 block uppercase">Hebel bei Optimierung (+8% Booking)</span>
-                    <p className="text-[10px] text-slate-500 font-semibold">Durch systematisches Lead-Nurturing vor Buchungstermin</p>
+                    <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Hebel bei Optimierung (+8% Booking)</span>
+                    <p className="text-[11px] text-slate-500 font-semibold">Durch systematisches Lead-Nurturing vor Buchungstermin</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.potenzial_jahr)} / J.</h4>
                 </div>
@@ -322,7 +318,7 @@ export default function KursFunnelRechner() {
       {results && (
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
+            <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
               <strong>Wo hakt Ihr Bildungs-Funnel am meisten?</strong> In 30 Minuten analysieren wir Ihre digitalen Laufwege und erstellen ein klares Massnahmen-Konzept.
             </div>
             <button
@@ -363,7 +359,7 @@ export default function KursFunnelRechner() {
                 {!formSubmitted ? (
                   <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
                       <input
                         type="email"
                         required
@@ -374,7 +370,7 @@ export default function KursFunnelRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Ihr Name *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Ihr Name *</label>
                       <input
                         type="text"
                         required
@@ -385,7 +381,7 @@ export default function KursFunnelRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Institution / Hochschule</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Institution / Hochschule</label>
                       <input
                         type="text"
                         value={companySub}
@@ -395,7 +391,7 @@ export default function KursFunnelRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Institutionsart</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Institutionsart</label>
                       <select
                         value={institution}
                         onChange={(e) => setInstitution(e.target.value)}
@@ -414,7 +410,7 @@ export default function KursFunnelRechner() {
                     >
                       Report kostenlos anfordern
                     </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
+                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
                       Datenschutzkonform. Einmaliger, personalisierter Report samt Schweizer Marketingbenchmarks im Bildungssektor.
                     </p>
                   </form>

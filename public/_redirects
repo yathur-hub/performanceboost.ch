@@ -1,0 +1,6 @@
+# Alte bzw. häufig erratene Adressen (in GA4 beobachtet) auf echte Seiten umleiten.
+/about      /ueber-uns  301
+/team       /ueber-uns  301
+/contact    /kontakt    301
+/services   /leistungen 301
+/blog       /ressourcen 301

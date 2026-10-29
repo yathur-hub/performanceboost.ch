@@ -103,7 +103,7 @@ export default function RevenuLeakDetector() {
             Revenue-Leak-Detector
           </h3>
         </div>
-        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
+        <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
           REVOPS AUDIT
         </span>
       </div>
@@ -131,7 +131,7 @@ export default function RevenuLeakDetector() {
               onChange={e => handleFieldChange('mql', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs animate-fadeIn"
             />
-            <p className="text-[10px] text-slate-400 font-medium">Leads, die das Marketing als bereit für den Vertrieb einstuft.</p>
+            <p className="text-[11px] text-slate-400 font-medium">Leads, die das Marketing als bereit für den Vertrieb einstuft.</p>
           </div>
 
           {/* Field 2 */}
@@ -149,7 +149,7 @@ export default function RevenuLeakDetector() {
               <option value="0.25">20% – 30% (Sehr gut)</option>
               <option value="0.35">Über 30% (Best-in-Class)</option>
             </select>
-            <p className="text-[10px] text-slate-400 font-medium">Anteil der Leads, die in qualifizierte Verkaufsaktivitäten übergehen.</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil der Leads, die in qualifizierte Verkaufsaktivitäten übergehen.</p>
           </div>
 
           {/* Field 3 */}
@@ -166,7 +166,7 @@ export default function RevenuLeakDetector() {
               <option value="0.25">20% – 30% (Guter Vertrieb)</option>
               <option value="0.35">Über 30% (Best-in-Class)</option>
             </select>
-            <p className="text-[10px] text-slate-400 font-medium">Anteil der qualifizierten Opportunities, die vertraglich abgeschlossen werden.</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil der qualifizierten Opportunities, die vertraglich abgeschlossen werden.</p>
           </div>
 
           {/* Field 4 */}
@@ -203,7 +203,7 @@ export default function RevenuLeakDetector() {
               transition={{ duration: 0.3 }}
               className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-6 text-center"
             >
-              <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block text-left">
+              <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block text-left">
                 KONVERSIONS-TRICHTER (LIVE)
               </span>
 
@@ -309,17 +309,17 @@ export default function RevenuLeakDetector() {
                 </svg>
 
                 {/* Vertical rate arrows badges (left: actual, right: BIC in gray) */}
-                <div className="absolute left-1 top-[42%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
+                <div className="absolute left-1 top-[42%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   Ist: <strong className={results.uberBenchmark ? "text-emerald-500" : "text-amber-500"}>{Math.round(results.mToOppSelected * 100)}%</strong>
                 </div>
-                <div className="absolute right-1 top-[42%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
+                <div className="absolute right-1 top-[42%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   BIC: <strong>35%</strong>
                 </div>
 
-                <div className="absolute left-1 bottom-[16%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
+                <div className="absolute left-1 bottom-[16%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   Ist: <strong className={results.uberBenchmark ? "text-emerald-500" : "text-amber-500"}>{Math.round(results.oToCloseSelected * 100)}%</strong>
                 </div>
-                <div className="absolute right-1 bottom-[16%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
+                <div className="absolute right-1 bottom-[16%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   BIC: <strong>30%</strong>
                 </div>
 
@@ -360,7 +360,7 @@ export default function RevenuLeakDetector() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 border border-slate-200/85 p-6 sm:p-8 rounded-2xl">
               
               <div className="space-y-1 text-left">
-                <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
+                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
                   {results.uberBenchmark ? "Umsatzüberschuss" : "MONATLICHES REVENUE-LECK"}
                 </span>
                 
@@ -373,20 +373,20 @@ export default function RevenuLeakDetector() {
                     {formatCHF(results.leckMonatlich)}
                   </div>
                 )}
-                <p className="text-[10px] text-slate-405 text-slate-405 text-slate-400 font-semibold uppercase tracking-wider font-mono">
+                <p className="text-[11px] text-slate-405 text-slate-405 text-slate-400 font-semibold uppercase tracking-wider font-mono">
                   {results.uberBenchmark ? "Du liegst rechnerisch über Benchmark" : "Monatlich verlorener Umsatz im Trichter"}
                 </p>
               </div>
 
               {!results.uberBenchmark && (
                 <div className="space-y-1 text-left border-t md:border-t-0 md:border-l border-slate-200 pt-4 md:pt-0 md:pl-6">
-                  <span className="text-[10px] font-mono text-slate-450 text-slate-400 font-bold uppercase tracking-widest block leading-none">
+                  <span className="text-[11px] font-mono text-slate-450 text-slate-400 font-bold uppercase tracking-widest block leading-none">
                     JÄHRLICHES REVENUE-LECK
                   </span>
                   <div className="text-xl sm:text-2xl font-black font-display text-slate-800">
                     {formatCHF(results.leckJaehrlich)}
                   </div>
-                  <p className="text-[10px] text-slate-455 text-slate-400 font-semibold uppercase tracking-wider font-mono">
+                  <p className="text-[11px] text-slate-455 text-slate-400 font-semibold uppercase tracking-wider font-mono">
                     Jährliches Verlust-Hebelpotenzial
                   </p>
                 </div>
@@ -396,14 +396,14 @@ export default function RevenuLeakDetector() {
 
             {/* Benchmark Tabular statistics */}
             <div className="space-y-3">
-              <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+              <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
                 TRICHTER BENCHMARK VERGLEICH
               </span>
 
               <div className="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-3xs">
                 <table className="w-full text-left text-xs text-slate-650 font-semibold border-collapse">
                   <thead>
-                    <tr className="bg-slate-50 border-b border-slate-200 text-slate-405 text-slate-400 text-[10px] font-mono uppercase tracking-wider">
+                    <tr className="bg-slate-50 border-b border-slate-200 text-slate-405 text-slate-400 text-[11px] font-mono uppercase tracking-wider">
                       <th className="py-3 px-4">Trichterstufe</th>
                       <th className="py-3 px-4">Deine Ist-Werte</th>
                       <th className="py-3 px-4">Best-In-Class (35% / 30%)</th>
@@ -450,7 +450,7 @@ export default function RevenuLeakDetector() {
 
             {/* Diagnostic insights mapping */}
             <div className="text-xs sm:text-sm text-slate-650 leading-relaxed font-semibold text-slate-705 text-slate-600 bg-slate-50 border border-slate-200/50 p-5 rounded-2xl space-y-3">
-              <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block leading-none">
+              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block leading-none">
                 DIAGNOSTISCHER ENGPASS-HEBEL
               </span>
 

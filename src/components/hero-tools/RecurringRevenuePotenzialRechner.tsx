@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Rocket, Users, CircleDollarSign, ChevronDown, ChevronUp } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   kunden: number;
@@ -16,12 +17,7 @@ interface Inputs {
   churn: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function RecurringRevenuePotenzialRechner() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -167,7 +163,7 @@ export default function RecurringRevenuePotenzialRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">IT REVENUE CALCULATOR</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">IT REVENUE CALCULATOR</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Recurring Revenue Potenzial-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Analysieren Sie Ihr Bestandsportfolio und berechnen Sie das Potential einer Managed Service Umstellung.
@@ -193,7 +189,7 @@ export default function RecurringRevenuePotenzialRechner() {
               />
               <Users className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium">Bestehende Portfolio-Zahl, inklusive Supportkunden</p>
+            <p className="text-[11px] text-slate-400 font-medium">Bestehende Portfolio-Zahl, inklusive Supportkunden</p>
           </div>
 
           <div className="space-y-1">
@@ -213,7 +209,7 @@ export default function RecurringRevenuePotenzialRechner() {
               />
               <CircleDollarSign className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium">Monatlicher Durchschnitt bei festen Verträgen</p>
+            <p className="text-[11px] text-slate-400 font-medium">Monatlicher Durchschnitt bei festen Verträgen</p>
           </div>
 
           <div className="space-y-1">
@@ -230,7 +226,7 @@ export default function RecurringRevenuePotenzialRechner() {
               onChange={(e) => handleInputChange('vertragsanteil', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Anteil Kunden mit festen managed Service Verträgen</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil Kunden mit festen managed Service Verträgen</p>
           </div>
 
           <div className="space-y-1">
@@ -247,7 +243,7 @@ export default function RecurringRevenuePotenzialRechner() {
               onChange={(e) => handleInputChange('churn', parseFloat(e.target.value) || 0.5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Wertverlust durch Kündigungen/Soll-Abwanderung</p>
+            <p className="text-[11px] text-slate-400 font-medium">Wertverlust durch Kündigungen/Soll-Abwanderung</p>
           </div>
         </div>
 
@@ -258,12 +254,12 @@ export default function RecurringRevenuePotenzialRechner() {
               {/* Score Header */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
                     MRR DIAGNOSE SCORE
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
-                <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+                <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
                   {currentStufe.label}
                 </span>
               </div>
@@ -271,25 +267,25 @@ export default function RecurringRevenuePotenzialRechner() {
               {/* Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">Aktueller ARR</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Aktueller ARR</span>
                   <h4 className="text-base font-black text-slate-900 mt-1">{formatCHF(results.aktueller_arr)}</h4>
-                  <p className="text-[9.5px] text-slate-500 leading-normal font-semibold">
+                  <p className="text-[11px] text-slate-500 leading-normal font-semibold">
                     {formatCHF(results.aktueller_mrr)} / Monat • {Math.round(inputs.kunden * inputs.vertragsanteil / 100)} Kunden konvertiert
                   </p>
                 </div>
 
                 <div className="bg-green-50 border border-green-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-green-700 block uppercase">Ungenutztes Bestandspotenzial</span>
+                  <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Ungenutztes Bestandspotenzial</span>
                   <h4 className="text-base font-black text-green-700 mt-1">+{formatCHF(results.ungenutztes_arr)} / J.</h4>
-                  <p className="text-[9.5px] text-green-600 leading-normal font-semibold">
+                  <p className="text-[11px] text-green-600 leading-normal font-semibold">
                     {inputs.vertragsanteil === 100 ? 'Alle Kunden auf Managed Service' : `Zusatz bei 100% Umstellquote`}
                   </p>
                 </div>
 
                 <div className={`sm:col-span-2 border rounded-xl p-4 flex items-center justify-between ${inputs.churn <= 1.5 ? 'bg-green-50/50 border-green-150' : 'bg-red-50/50 border-red-150'}`}>
                   <div>
-                    <span className="text-[9px] font-mono font-bold text-slate-500 block uppercase">Flaschenhals: Jährlicher Churn-Ausfall</span>
-                    <p className="text-[9.5px] text-slate-400">Bei aktuellen {inputs.churn}% Churn wird MRR-Zuwachs behindert</p>
+                    <span className="text-[11px] font-mono font-bold text-slate-500 block uppercase">Flaschenhals: Jährlicher Churn-Ausfall</span>
+                    <p className="text-[11px] text-slate-400">Bei aktuellen {inputs.churn}% Churn wird MRR-Zuwachs behindert</p>
                   </div>
                   <h4 className="text-base font-black text-red-600">-{formatCHF(results.churn_verlust_arr)} / J.</h4>
                 </div>
@@ -317,7 +313,7 @@ export default function RecurringRevenuePotenzialRechner() {
       {results && (
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
+            <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
               <strong>Wie viel ungenutztes MRR liegt in deinem Portfolio?</strong> In 30 Minuten ermitteln wir deine Potenziale und erstellen ein klares Massnahmen-Playbook.
             </div>
             <button
@@ -359,7 +355,7 @@ export default function RecurringRevenuePotenzialRechner() {
                 {!formSubmitted ? (
                   <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
                       <input
                         type="email"
                         required
@@ -370,7 +366,7 @@ export default function RecurringRevenuePotenzialRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Dein Name *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Dein Name *</label>
                       <input
                         type="text"
                         required
@@ -381,7 +377,7 @@ export default function RecurringRevenuePotenzialRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
                       <input
                         type="text"
                         value={companySub}
@@ -391,7 +387,7 @@ export default function RecurringRevenuePotenzialRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Infrastruktur-Typ</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Infrastruktur-Typ</label>
                       <select
                         value={itTyp}
                         onChange={(e) => setItTyp(e.target.value)}
@@ -410,7 +406,7 @@ export default function RecurringRevenuePotenzialRechner() {
                     >
                       Analyse kostenlos senden
                     </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
+                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
                       Wir halten deine Daten sicher. Einmalige MRR-Kalkulation und Branchenbenchmarks per E-Mail.
                     </p>
                   </form>

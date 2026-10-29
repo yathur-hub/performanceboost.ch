@@ -293,7 +293,7 @@ export function RevenueSystemGraphic() {
                 {/* Node texts */}
                 <div className="flex flex-col min-w-0 flex-1">
                   <span
-                    className={`text-[8.5px] font-bold tracking-wider uppercase font-mono ${
+                    className={`text-[11px] font-bold tracking-wider uppercase font-mono ${
                       node.highlight ? 'text-white/70' : 'text-[#686DF4]'
                     }`}
                   >
@@ -305,7 +305,7 @@ export function RevenueSystemGraphic() {
                     {node.title}
                   </span>
                   <span
-                    className={`text-[9px] font-medium tracking-normal leading-tight ${
+                    className={`text-[11px] font-medium tracking-normal leading-tight ${
                       node.highlight ? 'text-white/85' : 'text-slate-500'
                     }`}
                   >
@@ -352,7 +352,7 @@ export function RevenueSystemGraphic() {
                 <div className="flex flex-col min-w-0 flex-1">
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <span
-                      className={`text-[8.5px] font-extrabold tracking-wider font-mono ${
+                      className={`text-[11px] font-extrabold tracking-wider font-mono ${
                         node.highlight ? 'text-white/70' : 'text-[#686DF4]'
                       }`}
                     >
@@ -365,7 +365,7 @@ export function RevenueSystemGraphic() {
                     </span>
                   </div>
                   <span
-                    className={`text-[9.5px] font-medium leading-tight ${
+                    className={`text-[11px] font-medium leading-tight ${
                       node.highlight ? 'text-white/85' : 'text-slate-500'
                     }`}
                   >

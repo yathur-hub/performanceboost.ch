@@ -219,7 +219,7 @@ export default function AutomationMaturityCheck() {
         </div>
         <button
           onClick={handleReset}
-          className="text-[10px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
           title="Prüfung zurücksetzen"
         >
           <RefreshCw className="w-3 h-3" /> Reset
@@ -242,13 +242,13 @@ export default function AutomationMaturityCheck() {
               } flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4`}
             >
               <div className="space-y-1">
-                <span className="text-[10px] text-[#686DF4] font-bold font-mono uppercase tracking-wider block leading-none">
+                <span className="text-[11px] text-[#686DF4] font-bold font-mono uppercase tracking-wider block leading-none">
                   Faktor #{q.priority}
                 </span>
                 <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-tight">
                   {q.text}
                 </h4>
-                <p className="text-[10px] text-slate-400 leading-snug font-medium font-sans">
+                <p className="text-[11px] text-slate-400 leading-snug font-medium font-sans">
                   {q.subtext}
                 </p>
               </div>
@@ -286,7 +286,7 @@ export default function AutomationMaturityCheck() {
 
       {/* Horizontal Maturity level scale */}
       <div className="mt-10 pt-6 border-t border-slate-100">
-        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block mb-4">
+        <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block mb-4">
           REIFEGRAD-FORTSCHRITT
         </span>
         <div className="flex items-center justify-between gap-2 max-w-sm">
@@ -306,7 +306,7 @@ export default function AutomationMaturityCheck() {
                 >
                   {lvl}
                 </div>
-                <span className="text-[8px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                   {isCurrent ? "STAT" : isPassed ? "DONE" : "WAIT"}
                 </span>
               </div>
@@ -316,7 +316,7 @@ export default function AutomationMaturityCheck() {
         
         {/* Helper prompt below check */}
         {!allSet && (
-          <div className="text-[10px] text-slate-405 text-slate-400 mt-4 leading-none font-semibold">
+          <div className="text-[11px] text-slate-405 text-slate-400 mt-4 leading-none font-semibold">
             *Beantworte noch {5 - completedQuestions} Frage(n) für das vollständige Audit.
           </div>
         )}
@@ -335,11 +335,11 @@ export default function AutomationMaturityCheck() {
             {/* Level results card */}
             <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-5">
               <div className="flex items-center gap-3">
-                <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
+                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
                   AUDIT ERGEBNISSE
                 </span>
                 <span className="w-1.5 h-1.5 bg-[#686DF4] rounded-full shrink-0" />
-                <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
+                <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
                   {jaCount} / 5 Ja-Antworten
                 </span>
               </div>
@@ -369,7 +369,7 @@ export default function AutomationMaturityCheck() {
                     <h5 className="text-xs font-black text-[#686DF4] font-display uppercase tracking-wider">
                       {chosenNextStep.titel}
                     </h5>
-                    <div className="flex items-center gap-1.5 shrink-0 bg-[#686DF4]/10 text-[#686DF4] text-[9px] font-mono font-bold px-2.5 py-1 rounded-md">
+                    <div className="flex items-center gap-1.5 shrink-0 bg-[#686DF4]/10 text-[#686DF4] text-[11px] font-mono font-bold px-2.5 py-1 rounded-md">
                       <Calendar className="w-3.5 h-3.5" />
                       {chosenNextStep.zeitrahmen}
                     </div>

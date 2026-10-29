@@ -340,7 +340,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
             <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
               performanceboost behält sich das Recht vor, diese Datenschutzerklärung jederzeit anzupassen. Es gilt die jeweils aktuelle auf dieser Website veröffentlichte Version.
             </p>
-            <p className="text-[10px] text-slate-400 font-mono pt-2">
+            <p className="text-[11px] text-slate-400 font-mono pt-2">
               Stand: Juni 2026
             </p>
           </div>

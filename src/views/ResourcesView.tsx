@@ -70,7 +70,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
         {/* Article content header */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="space-y-4 pb-6 border-b border-slate-100">
-            <span className="inline-flex items-center gap-1 bg-[#686DF4]/5 text-[#686DF4] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-[#CACCFB]/20">
+            <span className="inline-flex items-center gap-1 bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-[#CACCFB]/20">
               {item.type === 'guide' ? 'Guide' : 'Blogbeitrag'}
             </span>
             <h1 className="text-3xl sm:text-4xl font-display font-semibold tracking-tight text-slate-950 leading-tight">
@@ -235,10 +235,10 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-[9px] font-mono font-bold bg-[#686DF4]/5 px-2.5 py-1 rounded-md text-[#686DF4] uppercase tracking-widest border border-[#CACCFB]/20">
+                    <span className="text-[11px] font-mono font-bold bg-[#686DF4]/5 px-2.5 py-1 rounded-md text-[#686DF4] uppercase tracking-widest border border-[#CACCFB]/20">
                       {item.type === 'guide' ? 'Guide' : 'Blog'}
                     </span>
-                    <span className="text-[10px] text-slate-400 font-mono font-semibold">{item.readTime}</span>
+                    <span className="text-[11px] text-slate-400 font-mono font-semibold">{item.readTime}</span>
                   </div>
 
                   <h3 className="text-base font-display font-semibold text-slate-905 group-hover:text-[#686DF4] transition-colors line-clamp-2 leading-snug">
@@ -251,7 +251,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                   {/* Category tags */}
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {item.tags.map((tag, idx) => (
-                      <span key={idx} className="text-[9px] font-bold bg-[#f6f6f6] border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
+                      <span key={idx} className="text-[11px] font-bold bg-[#f6f6f6] border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
                         #{tag}
                       </span>
                     ))}
@@ -259,7 +259,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                 </div>
 
                 <div className="pt-6 border-t border-slate-100 mt-8 flex justify-between items-center bg-transparent">
-                  <span className="text-[10px] text-slate-405 font-mono font-bold">
+                  <span className="text-[11px] text-slate-405 font-mono font-bold">
                     {item.publishDate}
                   </span>
                   

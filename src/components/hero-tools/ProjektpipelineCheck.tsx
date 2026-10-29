@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Inbox, CircleDollarSign, ChevronUp, ChevronDown } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   anfragen: number;
@@ -16,12 +17,7 @@ interface Inputs {
   top3_anteil: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function ProjektpipelineCheck() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -167,7 +163,7 @@ export default function ProjektpipelineCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">PLANER CHECK</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">PLANER CHECK</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Projektpipeline-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Ermitteln Sie die Stabilität Ihres Auftragsbestands und das Wachstumspotenzial bei höherer Win-Rate.
@@ -193,7 +189,7 @@ export default function ProjektpipelineCheck() {
               />
               <Inbox className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium">Ausschreibungseinladungen und Direktkontakte pro Jahr</p>
+            <p className="text-[11px] text-slate-400 font-medium">Ausschreibungseinladungen und Direktkontakte pro Jahr</p>
           </div>
 
           <div className="space-y-1">
@@ -210,7 +206,7 @@ export default function ProjektpipelineCheck() {
               onChange={(e) => handleInputChange('win_rate', parseInt(e.target.value) || 5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Anteil gewonnene Projekte / Gesamt-Anfragen</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil gewonnene Projekte / Gesamt-Anfragen</p>
           </div>
 
           <div className="space-y-1">
@@ -246,7 +242,7 @@ export default function ProjektpipelineCheck() {
               onChange={(e) => handleInputChange('top3_anteil', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Wie viel Umsatz hängt an den Top-3-Bauherren/GUs?</p>
+            <p className="text-[11px] text-slate-400 font-medium">Wie viel Umsatz hängt an den Top-3-Bauherren/GUs?</p>
           </div>
         </div>
 
@@ -257,12 +253,12 @@ export default function ProjektpipelineCheck() {
               {/* Score card Header */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
                     PIPELINE STABILITÄTS-SCORE
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
-                <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+                <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
                   {currentStufe.label}
                 </span>
               </div>
@@ -270,27 +266,27 @@ export default function ProjektpipelineCheck() {
               {/* Cards row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-green-50 border border-green-150 rounded-xl p-4 space-y-1">
-                  <span className="text-[9px] font-mono font-bold text-green-700 block uppercase">Umsatzhebel bei +10% Win-Rate</span>
+                  <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Umsatzhebel bei +10% Win-Rate</span>
                   <h4 className="text-base font-black text-green-700 mt-1">+{formatCHF(results.potenzial_winrate)} / J.</h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     Erhöhung der Abschluss-Win-Rate von {inputs.win_rate}% auf {inputs.win_rate + 10}%
                   </p>
                 </div>
 
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4 space-y-1">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">Abstand zu Richtwert (45% CR)</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Abstand zu Richtwert (45% CR)</span>
                   <h4 className="text-base font-black text-slate-950 mt-1">
                     {results.umsatz_gap > 0 ? `${formatCHF(results.umsatz_gap)}` : 'Über Benchmark'}
                   </h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     Ihr aktueller Jahresumsatz: {formatCHF(results.aktueller_umsatz)}
                   </p>
                 </div>
 
                 <div className={`sm:col-span-2 border rounded-xl p-4 flex items-center justify-between ${results.klumpen_score === 'hoch' ? 'bg-red-50 border-red-150 text-red-700' : 'bg-green-50 border-green-150 text-green-700'}`}>
                   <div>
-                    <span className="text-[9px] font-mono font-bold text-slate-500 block uppercase">Klumpenrisiko-Einschätzung</span>
-                    <p className="text-[10px] text-slate-500 pt-0.5">Top-3-Auftraggeber machen {inputs.top3_anteil}% Ihres Gesamtumsatzes aus</p>
+                    <span className="text-[11px] font-mono font-bold text-slate-500 block uppercase">Klumpenrisiko-Einschätzung</span>
+                    <p className="text-[11px] text-slate-500 pt-0.5">Top-3-Auftraggeber machen {inputs.top3_anteil}% Ihres Gesamtumsatzes aus</p>
                   </div>
                   <h4 className="text-lg font-black uppercase tracking-wider">{results.klumpen_score === 'hoch' ? '🍳 Hoch' : results.klumpen_score === 'mittel' ? 'Mittel' : '✓ Tief'}</h4>
                 </div>
@@ -318,7 +314,7 @@ export default function ProjektpipelineCheck() {
       {results && (
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
+            <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
               <strong>Wie abhängig ist Ihr Büro von 3 Hauptbauherrn?</strong> In 30 Minuten decken wir strategisch Lücken auf und skizzieren Optionen für stabilere Auftraggeberbasis.
             </div>
             <button
@@ -359,7 +355,7 @@ export default function ProjektpipelineCheck() {
                 {!formSubmitted ? (
                   <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
                       <input
                         type="email"
                         required
@@ -370,7 +366,7 @@ export default function ProjektpipelineCheck() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Vorname *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Vorname *</label>
                       <input
                         type="text"
                         required
@@ -381,7 +377,7 @@ export default function ProjektpipelineCheck() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
                       <input
                         type="text"
                         value={companySub}
@@ -391,7 +387,7 @@ export default function ProjektpipelineCheck() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Spezialisierung / Fachrichtung</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Spezialisierung / Fachrichtung</label>
                       <select
                         value={disziplin}
                         onChange={(e) => setDisziplin(e.target.value)}
@@ -410,7 +406,7 @@ export default function ProjektpipelineCheck() {
                     >
                       Büro-Analyse anfordern
                     </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
+                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
                       Keine Werbe-Kampagnen. Einmaliger, personalisierter Report samt Schweizer Planungsbenchmarks.
                     </p>
                   </form>

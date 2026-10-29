@@ -50,7 +50,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50/50 px-3 py-1.5 rounded-lg border border-slate-200/60 w-fit shadow-[var(--shadow-premium-sm)]">
               <ShieldCheck className="w-4 h-4 text-[#686DF4] shrink-0" />
-              <span className="font-semibold text-[10px]">Schweizer Qualität & Datenschutz</span>
+              <span className="font-semibold text-[11px]">Schweizer Qualität & Datenschutz</span>
             </div>
           </div>
 

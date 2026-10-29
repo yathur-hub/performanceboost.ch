@@ -108,7 +108,7 @@ export default function ActiveSessionBooking() {
         <div className="w-full md:w-1/3 bg-[#f6f6f6]/55 p-6 md:p-8 border-b md:border-b-0 md:border-r border-slate-100 flex flex-col justify-between">
           <div className="space-y-6">
             <div>
-              <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest block mb-1.5">KOSTENFREIER WORKSHOP</span>
+              <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest block mb-1.5">KOSTENFREIER WORKSHOP</span>
               <h3 className="text-xl font-display font-semibold text-slate-905 tracking-tight leading-none">Wachstums-Call</h3>
               <p className="text-xs text-slate-500 mt-3 font-semibold leading-relaxed">
                 Analysiere deine Sales-Pipeline lösungsorientiert mit Yathur Nathan. 1-zu-1 Live-Videokonferenz.
@@ -122,9 +122,9 @@ export default function ActiveSessionBooking() {
                     <CheckCircle className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h4 className="text-[9px] text-slate-400 uppercase font-bold tracking-wider font-mono">FOKUS</h4>
+                    <h4 className="text-[11px] text-slate-400 uppercase font-bold tracking-wider font-mono">FOKUS</h4>
                     <p className="text-xs font-semibold text-slate-800 leading-snug">{currentFocusDetails?.title}</p>
-                    <span className="text-[10px] text-slate-400 flex items-center gap-1 mt-1 font-mono">
+                    <span className="text-[11px] text-slate-400 flex items-center gap-1 mt-1 font-mono">
                       <Clock className="w-3.5 h-3.5" /> {currentFocusDetails?.duration}
                     </span>
                   </div>
@@ -136,9 +136,9 @@ export default function ActiveSessionBooking() {
                       <Calendar className="w-3.5 h-3.5" />
                     </div>
                     <div>
-                      <h4 className="text-[9px] text-slate-400 uppercase font-bold tracking-wider font-mono">ZEITPUNKT</h4>
+                      <h4 className="text-[11px] text-slate-400 uppercase font-bold tracking-wider font-mono">ZEITPUNKT</h4>
                       <p className="text-xs font-semibold text-slate-800 leading-snug">{currentDayLabel} um {selectedTime} Uhr</p>
-                      <span className="text-[10px] text-slate-400 flex items-center gap-1 mt-1 font-mono">
+                      <span className="text-[11px] text-slate-400 flex items-center gap-1 mt-1 font-mono">
                         <Globe className="w-3.5 h-3.5" /> Europe/Zurich (GMT+1)
                       </span>
                     </div>
@@ -148,7 +148,7 @@ export default function ActiveSessionBooking() {
             )}
           </div>
 
-          <div className="text-[10px] text-slate-400 pt-6 border-t border-slate-100 mt-6 md:mt-2 font-mono leading-relaxed">
+          <div className="text-[11px] text-slate-400 pt-6 border-t border-slate-100 mt-6 md:mt-2 font-mono leading-relaxed">
             * 100% KOSTENLOS. KEINE VERPFLICHTUNG. UNSER GEGENSEITIGER FOKUS LIEGT AUF REINEM WIRKUNGSWERT.
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function ActiveSessionBooking() {
                         </div>
                         <p className="text-xs text-slate-500 leading-relaxed font-semibold">{opt.desc}</p>
                       </div>
-                      <span className="text-[9px] font-mono font-bold bg-slate-50 text-slate-450 border border-slate-150 px-2 py-0.5 rounded shrink-0 whitespace-nowrap">
+                      <span className="text-[11px] font-mono font-bold bg-slate-50 text-slate-450 border border-slate-150 px-2 py-0.5 rounded shrink-0 whitespace-nowrap">
                         {opt.duration}
                       </span>
                     </button>
@@ -243,7 +243,7 @@ export default function ActiveSessionBooking() {
 
                 <div className="space-y-6">
                   <div className="space-y-2.5">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">TAG SELEKTIEREN</span>
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">TAG SELEKTIEREN</span>
                     <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
                       {AVAILABLE_DAYS.map((day) => (
                         <button
@@ -264,7 +264,7 @@ export default function ActiveSessionBooking() {
 
                   {selectedDay ? (
                     <div className="space-y-2.5 pt-2 animate-fadeIn">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">FREIE UHRZEIT</span>
+                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">FREIE UHRZEIT</span>
                       <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5">
                         {TIME_SLOTS.map((time) => (
                           <button
@@ -341,7 +341,7 @@ export default function ActiveSessionBooking() {
                 <form onSubmit={handleCompleteBooking} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Ihr Name *</label>
+                      <label className="text-[11px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Ihr Name *</label>
                       <div className="relative">
                         <User className="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
                         <input
@@ -357,7 +357,7 @@ export default function ActiveSessionBooking() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Geschäfts-E-Mail *</label>
+                      <label className="text-[11px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Geschäfts-E-Mail *</label>
                       <div className="relative">
                         <Globe className="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
                         <input
@@ -375,7 +375,7 @@ export default function ActiveSessionBooking() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Firma *</label>
+                      <label className="text-[11px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Firma *</label>
                       <div className="relative">
                         <Building2 className="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
                         <input
@@ -391,7 +391,7 @@ export default function ActiveSessionBooking() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Unternehmens-Website</label>
+                      <label className="text-[11px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Unternehmens-Website</label>
                       <input
                         type="url"
                         name="website"
@@ -404,7 +404,7 @@ export default function ActiveSessionBooking() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Grösster Pipeline-Engpass</label>
+                    <label className="text-[11px] text-slate-400 font-bold uppercase tracking-widest font-mono block">Grösster Pipeline-Engpass</label>
                     <select
                       name="bottleneck"
                       value={formData.bottleneck}
@@ -469,12 +469,12 @@ export default function ActiveSessionBooking() {
                     Wir haben eine Google Meet Kalender-Einladung an deine E-Mail <strong className="text-[#686DF4]">{formData.email}</strong> versandt.
                   </p>
                   <div className="pt-3.5 flex items-center gap-3">
-                    <div className="bg-[#686DF4]/5 border border-[#CACCFB]/25 text-[#686DF4] w-12 h-12 rounded-xl flex items-center justify-center text-[10px] font-mono font-bold leading-tight shrink-0 uppercase">
+                    <div className="bg-[#686DF4]/5 border border-[#CACCFB]/25 text-[#686DF4] w-12 h-12 rounded-xl flex items-center justify-center text-[11px] font-mono font-bold leading-tight shrink-0 uppercase">
                       VIDEO<br/>CALL
                     </div>
                     <div className="text-xs">
                       <span className="font-semibold block text-slate-800 leading-snug">Videoteam-Konferenz</span>
-                      <span className="text-slate-405 text-slate-400 font-semibold text-[10px]">Der Link wird 5 Min. vor dem Treffen freigeschaltet.</span>
+                      <span className="text-slate-405 text-slate-400 font-semibold text-[11px]">Der Link wird 5 Min. vor dem Treffen freigeschaltet.</span>
                     </div>
                   </div>
                 </div>

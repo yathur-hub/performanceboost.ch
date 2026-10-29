@@ -126,11 +126,11 @@ export default function RetentionRevenueRechner() {
                 onChange={(e) => handleInputChange('kunden', e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 Kunden
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Kunden, die in den letzten 12 Monaten mindestens einmal gekauft haben
             </p>
           </div>
@@ -150,11 +150,11 @@ export default function RetentionRevenueRechner() {
                 onChange={(e) => handleInputChange('umsatz', e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Jahr
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Durchschnittlicher Umsatz eines aktiven Kunden pro Jahr
             </p>
           </div>
@@ -176,7 +176,7 @@ export default function RetentionRevenueRechner() {
               <option value="60_80">60% – 80% — gut, aber steigerbar</option>
               <option value="ueber_80">Über 80% — starke Retention</option>
             </select>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Wie viel % deiner Kunden kaufen im nächsten Jahr erneut?
             </p>
           </div>
@@ -195,11 +195,11 @@ export default function RetentionRevenueRechner() {
                 className="space-y-6 flex flex-col justify-between h-full select-none"
               >
                 <div className="space-y-4 opacity-40 select-none pointer-events-none text-center py-4">
-                  <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">Zukünftiger Umsatz-Gewinn</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Zukünftiger Umsatz-Gewinn</span>
                   <span className="text-3xl sm:text-4xl font-bold font-display text-slate-400 block tracking-tight my-1">
                     + CHF 54'000 / Jahr
                   </span>
-                  <span className="inline-flex px-3 py-1 text-[9px] font-bold font-mono uppercase bg-slate-200 text-slate-500 rounded-md">
+                  <span className="inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-slate-200 text-slate-500 rounded-md">
                     Ausbaufähig
                   </span>
                 </div>
@@ -208,7 +208,7 @@ export default function RetentionRevenueRechner() {
                   <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" /> Gib deine Zahlen ein
                   </div>
-                  <p className="text-[9.5px] text-slate-400/90 font-mono">
+                  <p className="text-[11px] text-slate-400/90 font-mono">
                     Beispielrechnung · Wir berechnen deinen zusätzlichen Bestandskundenumsatz.
                   </p>
                 </div>
@@ -236,27 +236,27 @@ export default function RetentionRevenueRechner() {
                     </div>
 
                     <div className="text-center py-2">
-                      <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">ZUSÄTZLICHE JAHRES-MARGE</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">ZUSÄTZLICHE JAHRES-MARGE</span>
                       <span className="text-3xl sm:text-4xl font-bold font-display text-emerald-600 tracking-tight my-1 block">
                         + {formatCHF(result.mehrUmsatz)} / Jahr
                       </span>
-                      <span className="text-[10px] font-medium text-emerald-700 block select-none">
+                      <span className="text-[11px] font-medium text-emerald-700 block select-none">
                         jährlich mehr Umsatz — ohne einen einzigen Neukunden.
                       </span>
 
                       <div className="mt-2">
                         {result.diagnose === 'kritisch' && (
-                          <span className="inline-flex px-3 py-1 text-[9px] font-bold font-mono uppercase bg-red-100 border border-red-200/50 text-red-700 rounded-md">
+                          <span className="inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-red-100 border border-red-200/50 text-red-700 rounded-md">
                             ⚠️ Retention-Level: Kritisch
                           </span>
                         )}
                         {result.diagnose === 'ausbaufähig' && (
-                          <span className="inline-flex px-3 py-1 text-[9px] font-bold font-mono uppercase bg-amber-100 border border-amber-200/50 text-amber-700 rounded-md">
+                          <span className="inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-amber-100 border border-amber-200/50 text-amber-700 rounded-md">
                             ⚠️ Retention-Level: Ausbaufähig
                           </span>
                         )}
                         {result.diagnose === 'stark' && (
-                          <span className="inline-flex px-3 py-1 text-[9px] font-bold font-mono uppercase bg-emerald-100 border border-emerald-200/50 text-emerald-700 rounded-md">
+                          <span className="inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-emerald-100 border border-emerald-200/50 text-emerald-700 rounded-md">
                             ✓ Retention-Level: Stark
                           </span>
                         )}
@@ -284,12 +284,12 @@ export default function RetentionRevenueRechner() {
 
                     {/* Edge case label / warnings */}
                     {vKunden < 50 && (
-                      <p className="text-[10px] text-slate-450 text-left font-mono">
+                      <p className="text-[11px] text-slate-450 text-left font-mono">
                         * Bei kleiner Kundenbasis hat jede Abwanderung überproportionalen Impact — Churn-Prävention hat hier besonders hohe Hebelwirkung.
                       </p>
                     )}
                     {vAvgUmsatz > 50000 && (
-                      <p className="text-[10px] text-indigo-500 text-left font-mono font-bold">
+                      <p className="text-[11px] text-indigo-500 text-left font-mono font-bold">
                         * Bei hohem Einzelkundenwert lohnt sich Churn-Prävention besonders — ein gehaltener Kunde ersetzt 5–7 Neukunden-Abschlüsse.
                       </p>
                     )}
@@ -309,7 +309,7 @@ export default function RetentionRevenueRechner() {
                     <span>Retention-Potenzial besprechen — 30 Min, kostenlos</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
-                  <p className="text-[9px] text-slate-400 text-center font-mono mt-2">
+                  <p className="text-[11px] text-slate-400 text-center font-mono mt-2">
                     In 30 Minuten berechnen wir gemeinsam, wie viel Umsatz in deiner bestehenden Kundenbasis liegt — und was es braucht, ihn zu aktivieren.
                   </p>
                 </div>

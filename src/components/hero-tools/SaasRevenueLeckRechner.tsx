@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingDown, AlertCircle, CheckCircle, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   trials: number;
@@ -16,12 +17,7 @@ interface Inputs {
   churn: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function SaasRevenueLeckRechner() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -199,7 +195,7 @@ export default function SaasRevenueLeckRechner() {
               onChange={(e) => handleInputChange('trials', parseInt(e.target.value) || 5)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686DF4]"
             />
-            <p className="text-[9.5px] text-slate-400 font-medium">Alle Trial-Signups und Demo-Requests kombiniert</p>
+            <p className="text-[11px] text-slate-400 font-medium">Alle Trial-Signups und Demo-Requests kombiniert</p>
           </div>
 
           <div className="space-y-1">
@@ -215,7 +211,7 @@ export default function SaasRevenueLeckRechner() {
               onChange={(e) => handleInputChange('conversion', parseInt(e.target.value) || 1)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9.5px] text-slate-400 font-medium flex justify-between">
+            <p className="text-[11px] text-slate-400 font-medium flex justify-between">
               <span>B2B-SaaS Benchmark: 18–25%</span>
               <span className="font-mono text-[#686DF4]/80">Marker: 22%</span>
             </p>
@@ -235,7 +231,7 @@ export default function SaasRevenueLeckRechner() {
               onChange={(e) => handleInputChange('mrr_pro_account', parseInt(e.target.value) || 50)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686DF4]"
             />
-            <p className="text-[9.5px] text-slate-400 font-medium">Durchschnittlicher MRR je zahlendem Kunden</p>
+            <p className="text-[11px] text-slate-400 font-medium">Durchschnittlicher MRR je zahlendem Kunden</p>
           </div>
 
           <div className="space-y-1">
@@ -252,7 +248,7 @@ export default function SaasRevenueLeckRechner() {
               onChange={(e) => handleInputChange('churn', parseFloat(e.target.value) || 0.5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9.5px] text-slate-400 font-medium flex justify-between">
+            <p className="text-[11px] text-slate-400 font-medium flex justify-between">
               <span>Schnitt: 1–2%</span>
               <span className="font-mono text-[#686DF4]/80">Marker: 2%</span>
             </p>
@@ -266,10 +262,10 @@ export default function SaasRevenueLeckRechner() {
               {/* Score Header */}
               <div className="p-4 bg-slate-50 border border-slate-150 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">FUNNEL SCORE</span>
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">FUNNEL SCORE</span>
                   <div className="text-3xl font-black text-slate-900 leading-none mt-1">{results.gesamt_score} <span className="text-xs text-slate-400 font-bold">/ 100</span></div>
                 </div>
-                <div className={`px-3 py-1 rounded-full text-[10px] font-mono font-black border ${config.badgeBg}`}>
+                <div className={`px-3 py-1 rounded-full text-[11px] font-mono font-black border ${config.badgeBg}`}>
                   {config.label}
                 </div>
               </div>
@@ -277,19 +273,19 @@ export default function SaasRevenueLeckRechner() {
               {/* Kacheln */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50/50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Conversion-Leck (ARR)</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Conversion-Leck (ARR)</span>
                   <h4 className="text-sm font-bold text-red-600 mt-1">{formatCHFKompakt(results.conversion_leck_arr)} / Jahr</h4>
                 </div>
 
                 <div className="bg-slate-50/50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Retention-Leck (ARR)</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Retention-Leck (ARR)</span>
                   <h4 className="text-sm font-bold text-red-600 mt-1">{formatCHFKompakt(results.churn_leck_arr)} / Jahr</h4>
                 </div>
 
                 <div className="sm:col-span-2 bg-[#686DF4]/5 border border-[#CACCFB]/40 rounded-xl p-4 flex items-center justify-between">
                   <div>
-                    <span className="text-[9px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Gesamtes ARR-Potenzial</span>
-                    <p className="text-[10px] text-slate-400 font-semibold mb-1">Bei Benchmark-Niveau (22% Conv, 2% Churn)</p>
+                    <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Gesamtes ARR-Potenzial</span>
+                    <p className="text-[11px] text-slate-400 font-semibold mb-1">Bei Benchmark-Niveau (22% Conv, 2% Churn)</p>
                   </div>
                   <h4 className="text-xl font-black text-[#686DF4]">{formatCHFKompakt(results.arr_potenzial)} / Jahr</h4>
                 </div>
@@ -297,11 +293,11 @@ export default function SaasRevenueLeckRechner() {
 
               {/* Benchmark bars */}
               <div className="space-y-2 pt-2">
-                <span className="text-[9.5px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Benchmark-Vergleich</span>
+                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Benchmark-Vergleich</span>
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between font-semibold">
                     <span>Conversion Rate</span>
-                    <span>{inputs.conversion}% <span className="text-slate-400 text-[10px]">(vs 22% Bench)</span></span>
+                    <span>{inputs.conversion}% <span className="text-slate-400 text-[11px]">(vs 22% Bench)</span></span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                     <div className="bg-[#686DF4] h-full" style={{ width: `${Math.min(100, (inputs.conversion / 22) * 100)}%` }} />
@@ -310,7 +306,7 @@ export default function SaasRevenueLeckRechner() {
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between font-semibold">
                     <span>Churn Rate</span>
-                    <span>{inputs.churn}% <span className="text-slate-400 text-[10px]">(vs 2% Bench)</span></span>
+                    <span>{inputs.churn}% <span className="text-slate-400 text-[11px]">(vs 2% Bench)</span></span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                     {/* Higher churn is worse, so fill gets colored red if high */}
@@ -344,7 +340,7 @@ export default function SaasRevenueLeckRechner() {
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
             <div className="text-left max-w-md">
               <h5 className="text-xs font-bold text-slate-900 leading-tight">Wie viel Pipeline verliert ihr gerade?</h5>
-              <p className="text-[10px] text-slate-450 leading-relaxed mt-0.5 font-semibold">
+              <p className="text-[11px] text-slate-450 leading-relaxed mt-0.5 font-semibold">
                 In einem 30-minütigen Gespräch analysieren wir eure Zahlen strukturiert. Kein Pitch, kein Theater.
               </p>
             </div>
@@ -381,7 +377,7 @@ export default function SaasRevenueLeckRechner() {
                 {!formSubmitted ? (
                   <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
                       <input
                         type="email"
                         required
@@ -392,7 +388,7 @@ export default function SaasRevenueLeckRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Vorname</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Vorname</label>
                       <input
                         type="text"
                         value={nameSub}
@@ -402,7 +398,7 @@ export default function SaasRevenueLeckRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Aktueller ARR</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Aktueller ARR</label>
                       <select
                         value={arrBucket}
                         onChange={(e) => setArrBucket(e.target.value)}
@@ -415,7 +411,7 @@ export default function SaasRevenueLeckRechner() {
                       </select>
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
                       <input
                         type="text"
                         value={companySub}
@@ -430,7 +426,7 @@ export default function SaasRevenueLeckRechner() {
                     >
                       Ergebnisse jetzt zusenden
                     </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
+                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
                       Kein Newsletter. Einmalige Zusendung eurer berechneten Zahlen mit konkreten Analyse-Ideen.
                     </p>
                   </form>

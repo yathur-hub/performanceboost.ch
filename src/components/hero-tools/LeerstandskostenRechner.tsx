@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingDown, AlertCircle, CheckCircle, TrendingUp, Clock, Gauge } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   objekte: number;
@@ -16,12 +17,7 @@ interface Inputs {
   vermarktung_ziel: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function LeerstandskostenRechner() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -152,7 +148,7 @@ export default function LeerstandskostenRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">HERO DIAGNOSE-TOOL</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">HERO DIAGNOSE-TOOL</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Leerstandskosten-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           In 30 Sekunden — berechnen Sie die genauen Leerstandskosten Ihres Immobilien-Portfolios.
@@ -175,7 +171,7 @@ export default function LeerstandskostenRechner() {
               onChange={(e) => handleInputChange('objekte', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Anzahl Miet- oder Verkaufsobjekte pro Jahr</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anzahl Miet- oder Verkaufsobjekte pro Jahr</p>
           </div>
 
           <div className="space-y-1">
@@ -192,7 +188,7 @@ export default function LeerstandskostenRechner() {
               onChange={(e) => handleInputChange('miete_pro_monat', parseInt(e.target.value) || 500)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Feste monatliche Nettomiete oder Provision</p>
+            <p className="text-[11px] text-slate-400 font-medium">Feste monatliche Nettomiete oder Provision</p>
           </div>
 
           <div className="space-y-1">
@@ -226,7 +222,7 @@ export default function LeerstandskostenRechner() {
               className="w-full accent-[#686DF4]"
             />
             {inputs.vermarktung_ziel >= inputs.vermarktung_aktuell && (
-              <p className="text-red-500 text-[10px] font-bold mt-1">
+              <p className="text-red-500 text-[11px] font-bold mt-1">
                 Zieldauer muss kürzer sein als aktuelle Dauer.
               </p>
             )}
@@ -240,15 +236,15 @@ export default function LeerstandskostenRechner() {
               {/* Three cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-3.5 space-y-1">
-                  <span className="text-[8.5px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Leerstand aktuell</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Leerstand aktuell</span>
                   <h4 className="text-sm font-black text-slate-900">{formatCHF(results.leerstand_aktuell)} / J.</h4>
                 </div>
                 <div className="bg-green-50 border border-green-150 rounded-xl p-3.5 space-y-1">
-                  <span className="text-[8.5px] font-mono font-bold text-green-700 uppercase tracking-wider block">Mögl. Einsparung</span>
+                  <span className="text-[11px] font-mono font-bold text-green-700 uppercase tracking-wider block">Mögl. Einsparung</span>
                   <h4 className="text-sm font-black text-green-700">+{formatCHF(results.einsparung_jahr)} / J.</h4>
                 </div>
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-3.5 space-y-1">
-                  <span className="text-[8.5px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Verlust pro Tag</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Verlust pro Tag</span>
                   <h4 className="text-sm font-black text-red-600">{formatCHF(results.kosten_pro_tag)}</h4>
                 </div>
               </div>
@@ -276,7 +272,7 @@ export default function LeerstandskostenRechner() {
               {/* Diagnostics */}
               {currentStufe && (
                 <div className={`p-4 rounded-xl border ${currentStufe.color} space-y-1 text-left`}>
-                  <span className="text-[8px] font-mono font-black tracking-widest uppercase">{currentStufe.label}</span>
+                  <span className="text-[11px] font-mono font-black tracking-widest uppercase">{currentStufe.label}</span>
                   <p className="text-xs font-semibold leading-relaxed text-slate-800">{currentStufe.desc}</p>
                 </div>
               )}
@@ -294,7 +290,7 @@ export default function LeerstandskostenRechner() {
       {/* CTA Section */}
       {results && results.isValid && (
         <div className="border-t border-slate-100 pt-6 flex flex-col sm:flex-row gap-5 items-center justify-between">
-          <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-md">
+          <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-md">
             <strong>Möchten Sie das konkret angehen?</strong> Yathur schaut sich Ihre aktuelle Vermarktungssituation an und zeigt, welche Hebel den schnellsten Effekt haben.
           </div>
           <button
@@ -313,7 +309,7 @@ export default function LeerstandskostenRechner() {
           </button>
         </div>
       )}
-      <p className="text-[8.5px] text-slate-400 font-mono text-center">
+      <p className="text-[11px] text-slate-400 font-mono text-center">
         *Keine Verpflichtung. 30 Minuten, konkrete Einschätzung.
       </p>
     </div>

@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Hammer, ChevronUp, ChevronDown, CircleDollarSign } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   anfragen: number;
@@ -16,12 +17,7 @@ interface Inputs {
   projektwert: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function AuftragsPipelineRechner() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -166,7 +162,7 @@ export default function AuftragsPipelineRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left font-sans">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">HANDWERK CALCULATOR</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">HANDWERK CALCULATOR</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Auftrags-Pipeline-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Kalkuliere verdeckten Umsatz-Ausfall in deinen Angebots- und Nachfass-Prozessen im Handwerksbetrieb.
@@ -189,7 +185,7 @@ export default function AuftragsPipelineRechner() {
               onChange={(e) => handleInputChange('anfragen', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Alle schriftlichen und telefonischen Kundenanfragen pro Monat</p>
+            <p className="text-[11px] text-slate-400 font-medium">Alle schriftlichen und telefonischen Kundenanfragen pro Monat</p>
           </div>
 
           <div className="space-y-1">
@@ -206,7 +202,7 @@ export default function AuftragsPipelineRechner() {
               onChange={(e) => handleInputChange('offerten_quote', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Richtwert: 80% der Anfragen erhalten eine schriftliche Offerte</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert: 80% der Anfragen erhalten eine schriftliche Offerte</p>
           </div>
 
           <div className="space-y-1">
@@ -223,7 +219,7 @@ export default function AuftragsPipelineRechner() {
               onChange={(e) => handleInputChange('zuschlag_quote', parseInt(e.target.value) || 5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Richtwert: 35% der Offerten führen zum definitiven Auftrag</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert: 35% der Offerten führen zum definitiven Auftrag</p>
           </div>
 
           <div className="space-y-1">
@@ -253,12 +249,12 @@ export default function AuftragsPipelineRechner() {
               {/* Score header */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
                     PIPELINE WIRKUNGS SCORE
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
-                <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+                <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
                   {currentStufe.label}
                 </span>
               </div>
@@ -266,27 +262,27 @@ export default function AuftragsPipelineRechner() {
               {/* Cards column */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">Betriebs-Umsatz aktuell</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Betriebs-Umsatz aktuell</span>
                   <h4 className="text-base font-black text-slate-900 mt-1">{formatCHF(results.revenue_jahr)} / J.</h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     ({results.auftraege_monat.toFixed(1)} Aufträge / Monat insgesamt)
                   </p>
                 </div>
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-red-655 block uppercase">Umsatz-Verlust vs. Benchmark</span>
+                  <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Umsatz-Verlust vs. Benchmark</span>
                   <h4 className="text-base font-black text-red-600 mt-1">
                     {results.leck_jahr > 0 ? `-${formatCHF(results.leck_jahr)} / J.` : 'CHF 0'}
                   </h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     Soll-Benchmark-Verluste (80% Offerten / 35% Zuschlag)
                   </p>
                 </div>
 
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <span className="text-[9px] font-mono font-bold text-green-700 block uppercase">Zusatz bei aktivem Follow-Up (+10%)</span>
-                    <p className="text-[10px] text-slate-500 font-semibold">Durch systematisches Nachtelefonieren gelöster Umsatz</p>
+                    <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Zusatz bei aktivem Follow-Up (+10%)</span>
+                    <p className="text-[11px] text-slate-500 font-semibold">Durch systematisches Nachtelefonieren gelöster Umsatz</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.potenzial_jahr)} / J.</h4>
                 </div>
@@ -314,7 +310,7 @@ export default function AuftragsPipelineRechner() {
       {results && (
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
+            <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
               <strong>Möchtest du mehr wertige Aufträge statt Papierkram?</strong> In 30 Minuten analysieren wir deine Laufwege und beseitigen Schreib-Engpässe.
             </div>
             <button
@@ -355,7 +351,7 @@ export default function AuftragsPipelineRechner() {
                 {!formSubmitted ? (
                   <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
                       <input
                         type="email"
                         required
@@ -366,7 +362,7 @@ export default function AuftragsPipelineRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Dein Name *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Dein Name *</label>
                       <input
                         type="text"
                         required
@@ -377,7 +373,7 @@ export default function AuftragsPipelineRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Betriebsname</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Betriebsname</label>
                       <input
                         type="text"
                         value={companySub}
@@ -387,7 +383,7 @@ export default function AuftragsPipelineRechner() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Sparte / Gewirk</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Sparte / Gewirk</label>
                       <select
                         value={gewerk}
                         onChange={(e) => setGewerk(e.target.value)}
@@ -407,7 +403,7 @@ export default function AuftragsPipelineRechner() {
                     >
                       Report anfordern
                     </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
+                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
                       Keine Werbe-Flut. Einmalige, personalisierte Auswertung mit Tipps zur Angebots-Büroautomation.
                     </p>
                   </form>

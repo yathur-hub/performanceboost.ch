@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, CheckCircle, Target, Calculator } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   berater: number;
@@ -16,12 +17,7 @@ interface Inputs {
   jahresvolumen: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function BeratungsPipelineRechner() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -177,7 +173,7 @@ export default function BeratungsPipelineRechner() {
               onChange={(e) => handleInputChange('berater', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686DF4] focus:ring-1 focus:ring-[#686DF4]/30"
             />
-            <p className="text-[10px] text-slate-400 font-medium">Anzahl Berater, die aktiv Kundengespräche führen</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anzahl Berater, die aktiv Kundengespräche führen</p>
           </div>
 
           <div className="space-y-1.5">
@@ -193,7 +189,7 @@ export default function BeratungsPipelineRechner() {
               onChange={(e) => handleInputChange('gespraeche', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686DF4] focus:ring-1 focus:ring-[#686DF4]/30"
             />
-            <p className="text-[10px] text-slate-400 font-medium">Durchschnittliche Gespräche pro Berater im Monat</p>
+            <p className="text-[11px] text-slate-400 font-medium">Durchschnittliche Gespräche pro Berater im Monat</p>
           </div>
 
           <div className="space-y-1.5">
@@ -211,7 +207,7 @@ export default function BeratungsPipelineRechner() {
                 className="w-full accent-[#686DF4]"
               />
             </div>
-            <p className="text-[10px] text-slate-400 font-medium">Anteil Gespräche, die zu einem Abschluss führen</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil Gespräche, die zu einem Abschluss führen</p>
           </div>
 
           <div className="space-y-1.5">
@@ -228,7 +224,7 @@ export default function BeratungsPipelineRechner() {
               onChange={(e) => handleInputChange('jahresvolumen', parseInt(e.target.value) || 5000)}
               className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686DF4] focus:ring-1 focus:ring-[#686DF4]/30"
             />
-            <p className="text-[10px] text-slate-400 font-medium">Jahresprämien- oder Verwaltungsvolumen eines neuen Mandats</p>
+            <p className="text-[11px] text-slate-400 font-medium">Jahresprämien- oder Verwaltungsvolumen eines neuen Mandats</p>
           </div>
         </div>
 
@@ -236,35 +232,35 @@ export default function BeratungsPipelineRechner() {
         <div className="md:col-span-7 space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-slate-50/50 border border-slate-200/60 rounded-2xl p-4.5 space-y-1">
-              <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Jahresumsatz-Potenzial</span>
+              <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Jahresumsatz-Potenzial</span>
               <h4 className="text-xl font-bold text-slate-900 leading-none">{formatCHF(results.aktueller_jahresumsatz)}</h4>
-              <p className="text-[10px] text-slate-500 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2">
+              <p className="text-[11px] text-slate-500 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2">
                 {formatNumber(results.abschluesse_jahr)} Abschlüsse/Jahr • Schnitt {formatCHF(inputs.jahresvolumen)}
               </p>
             </div>
 
             <div className={`border rounded-2xl p-4.5 space-y-1 ${results.revenue_leck > 0 ? 'bg-red-50/30 border-red-100' : 'bg-green-50/30 border-green-100'}`}>
-              <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Revenue-Leck vs. Benchmark</span>
+              <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Revenue-Leck vs. Benchmark</span>
               <h4 className={`text-xl font-bold leading-none ${results.revenue_leck > 0 ? 'text-red-650' : 'text-green-700'}`}>
                 {results.revenue_leck > 0 ? formatCHF(results.revenue_leck) : 'CHF 0'}
               </h4>
-              <p className="text-[10px] text-slate-500 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2">
+              <p className="text-[11px] text-slate-500 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2">
                 {results.revenue_leck > 0 ? 'Basis: 30% Quote bei 10 Gespr./Mo' : 'Hervorragend, über Benchmark'}
               </p>
             </div>
 
             <div className="bg-slate-50/50 border border-slate-200/60 rounded-2xl p-4.5 space-y-1">
-              <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Potenzial +10% Abschlussquote</span>
+              <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Potenzial +10% Abschlussquote</span>
               <h4 className="text-xl font-bold text-green-700 leading-none">
                 {inputs.abschlussquote >= 60 ? 'Bereits am Maximum' : `+${formatCHF(results.potenzial_optimiert)}`}
               </h4>
-              <p className="text-[10px] text-slate-500 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2">
+              <p className="text-[11px] text-slate-500 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2">
                 Realistische Kurzfrist-Optimierung
               </p>
             </div>
 
             <div className="bg-slate-50/50 border border-slate-200/60 rounded-2xl p-4.5 space-y-1">
-              <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Pipeline-Score</span>
+              <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Pipeline-Score</span>
               <div className="flex items-center gap-3">
                 <h4 className="text-xl font-bold text-slate-900 leading-none">{results.effizienz_score} / 100</h4>
                 <div className="w-16 bg-slate-200 h-2 rounded-full overflow-hidden shrink-0">
@@ -274,7 +270,7 @@ export default function BeratungsPipelineRechner() {
                   />
                 </div>
               </div>
-              <p className="text-[10px] text-slate-400 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2 font-mono">
+              <p className="text-[11px] text-slate-400 font-semibold leading-normal pt-1.5 border-t border-slate-100 mt-2 font-mono">
                 Benchmark = 100
               </p>
             </div>
@@ -282,7 +278,7 @@ export default function BeratungsPipelineRechner() {
 
           {/* Status Diagnostic Card */}
           <div className={`p-5 rounded-2xl border ${currentStufe.color} text-left space-y-2`}>
-            <span className="text-[9px] font-mono font-bold tracking-widest uppercase">
+            <span className="text-[11px] font-mono font-bold tracking-widest uppercase">
               {currentStufe.badge}
             </span>
             <h4 className="text-xs sm:text-sm font-bold text-slate-900">{currentStufe.headline}</h4>
@@ -293,7 +289,7 @@ export default function BeratungsPipelineRechner() {
 
       {/* CTA Box */}
       <div className="border-t border-slate-100 pt-6 flex flex-col sm:flex-row gap-5 items-center justify-between">
-        <div className="text-[10px] text-slate-450 leading-relaxed font-semibold text-center sm:text-left text-balance max-w-md">
+        <div className="text-[11px] text-slate-450 leading-relaxed font-semibold text-center sm:text-left text-balance max-w-md">
           {results.score_stufe === 'kritisch' || results.score_stufe === 'entwicklung' ? (
             <span><strong>Deine Pipeline hat konkretes Optimierungspotenzial.</strong> In einem 30-minütigen Gespräch schauen wir gemeinsam auf die Zahlen hinter deiner Pipeline — und zeigen, welche Massnahme den grössten Impact hätte.</span>
           ) : (
@@ -316,7 +312,7 @@ export default function BeratungsPipelineRechner() {
           {currentStufe.btnText}
         </button>
       </div>
-      <p className="text-[8.5px] text-slate-400 font-mono text-center">
+      <p className="text-[11px] text-slate-400 font-mono text-center">
         *Diese Berechnung basiert auf deinen Eingaben und einem vereinfachten Branchenbenchmark. Sie dient der Orientierung, nicht der betriebswirtschaftlichen Planung.
       </p>
     </div>

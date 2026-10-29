@@ -230,7 +230,7 @@ export default function AIReadinessCheck() {
         </div>
         <button
           onClick={handleReset}
-          className="text-[10px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Reset
         </button>
@@ -268,7 +268,7 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium">Z. B. im Onboarding, der Lead-Bearbeitung, Content-Erstellung.</p>
+          <p className="text-[11px] text-slate-400 font-medium">Z. B. im Onboarding, der Lead-Bearbeitung, Content-Erstellung.</p>
         </div>
 
         {/* F2 */}
@@ -296,7 +296,7 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium">Vollständige Kontaktdaten, keine Duplikate, gepflegte Dealstage-Status.</p>
+          <p className="text-[11px] text-slate-400 font-medium">Vollständige Kontaktdaten, keine Duplikate, gepflegte Dealstage-Status.</p>
         </div>
 
         {/* F3 */}
@@ -323,7 +323,7 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium font-sans">Manuelle Handarbeit = Hohe Automations-Hebelwirkung.</p>
+          <p className="text-[11px] text-slate-400 font-medium font-sans">Manuelle Handarbeit = Hohe Automations-Hebelwirkung.</p>
         </div>
 
         {/* F4 */}
@@ -351,7 +351,7 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium">Z. B. via ChatGPT, Copilot, native AI-Features in Hubspot/Notion etc.</p>
+          <p className="text-[11px] text-slate-400 font-medium">Z. B. via ChatGPT, Copilot, native AI-Features in Hubspot/Notion etc.</p>
         </div>
 
         {/* F5 */}
@@ -413,7 +413,7 @@ export default function AIReadinessCheck() {
             animate={{ opacity: 1 }}
             className="space-y-6"
           >
-            <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+            <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
               DIAGNOSTIZIERTE EMPEHLUNGEN (3 USE-CASES)
             </span>
 
@@ -439,7 +439,7 @@ export default function AIReadinessCheck() {
                         <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
                           {usecase.titel}
                         </h4>
-                        <span className="bg-[#686DF4]/5 text-[#686DF4] text-[9px] font-mono font-black uppercase tracking-wider px-2 py-0.5 rounded-md leading-none border border-[#686DF4]/10">
+                        <span className="bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-mono font-black uppercase tracking-wider px-2 py-0.5 rounded-md leading-none border border-[#686DF4]/10">
                           {usecase.zeitrahmen}
                         </span>
                       </div>
@@ -460,7 +460,7 @@ export default function AIReadinessCheck() {
                     <div className="pt-3">
                       <button
                         onClick={() => toggleCaseExpanded(usecase.id)}
-                        className="text-[10px] font-mono leading-none tracking-wider uppercase text-slate-400 hover:text-slate-950 font-bold bg-transparent border-none cursor-pointer flex items-center gap-1"
+                        className="text-[11px] font-mono leading-none tracking-wider uppercase text-slate-400 hover:text-slate-950 font-bold bg-transparent border-none cursor-pointer flex items-center gap-1"
                       >
                         {isExpanded ? (
                           <>Details verbergen <ChevronUp className="w-3 h-3 text-[#686DF4]" /></>
@@ -479,7 +479,7 @@ export default function AIReadinessCheck() {
                             className="overflow-hidden mt-3 text-slate-500 text-xs sm:text-sm leading-relaxed"
                           >
                             <div className="p-4 bg-slate-50 border border-slate-200/50 rounded-xl space-y-1.5 animate-fadeIn">
-                              <h5 className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-405 text-slate-400">
+                              <h5 className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-405 text-slate-400">
                                 WIE DIE ERRICHTUNG AUSSIEHT
                               </h5>
                               <p className="text-xs text-slate-650 text-slate-600 font-semibold leading-relaxed">

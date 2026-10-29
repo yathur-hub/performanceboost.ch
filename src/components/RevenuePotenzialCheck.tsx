@@ -454,7 +454,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
                 onChange={(e) => setState(prev => ({ ...prev, aktuelleNeukunden: parseInt(e.target.value) }))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4] transition-all"
               />
-              <div className="flex justify-between text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider px-1">
+              <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold uppercase tracking-wider px-1">
                 <span>0</span>
                 <span>3–5</span>
                 <span>10–15</span>
@@ -556,7 +556,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
         {/* Block 1: Monats-Uplift Display */}
         <div className="text-center rounded-3xl bg-slate-900 text-white p-8 relative overflow-hidden group shadow-[var(--shadow-premium-lg)] border border-slate-800">
           <div className="absolute top-0 right-0 w-44 h-44 bg-gradient-to-br from-[#686DF4]/20 to-transparent rounded-full blur-2xl group-hover:scale-130 transition-transform duration-500 pointer-events-none" />
-          <p className="text-[10px] font-mono tracking-widest uppercase font-bold text-[#686DF4]">
+          <p className="text-[11px] font-mono tracking-widest uppercase font-bold text-[#686DF4]">
             DEIN MONATLICHES REVENUE-POTENZIAL
           </p>
           <h2 className="text-4xl sm:text-5xl font-display font-bold tracking-tight text-white mt-3 select-none">
@@ -565,7 +565,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
           <p className="text-xs text-[#686DF4] font-bold uppercase tracking-wider font-mono mt-1">
             monatlich erreichbar
           </p>
-          <p className="text-[10.5px] text-slate-400 leading-relaxed font-semibold max-w-lg mx-auto mt-4 pt-4 border-t border-slate-800">
+          <p className="text-[11px] text-slate-400 leading-relaxed font-semibold max-w-lg mx-auto mt-4 pt-4 border-t border-slate-800">
             Berechnet auf Basis von Branchen-Benchmarks für {sizeLabel}-Unternehmen mit einem Auftragswert von {dealLabel} — konservativ geschätzt.
           </p>
         </div>
@@ -684,7 +684,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
         {/* Header Bar */}
         <div className="flex justify-between items-center px-6 py-5 border-b border-slate-100 shrink-0 bg-slate-50/50">
           <div className="space-y-0.5">
-            <span className="text-[10px] font-mono tracking-wider font-bold text-[#686DF4] uppercase">REVENUE POTENZIAL-CHECK</span>
+            <span className="text-[11px] font-mono tracking-wider font-bold text-[#686DF4] uppercase">REVENUE POTENZIAL-CHECK</span>
             <h2 className="text-sm font-display font-bold text-slate-850">
               {isResultScreen ? 'Dein Revenue-Potenzial' : `Fragebogen (Schritt ${state.step} von 4)`}
             </h2>

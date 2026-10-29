@@ -156,7 +156,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[10px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
+            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
           >
             UNSER LÖSUNGS-FRAMEWORK
           </motion.span>
@@ -203,11 +203,11 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
           <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[9px] font-mono font-bold tracking-widest text-[#686DF4] uppercase">DIAGNOSE ZUERST</span>
+          <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] uppercase">DIAGNOSE ZUERST</span>
           <blockquote className="text-body-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
             "Die meisten Unternehmen suchen nach einem Kanal. Einer Plattform. Einem Tool. Das ist die falsche Frage. Die richtige Frage ist: Wo verlieren wir qualifizierte Leads? Warum konvertiert unsere Pipeline nicht? Wie machen wir Wachstum planbar?"
           </blockquote>
-          <p className="text-[10px] text-slate-400 font-mono tracking-wide uppercase">
+          <p className="text-[11px] text-slate-400 font-mono tracking-wide uppercase">
             Wir starten genau dort — nicht mit einem Pauschalangebot, sondern mit einer professionellen Diagnose.
           </p>
         </div>
@@ -222,7 +222,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">DIE SYSTEMBAUSTEINE</span>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">DIE SYSTEMBAUSTEINE</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Wachstumsbereiche</h2>
         </motion.div>
 
@@ -242,7 +242,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             >
               <div className="space-y-5">
                 <div className="flex justify-between items-center">
-                  <span className="text-[10px] font-mono font-bold bg-[#f6f6f6] text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686DF4]/5 group-hover:text-[#686DF4] group-hover:border-[#686DF4]/20 transition-all duration-300">
+                  <span className="text-[11px] font-mono font-bold bg-[#f6f6f6] text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686DF4]/5 group-hover:text-[#686DF4] group-hover:border-[#686DF4]/20 transition-all duration-300">
                     {item.num}
                   </span>
                   <button 
@@ -250,7 +250,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                       onNavigate(`/leistungen/${item.path}`);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="text-[10px] text-[#686DF4] hover:text-[#686DF4]/80 font-bold tracking-wide transition-colors cursor-pointer bg-transparent border-none"
+                    className="text-[11px] text-[#686DF4] hover:text-[#686DF4]/80 font-bold tracking-wide transition-colors cursor-pointer bg-transparent border-none"
                   >
                     Details →
                   </button>
@@ -260,11 +260,11 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               </div>
 
               <div className="mt-8 pt-5 border-t border-slate-100 space-y-3.5">
-                <div className="text-[10px]">
+                <div className="text-[11px]">
                   <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">NICHT:</span>
                   <span className="text-red-600 font-bold block bg-red-50/40 px-2 py-1 rounded border border-red-100/30 line-through">{item.notText}</span>
                 </div>
-                <div className="text-[10px]">
+                <div className="text-[11px]">
                   <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">SONDERN:</span>
                   <span className="text-[#686DF4] font-bold block bg-[#686DF4]/5 px-2 py-1 rounded border border-[#CACCFB]/20">{item.butText}</span>
                 </div>
@@ -285,7 +285,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3"
           >
-            <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">SYNERGIEN MAXIMIEREN</span>
+            <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">SYNERGIEN MAXIMIEREN</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
             <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
               Einzelne Leistungen haben Wirkung. Intelligent verknüpft entfalten sie ihre volle Hebelwirkung.
@@ -308,7 +308,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               >
                 <div className="space-y-5">
                   <div className="space-y-1.5">
-                    <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">{c.combo}</span>
+                    <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">{c.combo}</span>
                     <h3 className="text-lg font-bold text-slate-900 font-display">{c.title}</h3>
                   </div>
                   <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{c.desc}</p>
@@ -334,7 +334,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">FRAGEN & ANTWORTEN</span>
+          <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">FRAGEN & ANTWORTEN</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Häufig gestellte Fragen</h2>
         </motion.div>
 
@@ -386,7 +386,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">MEHR ERFAHREN</span>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">MEHR ERFAHREN</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Lösung braucht dein Unternehmen?</h2>
           <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
             30 Minuten unverbindliches Gespräch. Wir hören zu, stellen die richtigen strategischen Fragen — und empfehlen die wirkungsvollsten Hebel für dein Geschäftsmodell.

@@ -156,7 +156,7 @@ export default function SalesAlignmentCheck() {
         </div>
         <button
           onClick={handleReset}
-          className="text-[10px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Reset
         </button>
@@ -190,7 +190,7 @@ export default function SalesAlignmentCheck() {
             onChange={e => handleSliderChange('s1', Number(e.target.value))}
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+          <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Jeder versteht es anders</span>
             <span className="text-slate-500 font-medium font-sans">Schriftlich dokumentiert, beide aligned</span>
           </div>
@@ -217,7 +217,7 @@ export default function SalesAlignmentCheck() {
             onChange={e => handleSliderChange('s2', Number(e.target.value))}
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+          <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Sales macht eigene Unterlagen</span>
             <span className="text-slate-500 font-medium font-sans">Marketing-Content aktiv im Einsatz</span>
           </div>
@@ -244,7 +244,7 @@ export default function SalesAlignmentCheck() {
             onChange={e => handleSliderChange('s3', Number(e.target.value))}
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+          <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Verschiedene Metriken</span>
             <span className="text-slate-500 font-medium font-sans">Gemeinsame Revenue-KPIs, regelmässiges Sync</span>
           </div>
@@ -271,7 +271,7 @@ export default function SalesAlignmentCheck() {
             onChange={e => handleSliderChange('s4', Number(e.target.value))}
             className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
           />
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+          <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Kein SLA — manchmal Tage</span>
             <span className="text-slate-500 font-medium font-sans">SLA definiert, meistens &lt; 1 Stunde</span>
           </div>
@@ -313,7 +313,7 @@ export default function SalesAlignmentCheck() {
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
                 <div>
-                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
+                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
                     AUSWERTUNG MARKETING-SALES-ALIGNMENT
                   </span>
                   <p className="text-2xl font-bold font-display mt-2 leading-none" style={{ color: levelInfo.color }}>
@@ -337,7 +337,7 @@ export default function SalesAlignmentCheck() {
             {/* Friction Blocks */}
             {levelInfo.key !== 'gut' && topFrictionKeys.length > 0 && (
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
                   Top-2 Reibungspunkte (Priorisiert):
                 </span>
 

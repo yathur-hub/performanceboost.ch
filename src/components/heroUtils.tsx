@@ -1,3 +1,4 @@
+import { trackEvent } from "../lib/analytics";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, User, Building, Send, ChevronRight, Check } from 'lucide-react';
@@ -27,10 +28,7 @@ export function formatNumber(value: number, decimals: number = 0): string {
 // Unified tracking function — pushes to the GTM dataLayer (GTM-PJ9FBZ4V is loaded in index.html).
 // Never pass PII (email, name, phone, company, free-text) in props — GA4 prohibits it.
 export function track(event: string, props: Record<string, any>) {
-  if (typeof window === "undefined") return;
-  const win = window as any;
-  win.dataLayer = win.dataLayer || [];
-  win.dataLayer.push({ event, ...props });
+  trackEvent(event, props);
 }
 
 export interface AdditionalField {
@@ -114,7 +112,7 @@ export function LeadCaptureForm({
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="text-[10px] text-slate-400 hover:text-slate-900 border-none bg-transparent cursor-pointer font-bold uppercase font-mono"
+                  className="text-[11px] text-slate-400 hover:text-slate-900 border-none bg-transparent cursor-pointer font-bold uppercase font-mono"
                 >
                   Schliessen ×
                 </button>
@@ -193,7 +191,7 @@ export function LeadCaptureForm({
 
                     return (
                       <div key={idx} className="space-y-2 pt-1 border-t border-slate-100 mt-2">
-                        <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                        <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
                           {field.placeholder}
                         </label>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pb-1">
@@ -249,7 +247,7 @@ export function LeadCaptureForm({
                   setIsSubmitted(false);
                   setIsOpen(false);
                 }}
-                className="text-[10px] text-[#686DF4] hover:underline bg-transparent border-none cursor-pointer font-bold uppercase tracking-wider font-mono pt-2"
+                className="text-[11px] text-[#686DF4] hover:underline bg-transparent border-none cursor-pointer font-bold uppercase tracking-wider font-mono pt-2"
               >
                 Formular schliessen
               </button>

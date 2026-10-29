@@ -137,7 +137,7 @@ export default function InteractiveGrowthCalculator() {
             
             {/* --- Section 1: Akquisition & Traffic --- */}
             <div className="space-y-4 pt-1">
-              <span className="flex items-center gap-1.5 text-[9.5px] font-mono tracking-widest font-bold text-[#686DF4] uppercase bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md w-fit">
+              <span className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest font-bold text-[#686DF4] uppercase bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md w-fit">
                 <Settings2 className="w-3 h-3 text-[#686DF4]" /> 1. AKQUISITION &amp; ACQUISITION DRIVERS
               </span>
 
@@ -159,7 +159,7 @@ export default function InteractiveGrowthCalculator() {
                   onKeyUp={(e) => commitStep('ads_budget', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-250 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
-                <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
+                <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold">
                   <span>CHF 0</span>
                   <span>CHF 7\'500</span>
                   <span>CHF 15\'000</span>
@@ -184,7 +184,7 @@ export default function InteractiveGrowthCalculator() {
                   onKeyUp={(e) => commitStep('cpc', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
-                <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
+                <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold">
                   <span>CHF 0.50</span>
                   <span>CHF 2.25</span>
                   <span>CHF 4.00</span>
@@ -209,7 +209,7 @@ export default function InteractiveGrowthCalculator() {
                   onKeyUp={(e) => commitStep('organic_sessions', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-slate-800"
                 />
-                <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
+                <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold">
                   <span>100</span>
                   <span>2\'500</span>
                   <span>5\'000</span>
@@ -219,7 +219,7 @@ export default function InteractiveGrowthCalculator() {
               {/* Resulting aggregate Traffic Display */}
               <div className="bg-slate-900 text-white rounded-2xl p-4 flex justify-between items-center shadow-xs">
                 <div className="space-y-0.5">
-                  <span className="text-[10px] text-[#686DF4] font-mono font-bold uppercase tracking-wider block">BERECHNETE INBOUND SESSIONS</span>
+                  <span className="text-[11px] text-[#686DF4] font-mono font-bold uppercase tracking-wider block">BERECHNETE INBOUND SESSIONS</span>
                   <p className="text-[11px] text-slate-400 font-semibold leading-relaxed">
                     Aus {organic.toLocaleString('de-CH')} SEO-Visits + {Math.round(budget/cpc).toLocaleString('de-CH')} paid Clicks (Ads)
                   </p>
@@ -228,7 +228,7 @@ export default function InteractiveGrowthCalculator() {
                   <span className="text-base sm:text-lg font-display font-bold text-white block">
                     {currentMetrics.traffic.toLocaleString('de-CH')}
                   </span>
-                  <span className="text-[9px] text-[#686DF4] font-mono font-bold block uppercase">sessions / mt.</span>
+                  <span className="text-[11px] text-[#686DF4] font-mono font-bold block uppercase">sessions / mt.</span>
                 </div>
               </div>
 
@@ -236,7 +236,7 @@ export default function InteractiveGrowthCalculator() {
 
             {/* --- Section 2: Conversions & ACV --- */}
             <div className="space-y-4 pt-2">
-              <span className="flex items-center gap-1.5 text-[9.5px] font-mono tracking-widest font-bold text-[#686DF4] uppercase bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md w-fit">
+              <span className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest font-bold text-[#686DF4] uppercase bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md w-fit">
                 <Layers className="w-3 h-3 text-[#686DF4]" /> 2. TRICHTER-EFFIZIENZ &amp; DEALS
               </span>
 
@@ -261,7 +261,7 @@ export default function InteractiveGrowthCalculator() {
                   onKeyUp={(e) => commitStep('lead_conversion_rate', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
-                <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
+                <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold">
                   <span>0.2%</span>
                   <span>2.1%</span>
                   <span>4.0%</span>
@@ -289,7 +289,7 @@ export default function InteractiveGrowthCalculator() {
                   onKeyUp={(e) => commitStep('sales_close_rate', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
-                <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
+                <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold">
                   <span>1.0%</span>
                   <span>13.0%</span>
                   <span>25.0%</span>
@@ -314,7 +314,7 @@ export default function InteractiveGrowthCalculator() {
                   onKeyUp={(e) => commitStep('deal_value', Number(e.currentTarget.value))}
                   className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
                 />
-                <div className="flex justify-between text-[9px] text-slate-400 font-mono font-bold">
+                <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold">
                   <span>CHF 2\'000</span>
                   <span>CHF 41\'000</span>
                   <span>CHF 80\'000</span>
@@ -330,33 +330,33 @@ export default function InteractiveGrowthCalculator() {
         <div className="w-full lg:w-1/2 flex flex-col justify-between bg-[#f8fafc]/75 border border-[#E2E8F0] rounded-3xl p-6 sm:p-8 relative shadow-[var(--shadow-premium-sm)]">
           
           <div className="space-y-6">
-            <span className="inline-flex items-center gap-1.5 bg-[#686DF4]/5 text-[#686DF4] text-[10px] font-bold px-3.5 py-1 rounded-full border border-[#CACCFB]/25 uppercase tracking-widest font-mono">
+            <span className="inline-flex items-center gap-1.5 bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-bold px-3.5 py-1 rounded-full border border-[#CACCFB]/25 uppercase tracking-widest font-mono">
               <Sparkles className="w-3.5 h-3.5" /> EFFEKT-ANALYSE &amp; UPLIFT
             </span>
 
             {/* B2B Calibrated indicator badge */}
             <div className="bg-amber-50 border border-amber-200/50 rounded-2xl p-4.5 space-y-1.5">
-              <p className="text-[10px] font-mono tracking-wider font-bold text-amber-800 uppercase flex items-center gap-1">
+              <p className="text-[11px] font-mono tracking-wider font-bold text-amber-800 uppercase flex items-center gap-1">
                 🛡️ REALITY CALIBRATION ACTIVE
               </p>
               <p className="text-[11px] text-amber-900/80 leading-relaxed font-semibold">
                 Da teurere Deals (aktuell {formattedValue(dealValue)}) naturgemäss komplexere Vertriebszyklen haben, wurden deine Conversion-Raten automatisch konservativ für die Wirklichkeit tariert:
               </p>
-              <div className="flex gap-4 pt-1.5 text-[10px] font-mono text-amber-850 font-semibold border-t border-amber-200/40">
-                <div>Lead CR: <span className="font-bold text-slate-900">{currentMetrics.calibratedLeadCR}%</span> <span className="text-slate-400 text-[9px]">(Tariert)</span></div>
-                <div>Sales CR: <span className="font-bold text-slate-900">{currentMetrics.calibratedSalesCR}%</span> <span className="text-slate-400 text-[9px]">(Tariert)</span></div>
+              <div className="flex gap-4 pt-1.5 text-[11px] font-mono text-amber-850 font-semibold border-t border-amber-200/40">
+                <div>Lead CR: <span className="font-bold text-slate-900">{currentMetrics.calibratedLeadCR}%</span> <span className="text-slate-400 text-[11px]">(Tariert)</span></div>
+                <div>Sales CR: <span className="font-bold text-slate-900">{currentMetrics.calibratedSalesCR}%</span> <span className="text-slate-400 text-[11px]">(Tariert)</span></div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Box Current */}
               <div className="bg-white p-5 rounded-2xl border border-slate-200">
-                <p className="text-[9px] text-slate-400 tracking-widest uppercase mb-2 font-bold font-mono">STATUS QUO (MONATLICH)</p>
+                <p className="text-[11px] text-slate-400 tracking-widest uppercase mb-2 font-bold font-mono">STATUS QUO (MONATLICH)</p>
                 <div className="space-y-2">
                   <div className="text-lg sm:text-xl font-bold text-slate-800 font-display">
-                    {formattedValue(currentMetrics.monthlyRevenue)} <span className="text-[10px] text-slate-400 font-normal">/ Mt.</span>
+                    {formattedValue(currentMetrics.monthlyRevenue)} <span className="text-[11px] text-slate-400 font-normal">/ Mt.</span>
                   </div>
-                  <div className="text-[10.5px] text-slate-500 font-semibold leading-relaxed border-t border-slate-50 pt-2 space-y-0.5">
+                  <div className="text-[11px] text-slate-500 font-semibold leading-relaxed border-t border-slate-50 pt-2 space-y-0.5">
                     <div>Qual. Leads: <strong className="text-slate-800">{currentMetrics.leads} / Mt.</strong></div>
                     <div>Geschlossene Deals: <strong className="text-slate-800">{currentMetrics.sales} / Mt.</strong></div>
                   </div>
@@ -365,14 +365,14 @@ export default function InteractiveGrowthCalculator() {
 
               {/* Box Boosted */}
               <div className="bg-[#686DF4]/5 p-5 rounded-2xl border border-[#CACCFB]/35 shadow-xs">
-                <p className="text-[9px] text-[#686DF4] tracking-widest uppercase mb-2 flex items-center gap-1 font-bold font-mono">
+                <p className="text-[11px] text-[#686DF4] tracking-widest uppercase mb-2 flex items-center gap-1 font-bold font-mono">
                   <TrendingUp className="w-3 h-3 text-[#686DF4]" /> OPTIMIERT (MIT BENCHMARKS)
                 </p>
                 <div className="space-y-2">
                   <div className="text-lg sm:text-xl font-extrabold text-[#686DF4] font-display">
-                    {formattedValue(boostedMetrics.monthlyRevenue)} <span className="text-[10px] text-slate-450 font-normal">/ Mt.</span>
+                    {formattedValue(boostedMetrics.monthlyRevenue)} <span className="text-[11px] text-slate-450 font-normal">/ Mt.</span>
                   </div>
-                  <div className="text-[10.5px] text-slate-600 font-semibold leading-relaxed border-t border-[#686DF4]/10 pt-2 space-y-0.5">
+                  <div className="text-[11px] text-slate-600 font-semibold leading-relaxed border-t border-[#686DF4]/10 pt-2 space-y-0.5">
                     <div>Qual. Leads: <strong className="text-[#686DF4]">{boostedMetrics.leads} / Mt.</strong></div>
                     <div>Geschlossene Deals: <strong className="text-[#686DF4]">{boostedMetrics.sales} / Mt.</strong></div>
                   </div>
@@ -382,7 +382,7 @@ export default function InteractiveGrowthCalculator() {
 
             {/* Total Uplift representation */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center shadow-xs">
-              <p className="text-[9px] text-slate-400 mb-1.5 font-bold uppercase tracking-widest font-mono">ZUSÄTZLICHES REVENUE-POTENZIAL / JAHR</p>
+              <p className="text-[11px] text-slate-400 mb-1.5 font-bold uppercase tracking-widest font-mono">ZUSÄTZLICHES REVENUE-POTENZIAL / JAHR</p>
               <div className="text-2xl sm:text-3.5xl font-display font-extrabold text-[#686DF4] tracking-tight">
                 +{formattedValue((boostedMetrics.monthlyRevenue - currentMetrics.monthlyRevenue) * 12)}
               </div>
@@ -393,7 +393,7 @@ export default function InteractiveGrowthCalculator() {
           </div>
 
           <div className="pt-6 border-t border-slate-200/80 mt-8 flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-[10px] text-slate-450 leading-relaxed text-center sm:text-left font-semibold">
+            <div className="text-[11px] text-slate-450 leading-relaxed text-center sm:text-left font-semibold">
               *Simulation berechnet auf Basis von Branchenstandards für Lead-Verarbeitung, CRM-Automatisierung und Media-Buying-Optimierung von performanceboost.
             </div>
             <a 

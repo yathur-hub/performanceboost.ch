@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertTriangle, CheckCircle, Target, ChevronDown, ChevronUp } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   neue_mandate: number;
@@ -16,12 +17,7 @@ interface Inputs {
   ziel_mandate: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function KanzleiWachstumsCheck() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -165,7 +161,7 @@ export default function KanzleiWachstumsCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">KANZLEI-DIAGNOSE</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">KANZLEI-DIAGNOSE</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kanzlei-Wachstums-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Analysieren Sie Ihre Kanzlei-Abhängigkeiten und berechnen Sie Ihre digitale Wachstumslücke.
@@ -188,7 +184,7 @@ export default function KanzleiWachstumsCheck() {
               onChange={(e) => handleInputChange('neue_mandate', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Neue Mandate im letzten Jahr</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Neue Mandate im letzten Jahr</p>
           </div>
 
           <div className="space-y-1">
@@ -205,7 +201,7 @@ export default function KanzleiWachstumsCheck() {
               onChange={(e) => handleInputChange('empfehlungsanteil', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Anteil Mandate über Kontakte</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Anteil Mandate über Kontakte</p>
           </div>
 
           <div className="space-y-1">
@@ -222,7 +218,7 @@ export default function KanzleiWachstumsCheck() {
               onChange={(e) => handleInputChange('ø_mandat', parseInt(e.target.value) || 1000)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Ø Jahreshonorar pro Mandat</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Ø Jahreshonorar pro Mandat</p>
           </div>
 
           <div className="space-y-1">
@@ -239,7 +235,7 @@ export default function KanzleiWachstumsCheck() {
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
             {inputs.ziel_mandate < inputs.neue_mandate && (
-              <p className="text-amber-600 text-[10px] font-bold mt-1">
+              <p className="text-amber-600 text-[11px] font-bold mt-1">
                 Ihr Ziel liegt unter dem Vorjahr — wir berechnen trotzdem den aktuellen Kanal-Mix.
               </p>
             )}
@@ -250,10 +246,10 @@ export default function KanzleiWachstumsCheck() {
         <div className="md:col-span-7 space-y-6">
           <div className="p-5 bg-slate-950 text-white rounded-2xl flex flex-col justify-between space-y-4">
             <div className="flex justify-between items-center pb-2 border-b border-slate-850">
-              <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 uppercase">
+              <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 uppercase">
                 DIAGNORSTIZIERTER DIVERSIFIKATIONS-SCORE
               </span>
-              <span className={`px-2 py-0.5 rounded text-[8px] font-mono font-black ${results.stufe === 'klumpenrisiko' ? 'bg-red-800 text-red-100' : 'bg-[#686DF4] text-white'}`}>
+              <span className={`px-2 py-0.5 rounded text-[11px] font-mono font-black ${results.stufe === 'klumpenrisiko' ? 'bg-red-800 text-red-100' : 'bg-[#686DF4] text-white'}`}>
                 {currentStufe.label}
               </span>
             </div>
@@ -264,24 +260,24 @@ export default function KanzleiWachstumsCheck() {
             <p className="text-[11px] text-slate-300 leading-relaxed font-semibold">
               {currentStufe.desc}
             </p>
-            <p className="text-[9.5px] text-slate-400 font-mono pt-1">
+            <p className="text-[11px] text-slate-400 font-mono pt-1">
               Aktuell {inputs.neue_mandate - results.mandate_empfehlung} von {inputs.neue_mandate} Mandaten über digitale Kanäle gewonnen.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-slate-50/50 border border-slate-200 rounded-xl p-4 space-y-1">
-              <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Wachstumslücke</span>
+              <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Wachstumslücke</span>
               <h4 className="text-lg font-bold text-slate-900">{formatCHFCompact(results.chf_potenzial_digital)}</h4>
-              <p className="text-[10px] text-slate-450 font-semibold leading-normal pt-1">
+              <p className="text-[11px] text-slate-450 font-semibold leading-normal pt-1">
                 {results.digital_gap} Mandate fehlen digital bis zum Ziel ({inputs.ziel_mandate} Mandate Zuwachs)
               </p>
             </div>
 
             <div className="bg-slate-50/50 border border-slate-200 rounded-xl p-4 space-y-1">
-              <span className="text-[9px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Dringlichkeit digitaler Beitrag</span>
+              <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Dringlichkeit digitaler Beitrag</span>
               <h4 className="text-lg font-bold text-[#686DF4]">{results.notwendiger_digitaler_beitrag_n} Mandat(e)</h4>
-              <p className="text-[10px] text-slate-450 font-semibold leading-normal pt-1">
+              <p className="text-[11px] text-slate-450 font-semibold leading-normal pt-1">
                 entspricht {formatCHFCompact(results.notwendiger_digitaler_beitrag_chf)} Honorarpipeline
               </p>
             </div>
@@ -335,7 +331,7 @@ export default function KanzleiWachstumsCheck() {
                 {!formSubmitted ? (
                   <form onSubmit={handleFormSubmission} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
                       <input
                         type="email"
                         required
@@ -346,7 +342,7 @@ export default function KanzleiWachstumsCheck() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Dein Name</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Dein Name</label>
                       <input
                         type="text"
                         value={nameSub}
@@ -356,7 +352,7 @@ export default function KanzleiWachstumsCheck() {
                       />
                     </div>
                     <div className="sm:col-span-2 space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Kanzleityp</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Kanzleityp</label>
                       <select
                         value={kanzleiTyp}
                         onChange={(e) => setKanzleiTyp(e.target.value)}
@@ -375,7 +371,7 @@ export default function KanzleiWachstumsCheck() {
                     >
                       Analyse jetzt anfordern
                     </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
+                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
                       Kein Newsletter. Einmalige, personalisierte Einschätzung auf Basis Ihrer Eingaben — innert 48 Stunden.
                     </p>
                   </form>

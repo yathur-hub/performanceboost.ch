@@ -163,7 +163,7 @@ export default function LeadGenerationScore() {
             Content-to-Lead-Score
           </h3>
         </div>
-        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
+        <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
           CONVERSION AUDIT
         </span>
       </div>
@@ -221,13 +221,13 @@ export default function LeadGenerationScore() {
               hasValidationError ? 'border-red-300 focus:border-red-500' : 'border-slate-200'
             }`}
           />
-          <p className="text-[10px] text-slate-400 leading-snug font-medium">
+          <p className="text-[11px] text-slate-400 leading-snug font-medium">
             Kontaktformulare, Downloads, Demobuchungen, Newsletter-Anmeldungen — was auch immer ihr als Lead zählt.
           </p>
 
           {/* Inline Validation Alert */}
           {hasValidationError && (
-            <div className="bg-red-50 text-[#E63946] p-3 rounded-lg flex items-center gap-2 text-[10px] font-bold border border-red-100/30">
+            <div className="bg-red-50 text-[#E63946] p-3 rounded-lg flex items-center gap-2 text-[11px] font-bold border border-red-100/30">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>Leads können nicht mehr als Besucher sein</span>
             </div>
@@ -255,7 +255,7 @@ export default function LeadGenerationScore() {
             <option value="3">3–5 Conversion-Pfade</option>
             <option value="5">Mehr als 5 Conversion-Pfade im Funnel</option>
           </select>
-          <p className="text-[10px] text-slate-400 leading-snug font-medium">
+          <p className="text-[11px] text-slate-400 leading-snug font-medium">
             Z. B. Kontaktformular, PDF-Inhalte, Tools, Newsletter, Demo-Buchung, Gratis-Analyse...
           </p>
         </div>
@@ -296,7 +296,7 @@ export default function LeadGenerationScore() {
 
                 {/* Score Meta text info */}
                 <div className="space-y-2 text-center sm:text-left">
-                  <span className="text-[10px] font-mono text-slate-450 text-slate-400 font-bold uppercase tracking-widest block">
+                  <span className="text-[11px] font-mono text-slate-450 text-slate-400 font-bold uppercase tracking-widest block">
                     ERMITTELTES LEADERGEBNIS
                   </span>
                   <h4 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug font-display">
@@ -310,7 +310,7 @@ export default function LeadGenerationScore() {
 
               {/* Proportional Benchmark Double/Triple Horizontal bars */}
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block mb-2">
+                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block mb-2">
                   B2B BENCHMARK-VERGLEICH
                 </span>
 
@@ -370,13 +370,13 @@ export default function LeadGenerationScore() {
               {/* Core loss metric representation - Emotional Kernzahl */}
               {calculatedOutput.verloreneLeads_median > 0 && (
                 <div className="bg-red-50 p-5 rounded-xl border border-red-100/30 text-left space-y-1">
-                  <p className="text-[9px] text-[#E63946] font-bold uppercase tracking-widest font-mono">
+                  <p className="text-[11px] text-[#E63946] font-bold uppercase tracking-widest font-mono">
                     UNGENUTZTES POTENZIAL IM VERGLEICH ZUM MEDIAN
                   </p>
                   <div className="text-2xl sm:text-3xl font-black font-display text-[#E63946]">
                     {formatNumber(calculatedOutput.verloreneLeads_median)} Leads / Monat verloren
                   </div>
-                  <p className="text-[10px] text-slate-550 text-slate-500 leading-normal font-semibold">
+                  <p className="text-[11px] text-slate-550 text-slate-500 leading-normal font-semibold">
                     Diese Kontakte besuchen zwar die Webseite, verlassen sie jedoch, ohne ein Zeichen zu hinterlassen, weil die passenden Handlungsaufrufe fehlen.
                   </p>
                 </div>
@@ -459,7 +459,7 @@ function HoverHelp({ text }: { text: string }) {
   return (
     <div className="group relative cursor-help inline-block text-slate-400 hover:text-slate-900 transition-colors">
       <AlertCircle className="w-3.5 h-3.5" />
-      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[10px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
         {text}
       </div>
     </div>

@@ -224,7 +224,7 @@ export default function DataClarityCheck() {
         </div>
         <button
           onClick={handleReset}
-          className="text-[10px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Reset
         </button>
@@ -250,7 +250,7 @@ export default function DataClarityCheck() {
                   &ldquo;{field.text}&rdquo;
                 </p>
                 <div className="flex items-center gap-2">
-                  <span className={`text-[8px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-md leading-none border ${
+                  <span className={`text-[11px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-md leading-none border ${
                     field.severity === 'kritisch' 
                       ? 'bg-red-50 text-[#E63946] border-red-100/10' 
                       : field.severity === 'hoch' 
@@ -327,7 +327,7 @@ export default function DataClarityCheck() {
             <span className="text-3xl font-black font-mono leading-none tracking-tight" style={{ color: levelInfo.color }}>
               {score}%
             </span>
-            <span className="text-[8px] font-mono font-bold text-slate-400 mt-1 uppercase tracking-widest">
+            <span className="text-[11px] font-mono font-bold text-slate-400 mt-1 uppercase tracking-widest">
               CLARITY
             </span>
           </div>
@@ -340,7 +340,7 @@ export default function DataClarityCheck() {
           <p className="text-lg font-bold font-display leading-tight" style={{ color: levelInfo.color }}>
             {levelInfo.label}
           </p>
-          <p className="text-[10px] text-slate-400 font-medium">
+          <p className="text-[11px] text-slate-400 font-medium">
             Beantworte alle 5 Hebel-Aussagen für deine personalisierten Blindspots. ({completedQuestions}/5 abgeschlossen)
           </p>
         </div>
@@ -382,7 +382,7 @@ export default function DataClarityCheck() {
             {/* Rendered prioritized Blindspot Cards */}
             {activeBlindspots.length > 0 ? (
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
                   Identifizierte Daten-Blindspots:
                 </span>
 
@@ -402,7 +402,7 @@ export default function DataClarityCheck() {
                             {bs.titel}
                           </h4>
                           <span 
-                            className="px-2.5 py-0.5 rounded-md text-[9px] font-mono font-black uppercase tracking-wider text-white shrink-0 shadow-3xs"
+                            className="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-black uppercase tracking-wider text-white shrink-0 shadow-3xs"
                             style={{ backgroundColor: bs.severity_color }}
                           >
                             {bs.severity_label}
@@ -421,7 +421,7 @@ export default function DataClarityCheck() {
                         <div className="border-t border-slate-100 pt-3 mt-1">
                           <button
                             onClick={() => toggleNextStepExpanded(bs.key)}
-                            className="text-[9px] font-mono uppercase tracking-wider font-bold text-slate-400 hover:text-slate-905 bg-transparent border-none outline-none cursor-pointer flex items-center gap-1"
+                            className="text-[11px] font-mono uppercase tracking-wider font-bold text-slate-400 hover:text-slate-905 bg-transparent border-none outline-none cursor-pointer flex items-center gap-1"
                           >
                             {isNSExpanded ? 'Schritt verbergen ▲' : 'Nächster Schritt einsehen ▼'}
                           </button>

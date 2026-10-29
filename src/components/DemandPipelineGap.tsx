@@ -80,7 +80,7 @@ export default function DemandPipelineGap() {
             Pipeline-Gap-Rechner
           </h3>
         </div>
-        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
+        <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
           CH-BENCHMARKING
         </span>
       </div>
@@ -109,7 +109,7 @@ export default function DemandPipelineGap() {
                 onChange={e => handleFieldChange('neukunden', e.target.value)}
                 className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono uppercase font-bold text-slate-400">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Neukunden / Mt.
               </span>
             </div>
@@ -135,7 +135,7 @@ export default function DemandPipelineGap() {
               <option value="0.10">10% (Gut)</option>
               <option value="0.20">20% (Sehr gut)</option>
             </select>
-            <p className="text-[10px] text-slate-400 leading-snug font-medium">
+            <p className="text-[11px] text-slate-400 leading-snug font-medium">
               Wie viel % eurer Leads werden zu zahlenden Kunden?
             </p>
           </div>
@@ -155,7 +155,7 @@ export default function DemandPipelineGap() {
                 onChange={e => handleFieldChange('aktuelleLeads', e.target.value)}
                 className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono uppercase font-bold text-slate-400">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Leads / Mt.
               </span>
             </div>
@@ -176,7 +176,7 @@ export default function DemandPipelineGap() {
                 onChange={e => handleFieldChange('auftragswert', e.target.value)}
                 className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono uppercase font-bold text-slate-400">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 CHF
               </span>
             </div>
@@ -210,14 +210,14 @@ export default function DemandPipelineGap() {
                     <AlertTriangle className="w-4 h-4 text-[#E63946] shrink-0 mt-0.5" />
                     <div>
                       <h5 className="text-xs font-bold text-[#E63946] font-display">Starke Limitierung diagnostiziert</h5>
-                      <p className="text-[10px] text-[#E63946] leading-normal font-semibold mt-1">
+                      <p className="text-[11px] text-[#E63946] leading-normal font-semibold mt-1">
                         ⚠ Grosser Gap — das braucht ein System, keine einzelne Kampagne. Ein Gap von {formatNumber(results.gap)} Leads schliesst man nicht mit einer einmaligen Massnahme. Wir bauen die Infrastruktur, die das dauerhaft löst.
                       </p>
                     </div>
                   </div>
                 ) : (
                   <div className="flex justify-between items-center pb-2 border-b border-slate-200/40">
-                    <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">
+                    <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">
                       BERECHNUNGSERGEBNISSE
                     </span>
                     <span className="w-2 h-2 rounded-full" style={{ backgroundColor: results.istAufKurs ? '#2A9D8F' : '#E63946' }} />
@@ -226,7 +226,7 @@ export default function DemandPipelineGap() {
 
                 {/* Primary Metric Score */}
                 <div className="space-y-1">
-                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
                     {results.istAufKurs ? "Hebelstatus" : "Diagnostizierter Fehlbetrag"}
                   </span>
                   
@@ -271,13 +271,13 @@ export default function DemandPipelineGap() {
                 {/* Profit/Loss Potential representation */}
                 {!results.istAufKurs && (
                   <div className="bg-red-50/40 p-5 rounded-xl border border-red-100/20 text-left space-y-1.5">
-                    <p className="text-[9px] text-[#E63946] mb-0.5 font-bold uppercase tracking-widest font-mono">
+                    <p className="text-[11px] text-[#E63946] mb-0.5 font-bold uppercase tracking-widest font-mono">
                       UNERFASSTES REVENUE-POTENZIAL
                     </p>
                     <div className="text-xl sm:text-2xl font-bold font-display text-[#E63946] leading-none">
-                      {formatCHF(results.revenuePotenzial)} <span className="text-[10px] text-red-400 font-normal">/ Monat</span>
+                      {formatCHF(results.revenuePotenzial)} <span className="text-[11px] text-red-400 font-normal">/ Monat</span>
                     </div>
-                    <div className="text-[10px] text-slate-500 font-semibold font-mono">
+                    <div className="text-[11px] text-slate-500 font-semibold font-mono">
                       {formatCHF(results.jahresPotenzial)} pro Jahr ungenutzt
                     </div>
                   </div>
@@ -331,7 +331,7 @@ function HoverHelp({ text }: { text: string }) {
   return (
     <div className="group relative cursor-help inline-block text-slate-400 hover:text-slate-900 transition-colors">
       <Info className="w-3.5 h-3.5" />
-      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[10px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
         {text}
       </div>
     </div>

@@ -509,7 +509,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                   }`}
                 >
                   <span>{cat.label}</span>
-                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                  <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
                     isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'
                   }`}>
                     {cat.count}
@@ -546,13 +546,13 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                       
                       {/* Badge Row */}
                       <div className="flex items-center justify-between gap-2">
-                        <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold tracking-wide uppercase ${
+                        <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-extrabold tracking-wide uppercase ${
                           categoryColors[skill.category] || 'text-slate-700 bg-slate-50'
                         }`}>
                           {skill.categoryLabel}
                         </span>
                         
-                        <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold tracking-wide uppercase ${
+                        <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-extrabold tracking-wide uppercase ${
                           difficultyColors[skill.difficulty] || 'text-slate-700 bg-slate-50'
                         }`}>
                           {skill.difficulty}

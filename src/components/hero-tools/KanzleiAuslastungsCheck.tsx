@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Scale, ChevronUp, ChevronDown, CircleDollarSign } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   anwaelte: number;
@@ -16,12 +17,7 @@ interface Inputs {
   admin_stunden: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function KanzleiAuslastungsCheck() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -167,7 +163,7 @@ export default function KanzleiAuslastungsCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">LEGAL EFFICIENCY</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">LEGAL EFFICIENCY</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kanzlei-Auslastungs-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Analysiere administrative Zeitverluste und kalkuliere das ungenutzte Honorar-Potenzial in deiner Kanzlei.
@@ -190,7 +186,7 @@ export default function KanzleiAuslastungsCheck() {
               onChange={(e) => handleInputChange('anwaelte', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Anzahl Volljuristen, die Mandate abrechnen</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anzahl Volljuristen, die Mandate abrechnen</p>
           </div>
 
           <div className="space-y-1">
@@ -207,7 +203,7 @@ export default function KanzleiAuslastungsCheck() {
               onChange={(e) => handleInputChange('billable_stunden', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Richtwert: 32 h / Woche abrechenbare Mandatszeit pro Jurist</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert: 32 h / Woche abrechenbare Mandatszeit pro Jurist</p>
           </div>
 
           <div className="space-y-1">
@@ -224,7 +220,7 @@ export default function KanzleiAuslastungsCheck() {
               onChange={(e) => handleInputChange('admin_stunden', parseInt(e.target.value) || 2)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Nicht abrechenbare Büroarbeiten, Akquise & Organisation</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Nicht abrechenbare Büroarbeiten, Akquise & Organisation</p>
           </div>
 
           <div className="space-y-1">
@@ -254,12 +250,12 @@ export default function KanzleiAuslastungsCheck() {
               {/* Score header */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
                     EFFIZIENZ SCORE JURISTEN
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
-                <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+                <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
                   {currentStufe.label}
                 </span>
               </div>
@@ -267,27 +263,27 @@ export default function KanzleiAuslastungsCheck() {
               {/* Cards column */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">Honorargewinn aktuell</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Honorargewinn aktuell</span>
                   <h4 className="text-base font-black text-slate-900 mt-1">{formatCHF(results.umsatz_jahr_aktuell)} / J.</h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     (Basis: {results.billable_jahr_kanzlei.toLocaleString('de-CH')} abrechenbare Stunden / Jahr kanzleibeitrag)
                   </p>
                 </div>
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-red-655 block uppercase">Kapazitäts-Umsatzlücke</span>
+                  <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Kapazitäts-Umsatzlücke</span>
                   <h4 className="text-base font-black text-red-600 mt-1">
                     {results.umsatz_gap > 0 ? `-${formatCHF(results.umsatz_gap)} / J.` : 'CHF 0'}
                   </h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     Soll-Benchmark-Vergleich (32h billable / Woche)
                   </p>
                 </div>
 
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <span className="text-[9px] font-mono font-bold text-green-700 block uppercase">Wachstumspotenzial bei 40% Admin-Entlastung</span>
-                    <p className="text-[10px] text-slate-500 font-semibold">Durch digitale Werkzeuge und Prozesse wiederverwertete Mandatszeit</p>
+                    <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Wachstumspotenzial bei 40% Admin-Entlastung</span>
+                    <p className="text-[11px] text-slate-500 font-semibold">Durch digitale Werkzeuge und Prozesse wiederverwertete Mandatszeit</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.entlastung_potenzial_chf)} / J.</h4>
                 </div>
@@ -315,7 +311,7 @@ export default function KanzleiAuslastungsCheck() {
       {results && (
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
+            <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
               <strong>Möchtest du Zeit für strategische Fälle gewinnen?</strong> In einem 30-minütigen Gespräch zeigen wir konkrete Optionen zur Kanzlei-Automatisierung.
             </div>
             <button
@@ -356,7 +352,7 @@ export default function KanzleiAuslastungsCheck() {
                 {!formSubmitted ? (
                   <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
                       <input
                         type="email"
                         required
@@ -367,7 +363,7 @@ export default function KanzleiAuslastungsCheck() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Dein Name *</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Dein Name *</label>
                       <input
                         type="text"
                         required
@@ -378,7 +374,7 @@ export default function KanzleiAuslastungsCheck() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Kanzleiname</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Kanzleiname</label>
                       <input
                         type="text"
                         value={companySub}
@@ -388,7 +384,7 @@ export default function KanzleiAuslastungsCheck() {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Ausrichtung</label>
+                      <label className="text-[11px] font-bold text-slate-500 uppercase font-mono">Ausrichtung</label>
                       <select
                         value={kanzleiTyp}
                         onChange={(e) => setKanzleiTyp(e.target.value)}
@@ -407,7 +403,7 @@ export default function KanzleiAuslastungsCheck() {
                     >
                       Kalkulation anfordern
                     </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
+                    <p className="sm:col-span-2 text-[11px] text-slate-400 font-mono text-center">
                       Streng vertraulich. Einmalige, personalisierte PDF-Auswertung samt Kanzleiphasen-Einschätzung.
                     </p>
                   </form>

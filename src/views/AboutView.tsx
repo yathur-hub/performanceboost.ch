@@ -60,7 +60,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[10px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
+            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
           >
             ÜBER PERFORMANCEBOOST
           </motion.span>
@@ -94,7 +94,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="space-y-6"
         >
-          <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">UNSERE ENSTEHUNG</span>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">UNSERE ENSTEHUNG</span>
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Die Lücke zwischen Kreativität und harter Pipeline.</h2>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
             B2B-Wachstum scheitert selten an fehlender Kreativität. Es scheitert fast immer an mangelnder Systematisierung. Die meisten B2B-Unternehmen agieren in Silos: Marketing schaltet isolierte LinkedIn-Kampagnen und der Vertrieb telefoniert alten Kaltakquise-Listen hinterher.
@@ -162,7 +162,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
           className="md:col-span-7 space-y-6 text-left"
         >
-          <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">PERSÖNLICHES ENGAGEMENT & VISION</span>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">PERSÖNLICHES ENGAGEMENT & VISION</span>
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
@@ -186,7 +186,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3"
           >
-            <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">UNSER ALLEINSTELLUNGSMERKMAL</span>
+            <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">UNSER ALLEINSTELLUNGSMERKMAL</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Was performanceboost unterscheidet</h2>
           </motion.div>
 
@@ -252,7 +252,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">WIE WIR TICKEN</span>
+          <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">WIE WIR TICKEN</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Arbeitsphilosophie</h2>
         </motion.div>
 
@@ -296,7 +296,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3 animate-fadeIn"
           >
-            <span className="text-[10px] font-mono text-[#8185F8] font-bold uppercase tracking-widest">WERTE, DIE REVENUE BESTIMMEN</span>
+            <span className="text-[11px] font-mono text-[#8185F8] font-bold uppercase tracking-widest">WERTE, DIE REVENUE BESTIMMEN</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight text-white">Unsere inneren Leitwerte</h2>
           </motion.div>
 
@@ -339,7 +339,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">JETZT DURCHSTARTEN</span>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">JETZT DURCHSTARTEN</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Lass uns dein Pipeline-System diagnostizieren</h2>
           <p className="text-xs text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
             Entscheide nach 30 Minuten, ob du mit uns den Hebel ansetzen willst. Kein Druck, kein aggressiver Vertrieb — nur echte Analysen für dein Wachstum.

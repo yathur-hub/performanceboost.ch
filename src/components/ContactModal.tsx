@@ -9,11 +9,11 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Sparkles,
   MessageSquare
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import ContactForm from './ContactForm';
+import { SITE } from '../config/site';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -94,8 +94,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-white sticky top-0 z-20 shrink-0">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#686DF4] animate-pulse" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#686DF4]">
-                  Wachstumsgespräch & Audit
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#686DF4]">
+                  Erstgespräch anfragen
                 </span>
               </div>
 
@@ -120,17 +120,17 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <div className="space-y-2 border-b border-slate-100 pb-4">
                     <h2 id="contact-modal-title" className="text-2xl sm:text-3xl font-display font-bold text-slate-950 tracking-tight flex items-center gap-2.5">
                       <MessageSquare className="w-6 h-6 text-[#686DF4] shrink-0" />
-                      Wachstumsgespräch buchen
+                      Wie können wir Ihnen helfen?
                     </h2>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Lass uns in 30 Minuten deine B2B-Pipeline, Lead-Gen & Marketing-Prozesse analysieren. Unverbindlich, kostenlos &amp; direkt mit Inhaber Yathur Nathan.
+                      Schreiben Sie uns kurz, wo Sie stehen. Im kostenlosen Erstgespräch (30 Minuten, per Video oder Telefon) klären wir, wo Ihre Neukundengewinnung heute Potenzial verschenkt und ob wir der richtige Partner dafür sind.
                     </p>
                   </div>
 
                   <ContactForm 
-                    formName="Overlay Modal Formular" 
-                    source="Wachstumsgespräch Overlay"
-                    submitButtonText="Wachstumsgespräch jetzt anfragen"
+                    formName="Kontaktformular Overlay"
+                    formLocation="modal"
+                    submitButtonText="Anfrage senden"
                     onSuccess={() => {
                       // Keep modal open so user sees success message
                     }}
@@ -151,8 +151,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         referrerPolicy="no-referrer"
                       />
                       <div className="space-y-1">
-                        <span className="inline-flex items-center gap-1 text-[9px] font-mono font-bold uppercase tracking-widest text-[#686DF4] bg-[#686DF4]/15 px-2.5 py-1 rounded-full">
-                          <Sparkles className="w-2.5 h-2.5" /> Dein Ansprechpartner
+                        <span className="inline-flex items-center gap-1 text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4] bg-[#686DF4]/15 px-2.5 py-1 rounded-full">
+                          <MessageSquare className="w-2.5 h-2.5" /> Ihr Ansprechpartner
                         </span>
                         <h3 className="text-xl font-display font-bold text-white pt-1">Yathur Nathan</h3>
                         <p className="text-xs font-mono font-bold text-slate-400">Gründer &amp; Inhaber</p>
@@ -160,34 +160,34 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     </div>
 
                     <p className="text-xs text-slate-300 leading-relaxed italic border-t border-slate-800/80 pt-4 font-medium text-center sm:text-left lg:text-center">
-                      «Ich unterstütze Schweizer B2B-Unternehmen dabei, bestehende Wachstumspotenziale sichtbar zu machen und in ein verlässliches, automatisierte Kundengewinnungssystem zu übersetzen.»
+                      «Sie sprechen von der ersten Anfrage bis zur Umsetzung direkt mit mir. Kein Verkaufsteam, kein Account Manager dazwischen.»
                     </p>
 
                     {/* Contact details */}
                     <div className="space-y-3 pt-2 border-t border-slate-800/80">
                       <a 
-                        href="mailto:yathur@performanceboost.ch"
+                        href={`mailto:${SITE.email}`}
                         className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-850 border border-slate-800/80 hover:border-[#686DF4]/40 text-xs font-medium text-slate-200 hover:text-white transition-all group cursor-pointer"
                       >
                         <div className="w-7 h-7 rounded-lg bg-[#686DF4]/20 text-[#686DF4] flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white transition-all">
                           <Mail className="w-3.5 h-3.5" />
                         </div>
                         <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[8px] font-mono font-bold text-slate-400 uppercase">Direkte E-Mail</span>
-                          <span className="font-semibold text-xs truncate">yathur@performanceboost.ch</span>
+                          <span className="text-[11px] font-mono font-bold text-slate-400 uppercase">Direkte E-Mail</span>
+                          <span className="font-semibold text-xs truncate">{SITE.email}</span>
                         </div>
                       </a>
 
                       <a 
-                        href="tel:+41786754097"
+                        href={SITE.phoneHref}
                         className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-850 border border-slate-800/80 hover:border-[#686DF4]/40 text-xs font-medium text-slate-200 hover:text-white transition-all group cursor-pointer"
                       >
                         <div className="w-7 h-7 rounded-lg bg-[#686DF4]/20 text-[#686DF4] flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white transition-all">
                           <Phone className="w-3.5 h-3.5" />
                         </div>
                         <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[8px] font-mono font-bold text-slate-400 uppercase">Telefonische Rückfrage</span>
-                          <span className="font-semibold text-xs">+41 78 675 4097</span>
+                          <span className="text-[11px] font-mono font-bold text-slate-400 uppercase">Telefonische Rückfrage</span>
+                          <span className="font-semibold text-xs">{SITE.phoneDisplay}</span>
                         </div>
                       </a>
 
@@ -196,7 +196,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           <MapPin className="w-3.5 h-3.5" />
                         </div>
                         <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[8px] font-mono font-bold text-slate-400 uppercase">Standort Schweiz</span>
+                          <span className="text-[11px] font-mono font-bold text-slate-400 uppercase">Standort Schweiz</span>
                           <span className="font-semibold text-xs">Patschär 4 • 7306 Fläsch (Graubünden)</span>
                         </div>
                       </div>

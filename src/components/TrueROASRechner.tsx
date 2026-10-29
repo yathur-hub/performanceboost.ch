@@ -173,11 +173,11 @@ export default function TrueROASRechner() {
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
                 required
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Spend
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Gesamtes Paid-Social-Budget pro Monat (Meta + TikTok kombiniert)
             </p>
           </div>
@@ -198,11 +198,11 @@ export default function TrueROASRechner() {
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
                 required
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Umsatz
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Umsatz aus Ads (aus Meta / TikTok Ads Manager attribuiert)
             </p>
           </div>
@@ -225,7 +225,7 @@ export default function TrueROASRechner() {
               <option value="margin_mid_high">50–65% (z.B. 57.5%)</option>
               <option value="margin_high">Über 65% (z.B. 70%)</option>
             </select>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Marge nach Produktkosten, vor Marketing und Versand
             </p>
           </div>
@@ -245,11 +245,11 @@ export default function TrueROASRechner() {
                 onChange={(e) => handleInputChange('shipping', e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Order
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Leer lassen, wenn Versand bereits im Produktpreis kalkuliert ist
             </p>
           </div>
@@ -270,18 +270,18 @@ export default function TrueROASRechner() {
                 <div className="space-y-4 opacity-40 select-none pointer-events-none text-left">
                   <div className="grid grid-cols-2 gap-4 border-b border-slate-200/50 pb-4">
                     <div>
-                      <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">Gemeldeter ROAS:</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Gemeldeter ROAS:</span>
                       <strong className="text-xl font-display text-slate-900 block leading-tight">3.6x</strong>
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">Echter Profit:</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Echter Profit:</span>
                       <strong className="text-xl font-display text-slate-900 block leading-tight">CHF 4'200</strong>
                     </div>
                   </div>
 
                   <div className="space-y-1 text-center py-2">
                     <span className="text-xs font-semibold block text-slate-500">Break-Even-ROAS: 2.9x</span>
-                    <span className="text-[10px] text-slate-400 block">Ab diesem Wert arbeiten deine Social Ads im grünen Bereich.</span>
+                    <span className="text-[11px] text-slate-400 block">Ab diesem Wert arbeiten deine Social Ads im grünen Bereich.</span>
                   </div>
                 </div>
 
@@ -289,7 +289,7 @@ export default function TrueROASRechner() {
                   <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider animate-pulse">
                     <Sparkles className="w-3.5 h-3.5" /> Gib deine Zahlen ein
                   </div>
-                  <p className="text-[9.5px] text-slate-400/90 font-mono">
+                  <p className="text-[11px] text-slate-400/90 font-mono">
                     Wir vergleichen deinen echten Warenertrag mit den Media-Ausgaben.
                   </p>
                 </div>
@@ -307,19 +307,19 @@ export default function TrueROASRechner() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4 border-b border-slate-200/50 pb-4">
                       <div>
-                        <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">GEMELDETER ROAS:</span>
+                        <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">GEMELDETER ROAS:</span>
                         <strong className="text-xl sm:text-2xl font-display text-slate-900 block">
                           {result.reportedROAS ? `${result.reportedROAS.toFixed(1)}x` : '—'}
                         </strong>
-                        <span className="text-[9px] text-slate-400 font-medium block mt-0.5">Umsatz / Spend</span>
+                        <span className="text-[11px] text-slate-400 font-medium block mt-0.5">Umsatz / Spend</span>
                       </div>
                       <div>
-                        <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">ECHTER PROFIT:</span>
+                        <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">ECHTER PROFIT:</span>
                         <strong className={`text-xl sm:text-2xl font-display select-none block ${result.trueProfit < 0 ? 'text-red-500 animate-pulse' : 'text-emerald-600'}`}>
                           {result.trueProfit < 0 ? 'CHF −' : 'CHF +'}
                           {Math.abs(Math.round(result.trueProfit)).toLocaleString('de-CH')}
                         </strong>
-                        <span className="text-[9px] text-slate-450 block mt-0.5">nach Marge & Logistik</span>
+                        <span className="text-[11px] text-slate-450 block mt-0.5">nach Marge & Logistik</span>
                       </div>
                     </div>
 
@@ -327,7 +327,7 @@ export default function TrueROASRechner() {
                       <span className="text-xs font-bold text-slate-700 block select-none">
                         Break-Even-ROAS: <strong className="text-indigo-600 font-extrabold">{result.breakEvenROAS ? `${result.breakEvenROAS.toFixed(1)}x` : '—'}</strong>
                       </span>
-                      <p className="text-[10px] text-slate-400 leading-normal select-none">
+                      <p className="text-[11px] text-slate-400 leading-normal select-none">
                         Das ist der ROAS, ab dem deine Ads profitabel sind.
                       </p>
                     </div>
@@ -354,7 +354,7 @@ export default function TrueROASRechner() {
                     {/* Margin Warning */}
                     {result.lowMarginWarning && (
                       <div className="p-4 rounded-xl border border-orange-200 bg-orange-50/50 text-orange-900 text-xs leading-relaxed font-semibold">
-                        <span className="block font-bold text-[10px] font-mono tracking-wider uppercase mb-1">⚠️ Strukturelle Margen-Warnung:</span>
+                        <span className="block font-bold text-[11px] font-mono tracking-wider uppercase mb-1">⚠️ Strukturelle Margen-Warnung:</span>
                         Bei einer Produktmarge unter 20% ist profitables Paid Social strukturell schwierig. Dein Break-Even-ROAS liegt über 5x — ein Wert, den Meta und TikTok-Ads in wettbewerbsintensiven Märkten selten dauerhaft erreichen. Wir empfehlen, Preiskalkulationen anzupassen, bevor du Budgets vergrösserst.
                       </div>
                     )}
@@ -374,7 +374,7 @@ export default function TrueROASRechner() {
                     <span>Kostenlosen Ads-Audit buchen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
-                  <p className="text-[9px] text-slate-400 text-center font-mono mt-2">
+                  <p className="text-[11px] text-slate-400 text-center font-mono mt-2">
                     Wir analysieren deine Kampagnen kostenlos auf echte Profitabilität — inklusive Deckungsbeitrag. 30 Minuten, keine Verkaufsshow.
                   </p>
                 </div>
