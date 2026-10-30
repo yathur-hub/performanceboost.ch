@@ -335,6 +335,17 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                   </ul>
                 </div>
               </div>
+              <nav aria-label="Weitere Schwerpunkte" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                <span className="font-semibold text-slate-950">Auch interessant:</span>
+                {ICP_CARDS.filter((c) => c.slug !== slug).map((c) => (
+                  <Link key={c.slug} href={`/loesungen/${c.slug}`} className="inline-flex items-center gap-1.5 font-semibold text-[#4f54d6] hover:underline">
+                    {c.title} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                ))}
+                <Link href="/loesungen/finanzdienstleister" className="inline-flex items-center gap-1.5 font-semibold text-[#4f54d6] hover:underline">
+                  Übersicht Finanzdienstleister <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </nav>
             </section>
           )
         )}

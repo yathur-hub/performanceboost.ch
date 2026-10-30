@@ -221,42 +221,62 @@ function setMeta(attr: 'name' | 'property', key: string, content: string) {
   el.setAttribute('content', content);
 }
 
+export interface HeadTags {
+  title: string;
+  metas: { attr: 'name' | 'property'; key: string; content: string }[];
+  /** Nur bei indexierbaren Seiten gesetzt. */
+  canonical: string | null;
+  schema: object | null;
+}
+
+/** Kopfdaten einer Route. Wird im Browser (SEOHead) und beim Prerendern (scripts/prerender.mjs) verwendet. */
+export function buildHeadTags(route: ParsedRoute): HeadTags {
+  const meta = buildMeta(route);
+  const canonicalUrl = `${SITE.baseUrl}${route.path === '/' ? '/' : route.path}`;
+  return {
+    title: meta.title,
+    metas: [
+      { attr: 'name', key: 'description', content: meta.description },
+      { attr: 'name', key: 'robots', content: meta.indexable ? 'index, follow, max-image-preview:large' : 'noindex, follow' },
+      { attr: 'property', key: 'og:title', content: meta.title },
+      { attr: 'property', key: 'og:description', content: meta.description },
+      { attr: 'property', key: 'og:url', content: canonicalUrl },
+      { attr: 'property', key: 'og:type', content: meta.ogType },
+      { attr: 'property', key: 'og:site_name', content: SITE.name },
+      { attr: 'property', key: 'og:image', content: SITE.portraitUrl },
+      { attr: 'property', key: 'og:locale', content: 'de_CH' },
+      { attr: 'name', key: 'twitter:card', content: 'summary_large_image' },
+    ],
+    canonical: meta.indexable ? canonicalUrl : null,
+    schema: meta.schema,
+  };
+}
+
 export default function SEOHead({ route }: SEOHeadProps) {
   useEffect(() => {
-    const meta = buildMeta(route);
-    const canonicalUrl = `${SITE.baseUrl}${route.path === '/' ? '/' : route.path}`;
+    const head = buildHeadTags(route);
 
-    document.title = meta.title;
-    setMeta('name', 'description', meta.description);
-    setMeta('name', 'robots', meta.indexable ? 'index, follow, max-image-preview:large' : 'noindex, follow');
-
-    setMeta('property', 'og:title', meta.title);
-    setMeta('property', 'og:description', meta.description);
-    setMeta('property', 'og:url', canonicalUrl);
-    setMeta('property', 'og:type', meta.ogType);
-    setMeta('property', 'og:site_name', SITE.name);
-    setMeta('property', 'og:image', SITE.portraitUrl);
-    setMeta('property', 'og:locale', 'de_CH');
-    setMeta('name', 'twitter:card', 'summary_large_image');
+    document.title = head.title;
+    for (const m of head.metas) setMeta(m.attr, m.key, m.content);
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (meta.indexable) {
+    if (head.canonical) {
       if (!canonical) {
         canonical = document.createElement('link');
         canonical.rel = 'canonical';
         document.head.appendChild(canonical);
       }
-      canonical.href = canonicalUrl;
+      canonical.href = head.canonical;
     } else if (canonical) {
       canonical.remove();
     }
 
     document.getElementById('perf-boost-jsonld')?.remove();
-    if (meta.schema) {
+    if (head.schema) {
       const script = document.createElement('script');
       script.id = 'perf-boost-jsonld';
       script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(meta.schema);
+      script.textContent = JSON.stringify(head.schema);
       document.head.appendChild(script);
     }
   }, [route]);

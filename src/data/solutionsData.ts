@@ -23,6 +23,13 @@ export interface SolutionSector {
     q: string;
     a: string;
   }[];
+  /** Querverweis auf eine verwandte Seite (interne Verlinkung, z. B. zu den Finanz-Landingpages). */
+  related?: {
+    href: string;
+    title: string;
+    desc: string;
+    linkText: string;
+  };
 }
 
 export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
@@ -177,6 +184,12 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Automatische Einladungen zu Besichtigungen per E-Mail oder SMS',
       'Ein digitaler Auftritt, der Sie bei Eigentümern als kompetenten Makler zeigt'
     ],
+    related: {
+      href: '/loesungen/hypothekarberatung',
+      title: 'Sie beraten zur Finanzierung?',
+      desc: 'Für Hypothekarberatungen gibt es eine eigene Seite: Anfragen von Erstkäufern und zu auslaufenden Festhypotheken über die eigene Website statt über Vergleichsportale.',
+      linkText: 'Mehr zu Hypothekarberatung',
+    },
     faqs: [
       {
         q: 'Lohnt sich das auch für kleinere, regionale Makler?',
@@ -231,6 +244,12 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Ein geordneter, teilweise automatisierter Ablauf für neue Mandate',
       'Entlastung des Teams durch klare Abläufe'
     ],
+    related: {
+      href: '/loesungen/finanzdienstleister',
+      title: 'Sie bieten auch Finanzberatung an?',
+      desc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen gibt es eigene Seiten mit Beispielen und einem Anfrage-Check.',
+      linkText: 'Zu den Finanzdienstleistern',
+    },
     faqs: [
       {
         q: 'Unsere Mandanten wählen uns wegen des Vertrauens. Passt digitales Marketing dazu?',
