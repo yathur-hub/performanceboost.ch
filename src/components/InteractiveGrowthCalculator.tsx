@@ -10,6 +10,20 @@ import { trackEvent } from '../lib/analytics';
 
 const TOOL_NAME = 'revenue_budget_simulator';
 
+/**
+ * Verbesserungen, mit denen das Rechenbeispiel rechnet. Bewusst vom Besucher einstellbar und vorsichtig
+ * vorbelegt: Es gibt keine belegten Durchschnittswerte, die wir als Erwartung angeben könnten (P14/P16).
+ */
+const DEFAULT_IMPROVEMENTS = { cpcCut: 5, organicGain: 10, leadGain: 10, closeGain: 5 };
+type Improvements = typeof DEFAULT_IMPROVEMENTS;
+
+const IMPROVEMENT_SLIDERS: { key: keyof Improvements; label: string; hint: string; max: number; sign: '−' | '+' }[] = [
+  { key: 'cpcCut', label: 'Tiefere Klickkosten', hint: 'z. B. durch genauere Suchbegriffe und Ausschlüsse', max: 30, sign: '−' },
+  { key: 'organicGain', label: 'Mehr Besuche ohne Werbung', hint: 'z. B. durch bessere Inhalte und Auffindbarkeit', max: 50, sign: '+' },
+  { key: 'leadGain', label: 'Höhere Anfragequote', hint: 'z. B. durch eine klarere Anfrageseite', max: 60, sign: '+' },
+  { key: 'closeGain', label: 'Höhere Abschlussquote', hint: 'z. B. durch schnellere Antwort und Vorqualifizierung', max: 40, sign: '+' },
+];
+
 export default function InteractiveGrowthCalculator() {
   // Input States
   const [budget, setBudget] = useState<number>(2500); // Monatliches Marketingbudget im Ads-Sektor
@@ -18,6 +32,7 @@ export default function InteractiveGrowthCalculator() {
   const [leadConversion, setLeadConversion] = useState<number>(1.2); // Inbound-zu-Lead in %
   const [salesConversion, setSalesConversion] = useState<number>(8.0); // Lead-zu-Deal Close-Rate in %
   const [dealValue, setDealValue] = useState<number>(15000); // Ø Auftragsvolumen / Deal (ACV) in CHF
+  const [improvements, setImprovements] = useState<Improvements>(DEFAULT_IMPROVEMENTS);
 
   useEffect(() => { trackEvent('tool_view', { tool_name: TOOL_NAME }) }, []);
 
@@ -55,18 +70,14 @@ export default function InteractiveGrowthCalculator() {
     };
   }, [budget, organic, cpc, leadConversion, salesConversion, dealValue]);
 
-  // Boosted calculated metrics
+  // Metrics with the improvements the visitor has set
   const boostedMetrics = useMemo(() => {
-    // Optimization of campaigns: reduces average CPC wastage by 15%
-    const boostedCpc = Math.max(0.40, cpc * 0.85);
-    // Content structure & Organic visibility boost: +30% organic visitor growth
-    const boostedOrganic = Math.round(organic * 1.30);
+    const boostedCpc = Math.max(0.40, cpc * (1 - improvements.cpcCut / 100));
+    const boostedOrganic = Math.round(organic * (1 + improvements.organicGain / 100));
     const boostedTraffic = boostedOrganic + Math.round(budget / boostedCpc);
 
-    // Better landing page experiences, copy & CTA placements: +40% Lead Conversion Efficiency
-    const boostedLeadConv = leadConversion * 1.40;
-    // CRM Automation, rapid initial response & sales enablement tools: +25% Sales close efficiency
-    const boostedSalesConv = salesConversion * 1.25;
+    const boostedLeadConv = leadConversion * (1 + improvements.leadGain / 100);
+    const boostedSalesConv = salesConversion * (1 + improvements.closeGain / 100);
 
     const acvScale = Math.max(1, dealValue / 12000);
     const calibratedLeadCR = boostedLeadConv / Math.pow(acvScale, 0.18); 
@@ -86,7 +97,7 @@ export default function InteractiveGrowthCalculator() {
       optCpc: parseFloat(boostedCpc.toFixed(2)),
       optOrganic: boostedOrganic
     };
-  }, [budget, organic, cpc, leadConversion, salesConversion, dealValue]);
+  }, [budget, organic, cpc, leadConversion, salesConversion, dealValue, improvements]);
 
   const revenueUpliftPercentage = currentMetrics.monthlyRevenue === 0
     ? 0
@@ -104,7 +115,12 @@ export default function InteractiveGrowthCalculator() {
     setLeadConversion(1.2);
     setSalesConversion(8.0);
     setDealValue(15000);
+    setImprovements(DEFAULT_IMPROVEMENTS);
   };
+
+  const improvementSummary = IMPROVEMENT_SLIDERS.filter((s) => improvements[s.key] > 0)
+    .map((s) => `${s.sign}${improvements[s.key]}% ${s.label.replace(/^(Tiefere|Mehr|Höhere) /, '')}`)
+    .join(', ');
 
   return (
     <div className="bg-white border border-[#E2E8F0]/65 rounded-3xl p-6 md:p-10 text-slate-800 relative overflow-hidden shadow-[var(--shadow-premium-lg)]" id="growth-calculator">
@@ -306,7 +322,7 @@ export default function InteractiveGrowthCalculator() {
                   type="range"
                   min="2000"
                   max="80000"
-                  step="2000"
+                  step="1000"
                   value={dealValue}
                   onChange={(e) => setDealValue(Number(e.target.value))}
                   onMouseUp={(e) => commitStep('deal_value', Number(e.currentTarget.value))}
@@ -322,6 +338,7 @@ export default function InteractiveGrowthCalculator() {
               </div>
 
             </div>
+
 
           </div>
         </div>
@@ -348,6 +365,44 @@ export default function InteractiveGrowthCalculator() {
               </div>
             </div>
 
+            {/* Improvements set by the visitor, directly above their effect */}
+            <div className="space-y-3">
+              <span className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest font-bold text-[#686DF4] uppercase bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md w-fit">
+                <TrendingUp className="w-3 h-3 text-[#686DF4]" /> Ihre Annahmen
+              </span>
+              <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+                Welche Verbesserung halten Sie für realistisch? Die Startwerte sind bewusst vorsichtig gewählt. Bei 0% ändert sich nichts.
+              </p>
+
+              {IMPROVEMENT_SLIDERS.map((s) => (
+                <div key={s.key} className="space-y-2 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
+                  <div className="flex justify-between items-center text-xs gap-3">
+                    <div>
+                      <span className="text-slate-700 font-bold font-display block">{s.label}</span>
+                      <span className="text-[11px] text-slate-400 font-semibold">{s.hint}</span>
+                    </div>
+                    <span className="font-bold text-[#686DF4] font-mono shrink-0">{s.sign}{improvements[s.key]}%</span>
+                  </div>
+                  <input aria-label={s.label}
+                    type="range"
+                    min="0"
+                    max={s.max}
+                    step="5"
+                    value={improvements[s.key]}
+                    onChange={(e) => setImprovements((prev) => ({ ...prev, [s.key]: Number(e.target.value) }))}
+                    onMouseUp={(e) => commitStep(`improvement_${s.key}`, Number(e.currentTarget.value))}
+                    onTouchEnd={(e) => commitStep(`improvement_${s.key}`, Number(e.currentTarget.value))}
+                    onKeyUp={(e) => commitStep(`improvement_${s.key}`, Number(e.currentTarget.value))}
+                    className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+                  />
+                  <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold">
+                    <span>0%</span>
+                    <span>{s.max}%</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Box Current */}
               <div className="bg-white p-5 rounded-2xl border border-slate-200">
@@ -366,7 +421,7 @@ export default function InteractiveGrowthCalculator() {
               {/* Box Boosted */}
               <div className="bg-[#686DF4]/5 p-5 rounded-2xl border border-[#CACCFB]/35 shadow-xs">
                 <p className="text-[11px] text-[#686DF4] tracking-widest uppercase mb-2 flex items-center gap-1 font-bold font-mono">
-                  <TrendingUp className="w-3 h-3 text-[#686DF4]" /> Mit Annahmen (Richtwerte)
+                  <TrendingUp className="w-3 h-3 text-[#686DF4]" /> Mit Ihren Annahmen
                 </p>
                 <div className="space-y-2">
                   <div className="text-lg sm:text-xl font-extrabold text-[#686DF4] font-display">
@@ -387,7 +442,11 @@ export default function InteractiveGrowthCalculator() {
                 +{formattedValue((boostedMetrics.monthlyRevenue - currentMetrics.monthlyRevenue) * 12)}
               </div>
               <p className="text-xs text-slate-600 font-semibold mt-3 flex items-center justify-center gap-1.5 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-100">
-                <span>Rechnerisch <strong>+{revenueUpliftPercentage}%</strong>, wenn alle Annahmen eintreffen: 15% tiefere Klickkosten, 30% mehr Besuche ohne Werbung, 40% höhere Anfragequote und 25% höhere Abschlussquote. Das sind Richtwerte für ein Rechenbeispiel, kein Versprechen.</span>
+                <span>
+                  {improvementSummary
+                    ? <>Rechnerisch <strong>+{revenueUpliftPercentage}%</strong> mit Ihren Annahmen ({improvementSummary}). Ein Rechenbeispiel, kein Versprechen.</>
+                    : <>Ohne angenommene Verbesserung ändert sich nichts. Stellen Sie oben unter «Ihre Annahmen» ein, was Sie für realistisch halten.</>}
+                </span>
               </p>
             </div>
           </div>
