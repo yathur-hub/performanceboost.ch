@@ -771,7 +771,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Brauchen wir dafür neue Tools?',
-        a: 'Oft nicht. Meist lassen sich die bestehenden Tools besser nutzen. Wenn ein neues Tool nötig ist, empfehlen wir es aufgrund Ihrer Anforderungen. Wir erhalten keine Provisionen von Softwareanbietern.'
+        a: 'Oft nicht. Meist lassen sich die bestehenden Tools besser nutzen. Wenn ein neues Tool nötig ist, empfehlen wir es aufgrund Ihrer Anforderungen.'
       },
       {
         q: 'Ist das nicht einfach ein IT-Projekt?',
