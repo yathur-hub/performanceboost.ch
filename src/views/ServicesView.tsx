@@ -46,48 +46,48 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
   const servicesCopyOverride: { [key: string]: { benefit: string, desc: string } } = {
     'growth-strategy': {
-      benefit: 'Du weisst, wohin du wächst — und warum.',
-      desc: 'Kein Wachstum ohne Richtung. Wir entwickeln deine Go-to-Market-Strategie, definieren Zielgruppen, Positionierung und Wachstumshebel. Das Ergebnis: Ein klarer Plan, der dein Team auf ein gemeinsames Ziel ausrichtet.'
+      benefit: 'Sie wissen, wen Sie ansprechen und womit.',
+      desc: 'Wir legen mit Ihnen fest, wer Ihre Wunschkunden sind, wie Sie sich positionieren und über welche Kanäle Sie diese erreichen. Daraus entsteht ein Plan, mit dem Ihr Team arbeiten kann.'
     },
     'demand-generation': {
-      benefit: 'Dein Vertrieb bekommt konstant qualifizierte Leads.',
-      desc: 'Multi-Channel Demand Generation, die systematisch Nachfrage erzeugt. Paid Media, Content, LinkedIn, Email — koordiniert zu einer Pipeline-Maschine. Nicht Klicks. Kaufbereite Leads.'
+      benefit: 'Regelmässig passende Anfragen für Ihren Vertrieb.',
+      desc: 'Kampagnen auf Google, LinkedIn und Meta, abgestimmt mit Inhalten und E-Mail. Wir messen den Erfolg an Anfragen, nicht an Klicks.'
     },
     'lead-generation': {
-      benefit: 'Aus anonymen Besuchern werden qualifizierte Interessenten.',
-      desc: 'Organische und bezahlte Lead-Generierung. Content-Strategien, die ranken und konvertieren. Landing Pages, die Leads erfassen. Lead-Scoring, das Qualität sicherstellt.'
+      benefit: 'Aus Website-Besuchern werden Anfragen.',
+      desc: 'Inhalte und SEO, die bei Google gefunden werden, Landingpages, die Anfragen erfassen, und eine Bewertung, die zeigt, welche Anfragen Vorrang haben.'
     },
     'marketing-automation': {
-      benefit: 'Dein Team arbeitet weniger manuell — und erzielt mehr.',
-      desc: 'Automation-Workflows, die Leads nurturen, qualifizieren und übergeben. CRM-Strukturen, die deinem Sales-Team geben, was es braucht. Skalierbar. Ohne Prozess-Chaos.'
+      benefit: 'Weniger Handarbeit, keine vergessenen Anfragen.',
+      desc: 'Automatische Abläufe, die Interessenten weiterbegleiten und zur richtigen Zeit an den Vertrieb übergeben. Dazu ein CRM, das Ihr Team gerne nutzt.'
     },
     'sales-enablement': {
-      benefit: 'Dein Vertrieb schliesst schneller — mit besseren Tools.',
-      desc: 'Marketing und Sales sprechen dieselbe Sprache. Wir bauen Übergabeprozesse, Sales-Content and Enablement-Strukturen, die den Vertrieb produktiver machen.'
+      benefit: 'Ihr Vertrieb geht besser vorbereitet ins Gespräch.',
+      desc: 'Marketing und Vertrieb arbeiten mit denselben Kriterien. Wir erarbeiten Übergaben, Verkaufsunterlagen und Leitfäden, die im Alltag genutzt werden.'
     },
     'revenue-operations': {
-      benefit: 'Marketing, Sales und Customer Success arbeiten als System.',
-      desc: 'Wenn deine Teams nicht koordiniert sind, verlierst du Revenue. Wir bauen die operativen Grundlagen: Prozesse, Daten-Infrastruktur, Tool-Integration — damit alle Teams auf ein gemeinsames Ziel hinarbeiten.'
+      benefit: 'Marketing, Vertrieb und Kundenbetreuung arbeiten mit denselben Zahlen.',
+      desc: 'Wenn Ihre Teams mit unterschiedlichen Daten arbeiten, geht Umsatz verloren. Wir ordnen Abläufe, Daten und Tools so, dass alle auf dasselbe Ziel hinarbeiten.'
     },
     'ai-automation': {
-      benefit: 'Mehr Geschwindigkeit. Weniger manuelle Arbeit.',
-      desc: 'AI-gestützte Workflows für Research, Content, Personalisierung und Analyse. Wir implementieren dort, wo AI messbaren Einfluss auf dein Wachstum hat — nicht als Experiment, sondern als Produktivitätshebel.'
+      benefit: 'Weniger Routinearbeit im Vertrieb und Marketing.',
+      desc: 'KI-gestützte Abläufe für Recherche, Texte, Personalisierung und Auswertungen. Wir setzen KI dort ein, wo sie Ihrem Team nachweisbar Zeit spart.'
     },
     'data-analytics': {
-      benefit: 'Du weisst jederzeit, was funktioniert — und wo Revenue verloren geht.',
-      desc: 'Dashboards, Tracking-Strukturen und Reporting-Systeme, die Entscheidungen auf Fakten stützen. Von Funnel-Analytics bis Attribution. Daten als Wachstumssteuerung.'
+      benefit: 'Sie sehen, was funktioniert und wo Budget verloren geht.',
+      desc: 'Datenschutzkonformes Tracking, Dashboards und Berichte, die Entscheidungen auf Zahlen stützen. Von der Website-Messung bis zur Zuordnung von Umsatz zu Kanälen.'
     },
     'dtc-growth-acquisition': {
-      benefit: 'Skalierbare Kundengewinnung & CAC/LTV-Steuerung.',
-      desc: 'Viele Schweizer Online-Brands haben ein starkes Produkt – aber ein brüchiges Acquisition-System. Wir strukturieren deine Kampagnen, optimieren den Funnel und steigern die Performance.'
+      benefit: 'Kundengewinnung, deren Kosten Sie kennen.',
+      desc: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine verlässliche Kundengewinnung. Wir ordnen Ihre Kampagnen, verbessern den Shop und messen Kosten pro Kunde und Kundenwert.'
     },
     'customer-retention': {
-      benefit: 'Bestandskunden systematisch aktivieren und halten.',
-      desc: 'Ein Neukunde kostet das 5- bis 7-fache eines Bestandskunden. Wir etablieren automatisierte Kundenlebenszyklus-Flows, Win-Back-Schlaufen und Loyalitäts-Pipelines.'
+      benefit: 'Bestehende Kunden gezielt halten und zurückholen.',
+      desc: 'Einen Kunden zu halten ist meist günstiger, als einen neuen zu gewinnen. Wir bauen automatische E-Mails nach dem Kauf, Rückgewinnungsstrecken und Treueprogramme auf.'
     },
     'paid-social-ecommerce': {
-      benefit: 'Ads optimiert auf echten Deckungsbeitrag statt eitlen ROAS.',
-      desc: 'Die meisten E-Commerce-Shops optimieren auf Umsatz-ROAS. Wir rücken Datenpräzision runderherum in den Fokus und optimieren auf echten Deckungsbeitrag unter Abzug aller Logistikkosten.'
+      benefit: 'Anzeigen nach Deckungsbeitrag statt nur nach ROAS.',
+      desc: 'Viele Shops steuern ihre Werbung nach Umsatz. Wir beziehen Marge, Versand und Retouren ein und steuern Meta und TikTok nach dem, was am Ende übrig bleibt.'
     }
   };
 
@@ -135,7 +135,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               }}
               className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-slate-900 transition-colors cursor-pointer font-bold uppercase tracking-wider bg-transparent border-none outline-none font-mono"
             >
-              <ArrowLeft className="w-3.5 h-3.5" /> ZURÜCK ZUR LEISTUNGSÜBERSICHT
+              <ArrowLeft className="w-3.5 h-3.5" /> Zurück zur Leistungsübersicht
             </button>
           </div>
 
@@ -146,8 +146,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 <div className="w-12 h-12 rounded-xl bg-[#686DF4] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <IconComponent className="w-5.5 h-5.5" />
                 </div>
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-3 py-1 rounded-lg">
-                  DIAGNOSTIZIERTER HEBEL
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-3 py-1 rounded-lg">
+                  Leistung
                 </span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1] text-left">
@@ -158,17 +158,19 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               </p>
               
               {/* Secondary block with metrics info */}
+              {service.metrics.length > 0 && (
               <div className="bg-slate-50/70 border border-slate-200/50 p-6 rounded-2xl text-left space-y-3.5">
-                <h4 className="text-[9px] font-mono font-bold uppercase tracking-widest text-slate-400">PROGNOSTIZIERTER IMPACT:</h4>
+                <h4 className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">Kennzahlen</h4>
                 <div className="grid grid-cols-2 gap-4">
                   {service.metrics.map((met, index) => (
                     <div key={index} className="space-y-0.5">
                       <span className="text-lg font-bold font-display text-[#686DF4] block leading-none">{met.value}</span>
-                      <span className="text-[8px] text-slate-400 font-bold uppercase font-mono tracking-wider block">{met.label}</span>
+                      <span className="text-[11px] text-slate-400 font-bold uppercase font-mono tracking-wider block">{met.label}</span>
                     </div>
                   ))}
                 </div>
               </div>
+              )}
 
               <div className="pt-2 text-left">
                 <button 
@@ -218,8 +220,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* PROBLEM SECTION */}
           <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center animate-fadeIn">
-              <span className="text-[10px] font-mono text-red-650 font-bold uppercase tracking-widest bg-red-50/50 px-3 py-1.5 rounded-lg border border-red-100/20">
-                IST-SITUATION
+              <span className="text-[11px] font-mono text-red-650 font-bold uppercase tracking-widest bg-red-50/50 px-3 py-1.5 rounded-lg border border-red-100/20">
+                Ausgangslage
               </span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">
                 {extendedContent.problem.title}
@@ -237,7 +239,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* LEISTET SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">WIRKUNGSBEREICH</span>
+              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Leistungsumfang</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.leistet.title}
               </h2>
@@ -262,7 +264,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* APPROACH SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">IMPLEMENTIERUNGSFLOW</span>
+              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Vorgehen</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.approach.title}
               </h2>
@@ -270,7 +272,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {extendedContent.approach.items.map((item, idx) => (
                 <div key={idx} className="bg-[#f6f6f6]/55 border border-[#E0E0E0]/80 p-8 rounded-3xl space-y-4 relative shadow-[var(--shadow-premium-sm)]">
-                  <div className="bg-[#686DF4]/10 text-[#686DF4] text-[9px] tracking-widest font-mono font-bold px-2.5 py-1 rounded-md w-fit border border-[#CACCFB]/20">
+                  <div className="bg-[#686DF4]/10 text-[#686DF4] text-[11px] tracking-widest font-mono font-bold px-2.5 py-1 rounded-md w-fit border border-[#CACCFB]/20">
                     PHASE {idx + 1}
                   </div>
                   <h3 className="font-bold text-slate-900 text-sm sm:text-base pt-1 border-b border-slate-100 pb-3 leading-tight">
@@ -344,7 +346,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     {sec.items.map((it, iIdx) => (
                       <div key={iIdx} className="bg-white border-2 border-slate-100 hover:border-[#686DF4] p-8 rounded-3xl space-y-4 transition-colors flex flex-col justify-between shadow-[var(--shadow-premium-sm)] text-left">
                         <div className="space-y-2">
-                          <h4 className="font-bold text-slate-900 text-[10px] uppercase tracking-widest pb-2 border-b border-slate-100 font-mono">
+                          <h4 className="font-bold text-slate-900 text-[11px] uppercase tracking-widest pb-2 border-b border-slate-100 font-mono">
                             {it.title}
                           </h4>
                           <p className="text-[#686DF4] font-display font-medium text-2xl">
@@ -367,8 +369,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Benefits */}
             <div className="space-y-6">
               <div className="border-l-4 border-[#686DF4] pl-4">
-                <h2 className="text-xl font-display font-semibold tracking-tight text-slate-900 text-left leading-none">Dein konkreter Nutzen</h2>
-                <p className="text-xs text-slate-400 text-left mt-1.5 font-semibold">Warum sich diese Struktur für dein Vertriebsteam bezahlt macht.</p>
+                <h2 className="text-xl font-display font-semibold tracking-tight text-slate-900 text-left leading-none">Ihr Nutzen</h2>
+                <p className="text-xs text-slate-400 text-left mt-1.5 font-semibold">Was sich für Ihr Unternehmen konkret verbessert.</p>
               </div>
               <div className="space-y-4 text-left">
                 {service.benefits.map((ben, idx) => (
@@ -385,8 +387,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Deliverables */}
             <div className="space-y-6">
               <div className="border-l-4 border-slate-950 pl-4">
-                <h2 className="text-xl font-display font-semibold tracking-tight text-slate-900 text-left leading-none font-sans">Schlüsselfertige Deliverables</h2>
-                <p className="text-xs text-slate-400 text-left mt-1.5 font-semibold">Das übergeben wir strukturiert und betriebsbereit.</p>
+                <h2 className="text-xl font-display font-semibold tracking-tight text-slate-900 text-left leading-none font-sans">Was Sie erhalten</h2>
+                <p className="text-xs text-slate-400 text-left mt-1.5 font-semibold">Diese Ergebnisse übergeben wir dokumentiert und einsatzbereit.</p>
               </div>
               <div className="space-y-4 text-left">
                 {service.deliverables.map((del, idx) => (
@@ -405,7 +407,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="text-center space-y-3">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">PROZESSQUALITÄT</span>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Häufige Fragen</span>
                 <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                   Fragen zur Umsetzung
                 </h2>
@@ -446,7 +448,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <section className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
               <div className="md:col-span-4 shrink-0 flex justify-center md:justify-start">
-                <img 
+                <img loading="lazy" decoding="async" 
                   src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
                   alt="Yathur Nathan" 
                   className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border border-slate-200 shadow-sm"
@@ -459,19 +461,19 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   <p className="text-xs font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
                 </div>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Als Gründer von performanceboost unterstütze ich Schweizer Unternehmen dabei, isolierte Massnahmen in messbare Revenue-Infrastrukturen zu transformieren. Mit fundiertem technologischem Know-how und strategischer Klarheit begleite ich dich persönlich bei jedem Schritt zur Optimierung deiner Customer Journey.
+                  Als Gründer von performanceboost helfe ich Schweizer KMU, über Google, Meta, LinkedIn und die eigene Website planbar Kundenanfragen zu gewinnen. Kampagnen, Landingpages, Tracking und Automatisierung setze ich persönlich um, und Sie haben von der ersten Analyse bis zum Bericht einen festen Ansprechpartner.
                 </p>
                 <p className="text-body-sm text-[#686DF4] font-semibold leading-relaxed pt-1.5 border-t border-slate-100 italic">
                   {(() => {
                     const personalHighlights: { [key: string]: string } = {
-                      'growth-strategy': 'Gemeinsam schärfen wir deine Marktpositionierung und definieren die genauesten ICP-Kriterien, um dein Wachstum strategisch auf ein solides Fundament zu stellen.',
-                      'demand-generation': 'Wir konzipieren und steuern deine B2B-Paid-Kampagnen so, dass sie bei deiner Zielgruppe konsistent Relevanz erzeugen und messbare Pipeline aufbauen.',
-                      'lead-generation': 'Mit intelligenten Inbound-Magneten und datenkonformem Outbound Prospecting etablieren wir ein Neukundensystem, das planbar Demo-Termine generiert.',
-                      'marketing-automation': 'Wir automatisieren deine Lead-Nurturing-Strecken und optimieren deine HubSpot-Datenhygiene, damit dein Vertrieb ohne Reibungsverluste abschliessen kann.',
-                      'sales-enablement': 'Ich statte dein Sales-Team mit psychologisch optimierten Verkaufsargumenten und Playbooks aus, die deine Abschlussquote nachweislich erhöhen.',
-                      'revenue-operations': 'Wir lösen deine abteilungsübergreifenden Datensilos auf und verknüpfen Marketing, Sales und Service zu einem hocheffizienten Gesamtsystem.',
-                      'ai-automation': 'Ich implementiere produktive KI-Workflows, die Routineaufgaben im Handumdrehen erledigen und die Kapazität deines Teams massgeblich vergrössern.',
-                      'data-analytics': 'Mit sauberem First-Party Server-Side Tracking und transparenten Attributionsmodellen machen wir deinen Return on Ad Spend (ROAS) glasklar messbar.'
+                      'growth-strategy': 'Gemeinsam schärfen wir Ihre Positionierung und beschreiben Ihre Wunschkunden, damit jede weitere Massnahme auf einem klaren Plan aufbaut.',
+                      'demand-generation': 'Ich plane und betreue Ihre Kampagnen auf Google, LinkedIn und Meta so, dass sie bei Ihrer Zielgruppe ankommen und messbar Anfragen bringen.',
+                      'lead-generation': 'Mit nützlichen Inhalten, SEO und einer persönlichen Direktansprache bauen wir einen Weg auf, über den regelmässig Anfragen für Erstgespräche entstehen.',
+                      'marketing-automation': 'Wir automatisieren das Nachfassen bei Interessenten und bringen Ordnung in Ihr CRM, damit Ihr Vertrieb sich auf die richtigen Gespräche konzentrieren kann.',
+                      'sales-enablement': 'Ich erarbeite mit Ihrem Vertrieb Argumente, Unterlagen und Leitfäden, die im Verkaufsgespräch tatsächlich genutzt werden.',
+                      'revenue-operations': 'Wir bringen die Daten von Marketing, Vertrieb und Kundenbetreuung zusammen, damit alle mit denselben Zahlen arbeiten.',
+                      'ai-automation': 'Ich setze KI-Abläufe dort ein, wo sie Ihrem Team Routinearbeit abnehmen, und lasse sie weg, wo sie nichts bringen.',
+                      'data-analytics': 'Mit sauberem, datenschutzkonformem Tracking und nachvollziehbaren Berichten sehen Sie, welche Kanäle Ihnen Kunden und Umsatz bringen.'
                     };
                     return personalHighlights[service.slug] || '';
                   })()}
@@ -516,13 +518,13 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         <div className="absolute top-0 left-10 w-80 h-80 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <span className="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 text-slate-500 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-            PORTFOLIO
+            Leistungen
           </span>
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
-            Leistungen, die Revenue erzeugen.
+            Mehr Kundenanfragen über Google, Meta, LinkedIn und Ihre Website.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium">
-            Wir beschreiben unsere Lösungen nicht als nackte Tätigkeiten — sondern als valide Resultate, die wir für dich errichten.
+            performanceboost unterstützt Schweizer KMU bei der digitalen Neukundengewinnung. Wir planen und betreuen Kampagnen auf Google, Meta und LinkedIn, bauen Landingpages, die aus Besuchern Anfragen machen, richten sauberes Tracking und verständliche Berichte ein und automatisieren das Nachfassen mit Marketing Automation. Alles aus einer Hand, persönlich umgesetzt von Inhaber Yathur Nathan.
           </p>
         </div>
       </section>
@@ -530,8 +532,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       {/* Services Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 animate-fadeIn">
         <div className="text-center space-y-3">
-          <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">UNSER PORTFOLIO</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Leistungsbereiche</h2>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Übersicht</span>
+          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Leistungen im Detail</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -549,14 +551,14 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   </div>
                   <div>
                     <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">{s.title}</h3>
-                    <p className="text-[10px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
+                    <p className="text-[11px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
                     <p className="text-body-sm text-slate-500 leading-relaxed mt-3.5 line-clamp-4 font-medium">{localized.desc}</p>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-slate-100 mt-8 flex justify-between items-center">
-                  <span className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider">
-                    PROGNOSTIZIERBAR
+                  <span className="text-[11px] text-slate-400 font-mono font-bold uppercase tracking-wider">
+                    Leistung
                   </span>
                   <button
                     onClick={() => {
@@ -579,10 +581,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-center">
           
           <div className="space-y-3">
-            <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">SYNERGIEEFFEKTE</span>
+            <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Kombinationen</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir Leistungen kombinieren</h2>
             <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed font-semibold">
-              Einzelne Leistungen verändern vieles. Integrierte Gesamtsysteme skalieren dein gesamtes Wachstum.
+              Einzelne Leistungen bringen schon viel. Am meisten erreichen Sie, wenn Kampagnen, Website, Tracking und Vertrieb aufeinander abgestimmt sind.
             </p>
           </div>
 
@@ -591,10 +593,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 1 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SCHNELLE PIPELINE</span>
-                <h3 className="text-base font-bold text-slate-900 leading-tight">Demand Generation + Lead Generation</h3>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Schnell Anfragen</span>
+                <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Lead-Generierung</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Sofort Leads in die vertriebliche Pipeline leiten. Organische Suchmaschinenoptimierung und intelligente Paid Kampagnen exakt orchestriert. Erste Resultate in 2-4 Wochen.
+                  Google Ads bringen ab den ersten Wochen Anfragen, belastbare Daten liegen meist nach 4–8 Wochen vor. SEO und Inhalte bauen parallel Sichtbarkeit auf, die über mehrere Monate wächst.
                 </p>
               </div>
               <button 
@@ -611,10 +613,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 2 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">SKALIERBARE WACHSTUMS-MASCHINE</span>
-                <h3 className="text-base font-bold text-slate-900 leading-tight">Demand Gen + Automation + CRM</h3>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Anfragen weiterbegleiten</span>
+                <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Automation + CRM</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Moderne Nachfrageerzeugung gekoppelt mit systematischem Lead Nurturing und synchronisierter CRM-Übergabe. Keine manuellen Reibungsverluste im B2B Funnel.
+                  Kampagnen bringen neue Kontakte, automatische E-Mails begleiten sie weiter, und das CRM übergibt sie zur richtigen Zeit an Ihren Vertrieb. So geht unterwegs keine Anfrage verloren.
                 </p>
               </div>
               <button 
@@ -631,10 +633,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 3 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">REVENUE Operations</span>
-                <h3 className="text-base font-bold text-slate-900 leading-tight">RevOps + Sales Enablement + Analytics</h3>
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Gemeinsame Zahlen</span>
+                <h3 className="text-base font-bold text-slate-900 leading-tight">RevOps + Vertriebsunterstützung + Tracking</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Marketing und Sales auf aufeinander abgestützte Ziele ausrichten. Silos auflösen, so dass alle Abteilungen auf gemeinsamen Daten-Dashboards arbeiten.
+                  Marketing und Vertrieb arbeiten mit gemeinsamen Zielen und denselben Daten. Ein gemeinsames Dashboard zeigt allen, woher Anfragen kommen und was daraus wird.
                 </p>
               </div>
               <button 
@@ -662,10 +664,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-3">
-            <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">BRANCHENSPEZIFISCHE SYSTEME</span>
-            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Schweizer Branchenlösungen</h2>
+            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Branchen</span>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Lösungen für Schweizer Branchen</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
-              Wähle deinen Sektor und berechne dein ungenutztes Marge- und Pipeline-Potenzial mit unseren interaktiven Schnellrechnern.
+              Wählen Sie Ihre Branche und schätzen Sie mit unseren Rechnern grob ab, wie viel Potenzial bei Anfragen und Umsatz noch offen ist.
             </p>
           </div>
 
@@ -674,98 +676,98 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               {
                 title: 'Finanzdienstleister',
                 slug: 'finanzdienstleister',
-                desc: 'Compliance-konforme Berater-Pipelines für Vermögensverwalter.',
+                desc: 'Regelkonforme Kundengewinnung für Vermögensverwalter und Finanzberater.',
                 icon: PiggyBank,
                 tool: 'Beratungs-Pipeline-Rechner'
               },
               {
                 title: 'SaaS & Software',
                 slug: 'saas-software',
-                desc: 'Schliesse das Umsatz-Leck zwischen Marketing-MQL und closed-won Deals.',
+                desc: 'Weniger verlorene Anfragen zwischen erstem Kontakt und Vertragsabschluss.',
                 icon: Cloud,
                 tool: 'Revenue-Leck-Rechner'
               },
               {
                 title: 'Immobilien',
                 slug: 'immobilien',
-                desc: 'Verkürze die Vermarktungszeit für Neubauten und Gewerbeflächen drastisch.',
+                desc: 'Neubauten und Gewerbeflächen schneller vermarkten.',
                 icon: Home,
                 tool: 'Leerstandskosten-Rechner'
               },
               {
                 title: 'Treuhand & UB',
                 slug: 'treuhand-unternehmensberatung',
-                desc: 'Befreie deine Kanzlei von Beleg-Reibung und gewinne lukrative A-Mandate.',
+                desc: 'Weniger Aufwand mit Belegen und gezielt passende Mandate gewinnen.',
                 icon: Briefcase,
                 tool: 'Kanzlei-Wachstums-Check'
               },
               {
                 title: 'Industrie & KMU',
                 slug: 'b2b-industrie-kmu',
-                desc: 'Effiziente Angebots-Pipelines für anspruchsvolle B2B-Industriekunden.',
+                desc: 'Mehr qualifizierte Anfragen und Offerten für Industriekunden.',
                 icon: Factory,
                 tool: 'Angebots-Pipeline-Rechner'
               },
               {
                 title: 'IT-Dienstleister & MSPs',
                 slug: 'it-dienstleister-msps',
-                desc: 'Skaliere deine wiederkehrenden Umsätze (MRR) mit verlässlicher MSP-Paketierung.',
+                desc: 'Wiederkehrende Umsätze ausbauen, mit klar verpackten Serviceangeboten.',
                 icon: Cpu,
                 tool: 'Recurring Revenue Rechner'
               },
               {
                 title: 'Ingenieur- & Planungsbüros',
                 slug: 'ingenieur-planungsbuero',
-                desc: 'Beseitige Klumpenrisiken und sichere den Zugriff auf lukrative Bauträger.',
+                desc: 'Weniger Abhängigkeit von einzelnen Auftraggebern, mehr Kontakte zu Bauherren.',
                 icon: Compass,
                 tool: 'Projektpipeline-Check'
               },
               {
                 title: 'Personalvermittler',
                 slug: 'personalvermittler-recruiting',
-                desc: 'Zweiseitiges Lead-Wachstum für exklusive Suchmandate auf Arbeitgeberseite.',
+                desc: 'Mehr Suchmandate von Arbeitgebern und mehr passende Kandidaten.',
                 icon: Users,
                 tool: 'Placement-Effizienz-Rechner'
               },
               {
                 title: 'Bildung & Weiterbildung',
                 slug: 'bildung-weiterbildung',
-                desc: 'Fülle deine CAS-Lehrgänge, Seminare und Studiengänge systematisch aus.',
+                desc: 'Mehr Anmeldungen für CAS-Lehrgänge, Seminare und Studiengänge.',
                 icon: GraduationCap,
                 tool: 'Kurs-Funnel-Rechner'
               },
               {
                 title: 'Gesundheitswesen',
                 slug: 'gesundheitswesen',
-                desc: 'Mediziner-Marketing für Kliniken zur Akquise von Zuweisern & Selbstzahlern.',
+                desc: 'Marketing für Praxen und Kliniken, um Zuweiser und Selbstzahler zu gewinnen.',
                 icon: Stethoscope,
                 tool: 'Neupatienten-Potenzial-Check'
               },
               {
                 title: 'Handwerk & Bau',
                 slug: 'handwerk',
-                desc: 'Beschleunige deine Angebotsschleifen und stoppe Papier-Engpässe.',
+                desc: 'Offerten schneller erstellen und weniger Papierkram.',
                 icon: Hammer,
                 tool: 'Auftrags-Pipeline-Rechner'
               },
               {
                 title: 'Rechtsanwälte',
                 slug: 'rechtsanwaelte',
-                desc: 'Gezielte Akquisition für Wirtschafts- und Spezialmandate ohne administrativen Aufwand.',
+                desc: 'Gezielt Wirtschafts- und Spezialmandate gewinnen, mit wenig Zusatzaufwand.',
                 icon: Scale,
                 tool: 'Kanzlei-Auslastungs-Check'
               },
               {
                 title: 'Logistik & Transport',
                 slug: 'logistik-transport',
-                desc: 'Fülle die Kapazitäten deiner Rückfahrten und minimiere Spotmarkt-Verluste.',
+                desc: 'Leerfahrten reduzieren und freie Kapazitäten besser auslasten.',
                 icon: Truck,
                 tool: 'Flottenauslastungs-Rechner'
               },
               {
                 title: 'Hospitality & Hotels',
                 slug: 'hospitality',
-                desc: 'Steigere deine Direktbuchungsquote und spare hohe Booking-Gebühren.',
+                desc: 'Mehr Direktbuchungen und weniger Kommissionen an Buchungsplattformen.',
                 icon: Hotel,
                 tool: 'Direktbuchungs-Rechner'
               }
@@ -786,8 +788,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       <div className="p-2.5 bg-[#f6f6f6] rounded-xl border border-slate-100 group-hover:bg-[#686DF4]/5 group-hover:border-[#686DF4]/25 group-hover:text-[#686DF4] transition-colors">
                         <IconComp className="w-5 h-5 text-slate-400 group-hover:text-[#686DF4] transition-colors" />
                       </div>
-                      <span className="text-[7.5px] font-mono font-bold tracking-widest text-[#686DF4] bg-[#686DF4]/5 border border-[#686DF4]/10 px-2 py-0.5 rounded uppercase">
-                        SEKTOR
+                      <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] bg-[#686DF4]/5 border border-[#686DF4]/10 px-2 py-0.5 rounded uppercase">
+                        Branche
                       </span>
                     </div>
                     <div className="space-y-1.5">
@@ -801,7 +803,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   </div>
                   
                   <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[8.5px] font-mono font-bold text-[#686DF4]">
+                    <span className="text-[11px] font-mono font-bold text-[#686DF4]">
                       {ind.tool}
                     </span>
                     <span className="text-xs text-[#686DF4] group-hover:translate-x-0.5 transition-transform">
@@ -819,10 +821,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 animate-fadeIn">
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">STRATEGISCHE PRIORITÄT</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Leistung braucht dein Unternehmen?</h2>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Erstgespräch</span>
+          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Leistung passt zu Ihrem Unternehmen?</h2>
           <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-95 font-medium">
-            Wir unterstützen dich unkompliziert dabei, die wirksamsten Prioritäten zu isolieren — in einem unverbindlichen 30-minütigen Gespräch.
+            In einem unverbindlichen Gespräch von 30 Minuten schauen wir auf Ihre Situation und klären, womit Sie am sinnvollsten beginnen.
           </p>
 
           <button
@@ -830,7 +832,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             onClick={() => onNavigate('/kontakt')}
             className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer border-0"
           >
-            Wachstumsgespräch buchen
+            Erstgespräch vereinbaren
           </button>
         </div>
       </section>

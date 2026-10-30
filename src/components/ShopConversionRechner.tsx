@@ -122,11 +122,11 @@ export default function ShopConversionRechner() {
 
   // Diagnose text based on CR
   const getDiagnoseText = (cr: number) => {
-    if (cr <= 0.005) return "Eine CR unter 0.5% deutet meist auf ein grundlegendes Problem hin — Vertrauen, Mobile UX oder Checkout. Hier liegt das grösste Hebelfeld.";
-    if (cr <= 0.01)  return "Eine CR in diesem Bereich hat fast immer strukturelle Ursachen: schwacher Checkout, fehlende Vertrauenselemente oder zu komplexe Navigation. Alles optimierbar.";
-    if (cr <= 0.015) return "Solide Basis. Die grösste Verbesserung liegt jetzt im Checkout-Flow und in gezielten A/B-Tests auf den Top-Produktseiten.";
-    if (cr <= 0.02)  return "Guter Stand. Der nächste Hebel liegt in Produktseiten-Optimierung, Social Proof und schnellerer Ladezeit — besonders auf Mobile.";
-    return "Du bist bereits im oberen Drittel. Weitere Verbesserungen kommen aus datengetriebenen Tests, nicht aus offensichtlichen Fixes.";
+    if (cr <= 0.005) return "Eine Conversion-Rate unter 0.5% deutet meist auf ein grundlegendes Problem hin, etwa beim Vertrauen, bei der mobilen Darstellung oder im Checkout. Hier liegt das grösste Potenzial.";
+    if (cr <= 0.01)  return "In diesem Bereich liegen die Ursachen oft in der Struktur: ein umständlicher Checkout, fehlende Vertrauenselemente oder eine zu komplexe Navigation. Das lässt sich gezielt verbessern.";
+    if (cr <= 0.015) return "Eine solide Basis. Verbesserungen sind jetzt vor allem im Checkout und mit gezielten A/B-Tests auf den meistbesuchten Produktseiten möglich.";
+    if (cr <= 0.02)  return "Ein guter Stand. Als Nächstes lohnt sich der Blick auf die Produktseiten, Kundenbewertungen und die Ladezeit, besonders auf dem Smartphone.";
+    return "Ihr Shop konvertiert bereits gut. Weitere Verbesserungen kommen eher aus sauber aufgesetzten Tests als aus offensichtlichen Korrekturen.";
   };
 
   return (
@@ -140,7 +140,7 @@ export default function ShopConversionRechner() {
             Shop-Conversion-Rechner
           </h3>
           <p className="text-xs text-slate-500 leading-normal mt-1 font-medium select-none">
-            Berechne, wie viel mehr Umsatz dein bestehender Traffic bringen könnte — ohne einen Rappen mehr für Werbung auszugeben.
+            Schätzen Sie, wie viel mehr Umsatz Ihre heutigen Besucher bringen könnten, ohne zusätzliches Werbebudget.
           </p>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default function ShopConversionRechner() {
               Monatliche Besucher im Shop
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Monatliche Besucher im Shop"
                 type="number"
                 min="100"
                 max="10000000"
@@ -163,11 +163,11 @@ export default function ShopConversionRechner() {
                 onChange={(e) => handleInputChange('besucher', e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 Besucher / Mt.
               </span>
             </div>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
               Sessions laut Google Analytics oder Shopify Analytics
             </p>
           </div>
@@ -177,7 +177,7 @@ export default function ShopConversionRechner() {
             <label className="block text-xs font-bold text-slate-800 uppercase tracking-wide">
               Aktuelle Conversion-Rate
             </label>
-            <select
+            <select aria-label="Aktuelle Conversion-Rate"
               value={aktuellerCR}
               onChange={(e) => handleInputChange('cr', e.target.value)}
               className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 text-slate-705 transition-all font-semibold cursor-pointer"
@@ -190,8 +190,8 @@ export default function ShopConversionRechner() {
               <option value="0.025">2% – 3% (z. B. 2.5%)</option>
               <option value="0.035">Über 3% (z. B. 3.5%)</option>
             </select>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
-              Bestellungen ÷ Besucher × 100 — im Shop-Analytics einsehbar
+            <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
+              Bestellungen ÷ Besucher × 100, einsehbar in Ihrer Shop-Statistik
             </p>
           </div>
 
@@ -201,7 +201,7 @@ export default function ShopConversionRechner() {
               Ø Warenkorbwert (CHF)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Warenkorbwert (CHF)"
                 type="number"
                 min="1"
                 max="100000"
@@ -212,16 +212,16 @@ export default function ShopConversionRechner() {
                   validationError ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-200'
                 }`}
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 font-bold uppercase select-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / AOV
               </span>
             </div>
             {validationError ? (
-              <p className="text-[10px] text-red-500 leading-none font-bold animate-pulse mt-1 select-none">
+              <p className="text-[11px] text-red-500 leading-none font-bold animate-pulse mt-1 select-none">
                 {validationError}
               </p>
             ) : (
-              <p className="text-[10px] text-slate-450 leading-relaxed font-medium select-none">
+              <p className="text-[11px] text-slate-450 leading-relaxed font-medium select-none">
                 Ø Bestellwert ohne Versandkosten
               </p>
             )}
@@ -244,31 +244,31 @@ export default function ShopConversionRechner() {
                 <div className="space-y-4 opacity-35 select-none pointer-events-none">
                   <div className="grid grid-cols-2 gap-4 border-b border-slate-200/50 pb-4">
                     <div className="space-y-1">
-                      <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">Heute:</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Heute:</span>
                       <span className="text-sm sm:text-md font-bold font-display text-slate-900 block leading-tight">CHF 7'200</span>
-                      <span className="text-[9px] text-slate-450 block font-mono">pro Monat (1.0% CR)</span>
+                      <span className="text-[11px] text-slate-450 block font-mono">pro Monat (1.0% CR)</span>
                     </div>
                     <div className="space-y-1">
-                      <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">Erreichbar:</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Erreichbar:</span>
                       <span className="text-sm sm:text-md font-bold font-display text-emerald-600 block leading-tight">CHF 12'600</span>
-                      <span className="text-[9px] text-slate-450 block font-mono">pro Monat (1.75% CR)</span>
+                      <span className="text-[11px] text-slate-450 block font-mono">pro Monat (1.75% CR, Annahme)</span>
                     </div>
                   </div>
 
                   <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-4 space-y-1 text-center">
                     <span className="text-xl font-bold text-emerald-600 block leading-none">+ CHF 5'400 / Monat</span>
-                    <span className="text-[10px] font-medium text-emerald-700 block">
-                      mehr — ohne zusätzlichen Traffic, nur durch bessere Conversion.
+                    <span className="text-[11px] font-medium text-emerald-700 block">
+                      möglich, ohne zusätzliche Besucher, allein durch eine bessere Conversion-Rate.
                     </span>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-slate-200/40 text-center space-y-1.5 self-center w-full">
                   <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
-                    <Sparkles className="w-3.5 h-3.5" /> Gib deine Zahlen ein
+                    <Sparkles className="w-3.5 h-3.5" /> Ihre Zahlen eingeben
                   </div>
-                  <p className="text-[9.5px] text-slate-400/90 font-mono">
-                    Beispielrechnung · Gib deine realen Shopdaten links ein für dein Ergebnis
+                  <p className="text-[11px] text-slate-400/90 font-mono">
+                    Beispielrechnung · Geben Sie links Ihre Shopdaten ein, um Ihr Ergebnis zu sehen
                   </p>
                 </div>
               </motion.div>
@@ -286,31 +286,31 @@ export default function ShopConversionRechner() {
                     <div className="w-7 h-7 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-500 flex items-center justify-center shrink-0">
                       <Check className="w-4 h-4" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-emerald-600 uppercase tracking-widest">
-                      Spitzenklasse erreicht
+                    <span className="text-[11px] font-mono font-bold text-emerald-600 uppercase tracking-widest">
+                      Bereits starke Basis
                     </span>
                   </div>
 
                   <h4 className="text-md font-display font-semibold text-slate-950 leading-snug">
-                    Deine Conversion-Rate ist bärenstark.
+                    Ihre Conversion-Rate ist bereits hoch.
                   </h4>
 
                   <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                    Eine Conversion-Rate über 3% ist bereits deutlich über dem Schweizer Branchendurchschnitt. Das bedeutet, dass euer Vertrauensaufbau, euer Checkout und eure mobile Experience bereits exzellent funktionieren.
+                    Eine Conversion-Rate über 3% gilt in vielen Branchen als hoher Wert. Das spricht dafür, dass Vertrauensaufbau, Checkout und mobile Darstellung in Ihrem Shop bereits gut funktionieren.
                   </p>
 
                   <div className="p-4 rounded-xl bg-[#686DF4]/5 border border-[#686DF4]/10 space-y-2">
-                    <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400 block">DEIN NÄCHSTER HEBEL:</span>
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block">Ihr nächster Ansatzpunkt:</span>
                     <p className="text-xs text-[#686DF4] font-bold leading-relaxed">
-                      Der nächste grosse Wachstumshebel liegt für euch nicht in der mühsamen Erhöhung der Erstkonversion, sondern in <strong>Retention (Bestandskunden)</strong> und <strong>Average Order Value (AOV)</strong>:
+                      Mehr Potenzial liegt jetzt meist nicht in der Erstbestellung, sondern bei <strong>Wiederholungskäufen (Bestandskunden)</strong> und einem <strong>höheren Warenkorbwert</strong>.
                     </p>
                     <p className="text-[11px] text-slate-500 italic leading-snug font-medium pt-1 border-t border-slate-100/55">
-                      ↑ Wiederholkäufer um 10% zu reaktivieren bringt dir in dieser Phase typischerweise mehr stabilen Deckungsbeitrag als deine Conversion-Rate nochmals mühsam zu verdoppeln.
+                      ↑ Bestehende Kunden zu einem weiteren Kauf zu bewegen, ist in dieser Phase oft einfacher, als die Conversion-Rate nochmals deutlich zu steigern.
                     </p>
                   </div>
 
                   <div className="pt-2">
-                    <span className="text-[9px] font-mono text-slate-400 font-bold block uppercase select-none">AKTUELLER UMSATZ MIT DIESER CR:</span>
+                    <span className="text-[11px] font-mono text-slate-400 font-bold block uppercase select-none">Aktueller Umsatz mit dieser Conversion-Rate:</span>
                     <span className="text-md sm:text-lg font-bold text-slate-900 block leading-tight">
                       {formatCHF(result.aktuellerUmsatz)} <span className="text-xs text-slate-400 font-mono font-medium">/ Monat</span>
                     </span>
@@ -327,7 +327,7 @@ export default function ShopConversionRechner() {
                     }}
                     className="w-full bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
-                    <span>Wie erhöht ihr euren LTV und Wiederholkaufanteil?</span>
+                    <span>Bestandskunden-Potenzial besprechen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
                 </div>
@@ -346,29 +346,29 @@ export default function ShopConversionRechner() {
                   {result && result.mehrUmsatz > 50000 && (
                     <div className="bg-red-50 border border-red-200/60 rounded-xl p-3 flex gap-2 items-start shrink-0">
                       <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                      <p className="text-[10px] text-red-700 leading-snug font-bold">
-                        Das ist kein kleines Optimierungs-Problem. {formatCHF(result.mehrUmsatz)}/Monat Differenz bedeutet, dass jeder weitere Tag mit der aktuellen Conversion-Rate bares Geld kostet.
+                      <p className="text-[11px] text-red-700 leading-snug font-bold">
+                        Das ist mehr als eine kleine Optimierung. Eine geschätzte Differenz von {formatCHF(result.mehrUmsatz)} pro Monat zeigt, wie viel Potenzial in Ihrer Conversion-Rate liegen kann.
                       </p>
                     </div>
                   )}
 
                   <div className="grid grid-cols-2 gap-4 border-b border-slate-200/60 pb-3">
                     <div className="space-y-1">
-                      <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">HEUTE:</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Heute:</span>
                       <span className="text-md sm:text-lg font-bold font-display text-slate-805 text-slate-800 block leading-none">
                         {formatCHF(result.aktuellerUmsatz)}
                       </span>
-                      <span className="text-[9.5px] text-slate-450 block font-mono">
+                      <span className="text-[11px] text-slate-450 block font-mono">
                         pro Monat ({((result.aktuellerCR || 0) * 100).toFixed(2).replace(/\.?0+$/, '')}% CR)
                       </span>
                     </div>
 
                     <div className="space-y-1">
-                      <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">IN 6 MONATEN ERREICHBAR:</span>
+                      <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Mögliches Ziel (Annahme):</span>
                       <span className="text-md sm:text-lg font-bold font-display text-emerald-600 block leading-none">
                         {formatCHF(result.potenziellerUmsatz)}
                       </span>
-                      <span className="text-[9.5px] text-emerald-500 block font-mono">
+                      <span className="text-[11px] text-emerald-500 block font-mono">
                         pro Monat ({((result.erreichbareCR || 0) * 100).toFixed(2).replace(/\.?0+$/, '')}% CR)
                       </span>
                     </div>
@@ -377,23 +377,23 @@ export default function ShopConversionRechner() {
                   {/* DIFFERENCE DISPLAY */}
                   <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4.5 space-y-1 text-center">
                     <span className="text-xl sm:text-2xl font-bold text-emerald-600 block leading-none">
-                      + {formatCHF(result.mehrUmsatz)} / Monat mehr
+                      + {formatCHF(result.mehrUmsatz)} / Monat möglich
                     </span>
                     <span className="text-[11px] font-bold text-emerald-700 block leading-normal">
-                      ohne zusätzlichen Traffic — nur durch strukturierte Conversion-Rate Optimierung.
+                      Grobe Schätzung ohne zusätzliche Besucher, allein durch eine bessere Conversion-Rate.
                     </span>
-                    <div className="text-[9.5px] text-emerald-500 font-mono font-bold pt-1.5 border-t border-emerald-100/50 mt-1.5 uppercase tracking-wide">
-                      = {formatCHF(result.mehrUmsatz * 12)} pro Jahr zusätzliche Marge
+                    <div className="text-[11px] text-emerald-500 font-mono font-bold pt-1.5 border-t border-emerald-100/50 mt-1.5 uppercase tracking-wide">
+                      = {formatCHF(result.mehrUmsatz * 12)} Umsatzpotenzial pro Jahr
                     </div>
                   </div>
 
                   {/* Diagnosis sentence and context log */}
                   <div className="space-y-2 pt-1 border-t border-slate-200/40">
-                    <p className="text-[10.5px] text-slate-600 italic font-medium leading-relaxed">
+                    <p className="text-[11px] text-slate-600 italic font-medium leading-relaxed">
                       ➔ {getDiagnoseText(result.aktuellerCR)}
                     </p>
-                    <p className="text-[9px] text-slate-400/90 leading-normal font-mono">
-                      Basis: {formatBestellungen(result.aktuelleBestellungen)} Bestellungen heute ➔ {formatBestellungen(result.potenzielleBestellungen)} erreichbar. Die branchenübliche Richtlinie auf diesem Absprungniveau liegt bei {((result.benchmarkCR || 0) * 100).toFixed(1)}%.
+                    <p className="text-[11px] text-slate-400/90 leading-normal font-mono">
+                      Basis: {formatBestellungen(result.aktuelleBestellungen)} Bestellungen heute ➔ {formatBestellungen(result.potenzielleBestellungen)} möglich. Annahme: Sie schliessen die Hälfte der Lücke zu einem Richtwert von {((result.benchmarkCR || 0) * 100).toFixed(1)}%. Der tatsächliche Wert hängt von Branche und Sortiment ab.
                     </p>
                   </div>
                 </div>
@@ -408,11 +408,11 @@ export default function ShopConversionRechner() {
                     }}
                     className="w-full text-center bg-[#686DF4] hover:bg-slate-905 bg-slate-900 text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
                   >
-                    <span>Shop-Gespräch buchen — kostenlos, 30 Min</span>
+                    <span>Ergebnis besprechen: kostenlos, 30 Min.</span>
                     <ArrowRight className="w-4 h-4 text-white" />
                   </button>
-                  <p className="text-[9px] text-slate-400 text-center font-mono mt-2">
-                    Wir analysieren eure Zahlen und zeigen dir die 3 grössten Conversion-Hebel in deiner spezifischen Situation.
+                  <p className="text-[11px] text-slate-400 text-center font-mono mt-2">
+                    Wir schauen uns Ihre Zahlen gemeinsam an und zeigen Ihnen, wo in Ihrem Shop die wichtigsten Ansatzpunkte liegen.
                   </p>
                 </div>
               </motion.div>
@@ -427,13 +427,13 @@ export default function ShopConversionRechner() {
         <div className="mt-4">
           <LeadCaptureForm
             pageId="ecommerce-performance"
-            secondaryCTAText="Detaillierte Shop-Analyse per E-Mail →"
-            danachText="Vielen Dank! Wir schicken dir in Kürze eine strukturierte, datenbasierte Einschätzung darüber, wo euer Shop die grössten Conversion Quick-Wins hat."
+            secondaryCTAText="Ausführliche Einschätzung per E-Mail →"
+            danachText="Vielen Dank! Wir senden Ihnen in Kürze eine Einschätzung, wo Ihr Shop am schnellsten besser konvertieren kann."
             additionalFields={[
               {
                 type: 'select',
                 name: 'shopSystem',
-                placeholder: 'Welches Shop-System nutzt ihr? *',
+                placeholder: 'Welches Shop-System nutzen Sie? *',
                 options: ['Shopify', 'WooCommerce', 'Shopware', 'Magento / Adobe Commerce', 'Custom / Andere'],
                 required: true
               }

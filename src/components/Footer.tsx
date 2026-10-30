@@ -4,7 +4,8 @@
  */
 
 import React from 'react';
-import { Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
 
 interface FooterProps {
@@ -38,7 +39,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               onClick={(e) => handleLinkClick('/', e)}
               className="flex items-center gap-2 group cursor-pointer"
             >
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
                 alt="performanceboost Logo" 
                 className="h-[74px] w-auto object-contain -mt-3 transition-transform duration-300 group-hover:scale-103"
@@ -46,18 +47,18 @@ export default function Footer({ onNavigate }: FooterProps) {
               />
             </a>
             <p className="text-xs text-slate-500 leading-relaxed max-w-[240px] font-medium animate-fade-in">
-              Spezialist für Neukundengewinnung, Nachfragegenerierung und planbares Umsatzwachstum.
+              Beratung und Umsetzung für digitale Neukundengewinnung: Kampagnen, Landingpages, Tracking und Automatisierung für Schweizer KMU.
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50/50 px-3 py-1.5 rounded-lg border border-slate-200/60 w-fit shadow-[var(--shadow-premium-sm)]">
               <ShieldCheck className="w-4 h-4 text-[#686DF4] shrink-0" />
-              <span className="font-semibold text-[10px]">Schweizer Qualität & Datenschutz</span>
+              <span className="font-semibold text-[11px]">Inhabergeführt aus Graubünden</span>
             </div>
           </div>
 
-          {/* Column 2: Growth & Automation (8 Hebel) */}
+          {/* Column 2: B2B & Dienstleistung (8 Hebel) */}
           <div className="space-y-4" id="footer-col-b2b">
             <div>
-              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">Growth & Automation</h4>
+              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">B2B & Dienstleistung</h4>
               <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
             </div>
             <ul className="space-y-2 text-[11px] text-slate-500 font-semibold" id="footer-b2b-links">
@@ -80,7 +81,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="space-y-6" id="footer-col-ecommerce-company">
             <div className="space-y-3">
               <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">E-Commerce Performance</h4>
+                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">E-Commerce</h4>
                 <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
               </div>
               <ul className="space-y-2 text-[11px] text-slate-500 font-semibold" id="footer-ecommerce-links">
@@ -107,12 +108,32 @@ export default function Footer({ onNavigate }: FooterProps) {
               <ul className="space-y-2 text-[11px] text-slate-500 font-bold" id="footer-company-links">
                 <li>
                   <a 
+                    href="/loesungen" 
+                    onClick={(e) => handleLinkClick('/loesungen', e)} 
+                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Branchen</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/ressourcen" 
+                    onClick={(e) => handleLinkClick('/ressourcen', e)} 
+                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Ratgeber</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
                     href="/skills" 
                     onClick={(e) => handleLinkClick('/skills', e)} 
                     className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
                   >
                     <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Skill Factory (36 Diagnosen)</span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Selbst-Checks & Rechner</span>
                   </a>
                 </li>
                 <li>
@@ -122,7 +143,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
                   >
                     <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Über uns & Philosophie</span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Über uns</span>
                   </a>
                 </li>
                 <li>
@@ -132,7 +153,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
                   >
                     <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Direktkontakt & Erstgespräch</span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Kontakt & Erstgespräch</span>
                   </a>
                 </li>
               </ul>
@@ -156,8 +177,14 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#686DF4] shrink-0" />
-                <a href="mailto:hallo@performanceboost.ch" className="text-slate-700 hover:text-[#686DF4] transition-colors font-bold text-[11px]">
-                  hallo@performanceboost.ch
+                <a href={`mailto:${SITE.email}`} className="text-slate-700 hover:text-[#686DF4] transition-colors font-bold text-[11px]">
+                  {SITE.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#686DF4] shrink-0" />
+                <a href={SITE.phoneHref} className="text-slate-700 hover:text-[#686DF4] transition-colors font-bold text-[11px]">
+                  {SITE.phoneDisplay}
                 </a>
               </li>
             </ul>
@@ -175,7 +202,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               Impressum
             </a>
             <a href="/datenschutz" onClick={(e) => handleLinkClick('/datenschutz', e)} className="hover:text-[#686DF4] transition-colors">
-              Datenschutzerklärung (DSG)
+              Datenschutz
             </a>
           </div>
         </div>

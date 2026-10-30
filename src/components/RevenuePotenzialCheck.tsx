@@ -56,10 +56,10 @@ function useCountUp(target: number, duration = 1200, active = true) {
 
 // 2. Data Definitions
 const ZIEL_OPTIONS = [
-  { id: 'mehr_leads', label: 'Mehr qualifizierte Leads gewinnen', icon: Target },
-  { id: 'besser_konvertieren', label: 'Bestehende Leads besser konvertieren', icon: TrendingUp },
-  { id: 'mehr_effizienz', label: 'Marketing & Sales effizienter machen', icon: Zap },
-  { id: 'skalieren', label: 'Revenue planbar und skalierbar machen', icon: BarChart3 }
+  { id: 'mehr_leads', label: 'Mehr passende Anfragen gewinnen', icon: Target },
+  { id: 'besser_konvertieren', label: 'Aus bestehenden Anfragen mehr Aufträge machen', icon: TrendingUp },
+  { id: 'mehr_effizienz', label: 'Marketing und Vertrieb effizienter machen', icon: Zap },
+  { id: 'skalieren', label: 'Umsatz planbarer machen', icon: BarChart3 }
 ] as const;
 
 const DEAL_OPTIONS = [
@@ -71,15 +71,15 @@ const DEAL_OPTIONS = [
 ] as const;
 
 const BREMSEN_OPTIONS = [
-  { id: 'bremse_leads', label: 'Zu wenig Leads' },
-  { id: 'bremse_conversion', label: 'Schlechte Conversion' },
-  { id: 'bremse_prozesse', label: 'Fehlende Prozesse / Automation' },
+  { id: 'bremse_leads', label: 'Zu wenig Anfragen' },
+  { id: 'bremse_conversion', label: 'Zu wenige Anfragen werden zu Aufträgen' },
+  { id: 'bremse_prozesse', label: 'Viel Handarbeit, wenig Automatisierung' },
   { id: 'bremse_strategie', label: 'Kein klarer Plan' },
-  { id: 'bremse_alignment', label: 'Marketing & Sales nicht aligned' }
+  { id: 'bremse_alignment', label: 'Marketing und Vertrieb arbeiten aneinander vorbei' }
 ] as const;
 
 const GROESSE_OPTIONS = [
-  { id: 'size_micro', label: 'Solo / Micro', subtext: '1–5 Personen', icon: Users },
+  { id: 'size_micro', label: 'Sehr klein', subtext: '1–5 Personen', icon: Users },
   { id: 'size_small', label: 'Klein', subtext: '6–25 Personen', icon: Users },
   { id: 'size_mid', label: 'Mittel', subtext: '26–100 Personen', icon: Building },
   { id: 'size_growth', label: 'Wachsend', subtext: '100+ Personen', icon: Building }
@@ -88,73 +88,73 @@ const GROESSE_OPTIONS = [
 // 3. Map for Engpass Info
 const ENGPASS_MAP: Record<string, { title: string; desc: string; lossDesc: string }> = {
   bremse_strategie: {
-    title: 'Fehlende Strategie',
-    desc: 'Ohne klare ICP-Definition und Go-to-Market-Plan fliesst Budget in die falschen Kanäle — und jede Taktik kämpft ohne Richtung.',
-    lossDesc: 'Unternehmen ohne definierten GTM-Plan wachsen 40% langsamer als der Durchschnitt ihrer Branche.'
+    title: 'Kein klarer Plan',
+    desc: 'Solange nicht klar ist, wer Ihr Wunschkunde ist und über welche Kanäle Sie ihn erreichen, fliesst Budget leicht in die falschen Massnahmen.',
+    lossDesc: 'Ein klarer Plan mit Zielgruppe, Kanälen und Prioritäten ist meist der erste Schritt, bevor zusätzliches Budget sinnvoll ist.'
   },
   bremse_leads: {
-    title: 'Zu wenig qualifizierte Leads',
-    desc: 'Die Pipeline ist dünn oder gefüllt mit den falschen Kontakten. Der Vertrieb kämpft — ohne ausreichend Material.',
-    lossDesc: 'Ohne systematische Demand Generation fehlt die Basis. Vertriebszeit wird für Leads verschwendet, die nie kaufen werden.'
+    title: 'Zu wenig passende Anfragen',
+    desc: 'Es kommen zu wenige Anfragen herein, oder viele davon passen nicht zu Ihrem Angebot. Der Vertrieb hat zu wenig, womit er arbeiten kann.',
+    lossDesc: 'Ohne regelmässige Nachfrage über eigene Kanäle bleibt das Geschäft von Empfehlungen abhängig, und Vertriebszeit geht an Kontakte, die nicht kaufen.'
   },
   bremse_conversion: {
-    title: 'Schlechte Conversion-Rate',
-    desc: 'Traffic und Leads kommen — aber zu wenige werden zu Kunden. Das deutet auf Schwächen im Content, im Nurturing oder im Sales-Prozess hin.',
-    lossDesc: 'Eine Verbesserung der Conversion um 2 Prozentpunkte verdoppelt bei vielen KMU die Neukundenrate — ohne ein einziges neues Lead.'
+    title: 'Zu wenige Anfragen werden zu Aufträgen',
+    desc: 'Besucher und Anfragen sind da, aber zu wenige werden zu Kunden. Oft liegt das an der Website, an der Nachfassung oder am Ablauf im Verkauf.',
+    lossDesc: 'Wenn mehr bestehende Anfragen zu Aufträgen werden, wächst der Umsatz, ohne dass Sie mehr Werbebudget brauchen.'
   },
   bremse_alignment: {
-    title: 'Marketing & Sales nicht aligned',
-    desc: 'Leads werden übergeben, aber nicht bearbeitet. Oder sie kommen qualifiziert an und werden vom Sales-Team ignoriert, weil die Definition nicht stimmt.',
-    lossDesc: 'Unternehmen mit starkem Marketing-Sales-Alignment erzielen 67% mehr Abschlüsse aus denselben Leads.'
+    title: 'Marketing und Vertrieb arbeiten aneinander vorbei',
+    desc: 'Anfragen werden übergeben, aber nicht bearbeitet. Oder der Vertrieb lässt sie liegen, weil nie geklärt wurde, was eine gute Anfrage ist.',
+    lossDesc: 'Eine gemeinsame Definition, was eine gute Anfrage ist, und eine klare Übergabe sorgen dafür, dass weniger Anfragen liegen bleiben.'
   },
   bremse_prozesse: {
-    title: 'Fehlende Automation',
-    desc: 'Manuelle Prozesse bremsen Geschwindigkeit und Skalierbarkeit. Jede Stunde, die manuell in Follow-ups, Reporting oder Datenmanagement fliesst, fehlt für Wachstum.',
-    lossDesc: 'B2B-Unternehmen mit Automatisierung in Marketing und Sales bearbeiten 3x so viele Leads mit dem gleichen Team.'
+    title: 'Viel Handarbeit, wenig Automatisierung',
+    desc: 'Manuelle Abläufe kosten Zeit. Jede Stunde, die in Nachfassen, Reporting oder Datenpflege von Hand fliesst, fehlt im Verkauf.',
+    lossDesc: 'Wiederkehrende Schritte wie Nachfass-E-Mails oder Reportings lassen sich oft automatisieren, damit das Team mehr Zeit für Kundengespräche hat.'
   }
 };
 
 // 4. Hebel Library
 const HEBEL_LIB: Record<string, { title: string; text: string }> = {
   icp_schaerfen: { 
-    title: 'ICP schärfen', 
-    text: 'Klare Definition, wer kauft und warum — damit keine Ressource mehr an den falschen Kontakten verschwendet wird.' 
+    title: 'Wunschkunden klar definieren', 
+    text: 'Festlegen, wer bei Ihnen kauft und warum. So geht weniger Zeit und Budget an Kontakte, die nicht passen.' 
   },
   gtm_plan: { 
-    title: 'Go-to-Market-Plan', 
-    text: 'Strukturierter Plan mit Kanälen, Botschaften und Prioritäten — statt reaktiver Einzelmassnahmen.' 
+    title: 'Vermarktungsplan erstellen', 
+    text: 'Ein Plan mit Kanälen, Botschaften und Prioritäten, statt einzelner Massnahmen nach Gefühl.' 
   },
   demand_aufbauen: { 
-    title: 'Demand-System aufbauen', 
-    text: 'Multi-Channel-Ansatz für kontinuierliche Leadzufuhr — unabhängig von Empfehlungen und Referrals.' 
+    title: 'Regelmässige Nachfrage aufbauen', 
+    text: 'Mehrere Kanäle wie Google, LinkedIn und die eigene Website so aufsetzen, dass laufend Anfragen kommen, nicht nur über Empfehlungen.' 
   },
   content_maschine: { 
-    title: 'Content-Maschine starten', 
-    text: 'Systematischer Content-Aufbau, der rankt, konvertiert und Vertrauen aufbaut — vor dem ersten Gespräch.' 
+    title: 'Inhalte gezielt aufbauen', 
+    text: 'Inhalte, die bei Google gefunden werden und Vertrauen schaffen, noch bevor das erste Gespräch stattfindet.' 
   },
   nurturing_aufbauen: { 
-    title: 'Nurturing-System bauen', 
-    text: 'Leads, die noch nicht bereit sind, regelmässig mit Wert versorgen — bis sie kaufbereit sind.' 
+    title: 'Interessenten weiterbegleiten', 
+    text: 'Kontakte, die noch nicht kaufbereit sind, regelmässig mit nützlichen Informationen versorgen, bis der Zeitpunkt passt.' 
   },
   sales_alignment: { 
-    title: 'Sales-Alignment herstellen', 
-    text: 'Gemeinsame Lead-Definition, SLAs und Übergabeprozesse — damit kein Lead mehr in der Pipeline verloren geht.' 
+    title: 'Marketing und Vertrieb abstimmen', 
+    text: 'Gemeinsam festlegen, was eine gute Anfrage ist, wer sie wann bearbeitet und wie die Übergabe läuft.' 
   },
   automation_basics: { 
-    title: 'Automation-Grundstruktur', 
-    text: 'CRM-Setup, automatisiertes Follow-up und Lead-Scoring — damit das Team sich auf Abschlüsse konzentriert.' 
+    title: 'Grundlagen der Automatisierung', 
+    text: 'CRM einrichten, Nachfassen automatisieren und Anfragen bewerten, damit sich das Team auf Abschlüsse konzentrieren kann.' 
   },
   conversion_optimieren: { 
-    title: 'Conversion-Rate optimieren', 
-    text: 'Landingpages, CTAs und Formulare auf Konversion testen — mehr Abschlüsse aus demselben Traffic.' 
+    title: 'Website und Landingpages verbessern', 
+    text: 'Landingpages, Buttons und Formulare testen, damit mehr Besucher eine Anfrage senden.' 
   },
   revops_setup: { 
-    title: 'Revenue-Operations-Basis', 
-    text: 'Einheitliche Daten, Prozesse und Forecasting — damit alle Teams auf dasselbe Ziel hinarbeiten.' 
+    title: 'Marketing, Vertrieb und Daten verbinden', 
+    text: 'Einheitliche Daten, klare Abläufe und eine verlässliche Umsatzprognose, damit alle auf dasselbe Ziel hinarbeiten.' 
   },
   analytics_setup: { 
-    title: 'Analytics & Attribution', 
-    text: 'Klares Tracking, welcher Kanal welchen Lead und welchen Auftrag gebracht hat — für bessere Budget-Entscheidungen.' 
+    title: 'Sauberes Tracking', 
+    text: 'Nachvollziehen, welcher Kanal welche Anfrage und welchen Auftrag gebracht hat, damit Budgetentscheide auf Daten beruhen.' 
   }
 };
 
@@ -348,23 +348,23 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
     switch (state.step) {
       case 1:
         return {
-          title: 'Was wollt ihr erreichen?',
-          sub: '1 Frage — damit wir dein Potenzial auf dein Ziel kalibrieren.'
+          title: 'Was möchten Sie erreichen?',
+          sub: 'Damit wir die Schätzung auf Ihr Ziel ausrichten können.'
         };
       case 2:
         return {
-          title: 'Was ist euer Auftragswert?',
-          sub: 'Keine genaue Zahl nötig — eine Grössenordnung reicht.'
+          title: 'Wie hoch ist Ihr durchschnittlicher Auftragswert?',
+          sub: 'Eine genaue Zahl ist nicht nötig, die Grössenordnung reicht.'
         };
       case 3:
         return {
-          title: 'Wo steht ihr heute?',
-          sub: 'Ehrlich geschätzt. Je genauer, desto aussagekräftiger das Ergebnis.'
+          title: 'Wo stehen Sie heute?',
+          sub: 'Eine ehrliche Schätzung genügt. Je genauer, desto aussagekräftiger das Ergebnis.'
         };
       case 4:
         return {
-          title: 'Wie gross ist euer Team?',
-          sub: 'Fast fertig — letzter Schritt.'
+          title: 'Wie gross ist Ihr Unternehmen?',
+          sub: 'Letzter Schritt.'
         };
       default:
         return { title: '', sub: '' };
@@ -436,7 +436,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
             {/* Range Slider */}
             <div className="space-y-4 bg-slate-50 border border-slate-100 p-6 rounded-2xl">
               <div className="flex justify-between items-center text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
-                <span>AKTUELLER STAND</span>
+                <span>Neukunden heute</span>
                 <span className="text-[#686DF4] font-semibold text-sm">
                   {state.aktuelleNeukunden === 0 
                     ? '0 Neukunden' 
@@ -445,7 +445,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
                       : `${state.aktuelleNeukunden} Neukunden`} / Monat
                 </span>
               </div>
-              <input
+              <input aria-label="Neukunden pro Monat"
                 type="range"
                 min="0"
                 max="20"
@@ -454,21 +454,21 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
                 onChange={(e) => setState(prev => ({ ...prev, aktuelleNeukunden: parseInt(e.target.value) }))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#686DF4] transition-all"
               />
-              <div className="flex justify-between text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider px-1">
+              <div className="flex justify-between text-[11px] text-slate-400 font-mono font-bold uppercase tracking-wider px-1">
                 <span>0</span>
                 <span>3–5</span>
                 <span>10–15</span>
                 <span>20+</span>
               </div>
               <p className="text-[11px] text-slate-450 italic font-mono text-center">
-                «Schätzung des monatlichen Durchschnitts ist ausreichend»
+                Ein geschätzter Monatsdurchschnitt reicht.
               </p>
             </div>
 
             {/* Selected Obstacle (Bremse) */}
             <div className="space-y-4">
               <h3 className="font-display font-semibold text-slate-800 text-sm">
-                Was ist eure grösste Wachstumsbremse? <span className="text-xs text-[#686DF4] font-medium font-mono">(Mehrfachauswahl erlaubt)</span>
+                Was bremst Ihr Wachstum am meisten? <span className="text-xs text-[#686DF4] font-medium font-mono">(Mehrfachauswahl erlaubt)</span>
               </h3>
               <div className="flex flex-wrap gap-2.5">
                 {BREMSEN_OPTIONS.map((opt) => {
@@ -556,28 +556,28 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
         {/* Block 1: Monats-Uplift Display */}
         <div className="text-center rounded-3xl bg-slate-900 text-white p-8 relative overflow-hidden group shadow-[var(--shadow-premium-lg)] border border-slate-800">
           <div className="absolute top-0 right-0 w-44 h-44 bg-gradient-to-br from-[#686DF4]/20 to-transparent rounded-full blur-2xl group-hover:scale-130 transition-transform duration-500 pointer-events-none" />
-          <p className="text-[10px] font-mono tracking-widest uppercase font-bold text-[#686DF4]">
-            DEIN MONATLICHES REVENUE-POTENZIAL
+          <p className="text-[11px] font-mono tracking-widest uppercase font-bold text-[#686DF4]">
+            Mögliches zusätzliches Umsatzpotenzial pro Monat
           </p>
           <h2 className="text-4xl sm:text-5xl font-display font-bold tracking-tight text-white mt-3 select-none">
             {formatCHF(animatedPotenzial)}
           </h2>
           <p className="text-xs text-[#686DF4] font-bold uppercase tracking-wider font-mono mt-1">
-            monatlich erreichbar
+            grobe Schätzung
           </p>
-          <p className="text-[10.5px] text-slate-400 leading-relaxed font-semibold max-w-lg mx-auto mt-4 pt-4 border-t border-slate-800">
-            Berechnet auf Basis von Branchen-Benchmarks für {sizeLabel}-Unternehmen mit einem Auftragswert von {dealLabel} — konservativ geschätzt.
+          <p className="text-[11px] text-slate-400 leading-relaxed font-semibold max-w-lg mx-auto mt-4 pt-4 border-t border-slate-800">
+            Grobe Schätzung auf Basis vereinfachter Annahmen (Richtwerte) für Unternehmen der Grösse «{sizeLabel}» mit einem Auftragswert von {dealLabel}. Kein Versprechen: Was tatsächlich möglich ist, hängt von Markt, Angebot und Umsetzung ab.
           </p>
         </div>
 
         {/* Block 2: Grösster Engpass */}
         <div className="space-y-4">
           <h3 className="text-base font-display font-semibold text-slate-900 border-l-4 border-amber-500 pl-3 uppercase tracking-wider text-xs font-mono">
-            Dein grösster Engpass gerade
+            Ihr grösster Engpass
           </h3>
           <div className="bg-white border-l-4 border-amber-505 border border-slate-150 border-l-amber-550 p-6 rounded-2xl space-y-3.5 shadow-xs">
             <h4 className="font-display font-bold text-slate-900 text-sm">
-              🚨 {obstacleInfo.title}
+              {obstacleInfo.title}
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 font-semibold leading-relaxed">
               {obstacleInfo.desc}
@@ -591,7 +591,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
         {/* Block 3: Priorisierte Hebel */}
         <div className="space-y-4">
           <h3 className="text-base font-display font-semibold text-slate-900 border-l-4 border-[#686DF4] pl-3 uppercase tracking-wider text-xs font-mono">
-            Die 3 Hebel, die bei dir den grössten Impact haben
+            Drei Ansatzpunkte, die bei Ihnen am meisten bewirken dürften
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {calculationResult.hebelKeys.map((key, i) => {
@@ -619,7 +619,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
         <div className="pt-6 border-t border-slate-150 space-y-6">
           <div className="text-center space-y-2">
             <h4 className="text-sm font-display font-bold text-slate-800">
-              Was jetzt? Wir schauen gemeinsam, wie viel davon in den nächsten 90 Tagen realistisch ist.
+              Im Erstgespräch schauen wir gemeinsam an, was davon in Ihrer Situation realistisch ist.
             </h4>
           </div>
 
@@ -632,7 +632,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
               type="button"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#686DF4] hover:bg-[#686DF4]/95 text-white font-display font-bold px-7 py-3.5 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-xs select-none cursor-pointer outline-none"
             >
-              Wachstumsgespräch buchen <ArrowRight className="w-4 h-4 text-white" />
+              Erstgespräch vereinbaren <ArrowRight className="w-4 h-4 text-white" />
             </button>
             
             <button
@@ -647,7 +647,7 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
           {/* Lead capture component - genuinely optional */}
           <LeadCaptureForm
             secondaryCTAText="Ergebnis per E-Mail erhalten (optional) →"
-            danachText={`Danke — wir haben deine Analyse an deine E-Mail gesendet!\nWir kontaktieren dich nicht ungefragt. Nur deine Auswertung.`}
+            danachText={`Danke, wir haben Ihnen die Auswertung per E-Mail gesendet.\nWir kontaktieren Sie nicht ungefragt.`}
             pageId="revenue_potenzial_check"
           />
         </div>
@@ -684,16 +684,16 @@ export default function RevenuePotenzialCheck({ onClose, onNavigate }: RevenuePo
         {/* Header Bar */}
         <div className="flex justify-between items-center px-6 py-5 border-b border-slate-100 shrink-0 bg-slate-50/50">
           <div className="space-y-0.5">
-            <span className="text-[10px] font-mono tracking-wider font-bold text-[#686DF4] uppercase">REVENUE POTENZIAL-CHECK</span>
+            <span className="text-[11px] font-mono tracking-wider font-bold text-[#686DF4] uppercase">Potenzial-Check</span>
             <h2 className="text-sm font-display font-bold text-slate-850">
-              {isResultScreen ? 'Dein Revenue-Potenzial' : `Fragebogen (Schritt ${state.step} von 4)`}
+              {isResultScreen ? 'Ihre Auswertung' : `Fragebogen (Schritt ${state.step} von 4)`}
             </h2>
           </div>
           <button 
             type="button"
             onClick={onClose}
             className="p-2 text-slate-400 hover:text-slate-800 transition-colors bg-white rounded-full border border-slate-150 shadow-xs cursor-pointer outline-none"
-            aria-label="Modal schliessen"
+            aria-label="Fenster schliessen"
           >
             <X className="w-4 h-4" />
           </button>

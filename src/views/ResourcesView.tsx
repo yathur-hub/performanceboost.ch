@@ -33,7 +33,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
     if (!item) {
       return (
         <div className="pt-32 pb-16 text-center text-slate-800 space-y-4">
-          <p className="text-slate-500">Ressource "{activeItemSlug}" wurde nicht gefunden.</p>
+          <p className="text-slate-500">Der Beitrag «{activeItemSlug}» wurde nicht gefunden.</p>
           <button 
             onClick={() => onNavigate('/ressourcen')}
             className="text-[#686DF4] font-bold hover:underline bg-transparent border-none cursor-pointer"
@@ -63,15 +63,15 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             }}
             className="inline-flex items-center gap-2 text-xs text-slate-500 hover:text-slate-950 transition-colors cursor-pointer font-bold uppercase tracking-wider bg-transparent border-none outline-none font-mono"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> ZURÜCK ZUR ÜBERSICHT
+            <ArrowLeft className="w-3.5 h-3.5" /> Zurück zur Übersicht
           </button>
         </div>
 
         {/* Article content header */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="space-y-4 pb-6 border-b border-slate-100">
-            <span className="inline-flex items-center gap-1 bg-[#686DF4]/5 text-[#686DF4] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-[#CACCFB]/20">
-              {item.type === 'guide' ? 'Guide' : 'Blogbeitrag'}
+            <span className="inline-flex items-center gap-1 bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-[#CACCFB]/20">
+              {item.type === 'guide' ? 'Leitfaden' : 'Blogbeitrag'}
             </span>
             <h1 className="text-3xl sm:text-4xl font-display font-semibold tracking-tight text-slate-950 leading-tight">
               {item.title}
@@ -152,7 +152,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 text-slate-500 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full"
           >
-            KNOWLEDGE HUB
+            Wissen
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -160,7 +160,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Erkenntnisse & Playbooks
+            Leitfäden und Beiträge
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
@@ -168,7 +168,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            Wir teilen unsere besten Frameworks, tiefgehenden Branchenanalysen und praxisbewährten Taktiken ungekürzt. Keine leeren Flachheiten — echte Methodik.
+            Hier teilen wir, wie wir an Neukundengewinnung, Tracking und Automatisierung herangehen. Praxisnah und ohne Anmeldung.
           </motion.p>
         </div>
       </section>
@@ -200,18 +200,18 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                 subSection === 'guides' ? 'bg-slate-950 text-white border border-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
-              Guides & Frameworks
+              Leitfäden
             </button>
           </div>
 
           {/* Search container */}
           <div className="relative w-full md:w-80 shrink-0">
             <Search className="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
-            <input
+            <input aria-label="Beiträge durchsuchen"
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Keywords suchen..."
+              placeholder="Stichwort suchen …"
               className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-3 pl-11 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
             />
           </div>
@@ -235,10 +235,10 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-[9px] font-mono font-bold bg-[#686DF4]/5 px-2.5 py-1 rounded-md text-[#686DF4] uppercase tracking-widest border border-[#CACCFB]/20">
-                      {item.type === 'guide' ? 'Guide' : 'Blog'}
+                    <span className="text-[11px] font-mono font-bold bg-[#686DF4]/5 px-2.5 py-1 rounded-md text-[#686DF4] uppercase tracking-widest border border-[#CACCFB]/20">
+                      {item.type === 'guide' ? 'Leitfaden' : 'Blog'}
                     </span>
-                    <span className="text-[10px] text-slate-400 font-mono font-semibold">{item.readTime}</span>
+                    <span className="text-[11px] text-slate-400 font-mono font-semibold">{item.readTime}</span>
                   </div>
 
                   <h3 className="text-base font-display font-semibold text-slate-905 group-hover:text-[#686DF4] transition-colors line-clamp-2 leading-snug">
@@ -251,7 +251,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                   {/* Category tags */}
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {item.tags.map((tag, idx) => (
-                      <span key={idx} className="text-[9px] font-bold bg-[#f6f6f6] border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
+                      <span key={idx} className="text-[11px] font-bold bg-[#f6f6f6] border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
                         #{tag}
                       </span>
                     ))}
@@ -259,7 +259,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                 </div>
 
                 <div className="pt-6 border-t border-slate-100 mt-8 flex justify-between items-center bg-transparent">
-                  <span className="text-[10px] text-slate-405 font-mono font-bold">
+                  <span className="text-[11px] text-slate-405 font-mono font-bold">
                     {item.publishDate}
                   </span>
                   
@@ -271,7 +271,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                     }}
                     className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/85 bg-transparent border-none focus:outline-none"
                   >
-                    Vollständiger Artikel <ArrowRight className="w-3.5 h-3.5" />
+                    Beitrag lesen <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </motion.div>
@@ -280,7 +280,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
         ) : (
           <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl text-slate-400 space-y-3 bg-[#f6f6f6]/50">
             <AlertCircle className="w-10 h-10 text-slate-300 mx-auto" />
-            <p className="text-xs font-semibold text-slate-500">Keine Ressourcen für deine Filter-Kombination gefunden.</p>
+            <p className="text-xs font-semibold text-slate-500">Keine Beiträge für Ihre Suche gefunden.</p>
             <button 
               onClick={() => { setSearchTerm(''); }}
               className="text-xs text-[#686DF4] underline font-extrabold cursor-pointer bg-transparent border-none"

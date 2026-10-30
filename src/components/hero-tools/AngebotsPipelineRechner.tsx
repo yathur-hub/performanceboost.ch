@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Rocket, Gauge, ChevronUp, ChevronDown, Inbox, CircleDollarSign } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   anfragen: number;
@@ -16,12 +17,7 @@ interface Inputs {
   auftragswert: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function AngebotsPipelineRechner() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -142,30 +138,30 @@ export default function AngebotsPipelineRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosse Verbesserungsmöglichkeit',
-      desc: 'Deine Angebots-Pipeline verliert deutlich mehr Revenue als nötig. Schon einfache Massnahmen — systematisches Follow-up, ein klarer Angebotsprozess — würden einen messbaren Unterschied machen. Der grösste Hebel ist meistens nicht ein besseres Angebot, sondern dass das Angebot überhaupt nachgefasst wird.',
-      rec: `CRM einrichten, Follow-up-Prozess definieren, Abschlussquote schrittweise von ${inputs.abschlussquote}% Richtung 35% steigern.`,
+      label: 'Grosses Potenzial',
+      desc: 'Nach Ihren Angaben geht zwischen Anfrage und Auftrag deutlich mehr Umsatz verloren als nötig. Oft helfen schon einfache Schritte: Offerten konsequent nachfassen und einen klaren Ablauf für Angebote festlegen. Der grösste Hebel ist meist nicht die bessere Offerte, sondern dass überhaupt nachgefasst wird.',
+      rec: `CRM einrichten, Ablauf für das Nachfassen festlegen und die Abschlussquote schrittweise von ${inputs.abschlussquote}% Richtung 35% entwickeln.`,
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
+      badgeBg: 'bg-orange-700 text-white',
       label: 'Potenzial vorhanden',
-      desc: 'Du hast eine funktionierende Pipeline — aber es liegt noch signifikantes Revenue-Potenzial brach. Wahrscheinlich gibt es Lücken im Follow-up oder in der Erst-Qualifizierung von Anfragen. Gezielte Optimierung bringt dich in die Top-Performer-Kategorie.',
-      rec: 'Follow-up-Prozess systematisieren, Nurturing für lange Entscheidungszeiten aufbauen, CRM-Nutzung konsequenter machen.',
+      desc: 'Ihr Weg von der Anfrage zum Auftrag funktioniert, es bleibt aber spürbar Umsatz liegen. Häufige Ursachen sind Lücken beim Nachfassen oder eine unklare erste Einschätzung der Anfragen. Hier lohnt es sich, gezielt anzusetzen.',
+      rec: 'Nachfassen systematisch regeln, Interessenten bei langen Entscheidungszeiten weiterbegleiten und das CRM konsequenter nutzen.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/60',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut, aber ausbaufähig',
-      desc: 'Deine Pipeline-Effizienz liegt über dem Branchendurchschnitt. Das ist eine solide Basis. Jetzt geht es darum, die Anzahl eingehender Anfragen zu steigern und die letzten Prozentpunkte bei der Abschlussquote herauszuholen.',
-      rec: 'Lead Generation skalieren (mehr qualifizierte Anfragen), ABM für Wunschkunden aufbauen, Nurturing weiter optimieren.',
+      desc: 'Ihre Quoten liegen nahe an den angenommenen Richtwerten oder darüber. Das ist eine solide Basis. Als Nächstes geht es darum, mehr passende Anfragen zu gewinnen und die Abschlussquote weiter zu verbessern.',
+      rec: 'Mehr qualifizierte Anfragen gewinnen, Wunschkunden gezielt ansprechen und Interessenten weiterbegleiten.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686DF4] text-white',
-      label: 'Top-Performer',
-      desc: 'Deine Angebots-Pipeline ist ausgezeichnet aufgestellt. Du nutzt deine Anfragen nahezu optimal. Das nächste Wachstumspotenzial liegt jetzt im Volumen: mehr qualifizierte Anfragen bei gleicher Effizienz.',
-      rec: 'Fokus auf Lead Generation und ABM: mehr Wunschkunden in die Pipeline bringen, die du dann zuverlässig abschliesst.',
+      label: 'Sehr gut aufgestellt',
+      desc: 'Sie machen nach Ihren Angaben bereits sehr viel aus Ihren Anfragen. Weiteres Wachstum kommt jetzt vor allem über die Menge: mehr qualifizierte Anfragen bei gleicher Abschlussquote.',
+      rec: 'Fokus auf neue Anfragen: mehr Wunschkunden erreichen, die Sie dann zuverlässig abschliessen.',
     },
   };
 
@@ -174,10 +170,10 @@ export default function AngebotsPipelineRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">INDUSTRIE SIMULATOR</span>
-        <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Angebots-Pipeline-Rechner</h3>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Industrie</span>
+        <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Offerten-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
-          Ermitteln Sie das verdeckte Revenue-Potenzial in Ihren Vertriebs- und Angebotsprozessen.
+          Schätzen Sie, wie viel Umsatz zwischen Anfrage, Offerte und Auftrag verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -190,7 +186,7 @@ export default function AngebotsPipelineRechner() {
               <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Anfragen pro Monat"
                 type="number"
                 min={1}
                 max={500}
@@ -200,7 +196,7 @@ export default function AngebotsPipelineRechner() {
               />
               <Inbox className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium">Alle eingehenden Vertriebskontakte und Enquiries</p>
+            <p className="text-[11px] text-slate-400 font-medium">Alle eingehenden Kundenanfragen</p>
           </div>
 
           <div className="space-y-1">
@@ -208,7 +204,7 @@ export default function AngebotsPipelineRechner() {
               <span>Angebotsquote</span>
               <span className="text-[#686DF4] font-semibold">{inputs.angebotsquote}%</span>
             </label>
-            <input
+            <input aria-label="Angebotsquote"
               type="range"
               min={10}
               max={100}
@@ -217,7 +213,7 @@ export default function AngebotsPipelineRechner() {
               onChange={(e) => handleInputChange('angebotsquote', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Richtwert: 70% der Anfragen werden zu Offerten</p>
+            <p className="text-[11px] text-slate-400 font-medium">Richtwert (Annahme): 70% der Anfragen werden zu Offerten</p>
           </div>
 
           <div className="space-y-1">
@@ -225,7 +221,7 @@ export default function AngebotsPipelineRechner() {
               <span>Abschlussquote</span>
               <span className="text-[#686DF4] font-semibold">{inputs.abschlussquote}%</span>
             </label>
-            <input
+            <input aria-label="Abschlussquote"
               type="range"
               min={5}
               max={80}
@@ -234,7 +230,7 @@ export default function AngebotsPipelineRechner() {
               onChange={(e) => handleInputChange('abschlussquote', parseInt(e.target.value) || 5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Richtwert: 35% der Offerten führen zum Auftrag</p>
+            <p className="text-[11px] text-slate-400 font-medium">Richtwert (Annahme): 35% der Offerten führen zum Auftrag</p>
           </div>
 
           <div className="space-y-1">
@@ -243,7 +239,7 @@ export default function AngebotsPipelineRechner() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.auftragswert)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Auftragswert (CHF)"
                 type="number"
                 min={1000}
                 max={2000000}
@@ -254,7 +250,7 @@ export default function AngebotsPipelineRechner() {
               />
               <CircleDollarSign className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Gewichteter Auftragswert in CHF</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Durchschnittlicher Auftragswert in CHF</p>
           </div>
         </div>
 
@@ -262,39 +258,39 @@ export default function AngebotsPipelineRechner() {
         <div className="md:col-span-7 space-y-6">
           <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
             <div className="space-y-0.5">
-              <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 uppercase">
-                EFFIZIENZ SCORE
+              <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 uppercase">
+                Effizienz-Wert
               </span>
               <div className="text-2xl font-black text-slate-905">{results.effizienz_score} / 100</div>
             </div>
-            <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+            <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
               {currentStufe.label}
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-slate-50 border border-slate-150 rounded-xl p-4">
-              <span className="text-[9.5px] font-mono font-bold text-slate-400 block uppercase">Pipeline-Jahresumsatz aktuell</span>
+              <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Jahresumsatz aus Anfragen heute</span>
               <h4 className="text-lg font-black text-slate-900 mt-1">{formatCHF(results.revenue_jahr)}</h4>
-              <p className="text-[10px] text-slate-450 leading-relaxed font-semibold">
+              <p className="text-[11px] text-slate-450 leading-relaxed font-semibold">
                 {results.abschluesse_monat.toFixed(1)} Abschlüsse/Mt à {formatCHF(inputs.auftragswert)}
               </p>
             </div>
 
             <div className={`border rounded-xl p-4 ${results.leck_jahr > 0 ? 'bg-red-50 border-red-100' : 'bg-green-50 border-green-150'}`}>
-              <span className="text-[9.5px] font-mono font-bold text-slate-400 block uppercase">Bestands-Marge-Leck vs Richtwert</span>
-              <h4 className={`text-lg font-black mt-1 ${results.leck_jahr > 0 ? 'text-red-600' : 'text-green-700'}`}>
-                {results.leck_jahr > 0 ? `-${formatCHF(results.leck_jahr)} / J.` : 'Hervorragend, über Soll'}
+              <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Abstand zum Richtwert</span>
+              <h4 className={`text-lg font-black mt-1 ${results.leck_jahr > 0 ? 'text-red-700' : 'text-green-700'}`}>
+                {results.leck_jahr > 0 ? `-${formatCHF(results.leck_jahr)} / J.` : 'Auf oder über Richtwert'}
               </h4>
-              <p className="text-[10px] text-slate-450 font-semibold leading-relaxed">
-                Basis Richtwerte: 70% Offerten- / 35% Abschlussquote
+              <p className="text-[11px] text-slate-450 font-semibold leading-relaxed">
+                Annahme: 70% Offertquote / 35% Abschlussquote
               </p>
             </div>
 
             <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
               <div className="space-y-0.5">
-                <span className="text-[9.5px] font-mono font-bold text-green-700 block uppercase">Hebel durch aktives Follow-up</span>
-                <p className="text-[10px] text-slate-450 font-semibold">Umsatzzuwachs bei Erhöhung der Quote um 10 Prozentpunkte</p>
+                <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich durch konsequentes Nachfassen</span>
+                <p className="text-[11px] text-slate-450 font-semibold">Geschätztes Plus, wenn die Abschlussquote um 10 Prozentpunkte steigt</p>
               </div>
               <h4 className="text-lg font-black text-green-700 ml-4">+{formatCHF(results.follow_up_potenzial)} / J.</h4>
             </div>
@@ -315,8 +311,8 @@ export default function AngebotsPipelineRechner() {
       {/* CTA Box and collapsible Email */}
       <div className="border-t border-slate-100 pt-6 space-y-6">
         <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-          <div className="text-left font-semibold text-slate-500 text-[10.5px] leading-relaxed max-w-md">
-            <strong>Wie viel Umsatz liegt in deiner Angebots-Pipeline gerade brach?</strong> In 30 Minuten zeigen wir, welcher Hebel bei dir den grössten Impact erzielt. Ohne Standardpitch.
+          <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-md">
+            <strong>Ergebnis gemeinsam einordnen.</strong> In einem kostenlosen Erstgespräch von 30 Minuten schauen wir Ihre Zahlen an und besprechen, wo bei Ihnen der grösste Hebel liegt.
           </div>
           <button
             type="button"
@@ -331,95 +327,12 @@ export default function AngebotsPipelineRechner() {
             }}
             className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
           >
-            Pipeline-Gespräch buchen
+            Ergebnis besprechen
           </button>
         </div>
 
         {/* Lead Capture */}
-        <div className="border border-slate-150 rounded-2xl overflow-hidden text-left bg-slate-50/40">
-          <button
-            onClick={() => {
-              setAccordionOpen(!accordionOpen);
-              track('hero_tool_lead_form_opened', {
-                page: 'b2b-industrie-kmu',
-                leck_jahr: results.leck_jahr,
-                effizienz_score: results.effizienz_score
-              });
-            }}
-            className="w-full p-4 flex justify-between items-center text-xs font-bold text-slate-850 hover:bg-slate-50 transition-colors"
-          >
-            <span>Detaillierte Pipeline-Analyse per E-Mail erhalten →</span>
-            {accordionOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-slate-450" />}
-          </button>
 
-          {accordionOpen && (
-            <div className="p-4 border-t border-slate-150 bg-white space-y-4 animate-fadeIn">
-              {!formSubmitted ? (
-                <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
-                    <input
-                      type="email"
-                      required
-                      value={emailSub}
-                      onChange={(e) => setEmailSub(e.target.value)}
-                      placeholder="name@firma.ch"
-                      className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Vorname *</label>
-                    <input
-                      type="text"
-                      required
-                      value={nameSub}
-                      onChange={(e) => setNameSub(e.target.value)}
-                      placeholder="Vorname"
-                      className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Unternehmen</label>
-                    <input
-                      type="text"
-                      value={companySub}
-                      onChange={(e) => setCompanySub(e.target.value)}
-                      placeholder="GmbH / AG"
-                      className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Industrie-Sektor</label>
-                    <select
-                      value={branche}
-                      onChange={(e) => setBranche(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none"
-                    >
-                      <option>Metallbau / Maschinenbau</option>
-                      <option>Elektrotechnik / Kunststofftechnik</option>
-                      <option>Grosshandel / Distribution</option>
-                      <option>Industrieservice / Wartung</option>
-                      <option>Andere</option>
-                    </select>
-                  </div>
-                  <button
-                    type="submit"
-                    className="sm:col-span-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest py-3 rounded-lg text-center"
-                  >
-                    Analyse kostenlos anfordern
-                  </button>
-                  <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
-                    Keine Werbemails. Einmalige, detaillierte PDF-Analyse passend zu deinen Werten.
-                  </p>
-                </form>
-              ) : (
-                <div className="p-4 text-center text-green-700 bg-green-50 border border-green-150 rounded-xl font-bold text-xs">
-                  Vielen Dank! Deine personalisierte Pipeline-Analyse wird generiert und ist in Kürze in deinem Posteingang.
-                </div>
-              )}
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );

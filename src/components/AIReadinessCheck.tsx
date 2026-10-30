@@ -15,51 +15,51 @@ interface UseCaseData {
 const useCaseStore: Record<string, UseCaseData> = {
   content_research: {
     id: "content_research",
-    titel: "Content- und Research-Automation",
-    warum: "Ihr erstellt Inhalte oder Research heute hauptsächlich manuell — das ist der häufigste Zeitkiller in B2B-Marketing-Teams.",
-    was: "AI-Workflows für Erstentwürfe, Wettbewerbs-Research, Content-Briefings und automatisierte Report-Generierung. Euer Team übernimmt Strategie und Qualitätssicherung, AI übernimmt den ersten zeitaufwendigen Aufwand.",
-    impact: "Typische Zeitersparnis: 5–15 Stunden / Woche bei einem 2-3-köpfigen Marketing-Team.",
-    zeitrahmen: "Erste Workflows operational: ~2 Wochen"
+    titel: "Inhalte und Recherche automatisieren",
+    warum: "Sie erstellen Inhalte oder Recherchen heute grösstenteils von Hand. In vielen B2B-Marketingteams kostet genau das am meisten Zeit.",
+    was: "KI-Abläufe für Erstentwürfe, Recherche zu Mitbewerbern, Briefings für Inhalte und automatisch erstellte Reports. Ihr Team kümmert sich um Strategie und Qualität, die KI übernimmt die zeitaufwendige Vorarbeit.",
+    impact: "Weniger Zeit für Routinearbeit, mehr Zeit für Strategie und Qualität.",
+    zeitrahmen: "Richtwert: erste Abläufe nach ca. 2 Wochen"
   },
   lead_enrichment: {
     id: "lead_enrichment",
-    titel: "AI-gestützte Lead-Recherche & Enrichment",
-    warum: "Euer Ziel: Mehr qualifizierte Leads gewinnen. AI kann Prospect-Daten automatisch und hochgradig personalisiert anreichern, bevor Sales den ersten Kontakt macht.",
-    was: "Clay, Apollo oder ähnliche Tools mit intelligenten LLM-Workflows verbinden: Unternehmensgrösse, Technologie-Stack, Wachstumssignale, LinkedIn-Aktivität — vollautomatisch für jeden neuen Prospect im HubSpot/Salesforce.",
-    impact: "Sales geht in Gespräche besser vorbereitet. Durchschnittlich 2–3x höhere Qualität des ersten Kontakts.",
-    zeitrahmen: "Operational: ~3–4 Wochen"
+    titel: "KI-gestützte Recherche zu Interessenten",
+    warum: "Ihr Ziel sind mehr passende Anfragen. KI kann Informationen zu Interessenten automatisch ergänzen, bevor der Vertrieb den ersten Kontakt aufnimmt.",
+    was: "Tools wie Clay oder Apollo mit KI-Abläufen verbinden: Unternehmensgrösse, eingesetzte Software, Hinweise auf Wachstum, LinkedIn-Aktivität. Automatisch für jeden neuen Kontakt in HubSpot oder Salesforce.",
+    impact: "Der Vertrieb geht besser vorbereitet in Erstgespräche.",
+    zeitrahmen: "Richtwert: ca. 3–4 Wochen"
   },
   sales_prep: {
     id: "sales_prep",
-    titel: "AI-gestützte Gesprächsvorbereitung",
-    warum: "Sales-Zyklen sind oft unnötig lang, weil Vorbereitung Zeit kostet. AI kann in Minuten liefern, wofür ein Mensch sonst Stunden braucht.",
-    was: "Automatisierte Pre-Call-Briefings: Unternehmen, Entscheidungsträger, Buying Signals, Wettbewerbssituation. Plus: AI-gestützte Analyse von aufgezeichneten Sales-Calls für Muster und Best Practices.",
-    impact: "Kürzere Ramp-up-Zeit für neue Sales-Mitarbeiter. Höhere Win-Rate durch bessere Gesprächsvorbereitung.",
-    zeitrahmen: "Operational: ~4–6 Wochen"
+    titel: "KI-gestützte Gesprächsvorbereitung",
+    warum: "Verkaufsprozesse ziehen sich oft in die Länge, weil die Vorbereitung viel Zeit kostet. KI kann einen grossen Teil dieser Vorarbeit schnell erledigen.",
+    was: "Automatische Kurzbriefings vor Gesprächen: Unternehmen, Entscheider, Kaufsignale, Wettbewerb. Dazu eine KI-gestützte Auswertung aufgezeichneter Verkaufsgespräche, um wiederkehrende Muster zu erkennen.",
+    impact: "Neue Mitarbeitende im Vertrieb finden sich schneller zurecht, Gespräche sind besser vorbereitet.",
+    zeitrahmen: "Richtwert: ca. 4–6 Wochen"
   },
   workflow_automation: {
     id: "workflow_automation",
-    titel: "Workflow-Automation für repetitive Prozesse",
-    warum: "Kapazität skalieren ohne mehr Personal braucht intelligente Automation. AI erledigt die Arbeit, die keine menschliche Kreativität braucht.",
-    was: "E-Mail-Klassifizierung, Datenbereinigung, Meeting-Nachbereitung, Report-Generierung, CRM-Datenpflege. Intelligente Workflows in Make/n8n/Zapier, die mit LLMs verbunden sind.",
-    impact: "3–8 Stunden manueller Arbeit pro Person und Woche eliminiert.",
-    zeitrahmen: "Erste Automationen: ~1–2 Wochen"
+    titel: "Wiederkehrende Abläufe automatisieren",
+    warum: "Wer mehr schaffen will, ohne sofort neue Stellen zu besetzen, braucht Automatisierung. KI übernimmt Arbeit, die keine menschliche Kreativität erfordert.",
+    was: "E-Mails sortieren, Daten bereinigen, Meetings nachbereiten, Reports erstellen, CRM-Daten pflegen. Mit Abläufen in Make, n8n oder Zapier, die mit KI-Modellen verbunden sind.",
+    impact: "Weniger manuelle Routinearbeit für Ihr Team.",
+    zeitrahmen: "Richtwert: erste Automatisierungen nach ca. 1–2 Wochen"
   },
   ai_analysis: {
     id: "ai_analysis",
-    titel: "AI-gestützte Datenanalyse & Insights",
-    warum: "Ihr habt zwar Daten — aber die detaillierte Auswertung dauert zu lange oder passiert zu selten.",
-    was: "AI-gestützte Analyse von CRM-Daten, Customer Feedback und Kampagnen-Performance. Anomalie-Erkennung, Trend-Identifikation und automatische Handlungsempfehlungen aus Reports.",
-    impact: "Wöchentliche Insights statt monatlicher Reports. Entscheidungen auf Basis aktueller Daten, nicht veralteter Snapshots.",
-    zeitrahmen: "Grundsetup: ~3 Wochen"
+    titel: "KI-gestützte Datenauswertung",
+    warum: "Die Daten sind da, aber die Auswertung dauert zu lange oder findet zu selten statt.",
+    was: "KI-gestützte Auswertung von CRM-Daten, Kundenfeedback und Kampagnenergebnissen. Auffälligkeiten und Trends werden erkannt, aus Reports entstehen konkrete Handlungsvorschläge.",
+    impact: "Häufigere Auswertungen und Entscheide auf Basis aktueller Daten.",
+    zeitrahmen: "Richtwert: Grundeinrichtung ca. 3 Wochen"
   },
   personalization_scale: {
     id: "personalization_scale",
-    titel: "Personalisierung at Scale",
-    warum: "Du hast die Infrastruktur — jetzt kannst du segmentiert personalisieren, was manuell schlicht nicht koordinierbar wäre.",
-    was: "Personalisierte E-Mail-Sequenzen, dynamische Website-Inhalte und massgeschneiderte B2B-Angebote — basierend auf Realtime-Verhalten, Unternehmensdaten und Interaktionshistorie.",
-    impact: "Durchschnittlich 2–4x höhere Engagement-Rate gegenüber Standard-Kommunikation.",
-    zeitrahmen: "Erste Workflows: ~3–4 Wochen"
+    titel: "Personalisierte Ansprache für viele Kontakte",
+    warum: "Die Grundlagen sind vorhanden. Jetzt können Sie Kundengruppen gezielt ansprechen, was von Hand kaum zu bewältigen wäre.",
+    was: "Personalisierte E-Mail-Strecken, Website-Inhalte, die sich an den Besucher anpassen, und massgeschneiderte B2B-Angebote. Basierend auf aktuellem Verhalten, Unternehmensdaten und bisherigen Kontakten.",
+    impact: "Relevantere Kommunikation statt Einheitsbotschaften für alle.",
+    zeitrahmen: "Richtwert: erste Abläufe nach ca. 3–4 Wochen"
   }
 };
 
@@ -97,23 +97,23 @@ export default function AIReadinessCheck() {
     if (score <= 1) {
       return {
         key: "beginner",
-        label: "Beginner",
+        label: "Einstieg",
         color: "#F4A261",
-        desc: "Der Einstieg ist genau jetzt richtig. Du musst nicht perfekt vorbereitet sein, um mit AI anzufangen. Die besten ersten Schritte sind die, die schnell messbaren Wert liefern — ohne grosse technische Infrastruktur."
+        desc: "Sie müssen nicht perfekt vorbereitet sein, um mit KI anzufangen. Sinnvoll sind erste Schritte, die schnell einen spürbaren Nutzen bringen und keine grosse technische Infrastruktur brauchen."
       };
     } else if (score <= 4) {
       return {
         key: "intermediate",
-        label: "Intermediate",
+        label: "Fortgeschritten",
         color: "#4361EE",
-        desc: "Du hast Ansätze — jetzt geht es um Systematisierung. Einzelne AI-Tools existieren vielleicht schon. Aber AI als integrierter Teil deiner Prozesse — das ist der nächste Schritt. Der hat messbaren Impact."
+        desc: "Erste Ansätze sind da, jetzt geht es um System. Vielleicht nutzen Sie bereits einzelne KI-Tools. Der nächste Schritt ist, KI fest in Ihre Abläufe einzubauen."
       };
     } else {
       return {
         key: "advanced",
-        label: "Advanced",
+        label: "Gut aufgestellt",
         color: "#2A9D8F",
-        desc: "Du hast die Grundlagen — Zeit für echte Skalierung. Deine Infrastruktur und Datenqualität erlauben es, AI dort einzusetzen, wo andere noch experimentieren. Die Use-Cases für dich sind komplexer — und wertvoller."
+        desc: "Die Grundlagen sind vorhanden. Ihre Systeme und Daten erlauben es, KI auch für anspruchsvollere Aufgaben einzusetzen, die oft mehr Nutzen bringen."
       };
     }
   }, [score, isReadinessCalculable]);
@@ -225,19 +225,19 @@ export default function AIReadinessCheck() {
         <div className="flex items-center gap-2.5">
           <Bot className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            AI-Readiness-Check
+            KI-Check: Wo lohnt sich KI bei Ihnen?
           </h3>
         </div>
         <button
           onClick={handleReset}
-          className="text-[10px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
-          <RefreshCw className="w-3 h-3" /> Reset
+          <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
       </div>
 
       <p className="text-xs text-slate-500 leading-relaxed mt-2 mb-8 font-semibold">
-        Welche AI-Use-Cases machen für euch am meisten Sinn? Beantworte diese 5 strategischen Hebel-Fragen.
+        Wo bringt KI in Ihrem Unternehmen am meisten? Beantworten Sie fünf kurze Fragen.
       </p>
 
       {/* Input survey items */}
@@ -246,7 +246,7 @@ export default function AIReadinessCheck() {
         {/* F1 */}
         <div className="space-y-2">
           <label className="text-xs sm:text-sm text-slate-800 font-bold block leading-snug">
-            Sind eure wichtigsten wiederkehrenden Prozesse dokumentiert?
+            Sind Ihre wichtigsten wiederkehrenden Abläufe dokumentiert?
           </label>
           <div className="grid grid-cols-3 gap-2">
             {[
@@ -268,13 +268,13 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium">Z. B. im Onboarding, der Lead-Bearbeitung, Content-Erstellung.</p>
+          <p className="text-[11px] text-slate-400 font-medium">Z. B. Einarbeitung, Bearbeitung von Anfragen, Erstellung von Inhalten.</p>
         </div>
 
         {/* F2 */}
         <div className="space-y-2">
           <label className="text-xs sm:text-sm text-slate-800 font-bold block leading-snug">
-            Sind eure CRM-Daten aktuell und sauber gepflegt?
+            Sind Ihre CRM-Daten aktuell und sauber gepflegt?
           </label>
           <div className="grid grid-cols-3 gap-2">
             {[
@@ -296,13 +296,13 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium">Vollständige Kontaktdaten, keine Duplikate, gepflegte Dealstage-Status.</p>
+          <p className="text-[11px] text-slate-400 font-medium">Vollständige Kontaktdaten, keine Duplikate, aktuelle Verkaufsphasen.</p>
         </div>
 
         {/* F3 */}
         <div className="space-y-2">
           <label className="text-xs sm:text-sm text-slate-800 font-bold block leading-snug">
-            Wird Research, Content oder Reporting heute hauptsächlich manuell erstellt?
+            Entstehen Recherchen, Inhalte oder Reports heute grösstenteils von Hand?
           </label>
           <div className="grid grid-cols-2 gap-2">
             {[
@@ -323,18 +323,18 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium font-sans">Manuelle Handarbeit = Hohe Automations-Hebelwirkung.</p>
+          <p className="text-[11px] text-slate-400 font-medium font-sans">Viel Handarbeit heisst meist: viel Potenzial für Automatisierung.</p>
         </div>
 
         {/* F4 */}
         <div className="space-y-2">
           <label className="text-xs sm:text-sm text-slate-800 font-bold block leading-snug">
-            Wird AI in eurem Unternehmen bereits eingesetzt?
+            Setzen Sie in Ihrem Unternehmen bereits KI ein?
           </label>
           <div className="grid grid-cols-3 gap-2">
             {[
-              { label: 'Aktiv', val: 2 },
-              { label: 'Experimentell', val: 1 },
+              { label: 'Regelmässig', val: 2 },
+              { label: 'Testweise', val: 1 },
               { label: 'Nein', val: 0 }
             ].map(lvl => (
               <button
@@ -351,25 +351,25 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-400 font-medium">Z. B. via ChatGPT, Copilot, native AI-Features in Hubspot/Notion etc.</p>
+          <p className="text-[11px] text-slate-400 font-medium">Z. B. ChatGPT, Copilot oder KI-Funktionen in HubSpot oder Notion.</p>
         </div>
 
         {/* F5 */}
         <div className="space-y-1.5">
           <label className="text-xs sm:text-sm text-slate-800 font-bold block leading-snug">
-            Was ist euer primäres Wachstumsziel in den nächsten 6 Monaten?
+            Was ist Ihr wichtigstes Ziel für die nächsten 6 Monate?
           </label>
-          <select
+          <select aria-label="Was ist Ihr wichtigstes Ziel für die nächsten 6 Monate?"
             value={f5}
             onChange={e => handleFieldSet('f5', e.target.value)}
             className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
           >
             <option value="">Bitte wählen...</option>
-            <option value="leads">Mehr qualifizierte Leads gewinnen</option>
-            <option value="sales_speed">Sales-Zyklen verkürzen</option>
+            <option value="leads">Mehr passende Anfragen gewinnen</option>
+            <option value="sales_speed">Verkaufsprozesse verkürzen</option>
             <option value="marketing_efficiency">Marketing-Team effizienter machen</option>
-            <option value="data">Bessere Entscheidungsgrundlagen (Daten)</option>
-            <option value="scale">Team-Kapazität skalieren ohne mehr Personal</option>
+            <option value="data">Bessere Entscheidungsgrundlagen durch Daten</option>
+            <option value="scale">Mehr schaffen, ohne gleich mehr Personal einzustellen</option>
           </select>
         </div>
 
@@ -390,7 +390,7 @@ export default function AIReadinessCheck() {
           </div>
           <div className="space-y-1">
             <h5 className="text-xs font-bold text-slate-900 font-display">
-              AI-Readiness Status
+              Ihr Stand beim Thema KI
             </h5>
             <p className="text-[11px] text-slate-500 leading-relaxed font-semibold">
               {levelInfo.desc}
@@ -404,7 +404,7 @@ export default function AIReadinessCheck() {
         {!isComplete ? (
           <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
             <p className="text-xs text-slate-405 text-slate-400 font-semibold uppercase tracking-wider font-mono">
-              Fülle alle 5 Felder oben aus, um passgenaue Use-Cases anzuzeigen
+              Füllen Sie alle 5 Felder aus, um passende Einsatzmöglichkeiten zu sehen
             </p>
           </div>
         ) : (
@@ -413,8 +413,8 @@ export default function AIReadinessCheck() {
             animate={{ opacity: 1 }}
             className="space-y-6"
           >
-            <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
-              DIAGNOSTIZIERTE EMPEHLUNGEN (3 USE-CASES)
+            <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+              Drei Einsatzmöglichkeiten für Sie
             </span>
 
             {/* Staggered animated cards */}
@@ -439,7 +439,7 @@ export default function AIReadinessCheck() {
                         <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
                           {usecase.titel}
                         </h4>
-                        <span className="bg-[#686DF4]/5 text-[#686DF4] text-[9px] font-mono font-black uppercase tracking-wider px-2 py-0.5 rounded-md leading-none border border-[#686DF4]/10">
+                        <span className="bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-mono font-black uppercase tracking-wider px-2 py-0.5 rounded-md leading-none border border-[#686DF4]/10">
                           {usecase.zeitrahmen}
                         </span>
                       </div>
@@ -452,7 +452,7 @@ export default function AIReadinessCheck() {
 
                       {/* Prominent highlighted Impact metric */}
                       <div className="bg-emerald-50/50 text-emerald-800 px-4 py-3 rounded-xl text-xs font-bold border border-emerald-100/50 shadow-2xs">
-                        🚀 {usecase.impact}
+                        {usecase.impact}
                       </div>
                     </div>
 
@@ -460,7 +460,7 @@ export default function AIReadinessCheck() {
                     <div className="pt-3">
                       <button
                         onClick={() => toggleCaseExpanded(usecase.id)}
-                        className="text-[10px] font-mono leading-none tracking-wider uppercase text-slate-400 hover:text-slate-950 font-bold bg-transparent border-none cursor-pointer flex items-center gap-1"
+                        className="text-[11px] font-mono leading-none tracking-wider uppercase text-slate-400 hover:text-slate-950 font-bold bg-transparent border-none cursor-pointer flex items-center gap-1"
                       >
                         {isExpanded ? (
                           <>Details verbergen <ChevronUp className="w-3 h-3 text-[#686DF4]" /></>
@@ -479,8 +479,8 @@ export default function AIReadinessCheck() {
                             className="overflow-hidden mt-3 text-slate-500 text-xs sm:text-sm leading-relaxed"
                           >
                             <div className="p-4 bg-slate-50 border border-slate-200/50 rounded-xl space-y-1.5 animate-fadeIn">
-                              <h5 className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-405 text-slate-400">
-                                WIE DIE ERRICHTUNG AUSSIEHT
+                              <h5 className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-405 text-slate-400">
+                                So sieht die Umsetzung aus
                               </h5>
                               <p className="text-xs text-slate-650 text-slate-600 font-semibold leading-relaxed">
                                 {usecase.was}
@@ -502,14 +502,14 @@ export default function AIReadinessCheck() {
                 onClick={handleBooking}
                 className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
-                AI-Gespräch buchen — kostenlos, 30 Min <ArrowRight className="w-4 h-4 text-white" />
+                Erstgespräch vereinbaren <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
 
             {/* Custom capture model trigger */}
             <LeadCaptureForm
-              secondaryCTAText="AI-Roadmap per E-Mail erhalten →"
-              danachText="Wir schicken dir eine priorisierte AI-Roadmap mit konkreten Umsetzungsschritten für dein spezifisches Setup."
+              secondaryCTAText="KI-Fahrplan per E-Mail erhalten →"
+              danachText="Wir senden Ihnen einen priorisierten KI-Fahrplan mit konkreten Umsetzungsschritten für Ihre Situation."
               pageId="ai-automation"
               additionalFields={[
                 {

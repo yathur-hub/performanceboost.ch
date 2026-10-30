@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Heart, ChevronUp, ChevronDown, CircleDollarSign } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   visits: number;
@@ -16,12 +17,7 @@ interface Inputs {
   patient_wert: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function NeupatientenPotenzialCheck() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -135,30 +131,30 @@ export default function NeupatientenPotenzialCheck() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Hohes Digital-Potenzial',
-      desc: 'Ihre Praxis verliert viele potenzielle Patienten auf der Website, weil moderne Online-Buchungsmöglichkeiten fehlen oder die Sichtbarkeit bei lokalen Suchanfragen ungenügend ist. Mit einer unkomplizierten Online-Terminloesung (z.B. OneDoc) und lokalem SEO lässt sich der Strom erfreulich rasch optimieren.',
-      rec: 'Integration eines vollautomatischen Online-Terminkalenders & Google My Business Optimierung.',
+      label: 'Grosses Potenzial',
+      desc: 'Nach Ihren Angaben werden aus vielen Website-Besuchern keine Patienten, etwa weil eine einfache Online-Terminbuchung fehlt oder die Praxis bei lokalen Suchanfragen schlecht gefunden wird. Eine unkomplizierte Online-Terminlösung (z.B. OneDoc) und eine gute lokale Auffindbarkeit bei Google sind hier meist die ersten Schritte.',
+      rec: 'Online-Terminkalender einbinden und das Google-Unternehmensprofil vollständig pflegen.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
-      label: 'Ungelöstes Potenzial',
-      desc: 'Sie gewinnen bereits Patienten online — doch der Flaschenhals ist eng. Entspricht Ihr Google Profil nicht den modernen Erwartungen, oder ist der Online-Buchungsweg zu umständlich? Hier liegt ein bezifferbares Zusatz-Umsatzpotenzial.',
-      rec: 'Buchungsbutton präsenter platzieren, Ladezeit reduzieren, Bewertungen auf Google systematisch fördern.',
+      badgeBg: 'bg-orange-700 text-white',
+      label: 'Potenzial vorhanden',
+      desc: 'Sie gewinnen bereits Patienten online, auf dem Weg zum Termin gehen aber noch einige verloren. Häufige Gründe sind ein unvollständiges Google-Profil oder ein umständlicher Buchungsweg auf der Website.',
+      rec: 'Den Buchungsbutton sichtbarer platzieren, die Ladezeit der Website verkürzen und Patienten aktiv um Google-Bewertungen bitten.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
-      desc: 'Ihre Konvertierungsraten sind solide, und Ihre Patienten nutzen die Online-Kanäle überdurchschnittlich gut. Um weiter organisch zu wachsen, sollten Sie Ihre Reichweite digital erweitern (mehr Klicks auf Ihre Seite holen).',
-      rec: 'Fokus auf Traffic-Aufbau: Lokale Kampagnen (SEO & Google Ads) für besonders lukrative Fachbereiche.',
+      desc: 'Aus Ihren Website-Besuchern werden bereits viele Patienten, und die Online-Buchung wird gut genutzt. Um weiter zu wachsen, brauchen Sie vor allem mehr passende Besucher auf Ihrer Website.',
+      rec: 'Mehr Besucher gewinnen: lokale Auffindbarkeit bei Google und Google Ads für die Fachbereiche, die Sie ausbauen möchten.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686DF4] text-white',
-      label: 'Spitzen-Performer',
-      desc: 'Ihr Neupatienten-Funnel ist exzellent. Hohe Online-Buchungsquoten, starke Webkonvertierung. Optimieren Sie jetzt gezielt die Auslastung und lenken Sie Ihren Service-Fokus auf hochqualitative Behandlungsschwerpunkte.',
-      rec: 'Fokus auf Spezialisierungen und Premium-Services (z.B. Implantologie, Ästhetik) per Digital-Marketing.',
+      label: 'Sehr gut aufgestellt',
+      desc: 'Der Weg von der Website zum Termin funktioniert nach Ihren Angaben sehr gut, mit vielen Online-Buchungen. Jetzt können Sie die Auslastung gezielt steuern und mehr Patienten für Ihre Behandlungsschwerpunkte gewinnen.',
+      rec: 'Spezialisierte Leistungen (z.B. Implantologie, Ästhetik) online gezielt bekannt machen.',
     },
   };
 
@@ -167,10 +163,10 @@ export default function NeupatientenPotenzialCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">MEDICAL INSIGHTS</span>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Praxen</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Neupatienten-Potenzial-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
-          Ermitteln Sie die ungenutzten Wachstumspotentiale Ihrer Arzt- oder Zahnarztpraxis per Online-Patientenmarketing.
+          Schätzen Sie, wie viele zusätzliche Patienten Ihre Arzt- oder Zahnarztpraxis über die Website gewinnen könnte. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -182,7 +178,7 @@ export default function NeupatientenPotenzialCheck() {
               <span>Web-Besucher pro Monat</span>
               <span className="text-[#686DF4] font-semibold">{inputs.visits.toLocaleString('de-CH')}</span>
             </label>
-            <input
+            <input aria-label="Web-Besucher pro Monat"
               type="number"
               min={50}
               max={15000}
@@ -191,7 +187,7 @@ export default function NeupatientenPotenzialCheck() {
               onChange={(e) => handleInputChange('visits', parseInt(e.target.value) || 50)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Durchschnittliche Besucher auf Ihrer Praxis-Webseite</p>
+            <p className="text-[11px] text-slate-400 font-medium">Durchschnittliche Besucher auf Ihrer Praxis-Website</p>
           </div>
 
           <div className="space-y-1">
@@ -199,7 +195,7 @@ export default function NeupatientenPotenzialCheck() {
               <span>Neupatienten pro Monat (Schnitt)</span>
               <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
             </label>
-            <input
+            <input aria-label="Neupatienten pro Monat (Schnitt)"
               type="number"
               min={1}
               max={500}
@@ -207,7 +203,7 @@ export default function NeupatientenPotenzialCheck() {
               onChange={(e) => handleInputChange('anfragen', parseInt(e.target.value) || 1)}
               className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Bestehender monatlicher Zustrom an Neupatienten</p>
+            <p className="text-[11px] text-slate-400 font-medium">Heutige Anzahl neuer Patienten pro Monat</p>
           </div>
 
           <div className="space-y-1">
@@ -215,7 +211,7 @@ export default function NeupatientenPotenzialCheck() {
               <span>Anteil Online-Terminbuchungen</span>
               <span className="text-[#686DF4] font-semibold">{inputs.online_quote}%</span>
             </label>
-            <input
+            <input aria-label="Anteil Online-Terminbuchungen"
               type="range"
               min={0}
               max={100}
@@ -224,7 +220,7 @@ export default function NeupatientenPotenzialCheck() {
               onChange={(e) => handleInputChange('online_quote', parseInt(e.target.value) || 0)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Wie viel % buchen direkt online statt per Telefon/E-Mail?</p>
+            <p className="text-[11px] text-slate-400 font-medium">Wie viel % buchen direkt online statt per Telefon/E-Mail?</p>
           </div>
 
           <div className="space-y-1">
@@ -233,7 +229,7 @@ export default function NeupatientenPotenzialCheck() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.patient_wert)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Patientenwert / Jahr (CHF)"
                 type="number"
                 min={100}
                 max={25000}
@@ -244,7 +240,7 @@ export default function NeupatientenPotenzialCheck() {
               />
               <CircleDollarSign className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium font-mono">Durschnittlicher Umsatz pro Neupatient im 1. Jahr</p>
+            <p className="text-[11px] text-slate-400 font-medium font-mono">Durchschnittlicher Umsatz pro neuem Patienten im 1. Jahr</p>
           </div>
         </div>
 
@@ -255,12 +251,12 @@ export default function NeupatientenPotenzialCheck() {
               {/* Score header */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
-                    DIGITAL-REICHWEITEN SCORE
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
+                    Effizienz-Wert
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
-                <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+                <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
                   {currentStufe.label}
                 </span>
               </div>
@@ -268,28 +264,28 @@ export default function NeupatientenPotenzialCheck() {
               {/* Cards column */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">Umsatz aus Neupatienten aktuell</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Umsatz aus Neupatienten heute</span>
                   <h4 className="text-base font-black text-slate-900 mt-1">{formatCHF(results.umsatz_jahr)} / J.</h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
                     ({results.neupatienten_jahr} Neupatienten / Jahr insgesamt)
                   </p>
                 </div>
 
                 <div className="bg-red-50 border border-red-150 rounded-xl p-4">
-                  <span className="text-[9px] font-mono font-bold text-red-655 block uppercase">Umsatz-Lücke vs. Modern-Target</span>
-                  <h4 className="text-base font-black text-red-600 mt-1">
+                  <span className="text-[11px] font-mono font-bold text-red-655 block uppercase">Abstand zum Richtwert</span>
+                  <h4 className="text-base font-black text-red-700 mt-1">
                     {results.umsatz_gap > 0 ? `-${formatCHF(results.umsatz_gap)} / J.` : 'CHF 0'}
                   </h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
-                    Soll-Modern-Target: 8% Website-Konvertierungsrate
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                    Annahme: 8% der Besucher werden Patienten
                   </p>
                 </div>
 
                 {inputs.online_quote < 55 && (
                   <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                     <div className="space-y-0.5">
-                      <span className="text-[9px] font-mono font-bold text-green-700 block uppercase">Potenzial durch Online-Terminkalender</span>
-                      <p className="text-[10px] text-slate-500 font-semibold">Umsatzzuwachs bei Erhöhung der Online-Buchbarkeit auf 55%</p>
+                      <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich mit Online-Terminbuchung</span>
+                      <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung bei 55% Online-Buchungen (Annahme: +3% der Besucher)</p>
                     </div>
                     <h4 className="text-base font-black text-green-700">+{formatCHF(results.potential_umsatz_jahr)} / J.</h4>
                   </div>
@@ -302,13 +298,13 @@ export default function NeupatientenPotenzialCheck() {
                   {currentStufe.desc}
                 </p>
                 <p className="text-xs font-bold text-slate-900 pt-1 border-t border-slate-100/50 font-mono">
-                  Konkreter Hebel: {currentStufe.rec}
+                  Empfehlung: {currentStufe.rec}
                 </p>
               </div>
             </>
           ) : (
             <div className="p-8 text-center text-slate-400 border border-dashed border-slate-200 rounded-3xl">
-              Bitte qualifizieren Sie Ihre Eingaben (visits mind. 50).
+              Bitte geben Sie mindestens 50 Besucher und einen Patientenwert ab CHF 100 ein.
             </div>
           )}
         </div>
@@ -318,8 +314,8 @@ export default function NeupatientenPotenzialCheck() {
       {results && (
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
-              <strong>Entspricht Ihre Website den modernen Erwartungen Ihrer Patienten?</strong> In 30 Minuten analysieren wir Ihre Online-Auffindbarkeit.
+            <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
+              <strong>Ergebnis gemeinsam einordnen.</strong> In einem kostenlosen Erstgespräch von 30 Minuten schauen wir Ihre Zahlen an und besprechen, wo bei Ihnen der grösste Hebel liegt.
             </div>
             <button
               type="button"
@@ -334,94 +330,11 @@ export default function NeupatientenPotenzialCheck() {
               }}
               className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
-              Praxis-Analyse buchen
+              Ergebnis besprechen
             </button>
           </div>
 
-          <div className="border border-slate-150 rounded-2xl overflow-hidden text-left bg-slate-50/40">
-            <button
-              onClick={() => {
-                setAccordionOpen(!accordionOpen);
-                track('hero_tool_lead_form_opened', {
-                  page: 'gesundheitswesen',
-                  umsatz_gap: results.umsatz_gap,
-                  score: results.score,
-                });
-              }}
-              className="w-full p-4 flex justify-between items-center text-xs font-bold text-slate-800 hover:bg-slate-50 transition-colors"
-            >
-              <span>Detaillierten Praxis-Report per E-Mail anfordern →</span>
-              {accordionOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-slate-440" />}
-            </button>
 
-            {accordionOpen && (
-              <div className="p-4 border-t border-slate-150 bg-white space-y-4 animate-fadeIn">
-                {!formSubmitted ? (
-                  <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
-                      <input
-                        type="email"
-                        required
-                        value={emailSub}
-                        onChange={(e) => setEmailSub(e.target.value)}
-                        placeholder="praxis@arzt.ch"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Ihr Name *</label>
-                      <input
-                        type="text"
-                        required
-                        value={nameSub}
-                        onChange={(e) => setNameSub(e.target.value)}
-                        placeholder="Dr. Med. Meier"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Praxisname / Klinik</label>
-                      <input
-                        type="text"
-                        value={companySub}
-                        onChange={(e) => setCompanySub(e.target.value)}
-                        placeholder="Praxiszentrum Dr. Müller"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Praxisrichtung</label>
-                      <select
-                        value={praxisTyp}
-                        onChange={(e) => setPraxisTyp(e.target.value)}
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none"
-                      >
-                        <option>Zahnarztpraxis / Kieferorthopädie</option>
-                        <option>Hausarztmedizin / Gruppenpraxis</option>
-                        <option>Physiotherapie / Ostheopathie</option>
-                        <option>Ästhetische Medizin / Dermatologie</option>
-                        <option>Andere Spezialdisziplinen</option>
-                      </select>
-                    </div>
-                    <button
-                      type="submit"
-                      className="sm:col-span-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest py-3 rounded-lg text-center"
-                    >
-                      Report anfordern
-                    </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
-                      Datenschutzkonform (DSG). Einmaliger, personalisierter Report samt Schweizer Praxis-Benchmarks im Gesundheitssektor.
-                    </p>
-                  </form>
-                ) : (
-                  <div className="p-4 text-center text-green-700 bg-green-50 border border-green-150 rounded-xl font-bold text-xs">
-                    Vielen Dank! Die PDF-Auswertung ist in Kürze in Ihrem Posteingang.
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
         </div>
       )}
     </div>

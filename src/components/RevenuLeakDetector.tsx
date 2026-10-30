@@ -100,16 +100,16 @@ export default function RevenuLeakDetector() {
         <div className="flex items-center gap-2.5">
           <Layers className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            Revenue-Leak-Detector
+            Umsatz-Check: Wo gehen Aufträge verloren?
           </h3>
         </div>
-        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
-          REVOPS AUDIT
+        <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
+          Rechner
         </span>
       </div>
 
       <p className="text-xs text-slate-500 leading-relaxed mt-2 mb-8 font-semibold">
-        Silos auflösen und Umsatzlecks schliessen: Berechne dein monatliches Revenue-Leck in 60 Sekunden.
+        Rechnen Sie in rund einer Minute durch, an welcher Stelle zwischen Anfrage und Auftrag bei Ihnen am meisten verloren geht.
       </p>
 
       {/* Two columns on desktop */}
@@ -117,12 +117,12 @@ export default function RevenuLeakDetector() {
         
         {/* Left Side: Inputs */}
         <div className="lg:col-span-6 space-y-6">
-          <h4 className="text-sm font-semibold text-slate-900 font-display">Ist-Daten</h4>
+          <h4 className="text-sm font-semibold text-slate-900 font-display">Ihre heutigen Zahlen</h4>
           
           {/* Field 1 */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-850 block">Monatliche MQLs (Marketing-Qualified Leads)</label>
-            <input
+            <label className="text-xs font-bold text-slate-850 block">Qualifizierte Anfragen pro Monat</label>
+            <input aria-label="Qualifizierte Anfragen pro Monat"
               type="number"
               min="1"
               max="100000"
@@ -131,48 +131,48 @@ export default function RevenuLeakDetector() {
               onChange={e => handleFieldChange('mql', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs animate-fadeIn"
             />
-            <p className="text-[10px] text-slate-400 font-medium">Leads, die das Marketing als bereit für den Vertrieb einstuft.</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anfragen, die das Marketing als bereit für den Vertrieb einstuft.</p>
           </div>
 
           {/* Field 2 */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-850 block">MQL-zu-Opportunity Rate (%)</label>
-            <select
+            <label className="text-xs font-bold text-slate-850 block">Anteil Anfragen, aus denen ein Verkaufsgespräch wird (%)</label>
+            <select aria-label="Anteil Anfragen, aus denen ein Verkaufsgespräch wird (%)"
               value={mqlToOpp}
               onChange={e => handleFieldChange('mqlToOpp', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
-              <option value="0.03">Unter 5% (Gering)</option>
-              <option value="0.075">5% – 10% (Durchschnitt)</option>
-              <option value="0.15">10% – 20% (Gut)</option>
-              <option value="0.25">20% – 30% (Sehr gut)</option>
-              <option value="0.35">Über 30% (Best-in-Class)</option>
+              <option value="0.03">Unter 5% (gering)</option>
+              <option value="0.075">5% – 10% (mittel)</option>
+              <option value="0.15">10% – 20% (gut)</option>
+              <option value="0.25">20% – 30% (sehr gut)</option>
+              <option value="0.35">Über 30% (sehr hoch)</option>
             </select>
-            <p className="text-[10px] text-slate-400 font-medium">Anteil der Leads, die in qualifizierte Verkaufsaktivitäten übergehen.</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil der Anfragen, die zu einem konkreten Verkaufsgespräch oder Angebot führen.</p>
           </div>
 
           {/* Field 3 */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-850 block">Opportunity-zu-Close Rate (%)</label>
-            <select
+            <label className="text-xs font-bold text-slate-850 block">Abschlussquote (%)</label>
+            <select aria-label="Abschlussquote (%)"
               value={oppToClose}
               onChange={e => handleFieldChange('oppToClose', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
-              <option value="0.07">Unter 10% (Gering)</option>
-              <option value="0.15">10% – 20% (Durchschnitt)</option>
-              <option value="0.25">20% – 30% (Guter Vertrieb)</option>
-              <option value="0.35">Über 30% (Best-in-Class)</option>
+              <option value="0.07">Unter 10% (gering)</option>
+              <option value="0.15">10% – 20% (mittel)</option>
+              <option value="0.25">20% – 30% (gut)</option>
+              <option value="0.35">Über 30% (sehr hoch)</option>
             </select>
-            <p className="text-[10px] text-slate-400 font-medium">Anteil der qualifizierten Opportunities, die vertraglich abgeschlossen werden.</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil der Verkaufsgespräche bzw. Angebote, aus denen ein Auftrag wird.</p>
           </div>
 
           {/* Field 4 */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-850 block">Durchschnittlicher Auftragswert (ACV in CHF)</label>
-            <input
+            <label className="text-xs font-bold text-slate-850 block">Durchschnittlicher Auftragswert (CHF)</label>
+            <input aria-label="Durchschnittlicher Auftragswert (CHF)"
               type="number"
               min="100"
               max="10000000"
@@ -190,10 +190,10 @@ export default function RevenuLeakDetector() {
           {!results ? (
             <div className="bg-[#f6f6f6]/55 border border-slate-200/50 rounded-2xl p-8 text-center min-h-[340px] flex flex-col justify-center items-center shadow-xs">
               <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
-                Trichter-Vorschau
+                Vorschau
               </h4>
               <p className="text-xs text-slate-450 leading-relaxed font-semibold text-slate-500 max-w-xs">
-                Fülle alle Felder aus, um die interaktive Trichter-Visualisierung und deinen Gap zu analysieren.
+                Füllen Sie alle Felder aus, um Ihren Anfrageprozess und die Abweichung zum Richtwert zu sehen.
               </p>
             </div>
           ) : (
@@ -203,8 +203,8 @@ export default function RevenuLeakDetector() {
               transition={{ duration: 0.3 }}
               className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-6 text-center"
             >
-              <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block text-left">
-                KONVERSIONS-TRICHTER (LIVE)
+              <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block text-left">
+                Ihr Weg von der Anfrage zum Auftrag
               </span>
 
               {/* Funnel SVG Illustration */}
@@ -297,30 +297,30 @@ export default function RevenuLeakDetector() {
 
                   {/* Graph Text overlay indicators */}
                   <text x="160" y="45" fill="white" fontStyle="normal" fontWeight="bold" fontSize="9" textAnchor="middle">
-                    STAGE 1: {formatNumber(Number(mqlText))} MQLs
+                    {formatNumber(Number(mqlText))} Anfragen
                   </text>
                   <text x="160" y="125" fill="white" fontStyle="normal" fontWeight="bold" fontSize="9" textAnchor="middle">
-                    STAGE 2: {formatNumber(results.istOpps, 1)} Opportunities
+                    {formatNumber(results.istOpps, 1)} Verkaufsgespräche
                   </text>
                   <text x="160" y="180" fill="white" fontStyle="normal" fontWeight="bold" fontSize="8" textAnchor="middle">
-                    CLOSE: {formatNumber(results.istKunden, 1)} Deals
+                    {formatNumber(results.istKunden, 1)} Aufträge
                   </text>
 
                 </svg>
 
                 {/* Vertical rate arrows badges (left: actual, right: BIC in gray) */}
-                <div className="absolute left-1 top-[42%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
+                <div className="absolute left-1 top-[42%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   Ist: <strong className={results.uberBenchmark ? "text-emerald-500" : "text-amber-500"}>{Math.round(results.mToOppSelected * 100)}%</strong>
                 </div>
-                <div className="absolute right-1 top-[42%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
-                  BIC: <strong>35%</strong>
+                <div className="absolute right-1 top-[42%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
+                  Richtwert: <strong>35%</strong>
                 </div>
 
-                <div className="absolute left-1 bottom-[16%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
+                <div className="absolute left-1 bottom-[16%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   Ist: <strong className={results.uberBenchmark ? "text-emerald-500" : "text-amber-500"}>{Math.round(results.oToCloseSelected * 100)}%</strong>
                 </div>
-                <div className="absolute right-1 bottom-[16%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[8px] font-mono leading-none">
-                  BIC: <strong>30%</strong>
+                <div className="absolute right-1 bottom-[16%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
+                  Richtwert: <strong>30%</strong>
                 </div>
 
               </div>
@@ -347,10 +347,10 @@ export default function RevenuLeakDetector() {
                 <AlertTriangle className="w-6 h-6 text-[#E63946] shrink-0" />
                 <div>
                   <h5 className="text-xs sm:text-sm font-bold text-[#E63946] font-display">
-                    Unmittelbarer Skalierungsbruch detektiert
+                    Sehr grosse Abweichung zum Richtwert
                   </h5>
                   <p className="text-[11px] text-[#E63946] font-semibold leading-relaxed mt-1">
-                    ⚠ Das ist kein operatives Problem mehr — das ist ein strategisches. Ein monatliches Leck dieser Grösse macht ungeplantes Wachstum faktisch unmöglich.
+                    Bei einer Abweichung dieser Grösse lohnt es sich, Ihre Eingaben und den Anfrageprozess genau anzuschauen. Oft liegt die Ursache eher in der Strategie als im Tagesgeschäft.
                   </p>
                 </div>
               </div>
@@ -360,34 +360,34 @@ export default function RevenuLeakDetector() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 border border-slate-200/85 p-6 sm:p-8 rounded-2xl">
               
               <div className="space-y-1 text-left">
-                <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
-                  {results.uberBenchmark ? "Umsatzüberschuss" : "MONATLICHES REVENUE-LECK"}
+                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
+                  {results.uberBenchmark ? "Über dem Richtwert" : "Mögliches Umsatzpotenzial pro Monat"}
                 </span>
                 
                 {results.uberBenchmark ? (
                   <div className="text-2xl sm:text-3xl font-black font-display text-emerald-500">
-                    Keine Lecks identifiziert
+                    Keine grosse Lücke erkennbar
                   </div>
                 ) : (
                   <div className="text-3xl sm:text-4xl font-extrabold font-display leading-tight text-[#E63946] tracking-tight">
                     {formatCHF(results.leckMonatlich)}
                   </div>
                 )}
-                <p className="text-[10px] text-slate-405 text-slate-405 text-slate-400 font-semibold uppercase tracking-wider font-mono">
-                  {results.uberBenchmark ? "Du liegst rechnerisch über Benchmark" : "Monatlich verlorener Umsatz im Trichter"}
+                <p className="text-[11px] text-slate-405 text-slate-405 text-slate-400 font-semibold uppercase tracking-wider font-mono">
+                  {results.uberBenchmark ? "Sie liegen rechnerisch über dem Richtwert" : "Grobe Schätzung gegenüber dem Richtwert"}
                 </p>
               </div>
 
               {!results.uberBenchmark && (
                 <div className="space-y-1 text-left border-t md:border-t-0 md:border-l border-slate-200 pt-4 md:pt-0 md:pl-6">
-                  <span className="text-[10px] font-mono text-slate-450 text-slate-400 font-bold uppercase tracking-widest block leading-none">
-                    JÄHRLICHES REVENUE-LECK
+                  <span className="text-[11px] font-mono text-slate-450 text-slate-400 font-bold uppercase tracking-widest block leading-none">
+                    Mögliches Umsatzpotenzial pro Jahr
                   </span>
                   <div className="text-xl sm:text-2xl font-black font-display text-slate-800">
                     {formatCHF(results.leckJaehrlich)}
                   </div>
-                  <p className="text-[10px] text-slate-455 text-slate-400 font-semibold uppercase tracking-wider font-mono">
-                    Jährliches Verlust-Hebelpotenzial
+                  <p className="text-[11px] text-slate-455 text-slate-400 font-semibold uppercase tracking-wider font-mono">
+                    Grobe Schätzung, kein Versprechen
                   </p>
                 </div>
               )}
@@ -396,23 +396,23 @@ export default function RevenuLeakDetector() {
 
             {/* Benchmark Tabular statistics */}
             <div className="space-y-3">
-              <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
-                TRICHTER BENCHMARK VERGLEICH
+              <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+                Vergleich mit Richtwerten (Annahmen)
               </span>
 
               <div className="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-3xs">
                 <table className="w-full text-left text-xs text-slate-650 font-semibold border-collapse">
                   <thead>
-                    <tr className="bg-slate-50 border-b border-slate-200 text-slate-405 text-slate-400 text-[10px] font-mono uppercase tracking-wider">
-                      <th className="py-3 px-4">Trichterstufe</th>
-                      <th className="py-3 px-4">Deine Ist-Werte</th>
-                      <th className="py-3 px-4">Best-In-Class (35% / 30%)</th>
+                    <tr className="bg-slate-50 border-b border-slate-200 text-slate-405 text-slate-400 text-[11px] font-mono uppercase tracking-wider">
+                      <th className="py-3 px-4">Stufe</th>
+                      <th className="py-3 px-4">Ihre Werte</th>
+                      <th className="py-3 px-4">Richtwert (35% / 30%)</th>
                       <th className="py-3 px-4 text-right">Differenz</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 font-medium">
                     <tr>
-                      <td className="py-3 px-4 text-slate-800 font-bold">MQL → Opportunity Rate</td>
+                      <td className="py-3 px-4 text-slate-800 font-bold">Anfrage → Verkaufsgespräch</td>
                       <td className="py-3 px-4">{(results.mToOppSelected * 105 - results.mToOppSelected * 5).toFixed(1)}%</td>
                       <td className="py-3 px-4">35.0%</td>
                       <td className={`py-3 px-4 text-right font-mono ${results.mToOppSelected < 0.35 ? 'text-[#E63946]' : 'text-emerald-500'}`}>
@@ -420,7 +420,7 @@ export default function RevenuLeakDetector() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4 text-slate-800 font-bold">Opportunity → Deal Rate</td>
+                      <td className="py-3 px-4 text-slate-800 font-bold">Verkaufsgespräch → Auftrag</td>
                       <td className="py-3 px-4">{(results.oToCloseSelected * 100).toFixed(1)}%</td>
                       <td className="py-3 px-4">30.0%</td>
                       <td className={`py-3 px-4 text-right font-mono ${results.oToCloseSelected < 0.30 ? 'text-[#E63946]' : 'text-emerald-500'}`}>
@@ -428,11 +428,11 @@ export default function RevenuLeakDetector() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4 text-slate-800 font-bold">Deals / Monat</td>
+                      <td className="py-3 px-4 text-slate-800 font-bold">Aufträge / Monat</td>
                       <td className="py-3 px-4 font-mono">{formatNumber(results.istKunden, 1)}</td>
                       <td className="py-3 px-4 font-mono">{formatNumber(results.bicKunden, 1)}</td>
                       <td className={`py-3 px-4 text-right font-mono ${results.istKunden < results.bicKunden ? 'text-[#E63946]' : 'text-emerald-500'}`}>
-                        {formatNumber(results.istKunden - results.bicKunden, 1)} Deals / Mt.
+                        {formatNumber(results.istKunden - results.bicKunden, 1)} Aufträge / Mt.
                       </td>
                     </tr>
                     <tr className="bg-slate-50 font-bold">
@@ -450,8 +450,8 @@ export default function RevenuLeakDetector() {
 
             {/* Diagnostic insights mapping */}
             <div className="text-xs sm:text-sm text-slate-650 leading-relaxed font-semibold text-slate-705 text-slate-600 bg-slate-50 border border-slate-200/50 p-5 rounded-2xl space-y-3">
-              <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block leading-none">
-                DIAGNOSTISCHER ENGPASS-HEBEL
+              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block leading-none">
+                Wo Sie ansetzen sollten
               </span>
 
               {results.uberBenchmark ? (
@@ -461,31 +461,31 @@ export default function RevenuLeakDetector() {
                       ✓
                     </div>
                     <h5 className="text-xs sm:text-sm font-bold text-slate-900 font-display">
-                      Deine Konversionsraten liegen über dem Benchmark.
+                      Ihre Quoten liegen über dem Richtwert.
                     </h5>
                   </div>
                   <p className="text-xs text-slate-550 leading-relaxed">
-                    Das ist stark. Jetzt geht es darum, das System zu skalieren — mehr MQL ohne Qualitätsverlust, und die guten Raten zu halten. Wie skalierst du deinen Revenue-Motor?
+                    Das ist eine gute Ausgangslage. Jetzt geht es darum, mehr qualifizierte Anfragen zu gewinnen, ohne dass die Qualität oder die guten Quoten leiden.
                   </p>
                 </div>
               ) : results.engpass === 'mql_to_opp' ? (
                 <div>
                   <h5 className="text-xs sm:text-sm font-bold text-slate-900 font-display flex items-center gap-1.5 mb-1 text-amber-600 font-semibold leading-none">
                     <span className="w-1.5 h-1.5 bg-amber-500 rounded-full shrink-0" />
-                    Grösste Lücke: MQL → Opportunity ({(results.mToOppSelected * 100).toFixed(1)}% vs. 35% Best-in-Class)
+                    Grösste Lücke: Anfrage → Verkaufsgespräch ({(results.mToOppSelected * 100).toFixed(1)}% vs. Richtwert 35%)
                   </h5>
                   <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-                    Das deutet auf ein Übergabeproblem hin — nicht auf ein Demand-Generation-Problem. Entweder sind MQLs nicht wirklich qualifiziert, oder der Handoff-Prozess lässt qualifizierte Leads zwischen Marketing und Sales verschwinden.
+                    Das deutet eher auf ein Problem bei der Übergabe hin als auf zu wenig Nachfrage. Entweder sind die Anfragen nicht wirklich passend, oder gute Anfragen bleiben zwischen Marketing und Vertrieb liegen.
                   </p>
                 </div>
               ) : (
                 <div>
                   <h5 className="text-xs sm:text-sm font-bold text-slate-900 font-display flex items-center gap-1.5 mb-1 text-amber-600 font-semibold leading-none">
                     <span className="w-1.5 h-1.5 bg-amber-500 rounded-full shrink-0" />
-                    Grösste Lücke: Opportunity → Deal ({(results.oToCloseSelected * 100).toFixed(1)}% vs. 30% Best-in-Class)
+                    Grösste Lücke: Verkaufsgespräch → Auftrag ({(results.oToCloseSelected * 100).toFixed(1)}% vs. Richtwert 30%)
                   </h5>
                   <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-                    Das deutet auf ein Sales-Enablement- oder Prozess-Problem hin. Qualifizierte Deals gehen verloren — durch fehlende verkaufsunterstützende Materialien, unklare Entscheidungsprozesse oder einen zu langen Sales-Zyklus.
+                    Das deutet auf eine Schwachstelle im Verkauf hin. Gute Verkaufschancen gehen verloren, etwa wegen fehlender Verkaufsunterlagen, unklarer Entscheidungswege beim Kunden oder eines zu langen Verkaufsprozesses.
                   </p>
                 </div>
               )}
@@ -497,20 +497,20 @@ export default function RevenuLeakDetector() {
                 onClick={handleBooking}
                 className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
-                RevOps-Gespräch buchen — kostenlos, 30 Min <ArrowRight className="w-4 h-4 text-white" />
+                Ergebnis besprechen <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
 
             {/* Lead capture form */}
             <LeadCaptureForm
-              secondaryCTAText="Revenue-Leck-Report per E-Mail erhalten →"
-              danachText="Wir schicken dir eine detaillierte Einschätzung, welche RevOps-Massnahmen euren Trichter am stärksten verbessern."
+              secondaryCTAText="Auswertung per E-Mail erhalten →"
+              danachText="Wir senden Ihnen eine Einschätzung, welche Massnahmen Ihren Weg von der Anfrage zum Auftrag am meisten verbessern dürften."
               pageId="revenue-operations"
               additionalFields={[
                 {
                   type: 'select',
                   name: 'companySize',
-                  placeholder: 'Unternehmensgrösse lizensieren',
+                  placeholder: 'Unternehmensgrösse',
                   options: ['1–10 Personen', '11–50 Personen', '51–200 Personen', 'Mehr als 200 Personen']
                 }
               ]}

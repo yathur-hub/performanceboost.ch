@@ -3,362 +3,326 @@ import { ServiceDetail, SolutionArea } from '../types';
 export const SERVICES: ServiceDetail[] = [
   {
     id: 'growth-strategy',
-    title: 'Growth Strategy & Advisory',
+    title: 'Wachstumsstrategie & Beratung',
     slug: 'growth-strategy',
-    shortDesc: 'Strategisches Fundament für skalierbares Wachstum, Marktmodellierung und ICP-Optimierung.',
-    description: 'Erfolgreiches Wachstum überlässt man nicht dem Zufall. Wir analysieren deine Marktchancen, definieren deinen idealen Kunden (Ideal Customer Profile) und bauen ein datenbasiertes Go-To-Market Playbook auf. Damit verringern wir Streuverluste und sichern nachhaltige Neugeschäftskanäle.',
+    shortDesc: 'Klarer Plan für die Neukundengewinnung: Wunschkunden, Positionierung, Kanäle und Budget.',
+    description: 'Planbares Wachstum beginnt mit klaren Entscheidungen. Wir schauen uns Ihren Markt und Ihre bestehenden Kunden an, beschreiben Ihre Wunschkunden und legen fest, über welche Kanäle und mit welchen Botschaften Sie diese erreichen. So fliesst Ihr Budget dorthin, wo Anfragen entstehen.',
     benefits: [
-      'Genaue Definition des Ideal Customer Profile (ICP) für zielgerichtete Ansprache',
-      'Wettbewerbsanalyse & Unique Selling Proposition (USP) Schärfung',
-      'Skalierbares Go-To-Market Playbook auf Schweizer & DACH-Verhältnisse abgestimmt',
-      'Budgetsicherheit durch datengestützte Marktpotenzial-Modellierung'
+      'Klares Zielkundenprofil, damit Werbung und Vertrieb die richtigen Firmen ansprechen',
+      'Geschärfte Positionierung: warum Kunden Sie wählen und nicht die Konkurrenz',
+      'Umsetzbarer Vermarktungsplan, abgestimmt auf den Schweizer und DACH-Markt',
+      'Budgetplanung auf Basis realistischer Annahmen statt Bauchgefühl'
     ],
     deliverables: [
-      'Wachstums-Roadmap & 12-Monats-Aktionsplan',
-      'ICP- & Buyer-Persona-Matrizen',
-      'Wertversprechen- & Messaging-Framework',
-      'Kanal- & Budgetallokationsplan'
+      'Wachstumsplan mit Massnahmen für die nächsten 12 Monate',
+      'Zielkundenprofil und Beschreibung der wichtigsten Entscheider',
+      'Kernbotschaften und Nutzenversprechen',
+      'Kanal- und Budgetplan'
     ],
     iconName: 'TrendingUp',
-    metrics: [
-      { label: 'Erhöhung ROI', value: '+40%' },
-      { label: 'Verkürzte Sales Cycles', value: '-25%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Status-quo Analyse', desc: 'Audit aller aktuellen Kanäle, Pipeline-Zustände und Zielgruppen.' },
-      { title: 'ICP & Messaging Workshop', desc: 'Gemeinsame Erarbeitung des präzisesten Zielkundenprofils.' },
-      { title: 'Szenarien-Modellierung', desc: 'Berechnung von Budget-Szenarien und Akquisitionskosten (CAC).' },
-      { title: 'Strategischer Rollout', desc: 'Übergabe des schlüsselfertigen Go-To-Market Playbooks.' }
+      { title: 'Bestandsaufnahme', desc: 'Wir prüfen Ihre aktuellen Kanäle, Anfragen und Zielgruppen.' },
+      { title: 'Workshop Zielkunden & Botschaften', desc: 'Gemeinsam beschreiben wir Ihre Wunschkunden und was diese überzeugt.' },
+      { title: 'Budget-Szenarien', desc: 'Wir rechnen durch, was Kundengewinnung pro Kanal etwa kosten darf.' },
+      { title: 'Übergabe des Plans', desc: 'Sie erhalten einen Vermarktungsplan, den Ihr Team direkt umsetzen kann.' }
     ]
   },
   {
     id: 'demand-generation',
-    title: 'Demand Generation & Paid Ads',
+    title: 'Online-Werbung & Nachfrageaufbau',
     slug: 'demand-generation',
-    shortDesc: 'Markenpräsenz und Nachfrageaufbau in deiner Zielgruppe durch hochpräzise Kampagnen.',
-    description: 'Im B2B-Umfeld kaufen 95% deiner potenziellen Kunden jetzt gerade nicht. Mit modernem Demand Generation Marketing erzeugen wir echtes Kaufinteresse bei deiner Zielgruppe, bevor diese aktiv sucht. Wir bündeln exzellenten Content mit Paid LinkedIn, Google Search/Display sowie Meta Kampagnen.',
+    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn, die Ihre Zielgruppe gezielt erreichen.',
+    description: 'Viele Ihrer künftigen Kunden suchen heute noch nicht aktiv. Mit Kampagnen auf LinkedIn, Google und Meta sorgen wir dafür, dass Ihr Unternehmen bekannt ist, wenn der Bedarf entsteht, und dass Interessenten, die bereits suchen, bei Ihnen landen. Anzeigen, Inhalte und Landingpages stimmen wir aufeinander ab.',
     benefits: [
-      'Kontinuierliche pipeline-füllende Brand Awareness in der relevanten Zielgruppe',
-      'Optimierte Akquisitionskosten (CAC) durch Retargeting-Sequenzen',
-      'Synergieeffekte: LinkedIn Ads kombiniert mit Google Search Retargeting',
-      'Umfassende Begleitung von Social Multi-Channel Ansprachen'
+      'Regelmässige Sichtbarkeit bei den Firmen und Personen, die für Sie relevant sind',
+      'Tiefere Kosten pro Anfrage durch sauberes Retargeting',
+      'LinkedIn, Google und Meta ergänzen sich, statt nebeneinander zu laufen',
+      'Begleitung über alle Kanäle aus einer Hand'
     ],
     deliverables: [
-      'Ad Creative Master-Vorlagen & Copywriting',
-      'Kampagnen-Setup (LinkedIn, Google, Meta)',
-      'Account-Based Marketing (ABM) Kampagnenlisten',
-      'Live-Reporting Dashboard für C-Level und Betrieb'
+      'Anzeigenvorlagen und Werbetexte',
+      'Kampagnen-Setup auf LinkedIn, Google und Meta',
+      'Listen von Zielfirmen für gezielte Ansprache',
+      'Laufendes Reporting für Geschäftsleitung und Team'
     ],
     iconName: 'Megaphone',
-    metrics: [
-      { label: 'Pipeline-Wachstum', value: '3.4x' },
-      { label: 'CPL (Cost-per-Lead)', value: '-35%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Zielgruppen-Mapping', desc: 'Matching mit Job-Titeln, Branchen, Unternehmensgrössen.' },
-      { title: 'Asset & Creative Creation', desc: 'Entwicklung von Bild-, Video- und Text-Assets.' },
-      { title: 'Testphase & Optimization', desc: 'Start mit Budget-Splits zur Findung der besten "Winning-Hooks".' },
-      { title: 'Scaling', desc: 'Erhöhung der Budgets bei stabilen Akquisitionsmetriken.' }
+      { title: 'Zielgruppe festlegen', desc: 'Abgleich nach Funktion, Branche und Unternehmensgrösse.' },
+      { title: 'Anzeigen erstellen', desc: 'Entwicklung von Bild-, Video- und Textanzeigen.' },
+      { title: 'Testphase', desc: 'Start mit aufgeteiltem Budget, um herauszufinden, welche Botschaften wirken.' },
+      { title: 'Ausbau', desc: 'Mehr Budget dort, wo die Kosten pro Anfrage stabil bleiben.' }
     ]
   },
   {
     id: 'lead-generation',
-    title: 'Inbound & Outbound Lead Generation',
+    title: 'Lead-Generierung: SEO, Content & Direktansprache',
     slug: 'lead-generation',
-    shortDesc: 'Systematische Gewinnung qualifizierter Leads durch Content Hubs, SEO & Prospecting.',
-    description: 'Wir bringen kaufbereite Leads direkt in deine Sales Pipeline. Durch zielgerichtete Inbound-Methoden wie suchmaschinenoptimierten SEO-Content, Whitepaper-Funnels und Outbound Prospecting (Cold Outreach Automation via E-Mail und LinkedIn) erschaffen wir ein stabiles Neukundensystem.',
+    shortDesc: 'Qualifizierte Anfragen über Suchmaschinen, nützliche Inhalte und persönliche Direktansprache.',
+    description: 'Wir sorgen dafür, dass passende Interessenten zu Ihnen finden und Sie gezielt auf passende Firmen zugehen können. Dazu gehören Inhalte, die bei Google gefunden werden, Landingpages mit nützlichen Angeboten wie Checklisten oder Leitfäden sowie eine persönliche Direktansprache per E-Mail und LinkedIn.',
     benefits: [
-      'Konsistenter Fluss von qualifizierten Demo- und Erstgesprächs-Buchungen',
-      'Nachhaltige organische Sichtbarkeit (SEO) statt reiner Anzeigenabhängigkeit',
-      'Personalisierte Outbound-Strategien ohne Spam-Charakter (Swiss-tuned)',
-      'Effektive Lead-Magnete (Vorträge, ROI-Rechner, Checklisten)'
+      'Regelmässige Anfragen für Erstgespräche statt Zufallskontakte',
+      'Sichtbarkeit bei Google, die nicht vom Werbebudget abhängt',
+      'Direktansprache, die persönlich bleibt und auf den Schweizer Markt abgestimmt ist',
+      'Nützliche Angebote wie Rechner, Checklisten oder Vorträge, die Kontakte bringen'
     ],
     deliverables: [
-      'SEO Content Audit & Keyword-Struktur',
-      'Outbound-Prospecting Sequences & Kampagnen',
-      'Inbound Lead-Magnet & Landingpage-Funnel',
-      'Lead Scoring & Routing-Algorithmus'
+      'SEO-Analyse und Keyword-Struktur',
+      'E-Mail- und LinkedIn-Sequenzen für die Direktansprache',
+      'Landingpage mit Download-Angebot',
+      'Regeln zur Bewertung und Weiterleitung von Anfragen'
     ],
     iconName: 'Users',
-    metrics: [
-      { label: 'Monatlicher Inbound Zuwachs', value: '+120%' },
-      { label: 'Reply-Quote Outbound', value: '18%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Lead-Magnet-Entwicklung', desc: 'Erstellung von Werkzeugen & Inhalten mit extrem hohem Nutzwert.' },
-      { title: 'Outreach & SEO Setup', desc: 'Infrastruktur-Konfiguration und Setup der Mailbox-E-Mailings.' },
-      { title: 'Launch', desc: 'Aktivierung der Outreach-Kampagnen und Veröffentlichung von SEO-Inhalten.' },
-      { title: 'Analyse & Filter', desc: 'Iteratives Nachjustieren zur Reduzierung von unqualifizierten Kontakten.' }
+      { title: 'Angebot entwickeln', desc: 'Wir erstellen Inhalte und kleine Werkzeuge, die für Ihre Zielgruppe nützlich sind.' },
+      { title: 'Technik einrichten', desc: 'Postfächer, Versand und SEO-Grundlagen werden sauber aufgesetzt.' },
+      { title: 'Start', desc: 'Die Direktansprache startet, die ersten SEO-Inhalte gehen online.' },
+      { title: 'Auswerten & nachschärfen', desc: 'Wir passen laufend an, damit weniger unpassende Kontakte ankommen.' }
     ]
   },
   {
     id: 'marketing-automation',
     title: 'Marketing Automation & CRM',
     slug: 'marketing-automation',
-    shortDesc: 'Automatisierte Nurturing-Strecken und nahtlose HubSpot/CRM-Architekturen.',
-    description: 'Wir verwandeln kalte Kontakte und passive Website-Besucher systematisch in kaufbereite Opportunities. Mit intelligenten Automatisierungs-Szenarien in HubSpot, ActiveCampaign oder Salesforce begleiten wir Leads entlang der Customer Journey, ganz ohne manuellen Sales-Aufwand.',
+    shortDesc: 'Automatische Folge-E-Mails und ein CRM, in dem keine Anfrage mehr verloren geht.',
+    description: 'Nicht jeder Interessent ist sofort kaufbereit. Mit automatisierten Abläufen in HubSpot, ActiveCampaign oder Salesforce begleiten wir Kontakte weiter, bis ein Gespräch sinnvoll ist. Ihr Vertrieb sieht im CRM, wer sich wofür interessiert, und muss nicht jedem Kontakt manuell nachgehen.',
     benefits: [
-      'Keine verlorenen Leads mehr dank automatisierter Folge-Mails (Nurturing)',
-      'Perfekte Synchronität zwischen Marketing & Vertrieb',
-      'Automatisches Lead Scoring sorgt für Fokus auf die wichtigsten Deals',
-      'Effiziente Self-Service Buchungsstrecken'
+      'Keine vergessenen Anfragen dank automatischer Folge-E-Mails',
+      'Marketing und Vertrieb arbeiten mit denselben Informationen',
+      'Bewertung der Kontakte, damit sich Ihr Vertrieb auf die wichtigsten konzentriert',
+      'Interessenten können Termine selbst buchen'
     ],
     deliverables: [
-      'Nurturing Kampagnen-Workflow & Copy',
-      'CRM System-Integration & Custom Properties',
-      'Automated Lead-Routing Regeln',
-      'Datenbereinigungs- und Hygiene-Pipelines'
+      'Abläufe für Folge-E-Mails inklusive Texte',
+      'CRM-Einrichtung mit passenden Feldern',
+      'Regeln, wer welche Anfrage erhält',
+      'Bereinigung und laufende Pflege der Kontaktdaten'
     ],
     iconName: 'Cpu',
-    metrics: [
-      { label: 'Vertriebs-Effizienz', value: '+50%' },
-      { label: 'Lead-to-Opp Conversion', value: '+28%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Journey Mapping', desc: 'Definition aller Kontaktpunkte und Daten-Trigger.' },
-      { title: 'CRM-Architektur Design', desc: 'Aufbau der PipelineStufen, Deals und Kontakteigenschaften.' },
-      { title: 'Workflow-Programmierung', desc: 'Technische Verpartnerung der Systeme und Test-Triggers.' },
-      { title: 'Schulung & Go-Live', desc: 'Onboarding deines Sales-Teams auf die neuen automatisierten Prozesse.' }
+      { title: 'Ablauf aufzeichnen', desc: 'Wir halten fest, wo Interessenten mit Ihnen in Kontakt kommen.' },
+      { title: 'CRM-Struktur', desc: 'Aufbau der Verkaufsphasen, Deals und Kontakteigenschaften.' },
+      { title: 'Abläufe einrichten', desc: 'Systeme verbinden und alle Auslöser testen.' },
+      { title: 'Schulung & Start', desc: 'Ihr Team lernt die neuen Abläufe kennen und arbeitet damit.' }
     ]
   },
   {
     id: 'sales-enablement',
-    title: 'Sales Enablement & Playbooks',
+    title: 'Vertriebsunterstützung & Leitfäden',
     slug: 'sales-enablement',
-    shortDesc: 'Werkzeuge, Argumentarien und Präsentationen, die deine Abschlussquote messbar steigern.',
-    description: 'Das beste Marketing verpufft, wenn das Sales-Team im Gespräch improvisieren muss. Wir statten dein Vertriebsteam mit erstklassigen Fallstudien, einwandfreien Einwandbehandlungs-Leitfäden, interaktiven Preiskalkulatoren und messerscharfen Präsentationen aus. Jedes Gespräch wird professioneller.',
+    shortDesc: 'Argumentarien, Präsentationen und Unterlagen, mit denen Ihr Vertrieb besser vorbereitet ins Gespräch geht.',
+    description: 'Gutes Marketing verpufft, wenn im Verkaufsgespräch improvisiert wird. Wir erarbeiten mit Ihrem Team Referenzbeispiele, Antworten auf häufige Einwände, Preisrechner und Präsentationen. So treten alle Verkäufer einheitlich auf und neue Mitarbeitende finden sich schneller zurecht.',
     benefits: [
-      'Verkürzter Onboardingprozess für neue Sales-Mitarbeiter um über 50%',
-      'Konsistentes, hochprofessionelles Auftreten beim Kunden (Corporate Identity)',
-      'Höhere Abschlussquoten dank psychologisch optimierter Sales Decks',
-      'Effektiver Einsatz von "Social Proof" (Kundenstimmen & Fallstudien)'
+      'Neue Mitarbeitende im Verkauf werden schneller sicher',
+      'Einheitlicher, professioneller Auftritt beim Kunden',
+      'Präsentationen, die den Nutzen für den Kunden klar zeigen',
+      'Kundenstimmen und Referenzen gezielt einsetzen'
     ],
     deliverables: [
-      'Sales Playbook (Interne Wissensdatenbank)',
-      'Interaktive Präsentations-Templates & Decks',
-      'Einwandbehandlungs- & Battle-Cards',
-      'Kombinierter ROI-Rechner für Verkäufer'
+      'Vertriebsleitfaden als interne Wissenssammlung',
+      'Präsentationsvorlagen',
+      'Antworten auf häufige Einwände und Vergleich mit Mitbewerbern',
+      'Rechner für Wirtschaftlichkeit, den Ihr Vertrieb im Gespräch nutzt'
     ],
     iconName: 'ShieldAlert', // Fills the gap, representing strength/governance
-    metrics: [
-      { label: 'Abschlussquote (Close Rate)', value: '+35%' },
-      { label: 'Ramp-up-Zeit neue Mitarbeiter', value: '-60%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Sales-Audit & Befragung', desc: 'Wo haken Deals am häufigsten? Was sagen Konkurrenten?' },
-      { title: 'Playbook-Erstellung', desc: 'Strukturierte Ausformulierung von Argumentationsketten & Antworten.' },
-      { title: 'Asset-Design', desc: 'Gestaltung von optisch makellosen interaktiven Decks.' },
-      { title: 'Simulation', desc: 'Testgespräche und Einwand-Drills mit dem Team zur Live-Verprobung.' }
+      { title: 'Analyse & Gespräche', desc: 'Wo kommen Abschlüsse ins Stocken? Was sagen Kunden über Mitbewerber?' },
+      { title: 'Leitfaden erstellen', desc: 'Argumente und Antworten werden strukturiert ausformuliert.' },
+      { title: 'Unterlagen gestalten', desc: 'Präsentationen und Vorlagen im Erscheinungsbild Ihres Unternehmens.' },
+      { title: 'Üben', desc: 'Testgespräche mit dem Team, um die Unterlagen in der Praxis zu prüfen.' }
     ]
   },
   {
     id: 'revenue-operations',
-    title: 'Revenue Operations (RevOps)',
+    title: 'Marketing, Vertrieb & Daten verbinden (RevOps)',
     slug: 'revenue-operations',
-    shortDesc: 'Zusammenführung von Marketing, Sales und Support zu einer hocheffizienten Wachstumsmaschine.',
-    description: 'Silos blockieren deinen Umsatz. RevOps bricht die Barrieren zwischen Marketing, Vertrieb und Customer Success auf. Wir etablieren eine Single Source of Truth für deine Unternehmensdaten, vereinheitlichen KPIs und synchronisieren Tech-Stacks zur Maximierung der operativen Marge.',
+    shortDesc: 'Gemeinsame Zahlen, Abläufe und Tools für Marketing, Vertrieb und Kundenbetreuung.',
+    description: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir sorgen dafür, dass alle mit denselben Daten arbeiten, legen gemeinsame Kennzahlen fest und verbinden Ihre Systeme so, dass Übergaben funktionieren.',
     benefits: [
-      'Vollständige Transparenz über den gesamten Customer Lifetime Value (LTV)',
-      'Keine doppelten Lizenzen oder fragmentierten "Silo-Tools"',
-      'Zuverlässige Umsatz-Prognosen (Forecasting) für Geschäftsleitung und Beirat',
-      'Synchronisierte Motivation durch einheitliche Bonus-Metriken'
+      'Überblick, welche Kunden über die Zeit wie viel Umsatz bringen',
+      'Weniger doppelte Lizenzen und Insellösungen',
+      'Verlässlichere Umsatzprognosen für die Geschäftsleitung',
+      'Gemeinsame Ziele für Marketing und Vertrieb'
     ],
     deliverables: [
-      'RevOps Dashboard (Umsatzträger-Übersicht)',
-      'Tech-Stack-Kosten-Optimierungsplan',
-      'Cross-Departmental KPI Dashboard',
+      'Übersicht über Anfragen, Verkaufschancen und Umsatz',
+      'Plan zur Bereinigung der Tool-Landschaft und ihrer Kosten',
+      'Gemeinsames Kennzahlen-Dashboard',
       'Prozess-Handbuch'
     ],
     iconName: 'Layers',
-    metrics: [
-      { label: 'Umsatzwachstum (Rev Increase)', value: '+19%' },
-      { label: 'Tech-Stack Ersparnis', value: '-30%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Tech-Stack Audit', desc: 'Auflistung aller Softwaretools, Kosten und Datenflüsse.' },
-      { title: 'Pipeline-Harmonisierung', desc: 'Definition einheitlicher Phasenübergänge (MQL zu SQL zu Deal).' },
-      { title: 'Daten-Konsolidierung', desc: 'Verknüpfung der Silos im zentralen Revenue-CRM.' },
-      { title: 'Continuous Alignment', desc: 'Monatlicher Review-Cycle zur Systemoptimierung.' }
+      { title: 'Tool-Analyse', desc: 'Wir listen alle Programme, ihre Kosten und Datenflüsse auf.' },
+      { title: 'Verkaufsphasen vereinheitlichen', desc: 'Klare Definition, wann aus einem Kontakt eine Anfrage und ein Deal wird.' },
+      { title: 'Daten zusammenführen', desc: 'Die wichtigsten Daten laufen im CRM zusammen.' },
+      { title: 'Laufende Abstimmung', desc: 'Monatlicher Review, um Abläufe und Systeme nachzuschärfen.' }
     ]
   },
   {
     id: 'ai-automation',
-    title: 'AI & Inbound/Outbound Automation',
+    title: 'KI & Automatisierung',
     slug: 'ai-automation',
-    shortDesc: 'Automatisierte AI-Agenten für Datenanreicherung, Kundenservice & Smart Outreach.',
-    description: 'Manuelle Arbeit bremst dich aus. Wir konzipieren und implementieren intelligente KI-Agenten, die administrative Aufgaben im Handumdrehen erledigen. Ob automatisierte Vorbereitung von Verkaufsgesprächen, AI-gestützte Daten-Anreicherung von LinkedIn-Profilen oder automatisierte E-Mail-Beantwortung – wir machen dein Team produktiver.',
+    shortDesc: 'KI-gestützte Abläufe für Recherche, Datenpflege, Gesprächsvorbereitung und Direktansprache.',
+    description: 'Viele Routineaufgaben im Vertrieb und Marketing lassen sich heute automatisieren. Wir setzen KI-Abläufe dort ein, wo sie Ihrem Team Zeit sparen: bei der Vorbereitung von Verkaufsgesprächen, beim Anreichern von Firmendaten oder beim Vorsortieren von E-Mails. Was nicht zuverlässig funktioniert, setzen wir nicht ein.',
     benefits: [
-      'Enorme Zeitersparnis bei Routineaufgaben (Administration & Reporting)',
-      'Skalierbarkeit: Mehr Termine vereinbaren, ohne das Headcount zu erhöhen',
-      'Ultra-personalisierte Kundenansprache dank dynamischem LLM-Scoring',
-      'Perfekte Integration in Make.com, Zapier und n8n'
+      'Weniger Zeit für Routineaufgaben wie Administration und Reporting',
+      'Mehr Gespräche führen, ohne sofort neue Stellen zu schaffen',
+      'Persönlichere Ansprache dank besser aufbereiteter Informationen',
+      'Einbindung in Make, Zapier oder n8n'
     ],
     deliverables: [
-      'Integrierte AI-Assistenten (Make.com Workflows)',
-      'Scraping- & LinkedIn-Data Enriched Listen',
-      'Automatisierter Lead-Analyse-Agent im CRM',
-      'Interaktiv geschalteter KI-Qualifizierer'
+      'KI-Assistenten in Ihren bestehenden Abläufen',
+      'Angereicherte Firmen- und Kontaktlisten',
+      'Automatische Auswertung neuer Anfragen im CRM',
+      'KI-gestützte Vorqualifizierung von Anfragen'
     ],
     iconName: 'Sparkles',
-    metrics: [
-      { label: 'Eingesparte Arbeitsstunden', value: '18h/Woche' },
-      { label: 'Datenpräzision', value: '99%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Use-Case Identifikation', desc: 'Sichtung der zeitraubendsten repetitiven Aufgaben im Vertrieb.' },
-      { title: 'Workflow-Design', desc: 'Draft der Automatisierungskette unter Einbindung von GPT-4o / Gemini API.' },
-      { title: 'Security & Privacy Check', desc: 'Sicherstellung DSGVO/GDPR-konformer Datenverarbeitung.' },
-      { title: 'Wartungs-Übergabe', desc: 'Implementierung & Übergabe inklusive Ausfallsicherung.' }
+      { title: 'Einsatzbereiche finden', desc: 'Welche wiederkehrenden Aufgaben kosten im Vertrieb am meisten Zeit?' },
+      { title: 'Ablauf entwerfen', desc: 'Entwurf der Automatisierung mit geeigneten KI-Modellen wie GPT oder Gemini.' },
+      { title: 'Datenschutz prüfen', desc: 'Verarbeitung der Daten im Rahmen von DSG und DSGVO.' },
+      { title: 'Übergabe', desc: 'Umsetzung, Dokumentation und Übergabe inklusive Plan für Störungen.' }
     ]
   },
   {
     id: 'data-analytics',
-    title: 'Data, Analytics & Web Tracking',
+    title: 'Tracking, Analyse & Reporting',
     slug: 'data-analytics',
-    shortDesc: 'Datenschutzkonformes First-Party Webtracking und glasklare Attributionsmodelle.',
-    description: 'Rate nicht, wer für deinen Umsatz sorgt. Wir implementieren datenschutzkonformes (GDPR/Swiss DSG-konformes) Server-Side Tagging, Google Analytics 4, Matomo und ausgeklügelte Lead-Attributionsmodelle, damit du genau siehst, über welche Marketingkanäle deine wertvollsten Kunden kamen.',
+    shortDesc: 'Datenschutzkonformes Tracking und Berichte, die zeigen, welche Kanäle Kunden bringen.',
+    description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit serverseitigem Tagging, Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',
     benefits: [
-      'Umsatzbasierte Attributionsberichte statt "Last-Click"-Wahrsagerei',
-      'Datenschutzkonformes Tracking (CH-DSG & DSGVO-kompatibel) gesichert',
-      'Höhere Datenqualität für Meta & LinkedIn Conversion APIs (CAPI)',
-      'Aussagekräftige Customer-Journey Visualisierungen'
+      'Berichte nach Umsatz statt nur nach dem letzten Klick',
+      'Tracking im Rahmen von Schweizer DSG und DSGVO',
+      'Bessere Daten für die Kampagnensteuerung auf Meta und LinkedIn',
+      'Nachvollziehbare Darstellung, wie Kunden zu Ihnen finden'
     ],
     deliverables: [
-      'Server-Side Google Tag Manager Setup',
-      'GA4 / Matomo Clean Setup & Dashboards',
-      'Conversion API (CAPI) Anbindungen',
-      'Automated Executive Lead Report PDF'
+      'Serverseitiges Google Tag Manager Setup',
+      'Saubere Einrichtung von GA4 oder Matomo inklusive Dashboards',
+      'Anbindung der Conversion-Schnittstellen von Meta und LinkedIn',
+      'Automatischer Bericht für die Geschäftsleitung'
     ],
     iconName: 'PieChart',
-    metrics: [
-      { label: 'Erfasste Conversions', value: '+35%' },
-      { label: 'Vermeidung von Datenverlust', value: '100%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Tracking Audit & Consent Check', desc: 'Prüfung der aktuellen Cookie-Banner und Datenlecks.' },
-      { title: 'Server-Side GTM Setup', desc: 'Etablierung des Tracking-Servers (Cloud Run / AWS) zur First-Party-Datenspeicherung.' },
-      { title: 'Umsatz-Attribution', desc: 'Verknüpfung der CRM-Verkäufe mit den Klick-IDs (GCLID, MSCLKID, GLID).' },
-      { title: 'Dashboard-Erstellung', desc: 'Visualisierung in ansprechenden Looker Studio Reports.' }
+      { title: 'Tracking- und Cookie-Check', desc: 'Prüfung des Cookie-Banners und der bestehenden Messung.' },
+      { title: 'Serverseitiges Tracking', desc: 'Einrichtung eines eigenen Tracking-Servers, z. B. bei Google Cloud oder AWS.' },
+      { title: 'Umsatz zuordnen', desc: 'Verkäufe aus dem CRM werden mit den Klicks aus den Kampagnen verknüpft.' },
+      { title: 'Dashboards', desc: 'Übersichtliche Berichte in Looker Studio.' }
     ]
   },
   {
     id: 'ecommerce-performance',
     title: 'E-Commerce Performance',
     slug: 'ecommerce-performance',
-    shortDesc: 'Systematische Optimierung von Conversion-Rate, Retention & Paid Media für Online-Shops.',
-    description: 'Wir optimieren deinen Online-Shop für Conversion, Retention und skalierbares Wachstum. Weniger Abbrüche, höherer Warenkorb, mehr Wiederholkäufer — messbar.',
+    shortDesc: 'Mehr Käufe aus bestehendem Traffic: Shop-Optimierung, Wiederkäufe und Werbung für Online-Shops.',
+    description: 'Wir verbessern Ihren Online-Shop dort, wo Umsatz verloren geht: weniger Kaufabbrüche, grössere Warenkörbe und mehr Kunden, die wieder bestellen. Jede Massnahme messen wir, damit Sie sehen, was sie bringt.',
     benefits: [
-      'Conversion-Rate steigt messbar durch datenbasierte Optimierung',
-      'Paid Budget arbeitet effizienter — mehr Umsatz pro eingesetztem Franken',
-      'Bestandskunden kaufen häufiger (höhere Wiederkaufrate & LTV)',
-      'Optimierte Core Web Vitals für blitzschnelle Ladezeiten'
+      'Höhere Kaufquote durch Änderungen, die auf Daten beruhen',
+      'Werbebudget wird gezielter eingesetzt, mit Blick auf den Umsatz pro Franken',
+      'Bestehende Kunden bestellen häufiger',
+      'Schnellere Ladezeiten und bessere Core Web Vitals'
     ],
     deliverables: [
-      'Conversion-Rate & Checkout-Fluss Optimierung (CRO)',
-      'Automatisierte Retention Flows & E-Mail-Marketing',
-      'Paid Media & Google Shopping Kampagnen-Management',
-      'Server-Side Analytics & E-Commerce Attributions-Setup'
+      'Optimierung von Produktseiten und Checkout',
+      'Automatische E-Mails für Wiederkäufe und Kundenbindung',
+      'Betreuung von Google Shopping und weiteren Kampagnen',
+      'Serverseitiges Tracking und Umsatzzuordnung für den Shop'
     ],
     iconName: 'ShoppingCart',
-    metrics: [
-      { label: 'Conversion-Rate', value: '+2.4x' },
-      { label: 'Umsatz aus Retention', value: '38%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Diagnose & Audit', desc: 'Identifikation aller Schwachstellen und Conversion-Bremsen im Shop.' },
-      { title: 'Fundament legen', desc: 'Tracking-Reparatur, Bereinigung von Feeds und Aufbau der ersten Flows.' },
-      { title: 'Testen & Optimieren', desc: 'Systematische CRO-A/B-Tests auf Shop- und Checkout-Seiten.' },
-      { title: 'Skalieren & Vertiefen', desc: 'Budget-Skalierung, Expansion und Einbindung neuer Shop-Kategorien.' }
+      { title: 'Analyse', desc: 'Wir suchen die Stellen, an denen Besucher den Kauf abbrechen.' },
+      { title: 'Grundlagen schaffen', desc: 'Tracking reparieren, Produktfeeds bereinigen, erste E-Mail-Abläufe aufbauen.' },
+      { title: 'Testen & verbessern', desc: 'A/B-Tests auf Produkt- und Checkout-Seiten.' },
+      { title: 'Ausbauen', desc: 'Mehr Budget für rentable Kanäle, weitere Kategorien und Märkte.' }
     ]
   },
   {
     id: 'dtc-growth-acquisition',
-    title: 'D2C Growth & Acquisition',
+    title: 'Kundengewinnung für Online-Marken (D2C)',
     slug: 'dtc-growth-acquisition',
-    shortDesc: 'Skalierbare Kundengewinnung, CAC/LTV-Steuerung, Funnel-Optimierung und organische Marge für Schweizer Brands.',
-    description: 'Viele Schweizer Online-Brands haben ein starkes Produkt – aber ein brüchiges Acquisition-System. Zu viel Budget in Meta ohne Struktur, kein Funnel-Denken, organisch fast null. Wir ändern das: systematisch, messbar, profitabel.',
+    shortDesc: 'Neukundengewinnung mit Blick auf Kosten pro Kunde, Kundenwert und Marge für Schweizer Online-Marken.',
+    description: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine verlässliche Kundengewinnung. Oft fliesst viel Budget ohne klare Struktur in Meta, und über Google oder E-Mail kommt kaum etwas. Wir bauen eine Kundengewinnung auf, die auf mehreren Kanälen steht und deren Kosten Sie kennen.',
     benefits: [
-      'Messbarer CAC nach Kanal – kein Schätzen mehr, kein Bauchgefühl',
-      'LTV-Tracking nach Kohorte: du weisst, welche Kampagne profitable Kunden bringt',
-      'Conversion Rate auf Produktseiten und im Checkout verbessert',
-      'Reduktion der Meta-Abhängigkeit auf unter 60% des Acquisition-Budgets'
+      'Sie kennen Ihre Kosten pro Neukunde je Kanal',
+      'Kundenwert nach Kaufmonat: Sie sehen, welche Kampagnen rentable Kunden bringen',
+      'Bessere Kaufquote auf Produktseiten und im Checkout',
+      'Weniger Abhängigkeit von einem einzelnen Werbekanal'
     ],
     deliverables: [
-      'Paid Acquisition Multi-Channel Architektur',
-      'Live CAC/LTV Analyse-Framework',
-      'Funnel-Optimierung & Checkout CRO',
-      'Suchmaschinenoptimierung (SEO) für Kauf-Keywords'
+      'Kampagnenstruktur über mehrere Kanäle',
+      'Auswertung von Kosten pro Kunde und Kundenwert',
+      'Optimierung von Produktseiten und Checkout',
+      'SEO für Suchbegriffe mit Kaufabsicht'
     ],
     iconName: 'TrendingUp',
-    metrics: [
-      { label: 'Conversion Rate', value: '2.2%' },
-      { label: 'ROAS-Steigerung', value: '+61%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Diagnose & Daten', desc: 'Echter CAC nach Kanal und Wiederkaufrate ermitteln. Roadmap entwerfen.' },
-      { title: 'Wachstums-Fundament', desc: 'Tracking reparieren, CRO initial aufsetzen, Flows einrichten.' },
-      { title: 'Hypothesen-Testing', desc: 'Systematisches Creative- und Kanäle-Testing mit klaren KPIs.' },
-      { title: 'Profitabler Rollout', desc: 'Validiertes Werbebudget skalieren, Verlierer-Ads stoppen.' }
+      { title: 'Analyse & Daten', desc: 'Tatsächliche Kosten pro Kunde je Kanal und Wiederkaufrate ermitteln, Plan erstellen.' },
+      { title: 'Grundlagen', desc: 'Tracking reparieren, erste Shop-Optimierungen, E-Mail-Abläufe einrichten.' },
+      { title: 'Testen', desc: 'Anzeigen und Kanäle systematisch testen, mit klaren Kennzahlen.' },
+      { title: 'Ausbauen', desc: 'Budget für bewährte Kampagnen erhöhen, schwache Anzeigen stoppen.' }
     ]
   },
   {
     id: 'customer-retention',
-    title: 'Customer Retention & Lifecycle Marketing',
+    title: 'Kundenbindung & Wiederkäufe',
     slug: 'customer-retention',
-    shortDesc: 'Automatisierte Flows, Win-Back-Kampagnen, Loyalty-Programme und Churn-Prävention für E-Commerce & B2B.',
-    description: 'Ein Neukunde kostet 5 bis 7 Mal mehr als ein Bestandskunde. Trotzdem haben die meisten Unternehmen kein System, das Bestandskunden aktiviert, reaktiviert oder systematisch entwickelt. Wir bauen diese Infrastruktur — für E-Commerce-Shops, SaaS-Anbieter und B2B-Dienstleister.',
+    shortDesc: 'Automatische E-Mails, Rückgewinnung inaktiver Kunden und Treueprogramme für E-Commerce und B2B.',
+    description: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Trotzdem fehlt in vielen Unternehmen ein System, das Bestandskunden gezielt anspricht und inaktive Kunden zurückholt. Wir bauen diese Abläufe auf, für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
     benefits: [
-      'Wiederkaufrate steigt messbar durch automatisierte Post-Purchase-Flüsse',
-      'LTV ist keine Schätzung mehr, sondern basiert auf präzisen Kohorten',
-      'Abgewanderte Kunden werden reaktiviert, bevor sie teuer neu gekauft werden müssen',
-      'B2B Churn wird frühzeitig anhand verhaltensbasierter Signale entschärft'
+      'Mehr Wiederkäufe durch automatische E-Mails nach dem Kauf',
+      'Kundenwert wird nach Kaufmonat gemessen statt geschätzt',
+      'Inaktive Kunden werden angesprochen, bevor sie ganz weg sind',
+      'Im B2B erkennen Sie Kündigungsrisiken früher'
     ],
     deliverables: [
-      'Post-Purchase & Onboarding E-Mail/SMS Flows',
-      'Dauerhafte Reaktivierungs- & Win-Back-Programme',
-      'Custom Loyalty- & Empfehlungssysteme',
-      'Live LTV-Retention-Analytics Dashboard'
+      'E-Mail- und SMS-Abläufe nach dem Kauf und für den Einstieg',
+      'Laufende Programme zur Rückgewinnung inaktiver Kunden',
+      'Treue- und Empfehlungsprogramme',
+      'Dashboard zu Kundenwert und Wiederkäufen'
     ],
     iconName: 'RefreshCcw',
-    metrics: [
-      { label: 'Wiederkaufrate', value: '38%' },
-      { label: 'Monatlicher Mehrumsatz', value: '+CHF 34k' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Retention-Analyse', desc: 'Vollständiger Kohorten-Audit des Kundenverhaltens der letzten 12–24 Monate.' },
-      { title: 'Basis-Flows Launch', desc: 'Welcomes, Post-Purchase & Reaktivierungs-Flows gehen direkt scharf.' },
-      { title: 'LTV Optimierung', desc: 'Automatisierte Upsell-Trigger auf Basis von Kaufhistorie implementieren.' },
-      { title: 'Kanal-Integration', desc: 'WhatsApp/SMS Ergänzungen und personalisierte Lifecycle-Szenarien.' }
+      { title: 'Analyse der Kundenbasis', desc: 'Auswertung des Kaufverhaltens der letzten 12–24 Monate.' },
+      { title: 'Erste Abläufe', desc: 'Begrüssung, Nachkauf- und Rückgewinnungs-E-Mails gehen live.' },
+      { title: 'Kundenwert steigern', desc: 'Automatische Zusatzangebote auf Basis der Kaufhistorie.' },
+      { title: 'Weitere Kanäle', desc: 'Ergänzung um WhatsApp oder SMS und persönlichere Abläufe.' }
     ]
   },
   {
     id: 'paid-social-ecommerce',
-    title: 'Paid Social für E-Commerce',
+    title: 'Meta & TikTok Ads für Online-Shops',
     slug: 'paid-social-ecommerce',
-    shortDesc: 'Meta & TikTok Ads optimiert auf echten Deckungsbeitrag, nicht auf geschönten ROAS. Volle Marge-Transparenz.',
-    description: 'Die meisten E-Commerce-Shops optimieren ihre Meta- und TikTok-Kampagnen auf ROAS. Das Problem: ROAS berücksichtigt weder Produktmarge noch Versandkosten noch Rücksendungen. Wir optimieren auf echten Deckungsbeitrag — damit Paid Social nicht nur Traffic bringt, sondern Profit.',
+    shortDesc: 'Meta- und TikTok-Kampagnen, gesteuert nach Deckungsbeitrag statt nur nach ROAS.',
+    description: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen fliessen dort nicht ein. Wir steuern Ihre Kampagnen nach Deckungsbeitrag, damit Werbung nicht nur Umsatz bringt, sondern Gewinn.',
     benefits: [
-      'Volle Kostenkontrolle: du weisst genau, welcher ROAS Break-Even bedeutet',
-      'Paid-Kampagnen sind strikt auf Deckungsbeitrag optimiert, nicht Vanity-Metriken',
-      'Systematisches Creative-Testing sorgt für anhaltend rentable Conversionen',
-      'Optimale Multi-Channel Aufteilung zwischen Meta- und TikTok-Ads'
+      'Sie wissen, ab welchem ROAS Ihre Werbung kostendeckend ist',
+      'Kampagnen werden nach Deckungsbeitrag gesteuert, nicht nach Klicks oder Reichweite',
+      'Laufende Tests neuer Anzeigen, damit die Ergebnisse nicht nachlassen',
+      'Sinnvolle Aufteilung des Budgets zwischen Meta und TikTok'
     ],
     deliverables: [
-      'Marge-zentrierte Kampagnenarchitektur',
-      'Creative Testing Framework & Briefings',
-      'Server-Side CAPI Tracking (Meta, TikTok)',
-      'Profitabilitäts- & Deckungsbeitrags-Reporting'
+      'Kampagnenstruktur nach Produktmargen',
+      'Testplan und Briefings für neue Anzeigen',
+      'Serverseitiges Tracking über die Schnittstellen von Meta und TikTok',
+      'Monatlicher Bericht zu Deckungsbeitrag und Gewinn'
     ],
     iconName: 'TrendingUp',
-    metrics: [
-      { label: 'High-Margin ROAS', value: '+61%' },
-      { label: 'Netto-Profit', value: '+34%' }
-    ],
+    metrics: [],
     processSteps: [
-      { title: 'Marge-Audit', desc: 'Analyse der echten Marge je Artikel und Tracking-Feeds-Verifikation.' },
-      { title: 'Tracking & CAPI', desc: 'Implementierung hochpräziser Server-Side Event-Meldungen zu Verkäufen.' },
-      { title: 'Launch & Testen', desc: 'Aktivierung der budgetierten Margen-Kampagnen und Creative-Tests.' },
-      { title: 'Kontrollierte Skalierung', desc: 'Mehr Budget schrittweise einspielen, ohne die Marge zu gefährden.' }
+      { title: 'Margen-Analyse', desc: 'Auswertung der tatsächlichen Marge je Artikel und Prüfung des Trackings.' },
+      { title: 'Tracking einrichten', desc: 'Verkäufe werden serverseitig an Meta und TikTok übermittelt.' },
+      { title: 'Start & Tests', desc: 'Kampagnen gehen mit festgelegtem Budget live, erste Anzeigentests laufen.' },
+      { title: 'Kontrolliert ausbauen', desc: 'Budget schrittweise erhöhen, ohne die Marge aus den Augen zu verlieren.' }
     ]
   }
 ];
@@ -367,46 +331,46 @@ export const SOLUTIONS: SolutionArea[] = [
   {
     id: 'b2b-saas-tech',
     title: 'B2B Software & Tech',
-    tagline: 'Von unbemerkt zu global skalierbar – der Turbo für dein Softwaregeschäft.',
-    targetGroup: 'B2B SaaS Gründer, CEOs & VP Sales',
-    description: 'Im Technologie-Sektor reicht exzellente Software alleine nicht aus. Kunden müssen das Problem verstehen, bevor sie den Nutzen kaufen. Wir orchestrieren den gesamten Funnel: Lead Generation über technologische Insights, automatisierte Produktdemos und nahtloses HubSpot Pipeline Management.',
+    tagline: 'Mehr qualifizierte Anfragen für Ihr Softwaregeschäft.',
+    targetGroup: 'Gründer, Geschäftsführer und Vertriebsleiter von B2B-Softwarefirmen',
+    description: 'Gute Software verkauft sich nicht von allein. Interessenten müssen ihr Problem erkennen, bevor sie den Nutzen einer Lösung sehen. Wir kümmern uns um den ganzen Weg bis zur Anfrage: Kampagnen und Inhalte, automatisierte Produktdemos und ein sauber geführtes CRM, zum Beispiel in HubSpot.',
     idealFor: [
-      'wiederkehrende Software-Umsätze steigern willst',
-      'den Vertriebszyklus (Sales Cycle) von Monaten auf Wochen verkürzen möchtest',
-      'vor dem Problem stehst, dass der Outbound-Erfolg nachgelassen hat'
+      'Ihre wiederkehrenden Software-Umsätze steigern wollen',
+      'Ihren Verkaufszyklus verkürzen möchten',
+      'feststellen, dass die Kaltakquise weniger bringt als früher'
     ],
     includedServices: ['growth-strategy', 'demand-generation', 'marketing-automation', 'sales-enablement'],
-    recommendedCombo: 'Demand Generation (LinkedIn Content) kombiniert mit Sales Enablement Playbooks und automatisierten Nurturing-Sequenzen.',
-    resultMetric: { label: 'Ø Kosten pro qualifizierte SQL', value: 'SFr. 180.-' }
+    recommendedCombo: 'Kampagnen und Inhalte auf LinkedIn, kombiniert mit Vertriebsleitfäden und automatischen Folge-E-Mails.',
+    resultMetric: { label: 'Wichtigste Kennzahl', value: 'Kosten pro qualifizierter Anfrage' }
   },
   {
     id: 'professional-services',
-    title: 'Consulting, Agency & Professional Services',
-    tagline: 'Systematisch DACH-Marktführer anziehen statt reiner Mund-zu-Mund-Propaganda.',
-    targetGroup: 'Unternehmensberater, Executive Search, IT-Dienstleister & Agenturen',
-    description: 'Dienstleistungs-Unternehmen leben oft von unregelmässigen Empfehlungen. Mit unserer integrierten B2B-Wachstumsarchitektur transformieren wir dein Empfehlungsgeschäft zu einer messbaren, kalkulierbaren Kundenpipeline. Wir positionieren dich als anerkannte Thought Leader im Schweizer Markt.',
+    title: 'Beratung, Agenturen & Dienstleister',
+    tagline: 'Neue Mandate planbar gewinnen, nicht nur über Empfehlungen.',
+    targetGroup: 'Unternehmensberater, Personalberater, IT-Dienstleister und Agenturen',
+    description: 'Viele Dienstleister leben von Empfehlungen, die unregelmässig kommen. Wir ergänzen das Empfehlungsgeschäft um einen planbaren Weg zu neuen Anfragen und machen Ihre Fachkompetenz online sichtbar, damit Sie im Schweizer Markt als Ansprechpartner für Ihr Thema wahrgenommen werden.',
     idealFor: [
-      'dich aus der Abhängigkeit von reiner Kaltakquise und Empfehlungen befreien willst',
-      'systematisch Premium-Mandate (SFr. 25k+) abschliessen willst',
-      'deine Beratungsexpertise digital skalierbar präsentieren möchtest'
+      'weniger abhängig von Kaltakquise und Empfehlungen sein wollen',
+      'gezielt grössere Mandate gewinnen wollen',
+      'Ihre Beratungskompetenz online besser zeigen möchten'
     ],
     includedServices: ['growth-strategy', 'lead-generation', 'ai-automation', 'data-analytics'],
-    recommendedCombo: 'Lead Generation (Inbound Lead-Magneten wie Whitepapers) in Verbindung mit datenschutzkonformen Analytics und KI-Outbound Automation.',
-    resultMetric: { label: 'Ø Termin-Buchungsquote', value: '4.8%' }
+    recommendedCombo: 'Anfragen über nützliche Inhalte wie Leitfäden, kombiniert mit datenschutzkonformem Tracking und KI-gestützter Direktansprache.',
+    resultMetric: { label: 'Wichtigste Kennzahl', value: 'Gebuchte Erstgespräche' }
   },
   {
     id: 'b2b-manufacturing',
-    title: 'Verarbeitende Industrie & High-Tech Manufacturing',
-    tagline: 'Verbindung traditioneller Schweizer Präzision mit modernster digitaler Lead-Pipeline.',
-    targetGroup: 'Industrieunternehmen, Zulieferer, Elektronik- & Maschinenbau',
-    description: 'In der Industrie finden Geschäfte oft auf Fachmessen statt. Doch der moderne Einkäufer recherchiert digital: 84% des B2B-Einkaufsprozesses geschehen, bevor ein Verkäufer kontaktiert wird. Wir bauen dein digitales Ausstellungsfenster für nationale und internationale Leads.',
+    title: 'Industrie & Produktion',
+    tagline: 'Schweizer Industriekompetenz online sichtbar machen.',
+    targetGroup: 'Industrieunternehmen, Zulieferer, Elektronik- und Maschinenbau',
+    description: 'In der Industrie entstehen viele Geschäfte noch an Messen. Einkäufer recherchieren aber zunehmend online, bevor sie einen Anbieter kontaktieren. Wir sorgen dafür, dass Ihr Unternehmen dabei gefunden wird, im In- und Ausland.',
     idealFor: [
-      'auf Messen immer weniger Neukontakte generierst',
-      'komplexe, erklärungsbedürftige Industrieprodukte digital erfassbar machen willst',
-      'deine globalen Händlernetze gezielt online unterstützen willst'
+      'an Messen weniger neue Kontakte gewinnen als früher',
+      'erklärungsbedürftige Produkte online verständlich darstellen wollen',
+      'Ihre Händler und Partner online gezielt unterstützen wollen'
     ],
     includedServices: ['growth-strategy', 'demand-generation', 'sales-enablement', 'revenue-operations'],
-    recommendedCombo: 'RevOps (zur Pipeline-Synchronisation) gekoppelt mit High-Quality Demand Generation (LinkedIn Ads für KMU-Chefs) und Sales Playbooks.',
-    resultMetric: { label: 'Erhöhung der Exportanfragen', value: '+75%' }
+    recommendedCombo: 'Saubere Abläufe zwischen Marketing und Vertrieb, kombiniert mit LinkedIn-Kampagnen für Entscheider und Vertriebsleitfäden.',
+    resultMetric: { label: 'Wichtigste Kennzahl', value: 'Qualifizierte Anfragen pro Monat' }
   }
 ];

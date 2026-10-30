@@ -4,1262 +4,1264 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'ai-automation',
     hero: {
-      headline: 'AI ist kein Experiment. Es ist ein Produktivitätshebel — wenn man es sinnvoll einsetzt.',
-      subheadline: 'Wir implementieren AI-gestützte Workflows, die Recherche, Personalisierung, Content und Analyse beschleunigen. Nicht als Technologie-Gimmick, sondern mit direktem Einfluss auf dein Wachstum.',
-      ctaText: 'AI-Gespräch buchen (kostenlos, 30 Min)'
+      headline: 'KI, die Ihrem Team im Alltag Zeit spart.',
+      subheadline: 'Wir bauen KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen, eingebettet in Ihre bestehenden Tools. Wir setzen KI dort ein, wo sie Ihrem Vertrieb und Marketing nachweisbar Arbeit abnimmt.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'KI wird genutzt, aber selten dort, wo sie etwas bewirkt',
       paragraphs: [
-        'AI ist überall — aber die meisten Unternehmen nutzen es nicht strategisch.',
-        'Einzelne Mitarbeiter nutzen ChatGPT für Texte. Aber keine Integration in Prozesse. Keine skalierbare Nutzung. Kein messbarer Impact.',
-        'Oder das Gegenteil: Investitionen in AI-Tools, die niemand wirklich nutzt.',
-        'Der Gap zwischen AI-Hype und AI-Nutzen ist gross. Wir überbrücken ihn.'
+        'In vielen Unternehmen nutzen einzelne Mitarbeitende ChatGPT für Texte. In die eigentlichen Abläufe ist KI aber nicht eingebunden, und niemand weiss, ob sie Zeit spart.',
+        'Oder es wurden KI-Tools gekauft, die kaum jemand verwendet.',
+        'Zwischen dem, was über KI erzählt wird, und dem, was sie im Alltag bringt, liegt oft eine grosse Lücke. Wir helfen, diese Lücke mit konkreten, überprüfbaren Anwendungen zu schliessen.'
       ]
     },
     leistet: {
-      title: 'WO AI WACHSTUM BESCHLEUNIGT',
+      title: 'Wo KI in Marketing und Vertrieb hilft',
       items: [
         {
-          title: 'Personalisierung at Scale',
-          desc: 'AI ermöglicht personalisierte Kommunikation mit Hunderten von Leads — ohne dass jemand jeden Kontakt manuell bearbeitet. Personalisierte E-Mail-Sequenzen, dynamische Website-Inhalte, massgeschneiderte Angebote.'
+          title: 'Persönliche Ansprache für viele Kontakte',
+          desc: 'KI hilft, Hunderte Kontakte persönlich anzusprechen, ohne jeden einzeln von Hand zu bearbeiten: personalisierte E-Mail-Sequenzen, angepasste Website-Inhalte, passende Angebote.'
         },
         {
-          title: 'Content-Produktion beschleunigen',
-          desc: 'Nicht AI statt Menschen — sondern AI für die Arbeit, die keine Kreativität braucht. Research, Erstentwürfe, Varianten, Übersetzungen. Dein Team fokussiert auf Strategie und Qualitätssicherung.'
+          title: 'Schneller zu Texten und Inhalten',
+          desc: 'KI übernimmt Recherche, Erstentwürfe, Varianten und Übersetzungen. Ihr Team konzentriert sich auf Inhalt, Strategie und die Qualitätskontrolle.'
         },
         {
-          title: 'Lead-Recherche und Enrichment',
-          desc: 'AI-gestützte Tools, die Prospects automatisch recherchieren, qualifizieren und mit relevanten Informationen anreichen. Dein Sales-Team geht in Gespräche vorbereitet.'
+          title: 'Recherche und Anreicherung von Kontakten',
+          desc: 'KI-gestützte Tools recherchieren Zielfirmen, ergänzen fehlende Informationen und bereiten sie auf. Ihr Vertrieb geht vorbereitet ins Gespräch.'
         },
         {
-          title: 'Chatbots und Conversational AI',
-          desc: '24/7 Lead-Qualifizierung auf deiner Website. Nicht generische Chatbots — sondern spezifische Flows, die Interesse erkennen und qualifizieren.'
+          title: 'Chatbots auf der Website',
+          desc: 'Erste Fragen von Interessenten beantworten und Anfragen vorqualifizieren, auch ausserhalb der Bürozeiten. Mit Abläufen, die auf Ihr Angebot zugeschnitten sind.'
         },
         {
-          title: 'Datenanalyse und Insights',
-          desc: 'AI-gestützte Analyse von Verkaufsgesprächen, Customer Feedback, Markttrends. Erkenntnisse, die manuell Wochen dauern würden — in Minuten.'
+          title: 'Auswertungen und Erkenntnisse',
+          desc: 'KI-gestützte Auswertung von Verkaufsgesprächen, Kundenfeedback und Marktinformationen. Was von Hand Tage dauert, liegt deutlich schneller vor.'
         },
         {
-          title: 'Workflow-Automation mit AI',
-          desc: 'Repetitive Prozesse automatisieren: E-Mail-Klassifizierung, Datenbereinigung, Report-Generierung, Meeting-Nachbereitung. Zeit zurückgewinnen für was wirklich zählt.'
+          title: 'Abläufe automatisieren',
+          desc: 'Wiederkehrende Aufgaben wie E-Mails sortieren, Daten bereinigen, Berichte erstellen oder Meetings nachbereiten werden automatisiert. Die gewonnene Zeit fliesst in Kundengespräche.'
         }
       ]
     },
     approach: {
-      title: 'WIE WIR VORGEHEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 1: AI-Readiness-Assessment',
-          desc: 'Wo sind die grössten Zeitkiller in euren Prozessen? Wo würde Geschwindigkeit helfen? Welche Daten habt ihr, die AI nutzen kann?'
+          title: 'Bestandsaufnahme',
+          desc: 'Wo verliert Ihr Team am meisten Zeit? Wo würde mehr Tempo helfen? Welche Daten sind vorhanden, mit denen KI arbeiten kann?'
         },
         {
-          title: 'Phase 2: Use-Case-Priorisierung',
-          desc: 'Nicht alles gleichzeitig. Wir identifizieren die 3-5 AI-Anwendungsfälle mit dem grössten Impact für euer Wachstum.'
+          title: 'Einsatzbereiche priorisieren',
+          desc: 'Nicht alles gleichzeitig. Wir wählen die drei bis fünf Anwendungen aus, die für Ihr Unternehmen am meisten bringen.'
         },
         {
-          title: 'Phase 3: Implementation',
-          desc: 'Wir integrieren AI in bestehende Prozesse und Tools. Kein isoliertes Experiment — sondern eingebettet in euren Workflow.'
+          title: 'Umsetzung',
+          desc: 'Wir binden KI in Ihre bestehenden Abläufe und Tools ein, damit sie im Alltag tatsächlich genutzt wird.'
         },
         {
-          title: 'Phase 4: Training und Adoption',
-          desc: 'Dein Team muss die Tools wirklich nutzen. Wir begleiten die Adoption mit Training, Best Practices und laufender Unterstützung.'
+          title: 'Schulung und Einführung',
+          desc: 'Ihr Team muss die Tools auch verwenden. Wir begleiten die Einführung mit Schulung, klaren Anleitungen und Unterstützung bei Fragen.'
         },
         {
-          title: 'Phase 5: Messung und Iteration',
-          desc: 'Zeitersparnis, Lead-Qualität, Conversion-Rates — wir messen, ob AI wirklich wirkt. Und optimieren laufend.'
+          title: 'Messen und verbessern',
+          desc: 'Eingesparte Zeit, Qualität der Anfragen, Abschlussquoten: Wir prüfen, ob die KI-Abläufe wirken, und passen sie laufend an.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'TOOLS UND TECHNOLOGIEN',
+        title: 'Tools und Technologien',
         type: 'grid',
-        subtitle: 'Wir sind tool-agnostisch und arbeiten mit dem, was Sinn macht.',
+        subtitle: 'Wir sind an kein Tool gebunden und arbeiten mit dem, was zu Ihnen passt.',
         items: [
-          { title: 'Large Language Models', desc: 'GPT-4, Claude, Gemini — für Content, Research, Analyse.' },
-          { title: 'AI-Enrichment', desc: 'Clay, Apollo, Clearbit — für Lead-Daten und Personalisierung.' },
-          { title: 'Automation', desc: 'Make, Zapier, n8n — für workflow-basierte AI-Integration.' },
-          { title: 'Conversational AI', desc: 'Intercom, Drift, Tidio — für Website-Chatbots.' },
-          { title: 'Sales AI', desc: 'Gong, Chorus, Salesforce Einstein — für Gesprächsanalyse.' },
-          { title: 'Content AI', desc: 'Jasper, Copy.ai, proprietäre Workflows — für Content-Beschleunigung.' }
+          { title: 'Sprachmodelle', desc: 'GPT, Claude, Gemini für Texte, Recherche und Auswertungen.' },
+          { title: 'Datenanreicherung', desc: 'Clay, Apollo, Clearbit für Kontaktdaten und Personalisierung.' },
+          { title: 'Automatisierung', desc: 'Make, Zapier, n8n, um KI in Abläufe einzubinden.' },
+          { title: 'Chatbots', desc: 'Intercom, Drift, Tidio für die Website.' },
+          { title: 'Vertrieb', desc: 'Gong, Chorus, Salesforce Einstein für die Auswertung von Gesprächen.' },
+          { title: 'Texte', desc: 'Jasper, Copy.ai oder eigene Abläufe für die Erstellung von Inhalten.' }
         ]
       },
       {
-        title: 'WAS AI NICHT ERSETZT',
+        title: 'Was KI nicht ersetzt',
         type: 'text',
-        text: 'Transparenz ist uns wichtig. AI ersetzt keine Strategie. Kein menschliches Urteilsvermögen. Keine Beziehungen zu Kunden. AI beschleunigt Ausführung. Verbessert Personalisierung. Analysiert Daten schneller. Aber die strategischen Entscheidungen — was, warum, für wen — treffen Menschen. Wir helfen dir, AI dort einzusetzen, wo es Sinn macht. Nicht überall.'
+        text: 'KI ersetzt weder Ihre Strategie noch das Urteil Ihrer Mitarbeitenden noch die Beziehung zu Ihren Kunden. Sie hilft, Aufgaben schneller zu erledigen, Ansprache persönlicher zu machen und Daten rascher auszuwerten. Die Entscheidungen, was Sie wem und warum anbieten, treffen weiterhin Menschen. Wir setzen KI dort ein, wo sie sich lohnt, und raten ab, wo sie nichts bringt.'
       }
     ],
     faq: [
       {
         q: 'Brauchen wir technisches Know-how im Team?',
-        a: 'Nicht zwingend. Viele AI-Implementierungen funktionieren mit No-Code-Tools und brauchen nur grundlegendes Verständnis. Wo Technik nötig ist, begleiten wir die Umsetzung.'
+        a: 'Nicht zwingend. Viele KI-Anwendungen lassen sich mit No-Code-Tools umsetzen und brauchen nur ein Grundverständnis. Wo es technischer wird, übernehmen wir die Umsetzung und dokumentieren sie.'
       },
       {
-        q: 'Wie schnell sehen wir Ergebnisse?',
-        a: 'Einfache Automations: 1-2 Wochen. Komplexere Integrationen: 4-8 Wochen bis vollständige Nutzung.'
+        q: 'Wie schnell ist eine Automatisierung im Einsatz?',
+        a: 'Einfache Abläufe sind oft innert ein bis zwei Wochen eingerichtet. Komplexere Integrationen brauchen meist vier bis acht Wochen, bis sie im Alltag stabil laufen. Ob sich der Aufwand lohnt, zeigt sich meist erst nach einigen Wochen Nutzung, wenn die eingesparte Zeit messbar wird.'
       },
       {
-        q: 'Was kostet AI-Tooling?',
-        a: 'Die meisten AI-Tools sind günstig — oft unter CHF 200/Monat für das Tool-Licensing. Der Hauptinvestment ist in Setup und Training.'
+        q: 'Was kosten KI-Tools?',
+        a: 'Die Lizenzen sind meist überschaubar, als Richtwert oft unter CHF 200 pro Monat je Tool. Der grössere Aufwand liegt in Einrichtung, Tests und Schulung. Diesen schätzen wir nach dem Erstgespräch konkret für Ihren Fall.'
       },
       {
-        q: 'Wie stellt ihr sicher, dass AI-generierter Content Qualität hat?',
-        a: 'Wir bauen Qualitätssicherungs-Prozesse ein. AI liefert Entwürfe — Menschen überprüfen und finalisieren. Das ist der Standard.'
+        q: 'Wie stellen Sie sicher, dass KI-generierte Inhalte gut sind?',
+        a: 'Wir bauen eine Prüfung in jeden Ablauf ein. Die KI liefert Entwürfe, Menschen prüfen und geben frei. Bei Kundendaten achten wir darauf, welche Daten überhaupt an ein KI-Modell gehen dürfen.'
       }
     ],
     cta: {
-      headline: 'Produktivität steigern. Wachstum beschleunigen. Mit AI, die wirklich hilft.',
-      subheadline: '30 Minuten. Wir besprechen, welche AI-Use-Cases für euer Unternehmen am meisten Sinn machen.',
-      buttonText: 'AI-Gespräch buchen (kostenlos)'
+      headline: 'Wo kann KI Ihrem Team Arbeit abnehmen?',
+      subheadline: 'In 30 Minuten besprechen wir, welche Anwendungen für Ihr Unternehmen sinnvoll sind und welche nicht.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'data-analytics',
     hero: {
-      headline: 'Wachstum steuern, nicht hoffen. Mit Daten, die wirklich entscheiden.',
-      subheadline: 'Wir bauen die Daten-Infrastruktur, die dir jederzeit zeigt, was funktioniert, was nicht — und wo Revenue verloren geht.',
-      ctaText: 'Daten-Gespräch buchen (kostenlos, 30 Min)'
+      headline: 'Sehen, welche Kanäle Ihnen Kunden bringen.',
+      subheadline: 'Wir richten Tracking und Berichte so ein, dass Sie jederzeit sehen, was funktioniert, was nicht und wo Budget verloren geht.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'Viele Daten, wenig Klarheit',
       paragraphs: [
-        'Die meisten Unternehmen haben genug Daten. Sie haben zu wenig Klarheit.',
-        'Tools, die Daten sammeln — aber kein Reporting, das Entscheidungen unterstützt. Metriken, die niemand versteht oder nutzt. Dashboards, die Aktivität zeigen, aber nicht Revenue. Attribution-Chaos: Niemand weiss, welcher Kanal wirklich funktioniert.',
-        'Das Resultat: Entscheidungen auf Basis von Bauchgefühl. Und Budget, das in die falsche Richtung fliesst.'
+        'Die meisten Unternehmen haben genug Daten. Was fehlt, ist ein klares Bild.',
+        'Tools sammeln Daten, aber es gibt keine Berichte, die bei Entscheidungen helfen. Kennzahlen, die niemand versteht. Dashboards, die Klicks zeigen, aber keinen Umsatz. Und niemand weiss genau, welcher Kanal tatsächlich Kunden bringt.',
+        'Die Folge: Entscheidungen nach Bauchgefühl und Budget, das in die falsche Richtung fliesst.'
       ]
     },
     leistet: {
-      title: 'WAS DATA & ANALYTICS LEISTET',
+      title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Tracking-Infrastruktur aufbauen',
-          desc: 'Was wird gemessen? Was sollte gemessen werden? Wir implementieren ein sauberes Tracking-Fundament — Google Analytics 4, Event-Tracking, Conversion-Tracking, CRM-Integration.'
+          title: 'Sauberes Tracking',
+          desc: 'Was wird heute gemessen, was sollte gemessen werden? Wir richten eine verlässliche Grundlage ein: Google Analytics 4, Ereignis- und Conversion-Tracking, Anbindung an Ihr CRM.'
         },
         {
-          title: 'Attribution-Modelle implementieren',
-          desc: 'Welcher Kanal, welcher Touchpoint hat zum Abschluss beigetragen? Wir implementieren Attribution-Modelle, die realistisch und entscheidungsrelevant sind.'
+          title: 'Zuordnung zu Kanälen',
+          desc: 'Welcher Kanal und welcher Kontaktpunkt hat zum Abschluss beigetragen? Wir richten eine Zuordnung ein, die realistisch ist und bei Budgetentscheiden hilft.'
         },
         {
-          title: 'Dashboard-Aufbau',
-          desc: 'Ein Dashboard, das in 5 Minuten die wichtigsten Fragen beantwortet. Keine Daten-Friedhöfe — sondern Entscheidungsgrundlagen. Wöchentlich, monatlich, pro Initiative.'
+          title: 'Dashboards',
+          desc: 'Ein Dashboard, das die wichtigsten Fragen in wenigen Minuten beantwortet. Wöchentlich, monatlich oder pro Kampagne.'
         },
         {
-          title: 'Funnel-Analyse',
-          desc: 'Wo verlierst du Leads? Wo bricht der Sales-Zyklus ab? Funnel-Analyse, die genau zeigt, wo Revenue entgeht — und welche Hebel am stärksten wirken.'
+          title: 'Analyse des Anfrageprozesses',
+          desc: 'Wo springen Interessenten ab? Wo bleiben Verkaufschancen stecken? Wir zeigen, an welcher Stelle Umsatz verloren geht und wo sich Verbesserungen am meisten lohnen.'
         },
         {
-          title: 'ROI-Messung',
-          desc: 'Marketing-ROI transparent machen. Welche Kampagne, welcher Kanal, welche Massnahme — und was bringt sie wirklich? In CHF, nicht in Klicks.'
+          title: 'Wirkung des Marketings messen',
+          desc: 'Welche Kampagne, welcher Kanal, welche Massnahme bringt was? Ausgewiesen in Franken, nicht nur in Klicks.'
         },
         {
-          title: 'A/B-Testing-Infrastruktur',
-          desc: 'Hypothesenbasiertes Testen. Nicht zufällige Änderungen — sondern strukturiertes Testing mit statistisch validen Ergebnissen.'
+          title: 'A/B-Tests',
+          desc: 'Änderungen werden gezielt getestet, mit klarer Annahme vorab und genug Daten, damit das Ergebnis aussagekräftig ist.'
         },
         {
-          title: 'Regelmässiges Reporting',
-          desc: 'Monatliche und quartalsweise Reports, die deinem Führungsteam zeigen, wo das Unternehmen steht und was die nächste Priorität ist.'
+          title: 'Regelmässige Berichte',
+          desc: 'Monats- und Quartalsberichte, die Ihrer Geschäftsleitung zeigen, wo Sie stehen und was als Nächstes Priorität hat.'
         }
       ]
     },
     approach: {
-      title: 'UNSER VORGEHEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 1: Daten-Audit',
-          desc: 'Was wird heute gemessen? Was fehlt? Wo sind Datenlücken oder -fehler? Wir prüfen Tracking, CRM-Daten, Reporting-Strukturen.'
+          title: 'Prüfung der bestehenden Daten',
+          desc: 'Was wird heute gemessen? Was fehlt? Wo gibt es Lücken oder Fehler? Wir prüfen Tracking, CRM-Daten und bestehende Berichte.'
         },
         {
-          title: 'Phase 2: Metriken-Architektur',
-          desc: 'Welche Metriken sind für euer Wachstumsziel relevant? Nicht alles messen — sondern das Richtige. North Star Metric, Leading Indicators, Lagging Indicators.'
+          title: 'Kennzahlen festlegen',
+          desc: 'Welche Kennzahlen sind für Ihre Ziele wirklich wichtig? Wir messen nicht alles, sondern das, was für Ihre Entscheidungen zählt.'
         },
         {
-          title: 'Phase 3: Infrastruktur-Aufbau',
-          desc: 'Tracking implementieren, Datenquellen verbinden, Dashboards bauen. Technisch sauber, für Menschen verständlich.'
+          title: 'Einrichtung',
+          desc: 'Tracking umsetzen, Datenquellen verbinden, Dashboards bauen. Technisch sauber und für Ihr Team verständlich.'
         },
         {
-          title: 'Phase 4: Adoption und Interpretation',
-          desc: 'Das beste Dashboard bringt nichts, wenn es niemand liest. Wir trainieren dein Team, Daten zu interpretieren und Entscheidungen darauf zu stützen.'
+          title: 'Einführung im Team',
+          desc: 'Ein Dashboard nützt nur, wenn es gelesen wird. Wir zeigen Ihrem Team, wie es die Zahlen liest und daraus Entscheidungen ableitet.'
         },
         {
-          title: 'Phase 5: Laufende Analyse',
-          desc: 'Monatliche Analysen, die Trends erkennen, Anomalien aufdecken und Optimierungsempfehlungen liefern.'
+          title: 'Laufende Auswertung',
+          desc: 'Monatliche Auswertungen, die Veränderungen und Auffälligkeiten zeigen und konkrete Empfehlungen enthalten.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'TOOLS, MIT DENEN WIR ARBEITEN',
+        title: 'Tools, mit denen wir arbeiten',
         type: 'grid',
         items: [
-          { title: 'Analytics', desc: 'Google Analytics 4, Mixpanel, Heap' },
-          { title: 'Dashboards', desc: 'Looker Studio, Tableau, Power BI, HubSpot Dashboards' },
-          { title: 'Attribution', desc: 'Triple Whale, Northbeam, Google Analytics Attribution' },
-          { title: 'Tracking', desc: 'Google Tag Manager, Segment' },
-          { title: 'CRM-Analytics', desc: 'HubSpot, Salesforce Reports, Pipedrive Insights' },
-          { title: 'Testing', desc: 'Google Optimize, VWO, Optimizely' }
+          { title: 'Webanalyse', desc: 'Google Analytics 4, Matomo, Mixpanel' },
+          { title: 'Dashboards', desc: 'Looker Studio, Power BI, HubSpot Dashboards' },
+          { title: 'Zuordnung zu Kanälen', desc: 'Google Analytics, Triple Whale, Northbeam' },
+          { title: 'Tracking', desc: 'Google Tag Manager (auch serverseitig), Segment' },
+          { title: 'CRM-Auswertungen', desc: 'HubSpot, Salesforce Reports, Pipedrive Insights' },
+          { title: 'Testing', desc: 'VWO, Optimizely' }
         ]
       }
     ],
     faq: [
       {
-        q: 'Brauchen wir einen Daten-Spezialisten im Team?',
-        a: 'Nicht unbedingt. Wir bauen Systeme, die ein Marketing-Manager ohne Daten-Background bedienen kann. Für komplexere Anforderungen begleiten wir laufend.'
+        q: 'Brauchen wir eine Datenspezialistin oder einen Datenspezialisten im Team?',
+        a: 'Nicht unbedingt. Wir richten die Berichte so ein, dass sie auch ohne Datenhintergrund verständlich sind. Bei komplexeren Fragen begleiten wir Sie weiter.'
       },
       {
-        q: 'Unsere Daten sind ein Chaos — kann man das reparieren?',
-        a: 'Ja, aber es braucht Zeit. Daten-Bereinigung ist kein Glamour-Projekt, aber der Grundstein für alles andere. Wir starten dort — systematisch.'
+        q: 'Unsere Daten sind ein Durcheinander. Lässt sich das beheben?',
+        a: 'Ja, aber es braucht Zeit. Ein sauberes Tracking-Setup steht oft innert zwei bis vier Wochen. Bis genug saubere Daten für verlässliche Aussagen gesammelt sind, vergehen meist weitere Wochen, je nach Besucherzahl und Anzahl Anfragen.'
       },
       {
-        q: 'Wie oft sollen wir auf Daten schauen?',
-        a: 'Taktisch: täglich oder wöchentlich für operative Entscheidungen. Strategisch: monatlich und quartalsweise. Wir helfen, den richtigen Rhythmus zu etablieren.'
+        q: 'Wie oft sollten wir die Zahlen anschauen?',
+        a: 'Für laufende Kampagnen wöchentlich, für strategische Entscheide monatlich und pro Quartal. Wir helfen, einen Rhythmus festzulegen, der zu Ihrem Team passt.'
       },
       {
-        q: 'Was wenn wir noch kein Tracking haben?',
-        a: 'Dann starten wir dort. Kein Fundament, kein Wachstum steuern. Ein sauberes Tracking-Setup ist die erste Priorität.'
+        q: 'Was, wenn wir noch gar kein Tracking haben?',
+        a: 'Dann beginnen wir dort. Ohne verlässliche Messung lässt sich Marketing nicht sinnvoll steuern, deshalb hat ein sauberes Tracking-Setup Vorrang vor neuen Kampagnen.'
       }
     ],
     cta: {
-      headline: 'Entscheidungen auf Basis von Fakten — nicht von Hoffnung.',
-      subheadline: '30 Minuten. Wir schauen auf eure aktuelle Daten-Situation und zeigen, was möglich ist.',
-      buttonText: 'Daten-Gespräch buchen (kostenlos)'
+      headline: 'Entscheiden Sie auf Basis von Zahlen, nicht von Vermutungen.',
+      subheadline: 'In 30 Minuten schauen wir auf Ihre aktuelle Datenlage und zeigen, was sich verbessern lässt.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'demand-generation',
     hero: {
-      headline: 'Dein Vertrieb wartet auf Leads. Wir liefern sie — systematisch.',
-      subheadline: 'Demand Generation, die nicht auf Hoffnung basiert. Wir erzeugen qualifizierte Nachfrage über mehrere Kanäle — koordiniert, messbar, skalierbar.',
-      ctaText: 'Pipeline-Gespräch buchen (kostenlos, 30 Min)'
+      headline: 'Regelmässig qualifizierte Anfragen für Ihren Vertrieb.',
+      subheadline: 'Wir planen und betreuen Ihre Kampagnen auf Google, LinkedIn und Meta, abgestimmt auf Ihre Zielgruppe, mit sauberer Messung und laufender Optimierung.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'Viele Klicks, zu wenig passende Anfragen',
       paragraphs: [
-        'Die meisten B2B-Unternehmen haben dasselbe Problem:',
-        'Der Vertrieb verbringt zu viel Zeit damit, Pipeline aufzubauen — statt zu verkaufen. Marketing schaltet Kampagnen, die Klicks bringen, aber keine qualifizierten Leads. Niemand weiss genau, welcher Kanal wirklich funktioniert.',
-        'Das ist kein Kanal-Problem. Das ist ein System-Problem. Demand Generation löst das — wenn sie strategisch aufgebaut wird.'
+        'Viele B2B-Unternehmen kennen dieselbe Situation:',
+        'Der Vertrieb verbringt viel Zeit damit, neue Kontakte zu suchen, statt zu verkaufen. Kampagnen bringen Klicks, aber kaum qualifizierte Anfragen. Und niemand weiss genau, welcher Kanal tatsächlich funktioniert.',
+        'Selten liegt das an einem einzelnen Kanal. Meist fehlt die Abstimmung: Zielgruppe, Botschaft, Landingpage und Messung passen nicht zusammen. Genau dort setzen wir an.'
       ]
     },
     leistet: {
-      title: 'WAS DEMAND GENERATION LEISTET',
+      title: 'Was wir für Sie übernehmen',
       items: [
         {
-          title: 'Zielgruppen-Schärfung',
-          desc: 'Wen wollen wir wirklich erreichen? Welche Unternehmen? Welche Entscheider? In welcher Phase ihrer Kaufentscheidung? Präzises Targeting schlägt breite Reichweite.'
+          title: 'Zielgruppe schärfen',
+          desc: 'Wen wollen Sie erreichen? Welche Unternehmen, welche Entscheider, in welcher Phase ihrer Kaufentscheidung? Gezielte Ansprache bringt mehr als breite Reichweite.'
         },
         {
-          title: 'Multi-Channel-Koordination',
-          desc: 'LinkedIn Ads, Google Ads, Paid Social, Content, Email, SEO — nicht als Inseln, sondern als koordiniertes System. Jeder Kanal hat eine Rolle im Funnel.'
+          title: 'Kanäle aufeinander abstimmen',
+          desc: 'LinkedIn Ads, Google Ads, Meta, Inhalte, E-Mail und SEO laufen nicht nebeneinander her, sondern haben jeweils eine klare Aufgabe.'
         },
         {
-          title: 'Funnel-Aufbau',
-          desc: 'Awareness, Consideration, Decision. Wir begleiten potenzielle Kunden durch alle Phasen — mit den richtigen Botschaften zur richtigen Zeit.'
+          title: 'Den Weg zur Anfrage gestalten',
+          desc: 'Vom ersten Kontakt mit Ihrer Marke bis zur Anfrage: Wir sorgen dafür, dass Interessenten in jeder Phase die passende Botschaft sehen.'
         },
         {
-          title: 'Creative-Testing',
-          desc: 'Nicht eine Botschaft für alle. Wir testen Hypothesen: Welche Botschaft, welches Format, welcher Hook funktioniert für deine Zielgruppe? Daten entscheiden, nicht Bauchgefühl.'
+          title: 'Anzeigen testen',
+          desc: 'Wir testen verschiedene Botschaften und Formate und schauen, was bei Ihrer Zielgruppe funktioniert. Die Daten entscheiden.'
         },
         {
-          title: 'Paid Media Management',
-          desc: 'Google Search, LinkedIn Ads, Meta Ads — professionell verwaltet, täglich optimiert. Budget wird auf das gelenkt, was wirklich konvertiert.'
+          title: 'Kampagnenbetreuung',
+          desc: 'Google Ads, LinkedIn Ads und Meta Ads werden laufend betreut und optimiert. Das Budget fliesst dorthin, wo Anfragen entstehen.'
         },
         {
-          title: 'Kontinuierliche Optimierung',
-          desc: 'Wöchentliche Analyse. Monatliche Reportings. Was funktioniert, skalieren wir. Was nicht, stoppen wir.'
+          title: 'Laufende Optimierung',
+          desc: 'Wöchentliche Auswertung, monatlicher Bericht. Was funktioniert, bauen wir aus. Was nicht funktioniert, stoppen wir.'
         }
       ]
     },
     approach: {
-      title: 'UNSER ANSATZ: KLAR',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'K — Kontext verstehen',
-          desc: 'Wir analysieren dein Geschäft, deine Zielgruppe und deine bestehende Pipeline. Wo kommen Leads heute her? Wo verlierst du Potential?'
+          title: 'Ausgangslage verstehen',
+          desc: 'Wir schauen uns Ihr Geschäft, Ihre Zielgruppe und Ihre heutigen Anfragen an. Woher kommen sie? Wo geht Potenzial verloren?'
         },
         {
-          title: 'L — Lücken identifizieren',
-          desc: 'Welche Kanäle sind ungenutzt? Welche Zielgruppen werden nicht erreicht? Wo bricht der Funnel ab?'
+          title: 'Lücken finden',
+          desc: 'Welche Kanäle sind ungenutzt? Welche Zielgruppen werden nicht erreicht? Wo springen Interessenten ab?'
         },
         {
-          title: 'A — Ansatz definieren',
-          desc: 'Welche Kanäle, welche Budgets, welche Prioritäten? Nicht Standard-Pakete — sondern was für dein spezifisches Wachstumsziel Sinn macht.'
+          title: 'Plan festlegen',
+          desc: 'Welche Kanäle, welches Budget, welche Prioritäten? Kein Standardpaket, sondern was für Ihr Ziel sinnvoll ist.'
         },
         {
-          title: 'R — Resultate messen',
-          desc: 'Cost-per-Lead, Conversion Rate, Pipeline-Volumen, ROAS. Du siehst jederzeit, was dein Investment bringt.'
+          title: 'Ergebnisse messen',
+          desc: 'Kosten pro Anfrage, Anfragequote, Verkaufschancen, Werbeumsatz. Sie sehen jederzeit, was Ihr Budget bringt.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'KANÄLE, DIE WIR EINSETZEN',
+        title: 'Kanäle, die wir einsetzen',
         type: 'grid',
-        subtitle: 'Wir wählen Kanäle nach Eignung — nicht nach Präferenz.',
+        subtitle: 'Wir wählen die Kanäle danach, was zu Ihrer Zielgruppe passt.',
         items: [
-          { title: 'LinkedIn Ads', desc: 'Der effektivste B2B-Kanal für präzises Targeting nach Unternehmensgrösse, Rolle und Branche. Ideal für mittlere und längere Sales-Zyklen.' },
-          { title: 'Google Search Ads', desc: 'Für kaufbereite Zielgruppen, die aktiv nach Lösungen suchen. Höchste Conversion Intent. Ideal als Boden-des-Funnels-Kanal.' },
-          { title: 'Meta Ads (Facebook & Instagram)', desc: 'Für Awareness, Retargeting und Zielgruppen, die noch nicht aktiv suchen. Günstigere Reichweite, die mit anderen Kanälen koordiniert wird.' },
-          { title: 'Google Display & Programmatic', desc: 'Für Wiedererkennung und Retargeting. Deine Marke bleibt sichtbar, während potenzielle Kunden recherchieren.' },
-          { title: 'Content & SEO', desc: 'Langfristiger Demand-Aufbau über organische Sichtbarkeit. Content, der kaufbereite Besucher anzieht.' },
-          { title: 'Email & Newsletter', desc: 'Nurturing bestehender Leads und Aufbau einer eigenen Audience. Direkter Kanal ohne Algorithmus-Abhängigkeit.' }
+          { title: 'LinkedIn Ads', desc: 'Für B2B gut geeignet, weil sich nach Unternehmensgrösse, Funktion und Branche eingrenzen lässt. Sinnvoll bei mittleren und längeren Verkaufszyklen.' },
+          { title: 'Google Search Ads', desc: 'Für Interessenten, die bereits aktiv nach einer Lösung suchen. Oft der Kanal mit der höchsten Kaufabsicht.' },
+          { title: 'Meta Ads (Facebook & Instagram)', desc: 'Für Bekanntheit, Retargeting und Zielgruppen, die noch nicht aktiv suchen. Meist günstigere Reichweite, abgestimmt mit den anderen Kanälen.' },
+          { title: 'Google Display', desc: 'Für Wiedererkennung und Retargeting. Ihre Marke bleibt sichtbar, während Interessenten Angebote vergleichen.' },
+          { title: 'Inhalte & SEO', desc: 'Langfristige Sichtbarkeit bei Google mit Inhalten, die passende Besucher anziehen.' },
+          { title: 'E-Mail & Newsletter', desc: 'Bestehende Kontakte weiterbegleiten und eine eigene Leserschaft aufbauen, unabhängig von Plattform-Algorithmen.' }
         ]
       },
 
       {
-        title: 'INVESTITION',
+        title: 'Investition',
         type: 'investment',
-        subtitle: 'Demand Generation ist kein Kostenpunkt. Es ist eine Investition mit messbarem Return.',
+        subtitle: 'Richtwerte für die Betreuung, Werbebudget separat.',
         items: [
-          { title: 'Einstieg', desc: 'Ab CHF 2\'000/Monat', extra: 'Für: Erste Pipeline-Aufbau, 1-2 Kanäle, klarer Fokus.' },
-          { title: 'Ausbau', desc: 'CHF 4\'000-8\'000/Monat', extra: 'Für: Multi-Channel, kontinuierliche Optimierung, skalierbare Pipeline.' },
-          { title: 'Skalierung', desc: 'CHF 8\'000+/Monat', extra: 'Für: Vollständige Demand Generation Infrastruktur, mehrere Märkte oder Zielgruppen.' }
+          { title: 'Einstieg', desc: 'ab CHF 2\'000 / Monat', extra: 'Richtwert für ein bis zwei Kanäle mit klarem Fokus.' },
+          { title: 'Ausbau', desc: 'Richtwert CHF 4\'000–8\'000 / Monat', extra: 'Für mehrere Kanäle und laufende Optimierung.' },
+          { title: 'Mehrere Märkte', desc: 'ab CHF 8\'000 / Monat', extra: 'Richtwert für mehrere Märkte, Sprachen oder Zielgruppen.' }
         ],
-        text: 'Ad-Budget und Management-Fee transparent getrennt — du weisst immer, was wohin fliesst.'
+        text: 'Werbebudget und Betreuungshonorar weisen wir getrennt aus. Sie sehen jederzeit, was wohin fliesst.'
       }
     ],
     faq: [
       {
         q: 'Wann sehen wir erste Resultate?',
-        a: 'Bei Paid Media: Erste Daten in 1-2 Wochen, optimierte Ergebnisse ab Woche 4-6. Organische Kanäle brauchen 3-6 Monate. Wir kombinieren beides — schnelle Leads jetzt, nachhaltige Pipeline langfristig.'
+        a: 'Bei Google Ads sehen Sie die ersten Klicks und Anfragen meist innert Tagen. Belastbare Daten, auf die man Entscheidungen stützen kann, liegen in der Regel nach 4–8 Wochen vor. Bei LinkedIn und längeren Verkaufszyklen kann es länger dauern. SEO und Inhalte brauchen mehrere Monate, bis sie spürbar Anfragen bringen.'
       },
       {
         q: 'Welche Kanäle sind für uns richtig?',
-        a: 'Das hängt von deiner Zielgruppe und deinem Sales-Zyklus ab. Wir analysieren das im Erstgespräch und empfehlen, was für dich Sinn macht — nicht was gerade im Trend ist.'
+        a: 'Das hängt von Ihrer Zielgruppe und Ihrem Verkaufszyklus ab. Suchen Ihre Kunden aktiv nach Ihrem Angebot, ist Google meist der erste Kanal. Müssen Sie bestimmte Funktionen in bestimmten Firmen erreichen, eher LinkedIn. Wir besprechen das im Erstgespräch.'
       },
       {
         q: 'Brauchen wir ein grosses Budget?',
-        a: 'Nein. Mit fokussiertem Budget und richtiger Strategie kann man schon ab CHF 500/Monat qualifizierte Leads generieren. Der Schlüssel ist Präzision, nicht Volumen.'
+        a: 'Nein, aber ein passendes. Das Werbebudget muss genug Klicks ermöglichen, damit nach einigen Wochen aussagekräftige Daten vorliegen. Was das bei Ihnen bedeutet, hängt von den Klickpreisen in Ihrer Branche ab. Das rechnen wir im Erstgespräch gemeinsam durch, bevor Sie etwas ausgeben.'
       },
       {
-        q: 'Was unterscheidet euch von einer Werbeagentur?',
-        a: 'Wir denken in Pipeline und Revenue — nicht in Klicks und Impressionen. Wir messen, was deinen Vertrieb wirklich bewegt. Und wir verbinden Demand Generation mit deinen Sales-Prozessen.'
+        q: 'Was unterscheidet Sie von einer Werbeagentur?',
+        a: 'Wir messen den Erfolg an Anfragen und Verkaufschancen, nicht an Klicks und Impressionen. Kampagnen, Landingpages, Tracking und die Übergabe an Ihren Vertrieb kommen aus einer Hand, umgesetzt persönlich von Yathur Nathan.'
       }
     ],
     cta: {
-      headline: 'Dein Vertrieb verdient eine konstante Pipeline.',
-      subheadline: '30 Minuten. Wir analysieren deine aktuelle Situation und zeigen dir, wie eine Demand Generation Strategie für dein Unternehmen aussehen würde.',
-      buttonText: 'Pipeline-Gespräch buchen (kostenlos)'
+      headline: 'Mehr passende Anfragen für Ihren Vertrieb.',
+      subheadline: 'In 30 Minuten schauen wir auf Ihre aktuelle Situation und skizzieren, welche Kanäle und welches Budget für Sie sinnvoll wären.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'growth-strategy',
     hero: {
-      headline: 'Wachstum braucht eine Richtung. Ohne Strategie ist jede Massnahme Zufall.',
-      subheadline: 'Wir entwickeln deine Go-to-Market-Strategie — mit klaren Prioritäten, definierten Zielgruppen und einem Wachstumsplan, den dein Team umsetzen kann.',
-      ctaText: 'Strategiegespräch buchen (kostenlos)'
+      headline: 'Ein klarer Plan, wie Sie neue Kunden gewinnen.',
+      subheadline: 'Wir legen mit Ihnen fest, wen Sie ansprechen, womit Sie überzeugen und über welche Kanäle Sie Ihre Wunschkunden erreichen. Mit einem Plan, den Ihr Team umsetzen kann.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'Wachstum, das eher zufällig entsteht',
       paragraphs: [
-        'Die meisten Unternehmen wachsen reaktiv.',
-        'Ein Kanal funktioniert zufällig. Eine Kampagne bringt Leads. Aber kein System dahinter.',
-        'Das Resultat: Wachstum ist nicht planbar. Nicht skalierbar. Nicht wiederholbar.',
-        'Wenn du nicht weisst, woher dein Wachstum kommt — kannst du es nicht steuern.'
+        'Viele Unternehmen wachsen, ohne genau zu wissen, warum.',
+        'Ein Kanal funktioniert, eine Kampagne bringt Anfragen, aber es steht kein Plan dahinter.',
+        'Dadurch lässt sich Wachstum schlecht planen und kaum wiederholen.',
+        'Wer nicht weiss, woher die Kunden kommen, kann auch nicht gezielt mehr davon gewinnen.'
       ]
     },
     leistet: {
-      title: 'WAS GROWTH STRATEGY LEISTET',
+      title: 'Was die Strategiearbeit umfasst',
       items: [
         {
-          title: 'Zielgruppen-Definition (ICP)',
-          desc: 'Wer sind deine idealen Kunden wirklich? Nicht demografisch — sondern: Wer hat das Problem, das du löst? Wer ist kaufbereit? Wo stehen sie im Entscheidungsprozess?'
+          title: 'Wunschkunden festlegen',
+          desc: 'Wer sind Ihre besten Kunden? Nicht nur nach Branche und Grösse, sondern: Wer hat das Problem, das Sie lösen, und wer ist bereit, dafür zu bezahlen?'
         },
         {
           title: 'Positionierung',
-          desc: 'Warum sollte jemand dich wählen und nicht den Wettbewerb? Wir schärfen deine Positionierung auf ein klares Differenzierungsargument — das dein Team versteht und kommunizieren kann.'
+          desc: 'Warum sollte jemand Sie wählen und nicht die Konkurrenz? Wir arbeiten ein klares Unterscheidungsmerkmal heraus, das Ihr Team versteht und weitergeben kann.'
         },
         {
-          title: 'Go-to-Market-Plan',
-          desc: 'Welche Kanäle? Welche Botschaften? Welche Prioritäten? Ein realistischer Plan mit Meilensteinen — kein 50-seitiger Strategiebericht, der in der Schublade landet.'
+          title: 'Vermarktungsplan',
+          desc: 'Welche Kanäle, welche Botschaften, welche Reihenfolge? Ein realistischer Plan mit Meilensteinen statt eines langen Berichts, der in der Schublade landet.'
         },
         {
-          title: 'Wachstumshebel priorisieren',
-          desc: '80% des Wachstums kommen von 20% der Massnahmen. Wir identifizieren, welche 20% das für dich sind — und wo du dein Budget und deine Zeit einsetzen solltest.'
+          title: 'Prioritäten setzen',
+          desc: 'Nicht jede Massnahme bringt gleich viel. Wir zeigen, wo Ihr Budget und Ihre Zeit am meisten bewirken.'
         },
         {
-          title: 'Metriken definieren',
-          desc: 'Was messen wir? Worauf optimieren wir? Wachstum braucht klare KPIs. Wir definieren, was Erfolg für dein Unternehmen bedeutet.'
+          title: 'Kennzahlen festlegen',
+          desc: 'Woran messen wir Erfolg? Wir definieren wenige, klare Kennzahlen, die für Ihr Unternehmen zählen.'
         }
       ]
     },
     approach: {
-      title: 'UNSER VORGEHEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 1: Diagnose (Woche 1-2)',
-          desc: 'Wir analysieren deine aktuelle Situation. Markt, Wettbewerb, bestehende Kunden, Pipeline-Daten. Wo wächst du schon? Wo verlierst du Potential?'
+          title: 'Analyse (Woche 1–2)',
+          desc: 'Wir schauen uns Ihre Situation an: Markt, Mitbewerber, bestehende Kunden, bisherige Anfragen. Wo wachsen Sie schon? Wo bleibt Potenzial liegen?'
         },
         {
-          title: 'Phase 2: Strategie-Workshop (Woche 2-3)',
-          desc: 'Gemeinsam erarbeiten wir ICP, Positionierung und Prioritäten. Das ist kein Monolog von uns — dein Team bringt das Kontextwissen, wir bringen die Struktur.'
+          title: 'Strategie-Workshop (Woche 2–3)',
+          desc: 'Gemeinsam erarbeiten wir Zielkunden, Positionierung und Prioritäten. Ihr Team bringt das Wissen über Markt und Kunden ein, wir die Struktur.'
         },
         {
-          title: 'Phase 3: Wachstumsplan (Woche 3-4)',
-          desc: 'Das Ergebnis: Ein klarer, umsetzbarer Plan. Mit Prioritäten, Zeitplan und Metriken. Kein abstraktes Strategiepapier — sondern eine Roadmap, die dein Team direkt nutzt.'
+          title: 'Wachstumsplan (Woche 3–4)',
+          desc: 'Sie erhalten einen klaren, umsetzbaren Plan mit Prioritäten, Zeitplan und Kennzahlen, mit dem Ihr Team direkt arbeiten kann.'
         },
         {
-          title: 'Phase 4: Umsetzungsbegleitung (laufend)',
-          desc: 'Strategie ohne Umsetzung ist wertlos. Wir begleiten die Umsetzung, helfen bei der Priorisierung und passen den Plan an, wenn sich die Realität ändert.'
+          title: 'Begleitung der Umsetzung (laufend)',
+          desc: 'Wir begleiten die Umsetzung, helfen beim Priorisieren und passen den Plan an, wenn sich Ihre Situation ändert.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'ERGEBNIS',
+        title: 'Was Sie danach wissen',
         type: 'list',
-        subtitle: 'Nach einer Growth Strategy Zusammenarbeit weisst du:',
+        subtitle: 'Nach der Strategiearbeit wissen Sie:',
         bullets: [
-          'Wer dein idealer Kunde is — präzise, nicht vage',
-          'Was dich vom Wettbewerb unterscheidet — klar kommunizierbar',
-          'Welche Kanäle und Massnahmen priorisiert werden',
-          'Welche Metriken Wachstum messen',
+          'Wer Ihr Wunschkunde ist, klar beschrieben',
+          'Was Sie von Mitbewerbern unterscheidet, in einfachen Worten',
+          'Welche Kanäle und Massnahmen Vorrang haben',
+          'An welchen Kennzahlen Sie Fortschritt messen',
           'Was der nächste konkrete Schritt ist'
         ],
-        text: 'Das ist der Unterschied zwischen reaktivem Wachstum und gesteuertem Wachstum.'
+        text: 'So wird aus zufälligem Wachstum ein Plan, den Sie steuern können.'
       }
     ],
     faq: [
       {
         q: 'Brauchen wir wirklich eine Strategie, bevor wir Massnahmen umsetzen?',
-        a: 'Ja — wenn du planbar wachsen willst. Massnahmen ohne Strategie können zufällig funktionieren. Aber nicht systematisch skalieren. Eine klare Strategie macht jede Folgemassnahme effektiver.'
+        a: 'Wenn Sie planbar wachsen wollen, ja. Einzelne Massnahmen können auch ohne Strategie funktionieren, lassen sich aber schwer wiederholen und ausbauen. Mit einem klaren Plan wird jede weitere Massnahme gezielter.'
       },
       {
-        q: 'Wie lang dauert eine Growth Strategy?',
-        a: 'Der initiale Strategie-Sprint dauert 3-4 Wochen. Die Umsetzungsbegleitung ist laufend — je nach Bedarf monatlich oder quartalsweise.'
+        q: 'Wie lange dauert die Strategiearbeit?',
+        a: 'Die erste Phase bis zum fertigen Plan dauert in der Regel drei bis vier Wochen. Auf Ihrer Seite rechnen Sie mit einem Workshop und einigen kürzeren Abstimmungen. Die Begleitung danach richtet sich nach Ihrem Bedarf, monatlich oder pro Quartal.'
       },
       {
-        q: 'Was ist der Unterschied zu einem klassischen Strategieberater?',
-        a: 'Wir entwickeln Strategie und begleiten die Umsetzung. Keine Theorie ohne Praxis. Kein Bericht ohne Konsequenz. Wir bleiben im Spiel, bis die Strategie wirkt.'
+        q: 'Was ist der Unterschied zu einer klassischen Strategieberatung?',
+        a: 'Wir erarbeiten die Strategie und setzen sie auch um, von Kampagnen über Landingpages bis zum Tracking. Sie erhalten keinen Bericht, mit dem Sie danach allein bleiben.'
       },
       {
-        q: 'Wie viel kostet eine Growth Strategy?',
-        a: 'Das besprechen wir im Erstgespräch. Abhängig von Umfang und Komplexität — transparent, ohne Überraschungen.'
+        q: 'Was kostet die Strategiearbeit?',
+        a: 'Das hängt vom Umfang ab, zum Beispiel davon, wie viele Märkte, Angebote oder Zielgruppen einbezogen werden. Nach dem Erstgespräch erhalten Sie ein Angebot mit Festpreis für die erste Phase.'
       }
     ],
     cta: {
-      headline: 'Wachstum planbar machen — mit einem klaren Plan.',
-      subheadline: '30 Minuten. Wir besprechen deine aktuelle Situation und ob eine Growth Strategy der richtige nächste Schritt ist.',
-      buttonText: 'Strategiegespräch buchen (kostenlos)'
+      headline: 'Machen Sie Ihre Neukundengewinnung planbar.',
+      subheadline: 'In 30 Minuten besprechen wir Ihre aktuelle Situation und ob eine Strategiephase der richtige nächste Schritt ist.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'lead-generation',
     hero: {
-      headline: 'Aus anonymen Besuchern werden qualifizierte Interessenten.',
-      subheadline: 'Wir bauen Lead-Generierungs-Systeme, die organisch und bezahlt funktionieren — mit Content, SEO und strukturierten Conversion-Pfaden, die Leads erfassen, bewerten und entwickeln.',
-      ctaText: 'Lead-Gespräch buchen (kostenlos, 30 Min)'
+      headline: 'Aus Website-Besuchern werden Anfragen.',
+      subheadline: 'Wir bauen Wege, über die Interessenten zu Ihnen finden und sich melden: mit Inhalten, SEO und Landingpages, die Anfragen erfassen und bewerten. Bezahlt und organisch.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'Besucher ja, Anfragen kaum',
       paragraphs: [
-        'Viele Unternehmen haben Traffic. Aber kaum Leads. Oder Leads, die nicht qualifiziert sind. Oder kein System, um Interesse in konkrete Anfragen zu verwandeln.',
-        'Content wird produziert. Aber er rankt nicht. Konvertiert nicht. Bringt keine messbaren Ergebnisse.',
-        'Lead Generation braucht mehr als gute Inhalte. Es braucht ein System.'
+        'Viele Unternehmen haben Besucher auf der Website, aber kaum Anfragen. Oder Anfragen, die nicht passen. Oder es fehlt ein Weg, aus Interesse eine konkrete Anfrage zu machen.',
+        'Inhalte werden erstellt, aber sie werden bei Google nicht gefunden und bringen keine messbaren Ergebnisse.',
+        'Gute Inhalte allein reichen nicht. Es braucht einen klaren Weg vom ersten Besuch bis zur Anfrage.'
       ]
     },
     leistet: {
-      title: 'WAS LEAD GENERATION LEISTET',
+      title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Organische Sichtbarkeit aufbauen',
-          desc: 'Content-Strategien und SEO, die für kaufbereite Zielgruppen sichtbar machen — nicht für Algorithmen. Keywords, die Absicht signalisieren, nicht nur Volumen haben.'
+          title: 'Sichtbarkeit bei Google',
+          desc: 'Inhalte und SEO, die Sie bei passenden Suchanfragen sichtbar machen. Wir setzen auf Suchbegriffe, hinter denen eine echte Absicht steht, nicht nur auf grosses Suchvolumen.'
         },
         {
-          title: 'Conversion-Pfade strukturieren',
-          desc: 'Landing Pages, Lead-Magnete und Call-to-Actions, die aus Besuchern Leads machen. Nicht "Kontakt aufnehmen" als einzige Option — sondern ein gestuftes System für jede Kaufphase.'
+          title: 'Wege zur Anfrage',
+          desc: 'Landingpages, nützliche Angebote und klare Handlungsaufforderungen. Nicht nur «Kontakt aufnehmen», sondern passende Schritte für jede Phase der Entscheidung.'
         },
         {
-          title: 'Lead-Magnete entwickeln',
-          desc: 'Inhalte, die Leads erfassen, weil sie echten Wert liefern. Guides, Assessments, Tools, Checklisten — entwickelt für deine spezifische Zielgruppe.'
+          title: 'Nützliche Angebote',
+          desc: 'Leitfäden, Checklisten, Rechner oder Selbsttests, die für Ihre Zielgruppe echten Nutzen haben und gegen Kontaktangaben heruntergeladen werden.'
         },
         {
-          title: 'Lead-Scoring implementieren',
-          desc: 'Nicht jeder Lead is gleich wertvoll. Wir implementieren Scoring-Systeme, die Qualität priorisieren — damit dein Vertrieb Zeit in die richtigen Gespräche investiert.'
+          title: 'Anfragen bewerten',
+          desc: 'Nicht jede Anfrage ist gleich wertvoll. Wir richten eine Bewertung ein, damit Ihr Vertrieb seine Zeit in die richtigen Gespräche steckt.'
         },
         {
-          title: 'SEO-Infrastruktur aufbauen',
-          desc: 'Technisches SEO, Keyword-Strategie, Content-Cluster — eine organische Sichtbarkeit, die langfristig Leads bringt, ohne für jeden Klick zu zahlen.'
+          title: 'SEO-Grundlagen',
+          desc: 'Technisches SEO, Keyword-Planung und thematisch verknüpfte Inhalte. So entsteht Sichtbarkeit, die langfristig Anfragen bringt, ohne für jeden Klick zu bezahlen.'
         },
         {
-          title: 'Content-System strukturieren',
-          desc: 'Nicht einzelne Blogposts. Ein Content-System, das Zielgruppen durch den Funnel begleitet — von Awareness bis Decision.'
+          title: 'Inhalte mit Plan',
+          desc: 'Statt einzelner Blogartikel entsteht ein Themenplan, der Interessenten vom ersten Kontakt bis zur Entscheidung begleitet.'
         }
       ]
     },
     approach: {
-      title: 'UNSER ANSATZ',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: '1. Zielgruppen-Analyse',
-          desc: 'Wer ist dein ICP? Welche Probleme suchen sie zu lösen? Welche Keywords nutzen sie? Welche Inhalte helfen ihnen wirklich weiter?'
+          title: 'Zielgruppe verstehen',
+          desc: 'Wer sind Ihre Wunschkunden? Welche Probleme wollen sie lösen, wonach suchen sie, welche Inhalte helfen ihnen weiter?'
         },
         {
-          title: '2. Content-Audit',
-          desc: 'Was besteht bereits? Was rankt? Was konvertiert? Was fehlt? Wir bauen auf bestehender Arbeit auf — nicht von null.'
+          title: 'Bestehende Inhalte prüfen',
+          desc: 'Was gibt es bereits? Was wird gefunden, was bringt Anfragen, was fehlt? Wir bauen auf dem auf, was vorhanden ist.'
         },
         {
-          title: '3. Keyword- und Content-Strategie',
-          desc: 'Welche Themen? Welche Keywords? Welche Formate? Ein priorisierter Plan, der Ranking-Chancen mit Conversion-Absicht verbindet.'
+          title: 'Keyword- und Themenplan',
+          desc: 'Welche Themen, welche Suchbegriffe, welche Formate? Ein priorisierter Plan, der Chancen bei Google mit echter Kaufabsicht verbindet.'
         },
         {
-          title: '4. Content-Produktion und Optimierung',
-          desc: 'Inhalte, die für Menschen geschrieben sind — und für Suchmaschinen optimiert. SEO-Grundlagen: Struktur, interne Verlinkung, technische Qualität.'
+          title: 'Inhalte erstellen und optimieren',
+          desc: 'Inhalte, die für Menschen geschrieben und für Suchmaschinen aufbereitet sind: klare Struktur, interne Verlinkung, saubere Technik.'
         },
         {
-          title: '5. Conversion-Optimierung',
-          desc: 'Landing Pages testen. CTAs optimieren. Lead-Magnete evaluieren. Was bringt Leads, was nicht?'
+          title: 'Anfragequote verbessern',
+          desc: 'Landingpages testen, Handlungsaufforderungen verbessern, Angebote auswerten. Was bringt Anfragen, was nicht?'
         },
         {
-          title: '6. Reporting',
-          desc: 'Monatlich: Welche Inhalte ranken? Welche bringen Leads? Wo sind Lücken? Daten steuern die nächste Priorität.'
+          title: 'Bericht',
+          desc: 'Monatlich: Welche Inhalte werden gefunden? Welche bringen Anfragen? Wo gibt es Lücken? Die Zahlen bestimmen die nächsten Schritte.'
         }
       ]
     },
     extraSections: [
 
       {
-        title: 'INVESTITION',
+        title: 'Investition',
         type: 'investment',
-        subtitle: 'Transparente Pakete für Content & SEO.',
+        subtitle: 'Richtwerte für Inhalte und SEO. Der genaue Umfang richtet sich nach Ihrem Markt.',
         items: [
-          { title: 'Content & SEO Starter', desc: 'CHF 1\'500/Monat', extra: '2 Artikel/Monat + technisches SEO + Reporting. Für: Erste Sichtbarkeit aufbauen.' },
-          { title: 'Content & SEO Pro', desc: 'CHF 2\'500/Monat', extra: '4 Artikel/Monat + SEO-Infrastruktur + Conversion-Optimierung + Lead-Magnete. Für: Systematische Lead Generation.' },
-          { title: 'Content & SEO Premium', desc: 'CHF 4\'000/Monat', extra: '8+ Artikel/Monat + vollständige Content-Strategie + Automation-Integration + Wöchentliche Optimierung. Für: Aggressives organisches Wachstum.' }
+          { title: 'Einstieg', desc: 'ab CHF 1\'500 / Monat', extra: 'Richtwert: z. B. zwei Artikel pro Monat, technisches SEO und Bericht. Für den Aufbau erster Sichtbarkeit.' },
+          { title: 'Ausbau', desc: 'ab CHF 2\'500 / Monat', extra: 'Richtwert: z. B. vier Artikel pro Monat, SEO-Grundlagen, Landingpage-Optimierung und Download-Angebote.' },
+          { title: 'Intensiv', desc: 'ab CHF 4\'000 / Monat', extra: 'Richtwert: z. B. acht Artikel pro Monat, vollständiger Themenplan, Anbindung an Automatisierung und laufende Optimierung.' }
         ],
-        text: 'Timeline: Erste Rankings: 3-6 Monate. Messbare Lead-Steigerung: 6-9 Monate. Ehrlich: Organisch braucht Zeit. Wir kombinieren es daher mit Demand Generation für sofortige Ergebnisse.'
+        text: 'Zeitrahmen: Erste Platzierungen bei Google meist nach drei bis sechs Monaten, spürbar mehr Anfragen eher nach sechs bis neun Monaten. Organische Sichtbarkeit braucht Zeit. Wer schneller Anfragen braucht, ergänzt SEO mit Google Ads.'
       }
     ],
     faq: [
       {
-        q: 'Wie lange bis erste Leads organisch kommen?',
-        a: '3-4 Monate bis erste Rankings. 6-9 Monate bis messbare Lead-Steigerung. Das ist ehrlich — nicht schneller, aber dafür nachhaltig. Wir empfehlen, parallel Paid Demand Generation zu nutzen für sofortige Leads.'
+        q: 'Wie lange dauert es, bis über Google organisch Anfragen kommen?',
+        a: 'Erste Platzierungen sehen Sie meist nach drei bis sechs Monaten, spürbar mehr Anfragen eher nach sechs bis neun Monaten. Das hängt stark davon ab, wie umkämpft Ihre Suchbegriffe sind und wie stark Ihre Website heute schon ist. Wer früher Anfragen braucht, setzt parallel auf Google Ads.'
       },
       {
-        q: 'Was wenn meine Branche zu nischig ist?',
-        a: 'Je nischiger, desto besser. Weniger Konkurrenz bedeutet schnellere Rankings. B2B-Nischen-Content rankt oft schneller als breite Keywords.'
+        q: 'Was, wenn unsere Branche sehr spezialisiert ist?',
+        a: 'Das ist oft ein Vorteil. In spezialisierten Nischen gibt es weniger Konkurrenz, und Fachinhalte werden häufig schneller gefunden als Inhalte zu breiten Suchbegriffen. Dafür ist das Suchvolumen kleiner, was wir bei der Planung berücksichtigen.'
       },
       {
-        q: 'Kann ich das nicht selbst machen?',
-        a: 'Ja. Du brauchst 15-20 Stunden pro Monat dafür. Das ist die ehrliche Rechnung. Wenn du diese Zeit lieber ins Kerngeschäft investierst — sind wir die richtige Unterstützung.'
+        q: 'Können wir das nicht selbst machen?',
+        a: 'Doch. Rechnen Sie aber mit mehreren Stunden pro Woche für Planung, Schreiben, Technik und Auswertung, und zwar über Monate. Wenn Sie diese Zeit lieber in Ihr Kerngeschäft stecken, übernehmen wir das.'
       },
       {
-        q: 'Brauchen wir auch Paid Media?',
-        a: 'Nicht zwingend. Aber kombiniert ist es effektiver: Paid bringt sofortige Leads, Content baut langfristige Infrastruktur auf. Zusammen: schnell und nachhaltig.'
+        q: 'Brauchen wir zusätzlich bezahlte Werbung?',
+        a: 'Nicht zwingend. Kombiniert funktioniert es aber meist besser: Werbung bringt Anfragen ab den ersten Wochen, Inhalte und SEO bauen langfristig Sichtbarkeit auf.'
       }
     ],
     cta: {
-      headline: 'Leads, die kommen — nicht nur Besucher, die gehen.',
-      subheadline: '30 Minuten. Wir analysieren deine aktuelle Sichtbarkeit und zeigen, was möglich ist.',
-      buttonText: 'Lead-Gespräch buchen (kostenlos)'
+      headline: 'Mehr Anfragen aus Ihrer Website.',
+      subheadline: 'In 30 Minuten schauen wir auf Ihre heutige Sichtbarkeit und zeigen, wo Sie ansetzen können.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'marketing-automation',
     hero: {
-      headline: 'Leads automatisiert entwickeln — ohne manuelle Prozesse.',
-      subheadline: 'Marketing Automation und CRM-Strukturen, die dein Team entlasten, Leads nurturan und kaufbereite Interessenten an den Vertrieb übergeben. Skalierbar. Messbar. Ohne Chaos.',
-      ctaText: 'Automation-Gespräch buchen (kostenlos, 30 Min)'
+      headline: 'Keine Anfrage mehr, die im Posteingang liegen bleibt.',
+      subheadline: 'Wir richten Marketing Automation und CRM so ein, dass Interessenten automatisch weiterbegleitet werden und Ihr Vertrieb sieht, wer bereit für ein Gespräch ist.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'Anfragen kommen rein und versanden',
       paragraphs: [
-        'Leads kommen rein — und verschwinden dann. Kein Follow-up. Kein Nurturing. Kein System.',
-        'Oder: Manuelle Prozesse, die viel Zeit kosten und fehleranfällig sind. Zu viele Tools, die nicht miteinander reden. CRM-Daten, die veraltet oder unvollständig sind.',
-        'Das Resultat: Revenue-Potential, das ungenutzt bleibt.'
+        'Anfragen kommen herein und dann passiert nichts. Kein Nachfassen, keine weitere Information, kein klarer Ablauf.',
+        'Oder: Vieles läuft von Hand, kostet Zeit und ist fehleranfällig. Zu viele Tools, die nicht miteinander verbunden sind. CRM-Daten, die veraltet oder unvollständig sind.',
+        'Die Folge: Interessenten, die eigentlich kaufen würden, gehen verloren.'
       ]
     },
     leistet: {
-      title: 'WAS MARKETING AUTOMATION & CRM LEISTET',
+      title: 'Was wir für Sie einrichten',
       items: [
         {
-          title: 'Lead-Nurturing automatisieren',
-          desc: 'Automatische E-Mail-Sequenzen, die Leads mit relevanten Inhalten begleiten — basierend auf Verhalten, Interesse und Phase im Kaufprozess. Nicht Massen-Emails. Personalisiertes Nurturing.'
+          title: 'Interessenten automatisch weiterbegleiten',
+          desc: 'Automatische E-Mail-Abläufe, die Kontakten passende Inhalte schicken, je nach Verhalten, Interesse und Stand der Entscheidung. Persönlich statt Massenversand.'
         },
         {
-          title: 'Lead-Qualifizierung skalieren',
-          desc: 'Scoring-Modelle, die automatisch bewerten, welche Leads kaufbereit sind. Dein Vertrieb bekommt die richtigen Leads zur richtigen Zeit.'
+          title: 'Kontakte bewerten',
+          desc: 'Eine Bewertung im CRM zeigt, welche Kontakte bereit für ein Gespräch sind. Ihr Vertrieb meldet sich zur richtigen Zeit bei den richtigen Leuten.'
         },
         {
-          title: 'CRM-Struktur aufbauen oder optimieren',
-          desc: 'Ein CRM, das dein Team wirklich nutzt. Saubere Daten-Struktur, klare Pipeline-Stages, automatische Datenpflege. Kein Chaos, sondern Überblick.'
+          title: 'CRM aufbauen oder aufräumen',
+          desc: 'Ein CRM, das Ihr Team gerne nutzt: saubere Struktur, klare Verkaufsphasen, automatische Datenpflege.'
         },
         {
-          title: 'Übergabeprozesse strukturieren',
-          desc: 'Klare Kriterien, wann ein Lead vom Marketing an den Vertrieb übergeben wird. Keine verlorenen Leads mehr. Kein "Wir haben davon nichts gewusst."'
+          title: 'Übergabe an den Vertrieb',
+          desc: 'Klare Regeln, wann eine Anfrage vom Marketing an den Vertrieb geht. So geht keine Anfrage mehr unter.'
         },
         {
-          title: 'Tool-Integration',
-          desc: 'Deine bestehenden Tools — HubSpot, Salesforce, Pipedrive, Mailchimp, Intercom — werden verbunden. Daten fliessen automatisch. Keine manuelle Synchronisation.'
+          title: 'Tools verbinden',
+          desc: 'Ihre bestehenden Tools wie HubSpot, Salesforce, Pipedrive, Mailchimp oder Intercom werden verbunden. Daten fliessen automatisch, ohne Abtippen.'
         },
         {
-          title: 'Reporting-Automation',
-          desc: 'Automatische Dashboards, die dir täglich oder wöchentlich zeigen, wie die Automation-Performance aussieht. Kein manuelles Reporting.'
+          title: 'Automatische Berichte',
+          desc: 'Dashboards, die Ihnen regelmässig zeigen, wie die automatisierten Abläufe laufen. Ohne manuelles Zusammensuchen.'
         }
       ]
     },
     approach: {
-      title: 'UNSER VORGEHEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 1: Audit (Woche 1)',
-          desc: 'Was hast du heute? Welche Tools? Welche Prozesse? Wo verlierst du Leads? Was ist manuell, was sollte automatisch sein?'
+          title: 'Bestandsaufnahme (Woche 1)',
+          desc: 'Welche Tools und Abläufe gibt es heute? Wo gehen Anfragen verloren? Was läuft von Hand, was sollte automatisch laufen?'
         },
         {
-          title: 'Phase 2: Architektur (Woche 2)',
-          desc: 'Wir designen die Automation-Architektur: Welche Workflows? Welche Nurturing-Sequenzen? Welche CRM-Struktur? Was sind die Scoring-Kriterien?'
+          title: 'Konzept (Woche 2)',
+          desc: 'Wir planen die Abläufe: Welche E-Mail-Strecken, welche CRM-Struktur, nach welchen Kriterien werden Kontakte bewertet?'
         },
         {
-          title: 'Phase 3: Implementation (Woche 3-6)',
-          desc: 'Aufbau der Workflows, Integration der Tools, Einrichtung des CRM. Mit Testing in jeder Phase — nicht live gehen, wenn etwas nicht funktioniert.'
+          title: 'Umsetzung (Woche 3–6)',
+          desc: 'Abläufe aufbauen, Tools verbinden, CRM einrichten. Alles wird getestet, bevor es live geht.'
         },
         {
-          title: 'Phase 4: Übergabe und Training (Woche 6-8)',
-          desc: 'Dein Team lernt das System. Dokumentation. Feedback-Runden. Sicherstellung, dass das Team das System versteht und nutzt.'
+          title: 'Übergabe und Schulung (Woche 6–8)',
+          desc: 'Ihr Team lernt das System kennen. Mit Dokumentation und Feedback-Runden, damit es im Alltag auch genutzt wird.'
         },
         {
-          title: 'Phase 5: Optimierung (laufend)',
-          desc: 'Was funktioniert? Was nicht? Wir optimieren Workflows, testen Nurturing-Sequenzen und passen Scoring-Kriterien an.'
+          title: 'Optimierung (laufend)',
+          desc: 'Was funktioniert, was nicht? Wir passen Abläufe an, testen E-Mail-Strecken und schärfen die Bewertungskriterien nach.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'TOOLS, MIT DENEN WIR ARBEITEN',
+        title: 'Tools, mit denen wir arbeiten',
         type: 'grid',
         items: [
-          { title: 'HubSpot', desc: 'Vollständige Marketing- und Sales-Automation. Ideal für Mid-Market.' },
-          { title: 'Salesforce', desc: 'Enterprise CRM, wenn Komplexität es erfordert.' },
-          { title: 'Pipedrive', desc: 'Schlankes CRM für agile Sales-Teams.' },
-          { title: 'ActiveCampaign', desc: 'Starke Marketing Automation mit gutem Preis-Leistungs-Verhältnis.' },
-          { title: 'Make (Integromat) / Zapier', desc: 'No-Code-Integration für Cross-Tool-Automation.' },
-          { title: 'Brevo / Mailchimp', desc: 'Email-Marketing für einfachere Setups.' }
+          { title: 'HubSpot', desc: 'Marketing- und Vertriebsautomatisierung in einem System, verbreitet bei KMU.' },
+          { title: 'Salesforce', desc: 'Für Unternehmen mit komplexeren Vertriebsstrukturen.' },
+          { title: 'Pipedrive', desc: 'Schlankes CRM für kleinere Vertriebsteams.' },
+          { title: 'ActiveCampaign', desc: 'Marketing Automation mit gutem Preis-Leistungs-Verhältnis.' },
+          { title: 'Make / Zapier', desc: 'Verbindungen zwischen Tools ohne Programmierung.' },
+          { title: 'Brevo / Mailchimp', desc: 'E-Mail-Marketing für einfachere Anforderungen.' }
         ],
-        text: 'Wir bauen in deiner Infrastruktur. Kein erzwungener Tool-Wechsel.'
+        text: 'Wir arbeiten mit Ihren bestehenden Tools. Ein Wechsel ist nur dann ein Thema, wenn er sich wirklich lohnt.'
       },
       {
-        title: 'ERGEBNISSE, DIE DAS BRINGT',
+        title: 'Was sich für Sie ändert',
         type: 'list',
         bullets: [
-          'Mehr qualifizierte Leads an den Vertrieb — automatisch.',
-          'Kürzere Sales-Zyklen durch besseres Nurturing.',
-          'Weniger manuelle Arbeit für dein Marketing-Team.',
-          'Bessere CRM-Datenqualität für fundierte Entscheidungen.',
-          'Skalierbarkeit: Mehr Leads ohne mehr Personal.'
+          'Ihr Vertrieb erhält vorqualifizierte Anfragen, ohne nachfragen zu müssen.',
+          'Interessenten werden regelmässig und passend weiterbegleitet.',
+          'Ihr Marketing-Team hat weniger Handarbeit.',
+          'Die Daten im CRM sind aktuell und verlässlich.',
+          'Mehr Anfragen lassen sich bearbeiten, ohne dass der Aufwand im gleichen Mass steigt.'
         ]
       }
     ],
     faq: [
       {
-        q: 'Wir haben bereits ein CRM — kann man das integrieren?',
-        a: 'Ja. Wir arbeiten mit deinem bestehenden System. Ziel ist es, das, was vorhanden ist, besser zu nutzen — nicht alles zu ersetzen.'
+        q: 'Wir haben bereits ein CRM. Arbeiten Sie damit?',
+        a: 'Ja. Wir bauen auf Ihrem bestehenden System auf. Ziel ist, das Vorhandene besser zu nutzen, nicht alles zu ersetzen.'
       },
       {
-        q: 'Wie komplex ist Marketing Automation?',
-        a: 'Das hängt von deiner Ausgangssituation ab. Wir starten einfach und bauen Komplexität nur dort auf, wo sie Wert schafft. Komplexität um ihrer selbst willen hilft niemandem.'
+        q: 'Wie aufwendig ist Marketing Automation?',
+        a: 'Das hängt von Ihrer Ausgangslage ab. Wir starten mit wenigen, einfachen Abläufen und bauen nur dort aus, wo es etwas bringt. Auf Ihrer Seite braucht es vor allem in der Konzeptphase Zeit für Abstimmungen und Freigaben.'
       },
       {
         q: 'Brauchen wir ein grosses Team, um das zu betreiben?',
-        a: 'Nein. Das Ziel von Automation ist genau das Gegenteil: mit kleinem Team mehr leisten. Wir bauen Systeme, die funktionieren, auch wenn nicht täglich jemand daran arbeitet.'
+        a: 'Nein. Automatisierung soll ja gerade einem kleinen Team helfen, mehr zu schaffen. Die Abläufe laufen auch dann, wenn nicht täglich jemand daran arbeitet. Einmal im Monat sollte aber jemand die Zahlen anschauen.'
       },
       {
-        q: 'Wie lange bis das System produktiv ist?',
-        a: 'Grundstruktur ist in 4-6 Wochen operational. Vollständige Optimierung braucht 3-6 Monate iterativer Verbesserung.'
+        q: 'Wie lange dauert es, bis das System läuft?',
+        a: 'Die Grundstruktur ist meist nach vier bis acht Wochen in Betrieb. Bis die Abläufe gut eingespielt sind und Sie verlässlich sehen, was sie bringen, vergehen in der Regel mehrere Monate, weil genug Kontakte die Abläufe durchlaufen müssen.'
       }
     ],
     cta: {
-      headline: 'Leads, die automatisch entwickelt werden — nicht manuell verloren gehen.',
-      subheadline: '30 Minuten. Wir zeigen, wie eine Automation-Infrastruktur für dein Unternehmen aussehen würde.',
-      buttonText: 'Automation-Gespräch buchen (kostenlos)'
+      headline: 'Interessenten automatisch weiterbegleiten, statt sie zu verlieren.',
+      subheadline: 'In 30 Minuten zeigen wir, wie Automatisierung und CRM für Ihr Unternehmen aussehen könnten.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'revenue-operations',
     hero: {
-      headline: 'Revenue Operations: Das Betriebssystem für dein Wachstum.',
-      subheadline: 'Wenn Marketing, Sales und Customer Success nicht als System funktionieren, verlierst du Revenue. Wir bauen die operative Infrastruktur, die alle Teams verbindet — Prozesse, Daten, Tools, Metriken.',
-      ctaText: 'RevOps-Gespräch buchen (kostenlos, 30 Min)'
+      headline: 'Marketing, Vertrieb und Kundenbetreuung arbeiten mit denselben Zahlen.',
+      subheadline: 'Wenn Ihre Teams mit unterschiedlichen Daten und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir sorgen dafür, dass Abläufe, Daten, Tools und Kennzahlen zusammenpassen. Im Englischen heisst das Revenue Operations, kurz RevOps.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'Jedes Team misst etwas anderes',
       paragraphs: [
-        'Viele Wachstumsprobleme sind keine Marketing- oder Sales-Probleme. Sie sind Operationsprobleme.',
-        'Teams arbeiten in Silos. Daten sind fragmentiert. Handover-Prozesse fehlen. Marketing misst Leads, Sales misst Deals, Customer Success misst Churn — aber niemand misst Revenue als Ganzes.',
-        'Das Resultat: Ineffizienz, verlorene Opportunities, schwer vorhersagbares Wachstum.',
-        'Revenue Operations löst das.'
+        'Viele Wachstumsprobleme liegen weder im Marketing noch im Vertrieb, sondern in den Abläufen dazwischen.',
+        'Teams arbeiten nebeneinander her. Daten liegen verstreut in verschiedenen Tools. Übergaben sind nicht geregelt. Das Marketing zählt Kontakte, der Vertrieb Abschlüsse, die Kundenbetreuung Kündigungen. Den Umsatz als Ganzes betrachtet niemand.',
+        'Die Folge: Doppelspurigkeiten, verlorene Verkaufschancen und ein Wachstum, das sich kaum vorhersagen lässt.'
       ]
     },
     leistet: {
-      title: 'WAS REVENUE OPERATIONS LEISTET',
+      title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Gemeinsame Revenue-Metriken',
-          desc: 'Was misst ihr als Unternehmen wirklich? MQL, SQL, Pipeline-Velocity, Customer Acquisition Cost, Customer Lifetime Value — wir implementieren die Metriken, die Wachstum steuerbar machen.'
+          title: 'Gemeinsame Kennzahlen',
+          desc: 'Was messen Sie als Unternehmen? Qualifizierte Anfragen, Verkaufschancen, Kosten pro Neukunde, Kundenwert über die Zeit: Wir legen die Kennzahlen fest, mit denen sich Wachstum steuern lässt.'
         },
         {
-          title: 'Prozess-Harmonisierung',
-          desc: 'Marketing, Sales und Customer Success werden auf einheitliche Prozesse ausgerichtet. Übergaben funktionieren. Niemand fällt durchs Raster.'
+          title: 'Einheitliche Abläufe',
+          desc: 'Marketing, Vertrieb und Kundenbetreuung arbeiten nach abgestimmten Abläufen. Übergaben funktionieren, niemand fällt durchs Raster.'
         },
         {
-          title: 'Tech-Stack-Optimierung',
-          desc: 'Welche Tools nutzt ihr wirklich? Welche doppeln sich? Welche fehlen? Wir auditieren euren Tech-Stack und bauen eine Architektur, die sauber integriert ist und keine Daten-Silos schafft.'
+          title: 'Tool-Landschaft aufräumen',
+          desc: 'Welche Tools werden wirklich genutzt, welche doppeln sich, welche fehlen? Wir prüfen Ihre Tools und sorgen dafür, dass sie sauber verbunden sind.'
         },
         {
-          title: 'Daten-Architektur',
-          desc: 'Saubere Daten sind die Grundlage jeder Entscheidung. Wir strukturieren eure Daten-Infrastruktur: Tracking, CRM-Datenqualität, Attribution.'
+          title: 'Saubere Daten',
+          desc: 'Gute Entscheidungen brauchen gute Daten. Wir bringen Tracking, CRM-Daten und die Zuordnung zu Kanälen in Ordnung.'
         },
         {
-          title: 'Forecasting und Pipeline-Management',
-          desc: 'Revenue vorhersagen statt hoffen. Wir implementieren Forecasting-Modelle und Pipeline-Review-Prozesse, die realistisch und belastbar sind.'
+          title: 'Umsatzprognose und Verkaufschancen',
+          desc: 'Wir richten Prognosen und regelmässige Durchsichten der offenen Verkaufschancen ein, die realistisch und belastbar sind.'
         },
         {
-          title: 'Reporting-Infrastruktur',
-          desc: 'Ein Dashboard, das jede Woche die Fragen beantwortet, die zählen: Wie ist die Pipeline? Wo stehen wir gegen Ziele? Was muss priorisiert werden?'
+          title: 'Berichte',
+          desc: 'Ein Dashboard, das jede Woche die wichtigen Fragen beantwortet: Wie viele Verkaufschancen sind offen? Wo stehen wir gegenüber den Zielen? Was hat Vorrang?'
         }
       ]
     },
     approach: {
-      title: 'UNSER VORGEHEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 1: RevOps-Audit (Woche 1-2)',
-          desc: 'Prozess-Analyse, Tech-Stack-Review, Daten-Qualitäts-Check. Wir dokumentieren den IST-Zustand und identifizieren die grössten Lücken.'
+          title: 'Bestandsaufnahme (Woche 1–2)',
+          desc: 'Analyse der Abläufe, Prüfung der Tools und der Datenqualität. Wir halten den heutigen Stand fest und zeigen die grössten Lücken.'
         },
         {
-          title: 'Phase 2: Architektur-Design (Woche 2-4)',
-          desc: 'Wie soll das System aussehen? Prozesse, Tool-Integrationen, Metriken, Reporting. Ein Blueprint, den dein Team versteht.'
+          title: 'Konzept (Woche 2–4)',
+          desc: 'Wie soll es künftig laufen? Abläufe, Verbindungen zwischen Tools, Kennzahlen und Berichte, verständlich für Ihr Team.'
         },
         {
-          title: 'Phase 3: Implementation (Woche 4-12)',
-          desc: 'Schrittweise Umsetzung — beginnend mit den Bereichen mit grösstem Impact. Keine Big-Bang-Implementation, die alles auf einmal ändert.'
+          title: 'Umsetzung (Woche 4–12)',
+          desc: 'Schrittweise Umsetzung, beginnend mit den Bereichen, die am meisten bringen. Nicht alles auf einmal.'
         },
         {
-          title: 'Phase 4: Adoption und Training (laufend)',
-          desc: 'Das beste System bringt nichts, wenn niemand es nutzt. Wir begleiten die Adoption — mit Training, Dokumentation und regelmässigen Check-ins.'
+          title: 'Einführung und Schulung (laufend)',
+          desc: 'Wir begleiten die Einführung mit Schulung, Dokumentation und regelmässigen Abstimmungen, damit die neuen Abläufe genutzt werden.'
         },
         {
-          title: 'Phase 5: Continuous Improvement',
-          desc: 'RevOps ist kein Einmalprojekt. Wir optimieren laufend — basierend auf Daten, Feedback und sich ändernden Anforderungen.'
+          title: 'Laufende Verbesserung',
+          desc: 'Abläufe und Systeme werden regelmässig überprüft und auf Basis von Daten und Rückmeldungen angepasst.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'WARUM REVENUE OPERATIONS JETZT?',
+        title: 'Warum sich das früh lohnt',
         type: 'text',
-        text: 'Unternehmen, die Revenue Operations früh implementieren, wachsen schneller. Nicht weil RevOps magisch ist — sondern weil koordinierte Teams mit sauberen Daten bessere Entscheidungen treffen. Schneller. Öfter. Wer wartet, bis das Problem kritisch wird, repariert es teurer.'
+        text: 'Je früher Marketing, Vertrieb und Kundenbetreuung mit denselben Daten und Abläufen arbeiten, desto einfacher ist die Umstellung. Mit wenigen Mitarbeitenden und wenigen Tools ist das in Wochen erledigt. Wer wartet, bis die Datenlage unübersichtlich geworden ist, braucht für das Aufräumen deutlich mehr Zeit und Geld.'
       },
       {
-        title: 'TECH-STACK, MIT DEM WIR ARBEITEN',
+        title: 'Tools, mit denen wir arbeiten',
         type: 'grid',
         items: [
           { title: 'CRM', desc: 'HubSpot, Salesforce, Pipedrive' },
           { title: 'Marketing Automation', desc: 'HubSpot, ActiveCampaign, Marketo' },
-          { title: 'Analytics', desc: 'Google Analytics 4, Looker Studio, Tableau' },
-          { title: 'Integration', desc: 'Make (Integromat), Zapier, native Integrationen' },
-          { title: 'Reporting', desc: 'Looker Studio, HubSpot Reports, Salesforce Reports' },
-          { title: 'Weitere', desc: 'je nach bestehendem Stack' }
+          { title: 'Analyse', desc: 'Google Analytics 4, Looker Studio, Tableau' },
+          { title: 'Verbindungen', desc: 'Make, Zapier, native Schnittstellen' },
+          { title: 'Berichte', desc: 'Looker Studio, HubSpot Reports, Salesforce Reports' },
+          { title: 'Weitere', desc: 'je nach Ihren bestehenden Tools' }
         ]
       }
     ],
     faq: [
       {
-        q: 'Für welche Unternehmensgrösse ist RevOps relevant?',
-        a: 'Ab dem Moment, wo Marketing, Sales und Customer Success als separate Funktionen existieren. Das kann bei 5 Personen sein. Je früher die Grundlagen gelegt werden, desto besser.'
+        q: 'Ab welcher Unternehmensgrösse ist das sinnvoll?',
+        a: 'Sobald Marketing, Vertrieb und Kundenbetreuung von unterschiedlichen Personen gemacht werden. Das kann schon bei fünf Mitarbeitenden der Fall sein. Je früher die Grundlagen stehen, desto einfacher.'
       },
       {
-        q: 'Wie lange dauert eine RevOps-Implementation?',
-        a: 'Grundstruktur in 8-12 Wochen. Vollständige Reife braucht 6-12 Monate kontinuierlicher Optimierung.'
+        q: 'Wie lange dauert die Umsetzung?',
+        a: 'Die Grundstruktur steht in der Regel nach acht bis zwölf Wochen. Bis alle Abläufe eingespielt sind und die Zahlen verlässlich sind, vergehen meist mehrere Monate mit laufenden Anpassungen.'
       },
       {
         q: 'Brauchen wir dafür neue Tools?',
-        a: 'Oft nicht. Meistens werden bestehende Tools besser genutzt. Wenn neue Tools nötig sind, empfehlen wir das auf Basis deiner spezifischen Anforderungen — nicht auf Basis von Partnerprogrammen.'
+        a: 'Oft nicht. Meist lassen sich die bestehenden Tools besser nutzen. Wenn ein neues Tool nötig ist, empfehlen wir es aufgrund Ihrer Anforderungen. Wir erhalten keine Provisionen von Softwareanbietern.'
       },
       {
-        q: 'Was ist der Unterschied zu einem klassischen IT-Projekt?',
-        a: 'RevOps ist kein IT-Projekt. Es ist ein Business-Projekt. Die technische Implementierung ist das Mittel — das Ziel ist Revenue-Wachstum.'
+        q: 'Ist das nicht einfach ein IT-Projekt?',
+        a: 'Nein. Die Technik ist nur das Mittel. Im Kern geht es darum, wie Marketing, Vertrieb und Kundenbetreuung zusammenarbeiten, damit mehr Anfragen zu Kunden werden.'
       }
     ],
     cta: {
-      headline: 'Wachstum als System, nicht als Zufall.',
-      subheadline: '30 Minuten. Wir analysieren eure aktuelle Revenue-Infrastruktur und zeigen, wo die grössten Lücken sind.',
-      buttonText: 'RevOps-Gespräch buchen (kostenlos)'
+      headline: 'Ein gemeinsames Bild für Marketing, Vertrieb und Geschäftsleitung.',
+      subheadline: 'In 30 Minuten schauen wir auf Ihre heutigen Abläufe und Tools und zeigen, wo die grössten Lücken liegen.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'sales-enablement',
     hero: {
-      headline: 'Dein Vertrieb schliesse schneller — wenn Marketing ihn wirklich unterstützt.',
-      subheadline: 'Sales Enablement, das Marketing und Vertrieb verbindet. Gemeinsame Prozesse, relevanter Content und Übergabestrukturen, die deinen Sales-Zyklus verkürzen.',
-      ctaText: 'Sales-Gespräch buchen (kostenlos, 30 Min)'
+      headline: 'Ihr Vertrieb geht besser vorbereitet in jedes Gespräch.',
+      subheadline: 'Wir bringen Marketing und Vertrieb zusammen: mit gemeinsamen Abläufen, Unterlagen, die im Verkaufsgespräch tatsächlich helfen, und klaren Regeln für die Übergabe von Anfragen.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'DAS PROBLEM',
+      title: 'Marketing und Vertrieb arbeiten aneinander vorbei',
       paragraphs: [
-        'Marketing und Sales arbeiten in den meisten Unternehmen aneinander vorbei.',
-        'Marketing produziert Inhalte, die der Vertrieb nicht nutzt. Der Vertrieb klagt über schlechte Lead-Qualität. Marketing klagt, dass Leads nicht bearbeitet werden. Keiner weiss genau, wie der Übergabeprozess aussieht.',
-        'Das Resultat: Längere Sales-Zyklen. Verlorene Opportunities. Frustration auf beiden Seiten.'
+        'In vielen Unternehmen arbeiten Marketing und Vertrieb nebeneinander her.',
+        'Das Marketing erstellt Unterlagen, die der Vertrieb nicht nutzt. Der Vertrieb klagt über unpassende Anfragen, das Marketing darüber, dass Anfragen liegen bleiben. Wie die Übergabe genau laufen soll, weiss niemand.',
+        'Die Folge: längere Verkaufszyklen, verlorene Verkaufschancen und Frust auf beiden Seiten.'
       ]
     },
     leistet: {
-      title: 'WAS SALES ENABLEMENT LEISTET',
+      title: 'Was wir für Sie erarbeiten',
       items: [
         {
-          title: 'Alignment zwischen Marketing und Sales',
-          desc: 'Gemeinsame Definition: Was ist ein qualifizierter Lead? Wann ist ein Lead übergabebereit? Welche Metriken zählen für beide Teams?'
+          title: 'Gemeinsames Verständnis',
+          desc: 'Marketing und Vertrieb legen gemeinsam fest: Was ist eine qualifizierte Anfrage? Wann wird sie übergeben? Welche Kennzahlen zählen für beide?'
         },
         {
-          title: 'Sales Content entwickeln',
-          desc: 'Case Studies, Battle Cards, Proposal-Templates, Einwand-Handling-Guides — Inhalte, die der Vertrieb in echten Gesprächen nutzt. Nicht Marketing-Material, das in der Schublade landet.'
+          title: 'Unterlagen für den Verkauf',
+          desc: 'Referenzbeispiele, Vergleiche mit Mitbewerbern, Angebotsvorlagen, Antworten auf häufige Einwände. Unterlagen, die der Vertrieb in echten Gesprächen nutzt.'
         },
         {
-          title: 'Übergabeprozesse strukturieren',
-          desc: 'Klare Service Level Agreements (SLAs) zwischen Marketing und Sales. Wann, wie und mit welchen Informationen werden Leads übergeben?'
+          title: 'Klare Übergabe',
+          desc: 'Verbindliche Abmachungen zwischen Marketing und Vertrieb: Wann, wie und mit welchen Informationen wird eine Anfrage übergeben, und wie schnell meldet sich der Vertrieb?'
         },
         {
-          title: 'Sales-Zyklus analysieren und optimieren',
-          desc: 'Wo verlierst du Deals? In welcher Phase? Warum? Wir analysieren den Sales-Funnel und identifizieren, wo Marketing besser unterstützen kann.'
+          title: 'Verkaufsprozess analysieren',
+          desc: 'Wo gehen Abschlüsse verloren, in welcher Phase und warum? Wir zeigen, wo das Marketing den Vertrieb besser unterstützen kann.'
         },
         {
-          title: 'Onboarding und Training-Material',
-          desc: 'Neue Sales-Mitarbeiter müssen schnell produktiv sein. Wir strukturieren das Material, das das ermöglicht — Produkt-Guides, Zielgruppen-Briefings, Einwand-Handling.'
+          title: 'Einarbeitung neuer Mitarbeitender',
+          desc: 'Wir stellen die Unterlagen zusammen, mit denen sich neue Verkäuferinnen und Verkäufer schneller einarbeiten: Produktübersichten, Zielgruppenbeschreibungen, Antworten auf Einwände.'
         },
         {
-          title: 'Win/Loss-Analyse',
-          desc: 'Warum werden Deals gewonnen? Warum verloren? Diese Erkenntnisse fliessen direkt in Messaging, Positioning und Sales-Strategien zurück.'
+          title: 'Gewonnene und verlorene Abschlüsse auswerten',
+          desc: 'Warum werden Aufträge gewonnen, warum verloren? Die Erkenntnisse fliessen in Botschaften, Positionierung und Verkaufsargumente zurück.'
         }
       ]
     },
     approach: {
-      title: 'UNSER VORGEHEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 1: Diagnose (Woche 1-2)',
-          desc: 'Wir analysieren den aktuellen Sales-Funnel. Interviews mit Marketing und Sales. Wo sind die Reibungspunkte? Wo geht Revenue verloren?'
+          title: 'Analyse (Woche 1–2)',
+          desc: 'Wir schauen uns den heutigen Verkaufsprozess an und führen Gespräche mit Marketing und Vertrieb. Wo hakt es? Wo gehen Abschlüsse verloren?'
         },
         {
-          title: 'Phase 2: Alignment-Workshop (Woche 2-3)',
-          desc: 'Marketing und Sales definieren gemeinsam: Zielgruppen, Lead-Kriterien, Übergabeprozesse, gemeinsame Metriken. Das ist keine Overhead-Diskussion — es ist die Grundlage für effektives Wachstum.'
+          title: 'Workshop (Woche 2–3)',
+          desc: 'Marketing und Vertrieb legen gemeinsam Zielgruppen, Kriterien für Anfragen, Übergabe und Kennzahlen fest.'
         },
         {
-          title: 'Phase 3: Content-Entwicklung (Woche 3-8)',
-          desc: 'Prioritärer Sales-Content wird entwickelt. Kein generisches Material — sondern was den Vertrieb bei seinen spezifischen Herausforderungen unterstützt.'
+          title: 'Unterlagen erstellen (Woche 3–8)',
+          desc: 'Die wichtigsten Verkaufsunterlagen werden erarbeitet, abgestimmt auf die Situationen, in denen Ihr Vertrieb sie braucht.'
         },
         {
-          title: 'Phase 4: Prozess-Implementation (laufend)',
-          desc: 'Übergabeprozesse werden dokumentiert und implementiert. CRM-Felder angepasst. Handover-Routinen etabliert.'
+          title: 'Abläufe umsetzen (laufend)',
+          desc: 'Übergaben werden dokumentiert und eingeführt, CRM-Felder angepasst, feste Routinen etabliert.'
         },
         {
-          title: 'Phase 5: Messung und Iteration',
-          desc: 'Messen: Werden Leads bearbeitet? Wie schnell? Mit welchem Resultat? Wir optimieren Prozesse auf Basis echter Daten.'
+          title: 'Messen und anpassen',
+          desc: 'Werden Anfragen bearbeitet? Wie schnell? Mit welchem Ergebnis? Wir passen die Abläufe anhand dieser Zahlen an.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'WAS SICH ÄNDERT',
+        title: 'Was sich für Sie ändert',
         type: 'list',
         bullets: [
-          'Dein Vertrieb hat Klarheit, welche Leads prioritär sind.',
-          'Sales-Zyklen werden kürzer, weil Leads besser vorbereitet ankommen.',
-          'Marketing weiss, was Sales wirklich braucht.',
-          'Win-Rates verbessern sich durch besseres Enablement-Material.',
-          'Neues Sales-Personal wird schneller produktiv.'
+          'Ihr Vertrieb weiss, welche Anfragen Vorrang haben.',
+          'Interessenten kommen besser informiert ins Gespräch.',
+          'Das Marketing weiss, was der Vertrieb wirklich braucht.',
+          'Verkaufsunterlagen sind aktuell und werden genutzt.',
+          'Neue Mitarbeitende im Vertrieb finden sich schneller zurecht.'
         ]
       }
     ],
     faq: [
       {
-        q: 'Was wenn Marketing und Sales grundsätzlich nicht zusammenarbeiten wollen?',
-        a: 'Das ist ein kulturelles Problem — und das lösen wir nicht mit Prozessen. Aber wir schaffen die strukturellen Voraussetzungen: klare Rollen, gemeinsame Metriken, Transparenz. Oft hilft das, auch kulturell.'
+        q: 'Was, wenn Marketing und Vertrieb grundsätzlich nicht zusammenarbeiten wollen?',
+        a: 'Das ist eine Frage der Unternehmenskultur, die sich nicht allein mit Abläufen lösen lässt. Klare Rollen, gemeinsame Kennzahlen und Transparenz schaffen aber die Voraussetzungen, und das hilft oft auch beim Miteinander.'
       },
       {
-        q: 'Brauchen wir ein grosses Sales-Team dafür?',
-        a: 'Nein. Sales Enablement ist auch für kleinere Teams mit 2-5 Sales-Mitarbeitern relevant. Je kleiner das Team, desto grösser die Auswirkung von gut funktionierenden Prozessen.'
+        q: 'Brauchen wir dafür ein grosses Verkaufsteam?',
+        a: 'Nein. Gerade kleine Teams mit zwei bis fünf Personen im Verkauf profitieren, weil jede verlorene Anfrage stärker ins Gewicht fällt.'
       },
       {
-        q: 'Wie ist Sales Enablement von Revenue Operations abzugrenzen?',
-        a: 'Sales Enablement fokussiert auf Content, Training und Prozesse für das Sales-Team. Revenue Operations baut die technische und operative Infrastruktur darunter. Beides zusammen ist die vollständige Lösung.'
+        q: 'Wie lange dauert es, und wie viel Zeit braucht es von uns?',
+        a: 'Die Analyse und der Workshop dauern rund drei Wochen, die Unterlagen entstehen danach über einige Wochen. Von Ihrem Team brauchen wir vor allem Zeit für Gespräche und Feedback, meist einige Stunden pro Woche.'
+      },
+      {
+        q: 'Wie unterscheidet sich das von der Arbeit an Abläufen und Daten (RevOps)?',
+        a: 'Hier geht es um Unterlagen, Schulung und Abläufe für den Vertrieb. Bei RevOps geht es um die Systeme und Daten darunter, etwa CRM und Berichte. Beides ergänzt sich.'
       }
     ],
     cta: {
-      headline: 'Marketing und Sales als Team — nicht als Silos.',
-      subheadline: '30 Minuten. Wir besprechen, wo bei euch die grössten Reibungspunkte liegen.',
-      buttonText: 'Sales-Gespräch buchen (kostenlos)'
+      headline: 'Marketing und Vertrieb als ein Team.',
+      subheadline: 'In 30 Minuten besprechen wir, wo es bei Ihnen zwischen Marketing und Vertrieb am meisten hakt.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'ecommerce-performance',
     hero: {
-      headline: 'Dein Shop hat Besucher. Er braucht Käufer.',
-      subheadline: 'Wir optimieren, was zwischen Traffic und Umsatz liegt: Conversion-Rate, Retention, Paid-Effizienz und die Daten, die dir zeigen, wo du Geld lässt. Keine Agentur-Kosmetik — sondern strukturiertes Wachstum.',
-      ctaText: 'Shop-Gespräch buchen'
+      headline: 'Ihr Shop hat Besucher. Wir helfen, daraus Käufer zu machen.',
+      subheadline: 'Wir verbessern, was zwischen Besuch und Kauf liegt: Kaufquote, Wiederkäufe, Werbeeffizienz und die Daten, die zeigen, wo Umsatz verloren geht.',
+      ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
-      title: 'Die meisten Shops wachsen nicht — sie lecken.',
+      title: 'Viele Shops verlieren Umsatz, den sie schon fast hatten',
       paragraphs: [
-        'Der durchschnittliche E-Commerce-Shop konvertiert zwischen 1% und 3% seines Traffics. Das bedeutet: Für jede 100 Personen, die du bezahlt oder organisch in deinen Shop holst, kaufen 97 bis 99 nichts. Das ist kein Algorithmus-Problem. Das ist kein Traffic-Problem. Es ist ein System-Problem.',
-        'Zu viele Shops investieren fast ihr gesamtes Budget in Traffic-Generierung — Google Ads, Meta, Influencer — und lassen den eigentlichen Hebel unangetastet: Was passiert, wenn jemand ankommt? Warum verlassen 80% den Warenkorb? Warum kauft ein Kunde einmal und verschwindet? Warum ist der Paid ROAS unter Druck, obwohl der Traffic stimmt?',
-        'E-Commerce-Wachstum, das hält, kommt nicht aus mehr Budget. Es kommt aus besseren Systemen: Conversion-Optimierung, die auf Daten basiert. Retention, die Bestandskunden aktiviert. Attribution, die zeigt, welcher Kanal wirklich rentiert. Und Paid-Strategien, die mit Marge — nicht mit Hoffnung — arbeiten.'
+        'In den meisten Online-Shops kauft nur ein kleiner Teil der Besucher. Die übrigen gehen wieder, oft kurz vor dem Ziel. Das liegt selten am Algorithmus oder an zu wenig Besuchern, sondern am Ablauf im Shop.',
+        'Viele Shops stecken fast ihr ganzes Budget in neue Besucher über Google, Meta oder Influencer. Was danach passiert, bleibt oft unbeachtet: Warum brechen so viele im Warenkorb ab? Warum kauft jemand einmal und nie wieder? Warum steht die Werbung unter Druck, obwohl genug Besucher kommen?',
+        'Nachhaltiges Wachstum im E-Commerce entsteht selten durch mehr Budget allein. Es entsteht durch bessere Produktseiten und einen einfacheren Checkout, durch E-Mails, die Kunden zurückholen, durch Messung, die zeigt, welcher Kanal wirklich rentiert, und durch Werbung, die nach Marge gesteuert wird.'
       ]
     },
     leistet: {
-      title: 'WAS WIR FÜR DICH BAUEN',
+      title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Conversion-Rate-Optimierung (CRO)',
-          desc: 'Wir analysieren deinen Shop systematisch: Heatmaps, Session-Recordings, Funnel-Analyse und qualitative Nutzerbefragungen. Daraus entstehen priorisierte Hypothesen, die wir testen — A/B-Tests auf Produktseiten, Checkout-Optimierung, mobile UX, Vertrauenselemente und Seitenstruktur.'
+          title: 'Kaufquote verbessern',
+          desc: 'Wir analysieren Ihren Shop mit Heatmaps, Sitzungsaufzeichnungen, Auswertung der Kaufschritte und Kundenbefragungen. Daraus entstehen priorisierte Annahmen, die wir testen: Produktseiten, Checkout, mobile Darstellung, Vertrauenselemente und Seitenaufbau.'
         },
         {
-          title: 'Retention & E-Mail-Marketing',
-          desc: 'Wiederholungskäufer sind dein profitabelstes Marketing. Wir bauen automatisierte Flows: Welcome-Serie, Post-Purchase-Sequenzen, Win-Back-Kampagnen, Loyalty-Trigger und segmentierte Newsletter für höheren Customer Lifetime Value.'
+          title: 'Wiederkäufe & E-Mail-Marketing',
+          desc: 'Wiederkehrende Kunden sind meist die profitabelsten. Wir bauen automatische Abläufe: Begrüssung, E-Mails nach dem Kauf, Rückgewinnung, Treue-Anreize und Newsletter nach Kundengruppen.'
         },
         {
-          title: 'Paid Media — Performance mit Marge',
-          desc: 'Kampagnensteuerung für Google Shopping, Meta und Performance Max. Wir optimieren auf echten Deckungsbeitrag, strukturieren Kampagnen nach Produktmargen und skalieren nur, was wirklich rentiert.'
+          title: 'Werbung mit Blick auf die Marge',
+          desc: 'Betreuung von Google Shopping, Meta und Performance Max. Wir steuern nach Deckungsbeitrag, gliedern Kampagnen nach Produktmargen und bauen nur aus, was rentiert.'
         },
         {
-          title: 'Shop-Analytics & Attribution',
-          desc: 'Welcher Kanal bringt profitable Kunden? Wo springt der Funnel ab? Wir bauen das Analytics-Fundament: GA4-Setup, Server-Side-Tracking, Attribution-Modell, COGS-Integration und verständliche Daten-Dashboards.'
+          title: 'Shop-Analyse & Zuordnung',
+          desc: 'Welcher Kanal bringt rentable Kunden? Wo springen Besucher ab? Wir bauen die Grundlage: GA4, serverseitiges Tracking, Zuordnung zu Kanälen, Einbezug der Warenkosten und verständliche Dashboards.'
         },
         {
-          title: 'Produktfeed- & Katalog-Optimierung',
-          desc: 'Optimierung von Titeln, Beschreibungen, Kategorisierung und Feed-Struktur für das Google Merchant Center und den Meta Catalog, um maximale Sichtbarkeit bei hoher Kaufbereitschaft zu sichern.'
+          title: 'Produktfeed & Katalog',
+          desc: 'Wir verbessern Titel, Beschreibungen, Kategorien und Feed-Struktur für das Google Merchant Center und den Meta-Katalog, damit Ihre Produkte bei passenden Suchen sichtbar sind.'
         },
         {
           title: 'Technische Shop-Optimierung',
-          desc: 'Ladezeit entscheidet über deine Conversion-Rate. Wir analysieren und verbessern Core Web Vitals, Mobile Performance, Checkout-Flow-Technik und strukturierte Daten für technische Höchstleistung.'
+          desc: 'Ladezeiten beeinflussen die Kaufquote. Wir analysieren und verbessern Core Web Vitals, mobile Ladezeiten, die Technik im Checkout und strukturierte Daten.'
         }
       ]
     },
     approach: {
-      title: 'VORGEHEN IN 4 PHASEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 01 — Diagnose & Audit (Dauer: 1–2 Wochen)',
-          desc: 'Umfassender Check von Conversion-Schwächen, Paid-Performance, Tracking-Lücken und Funnel-Absprüngen für einen priorisierten Massnahmenplan.'
+          title: 'Analyse (1–2 Wochen)',
+          desc: 'Wir prüfen Schwachstellen im Shop, Werbekampagnen, Lücken im Tracking und Abbrüche im Kaufprozess und erstellen einen priorisierten Massnahmenplan.'
         },
         {
-          title: 'Phase 02 — Fundament legen (Dauer: 2–4 Wochen)',
-          desc: 'Reparatur der Analytics-Infrastruktur, Bereinigung der Produktfeeds und Aufsetzen essenzieller Retention-Flows (Warenkorb-Abbrecher, Welcome).'
+          title: 'Grundlagen (2–4 Wochen)',
+          desc: 'Tracking reparieren, Produktfeeds bereinigen und die wichtigsten E-Mail-Abläufe einrichten, etwa für Warenkorbabbrecher und neue Kunden.'
         },
         {
-          title: 'Phase 03 — Testen & Optimieren (Dauer: laufend, ab Woche 5)',
-          desc: 'Systematische A/B-Tests auf Produktseiten/Checkout, monatliche Iteration der Flows und Kampagnen-Steuerung auf echten Deckungsbeitrag.'
+          title: 'Testen & verbessern (ab Woche 5, laufend)',
+          desc: 'A/B-Tests auf Produktseiten und im Checkout, monatliche Überarbeitung der E-Mail-Abläufe und Kampagnensteuerung nach Deckungsbeitrag.'
         },
         {
-          title: 'Phase 04 — Skalieren & Vertiefen (Dauer: ab Monat 3)',
-          desc: 'Nachhaltiges Hochskalieren profitabler Kanäle, Erschliessung neuer Segmente oder internationaler Märkte mit voll optimiertem Fundament.'
+          title: 'Ausbauen (ab Monat 3)',
+          desc: 'Rentable Kanäle schrittweise ausbauen, neue Kundengruppen oder Märkte erschliessen, auf einer soliden Grundlage.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'WAS SICH ÄNDERT',
+        title: 'Was sich für Sie ändert',
         type: 'list',
         bullets: [
-          'Dein Shop konvertiert mehr Besucher zu Käufern — bei gleichem Mediabudget.',
-          'Deine Kundenbindungsrate (Retention Rate) steigt messbar an.',
-          'Deine Attributions- und Umsatzdaten sind 100 % vertrauenswürdig.',
-          'Deine Ladezeiten und Core Web Vitals liegen im grünen Bereich.',
-          'Deine Performance-Kampagnen laufen margen- statt hoffnungsgesteuert.'
+          'Sie wissen, an welchen Stellen Ihr Shop Käufer verliert.',
+          'Änderungen am Shop werden getestet statt nach Gefühl umgesetzt.',
+          'Ihre Umsatzdaten sind nachvollziehbar und verlässlicher.',
+          'Ladezeiten und Core Web Vitals sind im Blick.',
+          'Ihre Kampagnen werden nach Marge gesteuert, nicht nur nach Umsatz.'
         ]
       }
     ],
     faq: [
       {
-        q: 'Arbeitet ihr nur mit bestimmten Shop-Systemen?',
-        a: 'Wir arbeiten mit Shopify, WooCommerce, Shopware und anderen gängigen Systemen. Der grösste Teil unserer Arbeit ist system-unabhängig — Analytics, Paid, Retention und CRO-Strategie funktionieren auf jeder Plattform. Für technische Umsetzungen direkt im Shop-Backend arbeiten wir mit verifizierten Entwicklern zusammen.'
+        q: 'Arbeiten Sie nur mit bestimmten Shop-Systemen?',
+        a: 'Wir arbeiten mit Shopify, WooCommerce, Shopware und anderen gängigen Systemen. Analyse, Werbung, E-Mail-Abläufe und die Optimierung der Kaufquote funktionieren auf jeder Plattform. Für tiefere Eingriffe im Shop-Backend arbeiten wir mit erfahrenen Entwicklern zusammen.'
       },
       {
-        q: 'Übernehmt ihr das Paid-Management komplett, oder macht ihr nur Strategie?',
-        a: 'Beides ist möglich. Wir können Kampagnen vollständig übernehmen und operativ führen, oder wir auditieren und coachen euer internes Team bzw. eure bestehende Agentur.'
+        q: 'Übernehmen Sie die Kampagnen komplett oder nur die Strategie?',
+        a: 'Beides ist möglich. Wir übernehmen die Kampagnen vollständig oder prüfen und begleiten Ihr internes Team bzw. Ihre bestehende Agentur.'
       },
       {
-        q: 'Was ist ein realistischer Zeitrahmen bis zu ersten Ergebnissen?',
-        a: 'Erste messbare Verbesserungen durch Quick-Wins im Checkout oder erste E-Mail-Automationen sind oft schon nach 4–6 Wochen sichtbar. Strukturelle A/B-Tests für verifizierbare CRO-Steigerungen beanspruchen meist 2–3 Monate.'
+        q: 'Wann sehen wir erste Ergebnisse?',
+        a: 'Schnelle Verbesserungen im Checkout oder erste E-Mail-Abläufe zeigen oft nach vier bis acht Wochen eine Wirkung. A/B-Tests brauchen genug Bestellungen, um aussagekräftig zu sein, und dauern deshalb meist zwei bis drei Monate, bei kleineren Shops auch länger.'
       }
     ],
     cta: {
-      headline: 'Dein Shop hat Potenzial. Wir holen es raus.',
-      subheadline: '30 Minuten — wir schauen gemeinsam auf deine Zahlen und zeigen dir, wo der grösste Hebel liegt.',
-      buttonText: 'Shop-Gespräch buchen'
+      headline: 'Wo verliert Ihr Shop heute Umsatz?',
+      subheadline: 'In 30 Minuten schauen wir gemeinsam auf Ihre Zahlen und zeigen, wo Sie am meisten erreichen können.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'dtc-growth-acquisition',
     hero: {
-      headline: 'Dein Produkt ist gut. Deine Kundengewinnung noch nicht.',
-      subheadline: 'Viele Schweizer Online-Brands haben ein starkes Produkt – aber ein brüchiges Acquisition-System. Zu viel Budget in Meta ohne Struktur, kein Funnel-Denken, organisch fast null. Wir ändern das: systematisch, messbar, profitabel.',
-      ctaText: 'Wachstumspotenzial jetzt berechnen'
+      headline: 'Ihr Produkt ist gut. Jetzt braucht es eine verlässliche Kundengewinnung.',
+      subheadline: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine stabile Kundengewinnung. Viel Budget fliesst ohne Struktur in Meta, über Google und E-Mail kommt wenig. Wir bauen eine Kundengewinnung auf mehreren Kanälen auf, deren Kosten Sie kennen.',
+      ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
-      title: 'Was die meisten D2C-Brands bremst – bevor sie je richtig skalieren.',
+      title: 'Was viele Online-Marken am Wachsen hindert',
       paragraphs: [
-        'Das Problem ist selten das Produkt. Schweizer D2C-Brands mit CHF 200k–3M Umsatz kommen meistens über Mundpropaganda, einen glücklichen Viral-Post oder die ersten Meta-Kampagnen zu ersten Kunden. Aber wenn das Wachstum abflacht, liegt es fast immer an derselben Ursache: Es gibt kein System. Jeder Franken Ad-Budget landet ohne klare Attribution, ohne Funnel-Logik, ohne LTV-Grundlage in einem Black Box namens "Meta-Ads".',
-        'Der Customer Acquisition Cost klettert unbemerkt nach oben – weil niemand ihn sauber misst. Du weisst, was ein Neukunde kostet. Aber weisst du, was er über 12 Monate wert ist? Ohne LTV-Denken kaufst du Neukunden zu Preisen, die auf den ersten Blick funktionieren, aber auf den zweiten Blick deine Marge vernichten. Gleichzeitig wird der organische Kanal stiefmütterlich behandelt: kein SEO, kein strukturiertes Content-System, keine E-Mail-Strategie, die aus Erstkäufern echte Stammkunden macht.',
-        'Die Abhängigkeit von einem einzigen Kanal ist das grösste strukturelle Risiko für jede D2C-Brand. Eine iOS-Update, ein Meta-Algo-Shift, ein kurzes Ad-Account-Sperr-Ereignis – und der Umsatz bricht ein. Wir sehen das regelmässig bei Schweizer Brands, die seit Jahren profitabel liefen und dann über Nacht 40% Umsatz verlieren, weil ihr gesamtes Acquisition-System aus einem einzigen Schalter bestand. Unser Job: diesen Schalter ersetzen durch eine mehrspurige, attributierte, skalierbare Maschine.'
+        'Am Produkt liegt es selten. Viele Schweizer Online-Marken gewinnen ihre ersten Kunden über Empfehlungen, einen erfolgreichen Social-Media-Beitrag oder die ersten Meta-Kampagnen. Wenn das Wachstum dann abflacht, fehlt meist ein System: Das Werbebudget fliesst ohne klare Zuordnung, ohne geplanten Weg zum Kauf und ohne Wissen über den Kundenwert in Meta-Kampagnen.',
+        'Die Kosten pro Neukunde steigen oft unbemerkt, weil niemand sie sauber misst. Viele Marken wissen, was ein Neukunde kostet. Was er über zwölf Monate einbringt, wissen die wenigsten. Ohne diese Zahl kaufen Sie Kunden zu Preisen ein, die auf den ersten Blick aufgehen, die Marge aber auffressen. Gleichzeitig bleiben eigene Kanäle liegen: kein SEO, kein Plan für Inhalte, keine E-Mails, die aus Erstkäufern Stammkunden machen.',
+        'Die Abhängigkeit von einem einzigen Kanal ist ein grosses Risiko. Eine Änderung bei Apple oder Meta, ein Algorithmus-Wechsel oder ein gesperrtes Werbekonto, und der Umsatz bricht ein. Unser Ziel ist eine Kundengewinnung, die auf mehreren Kanälen steht und deren Wirkung Sie messen können.'
       ]
     },
     leistet: {
-      title: 'WAS WIR FÜR DICH BAUEN',
+      title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Paid Acquisition Architektur',
-          desc: 'Wir strukturieren dein Paid-Setup von Grund auf: saubere Kampagnenarchitektur, getrennte Awareness- und Conversion-Layer, Frequency-Management, Creative-Rotation-System. Meta bleibt ein Kanal – aber er ist nicht mehr dein einziger Lebensnerv. Wir testen systematisch, was funktioniert, und skalieren nur, was sich rechnet.'
+          title: 'Struktur für bezahlte Werbung',
+          desc: 'Wir ordnen Ihre Werbekonten neu: saubere Kampagnenstruktur, getrennte Kampagnen für Bekanntheit und Verkauf, kontrollierte Anzeigenhäufigkeit und regelmässig neue Anzeigen. Meta bleibt ein wichtiger Kanal, aber nicht mehr der einzige. Wir testen systematisch und bauen nur aus, was sich rechnet.'
         },
         {
-          title: 'CAC/LTV-Steuerung',
-          desc: 'Jede Acquisition-Entscheidung basiert auf Zahlen, die du tatsächlich kennst. Wir implementieren ein einfaches, aber robustes Tracking-Framework: CAC nach Kanal und Kampagne, LTV nach Kohorte, Break-even-Punkt nach Produkt. Du siehst auf einen Blick, wo du Geld verdienst – und wo du es verbrennst.'
+          title: 'Kosten pro Kunde und Kundenwert',
+          desc: 'Jede Entscheidung soll auf Zahlen beruhen, die Sie kennen. Wir richten eine einfache, robuste Auswertung ein: Kosten pro Neukunde nach Kanal und Kampagne, Kundenwert nach Kaufmonat, Gewinnschwelle nach Produkt. So sehen Sie, wo Sie Geld verdienen und wo nicht.'
         },
         {
-          title: 'Funnel-Architektur & CRO',
-          desc: 'Clicks allein bringen keinen Umsatz. Wir analysieren deinen gesamten Funnel – Landing Pages, Produktseiten, Checkout – und identifizieren, wo Interessenten abspringen. Durch gezielte CRO-Massnahmen senken wir die Kosten pro Conversion, ohne das Ad-Budget zu erhöhen. Eine Verbesserung der Conversion Rate von 1% auf 2% halbiert deinen effektiven CAC.'
+          title: 'Weg zum Kauf & Shop-Optimierung',
+          desc: 'Klicks allein bringen keinen Umsatz. Wir analysieren Landingpages, Produktseiten und Checkout und finden heraus, wo Interessenten abspringen. Gezielte Verbesserungen senken die Kosten pro Kauf, ohne dass Sie mehr Werbebudget brauchen. Rechenbeispiel: Steigt die Kaufquote von 1 auf 2 Prozent, halbieren sich bei gleichem Budget die Werbekosten pro Kauf.'
         },
         {
-          title: 'Organic & SEO-System',
-          desc: 'Paid bringt Volumen. Organic bringt Marge. Wir entwickeln eine SEO-Strategie, die auf echte Kaufabsicht ausgerichtet ist: nicht generische Blog-Posts, sondern Content, der Menschen abholt, die nach deinem Produkt oder deiner Kategorie suchen. Mittelfristig senkst du damit deinen Gesamt-CAC strukturell.'
+          title: 'SEO und eigene Kanäle',
+          desc: 'Bezahlte Werbung bringt Reichweite, eigene Kanäle schonen die Marge. Wir entwickeln eine SEO-Strategie mit Fokus auf Kaufabsicht: Inhalte für Menschen, die nach Ihrem Produkt oder Ihrer Kategorie suchen. Mittelfristig senkt das Ihre durchschnittlichen Kosten pro Neukunde.'
         },
         {
-          title: 'E-Mail & Retention-Mechanik',
-          desc: 'Der günstigste Neukunde ist der, den du bereits hast. Wir bauen Flows, die aus Erstkäufern Wiederkäufer machen: Welcome Series, Post-Purchase-Sequenzen, Win-back-Kampagnen. Wiederkaufrate ist nicht Zufall – sie ist Ergebnis von Infrastruktur. Jeder Prozentpunkt mehr Wiederkaufrate erhöht deinen LTV und senkt deinen relativen CAC.'
+          title: 'E-Mail & Wiederkäufe',
+          desc: 'Der günstigste Kunde ist einer, den Sie schon haben. Wir bauen E-Mail-Abläufe, die aus Erstkäufern Wiederkäufer machen: Begrüssung, E-Mails nach dem Kauf, Rückgewinnung. Jeder zusätzliche Wiederkauf erhöht den Kundenwert und senkt die Kosten pro Kunde.'
         },
         {
-          title: 'Kanal-Diversifikation & Test-Roadmap',
-          desc: 'Kein Brand sollte 80% seines Acquisition-Budgets in einen einzigen Kanal investieren. Wir entwickeln eine priorisierte Test-Roadmap für Zusatzkanäle: Google Shopping, Pinterest, TikTok Ads, Influencer mit Performance-Komponente, SEA – je nach Produkt, Kategorie und Zielgruppe.'
+          title: 'Weitere Kanäle & Testplan',
+          desc: 'Einen Grossteil des Budgets in einen einzigen Kanal zu stecken, ist riskant. Wir erstellen einen Testplan für weitere Kanäle: Google Shopping, Pinterest, TikTok Ads, Influencer mit erfolgsabhängiger Vergütung oder Suchanzeigen, je nach Produkt und Zielgruppe.'
         }
       ]
     },
     approach: {
-      title: 'VORGEHEN IN 4 PHASEN',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 01 – Diagnose & Datengrundlage',
-          desc: 'Bevor wir einen Franken Budget bewegen, verstehen wir, was bereits vorhanden ist. Wir analysieren deine bestehenden Kampagnen, dein Tracking-Setup, deinen Funnel und deine Kundendaten. Dabei geht es nicht um Aktivismus, sondern um Klarheit: Was ist dein echter CAC nach Kanal? Was ist deine Wiederkaufrate? Wo verlierst du Kunden im Funnel?'
+          title: 'Analyse & Datengrundlage',
+          desc: 'Bevor wir Budget verschieben, verstehen wir, was bereits da ist. Wir analysieren Kampagnen, Tracking, Shop und Kundendaten. Was kostet ein Neukunde je Kanal wirklich? Wie hoch ist Ihre Wiederkaufrate? Wo springen Interessenten ab?'
         },
         {
-          title: 'Phase 02 – Fundament legen',
-          desc: 'Tracking-Infrastruktur, saubere Kampagnenstruktur, erste CRO-Massnahmen, E-Mail-Flows aufsetzen oder reparieren. Diese Phase fühlt sich manchmal weniger spektakulär an als "einfach mehr Ads schalten" – aber sie ist die Voraussetzung dafür, dass Skalierung später tatsächlich funktioniert.'
+          title: 'Grundlagen schaffen',
+          desc: 'Tracking, saubere Kampagnenstruktur, erste Shop-Optimierungen, E-Mail-Abläufe einrichten oder reparieren. Diese Phase ist weniger spektakulär als «einfach mehr Werbung», aber die Voraussetzung dafür, dass späteres Wachstum funktioniert.'
         },
         {
-          title: 'Phase 03 – Testen & Validieren',
-          desc: 'Systematisches Creative-Testing, Kanal-Tests, Funnel-Varianten. Kein Bauchgefühl, sondern strukturierte Experimente mit definierten Metriken und Entscheidungsregeln. Wir testen günstig, lernen schnell, und skalieren nur, was den vordefinierten Schwellenwert überschreitet.'
+          title: 'Testen & prüfen',
+          desc: 'Anzeigen, Kanäle und Varianten im Shop werden systematisch getestet, mit festgelegten Kennzahlen und klaren Regeln, ab wann etwas als bewährt gilt. Wir testen mit kleinem Budget und bauen nur aus, was diese Schwelle erreicht.'
         },
         {
-          title: 'Phase 04 – Skalieren & Optimieren',
-          desc: 'Was validiert ist, wird skaliert. Was nicht funktioniert, wird abgeschaltet. Monatliches Reporting mit klaren KPIs, regelmässige Strategiemeetings, und ein System, das sich selbst verbessert: Jede neue Kohorte liefert Daten, die die nächste Entscheidung besser machen.'
+          title: 'Ausbauen & optimieren',
+          desc: 'Was sich bewährt, wird ausgebaut, was nicht funktioniert, wird abgeschaltet. Monatlicher Bericht mit klaren Kennzahlen, regelmässige Besprechungen, und jeder neue Kaufmonat liefert Daten für die nächste Entscheidung.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'PRAXIS-CASE STUDY',
+        title: 'Typische Ausgangslage',
         type: 'text',
-        text: 'Für ein Schweizer E-Commerce Brand (Consumer Goods) gelang uns über eine Neuausrichtung der Kampagnenarchitektur und Funnel-Checkout-Optimierung ein Sprung der Conversion-Rate von 0.9% auf 2.2% und ein um 61% gesteigerter ROAS. Durch den parallelen Aufbau automatisierter CRM-E-Mail-Flows sank der CAC nach 90 Tagen um 34% bei gleichzeitig 28% gesteigerter Wiederkaufrate.'
+        text: 'Typische Ausgangslage: Eine Schweizer Online-Marke steckt fast das ganze Werbebudget in Meta, die Kampagnen sind über die Jahre gewachsen und unübersichtlich, und niemand weiss genau, was ein Neukunde kostet. Erste Schritte sind dann meist, das Tracking zu reparieren, die Kampagnen neu zu ordnen, den Checkout zu vereinfachen und E-Mail-Abläufe für Wiederkäufe aufzubauen. Erst danach lohnt es sich, das Budget zu erhöhen oder neue Kanäle zu testen.'
       }
     ],
     faq: [
       {
-        q: 'Wir machen bereits Meta-Ads. Was macht ihr anders?',
-        a: 'Wir bringen Struktur ins Setup, implementieren ein kanalübergreifendes Tracking, das Meta nicht selbst kontrolliert, und bauen ein Creative-Testing-System, das kontinuierlich neue Gewinner produziert. Das Ziel ist nicht, mehr Budget in Meta zu stecken, sondern aus jedem eingesetzten Franken mehr herauszuholen.'
+        q: 'Wir schalten bereits Meta-Anzeigen. Was machen Sie anders?',
+        a: 'Wir bringen Struktur in die Kampagnen, richten eine Messung ein, die nicht allein auf den Zahlen von Meta beruht, und bauen einen festen Ablauf für das Testen neuer Anzeigen auf. Ziel ist nicht mehr Budget in Meta, sondern mehr Ergebnis pro eingesetztem Franken.'
       },
       {
-        q: 'Wie lange dauert es, bis wir Resultate sehen?',
-        a: 'Erste Verbesserungen auf Conversion-Rate-Ebene sind oft innerhalb von 4–6 Wochen sichtbar, wenn strukturelle Probleme im Funnel behoben werden. Paid-Optimierungen brauchen typischerweise 6–10 Wochen bis zur Stabilisierung. Organische Kanäle wie SEO entfalten nachhaltige Wirkung über 6–12 Monate.'
+        q: 'Wie lange dauert es, bis wir Ergebnisse sehen?',
+        a: 'Verbesserungen im Shop zeigen oft nach vier bis acht Wochen eine Wirkung, wenn klare Schwachstellen behoben werden. Neu aufgebaute Kampagnen brauchen meist sechs bis zehn Wochen, bis die Ergebnisse stabil sind. SEO und eigene Kanäle wirken über sechs bis zwölf Monate.'
       },
       {
-        q: 'Wir haben ein kleines Team und wenig Zeit. Passt das überhaupt zu uns?',
-        a: 'Ja, wir übernehmen die operative Ausführung, das Monitoring und die Optimierungszyklen komplett. Du erhältst regelmässige Reportings und klare Entscheidungsvorlagen.'
+        q: 'Wir haben ein kleines Team und wenig Zeit. Passt das zu uns?',
+        a: 'Ja. Wir übernehmen Umsetzung, Überwachung und Optimierung. Sie erhalten regelmässige Berichte und klare Entscheidungsgrundlagen. Von Ihrer Seite braucht es vor allem Zugänge, Produktwissen und kurze Freigaben.'
       }
     ],
     cta: {
-      headline: 'Dein nächstes Wachstumskapitel beginnt mit den richtigen Zahlen.',
-      subheadline: 'Die meisten Brands, die zu uns kommen, haben nie sauber gemessen, was ein Neukunde wirklich kostet – und was er wirklich wert ist. Das ändern wir im ersten Gespräch. Kein Pitch, kein Deck.',
-      buttonText: 'Kostenloses Erstgespräch buchen'
+      headline: 'Der nächste Wachstumsschritt beginnt mit den richtigen Zahlen.',
+      subheadline: 'Viele Online-Marken wissen nicht genau, was ein Neukunde kostet und was er einbringt. Im Erstgespräch schauen wir uns das gemeinsam an.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'customer-retention',
     hero: {
-      headline: 'Dein teuerster Fehler: Kunden einmal kaufen lassen.',
-      subheadline: 'Ein Neukunde kostet 5 bis 7 Mal mehr als ein Bestandskunde. Trotzdem haben die meisten Unternehmen kein System, das Bestandskunden aktiviert, reaktiviert oder systematisch entwickelt. Wir bauen diese Infrastruktur — für E-Commerce-Shops, SaaS-Anbieter und B2B-Dienstleister.',
-      ctaText: 'Retention-Potenzial berechnen'
+      headline: 'Machen Sie aus Erstkäufern Stammkunden.',
+      subheadline: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Trotzdem fehlt vielen Unternehmen ein System, das Bestandskunden gezielt anspricht und inaktive Kunden zurückholt. Wir bauen es auf, für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
+      ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
-      title: 'Wachstum durch Neukundengewinnung ist das teuerste Modell, das es gibt.',
+      title: 'Wachstum nur über Neukunden ist teuer',
       paragraphs: [
-        'Die meisten Unternehmen kennen ihre Cost per Acquisition auf den Franken genau. Aber sie haben keine Ahnung, was ein Bestandskunde über zwei, drei oder fünf Jahre tatsächlich wert ist — weil sie ihn nie systematisch entwickelt haben. Der Lifetime Value ist eine Theorie, keine Messgrösse.',
-        'Im E-Commerce bedeutet das: Ein Kunde kauft einmal, verschwindet, und das nächste Mal kostet es erneut CHF 40 bis 120, ihn über Paid Media zurückzuholen — wenn er überhaupt zurückkommt. Die Wiederkaufrate liegt bei vielen Shops unter 25%. Das ist kein Akzeptanzproblem, kein Produkt-Problem. Es ist ein Retention-Problem: keine Post-Purchase-Kommunikation, kein Anlass für den zweiten Kauf, kein System, das den Kunden im richtigen Moment zur richtigen Botschaft führt.',
-        'Im B2B ist das Muster dasselbe, nur teurer: Ein Kunde wird gewonnen, wird onboarded, und dann passiert — nichts. Kein strukturiertes Upsell. Kein Review-Gespräch. Kein Loyalty-Programm. Kein Warnsignal, bevor er abwandert. Churn wird erst sichtbar, wenn die Rechnung ausbleibt. Win-Back ist aufwendiger und teurer als Retention es je wäre.'
+        'Viele Unternehmen kennen ihre Kosten pro Neukunde genau. Was ein Kunde über zwei, drei oder fünf Jahre wert ist, wissen sie nicht, weil sie ihn nie gezielt weiterentwickelt haben. Der Kundenwert bleibt eine Schätzung.',
+        'Im E-Commerce heisst das: Ein Kunde kauft einmal, verschwindet, und ihn über Werbung zurückzuholen kostet erneut Geld, wenn er überhaupt zurückkommt. Oft fehlt einfach die Kommunikation nach dem Kauf: kein Anlass für den zweiten Kauf, keine Nachricht im richtigen Moment.',
+        'Im B2B ist das Muster ähnlich, nur teurer: Ein Kunde wird gewonnen, eingeführt, und danach passiert wenig. Kein strukturiertes Zusatzangebot, kein regelmässiges Gespräch, kein Warnsignal vor der Kündigung. Abwanderung fällt erst auf, wenn die Rechnung ausbleibt. Einen verlorenen Kunden zurückzugewinnen ist aufwendiger, als ihn zu halten.'
       ]
     },
     leistet: {
-      title: 'WAS WIR FÜR DICH BAUEN',
+      title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Post-Purchase & Onboarding Flows',
-          desc: 'Der Moment nach dem Kauf ist der wichtigste im gesamten Lifecycle — und wird am häufigsten verschwendet. Wir bauen E-Mail- und SMS-Sequenzen, die nach dem Erstkauf aktivieren: Nutzungsanleitungen, Cross-Sells, Review-Anfragen und Onboarding.'
+          title: 'E-Mails nach dem Kauf & Einführung',
+          desc: 'Die Zeit direkt nach dem Kauf ist entscheidend und wird oft verschenkt. Wir bauen E-Mail- und SMS-Abläufe für die Zeit nach dem ersten Kauf: Anleitungen, passende Ergänzungsprodukte, Bitte um Bewertung, Einführung.'
         },
         {
-          title: 'Win-Back-Kampagnen & Churn-Prävention',
-          desc: 'Abgewanderte Kunden sind kein verlorenes Spiel. Wir bauen Win-Back-Sequenzen, die inaktive Kunden reaktivieren. Für B2B ergänzen wir dies um Frühwarn-Systeme: verhaltensbasierte Signale, die Churn-Risiko anzeigen, bevor der Kunde kündigt.'
+          title: 'Rückgewinnung & Kündigungen vorbeugen',
+          desc: 'Inaktive Kunden sind nicht verloren. Wir bauen E-Mail-Strecken, die sie gezielt wieder ansprechen. Im B2B ergänzen wir Frühwarnzeichen: Verhaltenssignale, die auf ein Kündigungsrisiko hinweisen, bevor der Kunde kündigt.'
         },
         {
-          title: 'Loyalty- & Repeat-Purchase-Systeme',
-          desc: 'Loyalität entsteht durch systematische Erlebnisse. Wir konzipieren Loyalty-Programme, die zu deinem Geschäftsmodell passen: punkte- oder stufenbasiert für E-Commerce, Referral-Mechaniken für B2B oder VIP-Segmente für beste Sonderkonditionen.'
+          title: 'Treue- und Wiederkaufprogramme',
+          desc: 'Treue entsteht durch gute Erfahrungen. Wir entwickeln Programme, die zu Ihrem Geschäftsmodell passen: Punkte oder Stufen im E-Commerce, Empfehlungsprogramme im B2B oder besondere Konditionen für Ihre besten Kunden.'
         },
         {
-          title: 'Upsell- & Cross-Sell-Automatisierung',
-          desc: 'Der einfachste Weg, den Kundenwert zu steigern, ist nicht ein Neukunde — es ist das richtige Angebot an den richtigen Bestandskunden zur richtigen Zeit. Wir bauen Upsell-Trigger auf Basis von Kaufhistorie, Nutzungsverhalten und Segmenten.'
+          title: 'Zusatzangebote automatisieren',
+          desc: 'Der einfachste Weg zu mehr Umsatz ist oft das passende Angebot an einen bestehenden Kunden zur richtigen Zeit. Wir richten Auslöser ein, die auf Kaufhistorie, Nutzung und Kundengruppe beruhen.'
         },
         {
-          title: 'LTV-Messung & Retention-Analytics',
-          desc: 'Wir bauen das Analytics-Fundament, das Retention sichtbar macht: Cohort-Analyse nach Kaufdatum, LTV-Berechnung nach Segment, Churn-Rate-Tracking und Wiederkaufrate. Zum ersten Mal siehst du, welche Kunden wirklich profitabel sind.'
+          title: 'Kundenwert & Wiederkäufe messen',
+          desc: 'Wir bauen die Auswertung, die Kundenbindung sichtbar macht: Analyse nach Kaufmonat, Kundenwert je Gruppe, Abwanderung und Wiederkaufrate. So sehen Sie, welche Kunden wirklich rentabel sind.'
         },
         {
-          title: 'E-Mail & CRM-Infrastruktur',
-          desc: 'Retention ist nur so gut wie die technische Basis, auf der sie läuft. Wir auditieren und verbessern eure E-Mail-Infrastruktur: Deliverability, Listsegmentierung, Automatisierungsarchitektur, CRM-Integration und Datenhygiene.'
+          title: 'E-Mail- und CRM-Grundlagen',
+          desc: 'Kundenbindung ist nur so gut wie die Technik dahinter. Wir prüfen und verbessern Ihre E-Mail-Infrastruktur: Zustellbarkeit, Segmente, Aufbau der Automatisierungen, CRM-Anbindung und Datenpflege.'
         }
       ]
     },
     approach: {
-      title: 'WIE WIR VORGEHEN (4 PHASEN)',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 01 — Retention-Audit & LTV-Analyse',
-          desc: 'Vollständige Analyse deiner Kundenbasis nach Kauffrequenz, LTV, Churn-Rate und Wiederkaufverhalten. Audit der bestehenden E-Mail-Kommunikation und Automationen.'
+          title: 'Analyse der Kundenbasis',
+          desc: 'Auswertung Ihrer Kunden nach Kaufhäufigkeit, Kundenwert, Abwanderung und Wiederkaufverhalten. Prüfung der bestehenden E-Mails und Automatisierungen.'
         },
         {
-          title: 'Phase 02 — Infrastruktur & Basis-Flows',
-          desc: 'Aufbau der Retention-Infrastruktur: CRM- und E-Mail-System konfigurieren, Segmentierungslogik implementieren, Analytics-Dashboard einrichten. Kern-Flows wie Welcome- und Post-Purchase-Szenarien aktivieren.'
+          title: 'Grundlagen & erste Abläufe',
+          desc: 'CRM und E-Mail-System einrichten, Kundengruppen festlegen, Dashboard aufsetzen. Die ersten Abläufe für Begrüssung und die Zeit nach dem Kauf gehen live.'
         },
         {
-          title: 'Phase 03 — Optimierung & Lifecycle-Ausbau',
-          desc: 'Monatliche Iteration der bestehenden Flows auf Basis von Öffnungsraten, Klickraten und Conversion-Daten. Aufbau des Loyalty-Systems und der Upsell-Automatisierungen.'
+          title: 'Optimierung & Ausbau',
+          desc: 'Monatliche Überarbeitung der Abläufe anhand von Öffnungen, Klicks und Käufen. Aufbau von Treueprogramm und Zusatzangeboten.'
         },
         {
-          title: 'Phase 04 — LTV-Skalierung & Kanalintegration',
-          desc: 'Wenn die Basis steht: Ausweitung auf weitere Kanäle und Touchpoints (z. B. WhatsApp oder SMS). Paid Retargeting auf Basis der LTV-Segmente. Quarterly-Reviews mit konkreten Retention-KPIs.'
+          title: 'Weitere Kanäle',
+          desc: 'Wenn die Grundlage steht: Ausbau auf weitere Kanäle wie WhatsApp oder SMS, Retargeting für bestimmte Kundengruppen, Quartalsbesprechung mit klaren Kennzahlen.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'E-COMMERCE RETENTION ERFOLG',
+        title: 'Typische Ausgangslage',
         type: 'text',
-        text: 'Für ein Schweizer Handelsunternehmen im Haushalts-Bereich bauten wir auf Basis einer LTV-Cohort-Analyse eine Post-Purchase-Sequenz, eine 60/90/180-Tage-Win-Back-Kampagne und einen VIP-Zuteilungsfluss auf. Die Wiederkaufrate stieg von 9% auf 38%, was zu CHF 34\'000 monatlichem Mehrumsatz führte bei einer LTV-Erhöhung um das 2.8-fache.'
+        text: 'Typische Ausgangslage: Ein Schweizer Online-Shop hat eine solide Kundenbasis, verschickt aber ausser der Bestellbestätigung kaum E-Mails. Wiederkäufe passieren zufällig, und niemand weiss genau, wie viele Kunden ein zweites Mal bestellen. Wir beginnen dann mit einer Auswertung der Kundenbasis nach Kaufmonat, bauen E-Mails für die Zeit nach dem Kauf und eine Rückgewinnungsstrecke für inaktive Kunden auf und messen von Anfang an, wie sich die Wiederkaufrate entwickelt.'
       }
     ],
     faq: [
       {
-        q: 'Für wen ist Retention Marketing relevant — ab welcher Kundenzahl lohnt es sich?',
-        a: 'Im E-Commerce empfehlen wir den Aufbau ab einer aktiven Kundenbasis von 500 bis 1\'000 Käufern. Im B2B ist die Schwelle niedriger: Bereits ab 30 bis 50 aktiven Kunden macht eine strukturierte Lifecycle-Kommunikation einen messbaren Unterschied, weil der Einzelwert pro Kunde hoch ist.'
+        q: 'Ab welcher Kundenzahl lohnt sich das?',
+        a: 'Als grobe Orientierung: Im E-Commerce lohnt sich der Aufbau meist ab einigen hundert aktiven Käufern. Im B2B kann es schon mit wenigen Dutzend Kunden sinnvoll sein, weil jeder einzelne Kunde mehr wert ist. Wir prüfen das im Erstgespräch für Ihren Fall.'
       },
       {
-        q: 'Arbeitet ihr mit unserem bestehenden E-Mail-Tool, oder müssen wir wechseln?',
-        a: 'Wir arbeiten mit dem, was ihr habt. Die meisten Probleme entstehen nicht durch das falsche Tool, sondern durch fehlende Struktur und Segmentierung. Wir arbeiten produktiv mit Klaviyo, HubSpot, ActiveCampaign, Mailchimp und vergleichbaren Systemen.'
+        q: 'Arbeiten Sie mit unserem bestehenden E-Mail-Tool oder müssen wir wechseln?',
+        a: 'Wir arbeiten mit dem, was Sie haben. Die meisten Probleme liegen nicht am Tool, sondern an fehlender Struktur und Segmentierung. Wir arbeiten unter anderem mit Klaviyo, HubSpot, ActiveCampaign und Mailchimp.'
       },
       {
-        q: 'Was ist realistisch — welche Zahlen können wir erwarten?',
-        a: 'Bei Unternehmen ohne jegliche Retention-Infrastruktur sind Steigerungen der Wiederkaufrate von 10 bis 25 Prozentpunkten in den ersten sechs Monaten realistisch und dokumentiert — sofern Produktqualität und Grundzufriedenheit stimmen.'
+        q: 'Was ist realistisch, und wie schnell?',
+        a: 'Die ersten Abläufe sind meist innert vier bis sechs Wochen live. Ob sie wirken, zeigt sich über mehrere Monate, weil Kunden erst einen Kaufzyklus durchlaufen müssen. Wie stark sich die Wiederkaufrate verbessert, hängt von Produkt, Kauffrequenz und Kundenzufriedenheit ab. Konkrete Prozentversprechen machen wir deshalb nicht.'
       }
     ],
     cta: {
-      headline: 'Deine Bestandskunden sind dein grösster ungenutzter Hebel.',
-      subheadline: 'In 30 Minuten berechnen wir gemeinsam, wie viel Umsatz in deiner bestehenden Kundenbasis liegt — und was es braucht, ihn zu aktivieren.',
-      buttonText: 'Retention-Potenzial besprechen'
+      headline: 'Ihre Bestandskunden sind ein oft unterschätzter Hebel.',
+      subheadline: 'In 30 Minuten schauen wir gemeinsam, wie viel Potenzial in Ihrer bestehenden Kundenbasis steckt und was es braucht, es zu nutzen.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'paid-social-ecommerce',
     hero: {
-      headline: 'Dein ROAS sieht gut aus. Deine Marge nicht.',
-      subheadline: 'Die meisten E-Commerce-Shops optimieren ihre Meta- und TikTok-Kampagnen auf ROAS. Das Problem: ROAS berücksichtigt weder Produktmarge noch Versandkosten noch Rücksendungen. Wir optimieren auf echten Deckungsbeitrag — damit Paid Social nicht nur Traffic bringt, sondern Profit.',
-      ctaText: 'Kostenlosen Ads-Audit buchen'
+      headline: 'Ihr ROAS sieht gut aus. Aber verdienen Sie auch daran?',
+      subheadline: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen stecken darin nicht. Wir steuern nach Deckungsbeitrag, damit Ihre Werbung Gewinn bringt und nicht nur Umsatz.',
+      ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
-      title: 'Ein ROAS von 4x kann dich trotzdem Geld kosten.',
+      title: 'Ein guter ROAS heisst noch nicht, dass Sie Geld verdienen',
       paragraphs: [
-        'Stell dir vor: Du gibst CHF 10\'000 pro Monat für Meta Ads aus. Dein gemeldeter ROAS liegt bei 4x. Der Algorithmus gratuliert dir, deine Agentur schickt eine PowerPoint mit steigenden Balken — und trotzdem schaut am Monatsende weniger heraus als erwartet. Das ist kein Zufall. Das ist ein Messproblem.',
-        'ROAS misst Umsatz pro ausgegebenem Franken. Was ROAS nicht misst: wie hoch deine Produktmarge ist, was Versand und Rücksendungen kosten, was der Algorithmus bevorzugt — nämlich günstige Produkte mit hohem Durchklickverhalten, nicht deine margenstarken Artikel. Bei einer Produktmarge von 30% brauchst du allein schon einen ROAS von 3.3x, um den Ad-Spend zu decken — ohne Versand, ohne Retourenquote, ohne Fulfillment. Bei 20% Marge liegt der Break-Even bei 5x. Die meisten Shops wissen das nicht.',
-        'Dazu kommt das Skalierungsproblem: Was bei CHF 2\'000 Spend funktioniert, kollabiert bei CHF 10\'000, weil Meta in der Skalierung teurere Zielgruppen anspricht und der CPA steigt — aber nicht gleichmässig. Wer das nicht antizipiert, skaliert sich in die Unrentabilität. Und wer auf TikTok setzt ohne ein klares Creative-System, verbrennt Budget für Views, die nie konvertieren.'
+        'Ein Rechenbeispiel: Angenommen, Sie geben CHF 10\'000 pro Monat für Meta Ads aus und der gemeldete ROAS liegt bei 4. Die Berichte sehen gut aus, und trotzdem bleibt am Monatsende weniger übrig als erwartet. Das liegt meist nicht am Zufall, sondern daran, was gemessen wird.',
+        'ROAS misst Umsatz pro Werbefranken. Er zeigt nicht, wie hoch Ihre Produktmarge ist, was Versand und Rücksendungen kosten, und dass der Algorithmus oft günstige Produkte mit vielen Klicks bevorzugt statt Ihrer margenstarken Artikel. Rechenbeispiel: Bei 30 Prozent Marge brauchen Sie einen ROAS von rund 3.3, nur um die Werbekosten zu decken, ohne Versand und Retouren. Bei 20 Prozent Marge liegt diese Schwelle bei 5.',
+        'Dazu kommt: Was mit kleinem Budget funktioniert, muss mit grösserem Budget nicht genauso funktionieren. Meta zeigt die Anzeigen dann auch weniger passenden Zielgruppen, und die Kosten pro Kauf steigen. Wer das nicht einplant, baut Kampagnen aus, die sich nicht mehr rechnen. Und auf TikTok kostet Werbung ohne klares Konzept für die Anzeigen viel Geld für Aufrufe ohne Käufe.'
       ]
     },
     leistet: {
-      title: 'WAS WIR FÜR DICH BAUEN',
+      title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Marge-zentrierte Kampagnenstruktur',
-          desc: 'Bevor wir eine Kampagne aufsetzen, analysieren wir deine Produktmargen. Hochmargen-Produkte werden bevorzugt beworben, Kampagnen nach Margensegmenten getrennt, Budget nach Deckungsbeitragspotenzial alloziert.'
+          title: 'Kampagnen nach Marge',
+          desc: 'Bevor wir eine Kampagne aufsetzen, schauen wir uns Ihre Produktmargen an. Margenstarke Produkte werden bevorzugt beworben, Kampagnen nach Margengruppen getrennt und das Budget nach möglichem Deckungsbeitrag verteilt.'
         },
         {
-          title: 'Meta Ads Aufbau & Management',
-          desc: 'Vollständiger Kampagnen-Aufbau auf Meta (Facebook & Instagram): Prospecting, Retargeting und Retention getrennt strukturiert. Kampagnenziele nach Funnel-Position gewählt. Creative-Tests systematisch geplant.'
+          title: 'Meta Ads: Aufbau & Betreuung',
+          desc: 'Kampagnenaufbau auf Facebook und Instagram, getrennt nach Neukunden, Retargeting und Bestandskunden. Kampagnenziele je nach Phase gewählt, Anzeigentests geplant.'
         },
         {
-          title: 'TikTok Ads & Creative-Strategie',
-          desc: 'TikTok funktioniert nur mit dem richtigen Creative — nativer, authentischer Content, der nicht wie Werbung aussieht. Wir entwickeln Creative-Briefings, die für TikTok nativ sind, testen Hooks und Formate.'
+          title: 'TikTok Ads & Anzeigenkonzept',
+          desc: 'TikTok funktioniert nur mit passenden Anzeigen: natürlich wirkende Inhalte, die nicht nach Werbung aussehen. Wir erstellen Briefings für TikTok-gerechte Anzeigen und testen Einstiege und Formate.'
         },
         {
-          title: 'Tracking & Attribution',
-          desc: 'Server-Side-Tracking über Meta Conversions API und TikTok Events API. Ziel: maximale Datenpräzision auch nach iOS-Tracking-Einschränkungen. Wir konfigurieren deine Datenströme optimal.'
+          title: 'Tracking & Zuordnung',
+          desc: 'Serverseitiges Tracking über die Meta Conversions API und die TikTok Events API, damit auch nach den Tracking-Einschränkungen von Apple möglichst vollständige Daten ankommen.'
         },
         {
-          title: 'Creative Testing System',
-          desc: 'Nicht jedes Creative funktioniert — und kein Creative funktioniert für immer. Wir bauen ein strukturiertes Testing-System: Klare Hypothesen, saubere Test-Setups, regelmässige Iterationen.'
+          title: 'Anzeigen systematisch testen',
+          desc: 'Nicht jede Anzeige funktioniert, und keine funktioniert für immer. Wir bauen einen festen Testablauf: klare Annahmen, saubere Tests, regelmässig neue Varianten.'
         },
         {
-          title: 'Monatliche Profitabilitätsanalyse',
-          desc: 'Kein ROAS-Only-Reporting. Jeder Monat wird ausgewertet nach: Deckungsbeitrag pro Kampagne, echtem Profit nach Marge und Versandkosten, Break-Even-ROAS vs. erreichtem ROAS.'
+          title: 'Monatliche Gewinnauswertung',
+          desc: 'Kein Bericht, der nur den ROAS zeigt. Jeden Monat werten wir aus: Deckungsbeitrag pro Kampagne, Gewinn nach Marge und Versandkosten, kostendeckender ROAS im Vergleich zum erreichten.'
         }
       ]
     },
     approach: {
-      title: 'WIE WIR VORGEHEN (4 PHASEN)',
+      title: 'So gehen wir vor',
       items: [
         {
-          title: 'Phase 01 — Audit & Profitabilitätsanalyse',
-          desc: 'Wir prüfen bestehende Kampagnen auf Marge und echte Profitabilität. Tracking-Audit und Produktmargen-Analyse, um sofortige Potenziale aufzudecken.'
+          title: 'Prüfung & Margenanalyse',
+          desc: 'Wir prüfen bestehende Kampagnen auf Marge und tatsächlichen Gewinn, ausserdem Tracking und Produktmargen, um rasch umsetzbare Verbesserungen zu finden.'
         },
         {
-          title: 'Phase 02 — Struktur & Tracking-Fundament',
-          desc: 'Neuaufbau oder Umbau der Kampagnenstruktur nach Marge und Funnel-Position. Server-Side-Tracking via Meta Conversions API und TikTok Events API implementieren oder reparieren.'
+          title: 'Struktur & Tracking',
+          desc: 'Kampagnen werden nach Marge und Phase neu aufgebaut oder umgebaut. Serverseitiges Tracking über die Meta Conversions API und die TikTok Events API wird eingerichtet oder repariert.'
         },
         {
-          title: 'Phase 03 — Launch & erste Iteration',
-          desc: 'Kampagnen live schalten mit Initial-Budget. Erste Creative-Tests aufsetzen. Wöchentliche Analyse und Budget-Allokation nach Deckungsbeitrags-Mittelwert.'
+          title: 'Start & erste Tests',
+          desc: 'Kampagnen gehen mit einem Startbudget live, erste Anzeigentests laufen. Wöchentliche Auswertung und Verteilung des Budgets nach Deckungsbeitrag.'
         },
         {
-          title: 'Phase 04 — Skalierung & Optimierung',
-          desc: 'Wenn Kampagnen profitabel laufen und das Tracking zuverlässig ist: kontrollierte Skalierung. Neue Creatives auf Basis gewonnener Erkenntnisse kontinuierlich einspielen.'
+          title: 'Ausbau & Optimierung',
+          desc: 'Wenn die Kampagnen rentabel laufen und das Tracking verlässlich ist, erhöhen wir das Budget kontrolliert und bringen laufend neue Anzeigen auf Basis der Erkenntnisse.'
         }
       ]
     },
     extraSections: [
       {
-        title: 'ECHTES ERGEBNIS-PROFITBEISPIEL',
+        title: 'Typische Ausgangslage',
         type: 'text',
-        text: 'Ein Schweizer Handelsunternehmen bewarb bevorzugt Produkte mit hoher Klickrate aber niedriger Marge. Nach Umstrukturierung der Kampagnen auf Deckungsbeitrag (Fokus auf Artikel mit über 45% Marge) und CAPI Setup stieg der effektive Deckungsbeitrags-ROAS von unprofitabel auf 4.8x. Der monatliche Netto-Profit verbesserte sich um CHF 34\'000.'
+        text: 'Typische Ausgangslage: Ein Online-Shop bewirbt vor allem Produkte, die viele Klicks bringen, aber wenig Marge haben. Der ROAS im Werbekonto wirkt ordentlich, der Gewinn nach Warenkosten, Versand und Retouren ist es nicht. Wir rechnen dann zuerst für jede Produktgruppe aus, ab welchem ROAS sie kostendeckend ist, richten serverseitiges Tracking ein und bauen die Kampagnen so um, dass margenstarke Produkte mehr Budget erhalten.'
       }
     ],
     faq: [
       {
-        q: 'Was ist der Unterschied zwischen eurem Ansatz und dem einer klassischen Performance-Agentur?',
-        a: 'Klassische Performance-Agenturen optimieren auf ROAS, weil das einfach zu berichten ist. Wir berücksichtigen deine Produktmargen und optimieren auf echten Deckungsbeitrag in den Werbekampagnen.'
+        q: 'Was machen Sie anders als eine klassische Performance-Agentur?',
+        a: 'Viele Agenturen berichten vor allem über den ROAS, weil er einfach zu messen ist. Wir beziehen Ihre Produktmargen ein und steuern die Kampagnen nach Deckungsbeitrag.'
       },
       {
-        q: 'Müssen wir bestehende Kampagnen komplett neu aufbauen, oder können wir aufbauen?',
-        a: 'Das hängt vom Audit ab. Manchmal optimieren wir funktionierende Setups. Wenn die historische Ausrichtung jedoch falsche Signale aufweist, ist ein sauberer, strategischer Neuaufbau oft wirksamer.'
+        q: 'Müssen wir bestehende Kampagnen komplett neu aufbauen?',
+        a: 'Das zeigt die Prüfung. Oft lassen sich funktionierende Kampagnen verbessern. Wenn die bisherige Ausrichtung aber falsche Signale an den Algorithmus sendet, ist ein sauberer Neuaufbau meist wirksamer.'
       },
       {
-        q: 'Wie lange dauert es, bis Paid Social profitabel ist — und was kostet es?',
-        a: 'In den ersten 4-8 Wochen sammeln wir Daten, testen Creatives und optimieren Algorithmen (oft auf Break-Even-Niveau). Profitables Skalieren greift ab Woche 8-12. Wir empfehlen ab CHF 3\'000–5\'000 Spend pro Monat.'
+        q: 'Wie lange dauert es, bis Paid Social rentabel ist, und was kostet es?',
+        a: 'In den ersten vier bis acht Wochen sammeln wir Daten, testen Anzeigen und lassen die Algorithmen lernen. In dieser Zeit liegen die Kampagnen oft erst etwa bei der Gewinnschwelle. Ein rentabler Ausbau ist meist ab Woche acht bis zwölf realistisch. Als Richtwert empfehlen wir ein Werbebudget ab CHF 3\'000 bis 5\'000 pro Monat, damit genug Daten zusammenkommen. Das Betreuungshonorar offerieren wir separat nach dem Erstgespräch.'
       }
     ],
     cta: {
-      headline: 'Wie profitabel sind deine Ads wirklich?',
-      subheadline: 'Wir analysieren deine Kampagnen kostenlos auf echte Profitabilität — inklusive Deckungsbeitrag. 30 Minuten, keine Verkaufsshow.',
-      buttonText: 'Kostenlosen Ads-Audit buchen'
+      headline: 'Wie rentabel sind Ihre Anzeigen wirklich?',
+      subheadline: 'Im Erstgespräch schauen wir auf Ihre Kampagnen und rechnen gemeinsam aus, ab welchem ROAS sie sich lohnen. 30 Minuten, kostenlos.',
+      buttonText: 'Erstgespräch vereinbaren'
     }
   }
 ];

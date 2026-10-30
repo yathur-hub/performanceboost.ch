@@ -77,11 +77,11 @@ export default function DemandPipelineGap() {
         <div className="flex items-center gap-2.5">
           <Calculator className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
-            Pipeline-Gap-Rechner
+            Rechner: Wie viele Anfragen fehlen Ihnen?
           </h3>
         </div>
-        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
-          CH-BENCHMARKING
+        <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg border border-slate-200/40">
+          Schnellrechnung
         </span>
       </div>
 
@@ -97,10 +97,10 @@ export default function DemandPipelineGap() {
           {/* Field 1 */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-800 leading-snug block">
-              Wie viele Neukunden braucht ihr pro Monat?
+              Wie viele Neukunden brauchen Sie pro Monat?
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Wie viele Neukunden brauchen Sie pro Monat?"
                 type="number"
                 min="1"
                 max="1000"
@@ -109,7 +109,7 @@ export default function DemandPipelineGap() {
                 onChange={e => handleFieldChange('neukunden', e.target.value)}
                 className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono uppercase font-bold text-slate-400">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Neukunden / Mt.
               </span>
             </div>
@@ -119,34 +119,34 @@ export default function DemandPipelineGap() {
           <div className="space-y-1.5">
             <div className="flex justify-between items-center">
               <label className="text-xs font-bold text-slate-800 leading-snug">
-                Wie hoch ist eure Abschlussrate (Lead → Kunde)?
+                Wie hoch ist Ihre Abschlussquote (Lead → Kunde)?
               </label>
-              <HoverHelp text="Einheitliche CR von Sales-Akzeptierten Leads bis Unterschrift." />
+              <HoverHelp text="Anteil der vom Vertrieb angenommenen Leads, die am Ende unterschreiben." />
             </div>
-            <select
+            <select aria-label="Wie hoch ist Ihre Abschlussquote (Lead → Kunde)?"
               value={abschlussrate}
               onChange={e => handleFieldChange('abschlussrate', e.target.value)}
               className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-750 text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
-              <option value="0.01">1% (Sehr niedrig)</option>
-              <option value="0.02">2% (Niedrig)</option>
-              <option value="0.05">5% (Durchschnittlich)</option>
-              <option value="0.10">10% (Gut)</option>
-              <option value="0.20">20% (Sehr gut)</option>
+              <option value="0.01">1%</option>
+              <option value="0.02">2%</option>
+              <option value="0.05">5%</option>
+              <option value="0.10">10%</option>
+              <option value="0.20">20%</option>
             </select>
-            <p className="text-[10px] text-slate-400 leading-snug font-medium">
-              Wie viel % eurer Leads werden zu zahlenden Kunden?
+            <p className="text-[11px] text-slate-400 leading-snug font-medium">
+              Wie viel Prozent Ihrer Leads werden zu zahlenden Kunden?
             </p>
           </div>
 
           {/* Field 3 */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-800 leading-snug block">
-              Wie viele qualifizierte Leads bekommt euer Vertrieb heute pro Monat?
+              Wie viele qualifizierte Leads erhält Ihr Vertrieb heute pro Monat?
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Wie viele qualifizierte Leads erhält Ihr Vertrieb heute pro Monat?"
                 type="number"
                 min="0"
                 max="10000"
@@ -155,7 +155,7 @@ export default function DemandPipelineGap() {
                 onChange={e => handleFieldChange('aktuelleLeads', e.target.value)}
                 className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono uppercase font-bold text-slate-400">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Leads / Mt.
               </span>
             </div>
@@ -167,7 +167,7 @@ export default function DemandPipelineGap() {
               Durchschnittlicher Auftragswert (CHF)
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Durchschnittlicher Auftragswert (CHF)"
                 type="number"
                 min="100"
                 max="1000000"
@@ -176,7 +176,7 @@ export default function DemandPipelineGap() {
                 onChange={e => handleFieldChange('auftragswert', e.target.value)}
                 className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono uppercase font-bold text-slate-400">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 CHF
               </span>
             </div>
@@ -189,10 +189,10 @@ export default function DemandPipelineGap() {
           {!results ? (
             <div className="bg-[#f6f6f6]/55 border border-slate-200/50 rounded-2xl p-8 text-center h-full flex flex-col justify-center items-center min-h-[300px] shadow-xs">
               <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
-                Live-Analyse
+                Ihre Auswertung
               </h4>
               <p className="text-xs text-slate-450 leading-relaxed font-semibold max-w-xs text-slate-500">
-                Fülle alle 4 Pflichtfelder aus, um deinen Pipeline-Gap und das verfallene Umsatzpotenzial zu sehen.
+                Füllen Sie alle 4 Felder aus, um zu sehen, wie viele Anfragen Ihnen fehlen und wie viel Umsatz damit möglich wäre.
               </p>
             </div>
           ) : (
@@ -209,16 +209,16 @@ export default function DemandPipelineGap() {
                   <div className="bg-red-50 border border-red-200/50 rounded-xl p-4 flex gap-3 text-left">
                     <AlertTriangle className="w-4 h-4 text-[#E63946] shrink-0 mt-0.5" />
                     <div>
-                      <h5 className="text-xs font-bold text-[#E63946] font-display">Starke Limitierung diagnostiziert</h5>
-                      <p className="text-[10px] text-[#E63946] leading-normal font-semibold mt-1">
-                        ⚠ Grosser Gap — das braucht ein System, keine einzelne Kampagne. Ein Gap von {formatNumber(results.gap)} Leads schliesst man nicht mit einer einmaligen Massnahme. Wir bauen die Infrastruktur, die das dauerhaft löst.
+                      <h5 className="text-xs font-bold text-[#E63946] font-display">Grosse Lücke</h5>
+                      <p className="text-[11px] text-[#E63946] leading-normal font-semibold mt-1">
+                        ⚠ Eine Lücke von {formatNumber(results.gap)} Leads pro Monat lässt sich kaum mit einer einzelnen Kampagne schliessen. Dafür braucht es mehrere Kanäle, die laufend zusammenspielen.
                       </p>
                     </div>
                   </div>
                 ) : (
                   <div className="flex justify-between items-center pb-2 border-b border-slate-200/40">
-                    <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">
-                      BERECHNUNGSERGEBNISSE
+                    <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">
+                      Ergebnis
                     </span>
                     <span className="w-2 h-2 rounded-full" style={{ backgroundColor: results.istAufKurs ? '#2A9D8F' : '#E63946' }} />
                   </div>
@@ -226,8 +226,8 @@ export default function DemandPipelineGap() {
 
                 {/* Primary Metric Score */}
                 <div className="space-y-1">
-                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
-                    {results.istAufKurs ? "Hebelstatus" : "Diagnostizierter Fehlbetrag"}
+                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">
+                    {results.istAufKurs ? "Status" : "Lücke pro Monat"}
                   </span>
                   
                   {results.istAufKurs ? (
@@ -236,12 +236,12 @@ export default function DemandPipelineGap() {
                         ✓
                       </div>
                       <div className="text-2xl sm:text-3xl font-bold font-display" style={{ color: '#2A9D8F' }}>
-                        Pipeline steht solide.
+                        Ihre Anfragen reichen aus.
                       </div>
                     </div>
                   ) : (
                     <div className="text-3xl sm:text-4xl font-black font-display tracking-tight leading-none" style={{ color: '#E63946' }}>
-                      {formatNumber(results.gap)} Leads fehlen dir jeden Monat
+                      {formatNumber(results.gap)} Leads fehlen Ihnen pro Monat
                     </div>
                   )}
                 </div>
@@ -253,7 +253,7 @@ export default function DemandPipelineGap() {
                     <span className="font-bold text-slate-800 font-mono">{formatNumber(Number(neukunden))} Neukunden / Monat</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-slate-500 font-medium">Braucht:</span>
+                    <span className="text-slate-500 font-medium">Benötigt:</span>
                     <span className="font-bold text-slate-800 font-mono">{formatNumber(results.benoetigteLeads)} qualifizierte Leads</span>
                   </div>
                   <div className="flex justify-between text-xs pb-1">
@@ -271,14 +271,14 @@ export default function DemandPipelineGap() {
                 {/* Profit/Loss Potential representation */}
                 {!results.istAufKurs && (
                   <div className="bg-red-50/40 p-5 rounded-xl border border-red-100/20 text-left space-y-1.5">
-                    <p className="text-[9px] text-[#E63946] mb-0.5 font-bold uppercase tracking-widest font-mono">
-                      UNERFASSTES REVENUE-POTENZIAL
+                    <p className="text-[11px] text-[#E63946] mb-0.5 font-bold uppercase tracking-widest font-mono">
+                      Mögliches Umsatzpotenzial
                     </p>
                     <div className="text-xl sm:text-2xl font-bold font-display text-[#E63946] leading-none">
-                      {formatCHF(results.revenuePotenzial)} <span className="text-[10px] text-red-400 font-normal">/ Monat</span>
+                      {formatCHF(results.revenuePotenzial)} <span className="text-[11px] text-red-400 font-normal">/ Monat</span>
                     </div>
-                    <div className="text-[10px] text-slate-500 font-semibold font-mono">
-                      {formatCHF(results.jahresPotenzial)} pro Jahr ungenutzt
+                    <div className="text-[11px] text-slate-500 font-semibold font-mono">
+                      {formatCHF(results.jahresPotenzial)} pro Jahr (grobe Schätzung)
                     </div>
                   </div>
                 )}
@@ -287,11 +287,11 @@ export default function DemandPipelineGap() {
                 <div className="pt-2 text-xs text-slate-500 leading-relaxed font-semibold">
                   {results.istAufKurs ? (
                     <span>
-                      Mit {formatNumber(Number(aktuelleLeads))} Leads / Monat und einer Abschlussrate von {formatNumber(results.crLeadsSelected * 100)}% erreichst du dein Ziel von {neukunden} Neukunden. Das nächste Ziel: Qualität verbessern und Kosten pro Lead senken. Oder: Pipeline auf das nächste Wachstumsziel skalieren.
+                      Mit {formatNumber(Number(aktuelleLeads))} Leads pro Monat und einer Abschlussquote von {formatNumber(results.crLeadsSelected * 100)}% erreichen Sie Ihr Ziel von {neukunden} Neukunden. Als Nächstes lohnt es sich, die Qualität der Anfragen zu verbessern und die Kosten pro Lead zu senken, oder ein höheres Ziel anzupeilen.
                     </span>
                   ) : (
                     <span>
-                      Das ist kein Budget-Problem. Das ist ein System-Problem. Mehr Leads kommen nicht durch höhere Ad-Budgets alone — sondern durch ein koordiniertes Demand Generation System, das die richtigen Kanäle zur richtigen Zeit einsetzt.
+                      Mehr Werbebudget allein schliesst eine solche Lücke selten. Es braucht ein abgestimmtes Vorgehen, das Nachfrage über mehrere Kanäle aufbaut und Interessenten bis zur Anfrage begleitet.
                     </span>
                   )}
                 </div>
@@ -304,7 +304,7 @@ export default function DemandPipelineGap() {
                   onClick={handleBooking}
                   className="w-full bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-6 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-xs text-[#f6f6f6]"
                 >
-                  {results.istAufKurs ? "Skalierungsgespräch buchen — kostenlos, 30 Min" : "Pipeline-Gespräch buchen — kostenlos, 30 Min"} <ArrowRight className="w-4 h-4 text-white" />
+                  {results.istAufKurs ? "Nächste Schritte besprechen: kostenlos, 30 Min." : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
                 </button>
               </div>
 
@@ -317,8 +317,8 @@ export default function DemandPipelineGap() {
       {/* Accordion form logic below */}
       {isFormComplete && (
         <LeadCaptureForm
-          secondaryCTAText="Pipeline-Plan per E-Mail erhalten →"
-          danachText="Wir schicken dir eine personalisierte Einschätzung, wie ein Demand Generation System deinen Gap schliessen kann."
+          secondaryCTAText="Einschätzung per E-Mail erhalten →"
+          danachText="Wir senden Ihnen eine persönliche Einschätzung, wie Sie die fehlenden Anfragen gewinnen können."
           pageId="demand-generation"
         />
       )}
@@ -331,7 +331,7 @@ function HoverHelp({ text }: { text: string }) {
   return (
     <div className="group relative cursor-help inline-block text-slate-400 hover:text-slate-900 transition-colors">
       <Info className="w-3.5 h-3.5" />
-      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[10px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
         {text}
       </div>
     </div>

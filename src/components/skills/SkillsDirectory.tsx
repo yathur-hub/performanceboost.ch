@@ -16,7 +16,8 @@ export interface Skill {
   description: string;
   category: string;
   categoryLabel: string;
-  github: string;
+  /** Link zur Skill-Datei; leer lassen, solange die Datei im Repo fehlt. */
+  github?: string;
   difficulty: 'Einstieg' | 'Fortgeschritten' | 'Expert';
 }
 
@@ -24,8 +25,8 @@ const skills: Skill[] = [
   // STRATEGIE
   {
     id: 'growth-opportunity-assessment',
-    title: 'Growth Opportunity Assessment',
-    description: 'Wachstumschancen nach Marktpotenzial und Kapazität priorisieren.',
+    title: 'Wachstumschancen bewerten',
+    description: 'Wachstumschancen nach Marktpotenzial und eigener Kapazität priorisieren.',
     category: 'strategie',
     categoryLabel: 'Strategie',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/growth-opportunity-assessment.md',
@@ -33,8 +34,8 @@ const skills: Skill[] = [
   },
   {
     id: 'go-to-market-diagnostic',
-    title: 'Go-To-Market Diagnostic',
-    description: 'GTM-Strategie auf ICP, Channel und Messaging prüfen.',
+    title: 'Vermarktung prüfen',
+    description: 'Ihre Vermarktung auf Zielkunden, Kanäle und Botschaften prüfen.',
     category: 'strategie',
     categoryLabel: 'Strategie',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/go-to-market-diagnostic.md',
@@ -42,8 +43,8 @@ const skills: Skill[] = [
   },
   {
     id: 'icp-segment-prioritization',
-    title: 'ICP & Segment Prioritization',
-    description: 'Idealen Kundentypus anhand von Buying Triggern schärfen.',
+    title: 'Zielkunden und Segmente priorisieren',
+    description: 'Ihr Wunschkundenprofil anhand konkreter Kaufanlässe schärfen.',
     category: 'strategie',
     categoryLabel: 'Strategie',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/icp-segment-prioritization.md',
@@ -51,8 +52,8 @@ const skills: Skill[] = [
   },
   {
     id: 'competitive-positioning-review',
-    title: 'Competitive Positioning Review',
-    description: 'Differenzierungsschärfe und Messaging aus Kundensicht bewerten.',
+    title: 'Positionierung im Wettbewerb',
+    description: 'Wie klar Sie sich abheben und wie Ihre Botschaft bei Kunden ankommt.',
     category: 'strategie',
     categoryLabel: 'Strategie',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/competitive-positioning-review.md',
@@ -62,37 +63,37 @@ const skills: Skill[] = [
   // NACHFRAGEGENERIERUNG
   {
     id: 'demand-generation-gap-analysis',
-    title: 'Demand Generation Gap Analysis',
-    description: 'Lücke zwischen aktuellem Lead-Volumen und Umsatzziel berechnen.',
+    title: 'Lücke bei den Anfragen berechnen',
+    description: 'Lücke zwischen heutiger Anzahl Leads und Ihrem Umsatzziel berechnen.',
     category: 'nachfragegenerierung',
-    categoryLabel: 'Nachfragegenerierung',
+    categoryLabel: 'Nachfrage aufbauen',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/demand-generation-gap-analysis.md',
     difficulty: 'Einstieg',
   },
   {
     id: 'pipeline-coverage-assessment',
-    title: 'Pipeline Coverage Assessment',
-    description: 'Pipeline-Deckungsgrad für Quartalsziele mit Coverage Ratio messen.',
+    title: 'Deckung der Verkaufschancen',
+    description: 'Prüfen, ob Ihre offenen Verkaufschancen für die Quartalsziele reichen.',
     category: 'nachfragegenerierung',
-    categoryLabel: 'Nachfragegenerierung',
+    categoryLabel: 'Nachfrage aufbauen',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/pipeline-coverage-assessment.md',
     difficulty: 'Einstieg',
   },
   {
     id: 'content-to-pipeline-audit',
-    title: 'Content-to-Pipeline Audit',
-    description: 'Welcher Content beiträgt zur Pipeline — nicht nur zu Traffic.',
+    title: 'Inhalte und Anfragen',
+    description: 'Welche Inhalte zu Anfragen führen und nicht nur zu Besuchen.',
     category: 'nachfragegenerierung',
-    categoryLabel: 'Nachfragegenerierung',
+    categoryLabel: 'Nachfrage aufbauen',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/content-to-pipeline-audit.md',
     difficulty: 'Fortgeschritten',
   },
   {
     id: 'lead-generation-diagnostic',
-    title: 'Lead Generation Diagnostic',
-    description: 'Vollständige Diagnose: Kanäle, Conversion-Pfade und MQL-Qualität.',
+    title: 'Leadgewinnung prüfen',
+    description: 'Kanäle, Wege zur Anfrage und Qualität der Leads gesamthaft prüfen.',
     category: 'nachfragegenerierung',
-    categoryLabel: 'Nachfragegenerierung',
+    categoryLabel: 'Nachfrage aufbauen',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/lead-generation-diagnostic.md',
     difficulty: 'Fortgeschritten',
   },
@@ -100,46 +101,46 @@ const skills: Skill[] = [
   // REVENUE OPERATIONS
   {
     id: 'revenue-operations-maturity-assessment',
-    title: 'Revenue Operations Maturity Assessment',
-    description: 'Fünfstufiges Reifegradmodell für Prozesse, Daten und Forecasting.',
+    title: 'Reifegrad von Prozessen und Daten',
+    description: 'Fünfstufiges Reifegradmodell für Abläufe, Daten und Umsatzprognosen.',
     category: 'revenue-operations',
-    categoryLabel: 'Revenue Operations',
+    categoryLabel: 'Prozesse & Daten',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/revenue-operations-maturity-assessment.md',
     difficulty: 'Expert',
   },
   {
     id: 'funnel-leakage-detector',
-    title: 'Funnel Leakage Detector',
-    description: 'Wo geht Revenue verloren — CHF-Impact je Leckagestelle quantifizieren.',
+    title: 'Verluste im Anfrageprozess finden',
+    description: 'Wo im Anfrageprozess Umsatz verloren geht und wie viel CHF das ausmacht.',
     category: 'revenue-operations',
-    categoryLabel: 'Revenue Operations',
+    categoryLabel: 'Prozesse & Daten',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/funnel-leakage-detector.md',
     difficulty: 'Fortgeschritten',
   },
   {
     id: 'lead-routing-assessment',
-    title: 'Lead Routing Assessment',
-    description: 'Leads richtig, schnell und nachvollziehbar zu den richtigen Reps.',
+    title: 'Lead-Verteilung prüfen',
+    description: 'Kommen Leads schnell und nachvollziehbar zur richtigen Person im Vertrieb?',
     category: 'revenue-operations',
-    categoryLabel: 'Revenue Operations',
+    categoryLabel: 'Prozesse & Daten',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/lead-routing-assessment.md',
     difficulty: 'Einstieg',
   },
   {
     id: 'lifecycle-stage-audit',
-    title: 'Lifecycle Stage Audit',
-    description: 'CRM-Lifecycle-Stages auf Definition und Konsistenz prüfen.',
+    title: 'Kundenphasen im CRM prüfen',
+    description: 'Die Phasen im CRM auf klare Definition und einheitliche Nutzung prüfen.',
     category: 'revenue-operations',
-    categoryLabel: 'Revenue Operations',
+    categoryLabel: 'Prozesse & Daten',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/lifecycle-stage-audit.md',
     difficulty: 'Einstieg',
   },
   {
     id: 'crm-data-quality-check',
-    title: 'CRM Data Quality Check',
-    description: 'Vollständigkeit, Aktualität und Duplikate im CRM systematisch bewerten.',
+    title: 'Datenqualität im CRM',
+    description: 'Vollständigkeit, Aktualität und Dubletten im CRM systematisch bewerten.',
     category: 'revenue-operations',
-    categoryLabel: 'Revenue Operations',
+    categoryLabel: 'Prozesse & Daten',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/crm-data-quality-check.md',
     difficulty: 'Einstieg',
   },
@@ -147,8 +148,8 @@ const skills: Skill[] = [
   // MARKETING AUTOMATION
   {
     id: 'marketing-automation-maturity-assessment',
-    title: 'Marketing Automation Maturity Assessment',
-    description: 'Reifegradmodell von manuellen E-Mails bis verhaltensbasiertem Multi-Touch-Nurturing.',
+    title: 'Reifegrad der Marketing-Automatisierung',
+    description: 'Vom manuellen E-Mail-Versand bis zu E-Mails, die sich nach dem Verhalten richten.',
     category: 'marketing-automation',
     categoryLabel: 'Marketing Automation',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/marketing-automation-maturity-assessment.md',
@@ -156,8 +157,8 @@ const skills: Skill[] = [
   },
   {
     id: 'lead-nurturing-assessment',
-    title: 'Lead Nurturing Assessment',
-    description: 'Nurturing-Flows entlang der Buyer Journey auf Wirkung prüfen.',
+    title: 'Begleitung von Interessenten',
+    description: 'Prüfen, ob Ihre E-Mail-Serien Interessenten bis zur Kaufentscheidung begleiten.',
     category: 'marketing-automation',
     categoryLabel: 'Marketing Automation',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/lead-nurturing-assessment.md',
@@ -165,8 +166,8 @@ const skills: Skill[] = [
   },
   {
     id: 'workflow-opportunity-scanner',
-    title: 'Workflow Opportunity Scanner',
-    description: 'Manuelle Prozesse identifizieren, die automatisiert werden könnten.',
+    title: 'Automatisierbare Abläufe finden',
+    description: 'Manuelle Abläufe finden, die sich automatisieren lassen.',
     category: 'marketing-automation',
     categoryLabel: 'Marketing Automation',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/workflow-opportunity-scanner.md',
@@ -174,8 +175,8 @@ const skills: Skill[] = [
   },
   {
     id: 'conversion-path-analysis',
-    title: 'Conversion Path Analysis',
-    description: 'Alle Wege vom Erstkontakt bis MQL mit Drop-off-Punkten analysieren.',
+    title: 'Wege zur Anfrage analysieren',
+    description: 'Alle Wege vom Erstkontakt bis zur qualifizierten Anfrage samt Absprungstellen.',
     category: 'marketing-automation',
     categoryLabel: 'Marketing Automation',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/conversion-path-analysis.md',
@@ -185,8 +186,8 @@ const skills: Skill[] = [
   // VERTRIEB
   {
     id: 'sales-process-assessment',
-    title: 'Sales Process Assessment',
-    description: 'Stage-Definition, Qualifikation, Velocity und Win/Loss vollständig diagnostizieren.',
+    title: 'Verkaufsprozess prüfen',
+    description: 'Phasen, Qualifizierung, Tempo und Gründe für Gewinn oder Verlust prüfen.',
     category: 'vertrieb',
     categoryLabel: 'Vertrieb',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/sales-process-assessment.md',
@@ -194,8 +195,8 @@ const skills: Skill[] = [
   },
   {
     id: 'sales-enablement-audit',
-    title: 'Sales Enablement Audit',
-    description: 'Hat der Vertrieb das richtige Material zur richtigen Zeit?',
+    title: 'Unterlagen für den Vertrieb',
+    description: 'Hat der Vertrieb die richtigen Unterlagen zur richtigen Zeit?',
     category: 'vertrieb',
     categoryLabel: 'Vertrieb',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/sales-enablement-audit.md',
@@ -203,8 +204,8 @@ const skills: Skill[] = [
   },
   {
     id: 'pipeline-hygiene-review',
-    title: 'Pipeline Hygiene Review',
-    description: 'Stale Deals, Stage-Klumpen und unrealistische Forecasts aufdecken.',
+    title: 'Offene Verkaufschancen bereinigen',
+    description: 'Liegengebliebene Deals, Staus in einzelnen Phasen und unrealistische Prognosen aufdecken.',
     category: 'vertrieb',
     categoryLabel: 'Vertrieb',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/pipeline-hygiene-review.md',
@@ -212,8 +213,8 @@ const skills: Skill[] = [
   },
   {
     id: 'follow-up-effectiveness-review',
-    title: 'Follow-Up Effectiveness Review',
-    description: 'Geschwindigkeit, Konsistenz und Qualität von Lead-Follow-ups analysieren.',
+    title: 'Nachfassen prüfen',
+    description: 'Tempo, Regelmässigkeit und Qualität beim Nachfassen von Anfragen prüfen.',
     category: 'vertrieb',
     categoryLabel: 'Vertrieb',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/follow-up-effectiveness-review.md',
@@ -223,8 +224,8 @@ const skills: Skill[] = [
   // KI & AUTOMATISIERUNG
   {
     id: 'ai-readiness-assessment',
-    title: 'AI Readiness Assessment',
-    description: 'Bereitschaft für AI prüfen: Datenbasis, Prozessreife und Quick-Wins.',
+    title: 'Bereit für KI?',
+    description: 'Prüfen, ob Datenbasis und Abläufe bereit für KI sind, und erste einfache Einsätze finden.',
     category: 'ki-automatisierung',
     categoryLabel: 'KI & Automatisierung',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/ai-readiness-assessment.md',
@@ -232,8 +233,8 @@ const skills: Skill[] = [
   },
   {
     id: 'agentic-automation-opportunity-scanner',
-    title: 'Agentic Automation Opportunity Scanner',
-    description: 'Prozesse für autonome AI-Agents identifizieren und nach Impact priorisieren.',
+    title: 'Einsatzfelder für KI-Agenten',
+    description: 'Abläufe finden, die KI-Agenten selbständig übernehmen könnten, nach Nutzen geordnet.',
     category: 'ki-automatisierung',
     categoryLabel: 'KI & Automatisierung',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/agentic-automation-opportunity-scanner.md',
@@ -241,8 +242,8 @@ const skills: Skill[] = [
   },
   {
     id: 'process-automation-assessment',
-    title: 'Process Automation Assessment',
-    description: 'Repetitive Prozesse kartieren und CHF-Einsparpotenzial je Prozess bewerten.',
+    title: 'Prozesse automatisieren',
+    description: 'Wiederkehrende Abläufe erfassen und das Sparpotenzial in CHF je Ablauf schätzen.',
     category: 'ki-automatisierung',
     categoryLabel: 'KI & Automatisierung',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/process-automation-assessment.md',
@@ -250,8 +251,8 @@ const skills: Skill[] = [
   },
   {
     id: 'ai-use-case-discovery',
-    title: 'AI Use Case Discovery',
-    description: 'Von AI-Ideation über Feasibility bis zum konkreten Business Case.',
+    title: 'KI-Anwendungen finden',
+    description: 'Von der ersten Idee über die Machbarkeit bis zum konkreten Business Case.',
     category: 'ki-automatisierung',
     categoryLabel: 'KI & Automatisierung',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/ai-use-case-discovery.md',
@@ -261,8 +262,8 @@ const skills: Skill[] = [
   // DATEN & ANALYTICS
   {
     id: 'tracking-attribution-audit',
-    title: 'Tracking & Attribution Audit',
-    description: 'Tracking-Infrastruktur vollständig diagnostizieren — Datenlücken und Fehlattributionen finden.',
+    title: 'Tracking und Zuordnung prüfen',
+    description: 'Ihr Tracking prüfen und Datenlücken sowie falsch zugeordnete Erfolge finden.',
     category: 'daten-analytics',
     categoryLabel: 'Daten & Analytics',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/tracking-attribution-audit.md',
@@ -270,8 +271,8 @@ const skills: Skill[] = [
   },
   {
     id: 'dashboard-effectiveness-assessment',
-    title: 'Dashboard Effectiveness Assessment',
-    description: 'Unterstützen Dashboards echte Entscheidungen oder zeigen sie nur Aktivität?',
+    title: 'Nutzen Ihrer Dashboards',
+    description: 'Helfen Ihre Dashboards bei Entscheidungen oder zeigen sie nur Aktivität?',
     category: 'daten-analytics',
     categoryLabel: 'Daten & Analytics',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/dashboard-effectiveness-assessment.md',
@@ -279,8 +280,8 @@ const skills: Skill[] = [
   },
   {
     id: 'revenue-analytics-diagnostic',
-    title: 'Revenue Analytics Diagnostic',
-    description: 'Kann Reporting profitable Kanäle, Verluste und echten LTV benennen?',
+    title: 'Umsatzauswertung prüfen',
+    description: 'Zeigt Ihr Reporting, welche Kanäle profitabel sind, wo Sie verlieren und was ein Kunde wert ist?',
     category: 'daten-analytics',
     categoryLabel: 'Daten & Analytics',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/revenue-analytics-diagnostic.md',
@@ -288,8 +289,8 @@ const skills: Skill[] = [
   },
   {
     id: 'kpi-clarity-review',
-    title: 'KPI Clarity Review',
-    description: 'Vanity Metrics und fehlende Leading Indicators aufdecken.',
+    title: 'Kennzahlen klären',
+    description: 'Schönwetter-Kennzahlen und fehlende Frühindikatoren aufdecken.',
     category: 'daten-analytics',
     categoryLabel: 'Daten & Analytics',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/kpi-clarity-review.md',
@@ -299,8 +300,8 @@ const skills: Skill[] = [
   // WACHSTUM
   {
     id: 'growth-bottleneck-finder',
-    title: 'Growth Bottleneck Finder',
-    description: 'Den primären Wachstumsengpass identifizieren — basierend auf Theory of Constraints.',
+    title: 'Wachstumsengpass finden',
+    description: 'Den wichtigsten Engpass für Ihr Wachstum finden, nach der Engpasstheorie.',
     category: 'wachstum',
     categoryLabel: 'Wachstum',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/growth-bottleneck-finder.md',
@@ -308,8 +309,8 @@ const skills: Skill[] = [
   },
   {
     id: 'growth-pain-assessment',
-    title: 'Growth Pain Assessment',
-    description: 'Tieferliegende Ursachen von Wachstumsstagnation über Symptome hinaus diagnostizieren.',
+    title: 'Ursachen für Stillstand',
+    description: 'Die eigentlichen Ursachen finden, wenn das Wachstum stockt, nicht nur die Symptome.',
     category: 'wachstum',
     categoryLabel: 'Wachstum',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/growth-pain-assessment.md',
@@ -317,8 +318,8 @@ const skills: Skill[] = [
   },
   {
     id: 'scale-readiness-review',
-    title: 'Scale Readiness Review',
-    description: 'Sind Prozesse, Team und Revenue Engine bereit für Skalierung?',
+    title: 'Bereit für mehr Wachstum?',
+    description: 'Sind Abläufe, Team und Vertrieb bereit für deutlich mehr Volumen?',
     category: 'wachstum',
     categoryLabel: 'Wachstum',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/scale-readiness-review.md',
@@ -326,8 +327,8 @@ const skills: Skill[] = [
   },
   {
     id: 'revenue-growth-blueprint',
-    title: 'Revenue Growth Blueprint',
-    description: 'Alle Diagnose-Findings in einen priorisierten 12-Monats-Plan synthetisieren.',
+    title: 'Wachstumsplan für 12 Monate',
+    description: 'Alle Erkenntnisse aus den Checks in einem priorisierten 12-Monats-Plan bündeln.',
     category: 'wachstum',
     categoryLabel: 'Wachstum',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/revenue-growth-blueprint.md',
@@ -337,29 +338,29 @@ const skills: Skill[] = [
   // E-COMMERCE
   {
     id: 'ecommerce-growth-diagnostic',
-    title: 'E-Commerce Growth Diagnostic',
-    description: '5-dimensionales Shop-Audit: Acquisition, Conversion, Retention, Analytics und Technik.',
+    title: 'Wachstums-Check für Onlineshops',
+    description: 'Shop-Check in fünf Bereichen: Neukunden, Conversion, Stammkunden, Auswertung und Technik.',
     category: 'ecommerce',
     categoryLabel: 'E-Commerce',
-    github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/ecommerce-growth-diagnostic.md',
+    github: '', // Datei fehlt noch im Repo performanceboost-skill-factory
     difficulty: 'Expert',
   },
   {
     id: 'customer-lifetime-value-assessment',
-    title: 'Customer Lifetime Value Assessment',
-    description: 'LTV berechnen, CAC-Relation verstehen und Retention-Investment steuern.',
+    title: 'Kundenwert bewerten',
+    description: 'Kundenwert berechnen, mit den Akquisekosten vergleichen und Investitionen in Stammkunden steuern.',
     category: 'ecommerce',
     categoryLabel: 'E-Commerce',
-    github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/customer-lifetime-value-assessment.md',
+    github: '', // Datei fehlt noch im Repo performanceboost-skill-factory
     difficulty: 'Fortgeschritten',
   },
   {
     id: 'paid-social-efficiency-audit',
-    title: 'Paid Social Efficiency Audit',
-    description: 'Echte Profitabilität hinter ROAS: Deckungsbeitrag, Creative Fatigue und Attribution.',
+    title: 'Wirtschaftlichkeit von Social Ads',
+    description: 'Was hinter dem ROAS steckt: Deckungsbeitrag, abgenutzte Anzeigenmotive und Zuordnung.',
     category: 'ecommerce',
     categoryLabel: 'E-Commerce',
-    github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/paid-social-efficiency-audit.md',
+    github: '', // Datei fehlt noch im Repo performanceboost-skill-factory
     difficulty: 'Fortgeschritten',
   },
 ];
@@ -367,8 +368,8 @@ const skills: Skill[] = [
 const categories = [
   { value: 'alle', label: 'Alle', count: 36 },
   { value: 'strategie', label: 'Strategie', count: 4 },
-  { value: 'nachfragegenerierung', label: 'Nachfragegenerierung', count: 4 },
-  { value: 'revenue-operations', label: 'Revenue Operations', count: 5 },
+  { value: 'nachfragegenerierung', label: 'Nachfrage aufbauen', count: 4 },
+  { value: 'revenue-operations', label: 'Prozesse & Daten', count: 5 },
   { value: 'marketing-automation', label: 'Marketing Automation', count: 4 },
   { value: 'vertrieb', label: 'Vertrieb', count: 4 },
   { value: 'ki-automatisierung', label: 'KI & Automatisierung', count: 4 },
@@ -436,21 +437,21 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
           <div className="inline-flex items-center gap-1.5 bg-[#EEEEFF] text-[#686DF4] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase font-mono shadow-sm">
             <Github className="w-3.5 h-3.5" />
-            Skill Factory
+            Kostenlose Checklisten
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1A1A2E] tracking-tight leading-tight">
-            Diagnose zuerst.<br className="hidden sm:inline"/> Dann wachsen.
+            Erst prüfen, wo es hakt.<br className="hidden sm:inline"/> Dann gezielt handeln.
           </h1>
           
           <p className="text-[#505050] text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-            36 strukturierte Analyse-Frameworks für jeden Engpass entlang der Revenue Engine. Für Gründer, GTM-Verantwortliche und Ops-Teams, die Probleme an der Wurzel lösen wollen — nicht mit Vermutungen.
+            36 strukturierte Checklisten, mit denen Sie Engpässe in Marketing, Vertrieb und Daten selbst prüfen können. Für Geschäftsführer und Verantwortliche, die Probleme an der Ursache angehen wollen statt aufgrund von Vermutungen.
           </p>
 
           <div className="flex items-center justify-center gap-10 pt-4 pb-2">
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-extrabold text-[#686DF4]">36</div>
-              <div className="text-xs text-[#505050] font-bold mt-1 uppercase tracking-wider font-mono">Diagnose-Frameworks</div>
+              <div className="text-xs text-[#505050] font-bold mt-1 uppercase tracking-wider font-mono">Checklisten</div>
             </div>
             <div className="h-10 w-px bg-slate-300"></div>
             <div className="text-center">
@@ -460,7 +461,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
           </div>
 
           <p className="text-xs text-slate-400 font-semibold bg-white/70 backdrop-blur-xs px-4 py-2 rounded-xl border border-slate-200/55 shadow-[0_2px_8px_rgba(0,0,0,0.01)] inline-block">
-            🎁 Alle Frameworks sind kostenlos auf GitHub verfügbar — keine Anmeldung, kein Lead-Gate.
+            Die Checklisten sind kostenlos auf GitHub verfügbar, ohne Anmeldung.
           </p>
         </div>
       </AnimatedSection>
@@ -479,21 +480,21 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Framework suchen — z. B. „Funnel“, „Pipeline“ oder „AI“ …"
+                placeholder="Checkliste suchen, z. B. „CRM“, „Tracking“ oder „KI“ …"
                 className="w-full text-slate-800 text-xs text-slate-800 rounded-xl border border-slate-200/80 bg-slate-50/50 px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#686DF4] focus:border-[#686DF4] focus:bg-white transition-all font-medium placeholder:text-slate-400/80 shadow-[0_2px_4px_rgba(0,0,0,0.01)]"
-                aria-label="Framework suchen"
+                aria-label="Checkliste suchen"
               />
             </div>
 
             {/* Total count display */}
             <div className="hidden lg:block shrink-0 text-slate-500 font-bold font-mono text-xs bg-slate-100 border border-slate-200/60 px-3 py-1.5 rounded-lg">
-              {filteredSkills.length} Framework{filteredSkills.length !== 1 ? 's' : ''} gefunden
+              {filteredSkills.length} Checkliste{filteredSkills.length !== 1 ? 'n' : ''} gefunden
             </div>
 
           </div>
 
           {/* Horizontally scrolling Category Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto scroller-hidden pt-3.5 pb-0.5 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div role="tablist" aria-label="Kategorien" className="flex items-center gap-1.5 overflow-x-auto scroller-hidden pt-3.5 pb-0.5 -mx-4 px-4 sm:mx-0 sm:px-0">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.value;
               return (
@@ -509,7 +510,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                   }`}
                 >
                   <span>{cat.label}</span>
-                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                  <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
                     isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'
                   }`}>
                     {cat.count}
@@ -527,7 +528,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
         
         {/* Dynamic Mobile Count Indicator */}
         <div className="lg:hidden text-center mb-6 text-[11px] text-slate-500 font-bold font-mono uppercase tracking-wider">
-          💡 {filteredSkills.length} Framework{filteredSkills.length !== 1 ? 's' : ''} für die Auswahl
+          {filteredSkills.length} Checkliste{filteredSkills.length !== 1 ? 'n' : ''} in der Auswahl
         </div>
 
         <AnimatePresence mode="wait">
@@ -546,13 +547,13 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                       
                       {/* Badge Row */}
                       <div className="flex items-center justify-between gap-2">
-                        <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold tracking-wide uppercase ${
+                        <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-extrabold tracking-wide uppercase ${
                           categoryColors[skill.category] || 'text-slate-700 bg-slate-50'
                         }`}>
                           {skill.categoryLabel}
                         </span>
                         
-                        <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold tracking-wide uppercase ${
+                        <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-extrabold tracking-wide uppercase ${
                           difficultyColors[skill.difficulty] || 'text-slate-700 bg-slate-50'
                         }`}>
                           {skill.difficulty}
@@ -570,7 +571,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                       </div>
 
                       {/* GitHub Link Button with Icon */}
-                      <div className="mt-auto pt-2">
+                      {skill.github && <div className="mt-auto pt-2">
                         <a 
                           href={skill.github} 
                           target="_blank" 
@@ -580,7 +581,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                           <ExternalLink className="w-3.5 h-3.5 transition-transform duration-200 group-hover/item:scale-110" />
                           Auf GitHub öffnen
                         </a>
-                      </div>
+                      </div>}
 
                     </div>
                   </AnimatedChild>
@@ -598,16 +599,16 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                 <SlidersHorizontal className="w-5 h-5" />
               </div>
               <p className="text-[#505050] text-sm md:text-base font-bold">
-                Kein Framework gefunden für „{searchQuery}“.
+                Keine Checkliste gefunden für „{searchQuery}“.
               </p>
               <p className="text-slate-400 text-xs">
-                Versuch es mit einem anderen Begriff oder setze die Filter zurück.
+                Versuchen Sie es mit einem anderen Begriff oder setzen Sie die Filter zurück.
               </p>
               <button
                 onClick={() => { setSearchQuery(''); setActiveCategory('alle'); }}
                 className="text-[#686DF4] font-bold hover:underline text-xs inline-flex items-center gap-1 cursor-pointer"
               >
-                Zurücksetzen & alle anzeigen <ArrowRight className="w-3.5 h-3.5" />
+                Zurücksetzen und alle anzeigen <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </motion.div>
           )}
@@ -622,11 +623,11 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
 
         <div className="max-w-3xl mx-auto px-4 relative z-10 space-y-6">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white leading-tight">
-            Nicht sicher, womit du anfangen sollst?
+            Nicht sicher, wo Sie anfangen sollen?
           </h2>
           
           <p className="text-[#A0A0B8] text-xs md:text-sm leading-relaxed max-w-xl mx-auto font-semibold">
-            Die meisten Unternehmen lösen die falschen Probleme — weil sie nie systematisch diagnostiziert haben, was wirklich bremst. Ein 30-minütiges Gespräch reicht, um den richtigen Einstiegspunkt zu finden.
+            Oft wird an Symptomen gearbeitet, weil nie systematisch geprüft wurde, was wirklich bremst. In einem 30-minütigen Erstgespräch finden wir gemeinsam den sinnvollsten Einstieg.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -635,7 +636,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
               onClick={handleBookMeeting}
               className="w-full sm:w-auto bg-[#686DF4] hover:bg-[#5558e0] text-white rounded-xl px-6 py-3 text-xs font-extrabold tracking-wide uppercase shadow-[0_4px_14px_rgba(104,109,244,0.4)] transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer select-none"
             >
-              Kostenloses Erstgespräch buchen
+              Erstgespräch vereinbaren
             </a>
 
             <a 
@@ -645,7 +646,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
               className="w-full sm:w-auto text-[#A0A0B8] hover:text-white text-xs font-bold py-3 px-6 transition-colors flex items-center justify-center gap-2 group cursor-pointer"
             >
               <Github className="w-4 h-4" />
-              Alle Frameworks auf GitHub ansehen <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              Alle Checklisten auf GitHub ansehen <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </div>

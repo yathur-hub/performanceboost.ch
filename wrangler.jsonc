@@ -1,0 +1,20 @@
+// Cloudflare Worker (statische Assets). Werte entsprechen der Produktionskonfiguration
+// vom 30.10.2026; nötig, damit Branch-Builds (`wrangler versions upload`) wissen,
+// was hochgeladen wird.
+{
+  "name": "performanceboost",
+  "compatibility_date": "2026-08-15",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true
+    }
+  }
+}

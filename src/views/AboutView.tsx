@@ -29,23 +29,23 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
   const CORE_VALUES = [
     {
       icon: Eye,
-      title: 'Transparenz statt Blackbox',
-      desc: 'Keine Geheimniskrämerei um Klickpreise oder Funnel-Strukturen. Du besitzt deine Konten, deine Daten und dein System komplett.'
+      title: 'Transparenz',
+      desc: 'Sie sehen, wofür Ihr Budget eingesetzt wird, was es bringt und was nicht. Werbekonten und Auswertungen sind für Sie jederzeit einsehbar.'
     },
     {
       icon: RefreshCw,
-      title: 'Iterieren statt Philosophieren',
-      desc: 'Ein perfektes Konzept, das in der Schublade verstaubt, bringt keinen Umsatz. Wir bringen Ideen schnell live und optimieren auf Basis echter Daten.'
+      title: 'Umsetzen, dann verbessern',
+      desc: 'Ein Konzept in der Schublade bringt keine Anfragen. Wir bringen Massnahmen zügig live und verbessern sie anhand echter Zahlen.'
     },
     {
       icon: Award,
-      title: 'Qualität vor blanker Quantität',
-      desc: 'Lieber 10 handverlesene B2B-Pipeline-Anfragen mit hohem Deal-Wert als 100 wertlose Newsletter-Abonnenten.'
+      title: 'Passende Anfragen statt viele',
+      desc: 'Zehn Anfragen von Unternehmen, die zu Ihrem Angebot passen, sind mehr wert als hundert, die Ihr Team nur Zeit kosten.'
     },
     {
       icon: Cpu,
-      title: 'Technologischer Vorsprung',
-      desc: 'CRM-Systeme, AI-Funktionalität und Server-Side Automation sind für uns kein Neuland, sondern das tägliche Handwerkszeug.'
+      title: 'Technik, die mitarbeitet',
+      desc: 'CRM, Tracking, Automatisierung und KI-Werkzeuge setzen wir dort ein, wo sie Ihnen Arbeit abnehmen, nicht um ihrer selbst willen.'
     }
   ];
 
@@ -60,9 +60,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[10px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
+            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
           >
-            ÜBER PERFORMANCEBOOST
+            Über uns
           </motion.span>
           
           <motion.h1 
@@ -71,7 +71,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Wir bauen die Wachstumssysteme der Schweizer B2B-Zukunft.
+            Persönliche Beratung für digitale Neukundengewinnung.
           </motion.h1>
           
           <motion.p 
@@ -80,7 +80,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            Wir sind keine Event-Agentur, die bunte Broschüren entwirft. Wir sind ein fokussiertes Team aus B2B-Spezialisten, das datengetriebene Revenue-Infrastrukturen entwirft, testet und skaliert.
+            performanceboost ist eine inhabergeführte Beratung aus Fläsch in Graubünden. Wir helfen Schweizer KMU, über Google, Meta, LinkedIn und die eigene Website planbar neue Kunden zu gewinnen, und setzen das Nötige selbst um.
           </motion.p>
         </div>
       </section>
@@ -94,13 +94,13 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="space-y-6"
         >
-          <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">UNSERE ENSTEHUNG</span>
-          <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Die Lücke zwischen Kreativität und harter Pipeline.</h2>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">Warum es uns gibt</span>
+          <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Zwischen Werbung und Auftrag geht zu viel verloren.</h2>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-            B2B-Wachstum scheitert selten an fehlender Kreativität. Es scheitert fast immer an mangelnder Systematisierung. Die meisten B2B-Unternehmen agieren in Silos: Marketing schaltet isolierte LinkedIn-Kampagnen und der Vertrieb telefoniert alten Kaltakquise-Listen hinterher.
+            Viele KMU investieren in Werbung, eine neue Website oder ein CRM, aber die Teile arbeiten nicht zusammen. Die Agentur optimiert Klicks, die Website erklärt das Angebot nicht klar genug, und Anfragen werden zu spät beantwortet. Am Ende weiss niemand, was das Budget tatsächlich gebracht hat.
           </p>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-            Wir haben performanceboost gegründet, um diese Lücke zu schliessen. Wir betrachten Marketing und Sales als ein einziges, zusammenhängendes Revenue-System, das planbar, datengetrieben und skalierbar funktionieren muss.
+            performanceboost betrachtet deshalb die ganze Strecke: Anzeige, Landingpage, Anfrage, Nachbearbeitung und Messung. Erst wenn diese Kette funktioniert, lohnt es sich, mehr Budget einzusetzen.
           </p>
         </motion.div>
 
@@ -111,27 +111,27 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl space-y-6 shadow-[var(--shadow-premium-md)]"
         >
-          <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686DF4] pl-4">Zahlen & Fakten</h3>
+          <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686DF4] pl-4">Auf einen Blick</h3>
           
           <div className="space-y-5">
             <div className="pb-4 border-b border-slate-100 flex justify-between items-center">
-              <span className="text-xs text-slate-500 font-semibold">Gegründet in der Schweiz</span>
-              <span className="text-xs font-mono font-bold text-slate-900">Graubünden</span>
+              <span className="text-xs text-slate-500 font-semibold">Sitz</span>
+              <span className="text-xs font-mono font-bold text-slate-900">Fläsch, Graubünden</span>
             </div>
             
             <div className="pb-4 border-b border-slate-100 flex justify-between items-center">
-              <span className="text-xs text-slate-500 font-semibold">Schweizer B2B-Kunden</span>
-              <span className="text-xs font-mono font-bold text-slate-900">35+ KMUs in verschiedenen Bereichen</span>
+              <span className="text-xs text-slate-500 font-semibold">Ansprechpartner</span>
+              <span className="text-xs font-mono font-bold text-slate-900">Yathur Nathan, Inhaber</span>
             </div>
 
             <div className="pb-4 border-b border-slate-100 flex justify-between items-center">
-              <span className="text-xs text-slate-500 font-semibold">Mittelwert ROI Hebel</span>
-              <span className="text-xs font-mono font-bold text-[#686DF4]">3.4x Pipeline Boost</span>
+              <span className="text-xs text-slate-500 font-semibold">Schwerpunkt</span>
+              <span className="text-xs font-mono font-bold text-[#686DF4]">Digitale Neukundengewinnung für KMU</span>
             </div>
 
             <div className="flex justify-between items-center">
               <span className="text-xs text-slate-500 font-semibold">Arbeitsweise</span>
-              <span className="text-xs font-mono font-bold text-emerald-600">100% Umsetzungsfokus</span>
+              <span className="text-xs font-mono font-bold text-emerald-600">Analyse, Umsetzung, monatliche Auswertung</span>
             </div>
           </div>
         </motion.div>
@@ -147,7 +147,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           className="md:col-span-5 relative group"
         >
           <div className="absolute -inset-2 bg-[#686DF4]/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-          <img 
+          <img loading="lazy" decoding="async" 
             src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
             alt="Yathur Nathan" 
             className="w-full h-auto aspect-[4/5] object-cover rounded-3xl border border-[#E0E0E0]/65 shadow-[var(--shadow-premium-md)] relative z-10"
@@ -162,14 +162,14 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
           className="md:col-span-7 space-y-6 text-left"
         >
-          <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">PERSÖNLICHES ENGAGEMENT & VISION</span>
+          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">Der Inhaber</span>
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
-              Ich unterstütze Unternehmen dabei, Wachstumspotenziale sichtbar zu machen und in messbare Resultate zu übersetzen. Dabei verbinde ich Marketing, Technologie, Daten und Vertrieb zu einem System, das nicht auf Vermutungen, sondern auf Fakten basiert. Mein Fokus liegt auf der Entwicklung skalierbarer Lösungen in den Bereichen Demand Generation, Leadgenerierung, Marketing Automation, CRM und Revenue Operations.
+              Ich unterstütze Schweizer KMU dabei, aus ihrem Marketingbudget messbar Kundenanfragen zu machen. Dafür verbinde ich Performance Marketing, Webentwicklung, Tracking und Automatisierung, Aufgaben, die sonst oft auf mehrere Dienstleister verteilt sind und dabei aneinander vorbeilaufen.
             </p>
             <p>
-              In den vergangenen Jahren durfte ich mit Unternehmen unterschiedlichster Branchen zusammenarbeiten – von KMU bis zu etablierten Marktführern. Aus dieser Erfahrung ist eine klare Überzeugung entstanden: Nachhaltiges Wachstum entsteht nicht durch einzelne Kampagnen oder Tools, sondern durch das Zusammenspiel von Strategie, Prozessen, Technologie und konsequenter Umsetzung. Genau dort setzt performanceboost an.
+              In den vergangenen Jahren habe ich mit Unternehmen aus unterschiedlichen Branchen gearbeitet, vom Onlineshop bis zum Beratungsunternehmen. Dabei hat sich immer wieder gezeigt: Gute Ergebnisse entstehen nicht durch eine einzelne Kampagne oder ein neues Tool, sondern wenn Strategie, Website, Messung und Nachbearbeitung zusammenpassen. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
             </p>
           </div>
         </motion.div>
@@ -186,7 +186,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3"
           >
-            <span className="text-[10px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">UNSER ALLEINSTELLUNGSMERKMAL</span>
+            <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Was uns unterscheidet</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Was performanceboost unterscheidet</h2>
           </motion.div>
 
@@ -205,9 +205,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#CACCFB]/20">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">Keine lose Retainer-Bequemlichkeit</h3>
+              <h3 className="text-sm font-bold text-slate-900">Klare Etappen statt Pauschale ohne Ergebnis</h3>
               <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                Bequeme Langzeitverträge ohne echten Output lehnen wir ab. Wir arbeiten meilensteinbasiert. Du siehst in jeder Phase exakt, welche Pipeline-Infrastrukturen aufgebaut, getestet und live geschaltet werden.
+                Wir arbeiten in nachvollziehbaren Etappen. Sie sehen in jeder Phase, was aufgebaut, getestet und live geschaltet wurde und was es bewirkt hat.
               </p>
             </motion.div>
 
@@ -219,9 +219,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#CACCFB]/20">
                 <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">100% Inhouse-Umsetzungskompetenz</h3>
+              <h3 className="text-sm font-bold text-slate-900">Strategie und Umsetzung aus einer Hand</h3>
               <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                Wir lagern nichts an anonyme Subunternehmer aus. Strategie, Copywriting, technisches Tracking-Setup, CRM-Workflows und Ads-Management werden von festen B2B-Experten in der Schweiz umgesetzt.
+                Strategie, Texte, Tracking, CRM-Abläufe und Kampagnen kommen aus einer Hand. Dadurch gehen bei Übergaben keine Informationen verloren, und Sie haben einen einzigen Ansprechpartner.
               </p>
             </motion.div>
 
@@ -233,9 +233,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#CACCFB]/20">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">Fokus auf Closed-Won Revenue</h3>
+              <h3 className="text-sm font-bold text-slate-900">Gemessen an Aufträgen, nicht an Klicks</h3>
               <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                Bunte Impressionen und billige Klicks interessieren unseren CFO nicht — und deinen auch nicht. Wir optimieren Kampagnen und CRM-Leads konsequent auf tatsächliche Kaufabschlüsse (Closed-Won Revenue).
+                Reichweite und günstige Klicks sind kein Ziel an sich. Wir richten Kampagnen auf Anfragen und, wo die Daten es erlauben, auf tatsächliche Aufträge aus.
               </p>
             </motion.div>
           </motion.div>
@@ -252,8 +252,8 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">WIE WIR TICKEN</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Arbeitsphilosophie</h2>
+          <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Arbeitsweise</span>
+          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir vorgehen</h2>
         </motion.div>
 
         <div className="space-y-6">
@@ -264,9 +264,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
-            <span className="text-xs font-mono font-bold text-[#686DF4]">PRINZIP 1: DETEKTIV-ARBEIT GEHT DER UMSETZUNG VORAN</span>
+            <span className="text-xs font-mono font-bold text-[#686DF4]">Grundsatz 1: Erst verstehen, dann handeln</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-              Wir verändern kein Marketing-Kampagnen-Konto, bevor wir nicht deine Daten verstanden haben. Erst wenn wir deine Zielgruppe, deinen Lifetime-Value, deinen Sales-Schnitt und deine Pipeline analysiert haben, schlagen wir präzise Hebel vor.
+              Bevor wir etwas an Ihren Kampagnen ändern, verstehen wir Ihr Geschäft: Wer sind Ihre besten Kunden, was ist ein Auftrag wert, wie läuft der Verkauf heute? Erst dann schlagen wir Massnahmen vor.
             </p>
           </motion.div>
 
@@ -277,9 +277,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
-            <span className="text-xs font-mono font-bold text-[#686DF4]">PRINZIP 2: SYSTEMATIC BUILD-OVER-CAMPAIGN-CHAOS</span>
+            <span className="text-xs font-mono font-bold text-[#686DF4]">Grundsatz 2: Aufbauen, was bleibt</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-              Kreative Marketing-Entwürfe sind toll, aber temporär. Wir bauen langlebige Vermögenswerte (Digital Assets) für dein Unternehmen — zum Beispiel strukturierte HubSpot-Workflows, serverbasierte Custom-Dashboards oder ein lückenloses First-Party Tracking.
+              Eine einzelne Kampagne läuft irgendwann aus. Wir bauen zusätzlich Dinge auf, die Ihnen langfristig gehören: ein sauberes Tracking, CRM-Abläufe, Landingpages und Auswertungen, mit denen Sie auch später noch arbeiten.
             </p>
           </motion.div>
         </div>
@@ -296,8 +296,8 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3 animate-fadeIn"
           >
-            <span className="text-[10px] font-mono text-[#8185F8] font-bold uppercase tracking-widest">WERTE, DIE REVENUE BESTIMMEN</span>
-            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight text-white">Unsere inneren Leitwerte</h2>
+            <span className="text-[11px] font-mono text-[#8185F8] font-bold uppercase tracking-widest">Werte</span>
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight text-white">Worauf Sie sich verlassen können</h2>
           </motion.div>
 
           <motion.div 
@@ -339,10 +339,10 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[9px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">JETZT DURCHSTARTEN</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Lass uns dein Pipeline-System diagnostizieren</h2>
+          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Nächster Schritt</span>
+          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Lernen wir uns kennen</h2>
           <p className="text-xs text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
-            Entscheide nach 30 Minuten, ob du mit uns den Hebel ansetzen willst. Kein Druck, kein aggressiver Vertrieb — nur echte Analysen für dein Wachstum.
+            Im kostenlosen Erstgespräch (30 Minuten) besprechen wir Ihre Ausgangslage. Danach entscheiden Sie in Ruhe, ob und wie Sie weitermachen möchten.
           </p>
 
           <motion.button
@@ -350,7 +350,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             onClick={() => onNavigate('/kontakt')}
             className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
           >
-            Wachstumsgespräch buchen
+            Erstgespräch vereinbaren
           </motion.button>
         </div>
       </motion.section>

@@ -8,6 +8,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, AlertCircle, Inbox, CircleDollarSign, ChevronUp, ChevronDown } from 'lucide-react';
+import { trackEvent } from '../../lib/analytics';
 
 interface Inputs {
   anfragen: number;
@@ -16,12 +17,7 @@ interface Inputs {
   top3_anteil: number;
 }
 
-const track = (eventName: string, params: any) => {
-  console.log(`[Tracking] ${eventName}`, params);
-  if (typeof (window as any).gtag === 'function') {
-    (window as any).gtag('event', eventName, params);
-  }
-};
+const track = (eventName: string, params: Record<string, string | number | boolean | undefined>) => trackEvent(eventName, params);
 
 export default function ProjektpipelineCheck() {
   const [inputs, setInputs] = useState<Inputs>({
@@ -135,30 +131,30 @@ export default function ProjektpipelineCheck() {
     rot: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Hohes Optimierungspotenzial',
-      desc: 'Deine Projektpipeline zeigt zwei kritische Signale: Die Win-Rate liegt unter dem Branchendurchschnitt (45%) — und das Klumpenrisiko ist erheblich. Beides ist lösbar: mit gezielter Sichtbarkeit kommen qualifiziertere Anfragen rein, und mit einer strukturierten Akquise-Strategie wächst die Auftraggeberbasis.',
-      rec: 'LinkedIn-Positionierung, Google-Sichtbarkeit und CRM-Aufbau als erste Priorität.',
+      label: 'Grosses Potenzial',
+      desc: 'Nach Ihren Angaben gibt es zwei Warnsignale: Die Zuschlagsquote liegt unter dem angenommenen Richtwert von 45%, und ein grosser Teil des Umsatzes hängt an wenigen Auftraggebern. Beides lässt sich angehen: Mit gezielter Sichtbarkeit kommen passendere Anfragen, und mit einer geplanten Akquise wird die Auftraggeberbasis breiter.',
+      rec: 'Zuerst die Positionierung auf LinkedIn, die Sichtbarkeit bei Google und ein CRM aufbauen.',
     },
     orange: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
-      badgeBg: 'bg-orange-500 text-white',
-      label: 'Solide Basis, klares Potenzial',
-      desc: 'Deine Pipeline ist funktional — aber es liegt signifikantes Umsatz- und Stabilitätspotenzial brach. Entweder liegt die Win-Rate unter dem Richtwert, oder das Klumpenrisiko ist noch zu hoch. Gezielte Massnahmen bringen dich ganz nach oben.',
-      rec: 'Fokus auf den schwächeren Wert: Win-Rate steigern oder die Auftraggeberbasis diversifizieren.',
+      badgeBg: 'bg-orange-700 text-white',
+      label: 'Potenzial vorhanden',
+      desc: 'Ihr Auftragseingang funktioniert, bei Umsatz und Stabilität ist aber noch Potenzial vorhanden. Entweder liegt die Zuschlagsquote unter dem angenommenen Richtwert, oder zu viel Umsatz hängt an wenigen Auftraggebern.',
+      rec: 'Beim schwächeren Wert ansetzen: Zuschlagsquote verbessern oder die Auftraggeberbasis verbreitern.',
     },
     gruen: {
       color: 'text-green-700 bg-green-50 border-green-200/50',
-      badgeBg: 'bg-green-500 text-white',
+      badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
-      desc: 'Deine Projektpipeline liegt über dem Branchendurchschnitt — sowohl bei der Win-Rate als auch beim Klumpenrisiko. Das ist eine solide Ausgangslage. Das nächste Wachstumspotenzial liegt in mehr Volumen.',
-      rec: 'Sichtbarkeit skalieren (mehr Anfragen), Bestandskunden-Reaktivierung und neue Zielgruppensegmentierung.',
+      desc: 'Ihre Zuschlagsquote und die Verteilung auf Ihre Auftraggeber sehen nach Ihren Angaben gut aus. Das ist eine solide Ausgangslage. Weiteres Wachstum kommt vor allem über mehr passende Anfragen.',
+      rec: 'Sichtbarkeit ausbauen, frühere Auftraggeber wieder ansprechen und neue Zielgruppen definieren.',
     },
     primary: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686DF4] text-white',
-      label: 'Top-Performer',
-      desc: 'Deine Pipeline ist ausgezeichnet aufgestellt: hohe Win-Rate, breite Auftraggeberbasis. Das nächste Wachstumskapitel heisst Volumen — mehr Anfragen in die Maschine füttern, die du zuverlässig aufbaust.',
-      rec: 'Lead Generation und LinkedIn-Skalierung, um noch mehr Wunschauftraggeber direkt anzusprechen.',
+      label: 'Sehr gut aufgestellt',
+      desc: 'Ihr Büro ist nach Ihren Angaben sehr gut aufgestellt, mit hoher Zuschlagsquote und breiter Auftraggeberbasis. Weiteres Wachstum kommt jetzt vor allem über mehr Anfragen.',
+      rec: 'Mehr Anfragen gewinnen und auf LinkedIn gezielt Wunschauftraggeber ansprechen.',
     },
   };
 
@@ -167,10 +163,10 @@ export default function ProjektpipelineCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[10px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">PLANER CHECK</span>
-        <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Projektpipeline-Check</h3>
+        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Planungsbüros</span>
+        <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Auftragseingangs-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
-          Ermitteln Sie die Stabilität Ihres Auftragsbestands und das Wachstumspotenzial bei höherer Win-Rate.
+          Schätzen Sie, wie stabil Ihr Auftragseingang ist und was eine höhere Zuschlagsquote bringen könnte. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -183,7 +179,7 @@ export default function ProjektpipelineCheck() {
               <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Projektanfragen pro Jahr"
                 type="number"
                 min={1}
                 max={200}
@@ -193,15 +189,15 @@ export default function ProjektpipelineCheck() {
               />
               <Inbox className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
-            <p className="text-[9px] text-slate-400 font-medium">Ausschreibungseinladungen und Direktkontakte pro Jahr</p>
+            <p className="text-[11px] text-slate-400 font-medium">Einladungen zu Ausschreibungen und direkte Anfragen pro Jahr</p>
           </div>
 
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
-              <span>Win-Rate</span>
+              <span>Zuschlagsquote</span>
               <span className="text-[#686DF4] font-semibold">{inputs.win_rate}%</span>
             </label>
-            <input
+            <input aria-label="Zuschlagsquote"
               type="range"
               min={5}
               max={90}
@@ -210,7 +206,7 @@ export default function ProjektpipelineCheck() {
               onChange={(e) => handleInputChange('win_rate', parseInt(e.target.value) || 5)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Anteil gewonnene Projekte / Gesamt-Anfragen</p>
+            <p className="text-[11px] text-slate-400 font-medium">Anteil gewonnener Projekte an allen Anfragen</p>
           </div>
 
           <div className="space-y-1">
@@ -219,7 +215,7 @@ export default function ProjektpipelineCheck() {
               <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.projektvolumen)}</span>
             </label>
             <div className="relative">
-              <input
+              <input aria-label="Ø Projektvolumen (Honorar)"
                 type="number"
                 min={500}
                 max={2000000}
@@ -237,7 +233,7 @@ export default function ProjektpipelineCheck() {
               <span>Anteil Top-3-Auftraggeber</span>
               <span className="text-[#686DF4] font-semibold">{inputs.top3_anteil}%</span>
             </label>
-            <input
+            <input aria-label="Anteil Top-3-Auftraggeber"
               type="range"
               min={10}
               max={100}
@@ -246,7 +242,7 @@ export default function ProjektpipelineCheck() {
               onChange={(e) => handleInputChange('top3_anteil', parseInt(e.target.value) || 10)}
               className="w-full accent-[#686DF4]"
             />
-            <p className="text-[9px] text-slate-400 font-medium">Wie viel Umsatz hängt an den Top-3-Bauherren/GUs?</p>
+            <p className="text-[11px] text-slate-400 font-medium">Wie viel Umsatz hängt an Ihren 3 grössten Bauherren bzw. GU?</p>
           </div>
         </div>
 
@@ -257,12 +253,12 @@ export default function ProjektpipelineCheck() {
               {/* Score card Header */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
                 <div>
-                  <span className="text-[8.5px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
-                    PIPELINE STABILITÄTS-SCORE
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 block uppercase">
+                    Stabilitäts-Wert
                   </span>
                   <div className="text-2xl font-black text-slate-905 mt-1">{results.score} / 100</div>
                 </div>
-                <span className={`px-2.5 py-1 rounded text-[8px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
+                <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-black uppercase ${currentStufe.badgeBg}`}>
                   {currentStufe.label}
                 </span>
               </div>
@@ -270,29 +266,29 @@ export default function ProjektpipelineCheck() {
               {/* Cards row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-green-50 border border-green-150 rounded-xl p-4 space-y-1">
-                  <span className="text-[9px] font-mono font-bold text-green-700 block uppercase">Umsatzhebel bei +10% Win-Rate</span>
+                  <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich bei 10 Prozentpunkten mehr Zuschlag</span>
                   <h4 className="text-base font-black text-green-700 mt-1">+{formatCHF(results.potenzial_winrate)} / J.</h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
-                    Erhöhung der Abschluss-Win-Rate von {inputs.win_rate}% auf {inputs.win_rate + 10}%
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                    Grobe Schätzung bei einer Zuschlagsquote von {inputs.win_rate + 10}% statt {inputs.win_rate}%
                   </p>
                 </div>
 
                 <div className="bg-slate-50 border border-slate-150 rounded-xl p-4 space-y-1">
-                  <span className="text-[9px] font-mono font-bold text-slate-400 block uppercase">Abstand zu Richtwert (45% CR)</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">Abstand zum Richtwert (Annahme: 45%)</span>
                   <h4 className="text-base font-black text-slate-950 mt-1">
-                    {results.umsatz_gap > 0 ? `${formatCHF(results.umsatz_gap)}` : 'Über Benchmark'}
+                    {results.umsatz_gap > 0 ? `${formatCHF(results.umsatz_gap)}` : 'Auf oder über Richtwert'}
                   </h4>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
-                    Ihr aktueller Jahresumsatz: {formatCHF(results.aktueller_umsatz)}
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                    Ihr Jahresumsatz heute: {formatCHF(results.aktueller_umsatz)}
                   </p>
                 </div>
 
                 <div className={`sm:col-span-2 border rounded-xl p-4 flex items-center justify-between ${results.klumpen_score === 'hoch' ? 'bg-red-50 border-red-150 text-red-700' : 'bg-green-50 border-green-150 text-green-700'}`}>
                   <div>
-                    <span className="text-[9px] font-mono font-bold text-slate-500 block uppercase">Klumpenrisiko-Einschätzung</span>
-                    <p className="text-[10px] text-slate-500 pt-0.5">Top-3-Auftraggeber machen {inputs.top3_anteil}% Ihres Gesamtumsatzes aus</p>
+                    <span className="text-[11px] font-mono font-bold text-slate-500 block uppercase">Klumpenrisiko</span>
+                    <p className="text-[11px] text-slate-500 pt-0.5">Ihre 3 grössten Auftraggeber machen {inputs.top3_anteil}% Ihres Umsatzes aus</p>
                   </div>
-                  <h4 className="text-lg font-black uppercase tracking-wider">{results.klumpen_score === 'hoch' ? '🍳 Hoch' : results.klumpen_score === 'mittel' ? 'Mittel' : '✓ Tief'}</h4>
+                  <h4 className="text-lg font-black uppercase tracking-wider">{results.klumpen_score === 'hoch' ? 'Hoch' : results.klumpen_score === 'mittel' ? 'Mittel' : '✓ Tief'}</h4>
                 </div>
               </div>
 
@@ -302,13 +298,13 @@ export default function ProjektpipelineCheck() {
                   {currentStufe.desc}
                 </p>
                 <p className="text-xs font-bold text-slate-900 pt-1 border-t border-slate-100/50 font-mono">
-                  Am wichtigsten: {currentStufe.rec}
+                  Empfehlung: {currentStufe.rec}
                 </p>
               </div>
             </>
           ) : (
             <div className="p-8 text-center text-slate-400 border border-dashed border-slate-200 rounded-3xl">
-              Geben Sie gültige Werte ein (Projektvolumen mind. CHF 5'000).
+              Bitte geben Sie mindestens 1 Anfrage und ein Projektvolumen ab CHF 5'000 ein.
             </div>
           )}
         </div>
@@ -318,8 +314,8 @@ export default function ProjektpipelineCheck() {
       {results && (
         <div className="border-t border-slate-100 pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-between">
-            <div className="text-left font-semibold text-slate-500 text-[10px] leading-relaxed max-w-sm">
-              <strong>Wie abhängig ist Ihr Büro von 3 Hauptbauherrn?</strong> In 30 Minuten decken wir strategisch Lücken auf und skizzieren Optionen für stabilere Auftraggeberbasis.
+            <div className="text-left font-semibold text-slate-500 text-[11px] leading-relaxed max-w-sm">
+              <strong>Ergebnis gemeinsam einordnen.</strong> In einem kostenlosen Erstgespräch von 30 Minuten schauen wir Ihre Zahlen an und besprechen, wo bei Ihnen der grösste Hebel liegt.
             </div>
             <button
               type="button"
@@ -334,94 +330,11 @@ export default function ProjektpipelineCheck() {
               }}
               className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
-              Wachstumsplanung buchen
+              Ergebnis besprechen
             </button>
           </div>
 
-          <div className="border border-slate-150 rounded-2xl overflow-hidden text-left bg-slate-50/40">
-            <button
-              onClick={() => {
-                setAccordionOpen(!accordionOpen);
-                track('hero_tool_lead_form_opened', {
-                  page: 'ingenieur-planungsbuero',
-                  klumpen_score: results.klumpen_score,
-                  score: results.score,
-                });
-              }}
-              className="w-full p-4 flex justify-between items-center text-xs font-bold text-slate-800 hover:bg-slate-50 transition-colors"
-            >
-              <span>Projektpipeline-Analyse per E-Mail erhalten →</span>
-              {accordionOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-slate-440" />}
-            </button>
 
-            {accordionOpen && (
-              <div className="p-4 border-t border-slate-150 bg-white space-y-4 animate-fadeIn">
-                {!formSubmitted ? (
-                  <form onSubmit={handleSubmitLead} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">E-Mail Adresse *</label>
-                      <input
-                        type="email"
-                        required
-                        value={emailSub}
-                        onChange={(e) => setEmailSub(e.target.value)}
-                        placeholder="ingenieur@büro.ch"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Vorname *</label>
-                      <input
-                        type="text"
-                        required
-                        value={nameSub}
-                        onChange={(e) => setNameSub(e.target.value)}
-                        placeholder="Vorname"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Unternehmensname</label>
-                      <input
-                        type="text"
-                        value={companySub}
-                        onChange={(e) => setCompanySub(e.target.value)}
-                        placeholder="Inhaber / Partner AG"
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none focus:border-[#686DF4]"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Spezialisierung / Fachrichtung</label>
-                      <select
-                        value={disziplin}
-                        onChange={(e) => setDisziplin(e.target.value)}
-                        className="w-full bg-slate-50 border border-slate-200 p-2 text-xs font-semibold rounded-lg focus:outline-none"
-                      >
-                        <option>Bauingenieur / Tragwerksplanung</option>
-                        <option>Elektroplaner / MSRL</option>
-                        <option>HLKS-Planer</option>
-                        <option>Architektur / Generalplanung</option>
-                        <option>Andere</option>
-                      </select>
-                    </div>
-                    <button
-                      type="submit"
-                      className="sm:col-span-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest py-3 rounded-lg text-center"
-                    >
-                      Büro-Analyse anfordern
-                    </button>
-                    <p className="sm:col-span-2 text-[8px] text-slate-400 font-mono text-center">
-                      Keine Werbe-Kampagnen. Einmaliger, personalisierter Report samt Schweizer Planungsbenchmarks.
-                    </p>
-                  </form>
-                ) : (
-                  <div className="p-4 text-center text-green-700 bg-green-50 border border-green-150 rounded-xl font-bold text-xs">
-                    Vielen Dank! Ihre Projekt-Analyse wird zusammengestellt und ist in Kürze in Ihrem Posteingang.
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
         </div>
       )}
     </div>

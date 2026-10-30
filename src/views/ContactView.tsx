@@ -10,7 +10,8 @@ import {
   Mail, 
   Linkedin, 
   MapPin, 
-  MessageSquare
+  MessageSquare,
+  Phone
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import ContactForm from '../components/ContactForm';
@@ -18,44 +19,48 @@ import {
   PREMIUM_EASE, 
   DURATIONS 
 } from '../lib/motion';
+import { SITE } from '../config/site';
 
 export default function ContactView() {
   const DIRECT_CHANNELS = [
     {
-      icon: Mail,
-      label: 'DIREKTE E-MAIL',
-      value: 'hallo@performanceboost.ch',
-      href: 'mailto:hallo@performanceboost.ch'
+      icon: Phone,
+      label: 'Telefon',
+      value: SITE.phoneDisplay,
+      href: SITE.phoneHref,
+      external: false
     },
     {
-      icon: Linkedin,
-      label: 'LINKEDIN NETZWERK',
-      value: 'company/performanceboost',
-      href: 'https://linkedin.com/company/performanceboost'
+      icon: Mail,
+      label: 'E-Mail',
+      value: SITE.email,
+      href: `mailto:${SITE.email}`,
+      external: false
     },
     {
       icon: MapPin,
-      label: 'CH-ORGANISATION',
-      value: 'Patschär 4 • 7306 Fläsch',
-      href: 'https://maps.google.com'
+      label: 'Adresse',
+      value: `${SITE.street} · ${SITE.postalCode} ${SITE.locality}`,
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${SITE.street}, ${SITE.postalCode} ${SITE.locality}`)}`,
+      external: true
     }
   ];
 
   const NEXT_STEPS = [
     {
       step: '01',
-      title: 'Terminauswahl',
-      desc: 'Wähle im Kalender einen passenden 30-Minuten-Zeitraum aus oder sende uns eine Anfrage.'
+      title: 'Sie senden uns Ihre Anfrage',
+      desc: 'Ein paar Sätze zu Ihrer Ausgangslage genügen. Unterlagen brauchen Sie dafür keine.'
     },
     {
       step: '02',
-      title: 'Kurze Diagnose-Analyse',
-      desc: 'Vor unserem Gespräch analysieren wir deine Marktpräsenz, das Tracking und gefundene Pipeline-Lücken.'
+      title: 'Persönliche Antwort innert eines Arbeitstags',
+      desc: 'Yathur Nathan meldet sich bei Ihnen und schlägt einen Termin für das Erstgespräch vor.'
     },
     {
       step: '03',
-      title: 'Gemeinsames Audit',
-      desc: 'Wir präsentieren dir im Web-Call konkrete, messbare Lösungsvorschläge für deine B2B-Anforderungen.'
+      title: 'Erstgespräch (30 Minuten)',
+      desc: 'Per Video oder Telefon. Wir klären Ziele und Ausgangslage und ob wir der richtige Partner sind. Kostenlos und unverbindlich.'
     }
   ];
 
@@ -70,9 +75,9 @@ export default function ContactView() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[10px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full animate-fadeIn"
+            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full animate-fadeIn"
           >
-            LET'S CONVERT
+            Kontakt
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
@@ -80,7 +85,7 @@ export default function ContactView() {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.15]"
           >
-            Setze den nächsten B2B Wachstumshebel an.
+            Erzählen Sie uns, wo Sie stehen.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -88,7 +93,7 @@ export default function ContactView() {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold animate-fadeIn"
           >
-            Sichere dir direkt einen Termin für ein B2B-Wachstums-Audit oder sende uns deine individuellen Projekt-Herausforderungen.
+            Ob Sie bereits Werbung schalten oder noch am Anfang stehen: Schildern Sie kurz Ihre Situation. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
           </motion.p>
         </div>
       </section>
@@ -107,12 +112,12 @@ export default function ContactView() {
         >
           <div className="space-y-2 border-b border-slate-100 pb-5">
             <h2 className="text-xl font-display font-semibold text-slate-900 flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-[#686DF4]" /> Nachricht an Yathur senden
+              <MessageSquare className="w-5 h-5 text-[#686DF4]" /> Ihre Anfrage
             </h2>
-            <p className="text-xs text-slate-450 font-semibold font-mono uppercase tracking-wider">Unkomplizierte Kontaktaufnahme direkt ins Postfach des Inhabers.</p>
+            <p className="text-xs text-slate-450 font-semibold font-mono uppercase tracking-wider">Ihre Nachricht geht direkt an Yathur Nathan.</p>
           </div>
 
-          <ContactForm formName="Kontaktseite Formular" />
+          <ContactForm formName="Kontaktformular Seite" formLocation="kontakt_seite" />
         </motion.div>
 
         {/* Info Column (5 cols) */}
@@ -126,7 +131,7 @@ export default function ContactView() {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
-            <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686DF4] pl-4">Zusätzliche Kontaktkanäle</h3>
+            <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686DF4] pl-4">Direkter Kontakt</h3>
             
             <div className="space-y-4">
               {DIRECT_CHANNELS.map((ch, idx) => {
@@ -135,15 +140,15 @@ export default function ContactView() {
                   <a
                     key={idx}
                     href={ch.href}
-                    target={idx === 1 ? "_blank" : undefined}
-                    rel={idx === 1 ? "noreferrer" : undefined}
+                    target={ch.external ? "_blank" : undefined}
+                    rel={ch.external ? "noreferrer" : undefined}
                     className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.01] transition-all group"
                   >
                     <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-550 flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white transition-all">
                       <IconComp className="w-4 h-4" />
                     </div>
                     <div className="space-y-1">
-                      <span className="block text-[8px] font-mono font-bold text-slate-400 uppercase tracking-widest">{ch.label}</span>
+                      <span className="block text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest">{ch.label}</span>
                       <span className="block text-xs font-bold text-slate-805 group-hover:text-[#686DF4] transition-colors">{ch.value}</span>
                     </div>
                   </a>
@@ -160,13 +165,13 @@ export default function ContactView() {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="bg-slate-950 text-white border border-slate-900 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
-            <h3 className="text-sm font-bold text-white border-l-3 border-[#686DF4] pl-4 font-display">Ablauf der Diagnostic</h3>
+            <h3 className="text-sm font-bold text-white border-l-3 border-[#686DF4] pl-4 font-display">So geht es weiter</h3>
             
             <div className="space-y-6 relative pl-4 border-l border-slate-800">
               {NEXT_STEPS.map((ns, idx) => (
                 <div key={idx} className="relative space-y-1.5" id={`next-step-${ns.step}`}>
                   {/* Absolute positioning of step dot badge */}
-                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-slate-950 border-2 border-[#686DF4] rounded-full flex items-center justify-center text-[8px] font-bold text-white font-mono">
+                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-slate-950 border-2 border-[#686DF4] rounded-full flex items-center justify-center text-[11px] font-bold text-white font-mono">
                     {idx + 1}
                   </div>
                   
