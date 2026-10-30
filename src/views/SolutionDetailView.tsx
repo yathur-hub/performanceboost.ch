@@ -7,6 +7,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
+import Link from '../components/Link';
 import { 
   ArrowLeft, CheckCircle2, AlertOctagon, HelpCircle, ChevronDown, Check,
   ArrowUpRight, Target, ShieldAlert, KeyRound, Sparkles
@@ -213,6 +214,23 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           ))}
         </div>
       </section>
+
+      {sector.related && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href={sector.related.href}
+            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 shadow-sm text-left hover:border-[#686DF4]/50 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+          >
+            <div className="space-y-1.5">
+              <h2 className="text-lg font-display font-semibold text-slate-900 tracking-tight">{sector.related.title}</h2>
+              <p className="text-body-sm text-slate-600 leading-relaxed">{sector.related.desc}</p>
+            </div>
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4f54d6] shrink-0">
+              {sector.related.linkText} <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+            </span>
+          </Link>
+        </section>
+      )}
 
       {/* FAQ ACCORDIAN */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">

@@ -12,6 +12,13 @@ interface FooterProps {
   onNavigate: (path: string) => void;
 }
 
+const FINANCE_LINKS = [
+  { href: '/loesungen/finanzdienstleister', label: 'Übersicht' },
+  { href: '/loesungen/hypothekarberatung', label: 'Hypothekarberatung' },
+  { href: '/loesungen/vorsorgeberatung', label: 'Vorsorgeberatung' },
+  { href: '/loesungen/versicherungsbroker', label: 'Versicherungsbroker' },
+];
+
 export default function Footer({ onNavigate }: FooterProps) {
   const handleLinkClick = (path: string, e: React.MouseEvent) => {
     e.preventDefault();
@@ -94,6 +101,27 @@ export default function Footer({ onNavigate }: FooterProps) {
                     >
                       <span className="w-1 h-1 rounded-full bg-slate-300 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
                       <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">{s.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-3 pt-2">
+              <div>
+                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">Finanzdienstleister</h4>
+                <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
+              </div>
+              <ul className="space-y-2 text-[11px] text-slate-500 font-semibold" id="footer-finance-links">
+                {FINANCE_LINKS.map((l) => (
+                  <li key={l.href}>
+                    <a
+                      href={l.href}
+                      onClick={(e) => handleLinkClick(l.href, e)}
+                      className="hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-slate-300 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
+                      <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">{l.label}</span>
                     </a>
                   </li>
                 ))}

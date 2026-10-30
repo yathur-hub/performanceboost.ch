@@ -20,7 +20,8 @@ import {
   Clock,
   Phone,
   ShoppingCart,
-  RefreshCcw
+  RefreshCcw,
+  Landmark
 } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { ServiceDetail } from '../types';
@@ -451,6 +452,29 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
                       </a>
 
+                      {/* Finanzdienstleister Link Card */}
+                      <a
+                        href="/loesungen/finanzdienstleister"
+                        id="mega-menu-finance-link-card"
+                        onClick={(e) => handleLinkClick('/loesungen/finanzdienstleister', e)}
+                        className="group flex items-center justify-between p-2.5 bg-white border border-slate-200/70 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.02] shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <div className="w-7.5 h-7.5 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/10 transition-colors shrink-0">
+                            <Landmark className="w-3.5 h-3.5" />
+                          </div>
+                          <div className="min-w-0">
+                            <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
+                              Finanzdienstleister
+                            </span>
+                            <span className="block text-[11px] text-slate-500 font-normal truncate">
+                              Hypothek, Vorsorge, Versicherung
+                            </span>
+                          </div>
+                        </div>
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
+                      </a>
+
                       {/* Contact Portrait Card */}
                       <a
                         href="/kontakt"
@@ -570,6 +594,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
                   >
                     <span>BRANCHEN</span>
+                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
+                  </a>
+                  <a
+                    href="/loesungen/finanzdienstleister"
+                    onClick={(e) => handleLinkClick('/loesungen/finanzdienstleister', e)}
+                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
+                  >
+                    <span>FINANZDIENSTLEISTER</span>
                     <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
                   </a>
                   <a
