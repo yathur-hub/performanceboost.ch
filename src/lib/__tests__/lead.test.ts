@@ -130,3 +130,58 @@ describe('trackEvent', () => {
     expect(dl[1]).toEqual({ ui_source: undefined, form_id: undefined });
   });
 });
+
+describe('Finanz-Landingpages', () => {
+  it('leitet die vier Finanz-Routen auf die eigene Ansicht', async () => {
+    for (const slug of ['finanzdienstleister', 'hypothekarberatung', 'vorsorgeberatung', 'versicherungsbroker']) {
+      const r = parseRoute(`/loesungen/${slug}/`);
+      expect(r.view).toBe('finanz');
+      expect(r.slug).toBe(slug);
+      expect(r.pageType).toBe('finanz_landing');
+    }
+    expect(parseRoute('/loesungen/saas-software').view).toBe('loesungen_detail');
+  });
+
+  it('nimmt jede Finanz-Route genau einmal in die Sitemap auf', () => {
+    const paths = indexablePaths();
+    for (const slug of ['finanzdienstleister', 'hypothekarberatung', 'vorsorgeberatung', 'versicherungsbroker']) {
+      expect(paths.filter((p) => p === `/loesungen/${slug}`)).toHaveLength(1);
+    }
+  });
+
+  it('validiert Schritt 1 und Schritt 2 getrennt', async () => {
+    const { validateFinanceStep1, validateFinanceStep2, EMPTY_FINANCE_LEAD } = await import('../financeLead');
+    expect(Object.keys(validateFinanceStep1(EMPTY_FINANCE_LEAD)).sort()).toEqual(['segment', 'teamSize']);
+    const ok = { ...EMPTY_FINANCE_LEAD, firstName: 'A', lastName: 'B', company: 'C GmbH', email: 'a@c.ch' };
+    expect(validateFinanceStep2(ok)).toEqual({});
+    expect(validateFinanceStep2({ ...ok, companyWebsite: 'keine-adresse' }).companyWebsite).toBeTruthy();
+    expect(validateFinanceStep2({ ...ok, companyWebsite: 'www.muster.ch' }).companyWebsite).toBeUndefined();
+  });
+
+  it('baut einen v3-kompatiblen Payload mit lesbarer Zusammenfassung', async () => {
+    const { buildFinanceLeadPayload, EMPTY_FINANCE_LEAD } = await import('../financeLead');
+    const payload = buildFinanceLeadPayload(
+      { ...EMPTY_FINANCE_LEAD, segment: 'HY', teamSize: '2-5', firstName: ' Anna ', lastName: 'Muster', company: 'Muster GmbH', email: 'anna@muster.ch', adBudget: 'open' },
+      {
+        formId: 'finance', formName: 'Anfrage-Check Finanz', formLocation: 'finanz_hypothekarberatung', pageType: 'finanz_landing',
+        pageUrl: 'https://performanceboost.ch/loesungen/hypothekarberatung', conversionPath: '/loesungen/hypothekarberatung',
+        formStartedAt: null, submittedAt: '2026-10-30T10:00:00.000Z', attribution: { firstTouch: null, lastTouch: null },
+      },
+      '12 zusätzliche Mandate/Jahr',
+    );
+    expect(payload.firstName).toBe('Anna');
+    expect(payload.annualRevenue).toBe('');
+    expect(payload.qualification.segment).toBe('HY');
+    expect(payload.message).toContain('Schwerpunkt: Hypothek & Eigenheim');
+    expect(payload.message).toContain('Grösse: 2–5');
+    expect(payload.message).toContain('Wachstumscheck: 12 zusätzliche Mandate/Jahr');
+    expect(payload.message).not.toContain('Jahresumsatz');
+  });
+
+  it('rechnet den Wachstumscheck nur mit den eigenen Angaben', async () => {
+    const { requiredMeetingsPerMonth } = await import('../../components/FinanceGrowthCheck');
+    expect(requiredMeetingsPerMonth(12, 3)).toBe(4);
+    expect(requiredMeetingsPerMonth(0, 3)).toBe(0);
+    expect(requiredMeetingsPerMonth(24, 10)).toBe(2);
+  });
+});

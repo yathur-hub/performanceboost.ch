@@ -29,8 +29,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'finanzdienstleister': {
     slug: 'finanzdienstleister',
     title: 'Finanzdienstleister',
-    subtitle: 'Mehr Beratungsanfragen für unabhängige Vermögensverwalter',
-    heroDesc: 'Wir helfen Vermögensverwaltern und Finanzberatungen, über LinkedIn, Google und die eigene Website passende Privat- und Unternehmerkunden zu erreichen. Die Werbevorschriften Ihrer Branche berücksichtigen wir von Anfang an.',
+    subtitle: 'Mehr qualifizierte Erstgespräche für Hypotheken-, Vorsorge- und Versicherungsberatungen',
+    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz: Kampagnen, Landingpage und Terminweg für Ihren Beratungsanlass, gemessen bis zum Termin. Die Seite wird über FinanceLandingView dargestellt (src/data/financeLanding.ts).',
     calculatorComponent: 'BeratungsPipelineRechner',
     problems: [
       {

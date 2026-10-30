@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { SERVICES } from '../data/services';
 import { RESOURCES_DATA } from '../data/resources';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
+import { FINANCE_PAGES, isFinanceSlug } from '../data/financeLanding';
 import { SITE } from '../config/site';
 import type { ParsedRoute } from '../lib/routes';
 
@@ -122,6 +123,35 @@ export function buildMeta(route: ParsedRoute): Meta {
       const title = sector ? `Neukundengewinnung für ${sector.title} | performanceboost` : 'Branchenlösung | performanceboost';
       const description = truncate(sector ? sector.heroDesc : '');
       return { ...base, title, description, schema: webPage('WebPage', url, title, description) };
+    }
+    case 'finanz': {
+      const page = route.slug && isFinanceSlug(route.slug) ? FINANCE_PAGES[route.slug] : undefined;
+      if (!page) return { title: 'Seite nicht gefunden | performanceboost', description: '', schema: null, ogType: 'website', indexable: false };
+      const crumbs = [
+        { name: 'Lösungen', url: `${SITE.baseUrl}/loesungen` },
+        { name: 'Finanzdienstleister', url: `${SITE.baseUrl}/loesungen/finanzdienstleister` },
+        ...(page.slug === 'finanzdienstleister' ? [] : [{ name: page.label, url }]),
+      ];
+      return {
+        ...base,
+        title: page.seoTitle,
+        description: truncate(page.seoDescription),
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            { ...webPage('WebPage', url, page.seoTitle, page.seoDescription), '@context': undefined },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+            },
+            {
+              '@type': 'FAQPage',
+              '@id': `${url}#faq`,
+              mainEntity: page.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+            },
+          ],
+        },
+      };
     }
     case 'about': {
       const title = 'Über uns: Yathur Nathan & performanceboost | performanceboost';

@@ -1,12 +1,14 @@
 import { SERVICES } from '../data/services';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import { RESOURCES_DATA } from '../data/resources';
+import { FINANCE_SLUGS, isFinanceSlug } from '../data/financeLanding';
 
 export type RouteView =
   | 'home'
   | 'skills'
   | 'loesungen'
   | 'loesungen_detail'
+  | 'finanz'
   | 'about'
   | 'kontakt'
   | 'impressum'
@@ -46,6 +48,8 @@ export function parseRoute(pathname: string): ParsedRoute {
 
   if (path.startsWith('/loesungen/')) {
     const slug = path.slice('/loesungen/'.length);
+    // Finanz-Landingpages (Übersicht + Schwerpunkte) haben eine eigene Ansicht.
+    if (isFinanceSlug(slug)) return { view: 'finanz', slug, path, pageType: 'finanz_landing' };
     if (!SOLUTION_SLUGS.includes(slug)) return notFound;
     return { view: 'loesungen_detail', slug, path, pageType: 'loesung' };
   }
@@ -86,6 +90,7 @@ export function indexablePaths(): string[] {
     ...SERVICES.map((s) => `/leistungen/${s.slug}`),
     '/loesungen',
     ...SOLUTION_SLUGS.map((slug) => `/loesungen/${slug}`),
+    ...FINANCE_SLUGS.filter((slug) => !SOLUTION_SLUGS.includes(slug)).map((slug) => `/loesungen/${slug}`),
     '/ressourcen',
     ...RESOURCES_DATA.filter((r) => r.type !== 'case-study').map((r) => `/ressourcen/${r.slug}`),
     '/ueber-uns',
