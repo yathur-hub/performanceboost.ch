@@ -12,11 +12,13 @@ const AboutView = lazy(() => import('./views/AboutView'));
 const ContactView = lazy(() => import('./views/ContactView'));
 const LegalView = lazy(() => import('./views/LegalView'));
 const SolutionDetailView = lazy(() => import('./views/SolutionDetailView'));
+const FinanceLandingView = lazy(() => import('./views/FinanceLandingView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeView from './views/HomeView';
 import NotFoundView from './views/NotFoundView';
 import { parseRoute } from './lib/routes';
+import type { FinanceSlug } from './data/financeLanding';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
 import { motion, AnimatePresence } from 'motion/react';
@@ -108,6 +110,9 @@ function AppContent() {
             )}
             {parsed.view === 'loesungen_detail' && (
               <SolutionDetailView slug={parsed.slug || ''} onNavigate={handleNavigate} />
+            )}
+            {parsed.view === 'finanz' && parsed.slug && (
+              <FinanceLandingView slug={parsed.slug as FinanceSlug} />
             )}
             {parsed.view === 'leistungen' && (
               <ServicesView currentSlug={parsed.slug} onNavigate={handleNavigate} />
