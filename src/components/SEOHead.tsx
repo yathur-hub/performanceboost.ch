@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { trackEvent } from '../lib/analytics';
 import { SERVICES } from '../data/services';
 import { RESOURCES_DATA } from '../data/resources';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
@@ -252,6 +253,24 @@ export function buildHeadTags(route: ParsedRoute): HeadTags {
   };
 }
 
+/**
+ * Zuletzt gemeldete URL. Den ersten Seitenaufruf zählt der GA4-Konfigurationstag selbst; danach meldet
+ * jeder Routenwechsel einen virtuellen Seitenaufruf (GTM-Tag «GA4 Event | page_view (SPA)»).
+ * Modulvariable statt useRef, damit StrictMode-Doppelaufrufe keinen zusätzlichen Aufruf erzeugen.
+ */
+let lastTrackedUrl: string | null = null;
+
+function trackVirtualPageView() {
+  const url = window.location.href;
+  if (lastTrackedUrl === null) {
+    lastTrackedUrl = url;
+    return;
+  }
+  if (url === lastTrackedUrl) return;
+  trackEvent('virtual_page_view', { page_location: url, page_title: document.title, page_referrer: lastTrackedUrl });
+  lastTrackedUrl = url;
+}
+
 export default function SEOHead({ route }: SEOHeadProps) {
   useEffect(() => {
     const head = buildHeadTags(route);
@@ -279,6 +298,8 @@ export default function SEOHead({ route }: SEOHeadProps) {
       script.textContent = JSON.stringify(head.schema);
       document.head.appendChild(script);
     }
+
+    trackVirtualPageView();
   }, [route]);
 
   return null;
