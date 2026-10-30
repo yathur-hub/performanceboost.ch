@@ -101,7 +101,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Was kosten KI-Tools?',
-        a: 'Die Lizenzen sind meist überschaubar, als Richtwert oft unter CHF 200 pro Monat je Tool. Der grössere Aufwand liegt in Einrichtung, Tests und Schulung. Diesen schätzen wir nach dem Erstgespräch konkret für Ihren Fall.'
+        a: 'Die Lizenzkosten hängen vom Tool ab. Der grössere Aufwand liegt in Einrichtung, Tests und Schulung. Diesen schätzen wir nach dem Erstgespräch konkret für Ihren Fall.'
       },
       {
         q: 'Wie stellen Sie sicher, dass KI-generierte Inhalte gut sind?',
@@ -303,18 +303,6 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           { title: 'Inhalte & SEO', desc: 'Langfristige Sichtbarkeit bei Google mit Inhalten, die passende Besucher anziehen.' },
           { title: 'E-Mail & Newsletter', desc: 'Bestehende Kontakte weiterbegleiten und eine eigene Leserschaft aufbauen, unabhängig von Plattform-Algorithmen.' }
         ]
-      },
-
-      {
-        title: 'Investition',
-        type: 'investment',
-        subtitle: 'Richtwerte für die Betreuung, Werbebudget separat.',
-        items: [
-          { title: 'Einstieg', desc: 'ab CHF 2\'000 / Monat', extra: 'Richtwert für ein bis zwei Kanäle mit klarem Fokus.' },
-          { title: 'Ausbau', desc: 'Richtwert CHF 4\'000–8\'000 / Monat', extra: 'Für mehrere Kanäle und laufende Optimierung.' },
-          { title: 'Mehrere Märkte', desc: 'ab CHF 8\'000 / Monat', extra: 'Richtwert für mehrere Märkte, Sprachen oder Zielgruppen.' }
-        ],
-        text: 'Werbebudget und Betreuungshonorar weisen wir getrennt aus. Sie sehen jederzeit, was wohin fliesst.'
       }
     ],
     faq: [
@@ -518,15 +506,9 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     extraSections: [
 
       {
-        title: 'Investition',
-        type: 'investment',
-        subtitle: 'Richtwerte für Inhalte und SEO. Der genaue Umfang richtet sich nach Ihrem Markt.',
-        items: [
-          { title: 'Einstieg', desc: 'ab CHF 1\'500 / Monat', extra: 'Richtwert: z. B. zwei Artikel pro Monat, technisches SEO und Bericht. Für den Aufbau erster Sichtbarkeit.' },
-          { title: 'Ausbau', desc: 'ab CHF 2\'500 / Monat', extra: 'Richtwert: z. B. vier Artikel pro Monat, SEO-Grundlagen, Landingpage-Optimierung und Download-Angebote.' },
-          { title: 'Intensiv', desc: 'ab CHF 4\'000 / Monat', extra: 'Richtwert: z. B. acht Artikel pro Monat, vollständiger Themenplan, Anbindung an Automatisierung und laufende Optimierung.' }
-        ],
-        text: 'Zeitrahmen: Erste Platzierungen bei Google meist nach drei bis sechs Monaten, spürbar mehr Anfragen eher nach sechs bis neun Monaten. Organische Sichtbarkeit braucht Zeit. Wer schneller Anfragen braucht, ergänzt SEO mit Google Ads.'
+        title: 'Zeitrahmen',
+        type: 'text',
+        text: 'Erste Platzierungen bei Google meist nach drei bis sechs Monaten, spürbar mehr Anfragen eher nach sechs bis neun Monaten. Organische Sichtbarkeit braucht Zeit. Wer schneller Anfragen braucht, ergänzt SEO mit Google Ads.'
       }
     ],
     faq: [
@@ -1255,7 +1237,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Wie lange dauert es, bis Paid Social rentabel ist, und was kostet es?',
-        a: 'In den ersten vier bis acht Wochen sammeln wir Daten, testen Anzeigen und lassen die Algorithmen lernen. In dieser Zeit liegen die Kampagnen oft erst etwa bei der Gewinnschwelle. Ein rentabler Ausbau ist meist ab Woche acht bis zwölf realistisch. Als Richtwert empfehlen wir ein Werbebudget ab CHF 3\'000 bis 5\'000 pro Monat, damit genug Daten zusammenkommen. Das Betreuungshonorar offerieren wir separat nach dem Erstgespräch.'
+        a: 'In den ersten vier bis acht Wochen sammeln wir Daten, testen Anzeigen und lassen die Algorithmen lernen. In dieser Zeit liegen die Kampagnen oft erst etwa bei der Gewinnschwelle. Ein rentabler Ausbau ist meist ab Woche acht bis zwölf realistisch. Welches Werbebudget sinnvoll ist und wie die Betreuung aufgebaut wird, besprechen wir im Erstgespräch.'
       }
     ],
     cta: {
