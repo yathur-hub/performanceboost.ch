@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
+import { readRememberedResult } from '../data/problemFinder';
 
 import GrowthStrategyIndicator from '../components/GrowthStrategyIndicator';
 import DemandPipelineGap from '../components/DemandPipelineGap';
@@ -28,6 +29,8 @@ interface ServicesViewProps {
 }
 
 export default function ServicesView({ currentSlug, onNavigate }: ServicesViewProps) {
+  // Ergebnis aus dem Problem-Finder der Startseite (nur in dieser Sitzung).
+  const [finderHint] = React.useState(() => readRememberedResult());
   
   const servicesIcons: { [key: string]: any } = {
     'growth-strategy': TrendingUp,
@@ -170,6 +173,15 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   ))}
                 </div>
               </div>
+              )}
+
+              {finderHint && finderHint.serviceSlug === service.slug && (
+                <div className="rounded-2xl border border-[#686DF4]/30 bg-[#686DF4]/5 p-4 text-left space-y-1">
+                  <p className="text-sm font-semibold text-slate-900">Passend zu Ihrer Angabe «{finderHint.problemLabel}»</p>
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    Im kostenlosen Erstgespräch schauen wir uns an, wie das bei Ihnen konkret aussieht und was der erste sinnvolle Schritt ist.
+                  </p>
+                </div>
               )}
 
               <div className="pt-2 text-left">
