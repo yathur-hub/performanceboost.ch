@@ -96,13 +96,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     return servicesIcons[slug] || TrendingUp;
   };
 
-  const PRIMARY_LINKS = [
-    { href: '/leistungen', label: 'Leistungen' },
-    { href: '/loesungen', label: 'Branchen' },
-    { href: '/ueber-uns', label: 'Über uns' },
-    { href: '/ressourcen', label: 'Ratgeber' },
-  ];
-
   const navServices = SERVICES.filter(
     (s) => s.slug !== 'marketing-automation' && s.slug !== 'revenue-operations'
   );
@@ -137,37 +130,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               />
             </a>
 
-            {/* Persistente Hauptnavigation (Desktop) */}
-            <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-1">
-              {PRIMARY_LINKS.map((link) => {
-                const active = currentPath === link.href || currentPath.startsWith(`${link.href}/`);
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(link.href, e)}
-                    aria-current={active ? 'page' : undefined}
-                    className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                      active ? 'text-[#4f54d6] bg-[#686DF4]/8' : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100'
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                );
-              })}
-            </nav>
-
-            {/* CTA + Menü */}
-            <div className="flex items-center gap-2 sm:gap-3">
-              <a
-                href="/kontakt"
-                onClick={(e) => handleLinkClick('/kontakt', e)}
-                id="header-cta"
-                className="inline-flex items-center gap-1.5 min-h-11 px-4 sm:px-5 rounded-full bg-slate-950 text-white text-sm font-semibold hover:bg-[#4f54d6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors"
-              >
-                <span className="sm:hidden">Kontakt</span>
-                <span className="hidden sm:inline">Erstgespräch vereinbaren</span>
-              </a>
+            {/* Menü */}
+            <div className="flex items-center">
               <button
                 id="nav-toggle-button"
                 onClick={() => setIsOpen(!isOpen)}
