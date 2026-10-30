@@ -29,7 +29,7 @@ const VIEWPORTS = [
       await page.goto(base + route, { waitUntil: 'networkidle' });
       await page.waitForTimeout(400);
       const d = await page.evaluate(() => {
-        const cta = document.getElementById('header-cta');
+        const cta = document.getElementById('nav-toggle-button');
         const r = cta?.getBoundingClientRect();
         const main = document.querySelector('main')?.innerText || '';
         return {
@@ -38,7 +38,7 @@ const VIEWPORTS = [
           canonical: document.querySelector('link[rel=canonical]')?.getAttribute('href') || null,
           h1: [...document.querySelectorAll('h1')].map((h) => h.textContent.trim().replace(/\s+/g, ' ')),
           overflowX: document.documentElement.scrollWidth - window.innerWidth,
-          headerCtaVisible: !!r && r.width > 0 && r.top >= 0 && r.bottom <= window.innerHeight,
+          menuButtonVisible: !!r && r.width > 0 && r.top >= 0 && r.bottom <= window.innerHeight,
           internalLinks: document.querySelectorAll('a[href^="/"]').length,
           duForms: (main.match(/\b(du|dein|deine|deinen|deinem|dich|dir)\b/gi) || []).slice(0, 5),
           eszett: (main.match(/\S*ß\S*/g) || []).slice(0, 5),
@@ -71,7 +71,7 @@ const VIEWPORTS = [
     // Interne Navigation: Attribution muss erhalten bleiben
     await page.evaluate(() => window.dispatchEvent(new CustomEvent('navigation-change', { detail: '/ueber-uns' })));
     await page.waitForTimeout(300);
-    await page.click('#header-cta');
+    await page.evaluate(() => window.dispatchEvent(new Event('open-contact-modal')));
     await page.waitForSelector('#form-firstName');
     // Leeres Absenden: Validierung, kein Request
     await page.click('form button[type=submit]');
