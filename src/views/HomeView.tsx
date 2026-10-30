@@ -1,14 +1,13 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { 
   ArrowRight, Sparkles, CheckCircle2, ShieldCheck, HelpCircle, Laptop, Landmark, TrendingUp, Layers, Users, Cpu, FileText, Megaphone, AlertCircle, ChevronDown, Check,
-  PiggyBank, Cloud, Home, Briefcase, Factory, Compass, GraduationCap, Stethoscope, Hammer, Scale, Truck, Hotel
+  PiggyBank, Cloud, Home, Briefcase, Factory, GraduationCap, Stethoscope, Hammer, Scale, Truck, Hotel
 } from 'lucide-react';
 import InteractiveGrowthCalculator from '../components/InteractiveGrowthCalculator';
 const RevenuePotenzialCheck = lazy(() => import('../components/RevenuePotenzialCheck'));
 import { motion, AnimatePresence } from 'motion/react';
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
-const RevenueNavigator = lazy(() => import('../components/home/RevenueNavigator').then((m) => ({ default: m.RevenueNavigator })));
 import { ClientTestimonials } from '../components/home/ClientTestimonials';
 import { SITE } from '../config/site';
 
@@ -18,7 +17,6 @@ interface HomeViewProps {
 
 export default function HomeView({ onNavigate }: HomeViewProps) {
   const [showPotenzialCheck, setShowPotenzialCheck] = useState(false);
-  const [showRevenueNavigator, setShowRevenueNavigator] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleConsultationClick = (e: React.MouseEvent) => {
@@ -61,7 +59,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               className="text-[2.1rem] sm:text-5xl lg:text-6xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] max-w-3xl mx-auto"
             >
               Mehr passende Kundenanfragen für Ihr KMU.{' '}
-              <span className="text-[#686DF4] italic font-serif">Planbar statt zufällig.</span>
+              <span className="text-[#696EEF] italic font-serif">Planbar statt zufällig.</span>
             </motion.h1>
 
             <motion.div 
@@ -101,27 +99,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               >
                 Potenzial-Check starten <span className="text-sm font-normal text-slate-500">(unter 1 Min.)</span>
               </button>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { duration: 0.6 } }
-              }}
-              className="space-y-2 text-sm text-slate-600"
-            >
-              <p>Für KMU ab rund CHF 1 Mio. Umsatz · Antwort innert eines Arbeitstags</p>
-              <p>
-                Kundenstimmen u.a. von Mission13, CUIRA Partners und Marigin ·{' '}
-                <button
-                  type="button"
-                  onClick={() => setShowRevenueNavigator(true)}
-                  className="underline underline-offset-2 hover:text-slate-900 cursor-pointer bg-transparent border-0 p-0 text-sm text-slate-600"
-                >
-                  <Compass className="inline w-3.5 h-3.5 mr-1 -mt-0.5 text-[#686DF4]" aria-hidden="true" />
-                  Wegweiser: Wo stehen Sie?
-                </button>
-              </p>
             </motion.div>
           </motion.div>
         </div>
@@ -619,16 +596,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <RevenuePotenzialCheck 
             onClose={() => setShowPotenzialCheck(false)} 
             onNavigate={onNavigate}
-          />
-        )}
-        {showRevenueNavigator && (
-          <RevenueNavigator 
-            isModal={true}
-            onClose={() => setShowRevenueNavigator(false)} 
-            onNavigate={(path) => {
-              setShowRevenueNavigator(false);
-              onNavigate(path);
-            }}
           />
         )}
       </AnimatePresence>
