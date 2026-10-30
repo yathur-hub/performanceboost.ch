@@ -4,7 +4,7 @@ import {
   PiggyBank, Cloud, Home, Briefcase, Factory, GraduationCap, Stethoscope, Hammer, Scale, Truck, Hotel
 } from 'lucide-react';
 import InteractiveGrowthCalculator from '../components/InteractiveGrowthCalculator';
-const RevenuePotenzialCheck = lazy(() => import('../components/RevenuePotenzialCheck'));
+const ProblemFinder = lazy(() => import('../components/home/ProblemFinder'));
 import { motion, AnimatePresence } from 'motion/react';
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
@@ -16,7 +16,7 @@ interface HomeViewProps {
 }
 
 export default function HomeView({ onNavigate }: HomeViewProps) {
-  const [showPotenzialCheck, setShowPotenzialCheck] = useState(false);
+  const [showProblemFinder, setShowProblemFinder] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleConsultationClick = (e: React.MouseEvent) => {
@@ -93,11 +93,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </a>
               <button
                 type="button"
-                onClick={() => setShowPotenzialCheck(true)}
+                onClick={() => setShowProblemFinder(true)}
                 data-cta="hero_secondary"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
               >
-                Potenzial-Check starten <span className="text-sm font-normal text-slate-500">(unter 1 Min.)</span>
+                Welches Problem möchten Sie lösen?
               </button>
             </motion.div>
           </motion.div>
@@ -592,9 +592,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
       <Suspense fallback={null}>
       <AnimatePresence>
-        {showPotenzialCheck && (
-          <RevenuePotenzialCheck 
-            onClose={() => setShowPotenzialCheck(false)} 
+        {showProblemFinder && (
+          <ProblemFinder
+            onClose={() => setShowProblemFinder(false)}
             onNavigate={onNavigate}
           />
         )}
