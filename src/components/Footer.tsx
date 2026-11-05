@@ -7,6 +7,7 @@ import React from 'react';
 import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
+import { SERVICE_AREAS } from '../data/serviceAreas';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -27,7 +28,7 @@ export default function Footer({ onNavigate }: FooterProps) {
   };
 
   const b2bServices = SERVICES.filter((s) => 
-    ['growth-strategy', 'demand-generation', 'lead-generation', 'sales-enablement', 'ai-automation', 'data-analytics'].includes(s.slug)
+    ['growth-strategy', 'ai-automation', 'marketing-automation', 'data-analytics', 'demand-generation', 'lead-generation', 'revenue-operations', 'sales-enablement'].includes(s.slug)
   );
 
   const ecommerceServices = SERVICES.filter((s) => 
@@ -54,7 +55,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               />
             </a>
             <p className="text-xs text-slate-500 leading-relaxed max-w-[240px] font-medium animate-fade-in">
-              Beratung und Umsetzung für digitale Neukundengewinnung: Kampagnen, Landingpages, Tracking und Automatisierung für Schweizer KMU.
+              Business Performance Partner für Schweizer KMU. We boost business performance: Strategy, Technology, Growth.
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50/50 px-3 py-1.5 rounded-lg border border-slate-200/60 w-fit shadow-[var(--shadow-premium-sm)]">
               <ShieldCheck className="w-4 h-4 text-[#686DF4] shrink-0" />
@@ -62,10 +63,28 @@ export default function Footer({ onNavigate }: FooterProps) {
             </div>
           </div>
 
-          {/* Column 2: B2B & Dienstleistung (8 Hebel) */}
+          {/* Column 2: Leistungsfelder + Leistungen B2B */}
           <div className="space-y-4" id="footer-col-b2b">
             <div>
-              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">B2B & Dienstleistung</h4>
+              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">Leistungsfelder</h4>
+              <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
+            </div>
+            <ul className="space-y-2 text-[11px] text-slate-600 font-bold" id="footer-area-links">
+              {SERVICE_AREAS.map((a) => (
+                <li key={a.id}>
+                  <a
+                    href={`/leistungen/${a.id}`}
+                    onClick={(e) => handleLinkClick(`/leistungen/${a.id}`, e)}
+                    className="hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-[#686DF4]/60 shrink-0"></span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">{a.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="pt-2">
+              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">Leistungen</h4>
               <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
             </div>
             <ul className="space-y-2 text-[11px] text-slate-500 font-semibold" id="footer-b2b-links">
@@ -141,7 +160,17 @@ export default function Footer({ onNavigate }: FooterProps) {
                     className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
                   >
                     <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Branchen</span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Lösungen & Branchen</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/referenzen" 
+                    onClick={(e) => handleLinkClick('/referenzen', e)} 
+                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Referenzen</span>
                   </a>
                 </li>
                 <li>

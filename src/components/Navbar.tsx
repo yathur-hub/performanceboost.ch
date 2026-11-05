@@ -27,6 +27,7 @@ import { SERVICES } from '../data/services';
 import { ServiceDetail } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { SITE } from '../config/site';
+import { SERVICE_AREAS, primaryAreaOf } from '../data/serviceAreas';
 
 interface NavbarProps {
   currentPath: string;
@@ -97,9 +98,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     return servicesIcons[slug] || TrendingUp;
   };
 
-  const navServices = SERVICES.filter(
-    (s) => s.slug !== 'marketing-automation' && s.slug !== 'revenue-operations'
-  );
+  // Mega-Menü nach Leistungsfeldern gruppiert; jede Leistung erscheint nur in ihrem Hauptfeld.
+  const navGroups = SERVICE_AREAS.map((area) => ({
+    area,
+    services: SERVICES.filter((s) => primaryAreaOf(s.slug)?.id === area.id),
+  }));
 
   return (
     <>
@@ -292,12 +295,13 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           </div>
 
                           <h4 className="text-lg font-display font-bold text-slate-900 tracking-tight leading-snug">
-                            Mehr passende Anfragen statt mehr Klicks.
+                            We boost business performance.
                           </h4>
 
                           <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                            Kampagnen, Landingpages, Tracking und Automatisierung aus einer Hand, damit aus Werbebudget messbar Kundenanfragen werden.
+                            Business Performance Partner für Schweizer KMU: Strategie, Technologie und Wachstum aus einer Hand, damit Marketing, Vertrieb und Abläufe besser zusammenarbeiten.
                           </p>
+                          <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">Strategy · Technology · Growth</p>
 
                           
                         </div>
@@ -329,44 +333,57 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       </a>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2" id="services-interactive-grid">
-                      {navServices.map((s) => {
-                        const IconComp = getServiceIcon(s.slug);
-                        const isHovered = hoveredService?.slug === s.slug;
-                        
-                        return (
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-5" id="services-interactive-grid">
+                      {navGroups.map(({ area, services }) => (
+                        <div key={area.id} className="space-y-2">
                           <a
-                            key={s.slug}
-                            id={`navbar-service-card-${s.slug}`}
-                            href={`/leistungen/${s.slug}`}
-                            onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
-                            onMouseEnter={() => setHoveredService(s)}
-                            className={`group flex items-center gap-2.5 p-2.5 rounded-xl border text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] min-h-[50px] relative cursor-pointer ${
-                              isHovered 
-                                ? 'bg-[#686DF4]/[0.05] border-[#686DF4]/40 shadow-xs' 
-                                : 'bg-white border-slate-200/70 hover:bg-[#686DF4]/[0.025] hover:border-[#686DF4]/30'
-                            }`}
+                            href={`/leistungen/${area.id}`}
+                            onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
+                            className="block text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4] hover:text-slate-900 transition-colors"
                           >
-                            <div className={`w-7.5 h-7.5 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                              isHovered ? 'bg-[#686DF4] text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4]'
-                            }`}>
-                              <IconComp className="w-3.5 h-3.5" />
-                            </div>
-
-                            <div className="flex-grow min-w-0">
-                              <span className={`block text-xs font-semibold tracking-tight transition-colors truncate ${
-                                isHovered ? 'text-[#686DF4]' : 'text-slate-900 group-hover:text-[#686DF4]'
-                              }`}>
-                                {s.title}
-                              </span>
-                            </div>
-
-                            <ChevronRight className={`w-3.5 h-3.5 shrink-0 transition-all duration-200 ${
-                              isHovered ? 'text-[#686DF4] translate-x-0.5' : 'text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5'
-                            }`} />
+                            {area.label}
                           </a>
-                        );
-                      })}
+                          <div className="space-y-1.5">
+                            {services.map((s) => {
+                        const IconComp = getServiceIcon(s.slug);
+                              const isHovered = hoveredService?.slug === s.slug;
+                              
+                              return (
+                                <a
+                                  key={s.slug}
+                                  id={`navbar-service-card-${s.slug}`}
+                                  href={`/leistungen/${s.slug}`}
+                                  onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
+                                  onMouseEnter={() => setHoveredService(s)}
+                                  className={`group flex items-center gap-2.5 p-2.5 rounded-xl border text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] min-h-[50px] relative cursor-pointer ${
+                                    isHovered 
+                                      ? 'bg-[#686DF4]/[0.05] border-[#686DF4]/40 shadow-xs' 
+                                      : 'bg-white border-slate-200/70 hover:bg-[#686DF4]/[0.025] hover:border-[#686DF4]/30'
+                                  }`}
+                                >
+                                  <div className={`w-7.5 h-7.5 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                                    isHovered ? 'bg-[#686DF4] text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4]'
+                                  }`}>
+                                    <IconComp className="w-3.5 h-3.5" />
+                                  </div>
+
+                                  <div className="flex-grow min-w-0">
+                                    <span className={`block text-xs font-semibold tracking-tight transition-colors truncate ${
+                                      isHovered ? 'text-[#686DF4]' : 'text-slate-900 group-hover:text-[#686DF4]'
+                                    }`}>
+                                      {s.title}
+                                    </span>
+                                  </div>
+
+                                  <ChevronRight className={`w-3.5 h-3.5 shrink-0 transition-all duration-200 ${
+                                    isHovered ? 'text-[#686DF4] translate-x-0.5' : 'text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5'
+                                  }`} />
+                                </a>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -393,17 +410,63 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         </div>
 
                         <h5 className="text-sm font-bold tracking-tight text-white mb-1 group-hover:text-[#8185F8] transition-colors flex items-center justify-between">
-                          Erstgespräch (30 Min.) <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          Potenzial besprechen <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                         </h5>
 
                         <p className="text-[11px] text-slate-300 font-normal leading-snug mb-3">
-                          Wir schauen gemeinsam auf Ihre heutige Kundengewinnung.
+                          30 Minuten Erstgespräch: Wir schauen gemeinsam, wo Ihr grösster Hebel liegt.
                         </p>
 
                         <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-white bg-[#686DF4] group-hover:bg-[#575cdb] px-3 py-1.5 rounded-lg transition-colors">
                           <Calendar className="w-3.5 h-3.5" />
                           Anfrage senden
                         </div>
+                      </a>
+
+                      {/* Lösungen Link card */}
+                      <a
+                        href="/loesungen"
+                        id="mega-menu-solutions-link-card"
+                        onClick={(e) => handleLinkClick('/loesungen', e)}
+                        className="group flex items-center justify-between p-2.5 bg-white border border-slate-200/70 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.02] shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <div className="w-7.5 h-7.5 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/10 transition-colors shrink-0">
+                            <Layers className="w-3.5 h-3.5" />
+                          </div>
+                          <div className="min-w-0">
+                            <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
+                              Lösungen
+                            </span>
+                            <span className="block text-[11px] text-slate-500 font-normal truncate">
+                              Nach Herausforderung und Branche
+                            </span>
+                          </div>
+                        </div>
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
+                      </a>
+
+                      {/* Referenzen Link card */}
+                      <a
+                        href="/referenzen"
+                        id="mega-menu-references-link-card"
+                        onClick={(e) => handleLinkClick('/referenzen', e)}
+                        className="group flex items-center justify-between p-2.5 bg-white border border-slate-200/70 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.02] shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <div className="w-7.5 h-7.5 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/10 transition-colors shrink-0">
+                            <CheckCircle2 className="w-3.5 h-3.5" />
+                          </div>
+                          <div className="min-w-0">
+                            <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
+                              Referenzen
+                            </span>
+                            <span className="block text-[11px] text-slate-500 font-normal truncate">
+                              Was Kundinnen und Kunden sagen
+                            </span>
+                          </div>
+                        </div>
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
                       </a>
 
                       {/* Über uns Link card */}
@@ -536,7 +599,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 {/* Brand description header block */}
                 <div className="bg-white border border-slate-200/80 p-4.5 rounded-2xl space-y-2">
                   <p className="mega-menu-desc text-slate-600 font-medium leading-relaxed">
-                    Planbare Neukundengewinnung für Schweizer KMU.
+                    Business Performance Partner für Schweizer KMU. Strategy · Technology · Growth.
                   </p>
                 </div>
 
@@ -564,23 +627,34 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                           className="border-t border-slate-100 overflow-hidden bg-slate-50/50"
                         >
-                          <div className="p-3 grid grid-cols-1 gap-2.5">
-                            {navServices.map((s) => {
-                              const IconComp = getServiceIcon(s.slug);
-                              return (
+                          <div className="p-3 space-y-4">
+                            {navGroups.map(({ area, services }) => (
+                              <div key={area.id} className="space-y-2">
                                 <a
-                                  key={s.slug}
-                                  href={`/leistungen/${s.slug}`}
-                                  onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
-                                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200/60 hover:bg-slate-50 focus:outline-none"
+                                  href={`/leistungen/${area.id}`}
+                                  onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
+                                  className="block px-1 text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]"
                                 >
-                                  <div className="w-8.5 h-8.5 rounded-lg bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center shrink-0">
-                                    <IconComp className="w-4.5 h-4.5" />
-                                  </div>
-                                  <span className="mega-menu-link font-bold text-slate-900 tracking-tight">{s.title}</span>
+                                  {area.label}
                                 </a>
-                              );
-                            })}
+                                {services.map((s) => {
+                              const IconComp = getServiceIcon(s.slug);
+                                  return (
+                                    <a
+                                      key={s.slug}
+                                      href={`/leistungen/${s.slug}`}
+                                      onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
+                                      className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200/60 hover:bg-slate-50 focus:outline-none"
+                                    >
+                                      <div className="w-8.5 h-8.5 rounded-lg bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center shrink-0">
+                                        <IconComp className="w-4.5 h-4.5" />
+                                      </div>
+                                      <span className="mega-menu-link font-bold text-slate-900 tracking-tight">{s.title}</span>
+                                    </a>
+                                  );
+                                })}
+                              </div>
+                            ))}
                           </div>
                         </motion.div>
                       )}
@@ -593,7 +667,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     onClick={(e) => handleLinkClick('/loesungen', e)}
                     className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
                   >
-                    <span>BRANCHEN</span>
+                    <span>LÖSUNGEN</span>
                     <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
                   </a>
                   <a
@@ -602,6 +676,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
                   >
                     <span>FINANZDIENSTLEISTER</span>
+                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
+                  </a>
+                  <a
+                    href="/referenzen"
+                    onClick={(e) => handleLinkClick('/referenzen', e)}
+                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
+                  >
+                    <span>REFERENZEN</span>
                     <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
                   </a>
                   <a
@@ -652,8 +734,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                     <div className="flex items-center gap-3.5">
                       <Calendar className="w-5.5 h-5.5 text-white animate-pulse shrink-0" />
                       <div className="text-left">
-                        <span className="block mega-menu-heading font-bold text-white leading-tight">Erstgespräch (30 Min.)</span>
-                        <span className="block mega-menu-desc text-white/90 leading-snug mt-0.5 font-medium">Kostenlos und unverbindlich</span>
+                        <span className="block mega-menu-heading font-bold text-white leading-tight">Potenzial besprechen</span>
+                        <span className="block mega-menu-desc text-white/90 leading-snug mt-0.5 font-medium">30 Minuten, kostenlos und unverbindlich</span>
                       </div>
                     </div>
                     <ArrowRight className="w-4.5 h-4.5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
