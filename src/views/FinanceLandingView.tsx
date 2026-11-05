@@ -117,7 +117,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
   return (
     <div className="bg-[#f6f6f6] pb-24 text-slate-800" id="finance-landing">
       {/* 1. HERO */}
-      <section ref={heroRef} className="border-b border-slate-100 bg-white px-4 pb-14 pt-28 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="border-b border-slate-100 bg-white px-4 pb-14 pt-36 sm:px-6 md:pt-40 lg:px-8">
         <div className="mx-auto max-w-7xl space-y-8">
           <Link
             href={isHub ? '/loesungen' : '/loesungen/finanzdienstleister'}

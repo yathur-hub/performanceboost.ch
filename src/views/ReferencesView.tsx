@@ -17,8 +17,8 @@ const FOCUS: Record<string, string[]> = {
 
 export default function ReferencesView() {
   return (
-    <div className="space-y-20 md:space-y-28 pb-24 text-slate-800" id="references-view">
-      <section className="pt-28 md:pt-36 pb-4 bg-white/60">
+    <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="references-view">
+      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Referenzen' }]} />
           <div className="max-w-3xl space-y-6">

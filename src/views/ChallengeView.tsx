@@ -28,8 +28,8 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
     .filter((s): s is (typeof SERVICES)[number] => Boolean(s));
 
   return (
-    <div className="space-y-20 md:space-y-28 pb-24 text-slate-800" id={`challenge-${slug}`}>
-      <section className="pt-28 md:pt-36 pb-4 bg-white/60">
+    <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id={`challenge-${slug}`}>
+      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Lösungen', href: '/loesungen' }, { label: page.label }]} />
           <div className="max-w-4xl space-y-6">

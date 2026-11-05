@@ -92,7 +92,7 @@ export function CtaButton({
         trackEvent('cta_click', { cta_location: location, cta_target: 'kontakt', page_slug: pageSlug });
         openContactModal();
       }}
-      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40 ${styles} ${className}`}
+      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold whitespace-nowrap px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40 ${styles} ${className}`}
     >
       {label} <ArrowRight className="w-5 h-5" aria-hidden="true" />
     </a>

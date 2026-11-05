@@ -51,7 +51,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -15 }}
         transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-        className="pt-24 pb-16 text-slate-850 space-y-12" 
+        className="pt-32 md:pt-36 pb-16 text-slate-850 space-y-12" 
         id={`resource-detail-${item.slug}`}
       >
         
@@ -138,10 +138,10 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
   });
 
   return (
-    <div className="pt-24 pb-16 space-y-28 text-slate-800" id="resources-hub">
+    <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="resources-hub">
       
       {/* Header section with subtitle */}
-      <section className="relative bg-white py-28 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-0 right-10 w-96 h-96 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10 animate-fadeIn">
           <motion.h1 

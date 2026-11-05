@@ -101,3 +101,12 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 - Progressionslinie (`HeroGrowthLayer.tsx`) entfernt und Datei gelöscht.
 - Überarbeitung 06.11.2026: Rakete freigestellt (transparenter Hintergrund statt schwarz, Ränder des Rauchs weich ausgeblendet), ohne Karte und ohne Begriffe, vollständig sichtbar (`object-contain`) auf weissem Hero-Hintergrund. Dateien `hero-rakete-{560,900}.webp` (87 KB / 181 KB mit Alpha). Freistellungsskript liegt nicht im Repo; Quelle: `Downloads/performanceboost rakete.png`.
 - Überarbeitung 06.11.2026 (2): Neues Raketenbild (`Intern/performanceboost rakete.png`, bereits transparent). In zwei Ebenen zerlegt: `hero-rocket-{400,650}.webp` (animiert) und `hero-smoke-{400,650}.webp` (statisch, unten weich ausgeblendet); Übergang liegt weich in den Flammen. Animation `rocketHover` in `src/index.css` (3,2 s, max. 8 px entlang der Flugachse), deaktiviert bei `prefers-reduced-motion`. Gesamtgewicht Desktop ca. 88 KB.
+
+## Mobile-Optimierung (06.11.2026)
+
+- Gemessen auf 390 px: Abstand Header → erster Inhalt war auf Startseite, Hubs, Lösungsseiten, Referenzen, Leistungsseiten, Finanz- und Artikelseiten 0–4 px; auf Skill-Factory und Impressum lag die Überschrift teilweise unter dem Header. Jetzt einheitlich 45–64 px auf allen 15 geprüften Seitentypen.
+- Header mobil schlanker (Logo 72 px statt 84 px, Header 101 px statt 113 px), Desktop unverändert.
+- Seitenkopf-Abstände vereinheitlicht (`pt-36 md:pt-40`), Hero-Bänder mobil `pt-12 pb-16`, Sektionsabstände mobil gestrafft (`py-16`, `space-y-16`), Desktop unverändert.
+- Rakete auf Mobile/Tablet ausgeblendet (nur ab `lg`).
+- Hero-Headline zwischen 1024 und 1280 px eine Stufe kleiner; Buttons ohne Zeilenumbruch im Text.
+- Skill-Factory-Überschrift mit festem Zeilenumbruch.

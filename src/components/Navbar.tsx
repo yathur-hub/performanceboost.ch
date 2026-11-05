@@ -137,7 +137,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               <img 
                 src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
                 alt="performanceboost Logo" 
-                className="h-[84px] md:h-[90px] w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
+                className="h-[72px] md:h-[90px] w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
             </a>
@@ -188,7 +188,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   <img 
                     src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
                     alt="performanceboost Logo" 
-                    className="h-[84px] md:h-[90px] w-auto object-contain"
+                    className="h-[72px] md:h-[90px] w-auto object-contain"
                     referrerPolicy="no-referrer"
                   />
                 </a>

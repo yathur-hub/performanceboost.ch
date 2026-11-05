@@ -70,13 +70,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [showProblemFinder, setShowProblemFinder] = useState(false);
 
   return (
-    <div className="space-y-24 md:space-y-32 pb-24 text-slate-800" id="home-view">
+    <div className="space-y-16 md:space-y-32 pb-24 text-slate-800" id="home-view">
       {/* 1 HERO: Text links, Raketen-Visual rechts (mobil darunter) */}
-      <section className="relative pt-28 pb-12 md:pt-32 md:pb-16 overflow-hidden bg-white">
+      <section className="relative pt-36 pb-14 md:pt-40 md:pb-16 overflow-hidden bg-white">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
-              <h1 className="text-[2.1rem] sm:text-5xl lg:text-[3.6rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08]">
+              <h1 className="text-[2.1rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.6rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08]">
                 Mehr Performance für Ihr Unternehmen.{' '}
                 <span className="text-[#696EEF] italic font-serif">Strategie, Technologie, Wachstum.</span>
               </h1>
@@ -84,13 +84,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Wir verbinden Strategie, Technologie und Umsetzung, damit Marketing, Vertrieb und Abläufe in Ihrem Unternehmen besser
                 zusammenarbeiten. Von der Analyse bis zur laufenden Optimierung, persönlich betreut von Inhaber Yathur Nathan.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center lg:justify-start items-center">
                 <CtaButton label="Potenzial besprechen" location="home_hero" pageSlug="home" />
                 <button
                   type="button"
                   onClick={() => setShowProblemFinder(true)}
                   data-cta="hero_secondary"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/30"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 whitespace-nowrap text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/30"
                 >
                   Welches Problem möchten Sie lösen?
                 </button>
@@ -98,7 +98,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
 
             {/* Rakete in zwei Ebenen: Rauch statisch, Rakete animiert (Naht liegt weich in den Flammen) */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="hidden lg:col-span-5 lg:flex justify-end">
               <div className="relative w-[260px] sm:w-[320px] lg:w-[400px] aspect-[650/1024] select-none">
                 <img
                   src="/images/hero-smoke-650.webp"

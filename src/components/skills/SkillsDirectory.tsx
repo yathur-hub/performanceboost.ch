@@ -77,14 +77,14 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
   return (
     <div className="bg-[#f6f6f6] min-h-screen text-slate-850" id="skills-directory-root">
       {/* 1. Hero Section */}
-      <AnimatedSection className="bg-[#F6F6F6] border-b border-slate-200/60 py-16 md:py-24 relative overflow-hidden">
+      <AnimatedSection className="bg-[#F6F6F6] border-b border-slate-200/60 pt-36 pb-16 md:pt-44 md:pb-24 relative overflow-hidden">
         {/* Ambient background decoration */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
           
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1A1A2E] tracking-tight leading-tight">
-            Skill-Factory<br className="hidden sm:inline"/> Erst prüfen, dann gezielt handeln.
+            <span className="block text-[#696EEF]">Skill-Factory</span> Erst prüfen, dann gezielt handeln.
           </h1>
           
           <p className="text-[#505050] text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">

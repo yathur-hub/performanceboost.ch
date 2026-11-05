@@ -129,7 +129,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
     if (extendedContent) {
       return (
-        <div className="pt-24 pb-20 text-slate-800 space-y-28 animate-fadeIn" id={`service-detail-${service.slug}`}>
+        <div className="pt-32 md:pt-36 pb-20 text-slate-800 space-y-16 md:space-y-28 animate-fadeIn" id={`service-detail-${service.slug}`}>
           
           {/* Breadcrumb: Startseite / Leistungen / Leistungsfeld / Leistung */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
@@ -230,7 +230,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </section>
 
           {/* PROBLEM SECTION */}
-          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
+          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center animate-fadeIn">
               <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">
                 {extendedContent.problem.title}
@@ -411,7 +411,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </section>
 
           {/* FAQ ACCORDION SECTION */}
-          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
+          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="text-center space-y-3">
                 <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
@@ -539,10 +539,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
   // GENERAL OVERVIEW: GRID OF ALL 8 SERVICES
   // ----------------------------------------------------
   return (
-    <div className="pt-24 pb-16 space-y-28 text-slate-800" id="services-overview-page text-center">
+    <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="services-overview-page text-center">
       
       {/* Hero section */}
-      <section className="relative bg-white py-28 border-b border-slate-100 overflow-hidden text-center animate-fadeIn">
+      <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center animate-fadeIn">
         <div className="absolute top-0 left-10 w-80 h-80 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
@@ -598,7 +598,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       </section>
 
       {/* HOW WE COMBINE SERVICES */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32 animate-fadeIn">
+      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32 animate-fadeIn">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-center">
           
           <div className="space-y-3">
@@ -677,7 +677,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-120px" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-[#fcfcfc] border-y border-[#E2E8F0]/30 py-24 md:py-32"
+        className="bg-[#fcfcfc] border-y border-[#E2E8F0]/30 py-16 md:py-32"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-3">

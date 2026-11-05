@@ -50,10 +50,10 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
   ];
 
   return (
-    <div className="pt-24 pb-16 space-y-28 text-slate-800" id="about-us-view">
+    <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="about-us-view">
       
       {/* HERO SECTION */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white py-28 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           
@@ -166,7 +166,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       </section>
 
       {/* WAS UNS UNTERSCHEIDET */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
+      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <motion.div 
@@ -274,7 +274,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       </section>
 
       {/* CORE GUIDING VALUES */}
-      <section className="bg-slate-950 text-white border-y border-slate-900 py-24 md:py-32">
+      <section className="bg-slate-950 text-white border-y border-slate-900 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <motion.div 

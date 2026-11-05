@@ -40,9 +40,9 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
   const groups = area.serviceGroups ?? [{ label: '', services: area.services }];
 
   return (
-    <div className="space-y-20 md:space-y-28 pb-24 text-slate-800" id={`area-${id}`}>
+    <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id={`area-${id}`}>
       {/* HERO */}
-      <section className="pt-28 md:pt-36 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Leistungen', href: '/leistungen' }, { label: area.label }]} />
           <div className="max-w-4xl space-y-6">

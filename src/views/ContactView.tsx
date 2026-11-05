@@ -65,10 +65,10 @@ export default function ContactView() {
   ];
 
   return (
-    <div className="pt-24 pb-16 space-y-28 text-slate-800" id="contact-primary-view">
+    <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="contact-primary-view">
       
       {/* HERO TITLE BLOCK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white py-24 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-24 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <motion.h1 
