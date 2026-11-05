@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import Link from '../components/Link';
 import React, { useState } from 'react';
 import { RESOURCES_DATA } from '../data/resources';
 import { User, Calendar, Clock, ArrowRight, ArrowLeft, Search, AlertCircle, CheckCircle2 } from 'lucide-react';
@@ -263,16 +264,12 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                     {item.publishDate}
                   </span>
                   
-                  <button
-                    onClick={() => {
-                      const prefix = subSection ? `/ressourcen/${subSection}` : '/ressourcen';
-                      onNavigate(`${prefix}/${item.slug}`);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/85 bg-transparent border-none focus:outline-none"
+                  <Link
+                    href={`/ressourcen/${item.slug}`}
+                    className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/85"
                   >
                     Beitrag lesen <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}

@@ -196,6 +196,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </h3>
                 <p className="mt-2 text-body-sm text-slate-600 leading-relaxed">{a.teaser}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
+                  {servicesOf(a).length < 3 &&
+                    a.topics.slice(0, 3 - servicesOf(a).length).map((t) => (
+                      <li key={t.title} className="inline-block text-xs font-semibold text-slate-500 bg-white border border-dashed border-slate-200 rounded-full px-3 py-1.5">
+                        {t.title}
+                      </li>
+                    ))}
                   {servicesOf(a)
                     .slice(0, 4)
                     .map((s) => (
@@ -259,7 +265,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
             <div className="md:col-span-8 space-y-6">
               <div>
-                <Eyebrow>Über performanceboost</Eyebrow>
+                <Eyebrow>
+                  Über <span className="normal-case">performanceboost</span>
+                </Eyebrow>
                 <h2 className="mt-2 text-2xl sm:text-3xl font-display font-semibold text-slate-900 leading-tight">
                   Ein Partner für Strategie, Technologie und Wachstum.
                 </h2>

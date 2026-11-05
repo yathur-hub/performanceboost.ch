@@ -204,7 +204,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 
                 {/* Column 1: SPOTLIGHT PREVIEW CARD */}
                 <div 
-                  className="col-span-4 bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xs flex flex-col justify-between overflow-hidden relative min-h-[460px]"
+                  className="col-span-3 bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xs flex flex-col justify-between overflow-hidden relative min-h-[460px]"
                   id="menu-spotlight-panel"
                 >
                   <AnimatePresence mode="wait">
@@ -290,7 +290,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       >
                         <div className="space-y-3.5">
                           <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">performanceboost</span>
+                            <span className="text-[11px] font-mono font-bold normal-case tracking-widest text-[#686DF4]">performanceboost</span>
                             <div className="h-px bg-slate-100 flex-grow"></div>
                           </div>
 
@@ -320,7 +320,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 </div>
 
                 {/* Column 2: INTERACTIVE SERVICES MATRIX */}
-                <div className="col-span-5 flex flex-col justify-between" id="menu-services-panel">
+                <div className="col-span-6 flex flex-col justify-between" id="menu-services-panel">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between pb-0.5">
                       <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">Leistungen</span>
@@ -368,7 +368,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                   </div>
 
                                   <div className="flex-grow min-w-0">
-                                    <span className={`block text-xs font-semibold tracking-tight transition-colors truncate ${
+                                    <span className={`block text-xs font-semibold tracking-tight transition-colors leading-snug ${
                                       isHovered ? 'text-[#686DF4]' : 'text-slate-900 group-hover:text-[#686DF4]'
                                     }`}>
                                       {s.title}
@@ -768,7 +768,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
             {/* STATIC FOOTER RETAINED */}
             <div className="bg-slate-100 border-t border-slate-200/80 py-6 px-6 sm:px-8 lg:px-10 z-15 text-center text-[11px] text-slate-400/90 font-mono tracking-widest uppercase mt-auto">
-              © {new Date().getFullYear()} performanceboost · Fläsch, Graubünden
+              © {new Date().getFullYear()} <span className="normal-case">performanceboost</span> · Fläsch, Graubünden
             </div>
 
           </motion.div>

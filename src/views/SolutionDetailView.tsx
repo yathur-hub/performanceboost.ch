@@ -287,7 +287,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             </div>
             <div className="text-center">
               <h4 className="text-base font-bold text-slate-900 leading-none">Yathur Nathan</h4>
-              <p className="text-[11px] text-[#686DF4] font-bold tracking-wide mt-1 uppercase font-mono">Inhaber performanceboost</p>
+              <p className="text-[11px] text-[#686DF4] font-bold tracking-wide mt-1 uppercase font-mono">Inhaber <span className="normal-case">performanceboost</span></p>
             </div>
           </div>
 
