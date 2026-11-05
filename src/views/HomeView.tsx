@@ -97,19 +97,33 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </div>
 
+            {/* Rakete in zwei Ebenen: Rauch statisch, Rakete animiert (Naht liegt weich in den Flammen) */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <img
-                src="/images/hero-rakete-900.webp"
-                srcSet="/images/hero-rakete-560.webp 560w, /images/hero-rakete-900.webp 900w"
-                sizes="(min-width: 1024px) 420px, 300px"
-                width={900}
-                height={1326}
-                alt="Startende Rakete in den Farben von performanceboost"
-                fetchPriority="high"
-                decoding="async"
-                className="h-auto w-auto max-h-[440px] sm:max-h-[520px] lg:max-h-[640px] object-contain select-none"
-                draggable={false}
-              />
+              <div className="relative w-[260px] sm:w-[320px] lg:w-[400px] aspect-[650/1024] select-none">
+                <img
+                  src="/images/hero-smoke-650.webp"
+                  srcSet="/images/hero-smoke-400.webp 400w, /images/hero-smoke-650.webp 650w"
+                  sizes="(min-width: 1024px) 400px, (min-width: 640px) 320px, 260px"
+                  width={650}
+                  height={1024}
+                  alt=""
+                  decoding="async"
+                  draggable={false}
+                  className="absolute inset-0 h-full w-full"
+                />
+                <img
+                  src="/images/hero-rocket-650.webp"
+                  srcSet="/images/hero-rocket-400.webp 400w, /images/hero-rocket-650.webp 650w"
+                  sizes="(min-width: 1024px) 400px, (min-width: 640px) 320px, 260px"
+                  width={650}
+                  height={1024}
+                  alt="Startende Rakete in den Farben von performanceboost"
+                  fetchPriority="high"
+                  decoding="async"
+                  draggable={false}
+                  className="absolute inset-0 h-full w-full animate-rocket"
+                />
+              </div>
             </div>
           </div>
         </Container>
