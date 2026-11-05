@@ -143,3 +143,4 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 
 - Neu: Marke · Leistungen (4 Leistungsfelder) · Unternehmen (Lösungen, Referenzen, Über uns, Skill-Factory, Ratgeber, Kontakt) · Kontakt (Adresse, E-Mail, Telefon) · Impressum/Datenschutz.
 - Entfernt: Einzelleistungen, E-Commerce-Liste, Finanzdienstleister. Alle betroffenen Seiten bleiben über Hubs, /leistungen, /loesungen und Querlinks verlinkt (geprüft: Finanzseiten 3–7, Leistungsseiten ≥ 4 eingehende Links).
+- Mobiles Mega-Menü (06.11.2026): Leistungsfeld-Karten unter 640 px als Akkordeon (Icon, Titel, Plus-Button; Plus dreht sich beim Öffnen zum ×). Unterpunkte und «Zum Leistungsfeld» erscheinen erst nach Klick; beim Schliessen des Menüs klappt alles wieder zu. Ab 640 px unverändert.

@@ -23,7 +23,8 @@ import {
   RefreshCcw,
   Landmark,
   Compass,
-  Handshake
+  Handshake,
+  Plus
 } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { motion, AnimatePresence } from 'motion/react';
@@ -58,6 +59,8 @@ interface NavbarProps {
 export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Mobil: Leistungsfelder als Akkordeon (nur Titel + Plus), ab sm vollständig sichtbar
+  const [openArea, setOpenArea] = useState<string | null>(null);
 
   // Scroll listener to style floating header
   useEffect(() => {
@@ -90,6 +93,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) setOpenArea(null);
+  }, [isOpen]);
 
   const handleLinkClick = (path: string, e: React.MouseEvent) => {
     e.preventDefault();
@@ -222,12 +229,29 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       <motion.div
                         key={area.id}
                         variants={menuItem}
-                        className="group/card flex flex-col rounded-3xl bg-white border border-slate-200/70 p-5 sm:p-6 transition-all duration-300 hover:border-[#696EEF]/40 hover:shadow-[0_12px_40px_-12px_rgba(105,110,239,0.25)]"
+                        className="group/card flex flex-col rounded-2xl sm:rounded-3xl bg-white border border-slate-200/70 p-4 sm:p-6 transition-all duration-300 hover:border-[#696EEF]/40 hover:shadow-[0_12px_40px_-12px_rgba(105,110,239,0.25)]"
                       >
+                        {/* Mobil: Titel mit Plus, öffnet die Unterpunkte */}
+                        <button
+                          type="button"
+                          onClick={() => setOpenArea(openArea === area.id ? null : area.id)}
+                          aria-expanded={openArea === area.id}
+                          aria-controls={`menu-area-${area.id}`}
+                          className="sm:hidden w-full flex items-center gap-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF] rounded-xl"
+                        >
+                          <span className="w-9 h-9 rounded-xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0">
+                            <Icon className="w-4.5 h-4.5" aria-hidden="true" />
+                          </span>
+                          <span className="flex-1 text-base font-display font-semibold text-slate-900">{area.shortLabel}</span>
+                          <span className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openArea === area.id ? 'bg-[#696EEF] border-[#696EEF] text-white rotate-45' : 'border-slate-200 text-slate-600'}`}>
+                            <Plus className="w-4 h-4" aria-hidden="true" />
+                          </span>
+                        </button>
+                        {/* Ab sm: Titel als Link mit Kurzbeschreibung */}
                         <a
                           href={`/leistungen/${area.id}`}
                           onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
-                          className="flex items-start gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF]"
+                          className="hidden sm:flex items-start gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF]"
                         >
                           <span className="w-11 h-11 rounded-2xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0 transition-colors duration-300 group-hover/card:bg-[#696EEF] group-hover/card:text-white">
                             <Icon className="w-5 h-5" aria-hidden="true" />
@@ -237,6 +261,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             <span className="block mt-1 text-[13px] text-slate-500 leading-snug">{area.teaser}</span>
                           </span>
                         </a>
+                        <div id={`menu-area-${area.id}`} className={`${openArea === area.id ? 'flex' : 'hidden'} sm:flex flex-col flex-1`}>
                         <ul className="mt-4 pt-3 border-t border-slate-100 space-y-0.5">
                           {services.map((s) => {
                             const active = currentPath === s.href && s.href !== `/leistungen/${area.id}`;
@@ -264,6 +289,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         >
                           Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                         </a>
+                        </div>
                       </motion.div>
                     );
                   })}
