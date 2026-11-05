@@ -99,3 +99,4 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 - Startseiten-Hero zweispaltig: Text links, Raketen-Visual rechts in abgerundeter dunkler Karte; Tags Strategy / Technology / Growth als Bildunterschrift. Mobil unter den CTAs, quadratischer Ausschnitt.
 - Bild als WebP in `public/images/hero-rakete-{640,1024}.webp` (35 KB / 76 KB) mit `srcset`, `fetchpriority="high"`, ohne Einblend-Animation (LCP).
 - Progressionslinie (`HeroGrowthLayer.tsx`) entfernt und Datei gelöscht.
+- Überarbeitung 06.11.2026: Rakete freigestellt (transparenter Hintergrund statt schwarz, Ränder des Rauchs weich ausgeblendet), ohne Karte und ohne Begriffe, vollständig sichtbar (`object-contain`) auf weissem Hero-Hintergrund. Dateien `hero-rakete-{560,900}.webp` (87 KB / 181 KB mit Alpha). Freistellungsskript liegt nicht im Repo; Quelle: `Downloads/performanceboost rakete.png`.

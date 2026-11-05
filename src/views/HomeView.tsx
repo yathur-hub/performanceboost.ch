@@ -72,7 +72,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   return (
     <div className="space-y-24 md:space-y-32 pb-24 text-slate-800" id="home-view">
       {/* 1 HERO: Text links, Raketen-Visual rechts (mobil darunter) */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-white/60">
+      <section className="relative pt-28 pb-12 md:pt-32 md:pb-16 overflow-hidden bg-white">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
@@ -97,31 +97,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </div>
 
-            <figure
-              className="lg:col-span-5 relative mx-auto w-full max-w-md lg:max-w-none"
-            >
-              <div className="relative overflow-hidden rounded-[2rem] bg-black aspect-square lg:aspect-[4/5] shadow-[0_30px_80px_-30px_rgba(15,23,42,0.55)]">
-                <img
-                  src="/images/hero-rakete-1024.webp"
-                  srcSet="/images/hero-rakete-640.webp 640w, /images/hero-rakete-1024.webp 1024w"
-                  sizes="(min-width: 1024px) 40vw, (min-width: 640px) 448px, 100vw"
-                  width={1024}
-                  height={1536}
-                  alt="Startende Rakete in den Farben von performanceboost"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover object-[50%_22%] lg:object-[50%_40%]"
-                />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" aria-hidden="true" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-wrap gap-2">
-                  {['Strategy', 'Technology', 'Growth'].map((p) => (
-                    <span key={p} className="rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-3.5 py-1.5 text-xs font-semibold text-white">
-                      {p}
-                    </span>
-                  ))}
-                </figcaption>
-              </div>
-            </figure>
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <img
+                src="/images/hero-rakete-900.webp"
+                srcSet="/images/hero-rakete-560.webp 560w, /images/hero-rakete-900.webp 900w"
+                sizes="(min-width: 1024px) 420px, 300px"
+                width={900}
+                height={1326}
+                alt="Startende Rakete in den Farben von performanceboost"
+                fetchPriority="high"
+                decoding="async"
+                className="h-auto w-auto max-h-[440px] sm:max-h-[520px] lg:max-h-[640px] object-contain select-none"
+                draggable={false}
+              />
+            </div>
           </div>
         </Container>
       </section>
