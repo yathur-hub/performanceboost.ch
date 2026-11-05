@@ -137,3 +137,9 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 - Abschluss-Block am Seitenende (`LeadCtaSection`) zeigt den Ablauf in drei Schritten und öffnet das Overlay; Sticky-CTA mobil öffnet ebenfalls das Overlay.
 - Kontaktseite bettet die allgemeine Strecke ein. `ContactForm.tsx` wird nur noch für Hilfskomponenten der Finanz-Formulare (`Field`, `inputClass`) genutzt.
 - **Voraussetzung vor Go-live:** n8n contact-v3, Node «Parse & Validate»: `REVENUE_OPTIONAL = ['finance', 'qualifier']`. Ohne diese Änderung lehnt n8n die Anfragen ab (400, `annualRevenue`).
+- **n8n umgesetzt (06.11.2026, freigegeben):** Workflow contact-v3, Node «Parse & Validate»: `REVENUE_OPTIONAL = ['finance', 'qualifier']`. Versionsvergleich geprüft (nur diese Zeile + Kommentar), veröffentlicht (Version a838a2c6). End-to-End-Test von localhost:3000 (Strecke sales, is_test): Data Table OK, Cockpit PROCESSED, Mail gesendet, `generate_lead` ausgelöst. Regression: Formular `contact` ohne Umsatz weiterhin 400. Testdaten im Cockpit gelöscht (Kontakt, Lead, Übermittlung, Aktivität, Aufgabe, 2 Protokolleinträge); Testzeile 2 in `website_leads` bleibt (is_test=true, Löschen nur im n8n-UI).
+
+## Footer reduziert (06.11.2026)
+
+- Neu: Marke · Leistungen (4 Leistungsfelder) · Unternehmen (Lösungen, Referenzen, Über uns, Skill-Factory, Ratgeber, Kontakt) · Kontakt (Adresse, E-Mail, Telefon) · Impressum/Datenschutz.
+- Entfernt: Einzelleistungen, E-Commerce-Liste, Finanzdienstleister. Alle betroffenen Seiten bleiben über Hubs, /leistungen, /loesungen und Querlinks verlinkt (geprüft: Finanzseiten 3–7, Leistungsseiten ≥ 4 eingehende Links).
