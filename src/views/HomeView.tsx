@@ -8,7 +8,6 @@ import { ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 const ProblemFinder = lazy(() => import('../components/home/ProblemFinder'));
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
-import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
 import { ClientTestimonials } from '../components/home/ClientTestimonials';
 import { SITE } from '../config/site';
 import Link from '../components/Link';
@@ -72,33 +71,57 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   return (
     <div className="space-y-24 md:space-y-32 pb-24 text-slate-800" id="home-view">
-      {/* 1 HERO */}
-      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-white/60 backdrop-blur-xs">
-        <HeroGrowthLayer />
+      {/* 1 HERO: Text links, Raketen-Visual rechts (mobil darunter) */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-white/60">
         <Container className="relative z-10">
-          <div className="text-center space-y-6 sm:space-y-8 max-w-4xl mx-auto">
-            <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] max-w-3xl mx-auto">
-              Mehr Performance für Ihr Unternehmen.{' '}
-              <span className="text-[#696EEF] italic font-serif">Strategie, Technologie, Wachstum.</span>
-            </h1>
-            <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Wir verbinden Strategie, Technologie und Umsetzung, damit Marketing, Vertrieb und Abläufe in Ihrem Unternehmen besser
-              zusammenarbeiten. Von der Analyse bis zur laufenden Optimierung, persönlich betreut von Inhaber Yathur Nathan.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <CtaButton label="Potenzial besprechen" location="home_hero" pageSlug="home" />
-              <button
-                type="button"
-                onClick={() => setShowProblemFinder(true)}
-                data-cta="hero_secondary"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
-              >
-                Welches Problem möchten Sie lösen?
-              </button>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+              <h1 className="text-[2.1rem] sm:text-5xl lg:text-[3.6rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08]">
+                Mehr Performance für Ihr Unternehmen.{' '}
+                <span className="text-[#696EEF] italic font-serif">Strategie, Technologie, Wachstum.</span>
+              </h1>
+              <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Wir verbinden Strategie, Technologie und Umsetzung, damit Marketing, Vertrieb und Abläufe in Ihrem Unternehmen besser
+                zusammenarbeiten. Von der Analyse bis zur laufenden Optimierung, persönlich betreut von Inhaber Yathur Nathan.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center">
+                <CtaButton label="Potenzial besprechen" location="home_hero" pageSlug="home" />
+                <button
+                  type="button"
+                  onClick={() => setShowProblemFinder(true)}
+                  data-cta="hero_secondary"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/30"
+                >
+                  Welches Problem möchten Sie lösen?
+                </button>
+              </div>
             </div>
-            <p className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-slate-500 pt-2">
-              Strategy <span className="text-[#686DF4]">·</span> Technology <span className="text-[#686DF4]">·</span> Growth
-            </p>
+
+            <figure
+              className="lg:col-span-5 relative mx-auto w-full max-w-md lg:max-w-none"
+            >
+              <div className="relative overflow-hidden rounded-[2rem] bg-black aspect-square lg:aspect-[4/5] shadow-[0_30px_80px_-30px_rgba(15,23,42,0.55)]">
+                <img
+                  src="/images/hero-rakete-1024.webp"
+                  srcSet="/images/hero-rakete-640.webp 640w, /images/hero-rakete-1024.webp 1024w"
+                  sizes="(min-width: 1024px) 40vw, (min-width: 640px) 448px, 100vw"
+                  width={1024}
+                  height={1536}
+                  alt="Startende Rakete in den Farben von performanceboost"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover object-[50%_22%] lg:object-[50%_40%]"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" aria-hidden="true" />
+                <figcaption className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-wrap gap-2">
+                  {['Strategy', 'Technology', 'Growth'].map((p) => (
+                    <span key={p} className="rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-3.5 py-1.5 text-xs font-semibold text-white">
+                      {p}
+                    </span>
+                  ))}
+                </figcaption>
+              </div>
+            </figure>
           </div>
         </Container>
       </section>

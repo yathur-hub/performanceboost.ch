@@ -93,3 +93,9 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 - Die textlastige Listenansicht ersetzt durch vier **Leistungsfeld-Karten** (Icon, deutscher Feldname, Kurzbeschreibung, Leistungen als Linkzeilen mit Hover-Pfeil, «Zum Leistungsfeld»). Felder mit weniger als vier Leistungen werden mit ihren Themen ergänzt (Link auf den Hub), damit die Karten ausgewogen sind; «Marketing Automation & CRM» erscheint in Technologie und Vertrieb.
 - Rechts: Navigationskarte (Lösungen, Referenzen, Über uns, Skill-Factory, Ratgeber) mit Markierung der aktuellen Seite und eine dunkle **Kontaktkarte** mit Porträt, CTA «Potenzial besprechen» (#696EEF), Telefon und E-Mail.
 - Dezente gestaffelte Einblend-Animation, Hintergrund #f6f6f6, mobil alle Karten untereinander ohne horizontales Scrollen.
+
+## Hero-Visual (05.11.2026)
+
+- Startseiten-Hero zweispaltig: Text links, Raketen-Visual rechts in abgerundeter dunkler Karte; Tags Strategy / Technology / Growth als Bildunterschrift. Mobil unter den CTAs, quadratischer Ausschnitt.
+- Bild als WebP in `public/images/hero-rakete-{640,1024}.webp` (35 KB / 76 KB) mit `srcset`, `fetchpriority="high"`, ohne Einblend-Animation (LCP).
+- Progressionslinie (`HeroGrowthLayer.tsx`) entfernt und Datei gelöscht.
