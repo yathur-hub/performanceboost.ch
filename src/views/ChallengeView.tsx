@@ -7,7 +7,7 @@ import {
   CheckList,
   Container,
   CtaButton,
-  Eyebrow,
+ 
   FaqList,
   FinalCta,
   SectionHeading,
@@ -33,7 +33,6 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Lösungen', href: '/loesungen' }, { label: page.label }]} />
           <div className="max-w-4xl space-y-6">
-            <Eyebrow>{page.eyebrow}</Eyebrow>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">{page.h1}</h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">{page.intro}</p>
             <CtaButton label={page.ctaLabel} location={`challenge_${slug}_hero`} pageSlug={slug} />
@@ -44,7 +43,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
       <section>
         <Container className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5 space-y-6">
-            <SectionHeading eyebrow="Anzeichen" title="Woran Sie das Problem erkennen" />
+            <SectionHeading title="Woran Sie das Problem erkennen" />
             <ul className="space-y-3">
               {page.symptoms.map((s) => (
                 <li key={s} className="flex gap-3 text-body-sm text-slate-700 leading-relaxed">
@@ -55,7 +54,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
             </ul>
           </div>
           <div className="lg:col-span-7 space-y-6">
-            <SectionHeading eyebrow="Ursachen" title="Warum das in vielen KMU so ist" />
+            <SectionHeading title="Warum das in vielen KMU so ist" />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {page.causes.map((c) => (
                 <div key={c.title} className="bg-white border border-[#E0E0E0]/80 rounded-2xl p-5">
@@ -70,7 +69,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
 
       <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-24">
         <Container className="space-y-10">
-          <SectionHeading eyebrow="Vorgehen" title="So gehen wir vor" />
+          <SectionHeading title="So gehen wir vor" />
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {page.approach.map((a, i) => (
               <li key={a.title} className="bg-[#f6f6f6]/60 border border-[#E0E0E0]/80 rounded-2xl p-6 space-y-3">
@@ -86,7 +85,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
       <section>
         <Container className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7 space-y-6">
-            <SectionHeading eyebrow="Beispiele" title="Typische Ansatzpunkte" />
+            <SectionHeading title="Typische Ansatzpunkte" />
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
               {page.examples.map((e) => (
                 <div key={e.title}>
@@ -111,7 +110,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
 
       <section>
         <Container className="space-y-8">
-          <SectionHeading eyebrow="Leistungen" title="Diese Leistungen helfen dabei" />
+          <SectionHeading title="Diese Leistungen helfen dabei" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {services.map((s) => (
               <TeaserCard key={s.slug} href={`/leistungen/${s.slug}`} title={s.title} desc={s.shortDesc} linkText="Zur Leistung" />
@@ -122,14 +121,14 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
 
       <section>
         <Container className="space-y-6">
-          <SectionHeading eyebrow="Selbst prüfen" title="Wo stehen Sie heute?" />
+          <SectionHeading title="Wo stehen Sie heute?" />
           <ToolLinks ids={page.tools} />
         </Container>
       </section>
 
       <section>
         <Container className="max-w-4xl space-y-8">
-          <SectionHeading eyebrow="Häufige Fragen" title={`Fragen zu ${page.label}`} />
+          <SectionHeading title={`Fragen zu ${page.label}`} />
           <FaqList items={page.faq} />
         </Container>
       </section>

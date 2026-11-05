@@ -463,7 +463,7 @@ export default function InteractiveGrowthCalculator() {
                 window.dispatchEvent(new CustomEvent('navigation-change', { detail: '/kontakt' }));
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-[#686DF4] text-white text-xs font-bold px-7 py-4 rounded-full transition-all cursor-pointer uppercase tracking-wider text-[#f6f6f6]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#696EEF] hover:bg-[#5a5fe0] text-white text-xs font-bold px-7 py-4 rounded-full transition-all cursor-pointer uppercase tracking-wider text-[#f6f6f6]"
             >
               Ergebnis besprechen <ArrowRight className="w-4 h-4 text-white" />
             </a>

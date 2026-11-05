@@ -152,9 +152,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 <div className="w-12 h-12 rounded-xl bg-[#686DF4] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <IconComponent className="w-5.5 h-5.5" />
                 </div>
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-3 py-1 rounded-lg">
-                  {primaryAreaOf(service.slug)?.label ?? 'Leistung'}
-                </span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1] text-left">
                 {extendedContent.hero.headline}
@@ -190,7 +187,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               <div className="pt-2 text-left">
                 <button 
                   onClick={handleConsultation}
-                  className="bg-slate-900 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full inline-flex items-center gap-2 transition-all cursor-pointer uppercase tracking-widest shadow-md hover:-translate-y-0.5"
+                  className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full inline-flex items-center gap-2 transition-all cursor-pointer uppercase tracking-widest shadow-md hover:-translate-y-0.5"
                 >
                   {extendedContent.hero.ctaText} <ArrowRight className="w-4 h-4 text-white" />
                 </button>
@@ -235,9 +232,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* PROBLEM SECTION */}
           <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center animate-fadeIn">
-              <span className="text-[11px] font-mono text-red-650 font-bold uppercase tracking-widest bg-red-50/50 px-3 py-1.5 rounded-lg border border-red-100/20">
-                Ausgangslage
-              </span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">
                 {extendedContent.problem.title}
               </h2>
@@ -254,7 +248,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* LEISTET SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Leistungsumfang</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.leistet.title}
               </h2>
@@ -279,7 +272,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* APPROACH SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Vorgehen</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.approach.title}
               </h2>
@@ -422,7 +414,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="text-center space-y-3">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Häufige Fragen</span>
                 <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                   Fragen zur Umsetzung
                 </h2>
@@ -463,7 +454,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div className="space-y-2">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Zusammenspiel</span>
                 <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight">Passende Leistungen</h2>
               </div>
               {primaryAreaOf(service.slug) && (
@@ -533,7 +523,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
               <button
                 onClick={handleConsultation}
-                className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md hover:-translate-y-0.5"
+                className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md hover:-translate-y-0.5"
               >
                 {extendedContent.cta.buttonText}
               </button>
@@ -555,9 +545,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       <section className="relative bg-white py-28 border-b border-slate-100 overflow-hidden text-center animate-fadeIn">
         <div className="absolute top-0 left-10 w-80 h-80 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <span className="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 text-slate-500 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-            Leistungen
-          </span>
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
             Strategie, Technologie und Wachstum aus einer Hand.
           </h1>
@@ -575,7 +562,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             <div key={area.id} className="space-y-8" id={`leistungsfeld-${area.id}`}>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E0E0E0]/80 pb-5">
                 <div className="space-y-2 max-w-3xl">
-                  <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">{area.label}</span>
                   <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight">{area.headline}</h2>
                   <p className="text-body-sm text-slate-600 leading-relaxed">{area.teaser}</p>
                 </div>
@@ -616,7 +602,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-center">
           
           <div className="space-y-3">
-            <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Kombinationen</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir Leistungen kombinieren</h2>
             <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed font-semibold">
               Einzelne Leistungen bringen schon viel. Am meisten erreichen Sie, wenn Kampagnen, Website, Tracking und Vertrieb aufeinander abgestimmt sind.
@@ -628,7 +613,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 1 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Schnell Anfragen</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Lead-Generierung</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Google Ads bringen ab den ersten Wochen Anfragen, belastbare Daten liegen meist nach 4–8 Wochen vor. SEO und Inhalte bauen parallel Sichtbarkeit auf, die über mehrere Monate wächst.
@@ -648,7 +632,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 2 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Anfragen weiterbegleiten</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Automation + CRM</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Kampagnen bringen neue Kontakte, automatische E-Mails begleiten sie weiter, und das CRM übergibt sie zur richtigen Zeit an Ihren Vertrieb. So geht unterwegs keine Anfrage verloren.
@@ -668,7 +651,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 3 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Gemeinsame Zahlen</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">RevOps + Vertriebsunterstützung + Tracking</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Marketing und Vertrieb arbeiten mit gemeinsamen Zielen und denselben Daten. Ein gemeinsames Dashboard zeigt allen, woher Anfragen kommen und was daraus wird.
@@ -699,7 +681,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-3">
-            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Branchen</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Lösungen für Schweizer Branchen</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
               Wählen Sie Ihre Branche und schätzen Sie mit unseren Rechnern grob ab, wie viel Potenzial bei Anfragen und Umsatz noch offen ist.
@@ -820,9 +801,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       <div className="p-2.5 bg-[#f6f6f6] rounded-xl border border-slate-100 group-hover:bg-[#686DF4]/5 group-hover:border-[#686DF4]/25 group-hover:text-[#686DF4] transition-colors">
                         <IconComp className="w-5 h-5 text-slate-400 group-hover:text-[#686DF4] transition-colors" />
                       </div>
-                      <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] bg-[#686DF4]/5 border border-[#686DF4]/10 px-2 py-0.5 rounded uppercase">
-                        Branche
-                      </span>
                     </div>
                     <div className="space-y-1.5">
                       <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
@@ -853,7 +831,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 animate-fadeIn">
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Erstgespräch</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Leistung passt zu Ihrem Unternehmen?</h2>
           <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-95 font-medium">
             In einem unverbindlichen Gespräch von 30 Minuten schauen wir auf Ihre Situation und klären, womit Sie am sinnvollsten beginnen.
@@ -862,7 +839,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <button
             type="button"
             onClick={() => onNavigate('/kontakt')}
-            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer border-0"
+            className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer border-0"
           >
             Potenzial besprechen
           </button>

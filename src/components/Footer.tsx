@@ -190,7 +190,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
                   >
                     <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Selbst-Checks & Rechner</span>
+                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Skill-Factory</span>
                   </a>
                 </li>
                 <li>

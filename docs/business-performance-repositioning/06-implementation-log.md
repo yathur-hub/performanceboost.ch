@@ -80,3 +80,10 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 4. **Referenzen ausbauen:** Mit Freigabe der Kunden kurze Fallbeschreibungen (Ausgangslage, Massnahmen, belegte Ergebnisse) ergänzen.
 5. **Weitere Lösungsseiten** (z. B. «KI im Unternehmen») erst, wenn Search-Console-Daten Nachfrage zeigen.
 6. **GA4-Dimension** `cta_location` ist registriert; Auswertung nach 2–4 Wochen.
+
+## Überarbeitung 05.11.2026 (Feedback Inhaber)
+
+- **Eyebrows entfernt** (kleine Grossbuchstaben-Labels über Überschriften), seitenweit inkl. Finanz-Landingpages; `Eyebrow`-Komponente gelöscht. Zwei Labels mit Inhalt bleiben als normaler Text: Kartentitel der Finanz-Referenzen, Kombinationsname auf `/loesungen`.
+- **Buttonfarbe `#696EEF`** (Hover `#5a5fe0`) für alle Primär-Buttons und aktiven Zustände (55 Stellen inkl. Rechner und Formulare); `CtaButton` beide Varianten.
+- **Mega-Menü neu:** keine wechselnde Vorschau pro Menüpunkt, keine Icons; links die 4 Leistungsfelder mit ihren Leistungen als Textlinks, rechts Lösungen, Referenzen, Über uns, Skill-Factory, Ratgeber, CTA, Telefon/E-Mail. Finanzdienstleister aus dem Menü entfernt (bleibt im Footer und unter Lösungen). Desktop und Mobile nutzen dieselbe Struktur. `Navbar.tsx` von 776 auf 285 Zeilen.
+- **«Skill-Factory»** ersetzt «Selbst-Checks» in Menü, Footer, Hubs, H1 und Title von `/skills`.

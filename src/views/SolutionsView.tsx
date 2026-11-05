@@ -155,14 +155,6 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       <section className="relative px-4 sm:px-6 lg:px-8 bg-white py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
-          <motion.span 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
-          >
-            Lösungen
-          </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
@@ -188,7 +180,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             <motion.button
               {...buttonPressProps}
               onClick={() => onNavigate('/kontakt')}
-              className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
+              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
             >
               Potenzial besprechen
             </motion.button>
@@ -276,7 +268,6 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Leistungen</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Leistungsbereiche</h2>
         </motion.div>
 
@@ -339,7 +330,6 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3"
           >
-            <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Kombinationen</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
             <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
               Einzelne Leistungen wirken für sich. Sinnvoll kombiniert verstärken sie sich gegenseitig.
@@ -362,8 +352,8 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               >
                 <div className="space-y-5">
                   <div className="space-y-1.5">
-                    <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">{c.combo}</span>
                     <h3 className="text-lg font-bold text-slate-900 font-display">{c.title}</h3>
+                    <p className="text-xs font-semibold text-[#4f54d6]">{c.combo}</p>
                   </div>
                   <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{c.desc}</p>
                 </div>
@@ -388,7 +378,6 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Fragen und Antworten</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Häufig gestellte Fragen</h2>
         </motion.div>
 
@@ -440,7 +429,6 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Erstgespräch</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Lösung passt zu Ihrem Unternehmen?</h2>
           <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
             In einem unverbindlichen Gespräch von 30 Minuten klären wir Ihre Ausgangslage und Ziele. Danach wissen Sie, welche Massnahmen für Ihr Unternehmen am meisten bringen.
@@ -449,7 +437,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           <motion.button
             {...buttonPressProps}
             onClick={() => onNavigate('/kontakt')}
-            className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
+            className="bg-[#696EEF] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0 hover:bg-[#5a5fe0]"
           >
             Potenzial besprechen
           </motion.button>

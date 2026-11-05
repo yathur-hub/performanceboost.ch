@@ -279,8 +279,8 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'datenschutz':
       return { ...base, title: 'Datenschutzerklärung | performanceboost', description: 'Wie performanceboost Personendaten nach Schweizer DSG und DSGVO bearbeitet.', schema: null };
     case 'skills': {
-      const title = 'Selbst-Checks & Rechner für KMU | performanceboost';
-      const description = 'Kostenlose Selbst-Checks und Rechner zu Strategie, Vertrieb, CRM, Automatisierung, KI und Daten. Finden Sie heraus, wo Ihr grösster Hebel liegt.';
+      const title = 'Skill-Factory: Checks & Rechner für KMU | performanceboost';
+      const description = 'Die Skill-Factory: kostenlose Checks und Rechner zu Strategie, Vertrieb, CRM, Automatisierung, KI und Daten. Finden Sie Ihren grössten Hebel.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'ressourcen': {

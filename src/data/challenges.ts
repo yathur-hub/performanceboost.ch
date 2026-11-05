@@ -57,7 +57,6 @@ export type ChallengeSlug = 'prozessautomatisierung' | 'vertrieb-optimieren';
 export interface ChallengePage {
   slug: ChallengeSlug;
   label: string;
-  eyebrow: string;
   h1: string;
   intro: string;
   seoTitle: string;
@@ -79,7 +78,6 @@ export const CHALLENGE_PAGES: Record<ChallengeSlug, ChallengePage> = {
   prozessautomatisierung: {
     slug: 'prozessautomatisierung',
     label: 'Geschäftsprozesse automatisieren',
-    eyebrow: 'Lösung · Prozessautomatisierung',
     h1: 'Weniger Handarbeit in Ihren Abläufen.',
     intro:
       'Prozessautomatisierung heisst: Wiederkehrende Arbeitsschritte, etwa das Übertragen von Daten, Benachrichtigungen, Freigaben oder Berichte, laufen automatisch zwischen Ihren bestehenden Systemen ab. Wir finden heraus, welche Abläufe sich dafür eignen, und setzen sie so um, dass Ihr Team sie versteht und weiterführen kann.',
@@ -129,7 +127,6 @@ export const CHALLENGE_PAGES: Record<ChallengeSlug, ChallengePage> = {
   'vertrieb-optimieren': {
     slug: 'vertrieb-optimieren',
     label: 'Vertriebsprozesse optimieren',
-    eyebrow: 'Lösung · Vertrieb optimieren',
     h1: 'Aus mehr Anfragen mehr Aufträge machen.',
     intro:
       'Viele KMU verlieren Umsatz nicht im Marketing, sondern danach: Anfragen werden zu spät beantwortet, Angebote nicht nachgefasst und niemand sieht, wo Verkaufschancen stehen. Wir bringen Struktur in Lead-Management, CRM und Vertriebsabläufe, damit Ihr Vertrieb seine Zeit für die richtigen Gespräche nutzt.',

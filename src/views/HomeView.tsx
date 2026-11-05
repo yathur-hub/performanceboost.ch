@@ -12,7 +12,7 @@ import { HeroGrowthLayer } from '../components/home/HeroGrowthLayer';
 import { ClientTestimonials } from '../components/home/ClientTestimonials';
 import { SITE } from '../config/site';
 import Link from '../components/Link';
-import { Container, CtaButton, Eyebrow, FaqList, SectionHeading, TeaserCard } from '../components/bp/Blocks';
+import { Container, CtaButton, FaqList, SectionHeading, TeaserCard } from '../components/bp/Blocks';
 import { PILLARS, SERVICE_AREAS, servicesOf } from '../data/serviceAreas';
 import { CHALLENGE_CARDS } from '../data/challenges';
 
@@ -77,7 +77,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <HeroGrowthLayer />
         <Container className="relative z-10">
           <div className="text-center space-y-6 sm:space-y-8 max-w-4xl mx-auto">
-            <Eyebrow>Business Performance Partner für Schweizer KMU</Eyebrow>
             <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] max-w-3xl mx-auto">
               Mehr Performance für Ihr Unternehmen.{' '}
               <span className="text-[#696EEF] italic font-serif">Strategie, Technologie, Wachstum.</span>
@@ -109,7 +108,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <Container className="space-y-10">
           <motion.div {...reveal}>
             <SectionHeading
-              eyebrow="Typische Ausgangslage"
               title="Wo KMU heute Umsatz und Zeit verlieren"
               intro="Selten liegt es an einem einzelnen Kanal oder Tool. Meist greifen Marketing, Vertrieb und Abläufe nicht sauber ineinander."
             />
@@ -127,7 +125,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <Container className="space-y-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <motion.div {...reveal} className="lg:col-span-6 xl:col-span-7 space-y-5">
-              <Eyebrow>Unser Ansatz</Eyebrow>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight text-balance">
                 Eine Kampagne, ein Tool oder ein Strategiepapier allein reicht selten.
               </h2>
@@ -180,7 +177,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section>
         <Container className="space-y-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
-            <SectionHeading eyebrow="Leistungen" title="Vier Leistungsfelder, ein Ziel: bessere Ergebnisse" />
+            <SectionHeading title="Vier Leistungsfelder, ein Ziel: bessere Ergebnisse" />
             <Link href="/leistungen" className="text-xs font-bold text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
               Alle Leistungen ansehen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
@@ -188,7 +185,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {SERVICE_AREAS.map((a) => (
               <article key={a.id} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 flex flex-col">
-                <Eyebrow>{a.label}</Eyebrow>
                 <h3 className="mt-3 text-xl font-display font-semibold text-slate-900">
                   <Link href={`/leistungen/${a.id}`} className="hover:text-[#4f54d6] transition-colors">
                     {a.shortLabel}
@@ -227,7 +223,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 5 VORGEHEN */}
       <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-28">
         <Container className="space-y-12">
-          <SectionHeading align="center" eyebrow="Vorgehen" title="So arbeiten wir zusammen" />
+          <SectionHeading align="center" title="So arbeiten wir zusammen" />
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {STEPS.map((step, idx) => (
               <li
@@ -265,9 +261,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
             <div className="md:col-span-8 space-y-6">
               <div>
-                <Eyebrow>
-                  Über <span className="normal-case">performanceboost</span>
-                </Eyebrow>
                 <h2 className="mt-2 text-2xl sm:text-3xl font-display font-semibold text-slate-900 leading-tight">
                   Ein Partner für Strategie, Technologie und Wachstum.
                 </h2>
@@ -300,7 +293,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 7 FAQ + ABSCHLUSS */}
       <section>
         <Container className="max-w-4xl space-y-8">
-          <SectionHeading align="center" eyebrow="Häufige Fragen" title="FAQ" />
+          <SectionHeading align="center" title="FAQ" />
           <FaqList items={FAQ} />
         </Container>
       </section>
@@ -309,7 +302,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <Container>
           <div className="w-full bg-slate-950 text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
             <div className="space-y-4 max-w-2xl">
-              <Eyebrow>Nächster Schritt</Eyebrow>
               <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">
                 Wo liegt in Ihrem Unternehmen das grösste Potenzial?
               </h2>

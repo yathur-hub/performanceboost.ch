@@ -304,7 +304,7 @@ export default function RetentionRevenueRechner() {
                       track("hero_tool_cta_click", { page: "customer-retention", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full text-center bg-[#696EEF] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Ergebnis besprechen: 30 Min., kostenlos</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />

@@ -15,20 +15,12 @@ export function Container({ children, className = '' }: { children: React.ReactN
   return <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>;
 }
 
-export function Eyebrow({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return (
-    <span className={`text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest ${className}`}>{children}</span>
-  );
-}
-
 export function SectionHeading({
-  eyebrow,
   title,
   intro,
   align = 'left',
   as: Tag = 'h2',
 }: {
-  eyebrow?: string;
   title: string;
   intro?: string;
   align?: 'left' | 'center';
@@ -36,7 +28,6 @@ export function SectionHeading({
 }) {
   return (
     <div className={`space-y-3 ${align === 'center' ? 'text-center max-w-2xl mx-auto' : 'max-w-3xl'}`}>
-      {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <Tag className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight text-balance">{title}</Tag>
       {intro && <p className="text-body text-slate-600 leading-relaxed">{intro}</p>}
     </div>
@@ -87,8 +78,8 @@ export function CtaButton({
 }) {
   const { openContactModal } = useContactModal();
   const styles = {
-    dark: 'bg-slate-950 hover:bg-[#4f54d6] text-white',
-    accent: 'bg-[#686DF4] hover:bg-[#5a5fe6] text-white',
+    dark: 'bg-[#696EEF] hover:bg-[#5a5fe0] text-white',
+    accent: 'bg-[#696EEF] hover:bg-[#5a5fe0] text-white',
     light: 'bg-white hover:bg-slate-50 text-slate-900 border border-slate-300',
   }[variant];
   return (
@@ -101,7 +92,7 @@ export function CtaButton({
         trackEvent('cta_click', { cta_location: location, cta_target: 'kontakt', page_slug: pageSlug });
         openContactModal();
       }}
-      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 ${styles} ${className}`}
+      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40 ${styles} ${className}`}
     >
       {label} <ArrowRight className="w-5 h-5" aria-hidden="true" />
     </a>
@@ -112,18 +103,16 @@ interface TeaserCardProps {
   href: string;
   title: string;
   desc?: string;
-  eyebrow?: string;
   linkText?: string;
   children?: React.ReactNode;
 }
 
-export const TeaserCard: React.FC<TeaserCardProps> = ({ href, title, desc, eyebrow, linkText = 'Mehr erfahren', children }) => {
+export const TeaserCard: React.FC<TeaserCardProps> = ({ href, title, desc, linkText = 'Mehr erfahren', children }) => {
   return (
     <Link
       href={href}
       className="group flex flex-col h-full bg-white border border-[#E0E0E0]/80 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686DF4]/50 hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
     >
-      {eyebrow && <Eyebrow className="mb-3">{eyebrow}</Eyebrow>}
       <h3 className="text-base sm:text-lg font-display font-semibold text-slate-900 group-hover:text-[#4f54d6] transition-colors leading-snug">
         {title}
       </h3>
@@ -166,7 +155,7 @@ export function FaqList({ items }: { items: { q: string; a: string }[] }) {
   );
 }
 
-/** Passende Selbst-Checks (Teaser auf /skills). */
+/** Passende Checks aus der Skill-Factory (Teaser auf /skills). */
 export function ToolLinks({ ids }: { ids: string[] }) {
   const tools = ids.map((id) => SKILLS.find((s) => s.id === id)).filter((s): s is (typeof SKILLS)[number] => Boolean(s));
   if (!tools.length) return null;
@@ -246,7 +235,6 @@ export function FinalCta({
     <Container>
       <div className="w-full bg-slate-950 text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
         <div className="space-y-4 max-w-2xl">
-          <Eyebrow>Nächster Schritt</Eyebrow>
           <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">{title}</h2>
           <p className="text-body text-slate-300 leading-relaxed">{text}</p>
         </div>

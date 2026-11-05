@@ -71,7 +71,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         </p>
         <button
           onClick={() => onNavigate('/')}
-          className="bg-[#686DF4] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer"
+          className="bg-[#696EEF] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer hover:bg-[#5a5fe0]"
         >
           Zurück zur Startseite
         </button>
@@ -100,9 +100,6 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5 space-y-4 pr-0 lg:pr-6">
-              <span className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-3 py-1 rounded-full">
-                {sector.title}
-              </span>
               <h1 className="text-3xl sm:text-4.5xl font-display font-medium text-slate-955 tracking-tight leading-[1.1]">
                 {sector.subtitle}
               </h1>
@@ -146,7 +143,6 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       {/* TYPISCHE ENGPAESSE SEKTION */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="text-center space-y-2">
-          <span className="text-[11px] font-mono text-red-651 font-bold uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100/40">Ausgangslage</span>
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-900 tracking-tight">
             Typische Hürden in der Branche {sector.title}
           </h2>
@@ -172,7 +168,6 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-8 sm:p-12 space-y-12 shadow-[var(--shadow-premium-lg)]">
           <div className="text-center space-y-2">
-            <span className="text-[11px] font-mono text-[#686DF4] tracking-widest uppercase font-black">Vorgehen</span>
             <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir für Sie aufbauen</h2>
             <p className="text-body-sm text-slate-300 font-medium max-w-md mx-auto">
               In drei Schritten, abgestimmt auf Ihre Branche und Ihren Markt in der Schweiz.
@@ -184,9 +179,6 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               <div key={idx} className="space-y-3 relative">
                 <span aria-hidden="true" className="absolute -top-3 right-0 text-3xl font-black font-mono text-[#686DF4]/20">
                   {step.step}
-                </span>
-                <span className="text-[11px] font-semibold text-[#686DF4] uppercase font-mono tracking-widest">
-                  Schritt {step.step}
                 </span>
                 <h3 className="text-sm font-bold text-white tracking-tight">{step.title}</h3>
                 <p className="text-body-sm text-slate-300 leading-relaxed font-medium">
@@ -201,7 +193,6 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       {/* BENEFITS CHECKLIST */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2">
-          <span className="text-[11px] font-mono text-[#686DF4] font-black uppercase tracking-widest">Ihr Nutzen</span>
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Was Sie davon haben</h2>
         </div>
 
@@ -235,7 +226,6 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       {/* FAQ ACCORDIAN */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2">
-          <span className="text-[11px] font-mono text-slate-400 font-bold tracking-widest uppercase">Fragen</span>
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Häufige Fragen</h2>
         </div>
 
@@ -303,7 +293,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               <button
                 type="button"
                 onClick={() => onNavigate('/kontakt')}
-                className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all inline-block text-center shadow-sm shrink-0 w-full sm:w-auto border-0"
+                className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all inline-block text-center shadow-sm shrink-0 w-full sm:w-auto border-0"
               >
                 Potenzial besprechen
               </button>

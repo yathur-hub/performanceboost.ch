@@ -208,7 +208,7 @@ export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProp
                       type="button"
                       data-autofocus=""
                       onClick={goToService}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-6 rounded-full bg-slate-950 hover:bg-[#4f54d6] text-white font-semibold text-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-6 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-semibold text-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40"
                     >
                       Zur Lösung <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </button>

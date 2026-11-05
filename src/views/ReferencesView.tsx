@@ -1,7 +1,7 @@
 /** /referenzen: bestehende Kundenstimmen, wörtlich. Keine Kennzahlen, keine erfundenen Fallstudien. */
 import React from 'react';
 import { TESTIMONIALS_DATA } from '../components/home/ClientTestimonials';
-import { Breadcrumb, Container, Eyebrow, FinalCta, SectionHeading, TeaserCard } from '../components/bp/Blocks';
+import { Breadcrumb, Container, FinalCta, SectionHeading, TeaserCard } from '../components/bp/Blocks';
 import { SERVICE_AREAS } from '../data/serviceAreas';
 
 /** Schwerpunkte der Zusammenarbeit, abgeleitet aus dem Wortlaut der jeweiligen Kundenstimme. */
@@ -22,7 +22,6 @@ export default function ReferencesView() {
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Referenzen' }]} />
           <div className="max-w-3xl space-y-6">
-            <Eyebrow>Referenzen</Eyebrow>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               Was unsere Kundinnen und Kunden sagen.
             </h1>
@@ -79,10 +78,10 @@ export default function ReferencesView() {
 
       <section>
         <Container className="space-y-8">
-          <SectionHeading eyebrow="Leistungsfelder" title="Woran wir mit unseren Kunden arbeiten" />
+          <SectionHeading title="Woran wir mit unseren Kunden arbeiten" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICE_AREAS.map((a) => (
-              <TeaserCard key={a.id} href={`/leistungen/${a.id}`} eyebrow={a.label} title={a.shortLabel} desc={a.teaser} />
+              <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.shortLabel} desc={a.teaser} />
             ))}
           </div>
         </Container>

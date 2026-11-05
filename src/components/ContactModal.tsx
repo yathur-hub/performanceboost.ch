@@ -151,9 +151,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         referrerPolicy="no-referrer"
                       />
                       <div className="space-y-1">
-                        <span className="inline-flex items-center gap-1 text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4] bg-[#686DF4]/15 px-2.5 py-1 rounded-full">
-                          <MessageSquare className="w-2.5 h-2.5" /> Ihr Ansprechpartner
-                        </span>
                         <h3 className="text-xl font-display font-bold text-white pt-1">Yathur Nathan</h3>
                         <p className="text-xs font-mono font-bold text-slate-400">Gründer &amp; Inhaber</p>
                       </div>

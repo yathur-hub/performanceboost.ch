@@ -10,7 +10,7 @@ import {
   CheckList,
   Container,
   CtaButton,
-  Eyebrow,
+ 
   FaqList,
   FinalCta,
   ResourceLinks,
@@ -46,7 +46,6 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Leistungen', href: '/leistungen' }, { label: area.label }]} />
           <div className="max-w-4xl space-y-6">
-            <Eyebrow>{area.label}</Eyebrow>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               {area.headline}
             </h1>
@@ -62,7 +61,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       <section>
         <Container className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10 space-y-6">
-            <SectionHeading eyebrow="Typische Ausgangslage" title="Kommt Ihnen das bekannt vor?" />
+            <SectionHeading title="Kommt Ihnen das bekannt vor?" />
             <ul className="space-y-3">
               {area.challenges.map((c) => (
                 <li key={c} className="flex gap-3 text-body-sm text-slate-700 leading-relaxed">
@@ -73,7 +72,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             </ul>
           </div>
           <div className="bg-[#686DF4]/[0.04] border border-[#CACCFB]/60 rounded-3xl p-7 sm:p-10 space-y-6">
-            <SectionHeading eyebrow="Worauf wir hinarbeiten" title="Ziele der Zusammenarbeit" />
+            <SectionHeading title="Ziele der Zusammenarbeit" />
             <CheckList items={area.outcomes} />
             <p className="text-xs text-slate-500 leading-relaxed">
               Welche Ziele in Ihrem Fall realistisch sind und woran wir sie messen, legen wir zu Beginn gemeinsam fest.
@@ -85,7 +84,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* LEISTUNGEN */}
       <section>
         <Container className="space-y-10">
-          <SectionHeading eyebrow="Was wir übernehmen" title={`Leistungen im Bereich ${area.shortLabel}`} />
+          <SectionHeading title={`Leistungen im Bereich ${area.shortLabel}`} />
           {groups.map((g) => (
             <div key={g.label || 'all'} className="space-y-4">
               {g.label && <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 font-display">{g.label}</h3>}
@@ -121,7 +120,6 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
           <Container className="space-y-12">
             <SectionHeading
               align="center"
-              eyebrow="Rechner"
               title="Was eine bessere Anfragequote bringen kann"
               intro="Tragen Sie Ihre eigenen Werte ein. Der Rechner zeigt grob, wie sich höhere Anfrage- und Abschlussquoten auf Ihren Umsatz auswirken. Eine Schätzung, keine Prognose."
             />
@@ -136,7 +134,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {id === 'wachstum-marketing' && (
         <section>
           <Container className="space-y-6">
-            <SectionHeading eyebrow="Nach Branche" title="Kundengewinnung für Ihre Branche" intro="Wie Neukundengewinnung in Ihrer Branche funktioniert: typische Hürden, unser Vorgehen und ein passender Rechner." />
+            <SectionHeading title="Kundengewinnung für Ihre Branche" intro="Wie Neukundengewinnung in Ihrer Branche funktioniert: typische Hürden, unser Vorgehen und ein passender Rechner." />
             <ul className="flex flex-wrap gap-2.5">
               {Object.values(SOLUTIONS_SECTORS).map((sector) => (
                 <li key={sector.slug}>
@@ -164,7 +162,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       <section>
         <Container className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7 space-y-6">
-            <SectionHeading eyebrow="Selbst prüfen" title="Passende Selbst-Checks" as="h2" />
+            <SectionHeading title="Passende Checks aus der Skill-Factory" as="h2" />
             <ToolLinks ids={area.tools} />
           </div>
           <div className="lg:col-span-5 space-y-8">
@@ -197,7 +195,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* FAQ */}
       <section>
         <Container className="max-w-4xl space-y-8">
-          <SectionHeading eyebrow="Häufige Fragen" title={`Fragen zu ${area.shortLabel}`} />
+          <SectionHeading title={`Fragen zu ${area.shortLabel}`} />
           <FaqList items={area.faq} />
         </Container>
       </section>
@@ -205,10 +203,10 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* ANDERE FELDER */}
       <section>
         <Container className="space-y-8">
-          <SectionHeading eyebrow="Zusammenspiel" title="Die anderen Leistungsfelder" intro="Die besten Ergebnisse entstehen, wenn Strategie, Technologie, Marketing und Vertrieb aufeinander abgestimmt sind." />
+          <SectionHeading title="Die anderen Leistungsfelder" intro="Die besten Ergebnisse entstehen, wenn Strategie, Technologie, Marketing und Vertrieb aufeinander abgestimmt sind." />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {others.map((o) => (
-              <TeaserCard key={o.id} href={`/leistungen/${o.id}`} eyebrow={o.label} title={o.shortLabel} desc={o.teaser} />
+              <TeaserCard key={o.id} href={`/leistungen/${o.id}`} title={o.shortLabel} desc={o.teaser} />
             ))}
           </div>
         </Container>

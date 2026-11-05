@@ -56,14 +56,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       <section className="relative px-4 sm:px-6 lg:px-8 bg-white py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
-          <motion.span 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
-          >
-            Über uns
-          </motion.span>
           
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
@@ -94,7 +86,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="space-y-6"
         >
-          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">Warum es uns gibt</span>
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Zwischen Strategie, Systemen und Auftrag geht zu viel verloren.</h2>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
             Viele KMU investieren in Werbung, eine neue Website, ein CRM oder KI-Tools, aber die Teile arbeiten nicht zusammen. Die Agentur optimiert Klicks, das CRM bildet den Verkauf nicht ab, Daten werden von Hand übertragen und Anfragen zu spät beantwortet. Am Ende weiss niemand, was die Investitionen tatsächlich gebracht haben.
@@ -162,7 +153,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
           className="md:col-span-7 space-y-6 text-left"
         >
-          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">Der Inhaber</span>
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
@@ -186,7 +176,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3"
           >
-            <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Was uns unterscheidet</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Was performanceboost unterscheidet</h2>
           </motion.div>
 
@@ -252,7 +241,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="text-center space-y-3"
         >
-          <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Arbeitsweise</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir vorgehen</h2>
         </motion.div>
 
@@ -296,7 +284,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="text-center space-y-3 animate-fadeIn"
           >
-            <span className="text-[11px] font-mono text-[#8185F8] font-bold uppercase tracking-widest">Werte</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight text-white">Worauf Sie sich verlassen können</h2>
           </motion.div>
 
@@ -339,7 +326,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Nächster Schritt</span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Lernen wir uns kennen</h2>
           <p className="text-xs text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
             Im kostenlosen Erstgespräch (30 Minuten) besprechen wir Ihre Ausgangslage. Danach entscheiden Sie in Ruhe, ob und wie Sie weitermachen möchten.
@@ -348,7 +334,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <motion.button
             {...buttonPressProps}
             onClick={() => onNavigate('/kontakt')}
-            className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
+            className="bg-[#696EEF] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0 hover:bg-[#5a5fe0]"
           >
             Potenzial besprechen
           </motion.button>
