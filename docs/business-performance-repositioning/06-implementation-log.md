@@ -1,0 +1,82 @@
+# 06 – Implementation Log
+
+Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stand: 05.11.2026
+
+## Entscheide (Freigabe 05.11.2026)
+
+| Thema | Entscheid |
+|---|---|
+| Konzept 01–05 | freigegeben, umsetzen |
+| Ansprache | Sie-Form bleibt (Masterprompt nannte Du, Website nutzt seit 29.10.2026 Sie) |
+| Header | Minimal-Header bleibt, Navigation über das neu gegliederte Mega-Menü |
+| KI-Crawler | erlauben; Umsetzung im Cloudflare-Dashboard (siehe offene Punkte) |
+
+## Commits
+
+| Commit | Inhalt |
+|---|---|
+| `566bfc8` | Dokumentation 01–05 (Audit, Messaging, Sitemap, UX/CRO, SEO) |
+| `41f8904` | Leistungsfeld-Hubs, Lösungsseiten, Referenzen, Teaser-Daten, SEO-Schema, Prerendering der Startseite |
+| `c94ee5e` | Neue Startseite, Mega-Menü und Footer nach Leistungsfeldern |
+| `f803270` | Leistungsübersicht nach Feldern, Lösungs-Hub mit Herausforderungen, Über uns/Kontakt, CTA, Tests |
+| `b9f9e54` | Markenname nie in Grossbuchstaben, Mega-Menü breiter, Ratgeber-Karten als Links |
+
+## Neue Dateien
+
+| Datei | Zweck |
+|---|---|
+| `src/data/serviceAreas.ts` | Zentrale Definition der 4 Leistungsfelder (Texte, Leistungen, Themen, Checks, Ratgeber, FAQ), `primaryAreaOf`, `relatedServices`, `PILLARS` |
+| `src/data/challenges.ts` | 6 Herausforderungen (Karten) + 2 Lösungsseiten |
+| `src/data/skills.ts` | Daten der 36 Selbst-Checks, aus `SkillsDirectory.tsx` herausgelöst, damit Hubs sie teasern können |
+| `src/components/bp/Blocks.tsx` | Bausteine: `Container`, `Eyebrow`, `SectionHeading`, `Breadcrumb`, `CtaButton` (öffnet Modal, meldet `cta_click`), `TeaserCard`, `CheckList`, `FaqList` (`<details>`), `ToolLinks`, `ResourceLinks`, `TestimonialQuote`, `FinalCta` |
+| `src/views/ServiceAreaView.tsx` | Hub-Template für `/leistungen/{strategie,technologie-automation,wachstum-marketing,sales-revenue-operations}` |
+| `src/views/ChallengeView.tsx` | `/loesungen/prozessautomatisierung`, `/loesungen/vertrieb-optimieren` |
+| `src/views/ReferencesView.tsx` | `/referenzen` |
+| `src/lib/__tests__/serviceAreas.test.ts` | Integritätstests: jede Leistung hat ein Feld, alle Verweise existieren, Routen sind indexierbar |
+
+## Geänderte Dateien
+
+| Datei | Änderung |
+|---|---|
+| `src/lib/routes.ts` | Views `leistungsfeld`, `loesung_herausforderung`, `referenzen`; neue Pfade in `indexablePaths()` (Sitemap, Prerender) |
+| `src/App.tsx` | Lazy-Imports und Rendering der drei neuen Views |
+| `src/components/SEOHead.tsx` | Organisation: neue Beschreibung, `slogan`, `knowsAbout`, `sameAs`; Hubs: CollectionPage + ItemList + Breadcrumb + FAQPage; Leistungsseiten: Service + Breadcrumb + FAQPage; Lösungsseiten: WebPage + Breadcrumb + FAQPage; neue Titles/Descriptions für Start, Leistungen, Lösungen, Über uns, Skills, Ratgeber |
+| `scripts/prerender.mjs` | Startseite wird zuletzt in `dist/index.html` vorgerendert und ist Pflichtseite (Build bricht sonst ab) |
+| `index.html` | Fallback-Title/Description an Positionierung angepasst |
+| `src/views/HomeView.tsx` | Neu aufgebaut, 7 Abschnitte (Hero, Herausforderungen, Ansatz + Säulen, Leistungsfelder, Vorgehen, Referenzen + Über uns, FAQ + CTA). Umsatzrechner auf Growth-Hub verschoben |
+| `src/views/ServicesView.tsx` | Übersicht gegliedert nach Leistungsfeldern, Karten als Links; Detailseiten mit Breadcrumb, Feld-Label und «Passende Leistungen»; Branchenkarten als Links; Inhabertext |
+| `src/views/SolutionsView.tsx` | Neuer Hero, Abschnitt «Nach Herausforderung», «Nach Branche» |
+| `src/views/AboutView.tsx` | Positionierung, Inhabertext (ERP-Projekt aus Kundenstimme CarlaCares), Grundsätze |
+| `src/views/ContactView.tsx`, `src/components/ContactModal.tsx` | Einleitungstexte breiter formuliert |
+| `src/views/ResourcesView.tsx` | Artikelkarten als echte Links auf `/ressourcen/<slug>` |
+| `src/components/Navbar.tsx` | Mega-Menü nach Leistungsfeldern (alle 12 Leistungen, vorher fehlten 2), Lösungen + Referenzen im Schnellzugriff, CTA «Potenzial besprechen», Markenname nicht mehr in Grossbuchstaben |
+| `src/components/Footer.tsx` | Spalte Leistungsfelder, alle 8 B2B-Leistungen (inkl. `marketing-automation`, `revenue-operations`), Referenzen |
+| `src/views/SolutionDetailView.tsx`, `SkillsDirectory.tsx` | CTA-Text, Markenname |
+| `public/_redirects` | `/references`, `/referenz` → `/referenzen`; `/solutions` → `/loesungen` (301) |
+
+## Technische Entscheidungen
+
+1. **Kein Framework-Wechsel.** Der Masterprompt nennt Next.js; die Website ist Vite + React mit eigenem Routing und Prerendering. Alles wurde in dieser Architektur umgesetzt.
+2. **Hubs unter `/leistungen/<feld>`** im gleichen Pfadraum wie die Detailseiten; Kollisionen sind per Test ausgeschlossen.
+3. **Datengetriebenes Teaser-System:** Eine neue Leistung braucht nur einen Eintrag in `services.ts` und die Zuordnung in `serviceAreas.ts`. Hub, Übersicht, Mega-Menü, Footer, «Passende Leistungen» und Sitemap übernehmen sie automatisch.
+4. **FAQ als `<details>`:** Antworten stehen im vorgerenderten HTML (Voraussetzung für FAQPage-Schema und GEO).
+5. **Startseite vorgerendert in `index.html`:** Unbekannte Pfade erhalten weiterhin die Startseiten-Datei als SPA-Fallback; React rendert sofort die 404-Ansicht und entfernt das Canonical (setzt `noindex`). Alle gültigen, verlinkten Routen haben eigene HTML-Dateien.
+6. **`cta_click`** wird von den neuen CTAs mit `cta_location` (z. B. `home_hero`, `hub_<feld>_hero`, `challenge_<slug>_footer`, `referenzen_footer`) gemeldet. Der GTM-Tag existiert seit Version 7; keine GTM-Änderung nötig.
+
+## Bewusst unverändert
+
+- Kontaktformular, Finanzformular, Payload v3, n8n-Workflows, Data Table, Cockpit-Anbindung
+- GTM-Container, GA4-Konfiguration, `generate_lead`-Logik, Attribution (UTM, Click-IDs, first_touch)
+- Alle 41 bestehenden URLs, ihre Titles und H1 (ausser Kernseiten), die 4 Finanz-Landingpages komplett
+- Inhalte der 12 Leistungsseiten, 14 Branchenseiten, 4 Artikel und 36 Selbst-Checks
+- Logo, Farben, Schriften, Hero-Grafiken
+- Problem-Finder (Startseite, sekundärer CTA)
+
+## Offene Punkte
+
+1. **Cloudflare robots.txt:** Im Cloudflare-Dashboard (Zone performanceboost.ch → AI Crawl Control / «Manage your robots.txt») die verwaltete robots.txt deaktivieren oder KI-Crawler erlauben. Das Repo-`robots.txt` erlaubt bereits alles.
+2. **Search Console / GA4:** Nach Go-live Sitemap neu einreichen; URL-Prüfung für Startseite und 4 Hubs. GA4-Abfrage war in dieser Sitzung nicht möglich (`/ga-mcp-full:auth-login` nötig).
+3. **Inhalte prüfen:** Alle neuen Texte in `serviceAreas.ts`, `challenges.ts`, Startseite, Über uns (insbesondere die Aussage zum ERP-Projekt) durch den Inhaber freigeben lassen.
+4. **Referenzen ausbauen:** Mit Freigabe der Kunden kurze Fallbeschreibungen (Ausgangslage, Massnahmen, belegte Ergebnisse) ergänzen.
+5. **Weitere Lösungsseiten** (z. B. «KI im Unternehmen») erst, wenn Search-Console-Daten Nachfrage zeigen.
+6. **GA4-Dimension** `cta_location` ist registriert; Auswertung nach 2–4 Wochen.

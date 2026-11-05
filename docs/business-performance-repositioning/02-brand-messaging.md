@@ -1,6 +1,6 @@
 # 02 – Brand & Messaging Architecture
 
-Stand: 05.11.2026 · Status: **Konzept, wartet auf Freigabe** · Ansprache: **Sie-Form** (siehe 01, Abschnitt 8)
+Stand: 05.11.2026 · Status: **freigegeben am 05.11.2026, umgesetzt** · Ansprache: **Sie-Form** (siehe 01, Abschnitt 8)
 
 ## 1. Markenebene
 

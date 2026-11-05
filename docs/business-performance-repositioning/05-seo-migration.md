@@ -1,6 +1,6 @@
 # 05 – SEO Migration Plan
 
-Stand: 05.11.2026 · Status: **Konzept, wartet auf Freigabe**
+Stand: 05.11.2026 · Status: **freigegeben am 05.11.2026, umgesetzt**
 
 ## 1. Ausgangslage (Daten)
 
@@ -47,7 +47,7 @@ GA4-Daten (organische Landingpages) konnten in dieser Sitzung nicht abgerufen we
 | `/loesungen/vertrieb-optimieren` | Vertriebsprozesse optimieren | Anfragen bleiben liegen, Nachfassen hängt an Einzelnen, die Pipeline ist unklar? Wir bringen Struktur in Lead-Management, CRM und Vertrieb. |
 | `/referenzen` | Referenzen & Kundenstimmen | Was Schweizer Unternehmerinnen und Unternehmer über die Zusammenarbeit mit performanceboost sagen. |
 | `/ueber-uns` | Über uns: Yathur Nathan & performanceboost | performanceboost ist der Business Performance Partner für Schweizer KMU, inhabergeführt aus Graubünden. Strategie und Umsetzung aus einer Hand. |
-| `/skills` | Selbst-Checks & Rechner für KMU | 30 kostenlose Checks und Rechner zu Strategie, Vertrieb, CRM, Automatisierung, KI und Daten. Finden Sie heraus, wo Ihr grösster Hebel liegt. |
+| `/skills` | Selbst-Checks & Rechner für KMU | 36 kostenlose Checks und Rechner zu Strategie, Vertrieb, CRM, Automatisierung, KI und Daten. Finden Sie heraus, wo Ihr grösster Hebel liegt. |
 
 Detailseiten (12 Leistungen, Branchen, Finanz, Artikel): Titles bleiben, da sie spezifische Suchintentionen bedienen. Einzige Ausnahme: `ai-automation` Description um Prozess-/Backoffice-Einsatz ergänzen, falls Inhalte freigegeben.
 
@@ -90,7 +90,7 @@ Detailseiten (12 Leistungen, Branchen, Finanz, Artikel): Titles bleiben, da sie 
 
 ## 9. Validierung
 
-1. `npm run build`: Sitemap enthält 48 URLs, alle vorgerendert.
+1. `npm run build`: Sitemap enthält 47 URLs (ohne Impressum und Datenschutz), 49 Seiten vorgerendert.
 2. Skript: jede vorgerenderte Seite hat genau ein H1, Title, Description, Canonical = eigene URL.
 3. Linkprüfung: jede interne `href` in `dist/` zeigt auf eine existierende Datei oder einen Redirect.
 4. Rich-Results-Test für Startseite, einen Hub, eine Leistungsseite.

@@ -4,7 +4,7 @@ Stand: 05.11.2026 · Branch `feature/business-performance-repositioning` (ab `ma
 
 ## 1. Kurzfazit
 
-1. Die Website ist inhaltlich deutlich reicher, als die Startseite vermuten lässt: 12 Leistungsseiten mit je 750–1'100 Wörtern, FAQ und Prozess, 14 Branchenseiten, 4 ausgebaute Finanz-Landingpages, 4 Fachartikel, 30 Selbst-Checks und Rechner. Diese Substanz trägt die neue Positionierung bereits zu grossen Teilen (Automation, CRM, RevOps, KI, Daten).
+1. Die Website ist inhaltlich deutlich reicher, als die Startseite vermuten lässt: 12 Leistungsseiten mit je 750–1'100 Wörtern, FAQ und Prozess, 14 Branchenseiten, 4 ausgebaute Finanz-Landingpages, 4 Fachartikel, 36 Selbst-Checks und Rechner. Diese Substanz trägt die neue Positionierung bereits zu grossen Teilen (Automation, CRM, RevOps, KI, Daten).
 2. Die **Wahrnehmung** ist dagegen eng: Title, Meta-Description, Hero, Leistungsübersicht und Über-uns sprechen fast ausschliesslich von «Kundenanfragen über Google, Meta und LinkedIn».
 3. **Organische Sichtbarkeit ist noch kaum vorhanden** (Search Console seit 29.10.2026: 0 Klicks, 32 Impressionen, Ø-Position 75,7). Das Ranking-Risiko einer Umstrukturierung ist deshalb gering; die bestehenden URLs bleiben trotzdem erhalten (Backlinks, Kampagnen, Problem-Finder, bereits eingereichte Sitemap).
 4. Es gibt mehrere **technische SEO-Lücken**, die unabhängig von der Neupositionierung behoben werden sollten (siehe Abschnitt 6): Startseite ohne vorgerendertes HTML, Leistungskarten ohne echte Links, zwei verwaiste Leistungsseiten, KI-Crawler per Cloudflare blockiert.
@@ -46,7 +46,7 @@ Interne Links: «nur global» = nur Footer-Links; kontextuelle Links fehlen fast
 | `/loesungen` | Neukundengewinnung nach Branche | Neue Kunden gewinnen, abgestimmt auf Ihre Branche | Branchen-Hub + Leistungsbereiche + FAQ | Lösungen | hoch | mittel | **B** | Zwei Einstiege: «Nach Herausforderung» (neu) und «Nach Branche» (bestehend). |
 | `/ueber-uns` | Über uns: Yathur Nathan & performanceboost | Persönliche Beratung für digitale Neukundengewinnung. | Person, Unterschied, Vorgehen, Werte | Über uns | hoch | tief | **B** | Positionierung als Business Performance Partner, Kompetenzprofil (nur belegte Fakten). |
 | `/kontakt` | Kontakt & Erstgespräch | Erzählen Sie uns, wo Sie stehen. | Formular v3 | Conversion | hoch | tief | **B** | Nur Texte/CTA anpassen. Formularfelder und Payload unverändert. |
-| `/skills` | Selbst-Checks & Rechner für Ihre Neukundengewinnung | Erst prüfen, wo es hakt. Dann gezielt handeln. | 30 Checks und Rechner (Strategie, Prozesse, CRM, KI, Daten) | übergreifend | hoch | mittel | **C** | Title/Intro breiter fassen; Checks auf passenden Leistungs- und Lösungsseiten teasern (z. B. «Automatisierbare Abläufe finden» auf Technologie-Hub). |
+| `/skills` | Selbst-Checks & Rechner für Ihre Neukundengewinnung | Erst prüfen, wo es hakt. Dann gezielt handeln. | 36 Checks und Rechner (Strategie, Prozesse, CRM, KI, Daten) | übergreifend | hoch | mittel | **C** | Title/Intro breiter fassen; Checks auf passenden Leistungs- und Lösungsseiten teasern (z. B. «Automatisierbare Abläufe finden» auf Technologie-Hub). |
 | `/ressourcen` | Ratgeber & Fachbeiträge | Leitfäden und Beiträge | Artikelübersicht | Insights | mittel | mittel | **A/C** | URL und Name behalten, im Footer als «Ratgeber» verlinkt; Artikel auf Fachseiten teasern. |
 | `/impressum`, `/datenschutz` | – | – | Recht | – | – | – | **A** | Unverändert. |
 

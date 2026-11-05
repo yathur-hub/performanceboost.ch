@@ -1,6 +1,6 @@
 # 03 – Sitemap & Content Mapping
 
-Stand: 05.11.2026 · Status: **Konzept, wartet auf Freigabe**
+Stand: 05.11.2026 · Status: **freigegeben am 05.11.2026, umgesetzt**
 
 ## 1. Grundsätze
 
@@ -104,13 +104,10 @@ Neue URLs: 4 Hubs + 2 Lösungsseiten + 1 Referenzen = **7**. Bestehende URLs: **
 
 ## 4. Navigation
 
-**Header Desktop** (neu sichtbar, Mega-Menü bleibt für Detailtiefe):
-`Leistungen ▾` · `Lösungen ▾` · `Referenzen` · `Über uns` · **[Potenzial besprechen]**
+**Entscheid 05.11.2026:** Der Minimal-Header (Logo + Menü-Button, PR #7) bleibt. Die Navigation liegt im Mega-Menü, das neu nach den vier Leistungsfeldern gegliedert ist:
 
-- Leistungen ▾: 4 Leistungsfelder mit je 2–4 Detailleistungen + «Alle Leistungen».
-- Lösungen ▾: 4–6 Herausforderungen + «Lösungen nach Branche».
-- Ratgeber und Selbst-Checks: Footer + Kontextmodule, nicht im Header.
-
-**Header Mobile:** Logo + CTA-Icon/Button + Menü. Menü in gleicher Reihenfolge, Leistungsfelder als aufklappbare Gruppen.
+- Spalte Leistungen: Strategy & Consulting · Technology & Automation · Growth & Marketing · Sales & Revenue Operations, je mit Link zum Hub und den Detailleistungen (jede Leistung nur in ihrem Hauptfeld).
+- Schnellzugriff: CTA «Potenzial besprechen», Lösungen, Referenzen, Über uns, Selbst-Checks, Finanzdienstleister, Direktkontakt.
+- Mobile: gleiche Gruppierung als Akkordeon, danach Lösungen, Finanzdienstleister, Referenzen, Ratgeber, Über uns, Selbst-Checks, Kontakt.
 
 **Footer:** Spalten nach Leistungsfeldern (alle 12 Leistungen inkl. der bisher fehlenden zwei), Lösungen (Herausforderungen + «Alle Branchen» + Finanz), Unternehmen (Referenzen, Über uns, Ratgeber, Selbst-Checks, Kontakt), Recht.

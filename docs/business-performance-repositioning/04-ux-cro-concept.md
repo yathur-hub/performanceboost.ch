@@ -1,6 +1,6 @@
 # 04 – UX/UI & CRO Concept
 
-Stand: 05.11.2026 · Status: **Konzept, wartet auf Freigabe**
+Stand: 05.11.2026 · Status: **freigegeben am 05.11.2026, umgesetzt**
 
 ## 1. Designleitlinie
 
@@ -14,7 +14,7 @@ Weiterentwickelt wird:
 
 | Element | Heute | Neu |
 |---|---|---|
-| Header | nur Logo + Menü-Button | Desktop: sichtbare Navigation (Leistungen ▾, Lösungen ▾, Referenzen, Über uns) + CTA-Button. Sticky, beim Scrollen kompakter. Mobile unverändert schlank + CTA. |
+| Header | nur Logo + Menü-Button | **Bleibt** (Entscheid 05.11.2026). Mega-Menü neu nach Leistungsfeldern gegliedert, CTA «Potenzial besprechen», Lösungen und Referenzen im Schnellzugriff. |
 | Hero | Leadgen-Aussage, Linien-Grafik | Neue Aussage, gleiche Komposition. Unter den CTAs eine ruhige Zeile mit den drei Säulen «Strategy · Technology · Growth». |
 | Säulen-Darstellung | – | Neue Komponente: drei grosse Karten mit nummerierter Kopfzeile, je 1 Satz Kernbotschaft + 3 konkrete Themen + Link. Auf Desktop nebeneinander, auf Mobile gestapelt. Ohne Glas/Glow; feine Rahmenlinie, Akzent nur bei Hover. |
 | Leistungskarten | Buttons, teils verschachtelte Hover-Panels | Einheitliche `TeaserCard` (Titel, 1 Satz, Pfeil-Link), echte Links, sichtbarer Fokus. |
@@ -118,7 +118,7 @@ Neue Leistungen werden künftig nur in `services.ts` + Zuordnung in `serviceArea
 
 | Ebene | CTA | Ziel |
 |---|---|---|
-| Global (Header, Startseite, Abschluss) | **Potenzial besprechen** | Kontakt-Modal |
+| Global (Mega-Menü, Startseite, Abschluss) | **Potenzial besprechen** | Kontakt-Modal |
 | Sekundär Startseite | Welches Problem möchten Sie lösen? | Problem-Finder (bestehend) |
 | Strategie-Hub | Strategie besprechen | Kontakt-Modal |
 | Technologie-Hub | Prozesse besprechen | Kontakt-Modal |
@@ -134,7 +134,7 @@ Tracking: bestehendes `cta_click` mit `cta_location` / `cta_target` (GTM v7) –
 ## 6. Responsive-Verhalten
 
 - Breakpoints wie bisher (Tailwind `sm/md/lg`).
-- Header: ab `lg` sichtbare Navigation; darunter Menü-Button + kompakter CTA.
+- Header: Logo + Menü-Button auf allen Breiten (Entscheid 05.11.2026).
 - Säulen und Leistungsfelder: 3/4 Spalten → 2 → 1.
 - Touch-Ziele ≥ 44 px, Dropdowns per Tastatur bedienbar (`aria-expanded`, Escape schliesst).
 - Animationen respektieren `prefers-reduced-motion` (bestehende `motion`-Varianten).
