@@ -302,7 +302,7 @@ export default function DemandPipelineGap() {
               <div className="pt-5 mt-6 border-t border-slate-200/40">
                 <button
                   onClick={handleBooking}
-                  className="w-full bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-6 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-xs text-[#f6f6f6]"
+                  className="w-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-6 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-xs text-[#f6f6f6]"
                 >
                   {results.istAufKurs ? "Nächste Schritte besprechen: kostenlos, 30 Min." : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
                 </button>

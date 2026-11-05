@@ -591,7 +591,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 <button
                   type="button"
                   onClick={() => { trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'mehr_erfahren', result_label: recommendation.slug }); navigateTo(`/leistungen/${recommendation.slug}`) }}
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-display font-bold px-6 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-bold px-6 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
                 >
                   <span>Mehr zu {recommendation.title.split('&')[0].trim()} erfahren</span>
                   <ArrowRight className="w-4 h-4" />

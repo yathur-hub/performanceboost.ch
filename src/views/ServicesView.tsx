@@ -9,19 +9,14 @@ import {
 import { motion } from 'motion/react';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
 import { readRememberedResult } from '../data/problemFinder';
+import { SERVICE_AREAS, primaryAreaOf, relatedServices } from '../data/serviceAreas';
+import Link from '../components/Link';
+import { Breadcrumb, TeaserCard } from '../components/bp/Blocks';
+import { HeroTrust, LeadCtaSection } from '../components/bp/Conversion';
+import { Diagram } from '../components/diagrams/Diagram';
+import { SERVICE_DIAGRAMS } from '../data/diagrams';
+import { trackEvent } from '../lib/analytics';
 
-import GrowthStrategyIndicator from '../components/GrowthStrategyIndicator';
-import DemandPipelineGap from '../components/DemandPipelineGap';
-import LeadGenerationScore from '../components/LeadGenerationScore';
-import AutomationMaturityCheck from '../components/AutomationMaturityCheck';
-import SalesAlignmentCheck from '../components/SalesAlignmentCheck';
-import RevenueLeakDetector from '../components/RevenuLeakDetector';
-import AIReadinessCheck from '../components/AIReadinessCheck';
-import DataClarityCheck from '../components/DataClarityCheck';
-import ShopConversionRechner from '../components/ShopConversionRechner';
-import CacLtvCalculator from '../components/CacLtvCalculator';
-import RetentionRevenueRechner from '../components/RetentionRevenueRechner';
-import TrueROASRechner from '../components/TrueROASRechner';
 
 interface ServicesViewProps {
   currentSlug?: string;
@@ -96,8 +91,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
+    trackEvent('cta_click', { cta_location: 'leistung_hero', cta_target: 'overlay', page_slug: currentSlug });
     onNavigate('/kontakt');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // ----------------------------------------------------
@@ -126,20 +121,20 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
     if (extendedContent) {
       return (
-        <div className="pt-24 pb-20 text-slate-800 space-y-28 animate-fadeIn" id={`service-detail-${service.slug}`}>
+        <div className="pt-32 md:pt-36 pb-20 text-slate-800 space-y-16 md:space-y-28 animate-fadeIn" id={`service-detail-${service.slug}`}>
           
-          {/* Back Link and Breadcrumb */}
+          {/* Breadcrumb: Startseite / Leistungen / Leistungsfeld / Leistung */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/leistungen');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-slate-900 transition-colors cursor-pointer font-bold uppercase tracking-wider bg-transparent border-none outline-none font-mono"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" /> Zurück zur Leistungsübersicht
-            </button>
+            <Breadcrumb
+              items={[
+                { label: 'Startseite', href: '/' },
+                { label: 'Leistungen', href: '/leistungen' },
+                ...(primaryAreaOf(service.slug)
+                  ? [{ label: primaryAreaOf(service.slug)!.label, href: `/leistungen/${primaryAreaOf(service.slug)!.id}` }]
+                  : []),
+                { label: service.title },
+              ]}
+            />
           </div>
 
           {/* HERO SECTION WITH DYNAMIC INTERACTIVE AUDITS */}
@@ -149,9 +144,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 <div className="w-12 h-12 rounded-xl bg-[#686DF4] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <IconComponent className="w-5.5 h-5.5" />
                 </div>
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-3 py-1 rounded-lg">
-                  Leistung
-                </span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1] text-left">
                 {extendedContent.hero.headline}
@@ -187,54 +179,31 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               <div className="pt-2 text-left">
                 <button 
                   onClick={handleConsultation}
-                  className="bg-slate-900 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full inline-flex items-center gap-2 transition-all cursor-pointer uppercase tracking-widest shadow-md hover:-translate-y-0.5"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
                 >
-                  {extendedContent.hero.ctaText} <ArrowRight className="w-4 h-4 text-white" />
+                  {primaryAreaOf(service.slug)?.ctaLabel ?? 'Potenzial besprechen'} <ArrowRight className="w-4 h-4 text-white" />
                 </button>
               </div>
+              <HeroTrust className="pt-1" />
             </div>
 
-            {/* Interactive Hero Calculator/Audit */}
-            <div className="lg:col-span-7 w-full animate-fadeIn">
-              {(() => {
-                switch (service.slug) {
-                  case 'growth-strategy':
-                    return <GrowthStrategyIndicator />;
-                  case 'demand-generation':
-                    return <DemandPipelineGap />;
-                  case 'lead-generation':
-                    return <LeadGenerationScore />;
-                  case 'marketing-automation':
-                    return <AutomationMaturityCheck />;
-                  case 'sales-enablement':
-                    return <SalesAlignmentCheck />;
-                  case 'revenue-operations':
-                    return <RevenueLeakDetector />;
-                  case 'ai-automation':
-                    return <AIReadinessCheck />;
-                  case 'data-analytics':
-                    return <DataClarityCheck />;
-                  case 'ecommerce-performance':
-                    return <ShopConversionRechner />;
-                  case 'dtc-growth-acquisition':
-                    return <CacLtvCalculator />;
-                  case 'customer-retention':
-                    return <RetentionRevenueRechner />;
-                  case 'paid-social-ecommerce':
-                    return <TrueROASRechner />;
-                  default:
-                    return null;
-                }
-              })()}
+            {/* Themengrafik (ersetzt den früheren interaktiven Rechner) */}
+            <div className="lg:col-span-7 w-full space-y-4">
+              {SERVICE_DIAGRAMS[service.slug] && (
+                <>
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-display font-semibold text-slate-900">{SERVICE_DIAGRAMS[service.slug].title}</h2>
+                    <p className="mt-1.5 text-body-sm text-slate-600 leading-relaxed">{SERVICE_DIAGRAMS[service.slug].text}</p>
+                  </div>
+                  <Diagram spec={SERVICE_DIAGRAMS[service.slug].spec} />
+                </>
+              )}
             </div>
           </section>
 
           {/* PROBLEM SECTION */}
-          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
+          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center animate-fadeIn">
-              <span className="text-[11px] font-mono text-red-650 font-bold uppercase tracking-widest bg-red-50/50 px-3 py-1.5 rounded-lg border border-red-100/20">
-                Ausgangslage
-              </span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">
                 {extendedContent.problem.title}
               </h2>
@@ -251,7 +220,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* LEISTET SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Leistungsumfang</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.leistet.title}
               </h2>
@@ -276,7 +244,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           {/* APPROACH SECTION */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div className="text-center space-y-3">
-              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Vorgehen</span>
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                 {extendedContent.approach.title}
               </h2>
@@ -416,10 +383,9 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </section>
 
           {/* FAQ ACCORDION SECTION */}
-          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32">
+          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="text-center space-y-3">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Häufige Fragen</span>
                 <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
                   Fragen zur Umsetzung
                 </h2>
@@ -456,63 +422,35 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             </div>
           </section>
 
-          {/* PERSONAL BIO SECTION */}
-          <section className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
-              <div className="md:col-span-4 shrink-0 flex justify-center md:justify-start">
-                <img loading="lazy" decoding="async" 
-                  src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
-                  alt="Yathur Nathan" 
-                  className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border border-slate-200 shadow-sm"
-                  referrerPolicy="no-referrer"
-                />
+          {/* PASSENDE LEISTUNGEN (aus src/data/serviceAreas.ts) */}
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight">Passende Leistungen</h2>
               </div>
-              <div className="md:col-span-8 space-y-4">
-                <div>
-                  <h3 className="text-[#686DF4] text-xl font-display font-bold leading-tight">Yathur Nathan</h3>
-                  <p className="text-xs font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
-                </div>
-                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Als Gründer von performanceboost helfe ich Schweizer KMU, über Google, Meta, LinkedIn und die eigene Website planbar Kundenanfragen zu gewinnen. Kampagnen, Landingpages, Tracking und Automatisierung setze ich persönlich um, und Sie haben von der ersten Analyse bis zum Bericht einen festen Ansprechpartner.
-                </p>
-                <p className="text-body-sm text-[#686DF4] font-semibold leading-relaxed pt-1.5 border-t border-slate-100 italic">
-                  {(() => {
-                    const personalHighlights: { [key: string]: string } = {
-                      'growth-strategy': 'Gemeinsam schärfen wir Ihre Positionierung und beschreiben Ihre Wunschkunden, damit jede weitere Massnahme auf einem klaren Plan aufbaut.',
-                      'demand-generation': 'Ich plane und betreue Ihre Kampagnen auf Google, LinkedIn und Meta so, dass sie bei Ihrer Zielgruppe ankommen und messbar Anfragen bringen.',
-                      'lead-generation': 'Mit nützlichen Inhalten, SEO und einer persönlichen Direktansprache bauen wir einen Weg auf, über den regelmässig Anfragen für Erstgespräche entstehen.',
-                      'marketing-automation': 'Wir automatisieren das Nachfassen bei Interessenten und bringen Ordnung in Ihr CRM, damit Ihr Vertrieb sich auf die richtigen Gespräche konzentrieren kann.',
-                      'sales-enablement': 'Ich erarbeite mit Ihrem Vertrieb Argumente, Unterlagen und Leitfäden, die im Verkaufsgespräch tatsächlich genutzt werden.',
-                      'revenue-operations': 'Wir bringen die Daten von Marketing, Vertrieb und Kundenbetreuung zusammen, damit alle mit denselben Zahlen arbeiten.',
-                      'ai-automation': 'Ich setze KI-Abläufe dort ein, wo sie Ihrem Team Routinearbeit abnehmen, und lasse sie weg, wo sie nichts bringen.',
-                      'data-analytics': 'Mit sauberem, datenschutzkonformem Tracking und nachvollziehbaren Berichten sehen Sie, welche Kanäle Ihnen Kunden und Umsatz bringen.'
-                    };
-                    return personalHighlights[service.slug] || '';
-                  })()}
-                </p>
-              </div>
+              {primaryAreaOf(service.slug) && (
+                <Link
+                  href={`/leistungen/${primaryAreaOf(service.slug)!.id}`}
+                  className="text-xs font-bold text-[#686DF4] inline-flex items-center gap-1.5"
+                >
+                  Alles zu {primaryAreaOf(service.slug)!.shortLabel} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
+              )}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {relatedServices(service.slug).map((r) => (
+                <TeaserCard key={r.slug} href={`/leistungen/${r.slug}`} title={r.title} desc={r.shortDesc} linkText="Zur Leistung" />
+              ))}
             </div>
           </section>
 
-          {/* CTA CALLOUT */}
-          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-slate-950 text-white rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden border border-slate-900">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-              <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight max-w-2xl mx-auto leading-tight text-white">
-                {extendedContent.cta.headline}
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-lg mx-auto opacity-95 font-medium">
-                {extendedContent.cta.subheadline}
-              </p>
 
-              <button
-                onClick={handleConsultation}
-                className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md hover:-translate-y-0.5"
-              >
-                {extendedContent.cta.buttonText}
-              </button>
-            </div>
-          </section>
+          {/* ANFRAGE (eingebettetes Formular) */}
+          <LeadCtaSection
+            title={extendedContent.cta.headline}
+            intro={extendedContent.cta.subheadline}
+            formLocation={`leistung_${service.slug}`}
+          />
 
         </div>
       );
@@ -523,77 +461,69 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
   // GENERAL OVERVIEW: GRID OF ALL 8 SERVICES
   // ----------------------------------------------------
   return (
-    <div className="pt-24 pb-16 space-y-28 text-slate-800" id="services-overview-page text-center">
+    <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="services-overview-page text-center">
       
       {/* Hero section */}
-      <section className="relative bg-white py-28 border-b border-slate-100 overflow-hidden text-center animate-fadeIn">
+      <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center animate-fadeIn">
         <div className="absolute top-0 left-10 w-80 h-80 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <span className="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 text-slate-500 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-            Leistungen
-          </span>
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
-            Mehr Kundenanfragen über Google, Meta, LinkedIn und Ihre Website.
+            Strategie, Technologie und Wachstum aus einer Hand.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium">
-            performanceboost unterstützt Schweizer KMU bei der digitalen Neukundengewinnung. Wir planen und betreuen Kampagnen auf Google, Meta und LinkedIn, bauen Landingpages, die aus Besuchern Anfragen machen, richten sauberes Tracking und verständliche Berichte ein und automatisieren das Nachfassen mit Marketing Automation. Alles aus einer Hand, persönlich umgesetzt von Inhaber Yathur Nathan.
+            performanceboost verbessert die Bereiche, in denen Schweizer KMU heute am meisten Umsatz und Zeit verlieren: Strategie, Systeme und Abläufe, Marketing sowie Vertrieb. Unsere Leistungen sind in vier Felder gegliedert und greifen ineinander. Persönlich umgesetzt von Inhaber Yathur Nathan.
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 animate-fadeIn">
-        <div className="text-center space-y-3">
-          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Übersicht</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Leistungen im Detail</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {SERVICES.map((s) => {
-            const IconComp = servicesIcons[s.slug] || TrendingUp;
-            const localized = servicesCopyOverride[s.slug] || { benefit: s.shortDesc, desc: s.description };
-            return (
-              <div 
-                key={s.slug}
-                className="bg-white border border-[#E0E0E0]/65 hover:border-[#686DF4]/25 rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-1 group"
-              >
-                <div className="space-y-5">
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white group-hover:border-transparent transition-all duration-300">
-                    <IconComp className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">{s.title}</h3>
-                    <p className="text-[11px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
-                    <p className="text-body-sm text-slate-500 leading-relaxed mt-3.5 line-clamp-4 font-medium">{localized.desc}</p>
-                  </div>
+      {/* Leistungen nach Leistungsfeld */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 animate-fadeIn">
+        {SERVICE_AREAS.map((area) => {
+          const areaServices = SERVICES.filter((s) => primaryAreaOf(s.slug)?.id === area.id || (area.id === 'sales-revenue-operations' && s.slug === 'marketing-automation'));
+          return (
+            <div key={area.id} className="space-y-8" id={`leistungsfeld-${area.id}`}>
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E0E0E0]/80 pb-5">
+                <div className="space-y-2 max-w-3xl">
+                  <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight">{area.headline}</h2>
+                  <p className="text-body-sm text-slate-600 leading-relaxed">{area.teaser}</p>
                 </div>
-
-                <div className="pt-6 border-t border-slate-100 mt-8 flex justify-between items-center">
-                  <span className="text-[11px] text-slate-400 font-mono font-bold uppercase tracking-wider">
-                    Leistung
-                  </span>
-                  <button
-                    onClick={() => {
-                      onNavigate(`/leistungen/${s.slug}`);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/80"
-                  >
-                    Details <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+                <Link href={`/leistungen/${area.id}`} className="text-xs font-bold text-[#686DF4] inline-flex items-center gap-1.5 shrink-0">
+                  Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
               </div>
-            );
-          })}
-        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {areaServices.map((s) => {
+                  const IconComp = servicesIcons[s.slug] || TrendingUp;
+                  const localized = servicesCopyOverride[s.slug] || { benefit: s.shortDesc, desc: s.description };
+                  return (
+                    <Link
+                      key={s.slug}
+                      href={`/leistungen/${s.slug}`}
+                      className="bg-white border border-[#E0E0E0]/65 hover:border-[#686DF4]/40 rounded-3xl p-7 flex flex-col transition-all duration-300 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:border-transparent transition-all duration-300">
+                        <IconComp className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" aria-hidden="true" />
+                      </div>
+                      <h3 className="mt-5 text-base font-bold text-slate-900 group-hover:text-[#4f54d6] transition-colors leading-tight">{s.title}</h3>
+                      <p className="text-[11px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
+                      <p className="text-body-sm text-slate-500 leading-relaxed mt-3 line-clamp-4">{localized.desc}</p>
+                      <span className="mt-auto pt-6 text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5">
+                        Details <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </section>
 
       {/* HOW WE COMBINE SERVICES */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-24 md:py-32 animate-fadeIn">
+      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32 animate-fadeIn">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-center">
           
           <div className="space-y-3">
-            <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest">Kombinationen</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir Leistungen kombinieren</h2>
             <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed font-semibold">
               Einzelne Leistungen bringen schon viel. Am meisten erreichen Sie, wenn Kampagnen, Website, Tracking und Vertrieb aufeinander abgestimmt sind.
@@ -605,7 +535,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 1 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Schnell Anfragen</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Lead-Generierung</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Google Ads bringen ab den ersten Wochen Anfragen, belastbare Daten liegen meist nach 4–8 Wochen vor. SEO und Inhalte bauen parallel Sichtbarkeit auf, die über mehrere Monate wächst.
@@ -625,7 +554,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 2 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Anfragen weiterbegleiten</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Automation + CRM</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Kampagnen bringen neue Kontakte, automatische E-Mails begleiten sie weiter, und das CRM übergibt sie zur richtigen Zeit an Ihren Vertrieb. So geht unterwegs keine Anfrage verloren.
@@ -645,7 +573,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             {/* Combo 3 */}
             <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
               <div className="space-y-4">
-                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-2.5 py-1 rounded-md">Gemeinsame Zahlen</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">RevOps + Vertriebsunterstützung + Tracking</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
                   Marketing und Vertrieb arbeiten mit gemeinsamen Zielen und denselben Daten. Ein gemeinsames Dashboard zeigt allen, woher Anfragen kommen und was daraus wird.
@@ -672,11 +599,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-120px" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-[#fcfcfc] border-y border-[#E2E8F0]/30 py-24 md:py-32"
+        className="bg-[#fcfcfc] border-y border-[#E2E8F0]/30 py-16 md:py-32"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-3">
-            <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Branchen</span>
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Lösungen für Schweizer Branchen</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
               Wählen Sie Ihre Branche und schätzen Sie mit unseren Rechnern grob ab, wie viel Potenzial bei Anfragen und Umsatz noch offen ist.
@@ -786,13 +712,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             ].map((ind) => {
               const IconComp = ind.icon;
               return (
-                <div 
+                <Link
                   key={ind.slug}
                   id={`industry-card-${ind.slug}`}
-                  onClick={() => {
-                    onNavigate(`/loesungen/${ind.slug}`);
-                    window.scrollTo({ top: 0, behavior: 'instant' });
-                  }}
+                  href={`/loesungen/${ind.slug}`}
                   className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:border-[#686DF4]/25 transition-all duration-300 cursor-pointer group"
                 >
                   <div className="space-y-4">
@@ -800,9 +723,6 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       <div className="p-2.5 bg-[#f6f6f6] rounded-xl border border-slate-100 group-hover:bg-[#686DF4]/5 group-hover:border-[#686DF4]/25 group-hover:text-[#686DF4] transition-colors">
                         <IconComp className="w-5 h-5 text-slate-400 group-hover:text-[#686DF4] transition-colors" />
                       </div>
-                      <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] bg-[#686DF4]/5 border border-[#686DF4]/10 px-2 py-0.5 rounded uppercase">
-                        Branche
-                      </span>
                     </div>
                     <div className="space-y-1.5">
                       <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">
@@ -822,32 +742,14 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       →
                     </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
         </div>
       </motion.section>
 
-      {/* FINAL CALLOUT AND CTA */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 animate-fadeIn">
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] tracking-widest uppercase">Erstgespräch</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Leistung passt zu Ihrem Unternehmen?</h2>
-          <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-95 font-medium">
-            In einem unverbindlichen Gespräch von 30 Minuten schauen wir auf Ihre Situation und klären, womit Sie am sinnvollsten beginnen.
-          </p>
-
-          <button
-            type="button"
-            onClick={() => onNavigate('/kontakt')}
-            className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer border-0"
-          >
-            Erstgespräch vereinbaren
-          </button>
-        </div>
-      </section>
+      <LeadCtaSection formLocation="leistungen" title="Welche Leistung passt zu Ihrem Unternehmen?" />
 
     </div>
   );

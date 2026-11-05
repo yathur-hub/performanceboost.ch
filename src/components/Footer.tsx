@@ -1,240 +1,111 @@
 /**
- * @license
- * SPDX-License-Identifier: Apache-2.0
+ * Footer (reduziert, 06.11.2026): Marke · Leistungsfelder · Unternehmen · Kontakt.
+ * Einzelleistungen, E-Commerce und Finanzdienstleister sind bewusst nicht mehr im Footer;
+ * sie sind über die Leistungsfeld-Hubs, /leistungen und /loesungen verlinkt.
  */
-
 import React from 'react';
-import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { SITE } from '../config/site';
-import { SERVICES } from '../data/services';
+import { SERVICE_AREAS } from '../data/serviceAreas';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
 }
 
-const FINANCE_LINKS = [
-  { href: '/loesungen/finanzdienstleister', label: 'Übersicht' },
-  { href: '/loesungen/hypothekarberatung', label: 'Hypothekarberatung' },
-  { href: '/loesungen/vorsorgeberatung', label: 'Vorsorgeberatung' },
-  { href: '/loesungen/versicherungsbroker', label: 'Versicherungsbroker' },
+const COMPANY_LINKS = [
+  { href: '/loesungen', label: 'Lösungen' },
+  { href: '/referenzen', label: 'Referenzen' },
+  { href: '/ueber-uns', label: 'Über uns' },
+  { href: '/skills', label: 'Skill-Factory' },
+  { href: '/ressourcen', label: 'Ratgeber' },
+  { href: '/kontakt', label: 'Kontakt' },
 ];
 
 export default function Footer({ onNavigate }: FooterProps) {
-  const handleLinkClick = (path: string, e: React.MouseEvent) => {
+  const go = (path: string, e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
     onNavigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (path !== '/kontakt') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const b2bServices = SERVICES.filter((s) => 
-    ['growth-strategy', 'demand-generation', 'lead-generation', 'sales-enablement', 'ai-automation', 'data-analytics'].includes(s.slug)
-  );
-
-  const ecommerceServices = SERVICES.filter((s) => 
-    ['ecommerce-performance', 'dtc-growth-acquisition', 'customer-retention', 'paid-social-ecommerce'].includes(s.slug)
-  );
+  const linkClass = 'text-sm text-slate-600 hover:text-[#4f54d6] transition-colors';
+  const headingClass = 'text-sm font-display font-semibold text-slate-900';
 
   return (
-    <footer className="bg-white border-t border-slate-250 pt-16 pb-12 text-slate-650" id="site-footer">
+    <footer className="bg-white border-t border-slate-200 pt-14 pb-10" id="site-footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-slate-200" id="footer-top-grid">
-          {/* Column 1: Logo & Agency mission */}
-          <div className="space-y-4" id="footer-col-brand">
-            <a 
-              href="/" 
-              onClick={(e) => handleLinkClick('/', e)}
-              className="flex items-center gap-2 group cursor-pointer"
-            >
-              <img loading="lazy" decoding="async" 
-                src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
-                alt="performanceboost Logo" 
-                className="h-[74px] w-auto object-contain -mt-3 transition-transform duration-300 group-hover:scale-103"
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-10 pb-10 border-b border-slate-200">
+          <div className="col-span-2 lg:col-span-4 space-y-4">
+            <a href="/" onClick={(e) => go('/', e)} className="inline-block" aria-label="performanceboost Startseite">
+              <img
+                loading="lazy"
+                decoding="async"
+                src={SITE.logoUrl}
+                alt="performanceboost Logo"
+                className="h-[64px] w-auto object-contain -mt-3 -ml-1"
                 referrerPolicy="no-referrer"
               />
             </a>
-            <p className="text-xs text-slate-500 leading-relaxed max-w-[240px] font-medium animate-fade-in">
-              Beratung und Umsetzung für digitale Neukundengewinnung: Kampagnen, Landingpages, Tracking und Automatisierung für Schweizer KMU.
+            <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
+              Business Performance Partner für Schweizer KMU. Strategie, Technologie und Wachstum aus einer Hand, inhabergeführt aus Graubünden.
             </p>
-            <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50/50 px-3 py-1.5 rounded-lg border border-slate-200/60 w-fit shadow-[var(--shadow-premium-sm)]">
-              <ShieldCheck className="w-4 h-4 text-[#686DF4] shrink-0" />
-              <span className="font-semibold text-[11px]">Inhabergeführt aus Graubünden</span>
-            </div>
           </div>
 
-          {/* Column 2: B2B & Dienstleistung (8 Hebel) */}
-          <div className="space-y-4" id="footer-col-b2b">
-            <div>
-              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">B2B & Dienstleistung</h4>
-              <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
-            </div>
-            <ul className="space-y-2 text-[11px] text-slate-500 font-semibold" id="footer-b2b-links">
-              {b2bServices.map((s) => (
-                <li key={s.slug}>
-                  <a 
-                    href={`/leistungen/${s.slug}`} 
-                    onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)} 
-                    className="hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item hover:text-[#686DF4]"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-300 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">{s.title}</span>
+          <nav aria-label="Leistungsfelder" className="lg:col-span-3 space-y-3">
+            <p className={headingClass}>Leistungen</p>
+            <ul className="space-y-2">
+              {SERVICE_AREAS.map((a) => (
+                <li key={a.id}>
+                  <a href={`/leistungen/${a.id}`} onClick={(e) => go(`/leistungen/${a.id}`, e)} className={linkClass}>
+                    {a.shortLabel}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Column 3: E-Commerce & Corporate (4 Hebel + Company) */}
-          <div className="space-y-6" id="footer-col-ecommerce-company">
-            <div className="space-y-3">
-              <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">E-Commerce</h4>
-                <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
-              </div>
-              <ul className="space-y-2 text-[11px] text-slate-500 font-semibold" id="footer-ecommerce-links">
-                {ecommerceServices.map((s) => (
-                  <li key={s.slug}>
-                    <a 
-                      href={`/leistungen/${s.slug}`} 
-                      onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)} 
-                      className="hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item hover:text-[#686DF4]"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-slate-300 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                      <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">{s.title}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <nav aria-label="Unternehmen" className="lg:col-span-2 space-y-3">
+            <p className={headingClass}>Unternehmen</p>
+            <ul className="space-y-2">
+              {COMPANY_LINKS.map((l) => (
+                <li key={l.href}>
+                  <a href={l.href} onClick={(e) => go(l.href, e)} className={linkClass}>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            <div className="space-y-3 pt-2">
-              <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">Finanzdienstleister</h4>
-                <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
-              </div>
-              <ul className="space-y-2 text-[11px] text-slate-500 font-semibold" id="footer-finance-links">
-                {FINANCE_LINKS.map((l) => (
-                  <li key={l.href}>
-                    <a
-                      href={l.href}
-                      onClick={(e) => handleLinkClick(l.href, e)}
-                      className="hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-slate-300 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                      <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">{l.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-3 pt-2">
-              <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">Unternehmen</h4>
-                <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
-              </div>
-              <ul className="space-y-2 text-[11px] text-slate-500 font-bold" id="footer-company-links">
-                <li>
-                  <a 
-                    href="/loesungen" 
-                    onClick={(e) => handleLinkClick('/loesungen', e)} 
-                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Branchen</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/ressourcen" 
-                    onClick={(e) => handleLinkClick('/ressourcen', e)} 
-                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Ratgeber</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/skills" 
-                    onClick={(e) => handleLinkClick('/skills', e)} 
-                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Selbst-Checks & Rechner</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/ueber-uns" 
-                    onClick={(e) => handleLinkClick('/ueber-uns', e)} 
-                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Über uns</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/kontakt" 
-                    onClick={(e) => handleLinkClick('/kontakt', e)} 
-                    className="text-slate-600 hover:text-[#686DF4] transition-all duration-200 flex items-center gap-2 py-0.5 group/f-item"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-400 group-hover/f-item:bg-[#686DF4] group-hover/f-item:scale-125 transition-all shrink-0"></span>
-                    <span className="transition-transform duration-200 group-hover/f-item:translate-x-1">Kontakt & Erstgespräch</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Column 4: Direktkontakt */}
-          <div className="space-y-4" id="footer-col-contact">
-            <div>
-              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-widest font-display">Direktkontakt</h4>
-              <div className="h-0.5 w-6 bg-[#686DF4]/40 mt-1.5 rounded-full"></div>
-            </div>
-            <ul className="space-y-3.5 text-xs text-slate-500 font-medium" id="footer-contact-details">
+          <div className="col-span-2 lg:col-span-3 space-y-3">
+            <p className={headingClass}>Kontakt</p>
+            <ul className="space-y-2.5 text-sm text-slate-600">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#686DF4] shrink-0 mt-0.5" />
-                <span className="leading-relaxed text-slate-600 font-semibold text-[11px]">
-                  performanceboost<br/>
-                  Patschär 4<br/>
-                  7306 Fläsch / GR
+                <MapPin className="w-4 h-4 text-[#696EEF] shrink-0 mt-0.5" aria-hidden="true" />
+                <span>
+                  {SITE.street}, {SITE.postalCode} {SITE.locality}
                 </span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#686DF4] shrink-0" />
-                <a href={`mailto:${SITE.email}`} className="text-slate-700 hover:text-[#686DF4] transition-colors font-bold text-[11px]">
-                  {SITE.email}
-                </a>
+                <Mail className="w-4 h-4 text-[#696EEF] shrink-0" aria-hidden="true" />
+                <a href={`mailto:${SITE.email}`} className={linkClass}>{SITE.email}</a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#686DF4] shrink-0" />
-                <a href={SITE.phoneHref} className="text-slate-700 hover:text-[#686DF4] transition-colors font-bold text-[11px]">
-                  {SITE.phoneDisplay}
-                </a>
+                <Phone className="w-4 h-4 text-[#696EEF] shrink-0" aria-hidden="true" />
+                <a href={SITE.phoneHref} className={linkClass}>{SITE.phoneDisplay}</a>
               </li>
             </ul>
           </div>
-
         </div>
 
-        {/* Lower row: copyright & legal */}
-        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-semibold">
-          <div>
-            © {new Date().getFullYear()} performanceboost. Alle Rechte vorbehalten
-          </div>
-          <div className="flex gap-4 font-semibold text-slate-400">
-            <a href="/impressum" onClick={(e) => handleLinkClick('/impressum', e)} className="hover:text-[#686DF4] transition-colors">
-              Impressum
-            </a>
-            <a href="/datenschutz" onClick={(e) => handleLinkClick('/datenschutz', e)} className="hover:text-[#686DF4] transition-colors">
-              Datenschutz
-            </a>
+        <div className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} performanceboost</p>
+          <div className="flex gap-5">
+            <a href="/impressum" onClick={(e) => go('/impressum', e)} className="hover:text-[#4f54d6] transition-colors">Impressum</a>
+            <a href="/datenschutz" onClick={(e) => go('/datenschutz', e)} className="hover:text-[#4f54d6] transition-colors">Datenschutz</a>
           </div>
         </div>
-
       </div>
     </footer>
   );

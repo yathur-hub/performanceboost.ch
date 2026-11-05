@@ -2,6 +2,8 @@ import { SERVICES } from '../data/services';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import { RESOURCES_DATA } from '../data/resources';
 import { FINANCE_SLUGS, isFinanceSlug } from '../data/financeLanding';
+import { AREA_IDS, isAreaId } from '../data/serviceAreas';
+import { CHALLENGE_SLUGS, isChallengeSlug } from '../data/challenges';
 
 export type RouteView =
   | 'home'
@@ -9,6 +11,9 @@ export type RouteView =
   | 'loesungen'
   | 'loesungen_detail'
   | 'finanz'
+  | 'loesung_herausforderung'
+  | 'leistungsfeld'
+  | 'referenzen'
   | 'about'
   | 'kontakt'
   | 'impressum'
@@ -42,6 +47,7 @@ export function parseRoute(pathname: string): ParsedRoute {
   if (path === '/skills') return { view: 'skills', path, pageType: 'tools' };
   if (path === '/loesungen') return { view: 'loesungen', path, pageType: 'loesungen' };
   if (path === '/ueber-uns') return { view: 'about', path, pageType: 'ueber_uns' };
+  if (path === '/referenzen') return { view: 'referenzen', path, pageType: 'referenzen' };
   if (path === '/kontakt') return { view: 'kontakt', path, pageType: 'kontakt' };
   if (path === '/impressum') return { view: 'impressum', path, pageType: 'rechtliches' };
   if (path === '/datenschutz') return { view: 'datenschutz', path, pageType: 'rechtliches' };
@@ -50,6 +56,7 @@ export function parseRoute(pathname: string): ParsedRoute {
     const slug = path.slice('/loesungen/'.length);
     // Finanz-Landingpages (Übersicht + Schwerpunkte) haben eine eigene Ansicht.
     if (isFinanceSlug(slug)) return { view: 'finanz', slug, path, pageType: 'finanz_landing' };
+    if (isChallengeSlug(slug)) return { view: 'loesung_herausforderung', slug, path, pageType: 'loesung_herausforderung' };
     if (!SOLUTION_SLUGS.includes(slug)) return notFound;
     return { view: 'loesungen_detail', slug, path, pageType: 'loesung' };
   }
@@ -57,6 +64,7 @@ export function parseRoute(pathname: string): ParsedRoute {
   if (path === '/leistungen') return { view: 'leistungen', path, pageType: 'leistungen' };
   if (path.startsWith('/leistungen/')) {
     const slug = path.slice('/leistungen/'.length);
+    if (isAreaId(slug)) return { view: 'leistungsfeld', slug, path, pageType: 'leistungsfeld' };
     if (!SERVICES.some((s) => s.slug === slug)) return notFound;
     return { view: 'leistungen', slug, path, pageType: 'leistung' };
   }
@@ -87,12 +95,15 @@ export function indexablePaths(): string[] {
   return [
     '/',
     '/leistungen',
+    ...AREA_IDS.map((id) => `/leistungen/${id}`),
     ...SERVICES.map((s) => `/leistungen/${s.slug}`),
     '/loesungen',
+    ...CHALLENGE_SLUGS.map((slug) => `/loesungen/${slug}`),
     ...SOLUTION_SLUGS.map((slug) => `/loesungen/${slug}`),
     ...FINANCE_SLUGS.filter((slug) => !SOLUTION_SLUGS.includes(slug)).map((slug) => `/loesungen/${slug}`),
     '/ressourcen',
     ...RESOURCES_DATA.filter((r) => r.type !== 'case-study').map((r) => `/ressourcen/${r.slug}`),
+    '/referenzen',
     '/ueber-uns',
     '/kontakt',
     '/skills',

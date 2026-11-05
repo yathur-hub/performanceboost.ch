@@ -37,7 +37,7 @@ const ReferenceCardView: React.FC<{ card: ReferenceCard }> = ({ card }) => {
   const testimonial = card.testimonialId ? TESTIMONIALS_DATA.find((t) => t.id === card.testimonialId) : undefined;
   return (
     <article className="flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-6 sm:p-7">
-      <p className={overlineClass}>{card.label}</p>
+      <h3 className="font-display text-lg font-semibold text-slate-900">{card.label}</h3>
       {card.intro && <p className="text-sm text-slate-700">{card.intro}</p>}
       <div className="space-y-2">
         <p className="text-sm font-semibold text-slate-900">Unsere Arbeit</p>
@@ -117,7 +117,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
   return (
     <div className="bg-[#f6f6f6] pb-24 text-slate-800" id="finance-landing">
       {/* 1. HERO */}
-      <section ref={heroRef} className="border-b border-slate-100 bg-white px-4 pb-14 pt-28 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="border-b border-slate-100 bg-white px-4 pb-14 pt-36 sm:px-6 md:pt-40 lg:px-8">
         <div className="mx-auto max-w-7xl space-y-8">
           <Link
             href={isHub ? '/loesungen' : '/loesungen/finanzdienstleister'}
@@ -128,7 +128,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
 
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <div className="space-y-6 lg:col-span-7">
-              <p className={overlineClass}>{page.overline}</p>
               <h1 className="font-display text-3xl font-semibold leading-[1.1] tracking-tight text-slate-950 sm:text-5xl">
                 {page.h1}
               </h1>
@@ -205,7 +204,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {/* 3. AUSGANGSLAGE */}
         <section className="mx-auto max-w-6xl space-y-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-3">
-            <p className={overlineClass}>Ausgangslage</p>
             <h2 className={h2Class}>{PAIN_HEADING}</h2>
             <p className="text-slate-600">{PAIN_INTRO}</p>
           </div>
@@ -222,7 +220,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {/* 4. NUTZEN */}
         <section className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="space-y-3">
-            <p className={overlineClass}>Ihr Nutzen</p>
             <h2 className={h2Class}>Was sich für Sie ändert</h2>
           </div>
           <ul className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
@@ -241,7 +238,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-10 rounded-3xl bg-slate-950 p-8 text-white sm:p-12">
             <div className="max-w-3xl space-y-3">
-              <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#CACCFB]">Leistungen</p>
               <h2 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                 Was wir für Sie aufbauen und betreiben
               </h2>
@@ -252,9 +248,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
             <ol className="grid grid-cols-1 gap-8 border-t border-white/10 pt-8 md:grid-cols-2 lg:grid-cols-4">
               {BUILDING_BLOCKS.map((b, i) => (
                 <li key={b.title} className="space-y-3">
-                  <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-[#CACCFB]">
-                    Baustein {i + 1}
-                  </span>
                   <h3 className="font-semibold text-white">{b.title}</h3>
                   <p className="text-body-sm leading-relaxed text-slate-300">{b.desc}</p>
                   <ul className="space-y-1">
@@ -279,7 +272,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {isHub ? (
           <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl space-y-3">
-              <p className={overlineClass}>Anwendungsfälle</p>
               <h2 className={h2Class}>Für welche Beratungen wir arbeiten</h2>
             </div>
             <ul className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -303,7 +295,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           page.icpDetail && (
             <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
               <div className="max-w-3xl space-y-3">
-                <p className={overlineClass}>{page.overline}</p>
                 <h2 className={h2Class}>{page.icpDetail.heading}</h2>
               </div>
               <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -353,7 +344,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {/* 7. REFERENZEN */}
         <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-3">
-            <p className={overlineClass}>Referenzen</p>
             <h2 className={h2Class}>Mit wem wir in der Finanzbranche arbeiten</h2>
             <p className="text-slate-600">{REFERENCES_INTRO}</p>
           </div>
@@ -367,7 +357,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {/* 8. WACHSTUMSCHECK */}
         <section id="wachstumscheck" className="mx-auto max-w-6xl scroll-mt-24 space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-3">
-            <p className={overlineClass}>Wachstumscheck</p>
             <h2 className={h2Class}>Wie viele Erstgespräche brauchen Sie wirklich?</h2>
             <p className="text-slate-600">
               Rechnen Sie mit Ihren eigenen Annahmen. Wir verwenden keine Branchendurchschnitte, die es für Schweizer
@@ -380,7 +369,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {/* 9. ABLAUF */}
         <section className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="space-y-3">
-            <p className={overlineClass}>Ablauf</p>
             <h2 className={h2Class}>So arbeiten wir zusammen</h2>
           </div>
           <ol className="relative space-y-6 border-l-2 border-[#CACCFB] pl-8">
@@ -405,7 +393,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {/* 10. PAKETE (ohne Preise, Entscheid D3) */}
         <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-3">
-            <p className={overlineClass}>Pakete</p>
             <h2 className={h2Class}>Drei Pakete, je nach Grösse Ihrer Beratung</h2>
           </div>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
@@ -453,7 +440,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 md:grid-cols-2">
             <div className="space-y-4">
-              <p className={overlineClass}>Regulierung & Datenschutz</p>
               <h2 className={h2Class}>Was wir bewusst nicht tun</h2>
               <ul className="space-y-2">
                 {DONT_DO.map((d) => (
@@ -513,7 +499,6 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         {/* 14. FAQ */}
         <section className="mx-auto max-w-3xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="space-y-3">
-            <p className={overlineClass}>Fragen</p>
             <h2 className={h2Class}>Häufige Fragen</h2>
           </div>
           <div className="divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-white px-5 sm:px-8">

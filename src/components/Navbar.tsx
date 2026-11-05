@@ -21,12 +21,35 @@ import {
   Phone,
   ShoppingCart,
   RefreshCcw,
-  Landmark
+  Landmark,
+  Compass,
+  Handshake,
+  Plus
 } from 'lucide-react';
 import { SERVICES } from '../data/services';
-import { ServiceDetail } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { SITE } from '../config/site';
+import { SERVICE_AREAS } from '../data/serviceAreas';
+
+const AREA_ICONS = {
+  strategie: Compass,
+  'technologie-automation': Cpu,
+  'wachstum-marketing': TrendingUp,
+  'sales-revenue-operations': Handshake,
+} as const;
+
+const COMPANY_LINKS = [
+  { href: '/loesungen', label: 'Lösungen', desc: 'Nach Herausforderung und Branche' },
+  { href: '/referenzen', label: 'Referenzen', desc: 'Was Kundinnen und Kunden sagen' },
+  { href: '/ueber-uns', label: 'Über uns', desc: 'Wer hinter performanceboost steht' },
+  { href: '/skills', label: 'Skill-Factory', desc: 'Checks und Rechner für Ihre Analyse' },
+  { href: '/ressourcen', label: 'Ratgeber', desc: 'Leitfäden und Fachbeiträge' },
+];
+
+const menuItem = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 interface NavbarProps {
   currentPath: string;
@@ -36,8 +59,8 @@ interface NavbarProps {
 export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hoveredService, setHoveredService] = useState<ServiceDetail | null>(null);
-  const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false);
+  // Mobil: Leistungsfelder als Akkordeon (nur Titel + Plus), ab sm vollständig sichtbar
+  const [openArea, setOpenArea] = useState<string | null>(null);
 
   // Scroll listener to style floating header
   useEffect(() => {
@@ -71,35 +94,30 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) setOpenArea(null);
+  }, [isOpen]);
+
   const handleLinkClick = (path: string, e: React.MouseEvent) => {
     e.preventDefault();
     onNavigate(path);
     setIsOpen(false);
   };
 
-  const servicesIcons: { [key: string]: any } = {
-    'growth-strategy': TrendingUp,
-    'demand-generation': Megaphone,
-    'lead-generation': Users,
-    'marketing-automation': Cpu,
-    'sales-enablement': ShieldAlert,
-    'revenue-operations': Layers,
-    'ai-automation': Sparkles,
-    'data-analytics': PieChart,
-    'ecommerce-performance': ShoppingCart,
-    'dtc-growth-acquisition': TrendingUp,
-    'customer-retention': RefreshCcw,
-    'paid-social-ecommerce': TrendingUp
-  };
-
-  // Helper to safely get icon for a service
-  const getServiceIcon = (slug: string) => {
-    return servicesIcons[slug] || TrendingUp;
-  };
-
-  const navServices = SERVICES.filter(
-    (s) => s.slug !== 'marketing-automation' && s.slug !== 'revenue-operations'
-  );
+  // Mega-Menü nach Leistungsfeldern gruppiert; jede Leistung erscheint nur in ihrem Hauptfeld.
+  // Links pro Leistungsfeld: alle zugeordneten Leistungen; Felder mit weniger als 3 Leistungen
+  // werden mit ihren Themen ergänzt (Link auf den Hub), damit die Karten ausgewogen sind.
+  const navGroups = SERVICE_AREAS.map((area) => {
+    const services = area.services
+      .map((slug) => SERVICES.find((s) => s.slug === slug))
+      .filter((s): s is (typeof SERVICES)[number] => Boolean(s))
+      .map((s) => ({ key: s.slug, title: s.title, href: `/leistungen/${s.slug}` }));
+    const topics = area.topics
+      .filter((t) => !services.some((s) => s.title.split(' ')[0] === t.title.split(' ')[0]))
+      .slice(0, Math.max(0, 4 - services.length))
+      .map((t) => ({ key: t.title, title: t.title, href: `/leistungen/${area.id}` }));
+    return { area, services: [...services, ...topics] };
+  });
 
   return (
     <>
@@ -126,7 +144,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               <img 
                 src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
                 alt="performanceboost Logo" 
-                className="h-[84px] md:h-[90px] w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
+                className="h-[72px] md:h-[90px] w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
             </a>
@@ -161,7 +179,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.995, y: -2 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#f8fafc] flex flex-col overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#f6f6f6] flex flex-col overflow-y-auto"
           >
             {/* Header Block inside drop overlay to keep alignment perfect */}
             <div className="border-b border-slate-200/65 py-3.5 px-6 sm:px-8 lg:px-10 bg-white/70 backdrop-blur-md sticky top-0 z-30">
@@ -177,7 +195,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   <img 
                     src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
                     alt="performanceboost Logo" 
-                    className="h-[84px] md:h-[90px] w-auto object-contain"
+                    className="h-[72px] md:h-[90px] w-auto object-contain"
                     referrerPolicy="no-referrer"
                   />
                 </a>
@@ -186,7 +204,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 <button
                   id="overlay-close-button"
                   onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center justify-center gap-1.5 pl-3 pr-4 py-2 rounded-full border border-slate-200 bg-slate-900 text-white hover:bg-[#686DF4] focus-visible:ring-2 focus-visible:ring-[#686DF4] cursor-pointer transition-all duration-300 shadow-sm"
+                  className="inline-flex items-center justify-center gap-1.5 pl-3 pr-4 py-2 rounded-full border border-slate-200 bg-[#696EEF] text-white hover:bg-[#5a5fe0] focus-visible:ring-2 focus-visible:ring-[#686DF4] cursor-pointer transition-all duration-300 shadow-sm"
                 >
                   <X className="w-3.5 h-3.5" />
                   <span className="text-[11px] font-mono tracking-widest uppercase font-bold">SCHLIESSEN</span>
@@ -195,498 +213,152 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               </div>
             </div>
 
-            {/* CONTENTS CONTAINER (DESKTOP MODE) */}
-            <div className="hidden lg:block flex-grow max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-10 py-6 lg:py-8" id="desktop-menu-contents">
-              <div className="grid grid-cols-12 gap-6 xl:gap-8 items-stretch">
-                
-                {/* Column 1: SPOTLIGHT PREVIEW CARD */}
-                <div 
-                  className="col-span-4 bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xs flex flex-col justify-between overflow-hidden relative min-h-[460px]"
-                  id="menu-spotlight-panel"
-                >
-                  <AnimatePresence mode="wait">
-                    {hoveredService ? (
+            {/* MENÜ-INHALT: Leistungsfeld-Karten links, Navigation + Kontaktkarte rechts */}
+            <div className="flex-grow max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-10 pt-6 pb-10 lg:pt-8" id="menu-contents">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } } }}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6"
+              >
+                {/* Leistungsfelder */}
+                <nav aria-label="Leistungen" className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+                  {navGroups.map(({ area, services }) => {
+                    const Icon = AREA_ICONS[area.id];
+                    return (
                       <motion.div
-                        key={hoveredService.slug}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                        className="space-y-4 flex flex-col h-full justify-between"
-                        id={`spotlight-service-${hoveredService.slug}`}
+                        key={area.id}
+                        variants={menuItem}
+                        className="group/card flex flex-col rounded-2xl sm:rounded-3xl bg-white border border-slate-200/70 p-4 sm:p-6 transition-all duration-300 hover:border-[#696EEF]/40 hover:shadow-[0_12px_40px_-12px_rgba(105,110,239,0.25)]"
                       >
-                        <div className="space-y-3.5">
-                          {/* Service Indicator header label */}
-                          <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">Leistung</span>
-                            <div className="h-px bg-slate-100 flex-grow"></div>
-                          </div>
-
-                          <div className="flex items-center gap-3">
-                            <div className="w-9 h-9 rounded-xl bg-[#686DF4]/10 text-[#686DF4] flex items-center justify-center border border-[#686DF4]/20 shrink-0">
-                              {(() => {
-                                const IconC = getServiceIcon(hoveredService.slug);
-                                return <IconC className="w-4.5 h-4.5" />;
-                              })()}
-                            </div>
-                            <h4 className="text-base font-display font-bold text-slate-900 tracking-tight leading-snug">
-                              {hoveredService.title}
-                            </h4>
-                          </div>
-
-                          <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                            {hoveredService.description}
-                          </p>
-
-                          {/* Quick Deliverable Bullets */}
-                          <div className="space-y-2 pt-1">
-                            <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Was Sie erhalten:</span>
-                            <ul className="space-y-1.5" id="spotlight-deliverables">
-                              {hoveredService.deliverables.slice(0, 2).map((del, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-xs text-slate-700 font-medium leading-snug">
-                                  <CheckCircle2 className="w-3.5 h-3.5 text-[#686DF4] shrink-0 mt-0.5" />
-                                  <span>{del}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-
-                        {/* Impact stats dynamic layer */}
-                        <div className="pt-3.5 border-t border-slate-100 space-y-3">
-                          {hoveredService.metrics.length > 0 && <div className="bg-slate-50 border border-slate-200/60 p-3 rounded-xl flex items-center justify-between">
-                            {hoveredService.metrics.map((m, mIdx) => (
-                              <div key={mIdx} className="space-y-0.5">
-                                <span className="text-base font-bold font-display text-[#686DF4] block leading-none">{m.value}</span>
-                                <span className="text-[11px] text-slate-500 font-semibold uppercase font-mono tracking-wider block">{m.label}</span>
-                              </div>
-                            ))}
-                          </div>}
-
-                          <a
-                            href={`/leistungen/${hoveredService.slug}`}
-                            onClick={(e) => handleLinkClick(`/leistungen/${hoveredService.slug}`, e)}
-                            className="w-full justify-between bg-slate-900 hover:bg-[#686DF4] text-white font-semibold text-xs py-3 px-4 rounded-xl tracking-wider uppercase inline-flex items-center gap-2 transition-colors duration-200 group/spot"
-                            id={`spotlight-cta-link-${hoveredService.slug}`}
-                          >
-                            <span>Mehr zu dieser Leistung</span>
-                            <ArrowRight className="w-3.5 h-3.5 text-white group-hover/spot:translate-x-1 transition-transform duration-200" />
-                          </a>
+                        {/* Mobil: Titel mit Plus, öffnet die Unterpunkte */}
+                        <button
+                          type="button"
+                          onClick={() => setOpenArea(openArea === area.id ? null : area.id)}
+                          aria-expanded={openArea === area.id}
+                          aria-controls={`menu-area-${area.id}`}
+                          className="sm:hidden w-full flex items-center gap-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF] rounded-xl"
+                        >
+                          <span className="w-9 h-9 rounded-xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0">
+                            <Icon className="w-4.5 h-4.5" aria-hidden="true" />
+                          </span>
+                          <span className="flex-1 text-base font-display font-semibold text-slate-900">{area.shortLabel}</span>
+                          <span className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openArea === area.id ? 'bg-[#696EEF] border-[#696EEF] text-white rotate-45' : 'border-slate-200 text-slate-600'}`}>
+                            <Plus className="w-4 h-4" aria-hidden="true" />
+                          </span>
+                        </button>
+                        {/* Ab sm: Titel als Link mit Kurzbeschreibung */}
+                        <a
+                          href={`/leistungen/${area.id}`}
+                          onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
+                          className="hidden sm:flex items-start gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF]"
+                        >
+                          <span className="w-11 h-11 rounded-2xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0 transition-colors duration-300 group-hover/card:bg-[#696EEF] group-hover/card:text-white">
+                            <Icon className="w-5 h-5" aria-hidden="true" />
+                          </span>
+                          <span className="min-w-0">
+                            <span className="block text-lg font-display font-semibold text-slate-900 leading-tight">{area.shortLabel}</span>
+                            <span className="block mt-1 text-[13px] text-slate-500 leading-snug">{area.teaser}</span>
+                          </span>
+                        </a>
+                        <div id={`menu-area-${area.id}`} className={`${openArea === area.id ? 'flex' : 'hidden'} sm:flex flex-col flex-1`}>
+                        <ul className="mt-4 pt-3 border-t border-slate-100 space-y-0.5">
+                          {services.map((s) => {
+                            const active = currentPath === s.href && s.href !== `/leistungen/${area.id}`;
+                            return (
+                              <li key={s.key}>
+                                <a
+                                  href={s.href}
+                                  onClick={(e) => handleLinkClick(s.href, e)}
+                                  aria-current={active ? 'page' : undefined}
+                                  className={`group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2 -mx-3 text-sm transition-colors ${
+                                    active ? 'bg-[#696EEF]/10 text-[#4f54d6] font-semibold' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
+                                  }`}
+                                >
+                                  <span>{s.title}</span>
+                                  <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#696EEF] opacity-0 -translate-x-1 transition-all group-hover/link:opacity-100 group-hover/link:translate-x-0" aria-hidden="true" />
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                        <a
+                          href={`/leistungen/${area.id}`}
+                          onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
+                          className="mt-auto pt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#696EEF] hover:text-[#4f54d6]"
+                        >
+                          Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                        </a>
                         </div>
                       </motion.div>
-                    ) : (
-                      // DEFAULT VIEW (If no service is hovered)
-                      <motion.div
-                        key="default-view"
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                        className="space-y-4 flex flex-col h-full justify-between"
-                        id="spotlight-default-panel"
-                      >
-                        <div className="space-y-3.5">
-                          <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">performanceboost</span>
-                            <div className="h-px bg-slate-100 flex-grow"></div>
-                          </div>
+                    );
+                  })}
+                </nav>
 
-                          <h4 className="text-lg font-display font-bold text-slate-900 tracking-tight leading-snug">
-                            Mehr passende Anfragen statt mehr Klicks.
-                          </h4>
-
-                          <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                            Kampagnen, Landingpages, Tracking und Automatisierung aus einer Hand, damit aus Werbebudget messbar Kundenanfragen werden.
-                          </p>
-
-                          
-                        </div>
-
-                        <div className="space-y-2.5 pt-3 border-t border-slate-100">
-                          <div className="flex items-center gap-2 text-xs text-slate-600 font-medium">
-                            <MapPin className="w-3.5 h-3.5 text-[#686DF4] shrink-0" />
-                            <span>Fläsch (GR) · Zusammenarbeit vor Ort oder remote</span>
-                          </div>
-                          
-                          
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                {/* Column 2: INTERACTIVE SERVICES MATRIX */}
-                <div className="col-span-5 flex flex-col justify-between" id="menu-services-panel">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between pb-0.5">
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">Leistungen</span>
-                      <a 
-                        href="/leistungen" 
-                        onClick={(e) => handleLinkClick('/leistungen', e)}
-                        className="text-xs font-semibold text-[#686DF4] hover:text-slate-900 transition-colors flex items-center gap-1 group/all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] rounded-md px-1"
-                      >
-                        Alle anzeigen <ArrowRight className="w-3.5 h-3.5 group-hover/all:translate-x-0.5 transition-transform" />
-                      </a>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2" id="services-interactive-grid">
-                      {navServices.map((s) => {
-                        const IconComp = getServiceIcon(s.slug);
-                        const isHovered = hoveredService?.slug === s.slug;
-                        
+                {/* Navigation + Kontakt */}
+                <div className="lg:col-span-4 flex flex-col gap-5">
+                  <motion.nav variants={menuItem} aria-label="Unternehmen" className="rounded-3xl bg-white border border-slate-200/70 p-2">
+                    <ul>
+                      {COMPANY_LINKS.map((l) => {
+                        const active = currentPath === l.href;
                         return (
-                          <a
-                            key={s.slug}
-                            id={`navbar-service-card-${s.slug}`}
-                            href={`/leistungen/${s.slug}`}
-                            onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
-                            onMouseEnter={() => setHoveredService(s)}
-                            className={`group flex items-center gap-2.5 p-2.5 rounded-xl border text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] min-h-[50px] relative cursor-pointer ${
-                              isHovered 
-                                ? 'bg-[#686DF4]/[0.05] border-[#686DF4]/40 shadow-xs' 
-                                : 'bg-white border-slate-200/70 hover:bg-[#686DF4]/[0.025] hover:border-[#686DF4]/30'
-                            }`}
-                          >
-                            <div className={`w-7.5 h-7.5 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                              isHovered ? 'bg-[#686DF4] text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4]'
-                            }`}>
-                              <IconComp className="w-3.5 h-3.5" />
-                            </div>
-
-                            <div className="flex-grow min-w-0">
-                              <span className={`block text-xs font-semibold tracking-tight transition-colors truncate ${
-                                isHovered ? 'text-[#686DF4]' : 'text-slate-900 group-hover:text-[#686DF4]'
-                              }`}>
-                                {s.title}
+                          <li key={l.href}>
+                            <a
+                              href={l.href}
+                              onClick={(e) => handleLinkClick(l.href, e)}
+                              aria-current={active ? 'page' : undefined}
+                              className={`group flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors ${active ? 'bg-[#696EEF]/10' : 'hover:bg-slate-50'}`}
+                            >
+                              <span className="flex-1 min-w-0">
+                                <span className={`block font-display font-semibold ${active ? 'text-[#4f54d6]' : 'text-slate-900 group-hover:text-[#4f54d6]'} transition-colors`}>{l.label}</span>
+                                <span className="block text-xs text-slate-500 truncate">{l.desc}</span>
                               </span>
-                            </div>
-
-                            <ChevronRight className={`w-3.5 h-3.5 shrink-0 transition-all duration-200 ${
-                              isHovered ? 'text-[#686DF4] translate-x-0.5' : 'text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5'
-                            }`} />
-                          </a>
+                              <ArrowRight className="w-4 h-4 text-slate-300 transition-all group-hover:text-[#696EEF] group-hover:translate-x-0.5" aria-hidden="true" />
+                            </a>
+                          </li>
                         );
                       })}
-                    </div>
-                  </div>
-                </div>
+                    </ul>
+                  </motion.nav>
 
-                {/* Column 3: HIGHLIGHT INTEGRATED CONVERSION & CONTACT */}
-                <div className="col-span-3 flex flex-col justify-between" id="menu-overview-panel">
-                  <div className="space-y-3">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400 block">SCHNELLZUGRIFF</span>
-                    
-                    <div className="space-y-2" id="overview-links-col">
-                      {/* Interactive Conversion Card */}
-                      <a
-                        href="/kontakt"
-                        id="mega-menu-audit-cta-card"
-                        onClick={(e) => handleLinkClick('/kontakt', e)}
-                        className="relative overflow-hidden group block p-4 rounded-xl bg-slate-950 text-white border border-slate-800 hover:border-[#686DF4]/50 transition-all shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
-                      >
-                        <div className="flex items-center gap-2 mb-1.5">
-                          <span className="flex h-2 w-2 relative">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                          </span>
-                          <span className="text-[11px] font-mono font-bold tracking-widest text-emerald-400 uppercase">Kostenlos & unverbindlich</span>
-                        </div>
-
-                        <h5 className="text-sm font-bold tracking-tight text-white mb-1 group-hover:text-[#8185F8] transition-colors flex items-center justify-between">
-                          Erstgespräch (30 Min.) <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                        </h5>
-
-                        <p className="text-[11px] text-slate-300 font-normal leading-snug mb-3">
-                          Wir schauen gemeinsam auf Ihre heutige Kundengewinnung.
-                        </p>
-
-                        <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-white bg-[#686DF4] group-hover:bg-[#575cdb] px-3 py-1.5 rounded-lg transition-colors">
-                          <Calendar className="w-3.5 h-3.5" />
-                          Anfrage senden
-                        </div>
-                      </a>
-
-                      {/* Über uns Link card */}
-                      <a
-                        href="/ueber-uns"
-                        id="mega-menu-about-link-card"
-                        onClick={(e) => handleLinkClick('/ueber-uns', e)}
-                        className="group flex items-center justify-between p-2.5 bg-white border border-slate-200/70 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.02] shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
-                      >
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          <div className="w-7.5 h-7.5 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/10 transition-colors shrink-0">
-                            <Users className="w-3.5 h-3.5" />
-                          </div>
-                          <div className="min-w-0">
-                            <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
-                              Über uns
-                            </span>
-                            <span className="block text-[11px] text-slate-500 font-normal truncate">
-                              Wer hinter performanceboost steht
-                            </span>
-                          </div>
-                        </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
-                      </a>
-
-                      {/* Selbst-Checks Link Card */}
-                      <a
-                        href="/skills"
-                        id="mega-menu-skills-link-card"
-                        onClick={(e) => handleLinkClick('/skills', e)}
-                        className="group flex items-center justify-between p-2.5 bg-white border border-slate-200/70 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.02] shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
-                      >
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          <div className="w-7.5 h-7.5 rounded-lg bg-[#686DF4]/10 text-[#686DF4] flex items-center justify-center transition-colors shrink-0">
-                            <Sparkles className="w-3.5 h-3.5" />
-                          </div>
-                          <div className="min-w-0">
-                            <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
-                              Selbst-Checks
-                            </span>
-                            <span className="block text-[11px] text-slate-500 font-normal truncate">
-                              Rechner & Checks für Ihre Analyse
-                            </span>
-                          </div>
-                        </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
-                      </a>
-
-                      {/* Finanzdienstleister Link Card */}
-                      <a
-                        href="/loesungen/finanzdienstleister"
-                        id="mega-menu-finance-link-card"
-                        onClick={(e) => handleLinkClick('/loesungen/finanzdienstleister', e)}
-                        className="group flex items-center justify-between p-2.5 bg-white border border-slate-200/70 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.02] shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
-                      >
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          <div className="w-7.5 h-7.5 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:text-[#686DF4] group-hover:bg-[#686DF4]/10 transition-colors shrink-0">
-                            <Landmark className="w-3.5 h-3.5" />
-                          </div>
-                          <div className="min-w-0">
-                            <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
-                              Finanzdienstleister
-                            </span>
-                            <span className="block text-[11px] text-slate-500 font-normal truncate">
-                              Hypothek, Vorsorge, Versicherung
-                            </span>
-                          </div>
-                        </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
-                      </a>
-
-                      {/* Contact Portrait Card */}
-                      <a
-                        href="/kontakt"
-                        id="mega-menu-contact-link-card"
-                        onClick={(e) => handleLinkClick('/kontakt', e)}
-                        className="group flex items-center gap-2.5 p-2.5 bg-white border border-slate-200/70 rounded-xl hover:border-[#686DF4]/30 hover:bg-[#686DF4]/[0.02] shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4]"
-                      >
-                        <img 
-                          src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
-                          alt="Yathur Nathan" 
-                          className="w-8 h-8 object-cover rounded-lg border border-slate-200 shrink-0"
-                          referrerPolicy="no-referrer"
-                        />
-                        <div className="text-left min-w-0">
-                          <span className="block text-xs font-semibold text-slate-900 group-hover:text-[#686DF4] transition-colors">
-                            Direktkontakt
-                          </span>
-                          <span className="block text-[11px] text-slate-500 font-normal truncate">
-                            Yathur Nathan, Inhaber
-                          </span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Reachability block */}
-                  <div className="pt-3.5 border-t border-slate-200/60 space-y-2">
-                    <a 
-                      href={`mailto:${SITE.email}`}
-                      className="flex items-center gap-2.5 text-xs text-slate-700 hover:text-[#686DF4] font-semibold group transition-colors"
-                      id="desktop-email-footer"
-                    >
-                      <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
-                        <Mail className="w-3.5 h-3.5" />
-                      </div>
-                      <span className="truncate">{SITE.email}</span>
-                    </a>
-
-                    <a 
-                      href={SITE.phoneHref}
-                      className="flex items-center gap-2.5 text-xs text-slate-700 hover:text-[#686DF4] font-semibold group transition-colors"
-                      id="desktop-phone-footer"
-                    >
-                      <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#686DF4]/10 group-hover:text-[#686DF4] transition-colors shrink-0">
-                        <Phone className="w-3.5 h-3.5" />
-                      </div>
-                      <span>{SITE.phoneDisplay}</span>
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* CONTENTS CONTAINER (MOBILE VERSION) */}
-            <div className="block lg:hidden flex-grow px-5 sm:px-6 py-6 sm:py-8 overflow-y-auto" id="mobile-menu-contents">
-              <div className="space-y-6">
-                
-                {/* Brand description header block */}
-                <div className="bg-white border border-slate-200/80 p-4.5 rounded-2xl space-y-2">
-                  <p className="mega-menu-desc text-slate-600 font-medium leading-relaxed">
-                    Planbare Neukundengewinnung für Schweizer KMU.
-                  </p>
-                </div>
-
-                {/* Primary navigation list */}
-                <div className="space-y-3" id="mobile-navigation-links">
-                  
-                  {/* Leistungen Accordion */}
-                  <div className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs">
-                    <button
-                      onClick={() => setMobileLeistungenOpen(!mobileLeistungenOpen)}
-                      className="w-full flex justify-between items-center p-4.5 mega-menu-subheading font-bold text-slate-900 hover:text-[#686DF4] cursor-pointer"
-                      aria-expanded={mobileLeistungenOpen}
-                    >
-                      <span>LEISTUNGEN</span>
-                      <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${mobileLeistungenOpen ? 'rotate-90 text-[#686DF4]' : ''}`} />
-                    </button>
-                    
-                    {/* Collapsible details for Leistungen */}
-                    <AnimatePresence initial={false}>
-                      {mobileLeistungenOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                          className="border-t border-slate-100 overflow-hidden bg-slate-50/50"
-                        >
-                          <div className="p-3 grid grid-cols-1 gap-2.5">
-                            {navServices.map((s) => {
-                              const IconComp = getServiceIcon(s.slug);
-                              return (
-                                <a
-                                  key={s.slug}
-                                  href={`/leistungen/${s.slug}`}
-                                  onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
-                                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200/60 hover:bg-slate-50 focus:outline-none"
-                                >
-                                  <div className="w-8.5 h-8.5 rounded-lg bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center shrink-0">
-                                    <IconComp className="w-4.5 h-4.5" />
-                                  </div>
-                                  <span className="mega-menu-link font-bold text-slate-900 tracking-tight">{s.title}</span>
-                                </a>
-                              );
-                            })}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-
-                  {/* General Overview links */}
-                  <a
-                    href="/loesungen"
-                    onClick={(e) => handleLinkClick('/loesungen', e)}
-                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
-                  >
-                    <span>BRANCHEN</span>
-                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
-                  </a>
-                  <a
-                    href="/loesungen/finanzdienstleister"
-                    onClick={(e) => handleLinkClick('/loesungen/finanzdienstleister', e)}
-                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
-                  >
-                    <span>FINANZDIENSTLEISTER</span>
-                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
-                  </a>
-                  <a
-                    href="/ressourcen"
-                    onClick={(e) => handleLinkClick('/ressourcen', e)}
-                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
-                  >
-                    <span>RATGEBER</span>
-                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
-                  </a>
-                  <a
-                    href="/ueber-uns"
-                    onClick={(e) => handleLinkClick('/ueber-uns', e)}
-                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
-                  >
-                    <span>ÜBER UNS</span>
-                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
-                  </a>
-
-                  <a
-                    href="/skills"
-                    onClick={(e) => handleLinkClick('/skills', e)}
-                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
-                  >
-                    <span>SELBST-CHECKS</span>
-                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
-                  </a>
-
-                  <a
-                    href="/kontakt"
-                    onClick={(e) => handleLinkClick('/kontakt', e)}
-                    className="flex justify-between items-center p-4.5 bg-white border border-slate-200/80 rounded-2xl hover:bg-slate-50 mega-menu-subheading font-bold text-slate-900 shadow-xs"
-                  >
-                    <span>KONTAKT</span>
-                    <ChevronRight className="w-4.5 h-4.5 text-slate-400" />
-                  </a>
-
-                </div>
-
-                {/* Audit Booking block in the bottom area */}
-                <div className="space-y-4 pt-2">
-                  <a
-                    href="/kontakt"
-                    onClick={(e) => handleLinkClick('/kontakt', e)}
-                    className="flex items-center justify-between p-5 bg-[#686DF4] text-white rounded-2xl shadow-md group border border-[#686DF4]/30 hover:bg-slate-900 transition-all focus:outline-none"
-                    id="mobile-audit-btn"
-                  >
-                    <div className="flex items-center gap-3.5">
-                      <Calendar className="w-5.5 h-5.5 text-white animate-pulse shrink-0" />
-                      <div className="text-left">
-                        <span className="block mega-menu-heading font-bold text-white leading-tight">Erstgespräch (30 Min.)</span>
-                        <span className="block mega-menu-desc text-white/90 leading-snug mt-0.5 font-medium">Kostenlos und unverbindlich</span>
+                  <motion.div variants={menuItem} className="relative overflow-hidden rounded-3xl bg-slate-950 text-white p-6">
+                    <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#696EEF]/30 blur-3xl pointer-events-none" aria-hidden="true" />
+                    <div className="relative flex items-center gap-3">
+                      <img
+                        src={SITE.portraitUrl}
+                        alt="Yathur Nathan"
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 rounded-2xl object-cover border border-white/15"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div>
+                        <p className="font-display font-semibold leading-tight">Yathur Nathan</p>
+                        <p className="text-xs text-slate-400">Inhaber, Ihr direkter Ansprechpartner</p>
                       </div>
                     </div>
-                    <ArrowRight className="w-4.5 h-4.5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
-                  </a>
-
-                  {/* Contact channels footer block */}
-                  <div className="bg-slate-100/80 border border-slate-200/60 p-5 rounded-2xl space-y-3.5">
-                    <span className="mega-menu-meta font-mono font-bold uppercase tracking-wider text-slate-500 block">DIREKTKONTAKT</span>
-                    
-                    <a 
-                      href={`mailto:${SITE.email}`}
-                      className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
+                    <p className="relative mt-4 text-sm text-slate-300 leading-relaxed">
+                      30 Minuten, kostenlos: Wir schauen gemeinsam, wo in Ihrem Unternehmen der grösste Hebel liegt.
+                    </p>
+                    <a
+                      href="/kontakt"
+                      onClick={(e) => handleLinkClick('/kontakt', e)}
+                      id="mega-menu-cta"
+                      className="relative mt-5 w-full inline-flex items-center justify-center gap-2 min-h-12 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold px-6 py-3 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
                     >
-                      <Mail className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
-                      <span>{SITE.email}</span>
+                      Potenzial besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </a>
-
-                    <a 
-                      href={SITE.phoneHref}
-                      className="flex items-center gap-3 mega-menu-link text-slate-800 hover:text-[#686DF4] font-semibold"
-                    >
-                      <Phone className="w-4.5 h-4.5 text-[#686DF4] shrink-0" />
-                      <span>{SITE.phoneDisplay}</span>
-                    </a>
-                  </div>
+                    <div className="relative mt-4 flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs text-slate-400">
+                      <a href={SITE.phoneHref} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+                        <Phone className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.phoneDisplay}
+                      </a>
+                      <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+                        <Mail className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.email}
+                      </a>
+                    </div>
+                  </motion.div>
                 </div>
-
-              </div>
-            </div>
-
-            {/* STATIC FOOTER RETAINED */}
-            <div className="bg-slate-100 border-t border-slate-200/80 py-6 px-6 sm:px-8 lg:px-10 z-15 text-center text-[11px] text-slate-400/90 font-mono tracking-widest uppercase mt-auto">
-              © {new Date().getFullYear()} performanceboost · Fläsch, Graubünden
+              </motion.div>
             </div>
 
           </motion.div>

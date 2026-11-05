@@ -13,14 +13,20 @@ const ContactView = lazy(() => import('./views/ContactView'));
 const LegalView = lazy(() => import('./views/LegalView'));
 const SolutionDetailView = lazy(() => import('./views/SolutionDetailView'));
 const FinanceLandingView = lazy(() => import('./views/FinanceLandingView'));
+const ServiceAreaView = lazy(() => import('./views/ServiceAreaView'));
+const ChallengeView = lazy(() => import('./views/ChallengeView'));
+const ReferencesView = lazy(() => import('./views/ReferencesView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeView from './views/HomeView';
 import NotFoundView from './views/NotFoundView';
 import { parseRoute } from './lib/routes';
 import type { FinanceSlug } from './data/financeLanding';
+import type { AreaId } from './data/serviceAreas';
+import type { ChallengeSlug } from './data/challenges';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
+import { StickyMobileCta } from './components/bp/Conversion';
 import { motion, AnimatePresence } from 'motion/react';
 import { pageTransitionVariants } from './lib/motion';
 import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
@@ -70,6 +76,7 @@ function AppContent() {
 
   const handleNavigate = (path: string) => {
     if (path === '/kontakt' || path === '#kontakt') {
+      // Alle Kontakt-CTAs öffnen das Overlay mit der Formularstrecke der aktuellen Seite
       openContactModal();
       return;
     }
@@ -114,6 +121,13 @@ function AppContent() {
             {parsed.view === 'finanz' && parsed.slug && (
               <FinanceLandingView slug={parsed.slug as FinanceSlug} />
             )}
+            {parsed.view === 'leistungsfeld' && parsed.slug && (
+              <ServiceAreaView id={parsed.slug as AreaId} />
+            )}
+            {parsed.view === 'loesung_herausforderung' && parsed.slug && (
+              <ChallengeView slug={parsed.slug as ChallengeSlug} />
+            )}
+            {parsed.view === 'referenzen' && <ReferencesView />}
             {parsed.view === 'leistungen' && (
               <ServicesView currentSlug={parsed.slug} onNavigate={handleNavigate} />
             )}
@@ -143,6 +157,11 @@ function AppContent() {
 
       {/* Global Sitemapped Footer */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* Mobiler Sticky-CTA (nicht auf der Kontaktseite und den Finanz-Landingpages mit eigenem Formular) */}
+      {parsed.view !== 'kontakt' && parsed.view !== 'finanz' && parsed.view !== 'not_found' && (
+        <StickyMobileCta key={parsed.path} onFallback={openContactModal} />
+      )}
 
     </div>
   );

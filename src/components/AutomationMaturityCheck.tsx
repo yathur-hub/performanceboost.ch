@@ -260,7 +260,7 @@ export default function AutomationMaturityCheck() {
                   onClick={() => handleToggle(q.id, true)}
                   className={`flex-1 sm:flex-none text-xs font-bold font-mono tracking-wider uppercase px-4 py-2.5 rounded-xl border transition-all cursor-pointer ${
                     cAns === true
-                      ? 'bg-[#686DF4] text-white border-transparent shadow-xs'
+                      ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
                       : 'bg-transparent text-slate-400 border-slate-200/55 hover:border-slate-350 hover:bg-slate-50'
                   }`}
                 >
@@ -386,7 +386,7 @@ export default function AutomationMaturityCheck() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 {stufe === 5 ? "Nächste Schritte besprechen" : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
               </button>

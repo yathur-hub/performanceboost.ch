@@ -14,7 +14,8 @@ import {
   Phone
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import ContactForm from '../components/ContactForm';
+import LeadFunnel from '../components/LeadFunnel';
+import { LEAD_FLOWS } from '../data/leadFlows';
 import { 
   PREMIUM_EASE, 
   DURATIONS 
@@ -65,20 +66,12 @@ export default function ContactView() {
   ];
 
   return (
-    <div className="pt-24 pb-16 space-y-28 text-slate-800" id="contact-primary-view">
+    <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="contact-primary-view">
       
       {/* HERO TITLE BLOCK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white py-24 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-24 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
-          <motion.span 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full animate-fadeIn"
-          >
-            Kontakt
-          </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,7 +86,7 @@ export default function ContactView() {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold animate-fadeIn"
           >
-            Ob Sie bereits Werbung schalten oder noch am Anfang stehen: Schildern Sie kurz Ihre Situation. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
+            Ob es um Wachstum, Vertrieb, Abläufe oder Daten geht: Schildern Sie kurz Ihre Situation. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
           </motion.p>
         </div>
       </section>
@@ -117,7 +110,7 @@ export default function ContactView() {
             <p className="text-xs text-slate-450 font-semibold font-mono uppercase tracking-wider">Ihre Nachricht geht direkt an Yathur Nathan.</p>
           </div>
 
-          <ContactForm formName="Kontaktformular Seite" formLocation="kontakt_seite" />
+          <LeadFunnel flow={LEAD_FLOWS.general} formLocation="kontakt_seite" />
         </motion.div>
 
         {/* Info Column (5 cols) */}

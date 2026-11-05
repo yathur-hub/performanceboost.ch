@@ -122,7 +122,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
             type="button"
             onClick={handleDiscuss}
             disabled={!result}
-            className="w-full min-h-12 bg-[#686DF4] text-white font-semibold text-sm py-3.5 px-6 rounded-xl hover:bg-[#4f54d6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full min-h-12 bg-[#696EEF] text-white font-semibold text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Ergebnis in 30 Minuten besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>

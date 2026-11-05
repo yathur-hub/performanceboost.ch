@@ -6,6 +6,9 @@ import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import { FINANCE_PAGES, isFinanceSlug } from '../data/financeLanding';
 import { SITE } from '../config/site';
 import type { ParsedRoute } from '../lib/routes';
+import { isAreaId, getArea, primaryAreaOf, servicesOf } from '../data/serviceAreas';
+import { CHALLENGE_PAGES, isChallengeSlug } from '../data/challenges';
+import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
 
 interface SEOHeadProps {
   route: ParsedRoute;
@@ -21,8 +24,26 @@ const ORGANIZATION = {
   url: SITE.baseUrl,
   logo: SITE.logoUrl,
   image: SITE.portraitUrl,
+  slogan: 'We boost business performance.',
   description:
-    'Beratung für digitale Neukundengewinnung: Performance Marketing, Landingpages, Tracking und Marketing Automation für Schweizer KMU.',
+    'Business Performance Partner für Schweizer KMU: Strategie, Technologie und Wachstum aus einer Hand. Wachstums- und Digitalstrategie, Automatisierung und KI, CRM und Revenue Operations, Performance Marketing und SEO.',
+  knowsAbout: [
+    'Wachstumsstrategie',
+    'Digitalstrategie',
+    'Prozessautomatisierung',
+    'Systemintegration',
+    'Künstliche Intelligenz',
+    'CRM',
+    'Marketing Automation',
+    'Revenue Operations',
+    'Lead Management',
+    'Performance Marketing',
+    'Google Ads',
+    'Suchmaschinenoptimierung',
+    'Conversion-Optimierung',
+    'Tracking und Reporting',
+  ],
+  sameAs: [SITE.linkedinPerson],
   telephone: SITE.phoneDisplay,
   email: SITE.email,
   founder: { '@type': 'Person', name: SITE.owner, sameAs: [SITE.linkedinPerson] },
@@ -57,6 +78,19 @@ function webPage(type: string, url: string, name: string, description: string) {
   };
 }
 
+const crumbList = (items: { name: string; url: string }[]) => ({
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+});
+
+const faqPage = (url: string, faq: { q: string; a: string }[]) => ({
+  '@type': 'FAQPage',
+  '@id': `${url}#faq`,
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+
+const HOME_CRUMB = { name: 'Startseite', url: `${SITE.baseUrl}/` };
+
 interface Meta {
   title: string;
   description: string;
@@ -71,9 +105,9 @@ export function buildMeta(route: ParsedRoute): Meta {
 
   switch (route.view) {
     case 'home': {
-      const title = 'Mehr qualifizierte Kundenanfragen für Schweizer KMU | performanceboost';
+      const title = 'Business Performance Partner für Schweizer KMU | performanceboost';
       const description =
-        'Wir helfen Schweizer KMU, über Google, Meta und LinkedIn planbar neue Kunden zu gewinnen: mit sauberer Messung, Landingpages, die anfragen auslösen, und laufender Optimierung.';
+        'Strategie, Technologie und Wachstum aus einer Hand: Wir verbessern Marketing, Vertrieb und Abläufe von Schweizer KMU. Pragmatisch, datenbasiert, persönlich betreut.';
       return {
         ...base,
         title,
@@ -87,36 +121,105 @@ export function buildMeta(route: ParsedRoute): Meta {
         },
       };
     }
+    case 'leistungsfeld': {
+      if (!route.slug || !isAreaId(route.slug)) return { title: 'Seite nicht gefunden | performanceboost', description: '', schema: null, ogType: 'website', indexable: false };
+      const area = getArea(route.slug);
+      const title = area.seoTitle;
+      const description = truncate(area.seoDescription);
+      return {
+        ...base,
+        title,
+        description,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              ...webPage('CollectionPage', url, title, description),
+              '@context': undefined,
+              mainEntity: {
+                '@type': 'ItemList',
+                itemListElement: servicesOf(area).map((s, i) => ({
+                  '@type': 'ListItem',
+                  position: i + 1,
+                  name: s.title,
+                  url: `${SITE.baseUrl}/leistungen/${s.slug}`,
+                })),
+              },
+            },
+            crumbList([HOME_CRUMB, { name: 'Leistungen', url: `${SITE.baseUrl}/leistungen` }, { name: area.label, url }]),
+            faqPage(url, area.faq),
+          ],
+        },
+      };
+    }
     case 'leistungen': {
       const service = route.slug ? SERVICES.find((s) => s.slug === route.slug) : undefined;
       if (service) {
         const title = `${service.title} | performanceboost`;
         const description = truncate(`${service.shortDesc} ${service.description}`);
+        const area = primaryAreaOf(service.slug);
+        const faq = EXTENDED_SERVICES_DATA.find((e) => e.slug === service.slug)?.faq ?? [];
+        const crumbs = [
+          HOME_CRUMB,
+          { name: 'Leistungen', url: `${SITE.baseUrl}/leistungen` },
+          ...(area ? [{ name: area.label, url: `${SITE.baseUrl}/leistungen/${area.id}` }] : []),
+          { name: service.title, url },
+        ];
         return {
           ...base,
           title,
           description,
           schema: {
             '@context': 'https://schema.org',
-            '@type': 'Service',
-            '@id': `${url}#service`,
-            name: service.title,
-            description: service.shortDesc,
-            url,
-            provider: { '@id': ORG_ID },
-            areaServed: { '@type': 'Country', name: 'Schweiz' },
+            '@graph': [
+              {
+                '@type': 'Service',
+                '@id': `${url}#service`,
+                name: service.title,
+                description: service.shortDesc,
+                url,
+                provider: { '@id': ORG_ID },
+                areaServed: { '@type': 'Country', name: 'Schweiz' },
+                ...(area ? { category: area.label } : {}),
+              },
+              crumbList(crumbs),
+              ...(faq.length ? [faqPage(url, faq)] : []),
+            ],
           },
         };
       }
-      const title = 'Leistungen: Performance Marketing, Tracking & Automation | performanceboost';
+      const title = 'Leistungen: Strategie, Technologie, Wachstum, Vertrieb | performanceboost';
       const description =
-        'Was wir für Schweizer KMU umsetzen: Kampagnen auf Google, Meta und LinkedIn, Landingpages, Tracking und Marketing Automation. Mit klaren Zielen und transparentem Reporting.';
+        'Von der Wachstumsstrategie über KI und Automatisierung bis zu Kampagnen und CRM: alle Leistungen von performanceboost für Schweizer KMU im Überblick.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'loesungen': {
-      const title = 'Neukundengewinnung nach Branche | performanceboost';
+      const title = 'Lösungen nach Herausforderung und Branche | performanceboost';
       const description =
-        'Wie digitale Neukundengewinnung in Ihrer Branche funktioniert: Vorgehen, typische Hürden und konkrete Ansätze für Treuhand, Industrie, IT, Immobilien, Gesundheit und weitere Branchen.';
+        'Mehr Kunden gewinnen, Vertrieb verbessern, Abläufe automatisieren: Finden Sie den passenden Einstieg für Ihre Situation oder Ihre Branche, von Treuhand bis Industrie.';
+      return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
+    }
+    case 'loesung_herausforderung': {
+      if (!route.slug || !isChallengeSlug(route.slug)) return { title: 'Seite nicht gefunden | performanceboost', description: '', schema: null, ogType: 'website', indexable: false };
+      const page = CHALLENGE_PAGES[route.slug];
+      return {
+        ...base,
+        title: page.seoTitle,
+        description: truncate(page.seoDescription),
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            { ...webPage('WebPage', url, page.seoTitle, page.seoDescription), '@context': undefined },
+            crumbList([HOME_CRUMB, { name: 'Lösungen', url: `${SITE.baseUrl}/loesungen` }, { name: page.label, url }]),
+            faqPage(url, page.faq),
+          ],
+        },
+      };
+    }
+    case 'referenzen': {
+      const title = 'Referenzen & Kundenstimmen | performanceboost';
+      const description =
+        'Was Schweizer Unternehmerinnen und Unternehmer über die Zusammenarbeit mit performanceboost sagen: von Kampagnen und Onlineshops bis zum eigenen ERP-System.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'loesungen_detail': {
@@ -157,7 +260,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'about': {
       const title = 'Über uns: Yathur Nathan & performanceboost | performanceboost';
       const description =
-        'performanceboost ist eine inhabergeführte Beratung aus Fläsch (GR). Sie arbeiten direkt mit Yathur Nathan, ohne Account Manager dazwischen.';
+        'performanceboost ist der Business Performance Partner für Schweizer KMU, inhabergeführt aus Fläsch (GR). Strategie und Umsetzung aus einer Hand, direkt mit Yathur Nathan.';
       return {
         ...base,
         title,
@@ -176,8 +279,8 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'datenschutz':
       return { ...base, title: 'Datenschutzerklärung | performanceboost', description: 'Wie performanceboost Personendaten nach Schweizer DSG und DSGVO bearbeitet.', schema: null };
     case 'skills': {
-      const title = 'Selbst-Checks & Rechner für Ihre Neukundengewinnung | performanceboost';
-      const description = 'Kostenlose Selbst-Checks und Rechner, mit denen Sie in wenigen Minuten einschätzen, wo Ihre Neukundengewinnung Potenzial verschenkt.';
+      const title = 'Skill-Factory: Checks & Rechner für KMU | performanceboost';
+      const description = 'Die Skill-Factory: kostenlose Checks und Rechner zu Strategie, Vertrieb, CRM, Automatisierung, KI und Daten. Finden Sie Ihren grössten Hebel.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'ressourcen': {
@@ -203,7 +306,7 @@ export function buildMeta(route: ParsedRoute): Meta {
       }
       const section = route.subSection === 'blog' ? 'Fachbeiträge' : route.subSection === 'guides' ? 'Leitfäden' : 'Ratgeber & Fachbeiträge';
       const title = `${section} | performanceboost`;
-      const description = 'Praxisbeiträge zu Neukundengewinnung, Tracking, Datenschutz und Marketing Automation für Schweizer KMU.';
+      const description = 'Praxisbeiträge zu Wachstum, Vertrieb, Automatisierung, KI, Tracking und Datenschutz für Schweizer KMU.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'not_found':

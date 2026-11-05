@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import Link from '../components/Link';
 import React, { useState } from 'react';
 import { RESOURCES_DATA } from '../data/resources';
 import { User, Calendar, Clock, ArrowRight, ArrowLeft, Search, AlertCircle, CheckCircle2 } from 'lucide-react';
@@ -50,7 +51,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -15 }}
         transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-        className="pt-24 pb-16 text-slate-850 space-y-12" 
+        className="pt-32 md:pt-36 pb-16 text-slate-850 space-y-12" 
         id={`resource-detail-${item.slug}`}
       >
         
@@ -70,9 +71,6 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
         {/* Article content header */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="space-y-4 pb-6 border-b border-slate-100">
-            <span className="inline-flex items-center gap-1 bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-[#CACCFB]/20">
-              {item.type === 'guide' ? 'Leitfaden' : 'Blogbeitrag'}
-            </span>
             <h1 className="text-3xl sm:text-4xl font-display font-semibold tracking-tight text-slate-950 leading-tight">
               {item.title}
             </h1>
@@ -140,20 +138,12 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
   });
 
   return (
-    <div className="pt-24 pb-16 space-y-28 text-slate-800" id="resources-hub">
+    <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="resources-hub">
       
       {/* Header section with subtitle */}
-      <section className="relative bg-white py-28 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-0 right-10 w-96 h-96 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10 animate-fadeIn">
-          <motion.span 
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 text-slate-500 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full"
-          >
-            Wissen
-          </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -181,7 +171,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <button
               onClick={() => onNavigate('/ressourcen')}
               className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                !subSection ? 'bg-slate-950 text-white border border-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+                !subSection ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
               Alle Artikel
@@ -189,7 +179,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <button
               onClick={() => onNavigate('/ressourcen/blog')}
               className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                subSection === 'blog' ? 'bg-slate-950 text-white border border-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+                subSection === 'blog' ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
               Blog
@@ -197,7 +187,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <button
               onClick={() => onNavigate('/ressourcen/guides')}
               className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                subSection === 'guides' ? 'bg-slate-950 text-white border border-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+                subSection === 'guides' ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
               Leitfäden
@@ -263,16 +253,12 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                     {item.publishDate}
                   </span>
                   
-                  <button
-                    onClick={() => {
-                      const prefix = subSection ? `/ressourcen/${subSection}` : '/ressourcen';
-                      onNavigate(`${prefix}/${item.slug}`);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/85 bg-transparent border-none focus:outline-none"
+                  <Link
+                    href={`/ressourcen/${item.slug}`}
+                    className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/85"
                   >
                     Beitrag lesen <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}

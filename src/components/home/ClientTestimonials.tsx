@@ -178,9 +178,6 @@ export function ClientTestimonials() {
       {/* Header with Navigation Controls */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200/80 pb-6">
         <div className="space-y-2">
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">
-            KUNDENREFERENZEN &amp; ERFAHRUNGEN
-          </span>
           <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">
             Was Schweizer Gründer &amp; Führungskräfte sagen
           </h2>
@@ -315,7 +312,7 @@ export function ClientTestimonials() {
                       aria-label={`Gehe zu Kundenstimme ${dotIdx + 1}`}
                       className={`h-2 rounded-full transition-all cursor-pointer ${
                         dotIdx === currentIndex
-                          ? 'w-6 bg-[#686DF4]'
+                          ? 'w-6 bg-[#696EEF]'
                           : 'w-2 bg-slate-200 hover:bg-slate-350'
                       }`}
                     />

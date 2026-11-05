@@ -260,7 +260,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f1', lvl.val)}
                 className={`text-xs font-bold px-3 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f1 === lvl.val
-                    ? 'bg-[#686DF4] text-white border-transparent shadow-xs'
+                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -288,7 +288,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f2', lvl.val)}
                 className={`text-xs font-bold px-3 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f2 === lvl.val
-                    ? 'bg-[#686DF4] text-white border-transparent shadow-xs'
+                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -315,7 +315,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f3', lvl.val)}
                 className={`text-xs font-bold px-3 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f3 === lvl.val
-                    ? 'bg-[#686DF4] text-white border-transparent shadow-xs'
+                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -343,7 +343,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f4', lvl.val)}
                 className={`text-xs font-bold px-2 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f4 === lvl.val
-                    ? 'bg-[#686DF4] text-white border-transparent shadow-xs'
+                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -500,7 +500,7 @@ export default function AIReadinessCheck() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-slate-950 hover:bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 Erstgespräch vereinbaren <ArrowRight className="w-4 h-4 text-white" />
               </button>

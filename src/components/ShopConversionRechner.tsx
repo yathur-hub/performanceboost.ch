@@ -325,7 +325,7 @@ export default function ShopConversionRechner() {
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full bg-[#686DF4] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full bg-[#696EEF] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Bestandskunden-Potenzial besprechen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
@@ -406,7 +406,7 @@ export default function ShopConversionRechner() {
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#686DF4] hover:bg-slate-905 bg-slate-900 text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
+                    className="w-full text-center bg-[#696EEF] hover:bg-slate-905 bg-[#696EEF] text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
                   >
                     <span>Ergebnis besprechen: kostenlos, 30 Min.</span>
                     <ArrowRight className="w-4 h-4 text-white" />

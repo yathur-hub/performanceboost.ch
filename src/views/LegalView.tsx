@@ -26,7 +26,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -15 }}
         transition={{ duration: DURATIONS.medium, ease: PREMIUM_EASE }}
-        className="pt-24 pb-16 text-slate-800 min-h-[600px] max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" 
+        className="pt-36 md:pt-40 pb-16 text-slate-800 min-h-[600px] max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" 
         id="impressum-view"
       >
         <motion.button 
@@ -133,7 +133,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -15 }}
       transition={{ duration: DURATIONS.medium, ease: PREMIUM_EASE }}
-      className="pt-24 pb-16 text-slate-800 min-h-[600px] max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" 
+      className="pt-36 md:pt-40 pb-16 text-slate-800 min-h-[600px] max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" 
       id="datenschutz-view"
     >
       <motion.button 
