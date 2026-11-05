@@ -7,6 +7,7 @@ import { ArrowRight, ArrowUpRight, ChevronDown, Check } from 'lucide-react';
 import Link from '../Link';
 import { trackEvent } from '../../lib/analytics';
 import { useContactModal } from '../../context/ContactModalContext';
+import { goToLead, LEAD_ANCHOR } from './Conversion';
 import { SKILLS } from '../../data/skills';
 import { RESOURCES_DATA } from '../../data/resources';
 import { TESTIMONIALS_DATA } from '../home/ClientTestimonials';
@@ -89,8 +90,9 @@ export function CtaButton({
       onClick={(e) => {
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
         e.preventDefault();
-        trackEvent('cta_click', { cta_location: location, cta_target: 'kontakt', page_slug: pageSlug });
-        openContactModal();
+        const inline = typeof document !== 'undefined' && !!document.getElementById(LEAD_ANCHOR);
+        trackEvent('cta_click', { cta_location: location, cta_target: inline ? 'formular_inline' : 'kontakt', page_slug: pageSlug });
+        if (!goToLead()) openContactModal();
       }}
       className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold whitespace-nowrap px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40 ${styles} ${className}`}
     >

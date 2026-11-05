@@ -1,6 +1,9 @@
 /** Problemorientierte Lösungsseite (/loesungen/prozessautomatisierung, /loesungen/vertrieb-optimieren). */
 import React from 'react';
 import { CHALLENGE_PAGES, type ChallengeSlug } from '../data/challenges';
+import { CHALLENGE_DIAGRAMS } from '../data/diagrams';
+import { Diagram } from '../components/diagrams/Diagram';
+import { HeroTrust, LeadFormSection } from '../components/bp/Conversion';
 import { SERVICES } from '../data/services';
 import {
   Breadcrumb,
@@ -9,7 +12,6 @@ import {
   CtaButton,
  
   FaqList,
-  FinalCta,
   SectionHeading,
   TeaserCard,
   TestimonialQuote,
@@ -36,6 +38,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">{page.h1}</h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">{page.intro}</p>
             <CtaButton label={page.ctaLabel} location={`challenge_${slug}_hero`} pageSlug={slug} />
+            <HeroTrust />
           </div>
         </Container>
       </section>
@@ -66,6 +69,22 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
           </div>
         </Container>
       </section>
+
+      {/* THEMENGRAFIK */}
+      {CHALLENGE_DIAGRAMS[slug] && (
+        <section>
+          <Container className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-5 space-y-4">
+              <SectionHeading title={CHALLENGE_DIAGRAMS[slug].title} />
+              <p className="text-body text-slate-600 leading-relaxed">{CHALLENGE_DIAGRAMS[slug].text}</p>
+              <CtaButton label={page.ctaLabel} location={`challenge_${slug}_grafik`} pageSlug={slug} variant="light" />
+            </div>
+            <div className="lg:col-span-7">
+              <Diagram spec={CHALLENGE_DIAGRAMS[slug].spec} />
+            </div>
+          </Container>
+        </section>
+      )}
 
       <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-24">
         <Container className="space-y-10">
@@ -133,13 +152,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
         </Container>
       </section>
 
-      <FinalCta
-        title="Wo verliert Ihr Unternehmen heute Zeit oder Umsatz?"
-        text="Im kostenlosen Erstgespräch schauen wir uns Ihre Abläufe an und sagen Ihnen offen, wo wir ansetzen würden."
-        ctaLabel={page.ctaLabel}
-        location={`challenge_${slug}_footer`}
-        pageSlug={slug}
-      />
+      <LeadFormSection formLocation={`challenge_${slug}`} title="Wo verliert Ihr Unternehmen heute Zeit oder Umsatz?" />
     </div>
   );
 }

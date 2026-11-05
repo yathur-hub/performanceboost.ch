@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { LeadFormSection } from '../components/bp/Conversion';
 import { ArrowRight, Sparkles, CheckCircle2, Heart, Award, Cpu, Eye, Zap, RefreshCw } from 'lucide-react';
 import { motion } from 'motion/react';
 import { 
@@ -316,30 +317,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
         </div>
       </section>
 
-      {/* CTA BOTTOM BLOCK */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-120px" }}
-        transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12"
-      >
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Lernen wir uns kennen</h2>
-          <p className="text-xs text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
-            Im kostenlosen Erstgespräch (30 Minuten) besprechen wir Ihre Ausgangslage. Danach entscheiden Sie in Ruhe, ob und wie Sie weitermachen möchten.
-          </p>
-
-          <motion.button
-            {...buttonPressProps}
-            onClick={() => onNavigate('/kontakt')}
-            className="bg-[#696EEF] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0 hover:bg-[#5a5fe0]"
-          >
-            Potenzial besprechen
-          </motion.button>
-        </div>
-      </motion.section>
+      <LeadFormSection formLocation="ueber_uns" title="Lernen wir uns kennen." />
 
     </div>
   );

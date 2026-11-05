@@ -12,19 +12,11 @@ import { readRememberedResult } from '../data/problemFinder';
 import { SERVICE_AREAS, primaryAreaOf, relatedServices } from '../data/serviceAreas';
 import Link from '../components/Link';
 import { Breadcrumb, TeaserCard } from '../components/bp/Blocks';
+import { HeroTrust, LeadFormSection, goToLead } from '../components/bp/Conversion';
+import { Diagram } from '../components/diagrams/Diagram';
+import { SERVICE_DIAGRAMS } from '../data/diagrams';
+import { trackEvent } from '../lib/analytics';
 
-import GrowthStrategyIndicator from '../components/GrowthStrategyIndicator';
-import DemandPipelineGap from '../components/DemandPipelineGap';
-import LeadGenerationScore from '../components/LeadGenerationScore';
-import AutomationMaturityCheck from '../components/AutomationMaturityCheck';
-import SalesAlignmentCheck from '../components/SalesAlignmentCheck';
-import RevenueLeakDetector from '../components/RevenuLeakDetector';
-import AIReadinessCheck from '../components/AIReadinessCheck';
-import DataClarityCheck from '../components/DataClarityCheck';
-import ShopConversionRechner from '../components/ShopConversionRechner';
-import CacLtvCalculator from '../components/CacLtvCalculator';
-import RetentionRevenueRechner from '../components/RetentionRevenueRechner';
-import TrueROASRechner from '../components/TrueROASRechner';
 
 interface ServicesViewProps {
   currentSlug?: string;
@@ -99,8 +91,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
-    onNavigate('/kontakt');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    trackEvent('cta_click', { cta_location: 'leistung_hero', cta_target: document.getElementById('anfrage') ? 'formular_inline' : 'kontakt', page_slug: currentSlug });
+    if (!goToLead()) onNavigate('/kontakt');
   };
 
   // ----------------------------------------------------
@@ -187,45 +179,25 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               <div className="pt-2 text-left">
                 <button 
                   onClick={handleConsultation}
-                  className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full inline-flex items-center gap-2 transition-all cursor-pointer uppercase tracking-widest shadow-md hover:-translate-y-0.5"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
                 >
-                  {extendedContent.hero.ctaText} <ArrowRight className="w-4 h-4 text-white" />
+                  {primaryAreaOf(service.slug)?.ctaLabel ?? 'Potenzial besprechen'} <ArrowRight className="w-4 h-4 text-white" />
                 </button>
               </div>
+              <HeroTrust className="pt-1" />
             </div>
 
-            {/* Interactive Hero Calculator/Audit */}
-            <div className="lg:col-span-7 w-full animate-fadeIn">
-              {(() => {
-                switch (service.slug) {
-                  case 'growth-strategy':
-                    return <GrowthStrategyIndicator />;
-                  case 'demand-generation':
-                    return <DemandPipelineGap />;
-                  case 'lead-generation':
-                    return <LeadGenerationScore />;
-                  case 'marketing-automation':
-                    return <AutomationMaturityCheck />;
-                  case 'sales-enablement':
-                    return <SalesAlignmentCheck />;
-                  case 'revenue-operations':
-                    return <RevenueLeakDetector />;
-                  case 'ai-automation':
-                    return <AIReadinessCheck />;
-                  case 'data-analytics':
-                    return <DataClarityCheck />;
-                  case 'ecommerce-performance':
-                    return <ShopConversionRechner />;
-                  case 'dtc-growth-acquisition':
-                    return <CacLtvCalculator />;
-                  case 'customer-retention':
-                    return <RetentionRevenueRechner />;
-                  case 'paid-social-ecommerce':
-                    return <TrueROASRechner />;
-                  default:
-                    return null;
-                }
-              })()}
+            {/* Themengrafik (ersetzt den früheren interaktiven Rechner) */}
+            <div className="lg:col-span-7 w-full space-y-4">
+              {SERVICE_DIAGRAMS[service.slug] && (
+                <>
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-display font-semibold text-slate-900">{SERVICE_DIAGRAMS[service.slug].title}</h2>
+                    <p className="mt-1.5 text-body-sm text-slate-600 leading-relaxed">{SERVICE_DIAGRAMS[service.slug].text}</p>
+                  </div>
+                  <Diagram spec={SERVICE_DIAGRAMS[service.slug].spec} />
+                </>
+              )}
             </div>
           </section>
 
@@ -472,63 +444,13 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             </div>
           </section>
 
-          {/* PERSONAL BIO SECTION */}
-          <section className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
-              <div className="md:col-span-4 shrink-0 flex justify-center md:justify-start">
-                <img loading="lazy" decoding="async" 
-                  src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
-                  alt="Yathur Nathan" 
-                  className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl border border-slate-200 shadow-sm"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="md:col-span-8 space-y-4">
-                <div>
-                  <h3 className="text-[#686DF4] text-xl font-display font-bold leading-tight">Yathur Nathan</h3>
-                  <p className="text-xs font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
-                </div>
-                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Als Gründer von performanceboost helfe ich Schweizer KMU, ihre Performance in Marketing, Vertrieb und Abläufen zu verbessern. Strategie, Kampagnen, Systeme und Automatisierungen setze ich persönlich um, und Sie haben von der ersten Analyse bis zum Bericht einen festen Ansprechpartner.
-                </p>
-                <p className="text-body-sm text-[#686DF4] font-semibold leading-relaxed pt-1.5 border-t border-slate-100 italic">
-                  {(() => {
-                    const personalHighlights: { [key: string]: string } = {
-                      'growth-strategy': 'Gemeinsam schärfen wir Ihre Positionierung und beschreiben Ihre Wunschkunden, damit jede weitere Massnahme auf einem klaren Plan aufbaut.',
-                      'demand-generation': 'Ich plane und betreue Ihre Kampagnen auf Google, LinkedIn und Meta so, dass sie bei Ihrer Zielgruppe ankommen und messbar Anfragen bringen.',
-                      'lead-generation': 'Mit nützlichen Inhalten, SEO und einer persönlichen Direktansprache bauen wir einen Weg auf, über den regelmässig Anfragen für Erstgespräche entstehen.',
-                      'marketing-automation': 'Wir automatisieren das Nachfassen bei Interessenten und bringen Ordnung in Ihr CRM, damit Ihr Vertrieb sich auf die richtigen Gespräche konzentrieren kann.',
-                      'sales-enablement': 'Ich erarbeite mit Ihrem Vertrieb Argumente, Unterlagen und Leitfäden, die im Verkaufsgespräch tatsächlich genutzt werden.',
-                      'revenue-operations': 'Wir bringen die Daten von Marketing, Vertrieb und Kundenbetreuung zusammen, damit alle mit denselben Zahlen arbeiten.',
-                      'ai-automation': 'Ich setze KI-Abläufe dort ein, wo sie Ihrem Team Routinearbeit abnehmen, und lasse sie weg, wo sie nichts bringen.',
-                      'data-analytics': 'Mit sauberem, datenschutzkonformem Tracking und nachvollziehbaren Berichten sehen Sie, welche Kanäle Ihnen Kunden und Umsatz bringen.'
-                    };
-                    return personalHighlights[service.slug] || '';
-                  })()}
-                </p>
-              </div>
-            </div>
-          </section>
 
-          {/* CTA CALLOUT */}
-          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-slate-950 text-white rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden border border-slate-900">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-              <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight max-w-2xl mx-auto leading-tight text-white">
-                {extendedContent.cta.headline}
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-lg mx-auto opacity-95 font-medium">
-                {extendedContent.cta.subheadline}
-              </p>
-
-              <button
-                onClick={handleConsultation}
-                className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md hover:-translate-y-0.5"
-              >
-                {extendedContent.cta.buttonText}
-              </button>
-            </div>
-          </section>
+          {/* ANFRAGE (eingebettetes Formular) */}
+          <LeadFormSection
+            title={extendedContent.cta.headline}
+            intro={extendedContent.cta.subheadline}
+            formLocation={`leistung_${service.slug}`}
+          />
 
         </div>
       );
@@ -827,24 +749,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         </div>
       </motion.section>
 
-      {/* FINAL CALLOUT AND CTA */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 animate-fadeIn">
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Leistung passt zu Ihrem Unternehmen?</h2>
-          <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-95 font-medium">
-            In einem unverbindlichen Gespräch von 30 Minuten schauen wir auf Ihre Situation und klären, womit Sie am sinnvollsten beginnen.
-          </p>
-
-          <button
-            type="button"
-            onClick={() => onNavigate('/kontakt')}
-            className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer border-0"
-          >
-            Potenzial besprechen
-          </button>
-        </div>
-      </section>
+      <LeadFormSection formLocation="leistungen" title="Welche Leistung passt zu Ihrem Unternehmen?" />
 
     </div>
   );

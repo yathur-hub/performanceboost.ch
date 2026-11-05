@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import { LeadFormSection } from '../components/bp/Conversion';
 import { ArrowRight, Sparkles, CheckCircle2, ChevronDown, Check, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
@@ -419,30 +420,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
         </motion.div>
       </section>
 
-      {/* CTA BOTTOM BLOCK */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-120px" }}
-        transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12"
-      >
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 text-center space-y-8 shadow-[var(--shadow-premium-lg)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-white leading-tight">Welche Lösung passt zu Ihrem Unternehmen?</h2>
-          <p className="text-body text-slate-300 leading-relaxed max-w-xl mx-auto opacity-90 font-medium">
-            In einem unverbindlichen Gespräch von 30 Minuten klären wir Ihre Ausgangslage und Ziele. Danach wissen Sie, welche Massnahmen für Ihr Unternehmen am meisten bringen.
-          </p>
-
-          <motion.button
-            {...buttonPressProps}
-            onClick={() => onNavigate('/kontakt')}
-            className="bg-[#696EEF] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0 hover:bg-[#5a5fe0]"
-          >
-            Potenzial besprechen
-          </motion.button>
-        </div>
-      </motion.section>
+      <LeadFormSection formLocation="loesungen" title="Welche Lösung passt zu Ihrem Unternehmen?" />
 
     </div>
   );

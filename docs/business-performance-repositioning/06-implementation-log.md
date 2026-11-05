@@ -110,3 +110,21 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 - Rakete auf Mobile/Tablet ausgeblendet (nur ab `lg`).
 - Hero-Headline zwischen 1024 und 1280 px eine Stufe kleiner; Buttons ohne Zeilenumbruch im Text.
 - Skill-Factory-Überschrift mit festem Zeilenumbruch.
+
+## Unterseiten als CRO-Landingpages (06.11.2026)
+
+**Themengrafiken statt Rechner**
+- Neue Komponente `src/components/diagrams/Diagram.tsx` mit fünf Typen: Ablauf (`flow`), Hub mit Satelliten (`hub`), Trichter (`funnel`), Ebenen/Hierarchie (`layers`), Kreislauf (`cycle`). Reines HTML/CSS/SVG, vorgerendert, mobil angepasst.
+- Inhalte in `src/data/diagrams.ts`: 12 Leistungsseiten, 4 Hubs, 2 Lösungsseiten, 13 Branchenseiten (gemeinsamer Ablauf mit branchenspezifischem Ziel). Test stellt Vollständigkeit sicher.
+- Entfernt aus den Seiten: 12 Leistungs-Rechner/Checks, 14 Branchen-Rechner, Umsatzrechner im Growth-Hub. Die Komponenten-Dateien bleiben vorerst im Repo (nicht mehr eingebunden, nicht im Bundle). Die Skill-Factory bleibt als eigene Seite.
+
+**Conversion-Bausteine** (`src/components/bp/Conversion.tsx`)
+- `LeadFormSection` (#anfrage): eingebettetes Kontaktformular am Seitenende mit Erwartungen ans Erstgespräch und Ansprechperson. Auf 39 Seiten (alle Leistungs-, Hub-, Lösungs- und Branchenseiten sowie Leistungen, Lösungen, Referenzen, Über uns). Payload unverändert, `formLocation` je Seite (`leistung_<slug>`, `hub_<id>`, `challenge_<slug>`, `branche_<slug>`, `leistungen`, `loesungen`, `referenzen`, `ueber_uns`).
+- `HeroTrust`: Vertrauenszeile unter jedem Hero-CTA (Inhaber, Antwort innert eines Arbeitstags, kostenlos).
+- Alle CTAs springen auf Seiten mit Formular direkt zum Formular (Fokus aufs erste Feld); ohne Formular öffnet sich wie bisher das Modal. Zentral in `App.tsx` (`/kontakt`) und `CtaButton`. `cta_click` mit `cta_target=formular_inline` bzw. `kontakt`.
+- `StickyMobileCta`: fixierter Balken auf Mobile (CTA + Telefon), erscheint nach dem Hero, verschwindet beim Formular; nicht auf Kontakt- und Finanzseiten.
+- Leistungsseiten: Hero-CTA mit feldspezifischem Text («Prozesse besprechen» usw.), doppelte Inhaber-Box vor dem Formular entfernt. Branchenseiten: Unsplash-Fallbild entfernt.
+
+**Offen**
+- GA4: `form_location` als benutzerdefinierte Dimension registrieren, um Anfragen pro Seite auszuwerten.
+- Finanz-Landingpages unverändert (eigenes Formular und Kampagnen-Setup).

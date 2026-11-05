@@ -2,7 +2,7 @@
  * Hub-Seite eines Leistungsfelds (/leistungen/strategie, /technologie-automation, /wachstum-marketing,
  * /sales-revenue-operations). Inhalte aus src/data/serviceAreas.ts.
  */
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { getArea, servicesOf, SERVICE_AREAS, type AreaId } from '../data/serviceAreas';
 import { SERVICES } from '../data/services';
 import {
@@ -12,7 +12,6 @@ import {
   CtaButton,
  
   FaqList,
-  FinalCta,
   ResourceLinks,
   SectionHeading,
   TeaserCard,
@@ -20,10 +19,12 @@ import {
   ToolLinks,
 } from '../components/bp/Blocks';
 import { CHALLENGE_PAGES, isChallengeSlug } from '../data/challenges';
+import { AREA_DIAGRAMS } from '../data/diagrams';
+import { Diagram } from '../components/diagrams/Diagram';
+import { HeroTrust, LeadFormSection } from '../components/bp/Conversion';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import Link from '../components/Link';
 
-const InteractiveGrowthCalculator = lazy(() => import('../components/InteractiveGrowthCalculator'));
 
 /** Passende Kundenstimme je Feld (nur bestehende, wörtliche Zitate). */
 const AREA_TESTIMONIAL: Record<AreaId, string> = {
@@ -53,9 +54,26 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <CtaButton label={area.ctaLabel} location={`hub_${id}_hero`} pageSlug={id} />
             </div>
+            <HeroTrust />
           </div>
         </Container>
       </section>
+
+      {/* THEMENGRAFIK */}
+      {AREA_DIAGRAMS[id] && (
+        <section>
+          <Container className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-5 space-y-4">
+              <SectionHeading title={AREA_DIAGRAMS[id].title} />
+              <p className="text-body text-slate-600 leading-relaxed">{AREA_DIAGRAMS[id].text}</p>
+              <CtaButton label={area.ctaLabel} location={`hub_${id}_grafik`} pageSlug={id} variant="light" />
+            </div>
+            <div className="lg:col-span-7">
+              <Diagram spec={AREA_DIAGRAMS[id].spec} />
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* AUSGANGSLAGE + ERGEBNISSE */}
       <section>
@@ -114,21 +132,6 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         </Container>
       </section>
 
-      {/* RECHNER (nur Growth) */}
-      {id === 'wachstum-marketing' && (
-        <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-28">
-          <Container className="space-y-12">
-            <SectionHeading
-              align="center"
-              title="Was eine bessere Anfragequote bringen kann"
-              intro="Tragen Sie Ihre eigenen Werte ein. Der Rechner zeigt grob, wie sich höhere Anfrage- und Abschlussquoten auf Ihren Umsatz auswirken. Eine Schätzung, keine Prognose."
-            />
-            <Suspense fallback={<div className="min-h-[480px]" aria-busy="true" />}>
-              <InteractiveGrowthCalculator />
-            </Suspense>
-          </Container>
-        </section>
-      )}
 
       {/* BRANCHEN (nur Growth): bestehende Branchenseiten */}
       {id === 'wachstum-marketing' && (
@@ -212,13 +215,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         </Container>
       </section>
 
-      <FinalCta
-        title="Lassen Sie uns über Ihre Ausgangslage sprechen."
-        text="30 Minuten, kostenlos und unverbindlich. Sie schildern, wo Sie stehen, und wir sagen Ihnen offen, wo wir Potenzial sehen und ob wir der richtige Partner dafür sind."
-        ctaLabel={area.ctaLabel}
-        location={`hub_${id}_footer`}
-        pageSlug={id}
-      />
+      <LeadFormSection formLocation={`hub_${id}`} />
     </div>
   );
 }

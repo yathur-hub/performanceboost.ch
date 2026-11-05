@@ -61,3 +61,15 @@ describe('Lösungen nach Herausforderung', () => {
     expect(parseRoute('/referenzen').view).toBe('referenzen');
   });
 });
+
+import { SERVICE_DIAGRAMS, AREA_DIAGRAMS, CHALLENGE_DIAGRAMS, sectorDiagram } from '../../data/diagrams';
+import { SOLUTIONS_SECTORS } from '../../data/solutionsData';
+
+describe('Themengrafiken', () => {
+  it('jede Leistung, jedes Feld und jede Lösungsseite hat eine Grafik', () => {
+    for (const s of SERVICES) expect(SERVICE_DIAGRAMS[s.slug], s.slug).toBeDefined();
+    for (const a of SERVICE_AREAS) expect(AREA_DIAGRAMS[a.id], a.id).toBeDefined();
+    for (const c of Object.keys(CHALLENGE_PAGES)) expect(CHALLENGE_DIAGRAMS[c], c).toBeDefined();
+    for (const sec of Object.values(SOLUTIONS_SECTORS)) expect(sectorDiagram(sec.slug, sec.title).spec.type).toBe('flow');
+  });
+});

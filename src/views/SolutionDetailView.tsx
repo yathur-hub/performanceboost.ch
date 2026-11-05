@@ -7,6 +7,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
+import { sectorDiagram } from '../data/diagrams';
+import { Diagram } from '../components/diagrams/Diagram';
+import { CtaButton } from '../components/bp/Blocks';
+import { HeroTrust, LeadFormSection } from '../components/bp/Conversion';
 import Link from '../components/Link';
 import { 
   ArrowLeft, CheckCircle2, AlertOctagon, HelpCircle, ChevronDown, Check,
@@ -16,37 +20,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { PREMIUM_EASE, DURATIONS, buttonPressProps } from '../lib/motion';
 
 // Import all calculators statically for robust compilation
-import BeratungsPipelineRechner from '../components/hero-tools/BeratungsPipelineRechner';
-import SaasRevenueLeckRechner from '../components/hero-tools/SaasRevenueLeckRechner';
-import LeerstandskostenRechner from '../components/hero-tools/LeerstandskostenRechner';
-import KanzleiWachstumsCheck from '../components/hero-tools/KanzleiWachstumsCheck';
-import AngebotsPipelineRechner from '../components/hero-tools/AngebotsPipelineRechner';
-import RecurringRevenuePotenzialRechner from '../components/hero-tools/RecurringRevenuePotenzialRechner';
-import ProjektpipelineCheck from '../components/hero-tools/ProjektpipelineCheck';
-import PlacementEffizienzRechner from '../components/hero-tools/PlacementEffizienzRechner';
-import KursFunnelRechner from '../components/hero-tools/KursFunnelRechner';
-import NeupatientenPotenzialCheck from '../components/hero-tools/NeupatientenPotenzialCheck';
-import AuftragsPipelineRechner from '../components/hero-tools/AuftragsPipelineRechner';
-import KanzleiAuslastungsCheck from '../components/hero-tools/KanzleiAuslastungsCheck';
-import FlottenauslastungsRechner from '../components/hero-tools/FlottenauslastungsRechner';
-import DirektbuchungsRechner from '../components/hero-tools/DirektbuchungsRechner';
 
-const CALCULATOR_MAP: { [key: string]: React.ComponentType | any } = {
-  'BeratungsPipelineRechner': BeratungsPipelineRechner,
-  'SaasRevenueLeckRechner': SaasRevenueLeckRechner,
-  'LeerstandskostenRechner': LeerstandskostenRechner,
-  'KanzleiWachstumsCheck': KanzleiWachstumsCheck,
-  'AngebotsPipelineRechner': AngebotsPipelineRechner,
-  'RecurringRevenuePotenzialRechner': RecurringRevenuePotenzialRechner,
-  'ProjektpipelineCheck': ProjektpipelineCheck,
-  'PlacementEffizienzRechner': PlacementEffizienzRechner,
-  'KursFunnelRechner': KursFunnelRechner,
-  'NeupatientenPotenzialCheck': NeupatientenPotenzialCheck,
-  'AuftragsPipelineRechner': AuftragsPipelineRechner,
-  'KanzleiAuslastungsCheck': KanzleiAuslastungsCheck,
-  'FlottenauslastungsRechner': FlottenauslastungsRechner,
-  'DirektbuchungsRechner': DirektbuchungsRechner,
-};
 
 interface SolutionDetailViewProps {
   slug: string;
@@ -79,7 +53,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
     );
   }
 
-  const ActiveCalculator = CALCULATOR_MAP[sector.calculatorComponent];
+  const diagram = sectorDiagram(slug, sector.title);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -107,34 +81,19 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
                 {sector.heroDesc}
               </p>
               
-              <div className="pt-4 border-t border-slate-100 space-y-3.5">
-                <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block">Was Sie hier erhalten:</span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
-                    <Check className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Grobe Potenzialschätzung für Ihre Situation</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
-                    <Check className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Nachvollziehbare Annahmen</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
-                    <Check className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Ergebnis im Erstgespräch besprechen</span>
-                  </div>
-                </div>
+              <div className="pt-2 space-y-4">
+                <CtaButton label="Potenzial besprechen" location={`branche_${slug}_hero`} pageSlug={slug} />
+                <HeroTrust />
               </div>
             </div>
 
-            {/* Embed matching interactive hero calculator */}
-            <div className="lg:col-span-7">
-              <div className="bg-[#fcfcfc] border border-slate-150/80 rounded-3xl p-1 shadow-sm">
-                {ActiveCalculator ? (
-                  <ActiveCalculator />
-                ) : (
-                  <div className="p-8 text-center text-slate-400">Rechner ist in Vorbereitung.</div>
-                )}
+            {/* Themengrafik (ersetzt den früheren Branchen-Rechner) */}
+            <div className="lg:col-span-7 space-y-4">
+              <div>
+                <h2 className="text-lg sm:text-xl font-display font-semibold text-slate-900">{diagram.title}</h2>
+                <p className="mt-1.5 text-body-sm text-slate-600 leading-relaxed">{diagram.text}</p>
               </div>
+              <Diagram spec={diagram.spec} />
             </div>
           </div>
         </div>
@@ -260,47 +219,12 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         </div>
       </section>
 
-      {/* BIO MODULE: YATHUR NATHAN (+30% Larger Visual spacing) */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-[var(--shadow-premium-md)] grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
-          <div className="md:col-span-4 flex flex-col items-center justify-center space-y-3">
-            <div className="relative">
-              <img loading="lazy" decoding="async" 
-                src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
-                onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=350&fit=crop&q=80";
-                }}
-                alt="Yathur Nathan" 
-                className="w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover opacity-95 border-2 border-[#686DF4]/30"
-              />
-              <span className="absolute bottom-1 right-1 w-4.5 h-4.5 bg-green-500 border-2 border-white rounded-full" />
-            </div>
-            <div className="text-center">
-              <h4 className="text-base font-bold text-slate-900 leading-none">Yathur Nathan</h4>
-              <p className="text-[11px] text-[#686DF4] font-bold tracking-wide mt-1 uppercase font-mono">Inhaber <span className="normal-case">performanceboost</span></p>
-            </div>
-          </div>
-
-          <div className="md:col-span-8 space-y-5">
-            <span className="text-[11px] font-mono text-[#686DF4] font-black tracking-widest uppercase">Persönliche Begleitung</span>
-            <p className="text-body-sm font-medium leading-relaxed text-slate-600">
-              Ich bin Ihr direkter Ansprechpartner. Im Erstgespräch schauen wir gemeinsam an, wie Ihre Kunden heute zu Ihnen finden und wo Anfragen verloren gehen. Danach begleite ich die Umsetzung persönlich, von den Kampagnen bis zur sauberen Messung.
-            </p>
-            <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row gap-4 items-center justify-between">
-              <span className="text-[11px] font-bold text-slate-500 font-mono">
-                Erstgespräch per Telefon oder Video, 30 Minuten
-              </span>
-              <button
-                type="button"
-                onClick={() => onNavigate('/kontakt')}
-                className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all inline-block text-center shadow-sm shrink-0 w-full sm:w-auto border-0"
-              >
-                Potenzial besprechen
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ANFRAGE (eingebettetes Formular) */}
+      <LeadFormSection
+        title={`Mehr passende Anfragen für ${sector.title}?`}
+        intro="Schildern Sie kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort und einen Terminvorschlag für ein kostenloses Erstgespräch."
+        formLocation={`branche_${slug}`}
+      />
 
     </div>
   );

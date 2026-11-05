@@ -1,8 +1,9 @@
 /** /referenzen: bestehende Kundenstimmen, wörtlich. Keine Kennzahlen, keine erfundenen Fallstudien. */
 import React from 'react';
 import { TESTIMONIALS_DATA } from '../components/home/ClientTestimonials';
-import { Breadcrumb, Container, FinalCta, SectionHeading, TeaserCard } from '../components/bp/Blocks';
+import { Breadcrumb, Container, SectionHeading, TeaserCard } from '../components/bp/Blocks';
 import { SERVICE_AREAS } from '../data/serviceAreas';
+import { LeadFormSection } from '../components/bp/Conversion';
 
 /** Schwerpunkte der Zusammenarbeit, abgeleitet aus dem Wortlaut der jeweiligen Kundenstimme. */
 const FOCUS: Record<string, string[]> = {
@@ -87,13 +88,7 @@ export default function ReferencesView() {
         </Container>
       </section>
 
-      <FinalCta
-        title="Möchten Sie wissen, wo Ihr Unternehmen Potenzial hat?"
-        text="30 Minuten, kostenlos und unverbindlich. Sie schildern Ihre Ausgangslage, wir sagen Ihnen offen, wo wir ansetzen würden."
-        ctaLabel="Potenzial besprechen"
-        location="referenzen_footer"
-        pageSlug="referenzen"
-      />
+      <LeadFormSection formLocation="referenzen" title="Möchten Sie wissen, wo Ihr Unternehmen Potenzial hat?" />
     </div>
   );
 }

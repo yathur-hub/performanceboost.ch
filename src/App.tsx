@@ -26,6 +26,7 @@ import type { AreaId } from './data/serviceAreas';
 import type { ChallengeSlug } from './data/challenges';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
+import { StickyMobileCta, goToLead } from './components/bp/Conversion';
 import { motion, AnimatePresence } from 'motion/react';
 import { pageTransitionVariants } from './lib/motion';
 import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
@@ -52,7 +53,7 @@ function AppContent() {
       const customEvent = e as CustomEvent<string>;
       if (customEvent.detail) {
         if (customEvent.detail === '/kontakt' || customEvent.detail === '#kontakt') {
-          openContactModal();
+          if (!goToLead()) openContactModal();
         } else {
           handleNavigate(customEvent.detail);
         }
@@ -75,7 +76,8 @@ function AppContent() {
 
   const handleNavigate = (path: string) => {
     if (path === '/kontakt' || path === '#kontakt') {
-      openContactModal();
+      // Seiten mit eingebettetem Formular: dorthin scrollen, sonst Kontakt-Modal
+      if (!goToLead()) openContactModal();
       return;
     }
     window.history.pushState(null, '', path);
@@ -155,6 +157,11 @@ function AppContent() {
 
       {/* Global Sitemapped Footer */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* Mobiler Sticky-CTA (nicht auf der Kontaktseite und den Finanz-Landingpages mit eigenem Formular) */}
+      {parsed.view !== 'kontakt' && parsed.view !== 'finanz' && parsed.view !== 'not_found' && (
+        <StickyMobileCta key={parsed.path} onFallback={openContactModal} />
+      )}
 
     </div>
   );
