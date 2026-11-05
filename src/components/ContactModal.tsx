@@ -1,207 +1,127 @@
 /**
- * @license
- * SPDX-License-Identifier: Apache-2.0
+ * Overlay «Potenzial besprechen» mit qualifizierender Formularstrecke.
+ * Die Strecke wird beim Öffnen aus dem aktuellen Pfad bestimmt (src/data/leadFlows.ts).
+ * Mobil als Vollbild-Sheet, ab sm als zentriertes Fenster. Escape und Klick auf den Hintergrund schliessen.
  */
-
-import React, { useEffect, useRef } from 'react';
-import { 
-  X, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  MessageSquare
-} from 'lucide-react';
+import React, { useEffect, useMemo, useRef } from 'react';
+import { X, Phone, Clock, ShieldCheck, UserCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import ContactForm from './ContactForm';
+import LeadFunnel from './LeadFunnel';
 import { SITE } from '../config/site';
+import { resolveFlow } from '../data/leadFlows';
+import { trackEvent } from '../lib/analytics';
 
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+/** form_location je Seite, z. B. `overlay_leistungen_marketing-automation`. */
+export function overlayLocation(pathname: string): string {
+  const p = pathname.replace(/\/+$/, '').replace(/^\//, '').replace(/\//g, '_');
+  return `overlay_${p || 'startseite'}`.slice(0, 120);
+}
+
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
-  // Handle ESC key press and focus management
+  const { flow, location } = useMemo(() => {
+    if (!isOpen || typeof window === 'undefined') return { flow: resolveFlow('/'), location: 'overlay' };
+    return { flow: resolveFlow(window.location.pathname), location: overlayLocation(window.location.pathname) };
+  }, [isOpen]);
+
   useEffect(() => {
     if (!isOpen) return;
-
-    // Save previous active element to restore focus on close
     previousFocusRef.current = document.activeElement as HTMLElement;
-
-    // Lock body scrolling
     const originalStyle = window.getComputedStyle(document.body).overflow;
     document.body.style.overflow = 'hidden';
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-
-    // Focus the modal container
-    setTimeout(() => {
-      if (modalRef.current) {
-        modalRef.current.focus();
-      }
-    }, 50);
-
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    const t = window.setTimeout(() => modalRef.current?.focus(), 50);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.clearTimeout(t);
+      window.removeEventListener('keydown', onKey);
       document.body.style.overflow = originalStyle;
-
-      // Restore previous focus
-      if (previousFocusRef.current && typeof previousFocusRef.current.focus === 'function') {
-        previousFocusRef.current.focus();
-      }
+      previousFocusRef.current?.focus?.();
     };
   }, [isOpen, onClose]);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-x-hidden">
-          {/* Backdrop Overlay */}
+        <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:p-6">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 bg-slate-950/75 backdrop-blur-md"
+            className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm"
             aria-hidden="true"
           />
-
-          {/* Modal Box */}
           <motion.div
             ref={modalRef}
             tabIndex={-1}
             role="dialog"
             aria-modal="true"
-            aria-labelledby="contact-modal-title"
-            initial={{ opacity: 0, scale: 0.95, y: 15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 15 }}
+            aria-labelledby="lead-modal-title"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            onClick={(e) => e.stopPropagation()}
-            className="relative bg-white border border-slate-200 rounded-3xl shadow-2xl w-full max-w-5xl max-h-[92vh] flex flex-col overflow-hidden z-[10000] outline-none"
+            className="relative z-[10000] w-full sm:max-w-4xl h-[100dvh] sm:h-auto sm:max-h-[92vh] bg-white sm:rounded-3xl shadow-2xl flex flex-col sm:flex-row overflow-hidden outline-none"
           >
-            {/* Top Modal Bar / Header with Close Button */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-white sticky top-0 z-20 shrink-0">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#686DF4] animate-pulse" />
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#686DF4]">
-                  Erstgespräch anfragen
-                </span>
-              </div>
-
-              <button
-                type="button"
-                onClick={onClose}
-                aria-label="Schliessen"
-                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-900 flex items-center justify-center transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#686DF4]"
+            {/* Seitenleiste (ab sm): Ansprechperson und Versprechen */}
+            <aside className="hidden sm:flex sm:w-[280px] shrink-0 flex-col bg-slate-950 text-white p-7">
+              <img
+                src={SITE.portraitUrl}
+                alt="Yathur Nathan"
+                width={72}
+                height={72}
+                referrerPolicy="no-referrer"
+                className="w-16 h-16 rounded-2xl object-cover border border-white/15"
+              />
+              <p className="mt-4 font-display font-semibold">Yathur Nathan</p>
+              <p className="text-xs text-slate-400">Inhaber, Ihr direkter Ansprechpartner</p>
+              <ul className="mt-8 space-y-4 text-sm text-slate-300">
+                <li className="flex gap-2.5"><Clock className="w-4.5 h-4.5 text-[#9fa2f7] shrink-0" aria-hidden="true" /> Persönliche Antwort innert eines Arbeitstags</li>
+                <li className="flex gap-2.5"><UserCheck className="w-4.5 h-4.5 text-[#9fa2f7] shrink-0" aria-hidden="true" /> Erstgespräch mit dem Inhaber, 30 Minuten</li>
+                <li className="flex gap-2.5"><ShieldCheck className="w-4.5 h-4.5 text-[#9fa2f7] shrink-0" aria-hidden="true" /> Kostenlos und unverbindlich</li>
+              </ul>
+              <a
+                href={SITE.phoneHref}
+                onClick={() => trackEvent('phone_click', { cta_location: 'overlay' })}
+                className="mt-auto pt-8 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#9fa2f7]"
               >
-                <X className="w-4.5 h-4.5" />
-              </button>
-            </div>
+                <Phone className="w-4 h-4" aria-hidden="true" /> Lieber anrufen? {SITE.phoneDisplay}
+              </a>
+            </aside>
 
-            {/* Scrollable Modal Content */}
-            <div className="p-6 sm:p-8 md:p-10 overflow-y-auto flex-1 space-y-8">
-              
-              {/* Main 2-Column Layout */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-                
-                {/* LEFT COLUMN: Contact Form */}
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="space-y-2 border-b border-slate-100 pb-4">
-                    <h2 id="contact-modal-title" className="text-2xl sm:text-3xl font-display font-bold text-slate-950 tracking-tight flex items-center gap-2.5">
-                      <MessageSquare className="w-6 h-6 text-[#686DF4] shrink-0" />
-                      Wie können wir Ihnen helfen?
-                    </h2>
-                    <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Schreiben Sie uns kurz, wo Sie stehen. Im kostenlosen Erstgespräch (30 Minuten, per Video oder Telefon) klären wir, wo Ihr Unternehmen heute Potenzial verschenkt und ob wir der richtige Partner dafür sind.
-                    </p>
-                  </div>
-
-                  <ContactForm 
-                    formName="Kontaktformular Overlay"
-                    formLocation="modal"
-                    submitButtonText="Anfrage senden"
-                    onSuccess={() => {
-                      // Keep modal open so user sees success message
-                    }}
-                  />
-                </div>
-
-                {/* RIGHT COLUMN: Person Info */}
-                <div className="lg:col-span-5 space-y-6">
-                  <div className="bg-slate-950 text-white border border-slate-800 rounded-2xl p-6 space-y-6 shadow-xl relative overflow-hidden">
-                    {/* Background glow */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#686DF4]/20 rounded-full blur-2xl pointer-events-none" />
-
-                    <div className="relative z-10 flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center text-center sm:text-left lg:text-center gap-4">
-                      <img loading="lazy" decoding="async" 
-                        src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg"
-                        alt="Yathur Nathan"
-                        className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-2xl object-cover border-2 border-white/20 shadow-lg shrink-0"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="space-y-1">
-                        <h3 className="text-xl font-display font-bold text-white pt-1">Yathur Nathan</h3>
-                        <p className="text-xs font-mono font-bold text-slate-400">Gründer &amp; Inhaber</p>
-                      </div>
-                    </div>
-
-                    <p className="text-xs text-slate-300 leading-relaxed italic border-t border-slate-800/80 pt-4 font-medium text-center sm:text-left lg:text-center">
-                      «Sie sprechen von der ersten Anfrage bis zur Umsetzung direkt mit mir. Kein Verkaufsteam, kein Account Manager dazwischen.»
-                    </p>
-
-                    {/* Contact details */}
-                    <div className="space-y-3 pt-2 border-t border-slate-800/80">
-                      <a 
-                        href={`mailto:${SITE.email}`}
-                        className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-850 border border-slate-800/80 hover:border-[#686DF4]/40 text-xs font-medium text-slate-200 hover:text-white transition-all group cursor-pointer"
-                      >
-                        <div className="w-7 h-7 rounded-lg bg-[#686DF4]/20 text-[#686DF4] flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white transition-all">
-                          <Mail className="w-3.5 h-3.5" />
-                        </div>
-                        <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[11px] font-mono font-bold text-white/65 uppercase">E-Mail</span>
-                          <span className="font-semibold text-xs truncate">{SITE.email}</span>
-                        </div>
-                      </a>
-
-                      <a 
-                        href={SITE.phoneHref}
-                        className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-850 border border-slate-800/80 hover:border-[#686DF4]/40 text-xs font-medium text-slate-200 hover:text-white transition-all group cursor-pointer"
-                      >
-                        <div className="w-7 h-7 rounded-lg bg-[#686DF4]/20 text-[#686DF4] flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white transition-all">
-                          <Phone className="w-3.5 h-3.5" />
-                        </div>
-                        <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[11px] font-mono font-bold text-white/65 uppercase">Telefon</span>
-                          <span className="font-semibold text-xs">{SITE.phoneDisplay}</span>
-                        </div>
-                      </a>
-
-                      <div className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80 text-xs font-medium text-slate-200">
-                        <div className="w-7 h-7 rounded-lg bg-[#686DF4]/20 text-[#686DF4] flex items-center justify-center shrink-0">
-                          <MapPin className="w-3.5 h-3.5" />
-                        </div>
-                        <div className="flex flex-col min-w-0 text-left">
-                          <span className="text-[11px] font-mono font-bold text-white/65 uppercase">Adresse</span>
-                          <span className="font-semibold text-xs">Patschär 4 • 7306 Fläsch (Graubünden)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+            <div className="flex-1 flex flex-col min-h-0">
+              <div className="flex items-center justify-between gap-4 px-5 sm:px-8 pt-5 sm:pt-7">
+                <h2 id="lead-modal-title" className="text-sm font-semibold text-slate-500">
+                  {flow.title} <span className="text-slate-300">·</span> ca. 1 Minute
+                </h2>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  aria-label="Schliessen"
+                  className="w-9 h-9 shrink-0 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#696EEF]"
+                >
+                  <X className="w-4.5 h-4.5" />
+                </button>
               </div>
+              <div className="flex-1 overflow-y-auto px-5 sm:px-8 pt-5 pb-8">
+                <LeadFunnel flow={flow} formLocation={location} onDone={onClose} />
+              </div>
+              <a
+                href={SITE.phoneHref}
+                onClick={() => trackEvent('phone_click', { cta_location: 'overlay' })}
+                className="sm:hidden border-t border-slate-100 px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-sm text-slate-600 inline-flex items-center gap-2"
+              >
+                <Phone className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> Lieber anrufen? <span className="font-semibold text-slate-900">{SITE.phoneDisplay}</span>
+              </a>
             </div>
           </motion.div>
         </div>

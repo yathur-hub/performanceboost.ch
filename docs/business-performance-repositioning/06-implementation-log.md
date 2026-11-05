@@ -128,3 +128,12 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 **Offen**
 - GA4: `form_location` als benutzerdefinierte Dimension registrieren, um Anfragen pro Seite auszuwerten.
 - Finanz-Landingpages unverändert (eigenes Formular und Kampagnen-Setup).
+
+## Overlay mit qualifizierender Formularstrecke (06.11.2026)
+
+- Alle CTAs öffnen wieder das Overlay (`ContactModal`), mobil als Vollbild, ab sm mit Seitenleiste (Ansprechperson, Versprechen, Telefon).
+- Neues Formular `LeadFunnel`: Auswahlfragen je Thema (9 Strecken: general, strategy, marketing, ecommerce, automation, ai, data, sales, branch), danach Unternehmensgrösse und Zeitpunkt, zum Schluss Anrede, Unternehmen, Vorname, Nachname, E-Mail, Telefon, Einwilligung Datenschutz (Pflicht) und Marketing (optional). Jahresumsatz entfällt.
+- Zuordnung Seite → Strecke über den Pfad (`resolveFlow`). `form_location` je Seite (`overlay_<pfad>`).
+- Abschluss-Block am Seitenende (`LeadCtaSection`) zeigt den Ablauf in drei Schritten und öffnet das Overlay; Sticky-CTA mobil öffnet ebenfalls das Overlay.
+- Kontaktseite bettet die allgemeine Strecke ein. `ContactForm.tsx` wird nur noch für Hilfskomponenten der Finanz-Formulare (`Field`, `inputClass`) genutzt.
+- **Voraussetzung vor Go-live:** n8n contact-v3, Node «Parse & Validate»: `REVENUE_OPTIONAL = ['finance', 'qualifier']`. Ohne diese Änderung lehnt n8n die Anfragen ab (400, `annualRevenue`).

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { LeadFormSection } from '../components/bp/Conversion';
+import { LeadCtaSection } from '../components/bp/Conversion';
 import { ArrowRight, Sparkles, CheckCircle2, Heart, Award, Cpu, Eye, Zap, RefreshCw } from 'lucide-react';
 import { motion } from 'motion/react';
 import { 
@@ -317,7 +317,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
         </div>
       </section>
 
-      <LeadFormSection formLocation="ueber_uns" title="Lernen wir uns kennen." />
+      <LeadCtaSection formLocation="ueber_uns" title="Lernen wir uns kennen." />
 
     </div>
   );

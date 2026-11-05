@@ -14,7 +14,8 @@ import {
   Phone
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import ContactForm from '../components/ContactForm';
+import LeadFunnel from '../components/LeadFunnel';
+import { LEAD_FLOWS } from '../data/leadFlows';
 import { 
   PREMIUM_EASE, 
   DURATIONS 
@@ -109,7 +110,7 @@ export default function ContactView() {
             <p className="text-xs text-slate-450 font-semibold font-mono uppercase tracking-wider">Ihre Nachricht geht direkt an Yathur Nathan.</p>
           </div>
 
-          <ContactForm formName="Kontaktformular Seite" formLocation="kontakt_seite" />
+          <LeadFunnel flow={LEAD_FLOWS.general} formLocation="kontakt_seite" />
         </motion.div>
 
         {/* Info Column (5 cols) */}

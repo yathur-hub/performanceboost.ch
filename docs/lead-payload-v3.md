@@ -34,3 +34,21 @@ Header: `Content-Type: text/plain` (bewusst, vermeidet CORS-Preflight). Body = J
 - Honeypot gefüllt / zu schnell (< 3 s): `200 {"success":true}` ohne Speicherung.
 
 Das Frontend löst `generate_lead` nur bei `response.ok && body.success === true` aus.
+
+## Formularstrecke `qualifier` (ab 06.11.2026)
+
+Alle Kontakt-CTAs öffnen ein Overlay mit einer qualifizierenden Strecke (`src/components/LeadFunnel.tsx`, Fragen in `src/data/leadFlows.ts`). Die Kontaktseite bettet die allgemeine Strecke ein.
+
+| Feld | Wert |
+|---|---|
+| formId | `qualifier` |
+| formName | `Formularstrecke <Titel>` |
+| formLocation | `overlay_<pfad>` (z. B. `overlay_leistungen_marketing-automation`) bzw. `kontakt_seite` |
+| salutation | `Herr` oder `Frau` (Pflicht) |
+| annualRevenue | `''` (Feld entfällt; **n8n: `qualifier` muss in `REVENUE_OPTIONAL` stehen**) |
+| message | lesbare Zusammenfassung: Strecke, alle Fragen mit Antworten, Einwilligung Datenschutz (ja), Einwilligung Marketing (ja/nein) |
+| qualification | `{ flow, answers: [{ id, question, answer: string[] }] }` |
+| consent | `{ privacy: true, marketing: boolean, privacyText, marketingText, at }` |
+
+Pflicht: Anrede, Unternehmen, Vorname, Nachname, E-Mail, Datenschutz-Einwilligung. Optional: Telefon, Marketing-Einwilligung.
+Tracking: `form_start`, `form_step_complete` (`form_step` = Fragen-ID), `form_submit`, `generate_lead` (nur nach `{success:true}`), `form_error`; `form_id=qualifier`, `segment` = Strecken-ID.

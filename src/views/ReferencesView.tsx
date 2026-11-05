@@ -3,7 +3,7 @@ import React from 'react';
 import { TESTIMONIALS_DATA } from '../components/home/ClientTestimonials';
 import { Breadcrumb, Container, SectionHeading, TeaserCard } from '../components/bp/Blocks';
 import { SERVICE_AREAS } from '../data/serviceAreas';
-import { LeadFormSection } from '../components/bp/Conversion';
+import { LeadCtaSection } from '../components/bp/Conversion';
 
 /** Schwerpunkte der Zusammenarbeit, abgeleitet aus dem Wortlaut der jeweiligen Kundenstimme. */
 const FOCUS: Record<string, string[]> = {
@@ -88,7 +88,7 @@ export default function ReferencesView() {
         </Container>
       </section>
 
-      <LeadFormSection formLocation="referenzen" title="Möchten Sie wissen, wo Ihr Unternehmen Potenzial hat?" />
+      <LeadCtaSection formLocation="referenzen" title="Möchten Sie wissen, wo Ihr Unternehmen Potenzial hat?" />
     </div>
   );
 }

@@ -12,7 +12,7 @@ import { readRememberedResult } from '../data/problemFinder';
 import { SERVICE_AREAS, primaryAreaOf, relatedServices } from '../data/serviceAreas';
 import Link from '../components/Link';
 import { Breadcrumb, TeaserCard } from '../components/bp/Blocks';
-import { HeroTrust, LeadFormSection, goToLead } from '../components/bp/Conversion';
+import { HeroTrust, LeadCtaSection } from '../components/bp/Conversion';
 import { Diagram } from '../components/diagrams/Diagram';
 import { SERVICE_DIAGRAMS } from '../data/diagrams';
 import { trackEvent } from '../lib/analytics';
@@ -91,8 +91,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
-    trackEvent('cta_click', { cta_location: 'leistung_hero', cta_target: document.getElementById('anfrage') ? 'formular_inline' : 'kontakt', page_slug: currentSlug });
-    if (!goToLead()) onNavigate('/kontakt');
+    trackEvent('cta_click', { cta_location: 'leistung_hero', cta_target: 'overlay', page_slug: currentSlug });
+    onNavigate('/kontakt');
   };
 
   // ----------------------------------------------------
@@ -446,7 +446,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
 
           {/* ANFRAGE (eingebettetes Formular) */}
-          <LeadFormSection
+          <LeadCtaSection
             title={extendedContent.cta.headline}
             intro={extendedContent.cta.subheadline}
             formLocation={`leistung_${service.slug}`}
@@ -749,7 +749,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         </div>
       </motion.section>
 
-      <LeadFormSection formLocation="leistungen" title="Welche Leistung passt zu Ihrem Unternehmen?" />
+      <LeadCtaSection formLocation="leistungen" title="Welche Leistung passt zu Ihrem Unternehmen?" />
 
     </div>
   );

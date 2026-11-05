@@ -10,7 +10,7 @@ import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import { sectorDiagram } from '../data/diagrams';
 import { Diagram } from '../components/diagrams/Diagram';
 import { CtaButton } from '../components/bp/Blocks';
-import { HeroTrust, LeadFormSection } from '../components/bp/Conversion';
+import { HeroTrust, LeadCtaSection } from '../components/bp/Conversion';
 import Link from '../components/Link';
 import { 
   ArrowLeft, CheckCircle2, AlertOctagon, HelpCircle, ChevronDown, Check,
@@ -220,7 +220,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       </section>
 
       {/* ANFRAGE (eingebettetes Formular) */}
-      <LeadFormSection
+      <LeadCtaSection
         title={`Mehr passende Anfragen für ${sector.title}?`}
         intro="Schildern Sie kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort und einen Terminvorschlag für ein kostenloses Erstgespräch."
         formLocation={`branche_${slug}`}

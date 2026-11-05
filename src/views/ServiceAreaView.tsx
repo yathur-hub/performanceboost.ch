@@ -21,7 +21,7 @@ import {
 import { CHALLENGE_PAGES, isChallengeSlug } from '../data/challenges';
 import { AREA_DIAGRAMS } from '../data/diagrams';
 import { Diagram } from '../components/diagrams/Diagram';
-import { HeroTrust, LeadFormSection } from '../components/bp/Conversion';
+import { HeroTrust, LeadCtaSection } from '../components/bp/Conversion';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import Link from '../components/Link';
 
@@ -215,7 +215,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         </Container>
       </section>
 
-      <LeadFormSection formLocation={`hub_${id}`} />
+      <LeadCtaSection formLocation={`hub_${id}`} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { CHALLENGE_PAGES, type ChallengeSlug } from '../data/challenges';
 import { CHALLENGE_DIAGRAMS } from '../data/diagrams';
 import { Diagram } from '../components/diagrams/Diagram';
-import { HeroTrust, LeadFormSection } from '../components/bp/Conversion';
+import { HeroTrust, LeadCtaSection } from '../components/bp/Conversion';
 import { SERVICES } from '../data/services';
 import {
   Breadcrumb,
@@ -152,7 +152,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
         </Container>
       </section>
 
-      <LeadFormSection formLocation={`challenge_${slug}`} title="Wo verliert Ihr Unternehmen heute Zeit oder Umsatz?" />
+      <LeadCtaSection formLocation={`challenge_${slug}`} title="Wo verliert Ihr Unternehmen heute Zeit oder Umsatz?" />
     </div>
   );
 }

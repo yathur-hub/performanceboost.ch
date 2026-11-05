@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { LeadFormSection } from '../components/bp/Conversion';
+import { LeadCtaSection } from '../components/bp/Conversion';
 import { ArrowRight, Sparkles, CheckCircle2, ChevronDown, Check, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
@@ -420,7 +420,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
         </motion.div>
       </section>
 
-      <LeadFormSection formLocation="loesungen" title="Welche Lösung passt zu Ihrem Unternehmen?" />
+      <LeadCtaSection formLocation="loesungen" title="Welche Lösung passt zu Ihrem Unternehmen?" />
 
     </div>
   );

@@ -26,7 +26,7 @@ import type { AreaId } from './data/serviceAreas';
 import type { ChallengeSlug } from './data/challenges';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
-import { StickyMobileCta, goToLead } from './components/bp/Conversion';
+import { StickyMobileCta } from './components/bp/Conversion';
 import { motion, AnimatePresence } from 'motion/react';
 import { pageTransitionVariants } from './lib/motion';
 import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
@@ -53,7 +53,7 @@ function AppContent() {
       const customEvent = e as CustomEvent<string>;
       if (customEvent.detail) {
         if (customEvent.detail === '/kontakt' || customEvent.detail === '#kontakt') {
-          if (!goToLead()) openContactModal();
+          openContactModal();
         } else {
           handleNavigate(customEvent.detail);
         }
@@ -76,8 +76,8 @@ function AppContent() {
 
   const handleNavigate = (path: string) => {
     if (path === '/kontakt' || path === '#kontakt') {
-      // Seiten mit eingebettetem Formular: dorthin scrollen, sonst Kontakt-Modal
-      if (!goToLead()) openContactModal();
+      // Alle Kontakt-CTAs öffnen das Overlay mit der Formularstrecke der aktuellen Seite
+      openContactModal();
       return;
     }
     window.history.pushState(null, '', path);
