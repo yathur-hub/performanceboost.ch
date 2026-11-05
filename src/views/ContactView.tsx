@@ -93,7 +93,7 @@ export default function ContactView() {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold animate-fadeIn"
           >
-            Ob Sie bereits Werbung schalten oder noch am Anfang stehen: Schildern Sie kurz Ihre Situation. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
+            Ob es um Wachstum, Vertrieb, Abläufe oder Daten geht: Schildern Sie kurz Ihre Situation. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
           </motion.p>
         </div>
       </section>

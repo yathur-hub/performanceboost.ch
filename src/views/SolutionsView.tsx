@@ -7,6 +7,8 @@ import React, { useState } from 'react';
 import { ArrowRight, Sparkles, CheckCircle2, ChevronDown, Check, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
+import { CHALLENGE_CARDS } from '../data/challenges';
+import { TeaserCard } from '../components/bp/Blocks';
 import { 
   PREMIUM_EASE, 
   DURATIONS, 
@@ -159,7 +161,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="inline-block text-[11px] font-mono font-bold uppercase text-[#686DF4] tracking-widest bg-[#686DF4]/5 border border-[#686DF4]/10 px-4 py-1.5 rounded-full"
           >
-            Branchen und Leistungen
+            Lösungen
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
@@ -167,7 +169,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Neue Kunden gewinnen, abgestimmt auf Ihre Branche
+            Lösungen für Ihre Situation und Ihre Branche
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -175,7 +177,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium"
           >
-            Ob Treuhand, Industrie, IT, Immobilien, Gesundheitswesen, Handwerk oder Hotellerie: Wir stellen Ihre Lösung aus den Leistungen zusammen, die in Ihrer Branche wirken. Unten sehen Sie die einzelnen Bausteine und sinnvolle Kombinationen.
+            Sie müssen sich nicht zuerst für eine Technologie entscheiden. Starten Sie bei Ihrer Herausforderung oder bei Ihrer Branche: Wir stellen die Lösung aus den Leistungen zusammen, die in Ihrem Fall wirken.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -188,9 +190,26 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               onClick={() => onNavigate('/kontakt')}
               className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
             >
-              Erstgespräch vereinbaren
+              Potenzial besprechen
             </motion.button>
           </motion.div>
+        </div>
+      </section>
+
+      {/* NACH HERAUSFORDERUNG */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" aria-labelledby="herausforderung-heading">
+        <div className="space-y-3 max-w-2xl">
+          <h2 id="herausforderung-heading" className="text-2xl sm:text-3xl font-display font-semibold tracking-tight text-slate-950">
+            Nach Herausforderung
+          </h2>
+          <p className="text-slate-600 leading-relaxed">
+            Wo drückt der Schuh? Wählen Sie die Situation, die am ehesten auf Ihr Unternehmen zutrifft.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {CHALLENGE_CARDS.map((c) => (
+            <TeaserCard key={c.title} href={c.href} title={c.title} desc={c.desc} linkText={c.linkText} />
+          ))}
         </div>
       </section>
 
@@ -198,7 +217,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" aria-labelledby="branchen-heading">
         <div className="space-y-3 max-w-2xl">
           <h2 id="branchen-heading" className="text-2xl sm:text-3xl font-display font-semibold tracking-tight text-slate-950">
-            Ihre Branche
+            Nach Branche
           </h2>
           <p className="text-slate-600 leading-relaxed">
             Neukundengewinnung funktioniert in einer Treuhandkanzlei anders als in einem Handwerksbetrieb. Wählen Sie Ihre Branche,
@@ -432,7 +451,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             onClick={() => onNavigate('/kontakt')}
             className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
           >
-            Erstgespräch vereinbaren
+            Potenzial besprechen
           </motion.button>
         </div>
       </motion.section>

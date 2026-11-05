@@ -305,7 +305,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
                 onClick={() => onNavigate('/kontakt')}
                 className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all inline-block text-center shadow-sm shrink-0 w-full sm:w-auto border-0"
               >
-                Erstgespräch vereinbaren
+                Potenzial besprechen
               </button>
             </div>
           </div>

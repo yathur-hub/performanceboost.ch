@@ -35,7 +35,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
     {
       icon: RefreshCw,
       title: 'Umsetzen, dann verbessern',
-      desc: 'Ein Konzept in der Schublade bringt keine Anfragen. Wir bringen Massnahmen zügig live und verbessern sie anhand echter Zahlen.'
+      desc: 'Ein Konzept in der Schublade bringt keine Ergebnisse. Wir bringen Massnahmen zügig live und verbessern sie anhand echter Zahlen.'
     },
     {
       icon: Award,
@@ -71,7 +71,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Persönliche Beratung für digitale Neukundengewinnung.
+            Ihr Business Performance Partner aus Graubünden.
           </motion.h1>
           
           <motion.p 
@@ -80,7 +80,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            performanceboost ist eine inhabergeführte Beratung aus Fläsch in Graubünden. Wir helfen Schweizer KMU, über Google, Meta, LinkedIn und die eigene Website planbar neue Kunden zu gewinnen, und setzen das Nötige selbst um.
+            performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. Wir helfen Schweizer KMU, ihre Performance in Marketing, Vertrieb und Abläufen zu verbessern, und verbinden dafür Strategie, Technologie und Umsetzung. We boost business performance.
           </motion.p>
         </div>
       </section>
@@ -95,12 +95,12 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           className="space-y-6"
         >
           <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block">Warum es uns gibt</span>
-          <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Zwischen Werbung und Auftrag geht zu viel verloren.</h2>
+          <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Zwischen Strategie, Systemen und Auftrag geht zu viel verloren.</h2>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-            Viele KMU investieren in Werbung, eine neue Website oder ein CRM, aber die Teile arbeiten nicht zusammen. Die Agentur optimiert Klicks, die Website erklärt das Angebot nicht klar genug, und Anfragen werden zu spät beantwortet. Am Ende weiss niemand, was das Budget tatsächlich gebracht hat.
+            Viele KMU investieren in Werbung, eine neue Website, ein CRM oder KI-Tools, aber die Teile arbeiten nicht zusammen. Die Agentur optimiert Klicks, das CRM bildet den Verkauf nicht ab, Daten werden von Hand übertragen und Anfragen zu spät beantwortet. Am Ende weiss niemand, was die Investitionen tatsächlich gebracht haben.
           </p>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-            performanceboost betrachtet deshalb die ganze Strecke: Anzeige, Landingpage, Anfrage, Nachbearbeitung und Messung. Erst wenn diese Kette funktioniert, lohnt es sich, mehr Budget einzusetzen.
+            performanceboost betrachtet deshalb die ganze Strecke: von der Strategie über Systeme und Abläufe bis zu Marketing, Vertrieb und Messung. Erst wenn diese Kette funktioniert, lohnt es sich, mehr Budget oder neue Tools einzusetzen.
           </p>
         </motion.div>
 
@@ -126,12 +126,12 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
             <div className="pb-4 border-b border-slate-100 flex justify-between items-center">
               <span className="text-xs text-slate-500 font-semibold">Schwerpunkt</span>
-              <span className="text-xs font-mono font-bold text-[#686DF4]">Digitale Neukundengewinnung für KMU</span>
+              <span className="text-xs font-mono font-bold text-[#686DF4]">Strategy · Technology · Growth</span>
             </div>
 
             <div className="flex justify-between items-center">
               <span className="text-xs text-slate-500 font-semibold">Arbeitsweise</span>
-              <span className="text-xs font-mono font-bold text-emerald-600">Analyse, Umsetzung, monatliche Auswertung</span>
+              <span className="text-xs font-mono font-bold text-emerald-600">Analyse, Umsetzung, laufende Auswertung</span>
             </div>
           </div>
         </motion.div>
@@ -166,10 +166,10 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
-              Ich unterstütze Schweizer KMU dabei, aus ihrem Marketingbudget messbar Kundenanfragen zu machen. Dafür verbinde ich Performance Marketing, Webentwicklung, Tracking und Automatisierung, Aufgaben, die sonst oft auf mehrere Dienstleister verteilt sind und dabei aneinander vorbeilaufen.
+              Ich unterstütze Schweizer KMU dabei, ihre Unternehmensperformance zu verbessern: mehr passende Kunden, effizientere Abläufe und Zahlen, auf die man sich verlassen kann. Dafür verbinde ich Strategie, Performance Marketing, Webentwicklung, Daten und Automatisierung, Aufgaben, die sonst oft auf mehrere Dienstleister verteilt sind und dabei aneinander vorbeilaufen.
             </p>
             <p>
-              In den vergangenen Jahren habe ich mit Unternehmen aus unterschiedlichen Branchen gearbeitet, vom Onlineshop bis zum Beratungsunternehmen. Dabei hat sich immer wieder gezeigt: Gute Ergebnisse entstehen nicht durch eine einzelne Kampagne oder ein neues Tool, sondern wenn Strategie, Website, Messung und Nachbearbeitung zusammenpassen. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
+              In den vergangenen Jahren habe ich mit Unternehmen aus unterschiedlichen Branchen gearbeitet, vom Onlineshop über Beratungsunternehmen bis zum Dienstleister, für den ich Website und ERP-System entwickelt habe. Dabei hat sich immer wieder gezeigt: Gute Ergebnisse entstehen nicht durch eine einzelne Kampagne oder ein neues Tool, sondern wenn Strategie, Systeme, Abläufe und Messung zusammenpassen. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
             </p>
           </div>
         </motion.div>
@@ -221,7 +221,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               </div>
               <h3 className="text-sm font-bold text-slate-900">Strategie und Umsetzung aus einer Hand</h3>
               <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                Strategie, Texte, Tracking, CRM-Abläufe und Kampagnen kommen aus einer Hand. Dadurch gehen bei Übergaben keine Informationen verloren, und Sie haben einen einzigen Ansprechpartner.
+                Strategie, Systeme, Automatisierungen, Tracking und Kampagnen kommen aus einer Hand. Dadurch gehen bei Übergaben keine Informationen verloren, und Sie haben einen einzigen Ansprechpartner.
               </p>
             </motion.div>
 
@@ -233,9 +233,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#CACCFB]/20">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">Gemessen an Aufträgen, nicht an Klicks</h3>
+              <h3 className="text-sm font-bold text-slate-900">Gemessen an Ihren Geschäftszahlen</h3>
               <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                Reichweite und günstige Klicks sind kein Ziel an sich. Wir richten Kampagnen auf Anfragen und, wo die Daten es erlauben, auf tatsächliche Aufträge aus.
+                Reichweite, Klicks oder ein neues Tool sind kein Ziel an sich. Wir messen unsere Arbeit an dem, was für Ihr Unternehmen zählt: Anfragen, Aufträge, Reaktionszeiten oder eingesparte Stunden.
               </p>
             </motion.div>
           </motion.div>
@@ -266,7 +266,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           >
             <span className="text-xs font-mono font-bold text-[#686DF4]">Grundsatz 1: Erst verstehen, dann handeln</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-              Bevor wir etwas an Ihren Kampagnen ändern, verstehen wir Ihr Geschäft: Wer sind Ihre besten Kunden, was ist ein Auftrag wert, wie läuft der Verkauf heute? Erst dann schlagen wir Massnahmen vor.
+              Bevor wir Massnahmen oder Tools empfehlen, verstehen wir Ihr Geschäft: Wer sind Ihre besten Kunden, was ist ein Auftrag wert, wie laufen Verkauf und Abläufe heute? Software wählen wir erst, wenn klar ist, was sie abbilden soll.
             </p>
           </motion.div>
 
@@ -279,7 +279,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           >
             <span className="text-xs font-mono font-bold text-[#686DF4]">Grundsatz 2: Aufbauen, was bleibt</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-              Eine einzelne Kampagne läuft irgendwann aus. Wir bauen zusätzlich Dinge auf, die Ihnen langfristig gehören: ein sauberes Tracking, CRM-Abläufe, Landingpages und Auswertungen, mit denen Sie auch später noch arbeiten.
+              Eine einzelne Kampagne läuft irgendwann aus. Wir bauen zusätzlich Dinge auf, die Ihnen langfristig gehören: saubere Daten, CRM-Abläufe, Automatisierungen, Landingpages und Auswertungen. Alles ist dokumentiert, damit Ihr Team damit weiterarbeiten kann.
             </p>
           </motion.div>
         </div>
@@ -350,7 +350,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             onClick={() => onNavigate('/kontakt')}
             className="bg-[#686DF4] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest cursor-pointer shadow-[var(--shadow-premium-md)] inline-block text-center border-0"
           >
-            Erstgespräch vereinbaren
+            Potenzial besprechen
           </motion.button>
         </div>
       </motion.section>

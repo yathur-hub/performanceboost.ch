@@ -9,6 +9,9 @@ import {
 import { motion } from 'motion/react';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
 import { readRememberedResult } from '../data/problemFinder';
+import { SERVICE_AREAS, primaryAreaOf, relatedServices } from '../data/serviceAreas';
+import Link from '../components/Link';
+import { Breadcrumb, TeaserCard } from '../components/bp/Blocks';
 
 import GrowthStrategyIndicator from '../components/GrowthStrategyIndicator';
 import DemandPipelineGap from '../components/DemandPipelineGap';
@@ -128,18 +131,18 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       return (
         <div className="pt-24 pb-20 text-slate-800 space-y-28 animate-fadeIn" id={`service-detail-${service.slug}`}>
           
-          {/* Back Link and Breadcrumb */}
+          {/* Breadcrumb: Startseite / Leistungen / Leistungsfeld / Leistung */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/leistungen');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-slate-900 transition-colors cursor-pointer font-bold uppercase tracking-wider bg-transparent border-none outline-none font-mono"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" /> Zurück zur Leistungsübersicht
-            </button>
+            <Breadcrumb
+              items={[
+                { label: 'Startseite', href: '/' },
+                { label: 'Leistungen', href: '/leistungen' },
+                ...(primaryAreaOf(service.slug)
+                  ? [{ label: primaryAreaOf(service.slug)!.label, href: `/leistungen/${primaryAreaOf(service.slug)!.id}` }]
+                  : []),
+                { label: service.title },
+              ]}
+            />
           </div>
 
           {/* HERO SECTION WITH DYNAMIC INTERACTIVE AUDITS */}
@@ -150,7 +153,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   <IconComponent className="w-5.5 h-5.5" />
                 </div>
                 <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest bg-[#686DF4]/5 px-3 py-1 rounded-lg">
-                  Leistung
+                  {primaryAreaOf(service.slug)?.label ?? 'Leistung'}
                 </span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1] text-left">
@@ -456,6 +459,29 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             </div>
           </section>
 
+          {/* PASSENDE LEISTUNGEN (aus src/data/serviceAreas.ts) */}
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div className="space-y-2">
+                <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Zusammenspiel</span>
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight">Passende Leistungen</h2>
+              </div>
+              {primaryAreaOf(service.slug) && (
+                <Link
+                  href={`/leistungen/${primaryAreaOf(service.slug)!.id}`}
+                  className="text-xs font-bold text-[#686DF4] inline-flex items-center gap-1.5"
+                >
+                  Alles zu {primaryAreaOf(service.slug)!.shortLabel} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
+              )}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {relatedServices(service.slug).map((r) => (
+                <TeaserCard key={r.slug} href={`/leistungen/${r.slug}`} title={r.title} desc={r.shortDesc} linkText="Zur Leistung" />
+              ))}
+            </div>
+          </section>
+
           {/* PERSONAL BIO SECTION */}
           <section className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition duration-300">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
@@ -473,7 +499,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   <p className="text-xs font-mono font-bold text-[#686DF4] tracking-wider uppercase mt-1">Gründer &amp; Inhaber</p>
                 </div>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Als Gründer von performanceboost helfe ich Schweizer KMU, über Google, Meta, LinkedIn und die eigene Website planbar Kundenanfragen zu gewinnen. Kampagnen, Landingpages, Tracking und Automatisierung setze ich persönlich um, und Sie haben von der ersten Analyse bis zum Bericht einen festen Ansprechpartner.
+                  Als Gründer von performanceboost helfe ich Schweizer KMU, ihre Performance in Marketing, Vertrieb und Abläufen zu verbessern. Strategie, Kampagnen, Systeme und Automatisierungen setze ich persönlich um, und Sie haben von der ersten Analyse bis zum Bericht einen festen Ansprechpartner.
                 </p>
                 <p className="text-body-sm text-[#686DF4] font-semibold leading-relaxed pt-1.5 border-t border-slate-100 italic">
                   {(() => {
@@ -533,59 +559,56 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             Leistungen
           </span>
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
-            Mehr Kundenanfragen über Google, Meta, LinkedIn und Ihre Website.
+            Strategie, Technologie und Wachstum aus einer Hand.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium">
-            performanceboost unterstützt Schweizer KMU bei der digitalen Neukundengewinnung. Wir planen und betreuen Kampagnen auf Google, Meta und LinkedIn, bauen Landingpages, die aus Besuchern Anfragen machen, richten sauberes Tracking und verständliche Berichte ein und automatisieren das Nachfassen mit Marketing Automation. Alles aus einer Hand, persönlich umgesetzt von Inhaber Yathur Nathan.
+            performanceboost verbessert die Bereiche, in denen Schweizer KMU heute am meisten Umsatz und Zeit verlieren: Strategie, Systeme und Abläufe, Marketing sowie Vertrieb. Unsere Leistungen sind in vier Felder gegliedert und greifen ineinander. Persönlich umgesetzt von Inhaber Yathur Nathan.
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 animate-fadeIn">
-        <div className="text-center space-y-3">
-          <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">Übersicht</span>
-          <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Leistungen im Detail</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {SERVICES.map((s) => {
-            const IconComp = servicesIcons[s.slug] || TrendingUp;
-            const localized = servicesCopyOverride[s.slug] || { benefit: s.shortDesc, desc: s.description };
-            return (
-              <div 
-                key={s.slug}
-                className="bg-white border border-[#E0E0E0]/65 hover:border-[#686DF4]/25 rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-1 group"
-              >
-                <div className="space-y-5">
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white group-hover:border-transparent transition-all duration-300">
-                    <IconComp className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors leading-tight">{s.title}</h3>
-                    <p className="text-[11px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
-                    <p className="text-body-sm text-slate-500 leading-relaxed mt-3.5 line-clamp-4 font-medium">{localized.desc}</p>
-                  </div>
+      {/* Leistungen nach Leistungsfeld */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 animate-fadeIn">
+        {SERVICE_AREAS.map((area) => {
+          const areaServices = SERVICES.filter((s) => primaryAreaOf(s.slug)?.id === area.id || (area.id === 'sales-revenue-operations' && s.slug === 'marketing-automation'));
+          return (
+            <div key={area.id} className="space-y-8" id={`leistungsfeld-${area.id}`}>
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E0E0E0]/80 pb-5">
+                <div className="space-y-2 max-w-3xl">
+                  <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest">{area.label}</span>
+                  <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight">{area.headline}</h2>
+                  <p className="text-body-sm text-slate-600 leading-relaxed">{area.teaser}</p>
                 </div>
-
-                <div className="pt-6 border-t border-slate-100 mt-8 flex justify-between items-center">
-                  <span className="text-[11px] text-slate-400 font-mono font-bold uppercase tracking-wider">
-                    Leistung
-                  </span>
-                  <button
-                    onClick={() => {
-                      onNavigate(`/leistungen/${s.slug}`);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/80"
-                  >
-                    Details <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+                <Link href={`/leistungen/${area.id}`} className="text-xs font-bold text-[#686DF4] inline-flex items-center gap-1.5 shrink-0">
+                  Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
               </div>
-            );
-          })}
-        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {areaServices.map((s) => {
+                  const IconComp = servicesIcons[s.slug] || TrendingUp;
+                  const localized = servicesCopyOverride[s.slug] || { benefit: s.shortDesc, desc: s.description };
+                  return (
+                    <Link
+                      key={s.slug}
+                      href={`/leistungen/${s.slug}`}
+                      className="bg-white border border-[#E0E0E0]/65 hover:border-[#686DF4]/40 rounded-3xl p-7 flex flex-col transition-all duration-300 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:border-transparent transition-all duration-300">
+                        <IconComp className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" aria-hidden="true" />
+                      </div>
+                      <h3 className="mt-5 text-base font-bold text-slate-900 group-hover:text-[#4f54d6] transition-colors leading-tight">{s.title}</h3>
+                      <p className="text-[11px] text-[#686DF4] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
+                      <p className="text-body-sm text-slate-500 leading-relaxed mt-3 line-clamp-4">{localized.desc}</p>
+                      <span className="mt-auto pt-6 text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5">
+                        Details <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </section>
 
       {/* HOW WE COMBINE SERVICES */}
@@ -786,13 +809,10 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             ].map((ind) => {
               const IconComp = ind.icon;
               return (
-                <div 
+                <Link
                   key={ind.slug}
                   id={`industry-card-${ind.slug}`}
-                  onClick={() => {
-                    onNavigate(`/loesungen/${ind.slug}`);
-                    window.scrollTo({ top: 0, behavior: 'instant' });
-                  }}
+                  href={`/loesungen/${ind.slug}`}
                   className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:border-[#686DF4]/25 transition-all duration-300 cursor-pointer group"
                 >
                   <div className="space-y-4">
@@ -822,7 +842,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                       →
                     </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -844,7 +864,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             onClick={() => onNavigate('/kontakt')}
             className="bg-[#686DF4] hover:bg-[#686DF4]/90 text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 inline-block text-center cursor-pointer border-0"
           >
-            Erstgespräch vereinbaren
+            Potenzial besprechen
           </button>
         </div>
       </section>

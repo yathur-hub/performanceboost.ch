@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://performanceboost.ch/</loc></url>
   <url><loc>https://performanceboost.ch/leistungen</loc></url>
+  <url><loc>https://performanceboost.ch/leistungen/strategie</loc></url>
+  <url><loc>https://performanceboost.ch/leistungen/technologie-automation</loc></url>
+  <url><loc>https://performanceboost.ch/leistungen/wachstum-marketing</loc></url>
+  <url><loc>https://performanceboost.ch/leistungen/sales-revenue-operations</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/growth-strategy</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/demand-generation</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/lead-generation</loc></url>
@@ -15,6 +19,8 @@
   <url><loc>https://performanceboost.ch/leistungen/customer-retention</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/paid-social-ecommerce</loc></url>
   <url><loc>https://performanceboost.ch/loesungen</loc></url>
+  <url><loc>https://performanceboost.ch/loesungen/prozessautomatisierung</loc></url>
+  <url><loc>https://performanceboost.ch/loesungen/vertrieb-optimieren</loc></url>
   <url><loc>https://performanceboost.ch/loesungen/finanzdienstleister</loc></url>
   <url><loc>https://performanceboost.ch/loesungen/saas-software</loc></url>
   <url><loc>https://performanceboost.ch/loesungen/immobilien</loc></url>
@@ -37,6 +43,7 @@
   <url><loc>https://performanceboost.ch/ressourcen/ai-automation-b2b-sales</loc></url>
   <url><loc>https://performanceboost.ch/ressourcen/why-b2b-lead-gen-is-dead</loc></url>
   <url><loc>https://performanceboost.ch/ressourcen/swiss-dsg-tracking-compliance</loc></url>
+  <url><loc>https://performanceboost.ch/referenzen</loc></url>
   <url><loc>https://performanceboost.ch/ueber-uns</loc></url>
   <url><loc>https://performanceboost.ch/kontakt</loc></url>
   <url><loc>https://performanceboost.ch/skills</loc></url>

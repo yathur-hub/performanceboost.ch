@@ -123,7 +123,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       Wie können wir Ihnen helfen?
                     </h2>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Schreiben Sie uns kurz, wo Sie stehen. Im kostenlosen Erstgespräch (30 Minuten, per Video oder Telefon) klären wir, wo Ihre Neukundengewinnung heute Potenzial verschenkt und ob wir der richtige Partner dafür sind.
+                      Schreiben Sie uns kurz, wo Sie stehen. Im kostenlosen Erstgespräch (30 Minuten, per Video oder Telefon) klären wir, wo Ihr Unternehmen heute Potenzial verschenkt und ob wir der richtige Partner dafür sind.
                     </p>
                   </div>
 

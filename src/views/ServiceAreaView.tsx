@@ -20,6 +20,8 @@ import {
   ToolLinks,
 } from '../components/bp/Blocks';
 import { CHALLENGE_PAGES, isChallengeSlug } from '../data/challenges';
+import { SOLUTIONS_SECTORS } from '../data/solutionsData';
+import Link from '../components/Link';
 
 const InteractiveGrowthCalculator = lazy(() => import('../components/InteractiveGrowthCalculator'));
 
@@ -126,6 +128,27 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             <Suspense fallback={<div className="min-h-[480px]" aria-busy="true" />}>
               <InteractiveGrowthCalculator />
             </Suspense>
+          </Container>
+        </section>
+      )}
+
+      {/* BRANCHEN (nur Growth): bestehende Branchenseiten */}
+      {id === 'wachstum-marketing' && (
+        <section>
+          <Container className="space-y-6">
+            <SectionHeading eyebrow="Nach Branche" title="Kundengewinnung für Ihre Branche" intro="Wie Neukundengewinnung in Ihrer Branche funktioniert: typische Hürden, unser Vorgehen und ein passender Rechner." />
+            <ul className="flex flex-wrap gap-2.5">
+              {Object.values(SOLUTIONS_SECTORS).map((sector) => (
+                <li key={sector.slug}>
+                  <Link
+                    href={`/loesungen/${sector.slug}`}
+                    className="inline-block text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-full px-4 py-2 hover:border-[#686DF4]/50 hover:text-[#4f54d6] transition-colors"
+                  >
+                    {sector.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </Container>
         </section>
       )}
