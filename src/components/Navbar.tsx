@@ -21,12 +21,34 @@ import {
   Phone,
   ShoppingCart,
   RefreshCcw,
-  Landmark
+  Landmark,
+  Compass,
+  Handshake
 } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { motion, AnimatePresence } from 'motion/react';
 import { SITE } from '../config/site';
-import { SERVICE_AREAS, primaryAreaOf } from '../data/serviceAreas';
+import { SERVICE_AREAS } from '../data/serviceAreas';
+
+const AREA_ICONS = {
+  strategie: Compass,
+  'technologie-automation': Cpu,
+  'wachstum-marketing': TrendingUp,
+  'sales-revenue-operations': Handshake,
+} as const;
+
+const COMPANY_LINKS = [
+  { href: '/loesungen', label: 'Lösungen', desc: 'Nach Herausforderung und Branche' },
+  { href: '/referenzen', label: 'Referenzen', desc: 'Was Kundinnen und Kunden sagen' },
+  { href: '/ueber-uns', label: 'Über uns', desc: 'Wer hinter performanceboost steht' },
+  { href: '/skills', label: 'Skill-Factory', desc: 'Checks und Rechner für Ihre Analyse' },
+  { href: '/ressourcen', label: 'Ratgeber', desc: 'Leitfäden und Fachbeiträge' },
+];
+
+const menuItem = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 interface NavbarProps {
   currentPath: string;
@@ -76,10 +98,19 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   };
 
   // Mega-Menü nach Leistungsfeldern gruppiert; jede Leistung erscheint nur in ihrem Hauptfeld.
-  const navGroups = SERVICE_AREAS.map((area) => ({
-    area,
-    services: SERVICES.filter((s) => primaryAreaOf(s.slug)?.id === area.id),
-  }));
+  // Links pro Leistungsfeld: alle zugeordneten Leistungen; Felder mit weniger als 3 Leistungen
+  // werden mit ihren Themen ergänzt (Link auf den Hub), damit die Karten ausgewogen sind.
+  const navGroups = SERVICE_AREAS.map((area) => {
+    const services = area.services
+      .map((slug) => SERVICES.find((s) => s.slug === slug))
+      .filter((s): s is (typeof SERVICES)[number] => Boolean(s))
+      .map((s) => ({ key: s.slug, title: s.title, href: `/leistungen/${s.slug}` }));
+    const topics = area.topics
+      .filter((t) => !services.some((s) => s.title.split(' ')[0] === t.title.split(' ')[0]))
+      .slice(0, Math.max(0, 4 - services.length))
+      .map((t) => ({ key: t.title, title: t.title, href: `/leistungen/${area.id}` }));
+    return { area, services: [...services, ...topics] };
+  });
 
   return (
     <>
@@ -141,7 +172,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.995, y: -2 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#f8fafc] flex flex-col overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#f6f6f6] flex flex-col overflow-y-auto"
           >
             {/* Header Block inside drop overlay to keep alignment perfect */}
             <div className="border-b border-slate-200/65 py-3.5 px-6 sm:px-8 lg:px-10 bg-white/70 backdrop-blur-md sticky top-0 z-30">
@@ -175,106 +206,133 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               </div>
             </div>
 
-            {/* MENÜ-INHALT (Desktop und Mobile): Leistungsfelder links, Unternehmen + Kontakt rechts */}
-            <div className="flex-grow max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-10 py-8 lg:py-12" id="menu-contents">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-                <nav aria-label="Leistungen" className="lg:col-span-8">
-                  <div className="flex items-baseline justify-between mb-6">
-                    <p className="text-sm font-semibold text-slate-500">Leistungen</p>
-                    <a
-                      href="/leistungen"
-                      onClick={(e) => handleLinkClick('/leistungen', e)}
-                      className="text-sm font-semibold text-[#696EEF] hover:text-slate-900 inline-flex items-center gap-1"
-                    >
-                      Alle Leistungen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                    </a>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
-                    {navGroups.map(({ area, services }) => (
-                      <div key={area.id} className="space-y-3">
+            {/* MENÜ-INHALT: Leistungsfeld-Karten links, Navigation + Kontaktkarte rechts */}
+            <div className="flex-grow max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-10 pt-6 pb-10 lg:pt-8" id="menu-contents">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } } }}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6"
+              >
+                {/* Leistungsfelder */}
+                <nav aria-label="Leistungen" className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+                  {navGroups.map(({ area, services }) => {
+                    const Icon = AREA_ICONS[area.id];
+                    return (
+                      <motion.div
+                        key={area.id}
+                        variants={menuItem}
+                        className="group/card flex flex-col rounded-3xl bg-white border border-slate-200/70 p-5 sm:p-6 transition-all duration-300 hover:border-[#696EEF]/40 hover:shadow-[0_12px_40px_-12px_rgba(105,110,239,0.25)]"
+                      >
                         <a
                           href={`/leistungen/${area.id}`}
                           onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
-                          className="group block"
+                          className="flex items-start gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF]"
                         >
-                          <span className="block text-lg font-display font-semibold text-slate-900 group-hover:text-[#696EEF] transition-colors">
-                            {area.label}
+                          <span className="w-11 h-11 rounded-2xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0 transition-colors duration-300 group-hover/card:bg-[#696EEF] group-hover/card:text-white">
+                            <Icon className="w-5 h-5" aria-hidden="true" />
                           </span>
-                          <span className="block text-sm text-slate-500 leading-snug mt-0.5">{area.shortLabel}</span>
+                          <span className="min-w-0">
+                            <span className="block text-lg font-display font-semibold text-slate-900 leading-tight">{area.shortLabel}</span>
+                            <span className="block mt-1 text-[13px] text-slate-500 leading-snug">{area.teaser}</span>
+                          </span>
                         </a>
-                        <ul className="space-y-1.5 border-l border-slate-200 pl-4">
-                          {services.map((s) => (
-                            <li key={s.slug}>
-                              <a
-                                href={`/leistungen/${s.slug}`}
-                                onClick={(e) => handleLinkClick(`/leistungen/${s.slug}`, e)}
-                                className={`block text-sm leading-snug py-0.5 transition-colors ${
-                                  currentPath === `/leistungen/${s.slug}` ? 'text-[#696EEF] font-semibold' : 'text-slate-700 hover:text-[#696EEF]'
-                                }`}
-                              >
-                                {s.title}
-                              </a>
-                            </li>
-                          ))}
+                        <ul className="mt-4 pt-3 border-t border-slate-100 space-y-0.5">
+                          {services.map((s) => {
+                            const active = currentPath === s.href && s.href !== `/leistungen/${area.id}`;
+                            return (
+                              <li key={s.key}>
+                                <a
+                                  href={s.href}
+                                  onClick={(e) => handleLinkClick(s.href, e)}
+                                  aria-current={active ? 'page' : undefined}
+                                  className={`group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2 -mx-3 text-sm transition-colors ${
+                                    active ? 'bg-[#696EEF]/10 text-[#4f54d6] font-semibold' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
+                                  }`}
+                                >
+                                  <span>{s.title}</span>
+                                  <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#696EEF] opacity-0 -translate-x-1 transition-all group-hover/link:opacity-100 group-hover/link:translate-x-0" aria-hidden="true" />
+                                </a>
+                              </li>
+                            );
+                          })}
                         </ul>
-                      </div>
-                    ))}
-                  </div>
+                        <a
+                          href={`/leistungen/${area.id}`}
+                          onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
+                          className="mt-auto pt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#696EEF] hover:text-[#4f54d6]"
+                        >
+                          Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                        </a>
+                      </motion.div>
+                    );
+                  })}
                 </nav>
 
-                <div className="lg:col-span-4 lg:border-l lg:border-slate-200 lg:pl-12 space-y-8">
-                  <nav aria-label="Unternehmen">
-                    <ul className="space-y-1">
-                      {[
-                        { href: '/loesungen', label: 'Lösungen', desc: 'Nach Herausforderung und Branche' },
-                        { href: '/referenzen', label: 'Referenzen', desc: 'Was Kundinnen und Kunden sagen' },
-                        { href: '/ueber-uns', label: 'Über uns', desc: 'Wer hinter performanceboost steht' },
-                        { href: '/skills', label: 'Skill-Factory', desc: 'Checks und Rechner für Ihre Analyse' },
-                        { href: '/ressourcen', label: 'Ratgeber', desc: 'Leitfäden und Fachbeiträge' },
-                      ].map((l) => (
-                        <li key={l.href}>
-                          <a
-                            href={l.href}
-                            onClick={(e) => handleLinkClick(l.href, e)}
-                            className="group flex items-center justify-between gap-4 py-2.5 border-b border-slate-200/70"
-                          >
-                            <span>
-                              <span className="block text-base font-display font-semibold text-slate-900 group-hover:text-[#696EEF] transition-colors">{l.label}</span>
-                              <span className="block text-xs text-slate-500">{l.desc}</span>
-                            </span>
-                            <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#696EEF] shrink-0" aria-hidden="true" />
-                          </a>
-                        </li>
-                      ))}
+                {/* Navigation + Kontakt */}
+                <div className="lg:col-span-4 flex flex-col gap-5">
+                  <motion.nav variants={menuItem} aria-label="Unternehmen" className="rounded-3xl bg-white border border-slate-200/70 p-2">
+                    <ul>
+                      {COMPANY_LINKS.map((l) => {
+                        const active = currentPath === l.href;
+                        return (
+                          <li key={l.href}>
+                            <a
+                              href={l.href}
+                              onClick={(e) => handleLinkClick(l.href, e)}
+                              aria-current={active ? 'page' : undefined}
+                              className={`group flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors ${active ? 'bg-[#696EEF]/10' : 'hover:bg-slate-50'}`}
+                            >
+                              <span className="flex-1 min-w-0">
+                                <span className={`block font-display font-semibold ${active ? 'text-[#4f54d6]' : 'text-slate-900 group-hover:text-[#4f54d6]'} transition-colors`}>{l.label}</span>
+                                <span className="block text-xs text-slate-500 truncate">{l.desc}</span>
+                              </span>
+                              <ArrowRight className="w-4 h-4 text-slate-300 transition-all group-hover:text-[#696EEF] group-hover:translate-x-0.5" aria-hidden="true" />
+                            </a>
+                          </li>
+                        );
+                      })}
                     </ul>
-                  </nav>
+                  </motion.nav>
 
-                  <div className="space-y-4">
+                  <motion.div variants={menuItem} className="relative overflow-hidden rounded-3xl bg-slate-950 text-white p-6">
+                    <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#696EEF]/30 blur-3xl pointer-events-none" aria-hidden="true" />
+                    <div className="relative flex items-center gap-3">
+                      <img
+                        src={SITE.portraitUrl}
+                        alt="Yathur Nathan"
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 rounded-2xl object-cover border border-white/15"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div>
+                        <p className="font-display font-semibold leading-tight">Yathur Nathan</p>
+                        <p className="text-xs text-slate-400">Inhaber, Ihr direkter Ansprechpartner</p>
+                      </div>
+                    </div>
+                    <p className="relative mt-4 text-sm text-slate-300 leading-relaxed">
+                      30 Minuten, kostenlos: Wir schauen gemeinsam, wo in Ihrem Unternehmen der grösste Hebel liegt.
+                    </p>
                     <a
                       href="/kontakt"
                       onClick={(e) => handleLinkClick('/kontakt', e)}
-                      className="w-full inline-flex items-center justify-center gap-2 min-h-12 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold px-6 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
                       id="mega-menu-cta"
+                      className="relative mt-5 w-full inline-flex items-center justify-center gap-2 min-h-12 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold px-6 py-3 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
                     >
-                      Potenzial besprechen <ArrowRight className="w-4.5 h-4.5" aria-hidden="true" />
+                      Potenzial besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </a>
-                    <p className="text-xs text-slate-500 text-center">30 Minuten, kostenlos und unverbindlich</p>
-                    <div className="flex flex-col gap-2 pt-2 text-sm">
-                      <a href={SITE.phoneHref} className="inline-flex items-center gap-2.5 text-slate-700 hover:text-[#696EEF] font-semibold">
-                        <Phone className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> {SITE.phoneDisplay}
+                    <div className="relative mt-4 flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs text-slate-400">
+                      <a href={SITE.phoneHref} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+                        <Phone className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.phoneDisplay}
                       </a>
-                      <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2.5 text-slate-700 hover:text-[#696EEF] font-semibold">
-                        <Mail className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> {SITE.email}
+                      <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+                        <Mail className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.email}
                       </a>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
-            </div>
-
-            {/* STATIC FOOTER RETAINED */}
-            <div className="bg-slate-100 border-t border-slate-200/80 py-6 px-6 sm:px-8 lg:px-10 z-15 text-center text-[11px] text-slate-400/90 font-mono tracking-widest uppercase mt-auto">
-              © {new Date().getFullYear()} <span className="normal-case">performanceboost</span> · Fläsch, Graubünden
+              </motion.div>
             </div>
 
           </motion.div>

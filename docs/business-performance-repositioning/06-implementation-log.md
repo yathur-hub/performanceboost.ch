@@ -87,3 +87,9 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 - **Buttonfarbe `#696EEF`** (Hover `#5a5fe0`) für alle Primär-Buttons und aktiven Zustände (55 Stellen inkl. Rechner und Formulare); `CtaButton` beide Varianten.
 - **Mega-Menü neu:** keine wechselnde Vorschau pro Menüpunkt, keine Icons; links die 4 Leistungsfelder mit ihren Leistungen als Textlinks, rechts Lösungen, Referenzen, Über uns, Skill-Factory, Ratgeber, CTA, Telefon/E-Mail. Finanzdienstleister aus dem Menü entfernt (bleibt im Footer und unter Lösungen). Desktop und Mobile nutzen dieselbe Struktur. `Navbar.tsx` von 776 auf 285 Zeilen.
 - **«Skill-Factory»** ersetzt «Selbst-Checks» in Menü, Footer, Hubs, H1 und Title von `/skills`.
+
+## Mega-Menü Redesign (05.11.2026, zweite Runde)
+
+- Die textlastige Listenansicht ersetzt durch vier **Leistungsfeld-Karten** (Icon, deutscher Feldname, Kurzbeschreibung, Leistungen als Linkzeilen mit Hover-Pfeil, «Zum Leistungsfeld»). Felder mit weniger als vier Leistungen werden mit ihren Themen ergänzt (Link auf den Hub), damit die Karten ausgewogen sind; «Marketing Automation & CRM» erscheint in Technologie und Vertrieb.
+- Rechts: Navigationskarte (Lösungen, Referenzen, Über uns, Skill-Factory, Ratgeber) mit Markierung der aktuellen Seite und eine dunkle **Kontaktkarte** mit Porträt, CTA «Potenzial besprechen» (#696EEF), Telefon und E-Mail.
+- Dezente gestaffelte Einblend-Animation, Hintergrund #f6f6f6, mobil alle Karten untereinander ohne horizontales Scrollen.
