@@ -13,12 +13,17 @@ const ContactView = lazy(() => import('./views/ContactView'));
 const LegalView = lazy(() => import('./views/LegalView'));
 const SolutionDetailView = lazy(() => import('./views/SolutionDetailView'));
 const FinanceLandingView = lazy(() => import('./views/FinanceLandingView'));
+const ServiceAreaView = lazy(() => import('./views/ServiceAreaView'));
+const ChallengeView = lazy(() => import('./views/ChallengeView'));
+const ReferencesView = lazy(() => import('./views/ReferencesView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeView from './views/HomeView';
 import NotFoundView from './views/NotFoundView';
 import { parseRoute } from './lib/routes';
 import type { FinanceSlug } from './data/financeLanding';
+import type { AreaId } from './data/serviceAreas';
+import type { ChallengeSlug } from './data/challenges';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
 import { motion, AnimatePresence } from 'motion/react';
@@ -114,6 +119,13 @@ function AppContent() {
             {parsed.view === 'finanz' && parsed.slug && (
               <FinanceLandingView slug={parsed.slug as FinanceSlug} />
             )}
+            {parsed.view === 'leistungsfeld' && parsed.slug && (
+              <ServiceAreaView id={parsed.slug as AreaId} />
+            )}
+            {parsed.view === 'loesung_herausforderung' && parsed.slug && (
+              <ChallengeView slug={parsed.slug as ChallengeSlug} />
+            )}
+            {parsed.view === 'referenzen' && <ReferencesView />}
             {parsed.view === 'leistungen' && (
               <ServicesView currentSlug={parsed.slug} onNavigate={handleNavigate} />
             )}

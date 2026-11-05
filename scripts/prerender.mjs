@@ -3,8 +3,10 @@
 // Cloudflare liefert /loesungen/x aus dist/loesungen/x.html aus; unbekannte Pfade fallen weiter auf
 // dist/index.html zurück (SPA). Im Browser ersetzt createRoot den Inhalt von #root vollständig.
 //
-// Die Startseite wird bewusst nicht vorgerendert: dist/index.html ist zugleich die Rückfallseite für
-// alle anderen Pfade und darf deshalb weder Startseiten-Inhalt noch Canonical enthalten.
+// Die Startseite wird zuletzt in dist/index.html geschrieben (seit der Business-Performance-Repositionierung):
+// Crawler und KI-Systeme sehen so Inhalt, H1 und Schema der Startseite im Roh-HTML. dist/index.html ist
+// zugleich die SPA-Rückfallseite für unbekannte Pfade; diese zeigen kurz den Startseiten-Inhalt, bis React
+// die 404-Ansicht rendert (setzt noindex). Alle gültigen, verlinkten Routen haben eine eigene HTML-Datei.
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -76,11 +78,25 @@ for (const path of indexablePaths()) {
   }
 }
 
+// Startseite als letzte, damit `template` für alle anderen Seiten die leere Shell bleibt.
+location.pathname = '/';
+location.href = 'https://performanceboost.ch/';
+try {
+  const body = await render();
+  if (!/<h1[\s>]/.test(body)) throw new Error('kein <h1> im Ergebnis');
+  const html = withHead(template, buildHeadTags(parseRoute('/'))).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+  writeFileSync(resolve(distDir, 'index.html'), html);
+  written++;
+} catch (err) {
+  failed.push('/');
+  console.warn(`prerender: / übersprungen (${err.message})`);
+}
+
 rmSync(ssrDir, { recursive: true, force: true });
 console.log(`prerender: ${written} Seiten geschrieben, ${failed.length} übersprungen`);
 
-// Die Finanz-Landingpages müssen vorgerendert sein (SEO-Vorgabe S2); alles andere ist Bonus.
-const required = failed.filter((p) => /^\/loesungen\/(finanzdienstleister|hypothekarberatung|vorsorgeberatung|versicherungsbroker)$/.test(p));
+// Startseite und Finanz-Landingpages müssen vorgerendert sein (SEO-Vorgabe S2); alles andere ist Bonus.
+const required = failed.filter((p) => p === '/' || /^\/loesungen\/(finanzdienstleister|hypothekarberatung|vorsorgeberatung|versicherungsbroker)$/.test(p));
 if (required.length) {
   console.error(`prerender: Pflichtseiten fehlgeschlagen: ${required.join(', ')}`);
   process.exit(1);
