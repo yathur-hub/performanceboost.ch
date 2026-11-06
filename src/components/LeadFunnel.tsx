@@ -6,6 +6,7 @@
  */
 import React, { useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Check, CheckCircle2, AlertCircle, Lock } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { trackEvent } from '../lib/analytics';
 import { getAttribution } from '../lib/attribution';
 import { parseRoute } from '../lib/routes';
@@ -167,8 +168,16 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
         </div>
       </div>
 
+      <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={question ? question.id : 'contact'}
+        initial={{ opacity: 0, x: 24 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -24 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+      >
       {question ? (
-        <fieldset key={question.id} className="space-y-4 animate-fadeIn">
+        <fieldset className="space-y-4">
           <legend className="text-xl sm:text-2xl font-display font-semibold text-slate-950 leading-snug">{question.label}</legend>
           {question.hint && <p className="text-sm text-slate-500 -mt-2">{question.hint}</p>}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -212,7 +221,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           )}
         </fieldset>
       ) : (
-        <form ref={formRef} onSubmit={submit} noValidate className="space-y-4 animate-fadeIn">
+        <form ref={formRef} onSubmit={submit} noValidate className="space-y-4">
           <div>
             <h3 className="text-xl sm:text-2xl font-display font-semibold text-slate-950 leading-snug">Wohin dürfen wir Ihre Einschätzung senden?</h3>
             <p className="mt-1 text-sm text-slate-500">Sie erhalten innert eines Arbeitstags eine persönliche Antwort.</p>
@@ -301,6 +310,8 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           </p>
         </form>
       )}
+      </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

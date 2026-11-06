@@ -139,7 +139,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
           {/* HERO SECTION WITH DYNAMIC INTERACTIVE AUDITS */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+            <div className="hero-enter lg:col-span-5 space-y-6 lg:sticky lg:top-24">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#686DF4] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <IconComponent className="w-5.5 h-5.5" />

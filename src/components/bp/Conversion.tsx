@@ -137,7 +137,9 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void }> = ({ onFallba
       const form = document.getElementById('lead-cta');
       const formTop = form ? form.getBoundingClientRect().top : Infinity;
       const formVisible = formTop < window.innerHeight && (form?.getBoundingClientRect().bottom ?? 0) > 0;
-      setVisible(window.scrollY > 520 && !formVisible);
+      const footer = document.getElementById('site-footer');
+      const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight : false;
+      setVisible(window.scrollY > 520 && !formVisible && !footerVisible);
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });

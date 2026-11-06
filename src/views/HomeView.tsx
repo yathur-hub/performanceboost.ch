@@ -75,7 +75,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section className="relative pt-36 pb-14 md:pt-40 md:pb-16 overflow-hidden bg-white">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+            <div className="hero-enter lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
               <h1 className="text-[2.1rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.6rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08]">
                 Mehr Performance für Ihr Unternehmen.{' '}
                 <span className="text-[#696EEF] italic font-serif">Strategie, Technologie, Wachstum.</span>
@@ -109,8 +109,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   alt=""
                   decoding="async"
                   draggable={false}
-                  className="absolute inset-0 h-full w-full"
+                  className="smoke-in absolute inset-0 h-full w-full"
                 />
+                <div className="rocket-in absolute inset-0">
                 <img
                   src="/images/hero-rocket-650.webp"
                   srcSet="/images/hero-rocket-400.webp 400w, /images/hero-rocket-650.webp 650w"
@@ -123,6 +124,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   draggable={false}
                   className="absolute inset-0 h-full w-full animate-rocket"
                 />
+                </div>
               </div>
             </div>
           </div>

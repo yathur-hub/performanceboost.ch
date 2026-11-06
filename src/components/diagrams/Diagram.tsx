@@ -76,7 +76,7 @@ function Flow({ nodes }: { nodes: DiagramNode[] }) {
   return (
     <ol className="space-y-0">
       {nodes.map((n, i) => (
-        <li key={n.title}>
+        <li key={n.title} style={{ ['--d' as string]: i } as React.CSSProperties}>
           <NodeCard node={n} index={i} active={i === nodes.length - 1} />
           {i < nodes.length - 1 && (
             <span className="flex justify-center py-1.5 text-[#696EEF]/50" aria-hidden="true">
@@ -106,20 +106,20 @@ function Hub({ center, nodes }: { center: DiagramNode; nodes: DiagramNode[] }) {
         </svg>
         <div className="relative grid grid-cols-3 grid-rows-3 gap-3 min-h-[360px]">
           {nodes.slice(0, 6).map((n, i) => (
-            <div key={n.title} className="flex items-center" style={{ gridColumn: slots[i][0] + 1, gridRow: slots[i][1] + 1 }}>
+            <div key={n.title} className="flex items-center" style={{ gridColumn: slots[i][0] + 1, gridRow: slots[i][1] + 1, ['--d' as string]: i + 1 } as React.CSSProperties}>
               <div className="w-full"><NodeCard node={n} compact /></div>
             </div>
           ))}
-          <div className="flex items-center" style={{ gridColumn: 2, gridRow: 2 }}>
+          <div className="flex items-center" style={{ gridColumn: 2, gridRow: 2, ['--d' as string]: 0 } as React.CSSProperties}>
             <div className="w-full"><NodeCard node={center} active compact /></div>
           </div>
         </div>
       </div>
       {/* Mobil: Zentrum oben, Satelliten als Raster */}
       <div className="sm:hidden space-y-3">
-        <NodeCard node={center} active />
+        <div style={{ ['--d' as string]: 0 } as React.CSSProperties}><NodeCard node={center} active /></div>
         <div className="grid grid-cols-2 gap-2.5">
-          {nodes.map((n) => <NodeCard key={n.title} node={{ ...n, sub: undefined }} compact />)}
+          {nodes.map((n, i) => <div key={n.title} style={{ ['--d' as string]: i + 1 } as React.CSSProperties}><NodeCard node={{ ...n, sub: undefined }} compact /></div>)}
         </div>
       </div>
     </div>
@@ -136,7 +136,7 @@ function Funnel({ nodes }: { nodes: DiagramNode[] }) {
         const active = i === n - 1;
         const Icon = ICONS[node.icon ?? 'CheckCircle2'];
         return (
-          <li key={node.title} className="flex flex-col items-center">
+          <li key={node.title} className="flex flex-col items-center" style={{ ['--d' as string]: i } as React.CSSProperties}>
             <div
               className={`flex items-center gap-3 rounded-2xl px-4 py-3 border transition-colors ${
                 active ? 'bg-[#696EEF] border-[#696EEF] text-white' : 'bg-white border-slate-200/80'
@@ -164,7 +164,7 @@ function LayersDiagram({ nodes }: { nodes: DiagramNode[] }) {
       {nodes.map((node, i) => {
         const width = 64 + (i * 36) / Math.max(1, n - 1);
         return (
-          <li key={node.title} className="flex justify-center">
+          <li key={node.title} className="flex justify-center" style={{ ['--d' as string]: i } as React.CSSProperties}>
             <div style={{ width: `${width}%` }}>
               <NodeCard node={node} active={i === 0} compact />
             </div>
@@ -186,7 +186,7 @@ function Cycle({ center, nodes }: { center: string; nodes: DiagramNode[] }) {
       <div className="relative grid grid-cols-2 gap-x-3 gap-y-16 sm:gap-y-20">
         {[items[0], items[1], items[3], items[2]].map((node, i) =>
           node ? (
-            <NodeCard key={node.title} node={node} index={[0, 1, 3, 2][i]} compact />
+            <div key={node.title} style={{ ['--d' as string]: [0, 1, 3, 2][i] } as React.CSSProperties}><NodeCard node={node} index={[0, 1, 3, 2][i]} compact /></div>
           ) : (
             <span key={i} />
           ),
@@ -203,7 +203,7 @@ function Cycle({ center, nodes }: { center: string; nodes: DiagramNode[] }) {
 
 export function Diagram({ spec, className = '' }: { spec: DiagramSpec; className?: string }) {
   return (
-    <figure className={`rounded-3xl bg-gradient-to-b from-white to-[#f7f7fe] border border-slate-200/70 p-4 sm:p-6 ${className}`}>
+    <figure className={`diagram-enter rounded-3xl bg-gradient-to-b from-white to-[#f7f7fe] border border-slate-200/70 p-4 sm:p-6 ${className}`}>
       {spec.type === 'flow' && <Flow nodes={spec.nodes} />}
       {spec.type === 'hub' && <Hub center={spec.center} nodes={spec.nodes} />}
       {spec.type === 'funnel' && <Funnel nodes={spec.nodes} />}

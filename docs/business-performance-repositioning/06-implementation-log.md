@@ -144,3 +144,14 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
 - Neu: Marke · Leistungen (4 Leistungsfelder) · Unternehmen (Lösungen, Referenzen, Über uns, Skill-Factory, Ratgeber, Kontakt) · Kontakt (Adresse, E-Mail, Telefon) · Impressum/Datenschutz.
 - Entfernt: Einzelleistungen, E-Commerce-Liste, Finanzdienstleister. Alle betroffenen Seiten bleiben über Hubs, /leistungen, /loesungen und Querlinks verlinkt (geprüft: Finanzseiten 3–7, Leistungsseiten ≥ 4 eingehende Links).
 - Mobiles Mega-Menü (06.11.2026): Leistungsfeld-Karten unter 640 px als Akkordeon (Icon, Titel, Plus-Button; Plus dreht sich beim Öffnen zum ×). Unterpunkte und «Zum Leistungsfeld» erscheinen erst nach Klick; beim Schliessen des Menüs klappt alles wieder zu. Ab 640 px unverändert.
+
+## Animationen (06.11.2026)
+
+- Einheitliches System in `src/index.css` + `src/lib/useScrollReveal.ts`:
+  - Hero: Inhalte gestaffelt von unten (`.hero-enter`, reines CSS), Rakete fliegt ein (`.rocket-in`), Rauch blendet ein (`.smoke-in`), danach Schwebe-Animation.
+  - Scroll: Abschnitte unterhalb des sichtbaren Bereichs gleiten beim ersten Sichtkontakt herein, Karten und Listen gestaffelt (`.reveal`, `.reveal-item`). Abschnitte mit bestehenden Framer-Motion-Animationen werden ausgelassen (keine Doppelanimation); ohne JavaScript bleibt alles sichtbar.
+  - Themengrafiken: Knoten erscheinen nacheinander (`.diagram-enter`, `--d`).
+  - Ausgang/Übergang: Seitenwechsel (bestehend), Overlay und Menü (bestehend), mobiles Menü-Akkordeon weich auf/zu, FAQ weich auf/zu (Browser mit `interpolate-size`), Formularstrecke mit Slide zwischen den Schritten.
+  - Erstaufruf ohne Seitenwechsel-Einblendung (`AnimatePresence initial={false}`): vorgerenderter Inhalt sofort sichtbar (bessere Ladezeit), Hero animiert per CSS.
+  - `prefers-reduced-motion`: alles aus.
+- Sticky-CTA mobil blendet zusätzlich am Footer aus.
