@@ -44,7 +44,6 @@ const ORGANIZATION = {
     'Tracking und Reporting',
   ],
   sameAs: [SITE.linkedinPerson],
-  telephone: SITE.phoneDisplay,
   email: SITE.email,
   founder: { '@type': 'Person', name: SITE.owner, sameAs: [SITE.linkedinPerson] },
   address: {
@@ -271,7 +270,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'kontakt': {
       const title = 'Kontakt & Erstgespräch | performanceboost';
       const description =
-        'Schildern Sie uns kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort von Yathur Nathan. Telefon +41 78 675 40 97.';
+        'Schildern Sie uns kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort von Yathur Nathan.';
       return { ...base, title, description, schema: webPage('ContactPage', url, title, description) };
     }
     case 'impressum':

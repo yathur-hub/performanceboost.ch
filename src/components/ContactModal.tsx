@@ -4,12 +4,11 @@
  * Mobil als Vollbild-Sheet, ab sm als zentriertes Fenster. Escape und Klick auf den Hintergrund schliessen.
  */
 import React, { useEffect, useMemo, useRef } from 'react';
-import { X, Phone, Clock, ShieldCheck, UserCheck } from 'lucide-react';
+import { X, Clock, ShieldCheck, UserCheck, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import LeadFunnel from './LeadFunnel';
 import { SITE } from '../config/site';
 import { resolveFlow } from '../data/leadFlows';
-import { trackEvent } from '../lib/analytics';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -90,11 +89,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <li className="flex gap-2.5"><ShieldCheck className="w-4.5 h-4.5 text-[#9fa2f7] shrink-0" aria-hidden="true" /> Kostenlos und unverbindlich</li>
               </ul>
               <a
-                href={SITE.phoneHref}
-                onClick={() => trackEvent('phone_click', { cta_location: 'overlay' })}
+                href={`mailto:${SITE.email}`}
                 className="mt-auto pt-8 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#9fa2f7]"
               >
-                <Phone className="w-4 h-4" aria-hidden="true" /> Lieber anrufen? {SITE.phoneDisplay}
+                <Mail className="w-4 h-4" aria-hidden="true" /> Lieber per E-Mail? {SITE.email}
               </a>
             </aside>
 
@@ -116,11 +114,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <LeadFunnel flow={flow} formLocation={location} onDone={onClose} />
               </div>
               <a
-                href={SITE.phoneHref}
-                onClick={() => trackEvent('phone_click', { cta_location: 'overlay' })}
+                href={`mailto:${SITE.email}`}
                 className="sm:hidden border-t border-slate-100 px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-sm text-slate-600 inline-flex items-center gap-2"
               >
-                <Phone className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> Lieber anrufen? <span className="font-semibold text-slate-900">{SITE.phoneDisplay}</span>
+                <Mail className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> Lieber per E-Mail? <span className="font-semibold text-slate-900">{SITE.email}</span>
               </a>
             </div>
           </motion.div>

@@ -218,7 +218,7 @@ export default function FinanceLeadForm({ pageSlug, defaultSegment, toolContext 
             : 'Wir sehen uns Ihre Website an und melden uns innert eines Arbeitstags, um einen Termin für den Anfrage-Check zu vereinbaren.'}
         </p>
         <p className="text-sm text-slate-600">
-          Lieber sofort sprechen? <a href={SITE.phoneHref} className="underline font-semibold">{SITE.phoneDisplay}</a>
+          Lieber direkt schreiben? <a href={`mailto:${SITE.email}`} className="underline font-semibold">{SITE.email}</a>
         </p>
       </motion.div>
     );

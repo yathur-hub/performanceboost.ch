@@ -4,8 +4,6 @@ export const SITE = {
   baseUrl: 'https://performanceboost.ch',
   owner: 'Yathur Nathan',
   email: 'hallo@performanceboost.ch',
-  phoneDisplay: '+41 78 675 40 97',
-  phoneHref: 'tel:+41786754097',
   street: 'Patschär 4',
   postalCode: '7306',
   locality: 'Fläsch',

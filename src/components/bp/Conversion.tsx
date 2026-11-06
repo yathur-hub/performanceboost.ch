@@ -8,7 +8,7 @@
  */
 import { Visual3D, type VisualId } from '../Visual3D';
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Check, Clock, ListChecks, Phone, Send, ShieldCheck, UserCheck } from 'lucide-react';
+import { ArrowRight, Check, Clock, ListChecks, Send, ShieldCheck, UserCheck, Mail } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
 import { SITE } from '../../config/site';
 import { trackEvent } from '../../lib/analytics';
@@ -83,11 +83,10 @@ export function LeadCtaSection({
                 <p className="font-display font-semibold">Yathur Nathan</p>
                 <p className="text-slate-400">Inhaber, Ihr direkter Ansprechpartner</p>
                 <a
-                  href={SITE.phoneHref}
-                  onClick={() => trackEvent('phone_click', { cta_location: formLocation })}
+                  href={`mailto:${SITE.email}`}
                   className="mt-1 inline-flex items-center gap-1.5 text-white hover:text-[#9fa2f7] font-semibold"
                 >
-                  <Phone className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.phoneDisplay}
+                  <Mail className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.email}
                 </a>
               </div>
             </div>
@@ -173,15 +172,6 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void }> = ({ onFallba
         >
           Potenzial besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </button>
-        <a
-          href={SITE.phoneHref}
-          tabIndex={visible ? 0 : -1}
-          onClick={() => trackEvent('phone_click', { cta_location: 'sticky_mobile' })}
-          aria-label={`Anrufen: ${SITE.phoneDisplay}`}
-          className="w-12 h-12 shrink-0 inline-flex items-center justify-center rounded-full border border-slate-300 text-slate-800"
-        >
-          <Phone className="w-5 h-5" aria-hidden="true" />
-        </a>
       </div>
     </div>
   );

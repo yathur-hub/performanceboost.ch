@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import {
-  ArrowLeft, ArrowRight, Check, CheckCircle2, ChevronDown, KeyRound, LineChart, Phone, Quote, ShieldCheck, UserRound, X,
-} from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, CheckCircle2, ChevronDown, KeyRound, LineChart, Quote, ShieldCheck, UserRound, X, Mail } from 'lucide-react';
 import Link from '../components/Link';
 import FinanceLeadForm from '../components/FinanceLeadForm';
 import FinanceGrowthCheck from '../components/FinanceGrowthCheck';
@@ -485,11 +483,10 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                   Anfrage-Check anfragen <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </button>
                 <a
-                  href={SITE.phoneHref}
-                  onClick={() => trackEvent('phone_click', { cta_location: 'ansprechperson', page_slug: slug })}
+                  href={`mailto:${SITE.email}`}
                   className="inline-flex min-h-12 items-center justify-center gap-2 px-2 text-sm font-semibold text-slate-900 underline-offset-2 hover:underline"
                 >
-                  <Phone className="h-4 w-4" aria-hidden="true" /> 078 675 40 97
+                  <Mail className="h-4 w-4" aria-hidden="true" /> {SITE.email}
                 </a>
               </div>
             </div>
