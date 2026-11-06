@@ -2,7 +2,7 @@
 
 Stand: 06.11.2026 · Branch `copy/natural-language`
 
-## Geänderte Dateien (28, 243 Zeilen geändert, 243 hinzugefügt)
+## Geänderte Dateien (28 Dateien, 243 Zeilen ersetzt)
 
 - `src/components/FinanceGrowthCheck.tsx`
 - `src/components/FinanceLeadForm.tsx`
