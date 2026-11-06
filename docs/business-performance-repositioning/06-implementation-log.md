@@ -155,3 +155,15 @@ Branch: `feature/business-performance-repositioning` (ab `main` 908a6e6) · Stan
   - Erstaufruf ohne Seitenwechsel-Einblendung (`AnimatePresence initial={false}`): vorgerenderter Inhalt sofort sichtbar (bessere Ladezeit), Hero animiert per CSS.
   - `prefers-reduced-motion`: alles aus.
 - Sticky-CTA mobil blendet zusätzlich am Footer aus.
+
+## 3D-Visuals (06.11.2026)
+
+- Quelle: Brand Assets «3D Visuals» Vol. 1 + 2 (`web/*.webp`), 26 von 31 Motiven eingesetzt, als 480/960-px-Varianten in `public/images/3d/` (16–126 KB).
+- Komponente `src/components/Visual3D.tsx`: rein dekorativ (`alt=""`, `aria-hidden`), `srcset`, feste Masse gegen Layout-Shift, Lazy Loading; Zuordnung in `VISUAL_BY_AREA`, `VISUAL_BY_PILLAR`, `VISUAL_BY_SERVICE`, `VISUAL_BY_CHALLENGE`.
+- Einsatz:
+  - Startseite: Säulen (Kompass, Würfel, Treppe), Leistungsfeld-Karten (Leitobjekte, ab sm), Referenzen (Pokal), Schluss-CTA (Startplattform, ab lg).
+  - Leistungsfeld-Hubs: Leitobjekt im Hero (ab lg).
+  - Leistungsseiten und Herausforderungsseiten: eigenes Objekt in der dunklen Spalte der `LeadCtaSection` (neue Prop `visual`).
+  - Weitere Seiten: Über uns (Waage), Referenzen-Hero (Pokal), Skill-Factory (Energiekern), Ratgeber (Satellit), 404 (alternative Rakete).
+- Bewusst ohne Visuals: Mega-Menü, Kontakt-Overlay, Footer, Branchenseiten.
+- Reserve: Stoppuhr, Turm, Puzzle, Drohne, Quantencomputer.

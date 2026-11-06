@@ -1,4 +1,5 @@
 import React from 'react';
+import { Visual3D } from '../components/Visual3D';
 import { ArrowRight } from 'lucide-react';
 
 interface NotFoundViewProps {
@@ -21,6 +22,7 @@ export default function NotFoundView({ onNavigate }: NotFoundViewProps) {
   return (
     <section className="pt-36 pb-24 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto text-center space-y-6">
+        <Visual3D id="rocket-alt" priority sizes="260px" className="mx-auto h-32 sm:h-40 w-auto -rotate-6" />
         <p className="text-xs font-mono font-bold tracking-wider text-[#686DF4]">FEHLER 404</p>
         <h1 className="text-3xl sm:text-4xl font-display font-semibold tracking-tight text-slate-950">
           Diese Seite gibt es nicht (mehr).

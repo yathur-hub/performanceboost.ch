@@ -1,4 +1,5 @@
 /** Problemorientierte Lösungsseite (/loesungen/prozessautomatisierung, /loesungen/vertrieb-optimieren). */
+import { VISUAL_BY_CHALLENGE } from '../components/Visual3D';
 import React from 'react';
 import { CHALLENGE_PAGES, type ChallengeSlug } from '../data/challenges';
 import { CHALLENGE_DIAGRAMS } from '../data/diagrams';
@@ -152,7 +153,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
         </Container>
       </section>
 
-      <LeadCtaSection formLocation={`challenge_${slug}`} title="Wo verliert Ihr Unternehmen heute Zeit oder Umsatz?" />
+      <LeadCtaSection formLocation={`challenge_${slug}`} title="Wo verliert Ihr Unternehmen heute Zeit oder Umsatz?" visual={VISUAL_BY_CHALLENGE[slug]} />
     </div>
   );
 }

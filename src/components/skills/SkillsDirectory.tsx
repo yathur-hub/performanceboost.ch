@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Visual3D } from '../Visual3D';
 import React, { useState, useMemo } from 'react';
 import { Search, ExternalLink, SlidersHorizontal, ArrowRight, Github } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -82,7 +83,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
-          
+          <Visual3D id="energy-core" priority sizes="160px" className="mx-auto h-28 sm:h-36 w-auto animate-float" />
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1A1A2E] tracking-tight leading-tight">
             <span className="block text-[#696EEF]">Skill-Factory</span> Erst prüfen, dann gezielt handeln.
           </h1>

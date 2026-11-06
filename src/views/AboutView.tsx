@@ -317,7 +317,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
         </div>
       </section>
 
-      <LeadCtaSection formLocation="ueber_uns" title="Lernen wir uns kennen." />
+      <LeadCtaSection formLocation="ueber_uns" title="Lernen wir uns kennen." visual="balance" />
 
     </div>
   );

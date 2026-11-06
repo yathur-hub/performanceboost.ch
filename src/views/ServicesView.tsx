@@ -1,4 +1,5 @@
 import React from 'react';
+import { VISUAL_BY_SERVICE } from '../components/Visual3D';
 import { SERVICES } from '../data/services';
 import { 
   TrendingUp, Megaphone, Users, Cpu, Layers, Sparkles, PieChart, ShieldAlert,
@@ -450,6 +451,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             title={extendedContent.cta.headline}
             intro={extendedContent.cta.subheadline}
             formLocation={`leistung_${service.slug}`}
+            visual={VISUAL_BY_SERVICE[service.slug]}
           />
 
         </div>

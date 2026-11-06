@@ -2,6 +2,7 @@
  * Hub-Seite eines Leistungsfelds (/leistungen/strategie, /technologie-automation, /wachstum-marketing,
  * /sales-revenue-operations). Inhalte aus src/data/serviceAreas.ts.
  */
+import { Visual3D, VISUAL_BY_AREA } from '../components/Visual3D';
 import React from 'react';
 import { getArea, servicesOf, SERVICE_AREAS, type AreaId } from '../data/serviceAreas';
 import { SERVICES } from '../data/services';
@@ -46,7 +47,8 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Leistungen', href: '/leistungen' }, { label: area.label }]} />
-          <div className="hero-enter max-w-4xl space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="hero-enter lg:col-span-8 max-w-4xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               {area.headline}
             </h1>
@@ -55,6 +57,10 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
               <CtaButton label={area.ctaLabel} location={`hub_${id}_hero`} pageSlug={id} />
             </div>
             <HeroTrust />
+          </div>
+          <div className="hidden lg:flex lg:col-span-4 justify-center rocket-in">
+            <Visual3D id={VISUAL_BY_AREA[id]} priority sizes="340px" className="max-h-80 w-auto max-w-full animate-float" />
+          </div>
           </div>
         </Container>
       </section>
