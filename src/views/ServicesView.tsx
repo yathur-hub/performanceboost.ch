@@ -74,14 +74,14 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     },
     'data-analytics': {
       benefit: 'Sie sehen, was funktioniert und wo Budget verloren geht.',
-      desc: 'Datenschutzkonformes Tracking, Dashboards und Berichte, die Entscheidungen auf Zahlen stützen. Von der Website-Messung bis zur Zuordnung von Umsatz zu Kanälen.'
+      desc: 'Datenschutzkonformes Tracking, Dashboards und Berichte, damit Sie nach Zahlen entscheiden. Wir messen die Website und ordnen den Umsatz den Kanälen zu, aus denen er kommt.'
     },
     'dtc-growth-acquisition': {
       benefit: 'Kundengewinnung, deren Kosten Sie kennen.',
       desc: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine verlässliche Kundengewinnung. Wir ordnen Ihre Kampagnen, verbessern den Shop und messen Kosten pro Kunde und Kundenwert.'
     },
     'customer-retention': {
-      benefit: 'Bestehende Kunden gezielt halten und zurückholen.',
+      benefit: 'Bestehende Kunden halten und Inaktive zurückholen.',
       desc: 'Einen Kunden zu halten ist meist günstiger, als einen neuen zu gewinnen. Wir bauen automatische E-Mails nach dem Kauf, Rückgewinnungsstrecken und Treueprogramme auf.'
     },
     'paid-social-ecommerce': {
@@ -473,7 +473,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             Strategie, Technologie und Wachstum aus einer Hand.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium">
-            performanceboost verbessert die Bereiche, in denen Schweizer KMU heute am meisten Umsatz und Zeit verlieren: Strategie, Systeme und Abläufe, Marketing sowie Vertrieb. Unsere Leistungen sind in vier Felder gegliedert und greifen ineinander. Persönlich umgesetzt von Inhaber Yathur Nathan.
+            performanceboost setzt dort an, wo Schweizer KMU heute am meisten Umsatz und Zeit verlieren: bei Strategie, Systemen und Abläufen, Marketing und Vertrieb. Die Leistungen sind in vier Felder gegliedert, die aufeinander aufbauen. Inhaber Yathur Nathan setzt sie persönlich um.
           </p>
         </div>
       </section>
@@ -607,7 +607,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <div className="text-center max-w-xl mx-auto space-y-3">
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Lösungen für Schweizer Branchen</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
-              Wählen Sie Ihre Branche und schätzen Sie mit unseren Rechnern grob ab, wie viel Potenzial bei Anfragen und Umsatz noch offen ist.
+              Wählen Sie Ihre Branche und schätzen Sie mit unseren Rechnern grob ab, wie viele zusätzliche Anfragen und wie viel Umsatz möglich wären.
             </p>
           </div>
 
@@ -637,7 +637,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               {
                 title: 'Treuhand & UB',
                 slug: 'treuhand-unternehmensberatung',
-                desc: 'Weniger Aufwand mit Belegen und gezielt passende Mandate gewinnen.',
+                desc: 'Weniger Aufwand mit Belegen und mehr Mandate, die zu Ihnen passen.',
                 icon: Briefcase,
                 tool: 'Kanzlei-Wachstums-Check'
               },
@@ -651,7 +651,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               {
                 title: 'IT-Dienstleister & MSPs',
                 slug: 'it-dienstleister-msps',
-                desc: 'Wiederkehrende Umsätze ausbauen, mit klar verpackten Serviceangeboten.',
+                desc: 'Wiederkehrende Umsätze ausbauen, mit klar beschriebenen Servicepaketen.',
                 icon: Cpu,
                 tool: 'Recurring Revenue Rechner'
               },
@@ -693,7 +693,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               {
                 title: 'Rechtsanwälte',
                 slug: 'rechtsanwaelte',
-                desc: 'Gezielt Wirtschafts- und Spezialmandate gewinnen, mit wenig Zusatzaufwand.',
+                desc: 'Mehr Wirtschafts- und Spezialmandate gewinnen, ohne viel Zusatzaufwand.',
                 icon: Scale,
                 tool: 'Kanzlei-Auslastungs-Check'
               },

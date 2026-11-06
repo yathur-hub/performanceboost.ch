@@ -28,7 +28,7 @@ export default function NotFoundView({ onNavigate }: NotFoundViewProps) {
           Diese Seite gibt es nicht (mehr).
         </h1>
         <p className="text-slate-600 leading-relaxed">
-          Vielleicht hat sich die Adresse geändert. Über die folgenden Seiten finden Sie weiter, oder Sie schreiben uns direkt.
+          Vielleicht hat sich die Adresse geändert. Über diese Seiten finden Sie weiter. Oder Sie schreiben uns direkt.
         </p>
         <nav aria-label="Weiterführende Seiten" className="flex flex-wrap justify-center gap-3 pt-2">
           {LINKS.map((l) => (

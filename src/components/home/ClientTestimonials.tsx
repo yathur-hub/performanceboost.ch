@@ -184,7 +184,7 @@ export function ClientTestimonials() {
             <span>Was Schweizer Gründer &amp; Führungskräfte sagen</span>
           </h2>
           <p className="text-slate-500 text-body-sm leading-relaxed font-medium max-w-2xl">
-            Erprobte Zusammenarbeit, spürbare operative Entlastung und messbares Wachstum — direkte Einblicke aus der Praxis.
+            Kundinnen und Kunden erzählen in eigenen Worten, wie die Zusammenarbeit abläuft und was sie ihnen gebracht hat.
           </p>
         </div>
 

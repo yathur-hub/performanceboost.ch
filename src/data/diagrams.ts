@@ -42,7 +42,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'lead-generation': {
     title: 'Ihre Website als Zentrum der Anfragen',
-    text: 'Gefunden werden, überzeugen, anfragen: Alle Wege führen auf Ihre Website. Wir sorgen dafür, dass jeder dieser Wege dort mit einer passenden Anfrage endet.',
+    text: 'Interessenten kommen über Google, Inhalte oder die Direktansprache auf Ihre Website. Wir sorgen dafür, dass sie dort einfach und mit dem passenden Angebot anfragen können.',
     spec: {
       type: 'hub',
       center: { title: 'Ihre Website', sub: 'Klares Angebot, einfacher Weg zur Anfrage', icon: 'Globe' },
@@ -58,7 +58,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'marketing-automation': {
     title: 'Was nach einer Anfrage automatisch passiert',
-    text: 'Keine Anfrage bleibt im Posteingang liegen: Sie landet mit Quelle im CRM, wird bewertet, zugewiesen und begleitet, bis der Vertrieb übernimmt.',
+    text: 'Eine Anfrage bleibt nicht im Posteingang liegen. Sie landet mit Quelle im CRM, wird bewertet, zugewiesen und begleitet, bis der Vertrieb übernimmt.',
     spec: {
       type: 'flow',
       nodes: [
@@ -72,7 +72,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'sales-enablement': {
     title: 'Für jede Verkaufsphase das passende Werkzeug',
-    text: 'Ihr Vertrieb geht in jede Phase vorbereitet: mit Leitfäden, Unterlagen und Vorlagen, die im Alltag genutzt werden, statt in einem Ordner zu liegen.',
+    text: 'Für jede Phase hat Ihr Vertrieb Leitfäden, Unterlagen und Vorlagen zur Hand. Sie werden im Alltag genutzt und liegen nicht ungelesen in einem Ordner.',
     spec: {
       type: 'flow',
       nodes: [
@@ -86,10 +86,10 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'revenue-operations': {
     title: 'Ein gemeinsames Fundament für alle Teams',
-    text: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen arbeiten, geht Umsatz verloren. RevOps schafft gemeinsame Daten, Abläufe und Ziele.',
+    text: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen arbeiten, geht Umsatz verloren. Revenue Operations (RevOps) sorgt dafür, dass alle mit denselben Daten, Abläufen und Zielen arbeiten.',
     spec: {
       type: 'hub',
-      center: { title: 'Gemeinsame Daten & Ziele', sub: 'Eine Pipeline, eine Wahrheit', icon: 'Target' },
+      center: { title: 'Gemeinsame Daten & Ziele', sub: 'Alle sehen dieselben Zahlen', icon: 'Target' },
       nodes: [
         { title: 'Marketing', sub: 'Anfragen mit Quelle', icon: 'Megaphone' },
         { title: 'Vertrieb', sub: 'Verkaufschancen', icon: 'Handshake' },
@@ -115,7 +115,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'data-analytics': {
     title: 'Vom Klick bis zum Umsatz nachvollziehbar',
-    text: 'Wir verbinden Website-Messung mit den Daten aus Ihrem CRM. So sehen Sie, welcher Kanal nicht nur Klicks, sondern Anfragen und Aufträge bringt.',
+    text: 'Wir verbinden Website-Messung mit den Daten aus Ihrem CRM. So sehen Sie, welcher Kanal Anfragen und Aufträge bringt und welcher nur Klicks.',
     spec: {
       type: 'flow',
       nodes: [
@@ -143,7 +143,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'dtc-growth-acquisition': {
     title: 'Der Kreislauf profitabler Kundengewinnung',
-    text: 'Entscheidend ist nicht der günstigste Erstkauf, sondern was ein Kunde über die Zeit einbringt. Daran richten wir Budget und Kampagnen aus.',
+    text: 'Ein günstiger Erstkauf allein sagt wenig. Wichtiger ist, was ein Kunde über die Zeit einbringt, und daran richten wir Budget und Kampagnen aus.',
     spec: {
       type: 'cycle',
       center: 'Profitables Wachstum',
@@ -189,12 +189,12 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
 export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
   strategie: {
     title: 'Unser Weg von der Analyse zur Wirkung',
-    text: 'Strategie ist bei uns kein Dokument, sondern der erste Schritt einer Umsetzung. Jede Phase baut auf der vorherigen auf und wird gemessen.',
+    text: 'Bei uns landet eine Strategie nicht in der Schublade, sie ist der erste Schritt der Umsetzung. Jede Phase baut auf der vorherigen auf, und wir messen, was sie bewirkt.',
     spec: {
       type: 'flow',
       nodes: [
         { title: 'Analyse', sub: 'Zahlen, Kunden, Abläufe, Systeme', icon: 'Search' },
-        { title: 'Prioritäten', sub: 'Was den grössten Hebel hat', icon: 'Filter' },
+        { title: 'Prioritäten', sub: 'Was am meisten bringt', icon: 'Filter' },
         { title: 'Strategie', sub: 'Wachstum, Digitalisierung, Technologie', icon: 'Compass' },
         { title: 'Umsetzung', sub: 'Selbst umgesetzt oder begleitet', icon: 'Settings' },
         { title: 'Messbare Wirkung', sub: 'Kennzahlen, die alle verstehen', icon: 'LineChart' },
@@ -219,7 +219,7 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'wachstum-marketing': {
     title: 'Wachstum entlang der ganzen Strecke',
-    text: 'Wir optimieren nicht einzelne Kampagnen, sondern den gesamten Weg vom ersten Kontakt bis zum Auftrag. Jede Stufe wird gemessen und verbessert.',
+    text: 'Wir verbessern den ganzen Weg vom ersten Kontakt bis zum Auftrag, nicht nur einzelne Kampagnen. An jeder Stufe messen wir, wo Interessenten abspringen.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -272,7 +272,7 @@ export const CHALLENGE_DIAGRAMS: Record<string, PageDiagram> = {
         { title: 'Anfrage', sub: 'Kommt sie beim Richtigen an?', icon: 'Mail' },
         { title: 'Erstreaktion', sub: 'Wie schnell wird geantwortet?', icon: 'Zap' },
         { title: 'Gespräch', sub: 'Ist der Bedarf klar?', icon: 'Phone' },
-        { title: 'Angebot', sub: 'Wird konsequent nachgefasst?', icon: 'FileText' },
+        { title: 'Angebot', sub: 'Wird nachgefasst?', icon: 'FileText' },
         { title: 'Auftrag', sub: 'Und weiss man, woher er kam?', icon: 'Handshake' },
       ],
     },
@@ -300,7 +300,7 @@ export function sectorDiagram(slug: string, sectorTitle: string): PageDiagram {
   const g = SECTOR_GOAL[slug] ?? { goal: 'Auftrag', sub: 'Neue Kundin, neuer Kunde', first: 'Google, LinkedIn, Meta' };
   return {
     title: `So entstehen Anfragen für ${sectorTitle}`,
-    text: 'Wir bauen den ganzen Weg auf, nicht nur einzelne Kampagnen: vom ersten Kontakt bis zum Abschluss, mit messbaren Übergaben dazwischen.',
+    text: 'Wir kümmern uns um den ganzen Weg vom ersten Kontakt bis zum Abschluss und messen, wie viele Interessenten von einer Stufe zur nächsten kommen.',
     spec: {
       type: 'flow',
       nodes: [

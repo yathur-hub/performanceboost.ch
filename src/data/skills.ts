@@ -53,7 +53,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'demand-generation-gap-analysis',
     title: 'Lücke bei den Anfragen berechnen',
-    description: 'Lücke zwischen heutiger Anzahl Leads und Ihrem Umsatzziel berechnen.',
+    description: 'Berechnen, wie viele Anfragen Ihnen bis zum Umsatzziel noch fehlen.',
     category: 'nachfragegenerierung',
     categoryLabel: 'Nachfrage aufbauen',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/demand-generation-gap-analysis.md',
@@ -109,7 +109,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'lead-routing-assessment',
     title: 'Lead-Verteilung prüfen',
-    description: 'Kommen Leads schnell und nachvollziehbar zur richtigen Person im Vertrieb?',
+    description: 'Landen neue Anfragen schnell und nachvollziehbar bei der richtigen Person?',
     category: 'revenue-operations',
     categoryLabel: 'Prozesse & Daten',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/lead-routing-assessment.md',
@@ -194,7 +194,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'pipeline-hygiene-review',
     title: 'Offene Verkaufschancen bereinigen',
-    description: 'Liegengebliebene Deals, Staus in einzelnen Phasen und unrealistische Prognosen aufdecken.',
+    description: 'Liegengebliebene Angebote, Staus in einzelnen Phasen und zu optimistische Prognosen finden.',
     category: 'vertrieb',
     categoryLabel: 'Vertrieb',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/pipeline-hygiene-review.md',
@@ -241,7 +241,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'ai-use-case-discovery',
     title: 'KI-Anwendungen finden',
-    description: 'Von der ersten Idee über die Machbarkeit bis zum konkreten Business Case.',
+    description: 'KI-Ideen sammeln, auf Machbarkeit prüfen und den Nutzen durchrechnen.',
     category: 'ki-automatisierung',
     categoryLabel: 'KI & Automatisierung',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/ai-use-case-discovery.md',
@@ -290,7 +290,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'growth-bottleneck-finder',
     title: 'Wachstumsengpass finden',
-    description: 'Den wichtigsten Engpass für Ihr Wachstum finden, nach der Engpasstheorie.',
+    description: 'Den Engpass finden, der Ihr Wachstum heute am stärksten bremst.',
     category: 'wachstum',
     categoryLabel: 'Wachstum',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/growth-bottleneck-finder.md',
@@ -299,7 +299,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'growth-pain-assessment',
     title: 'Ursachen für Stillstand',
-    description: 'Die eigentlichen Ursachen finden, wenn das Wachstum stockt, nicht nur die Symptome.',
+    description: 'Herausfinden, warum das Wachstum stockt, statt nur Symptome zu behandeln.',
     category: 'wachstum',
     categoryLabel: 'Wachstum',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/growth-pain-assessment.md',
@@ -346,7 +346,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'paid-social-efficiency-audit',
     title: 'Wirtschaftlichkeit von Social Ads',
-    description: 'Was hinter dem ROAS steckt: Deckungsbeitrag, abgenutzte Anzeigenmotive und Zuordnung.',
+    description: 'Was hinter dem ROAS (Umsatz pro Werbefranken) steckt: Deckungsbeitrag, müde Motive, Zuordnung.',
     category: 'ecommerce',
     categoryLabel: 'E-Commerce',
     github: '', // Datei fehlt noch im Repo performanceboost-skill-factory

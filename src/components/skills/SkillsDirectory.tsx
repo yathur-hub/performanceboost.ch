@@ -85,11 +85,11 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
           <Visual3D id="energy-core" priority sizes="160px" className="mx-auto h-28 sm:h-36 w-auto animate-float" />
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1A1A2E] tracking-tight leading-tight">
-            <span className="block text-[#696EEF]">Skill-Factory</span> Erst prüfen, dann gezielt handeln.
+            <span className="block text-[#696EEF]">Skill-Factory</span> Erst prüfen, dann richtig ansetzen.
           </h1>
           
           <p className="text-[#505050] text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-            36 strukturierte Checklisten, mit denen Sie Engpässe in Marketing, Vertrieb und Daten selbst prüfen können. Für Geschäftsführer und Verantwortliche, die Probleme an der Ursache angehen wollen statt aufgrund von Vermutungen.
+            36 strukturierte Checklisten, mit denen Sie Engpässe in Marketing, Vertrieb und Daten selbst prüfen können. Gedacht für Geschäftsführer und Verantwortliche, die Probleme an der Ursache lösen wollen, statt nach Gefühl zu entscheiden.
           </p>
 
           <div className="flex items-center justify-center gap-10 pt-4 pb-2">
@@ -124,7 +124,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Checkliste suchen, z. B. „CRM“, „Tracking“ oder „KI“ …"
+                placeholder="Checkliste suchen, z. B. «CRM», «Tracking» oder «KI» …"
                 className="w-full text-slate-800 text-xs text-slate-800 rounded-xl border border-slate-200/80 bg-slate-50/50 px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#686DF4] focus:border-[#686DF4] focus:bg-white transition-all font-medium placeholder:text-slate-400/80 shadow-[0_2px_4px_rgba(0,0,0,0.01)]"
                 aria-label="Checkliste suchen"
               />
@@ -243,7 +243,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                 <SlidersHorizontal className="w-5 h-5" />
               </div>
               <p className="text-[#505050] text-sm md:text-base font-bold">
-                Keine Checkliste gefunden für „{searchQuery}“.
+                Keine Checkliste gefunden für «{searchQuery}».
               </p>
               <p className="text-slate-400 text-xs">
                 Versuchen Sie es mit einem anderen Begriff oder setzen Sie die Filter zurück.
@@ -271,7 +271,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
           </h2>
           
           <p className="text-[#A0A0B8] text-xs md:text-sm leading-relaxed max-w-xl mx-auto font-semibold">
-            Oft wird an Symptomen gearbeitet, weil nie systematisch geprüft wurde, was wirklich bremst. In einem 30-minütigen Erstgespräch finden wir gemeinsam den sinnvollsten Einstieg.
+            Viele Unternehmen arbeiten an Symptomen, weil nie jemand genau geprüft hat, was bremst. Im 30-minütigen Erstgespräch finden wir gemeinsam heraus, wo sich der Einstieg lohnt.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

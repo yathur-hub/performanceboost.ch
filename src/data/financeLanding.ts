@@ -68,7 +68,7 @@ export const TRUST_POINTS = [
   'Direkter Kontakt mit dem Inhaber',
 ];
 
-export const PAIN_HEADING = 'Neue Mandate, die nicht nur von Empfehlungen abhängen';
+export const PAIN_HEADING = 'Neue Mandate, die nicht allein von Empfehlungen abhängen';
 export const PAIN_INTRO =
   'Die meisten Beratungsfirmen, mit denen wir sprechen, wachsen gut. Aber sie wissen selten, wie viele neue Gespräche der nächste Monat bringt.';
 
@@ -86,13 +86,13 @@ const PAIN_MEASUREMENT: TextCard = {
 };
 const PAIN_AGENCY: TextCard = {
   title: 'Die letzte Agentur hat Klicks geliefert, keine Gespräche',
-  desc: 'Berichte voller Reichweite und Klickraten, aber keine Antwort auf die Frage, die zählt: Wie viele gute Erstgespräche sind daraus entstanden? Dazu Texte, die Ihre Branche nicht kennen und regulatorisch nicht passen.',
+  desc: 'Die Berichte zeigten Reichweite und Klickraten. Wie viele gute Erstgespräche daraus entstanden sind, stand nirgends. Dazu kamen Texte, die weder zu Ihrer Branche noch zu den Werberegeln passten.',
 };
 
 export const BENEFITS: TextCard[] = [
   {
     title: 'Sie wissen, woher neue Gespräche kommen.',
-    desc: 'Jede Anfrage trägt ihre Herkunft mit: Google, Meta, Empfehlung, Ihr eigener Newsletter.',
+    desc: 'Bei jeder Anfrage ist erfasst, woher sie kommt, etwa von Google, Meta, einer Empfehlung oder Ihrem Newsletter.',
   },
   {
     title: 'Ihre Beraterinnen und Berater sprechen mit den richtigen Personen.',
@@ -104,7 +104,7 @@ export const BENEFITS: TextCard[] = [
   },
   {
     title: 'Ihre Werbung passt zu Ihrer Branche.',
-    desc: 'Keine Rendite- oder Ersparnisversprechen, Werbung klar als Werbung gekennzeichnet, gesetzliche Werte mit Quelle.',
+    desc: 'Wir machen keine Rendite- oder Ersparnisversprechen, kennzeichnen Werbung klar und nennen gesetzliche Werte mit Quelle.',
   },
 ];
 
@@ -112,7 +112,7 @@ export const BUILDING_BLOCKS: { title: string; desc: string; points: string[] }[
   {
     title: 'Anfrageseite',
     desc: 'Eine Seite pro Beratungsthema, die erklärt, vorqualifiziert und direkt zur Terminwahl führt.',
-    points: ['Landingpage auf Ihrer Domain', 'Formular mit wenigen, gezielten Fragen', 'Online-Terminbuchung'],
+    points: ['Landingpage auf Ihrer Domain', 'Formular mit wenigen Fragen zum Anliegen', 'Online-Terminbuchung'],
   },
   {
     title: 'Kampagnen',
@@ -144,13 +144,13 @@ export const ICP_CARDS: { slug: FinanceSlug; title: string; desc: string; linkTe
   {
     slug: 'vorsorgeberatung',
     title: 'Vorsorge & Finanzplanung',
-    desc: 'Pensionierung, Kapitalbezug oder Rente, Einkauf in die Pensionskasse: Themen, die Menschen online vorbereiten. Wir sorgen für den klaren nächsten Schritt zu Ihnen.',
+    desc: 'Wer die Pensionierung plant, informiert sich lange vorher online, etwa zu Kapitalbezug oder Rente und zum Einkauf in die Pensionskasse. Wir sorgen dafür, dass der nächste Schritt zu Ihnen führt.',
     linkText: 'Mehr zu Vorsorgeberatung',
   },
   {
     slug: 'versicherungsbroker',
     title: 'Versicherung: Broker & Generalagenturen',
-    desc: 'Ob ungebundener Broker oder Generalagentur: eine lokale Anfrageseite mit Online-Terminbuchung bringt eigene Anfragen statt gekaufter Kontakte.',
+    desc: 'Ob ungebundener Broker oder Generalagentur: Mit einer lokalen Anfrageseite und Online-Terminbuchung gewinnen Sie eigene Anfragen, statt Kontakte zu kaufen.',
     linkText: 'Mehr zu Versicherungsbroker',
   },
 ];
@@ -262,7 +262,7 @@ export const PACKAGES: { name: string; audience: string; items: string[]; recomm
 ];
 
 export const PACKAGE_NOTES = [
-  'Was ein Pilot für Ihre Beratung kostet, erhalten Sie nach dem Anfrage-Check schriftlich und verbindlich, ohne Verpflichtung.',
+  'Was ein Pilot für Ihre Beratung kostet, erhalten Sie nach dem Anfrage-Check als verbindliche Offerte. Zusagen müssen Sie damit nichts.',
   'Pilot: 3 Monate (bei Vorsorge 4 Monate). Wird das vorher vereinbarte Ziel verfehlt, endet der Vertrag ohne Kündigungsfrist.',
   'Das Werbebudget zahlen Sie direkt an Google oder Meta, auf Ihrem eigenen Konto.',
 ];
@@ -343,7 +343,7 @@ const FAQ = {
   },
   start: {
     q: 'Wann kommen die ersten Anfragen?',
-    a: 'Sobald Anfrageseite, Messung und Kampagnen stehen, laufen die Anzeigen. Wie schnell daraus Anfragen werden, sehen wir in den ersten Wochen. Eine verlässliche Aussage über Termine und Mandate ist erst nach einigen Wochen möglich, weil Beratungsentscheide Zeit brauchen.',
+    a: 'Sobald Anfrageseite, Messung und Kampagnen stehen, laufen die Anzeigen. Wie schnell daraus Anfragen werden, zeigt sich in den ersten Wochen. Für eine verlässliche Aussage über Termine und Mandate dauert es länger, denn für eine Beratung entscheidet sich niemand über Nacht.',
   },
   sprachen: {
     q: 'Arbeiten Sie auch auf Italienisch oder Französisch?',
@@ -364,7 +364,7 @@ export const FINANCE_PAGES: Record<FinanceSlug, FinancePage> = {
       'Mehr qualifizierte Erstgespräche für Hypotheken-, Vorsorge- und Versicherungsberatungen: Kampagnen, Anfrageseite und Messung bis zum Termin, auf Ihren eigenen Konten.',
     overline: 'Für Finanzdienstleister in der Schweiz',
     h1: 'Mehr qualifizierte Erstgespräche für Ihre Finanzberatung',
-    sub: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz: Kampagnen, Landingpage und Terminweg für Ihren Beratungsanlass. Gemessen bis zum Termin und, mit Ihrem CRM, bis zum Mandat. Auf Ihren eigenen Konten.',
+    sub: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz. Wir bauen Kampagnen, Landingpage und Terminbuchung für Ihr Beratungsthema auf und messen bis zum Termin, mit Ihrem CRM auch bis zum Mandat. Alles läuft auf Ihren eigenen Konten.',
     pains: [PAIN_REFERRALS, PAIN_WAVES, PAIN_MEASUREMENT, PAIN_AGENCY],
     references: ['mission13', 'cuira', 'ostschweiz', 'tessin'],
     faqs: [
@@ -488,7 +488,7 @@ export const FINANCE_PAGES: Record<FinanceSlug, FinancePage> = {
         'Umzug in die Region',
       ],
       build:
-        'Anfrageseiten pro Sparte, auf Wunsch mehrsprachig; Online-Terminbuchung; Kampagnen im Einzugsgebiet; Messung, die innerhalb der Vorgaben Ihres Versicherers funktioniert (bei Generalagenturen).',
+        'Anfrageseiten pro Sparte, auf Wunsch mehrsprachig; Online-Terminbuchung; Kampagnen im Einzugsgebiet; bei Generalagenturen eine Messung, die die Vorgaben Ihres Versicherers einhält.',
       avoid: [
         'Telefonische Kaltakquise für Krankenzusatzversicherungen (seit 1.9.2024 durch eine allgemeinverbindliche Branchenvereinbarung eingeschränkt).',
         'Die Bezeichnung «unabhängig» für gebundene Vermittler.',

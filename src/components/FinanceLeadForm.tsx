@@ -268,7 +268,7 @@ export default function FinanceLeadForm({ pageSlug, defaultSegment, toolContext 
             <span>Weiter zu Schritt 2</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>
-          <p className="text-xs text-slate-500">Diese Angaben helfen uns, das Gespräch vorzubereiten. Noch keine Kontaktdaten nötig.</p>
+          <p className="text-xs text-slate-500">Mit diesen Angaben bereiten wir das Gespräch vor. Ihre Kontaktdaten folgen erst im nächsten Schritt.</p>
         </div>
       )}
 

@@ -37,7 +37,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'finanzdienstleister',
     title: 'Finanzdienstleister',
     subtitle: 'Mehr qualifizierte Erstgespräche für Hypotheken-, Vorsorge- und Versicherungsberatungen',
-    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz: Kampagnen, Landingpage und Terminweg für Ihren Beratungsanlass, gemessen bis zum Termin. Die Seite wird über FinanceLandingView dargestellt (src/data/financeLanding.ts).',
+    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz: Kampagnen, Landingpage und Terminweg für Ihren Beratungsanlass, gemessen bis zum Termin.',
     calculatorComponent: 'BeratungsPipelineRechner',
     problems: [
       {
@@ -91,12 +91,12 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'saas-software',
     title: 'SaaS & Software',
     subtitle: 'Mehr qualifizierte Demo-Anfragen für Schweizer Softwarefirmen',
-    heroDesc: 'Wir verbinden Kampagnen, Website und CRM so, dass Sie sehen, welche Kanäle zu Abschlüssen führen und nicht nur zu Klicks. So investieren Sie Ihr Marketingbudget dort, wo es Umsatz bringt.',
+    heroDesc: 'Wir verbinden Kampagnen, Website und CRM. So sehen Sie, aus welchen Kanälen Ihre Abschlüsse tatsächlich stammen, und setzen das Marketingbudget dort ein, wo es Umsatz bringt.',
     calculatorComponent: 'SaasRevenueLeckRechner',
     problems: [
       {
         title: 'Marketing und Vertrieb zählen verschieden',
-        desc: 'Das Marketing meldet viele Leads, der Vertrieb beklagt unpassende Kontakte. Es fehlt eine durchgehende Sicht von der ersten Anfrage bis zum Abschluss.'
+        desc: 'Das Marketing meldet viele Anfragen, der Vertrieb klagt über unpassende Kontakte. Es fehlt eine durchgehende Sicht von der ersten Anfrage bis zum Abschluss.'
       },
       {
         title: 'Hohe Kosten pro Neukunde',
@@ -175,7 +175,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Regionale Kampagnen',
-        desc: 'Über Google Ads und Social Media sprechen wir gezielt Personen und Firmen an, die in der Region suchen.'
+        desc: 'Über Google Ads und Social Media erreichen wir Personen und Firmen, die in Ihrer Region eine Wohnung, ein Haus oder eine Gewerbefläche suchen.'
       }
     ],
     benefits: [
@@ -193,7 +193,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     faqs: [
       {
         q: 'Lohnt sich das auch für kleinere, regionale Makler?',
-        a: 'Ja. Gerade regional können Sie mit gezielter Sichtbarkeit gegen grössere Anbieter bestehen und bei Eigentümern als lokale Ansprechperson auffallen.'
+        a: 'Ja. Wer in seiner Region online gut sichtbar ist, kann gegen grössere Anbieter bestehen und fällt Eigentümern als lokale Ansprechperson auf.'
       },
       {
         q: 'Lässt sich bestehende Immobiliensoftware wie FlowFact oder CAS anbinden?',
@@ -205,7 +205,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'treuhand-unternehmensberatung',
     title: 'Treuhand & Unternehmensberatung',
     subtitle: 'Mehr Mandatsanfragen für Treuhand- und Beratungsbüros',
-    heroDesc: 'Wir helfen Treuhand- und Beratungsbüros, gezielt die KMU-Mandate zu gewinnen, die fachlich und wirtschaftlich zu ihnen passen. Mit klarer Positionierung, Vorqualifizierung und weniger Aufwand im Erstkontakt.',
+    heroDesc: 'Wir helfen Treuhand- und Beratungsbüros, die KMU-Mandate zu gewinnen, die fachlich und wirtschaftlich zu ihnen passen. Dafür schärfen wir Ihr Profil und fragen Eckdaten vorab ab. Das spart Aufwand im Erstkontakt.',
     calculatorComponent: 'KanzleiWachstumsCheck',
     problems: [
       {
@@ -214,7 +214,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Empfehlungen kommen unregelmässig',
-        desc: 'Empfehlungen sind wertvoll, aber nicht planbar. Wachstum lässt sich so kaum steuern.'
+        desc: 'Empfehlungen sind wertvoll, aber Sie wissen nie, wann die nächste kommt. So lässt sich Wachstum kaum planen.'
       },
       {
         title: 'Unvollständige Unterlagen von Mandanten',
@@ -239,10 +239,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       }
     ],
     benefits: [
-      'Gezielte Anfragen von Mandaten, die zu Ihrem Büro passen',
+      'Anfragen von Mandanten, die fachlich zu Ihrem Büro passen',
       'Weniger Erstgespräche mit Interessenten, die nicht passen',
       'Ein geordneter, teilweise automatisierter Ablauf für neue Mandate',
-      'Entlastung des Teams durch klare Abläufe'
+      'Mehr Zeit im Team für anspruchsvolle Beratungsmandate'
     ],
     related: {
       href: '/loesungen/finanzdienstleister',
@@ -344,11 +344,11 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Online-Check zu Sicherheit und Infrastruktur',
-        desc: 'Ein kurzer Online-Check zu Datenschutz, IT-Sicherheit und Backups zeigt KMU ihren Handlungsbedarf und liefert Ihnen qualifizierte Anfragen.'
+        desc: 'Ein kurzer Online-Check zu Datenschutz, IT-Sicherheit und Backups zeigt KMU, wo sie handeln sollten. Sie erhalten Anfragen mit konkretem Bedarf.'
       },
       {
         step: '03',
-        title: 'Gezielte LinkedIn-Kampagnen',
+        title: 'LinkedIn-Kampagnen für Entscheider',
         desc: 'Wir sprechen Geschäftsführer und Finanzverantwortliche in ihrer Sprache an: planbare Kosten, Ausfallsicherheit und ein Team, das ungestört arbeiten kann.'
       }
     ],
@@ -427,7 +427,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'personalvermittler-recruiting',
     title: 'Personalvermittler & Recruiting',
     subtitle: 'Mehr Suchmandate und passende Kandidaten für Ihre Vermittlung',
-    heroDesc: 'Wir helfen Personalvermittlern, auf beiden Seiten zu gewinnen: Suchaufträge von Arbeitgebern und passende Kandidaten für diese Stellen. So besetzen Sie schneller und arbeiten weniger auf gut Glück.',
+    heroDesc: 'Wir helfen Personalvermittlern, mehr Suchaufträge von Arbeitgebern zu gewinnen und passende Kandidaten für diese Stellen zu finden. So besetzen Sie schneller und arbeiten weniger auf gut Glück.',
     calculatorComponent: 'PlacementEffizienzRechner',
     problems: [
       {
@@ -447,7 +447,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Klare Spezialisierung',
-        desc: 'Wir heben Sie von allgemeinen Vermittlern ab und positionieren Sie als Anlaufstelle für Ihre Branche oder Ihr Berufsfeld.'
+        desc: 'Wir stellen Ihre Spezialisierung in den Vordergrund, damit Arbeitgeber Sie als Anlaufstelle für ihre Branche oder ihr Berufsfeld wahrnehmen.'
       },
       {
         step: '02',
@@ -473,7 +473,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Funktioniert das auch für Executive Search?',
-        a: 'Ja, mit angepasstem Vorgehen. Für Führungspositionen setzen wir stärker auf persönliche Ansprache, etwa mit kurzen Videos, und auf den gezielten Ausbau Ihres Netzwerks.'
+        a: 'Ja, mit angepasstem Vorgehen. Für Führungspositionen setzen wir stärker auf persönliche Ansprache, etwa mit kurzen Videos, und bauen Ihr Netzwerk in der jeweiligen Branche aus.'
       }
     ]
   },
@@ -481,7 +481,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'bildung-weiterbildung',
     title: 'Bildung & Weiterbildung',
     subtitle: 'Mehr Anmeldungen für Ihre Lehrgänge, Kurse und Seminare',
-    heroDesc: 'Wir helfen Akademien, Instituten und Weiterbildungsanbietern, Lehrgänge, Seminare und CAS-Studiengänge mit passenden Teilnehmenden zu füllen. Mit gezielten Kampagnen und einem einfachen Weg zur Anmeldung.',
+    heroDesc: 'Wir helfen Akademien, Instituten und Weiterbildungsanbietern, Lehrgänge, Seminare und CAS-Studiengänge mit passenden Teilnehmenden zu füllen. Dafür braucht es Kampagnen, die die richtigen Personen erreichen, und eine Anmeldung ohne Umwege.',
     calculatorComponent: 'KursFunnelRechner',
     problems: [
       {
@@ -510,8 +510,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         step: '03',
-        title: 'Gezielte Erinnerungswerbung',
-        desc: 'Wer sich die Kursdetails angesehen hat, sieht später zum Beispiel Erfahrungsberichte von Absolventinnen und Absolventen.'
+        title: 'Anzeigen für frühere Besucher',
+        desc: 'Wer die Kursdetails angesehen, sich aber nicht angemeldet hat, sieht später Anzeigen, etwa mit Erfahrungsberichten von Absolventinnen und Absolventen.'
       }
     ],
     benefits: [
@@ -527,7 +527,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Wir bieten Nischenkurse an. Finden wir online genug Teilnehmende?',
-        a: 'Oft ja. Wer gezielt nach einem bestimmten Fachthema sucht, hat meist schon eine konkrete Absicht. Dafür eignen sich Google Ads besonders.'
+        a: 'Oft ja. Wer auf Google nach einem bestimmten Fachthema sucht, hat meist schon eine konkrete Absicht. Genau diese Personen erreichen Sie mit Google Ads.'
       }
     ]
   },
@@ -540,7 +540,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     problems: [
       {
         title: 'Der Alltag lässt keinen Raum für Schwerpunkte',
-        desc: 'Grundversorgung füllt den Kalender. Für Ihre Schwerpunkte und Selbstzahler-Leistungen bleibt wenig Raum, und sie sind online kaum sichtbar.'
+        desc: 'Grundversorgung füllt den Kalender. Für Ihre Schwerpunkte und Selbstzahler-Leistungen bleibt wenig Zeit, und online findet man sie kaum.'
       },
       {
         title: 'Wenig Sichtbarkeit bei spezifischen Themen',
@@ -594,7 +594,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     problems: [
       {
         title: 'Anfragen auf allen Kanälen',
-        desc: 'Anfragen kommen per E-Mail, Telefon und WhatsApp. Die Übersicht geht verloren, Offerten dauern lange und Kunden springen ab.'
+        desc: 'Anfragen kommen per E-Mail, Telefon und WhatsApp. Dabei geht die Übersicht verloren, Offerten dauern zu lange und Kunden springen ab.'
       },
       {
         title: 'Preiskampf bei Ausschreibungen',
@@ -609,7 +609,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Sichtbar in Ihrer Region',
-        desc: 'Wir machen Ihren Betrieb online zur ersten Anlaufstelle für Privat- und Gewerbeprojekte in Ihrem Kanton.'
+        desc: 'Wer in Ihrem Kanton online einen Handwerker sucht, soll Ihren Betrieb finden, ob für ein Privat- oder ein Gewerbeprojekt.'
       },
       {
         step: '02',
@@ -643,7 +643,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'rechtsanwaelte',
     title: 'Rechtsanwälte',
     subtitle: 'Mehr passende Mandatsanfragen für Anwaltskanzleien',
-    heroDesc: 'Wir helfen Kanzleien, gezielt Mandate in ihren Fachgebieten zu gewinnen und unpassende Anfragen früh auszusortieren. Die Standes- und Werberegeln für Anwältinnen und Anwälte berücksichtigen wir dabei.',
+    heroDesc: 'Wir helfen Kanzleien, mehr Mandate in ihren Fachgebieten zu gewinnen und unpassende Anfragen früh auszusortieren. Die Standes- und Werberegeln für Anwältinnen und Anwälte berücksichtigen wir dabei.',
     calculatorComponent: 'KanzleiAuslastungsCheck',
     problems: [
       {
@@ -680,7 +680,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Mehr Anfragen in Ihren Fachgebieten',
       'Weniger Zeitaufwand für unpassende Erstanfragen',
       'Auftritt, der die Standes- und Werberegeln berücksichtigt',
-      'Gezielte Ansprache von Unternehmen für längerfristige Mandate'
+      'Kontakt zu Unternehmen, die eine längerfristige Begleitung suchen'
     ],
     faqs: [
       {
@@ -706,7 +706,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Leere Rückfahrten',
-        desc: 'Die Hinfahrt ist ausgelastet, die Rückfahrt erfolgt oft leer oder mit schlecht bezahlten Beiladungen.'
+        desc: 'Hin ist der Lastwagen voll, zurück fährt er oft leer oder mit schlecht bezahlten Beiladungen.'
       },
       {
         title: 'Fehlende Chauffeure',
@@ -717,7 +717,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Sichtbar auf Ihren Stammstrecken',
-        desc: 'Wir schalten Anzeigen gezielt in den Regionen entlang Ihrer Stammstrecken, um Versender direkt zu erreichen.'
+        desc: 'Wir schalten Anzeigen in den Regionen entlang Ihrer Stammstrecken. So erreichen Sie Versender dort, wo Sie ohnehin fahren.'
       },
       {
         step: '02',
@@ -727,7 +727,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Schnelle Bewerbung für Chauffeure',
-        desc: 'Wir richten eine kurze Bewerbung ohne Lebenslauf ein und sprechen wechselbereite Fahrer in Ihrer Region gezielt an.'
+        desc: 'Wir richten eine kurze Bewerbung ohne Lebenslauf ein und schalten Anzeigen für wechselbereite Fahrer in Ihrer Region.'
       }
     ],
     benefits: [

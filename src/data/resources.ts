@@ -34,7 +34,7 @@ Viele Unternehmen messen Marketing an der Anzahl Leads. Das verleitet dazu, mög
 
 Wirksamer ist es, Ihr Fachwissen offen zu zeigen: in Beiträgen auf LinkedIn, auf Ihrer Website, in Fallbeispielen oder kurzen Videos. Wer versteht, welches Problem Sie lösen und wie Sie arbeiten, meldet sich eher von sich aus und kommt besser vorbereitet ins Erstgespräch.
 
-## 3. Kanäle gezielt wählen
+## 3. Die passenden Kanäle wählen
 
 Nicht jeder Kanal passt zu jedem Angebot. Als grobe Orientierung:
 
@@ -85,7 +85,7 @@ Ein Interessent bucht über Ihre Website ein Erstgespräch. Bisher sucht jemand 
 - Schritt 3: Daraus entsteht eine kurze Gesprächsvorbereitung mit möglichen Fragen.
 - Schritt 4: Die zuständige Person erhält die Zusammenfassung vor dem Termin per E-Mail oder direkt im CRM.
 
-Das Ergebnis ist eine Vorbereitung, die Ihr Team prüft und ergänzt, nicht ersetzt. KI-Zusammenfassungen können Fehler enthalten. Vor dem Gespräch sollte deshalb immer ein Mensch kurz darüberschauen.
+So entsteht eine Vorbereitung, die Ihr Team prüft und ergänzt, statt bei null anzufangen. KI-Zusammenfassungen können Fehler enthalten. Vor dem Gespräch sollte deshalb immer ein Mensch kurz darüberschauen.
 
 ## Weitere typische Einsatzfelder
 
@@ -103,7 +103,7 @@ Das Ergebnis ist eine Vorbereitung, die Ihr Team prüft und ergänzt, nicht erse
 
 ## Wie viel Zeit sich sparen lässt
 
-Das hängt davon ab, wie viel Routinearbeit heute anfällt. Ein guter Startpunkt: Halten Sie eine Woche lang fest, wofür Ihr Vertrieb Zeit aufwendet, die nicht direkt mit Kunden zu tun hat. Daraus ergibt sich meist schnell, welcher Ablauf sich zuerst lohnt.`
+Das hängt davon ab, wie viel Routinearbeit heute anfällt. Ein guter Anfang: Halten Sie eine Woche lang fest, wofür Ihr Vertrieb Zeit aufwendet, die nicht direkt mit Kunden zu tun hat. Daraus ergibt sich meist schnell, welcher Ablauf sich zuerst lohnt.`
   },
   {
     id: 'blog-demand-gen-vs-lead-gen',

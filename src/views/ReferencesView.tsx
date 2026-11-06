@@ -29,8 +29,8 @@ export default function ReferencesView() {
               Was unsere Kundinnen und Kunden sagen.
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              Von der Kampagne über den Onlineshop bis zum eigenen ERP-System: Stimmen von Unternehmen, die mit performanceboost
-              zusammenarbeiten oder zusammengearbeitet haben. Die Aussagen sind unverändert und namentlich gezeichnet.
+              Hier lesen Sie, was Unternehmen über die Zusammenarbeit mit performanceboost sagen, ob es um Kampagnen, einen
+              Onlineshop oder ein eigenes ERP-System ging. Alle Aussagen sind unverändert und namentlich gezeichnet.
             </p>
           </div>
           <div className="hidden lg:flex lg:col-span-4 justify-center rocket-in">
@@ -94,7 +94,7 @@ export default function ReferencesView() {
         </Container>
       </section>
 
-      <LeadCtaSection formLocation="referenzen" title="Möchten Sie wissen, wo Ihr Unternehmen Potenzial hat?" />
+      <LeadCtaSection formLocation="referenzen" title="Möchten Sie wissen, wo Ihr Unternehmen zulegen kann?" />
     </div>
   );
 }

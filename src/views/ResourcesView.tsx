@@ -160,7 +160,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            Hier teilen wir, wie wir an Neukundengewinnung, Tracking und Automatisierung herangehen. Praxisnah und ohne Anmeldung.
+            Hier zeigen wir, wie wir bei Neukundengewinnung, Tracking und Automatisierung vorgehen. Alle Beiträge lesen Sie ohne Anmeldung.
           </motion.p>
         </div>
       </section>
