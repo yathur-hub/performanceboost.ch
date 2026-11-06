@@ -3,6 +3,7 @@
  * 7 Abschnitte: Hero · Herausforderungen · Säulen + Zusammenspiel · Leistungsfelder · Vorgehen ·
  * Referenzen + Über uns · FAQ + Abschluss-CTA. Der Umsatzrechner liegt seit dem Umbau auf /leistungen/wachstum-marketing.
  */
+import { Visual3D, VISUAL_BY_AREA, VISUAL_BY_PILLAR } from '../components/Visual3D';
 import React, { useState, lazy, Suspense } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -177,6 +178,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   href={p.href}
                   className="group flex flex-col h-full rounded-3xl border border-[#E0E0E0]/80 bg-[#f6f6f6]/50 p-7 sm:p-8 transition-all duration-300 hover:border-[#686DF4]/50 hover:bg-white hover:shadow-[var(--shadow-premium-md)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
                 >
+                  <span className="h-24 mb-5 flex items-end">
+                    <Visual3D id={VISUAL_BY_PILLAR[p.id]} sizes="96px" className="h-full w-auto transition-transform duration-500 group-hover:-translate-y-1.5" />
+                  </span>
                   <span className="flex items-baseline justify-between">
                     <span className="text-2xl font-display font-semibold text-slate-900">{p.label}</span>
                     <span className="text-[11px] font-mono font-bold text-[#686DF4]">0{i + 1}</span>
@@ -212,13 +216,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {SERVICE_AREAS.map((a) => (
-              <article key={a.id} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 flex flex-col">
-                <h3 className="mt-3 text-xl font-display font-semibold text-slate-900">
+              <article key={a.id} className="relative bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 flex flex-col">
+                <Visual3D id={VISUAL_BY_AREA[a.id]} sizes="112px" className="hidden sm:block absolute top-6 right-6 h-24 w-28" />
+                <h3 className="mt-3 text-xl font-display font-semibold text-slate-900 sm:pr-32">
                   <Link href={`/leistungen/${a.id}`} className="hover:text-[#4f54d6] transition-colors">
                     {a.shortLabel}
                   </Link>
                 </h3>
-                <p className="mt-2 text-body-sm text-slate-600 leading-relaxed">{a.teaser}</p>
+                <p className="mt-2 text-body-sm text-slate-600 leading-relaxed sm:pr-32">{a.teaser}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {servicesOf(a).length < 3 &&
                     a.topics.slice(0, 3 - servicesOf(a).length).map((t) => (
@@ -344,7 +349,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </a>
               </p>
             </div>
-            <CtaButton label="Potenzial besprechen" location="home_footer" pageSlug="home" variant="accent" className="shrink-0" />
+            <div className="flex items-center gap-8 shrink-0">
+              <Visual3D id="launch-platform" shadow="dark" sizes="120px" className="hidden lg:block h-44 w-auto" />
+              <CtaButton label="Potenzial besprechen" location="home_footer" pageSlug="home" variant="accent" />
+            </div>
           </div>
         </Container>
       </section>

@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Visual3D } from '../Visual3D';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Quote, ChevronLeft, ChevronRight, Sparkles, Pause, Play } from 'lucide-react';
@@ -178,8 +179,9 @@ export function ClientTestimonials() {
       {/* Header with Navigation Controls */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200/80 pb-6">
         <div className="space-y-2">
-          <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight">
-            Was Schweizer Gründer &amp; Führungskräfte sagen
+          <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight flex items-center gap-4">
+            <Visual3D id="trophy" sizes="80px" className="hidden sm:block h-20 w-auto shrink-0" />
+            <span>Was Schweizer Gründer &amp; Führungskräfte sagen</span>
           </h2>
           <p className="text-slate-500 text-body-sm leading-relaxed font-medium max-w-2xl">
             Erprobte Zusammenarbeit, spürbare operative Entlastung und messbares Wachstum — direkte Einblicke aus der Praxis.

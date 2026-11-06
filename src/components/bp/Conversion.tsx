@@ -6,6 +6,7 @@
  * - StickyMobileCta: fixierter CTA-Balken auf Mobile, ausgeblendet im Hero und wenn das Formular sichtbar ist
  * Alle CTAs öffnen dasselbe Overlay; die Strecke richtet sich nach der aktuellen Seite.
  */
+import { Visual3D, type VisualId } from '../Visual3D';
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Check, Clock, ListChecks, Phone, Send, ShieldCheck, UserCheck } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
@@ -38,17 +39,25 @@ export function LeadCtaSection({
     'Sie erfahren, wo wir den grössten Hebel sehen, und ob wir der richtige Partner sind.',
     'Danach entscheiden Sie in Ruhe. Kein Verkaufsdruck, keine Verpflichtung.',
   ],
+  visual,
 }: {
   title?: string;
   intro?: string;
   formLocation: string;
   points?: string[];
+  /** Dekoratives 3D-Objekt oben in der dunklen Spalte. */
+  visual?: VisualId;
 }) {
   return (
     <section id="lead-cta" className="scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
           <div className="lg:col-span-5 bg-slate-950 text-white p-7 sm:p-10 flex flex-col">
+            {visual && (
+              <div className="h-24 sm:h-32 mb-6 flex items-end">
+                <Visual3D id={visual} shadow="dark" sizes="(min-width: 640px) 200px, 150px" className="h-full w-auto max-w-[220px]" />
+              </div>
+            )}
             <h2 className="text-2xl sm:text-3xl font-display font-semibold leading-tight">{title}</h2>
             <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">{intro}</p>
             <p className="hidden sm:block mt-8 text-sm font-semibold text-white">So läuft das Erstgespräch ab</p>

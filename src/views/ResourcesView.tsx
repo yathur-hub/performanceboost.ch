@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Visual3D } from '../components/Visual3D';
 import Link from '../components/Link';
 import React, { useState } from 'react';
 import { RESOURCES_DATA } from '../data/resources';
@@ -144,6 +145,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
       <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-0 right-10 w-96 h-96 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10 animate-fadeIn">
+          <Visual3D id="satellite" priority sizes="240px" className="mx-auto h-24 sm:h-32 w-auto animate-float" />
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -1,4 +1,5 @@
 /** /referenzen: bestehende Kundenstimmen, wörtlich. Keine Kennzahlen, keine erfundenen Fallstudien. */
+import { Visual3D } from '../components/Visual3D';
 import React from 'react';
 import { TESTIMONIALS_DATA } from '../components/home/ClientTestimonials';
 import { Breadcrumb, Container, SectionHeading, TeaserCard } from '../components/bp/Blocks';
@@ -22,7 +23,8 @@ export default function ReferencesView() {
       <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Referenzen' }]} />
-          <div className="hero-enter max-w-3xl space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="hero-enter lg:col-span-8 max-w-3xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               Was unsere Kundinnen und Kunden sagen.
             </h1>
@@ -30,6 +32,10 @@ export default function ReferencesView() {
               Von der Kampagne über den Onlineshop bis zum eigenen ERP-System: Stimmen von Unternehmen, die mit performanceboost
               zusammenarbeiten oder zusammengearbeitet haben. Die Aussagen sind unverändert und namentlich gezeichnet.
             </p>
+          </div>
+          <div className="hidden lg:flex lg:col-span-4 justify-center rocket-in">
+            <Visual3D id="trophy" priority sizes="220px" className="h-72 w-auto animate-float" />
+          </div>
           </div>
         </Container>
       </section>
