@@ -240,7 +240,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                 Was wir für Sie aufbauen und betreiben
               </h2>
               <p className="text-slate-300">
-                Vier Bausteine, die zusammenarbeiten. Je nach Ausgangslage beginnen wir bei der Messung oder bei den Kampagnen.
+                Vier Bausteine, die ineinandergreifen. Je nach Ausgangslage beginnen wir mit der Messung oder mit den Kampagnen.
               </p>
             </div>
             <ol className="grid grid-cols-1 gap-8 border-t border-white/10 pt-8 md:grid-cols-2 lg:grid-cols-4">
@@ -357,8 +357,8 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           <div className="max-w-3xl space-y-3">
             <h2 className={h2Class}>Wie viele Erstgespräche brauchen Sie wirklich?</h2>
             <p className="text-slate-600">
-              Rechnen Sie mit Ihren eigenen Annahmen. Wir verwenden keine Branchendurchschnitte, die es für Schweizer
-              Beratungsfirmen in verlässlicher Form nicht gibt.
+              Rechnen Sie mit Ihren eigenen Annahmen. Branchendurchschnitte verwenden wir nicht, weil es für Schweizer
+              Beratungsfirmen keine verlässlichen gibt.
             </p>
           </div>
           <FinanceGrowthCheck pageSlug={slug} onDiscuss={handleDiscuss} />

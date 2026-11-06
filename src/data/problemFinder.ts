@@ -26,7 +26,7 @@ export const PROBLEM_OPTIONS: Record<BusinessModel, ProblemOption[]> = {
       id: 'zu_wenig_anfragen',
       label: 'Es kommen zu wenige Anfragen',
       serviceSlug: 'lead-generation',
-      reason: 'Mit Inhalten, Suchmaschinenoptimierung und gezielter Direktansprache bauen wir einen stetigen Strom an passenden Anfragen auf.',
+      reason: 'Mit Fachinhalten, Suchmaschinenoptimierung und persönlicher Direktansprache sorgen wir dafür, dass regelmässig passende Anfragen kommen.',
     },
     {
       id: 'werbung_bringt_wenig',
@@ -70,19 +70,19 @@ export const PROBLEM_OPTIONS: Record<BusinessModel, ProblemOption[]> = {
       id: 'besucher_kaufen_selten',
       label: 'Besucher kaufen zu selten',
       serviceSlug: 'ecommerce-performance',
-      reason: 'Wir finden heraus, wo Besucher im Shop abspringen, und verbessern Produktseiten und Checkout gezielt.',
+      reason: 'Wir finden heraus, wo Besucher im Shop abspringen, und verbessern genau dort Produktseiten und Checkout.',
     },
     {
       id: 'social_ads_lohnen_nicht',
       label: 'Meta- oder TikTok-Werbung lohnt sich kaum',
       serviceSlug: 'paid-social-ecommerce',
-      reason: 'Wir richten Ihre Social-Kampagnen auf Marge statt auf gemeldeten ROAS aus und testen Anzeigen systematisch.',
+      reason: 'Wir steuern Ihre Social-Kampagnen nach Marge statt nach dem ROAS, den die Plattform meldet, und testen Anzeigen systematisch.',
     },
     {
       id: 'kunden_kaufen_einmal',
       label: 'Kunden kaufen nur einmal',
       serviceSlug: 'customer-retention',
-      reason: 'Mit gezielter Kommunikation nach dem ersten Kauf machen wir aus Einmalkäufern Stammkunden.',
+      reason: 'Mit passenden E-Mails und Angeboten nach dem ersten Kauf werden aus Einmalkäufern öfter Stammkunden.',
     },
     {
       id: 'wirkung_unklar',

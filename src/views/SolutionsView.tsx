@@ -56,7 +56,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '03',
       title: 'Lead-Generierung',
-      desc: 'Aus Interesse werden Anfragen. Wir richten Formulare, Landingpages und Abläufe ein, die Anfragen erfassen, bewerten und automatisch weiterbearbeiten.',
+      desc: 'Damit aus Interesse eine Anfrage wird, richten wir Formulare, Landingpages und Abläufe ein, die Anfragen erfassen, bewerten und automatisch weiterleiten.',
       notText: '«Wir erstellen Inhalte.»',
       butText: '«Wir erstellen Inhalte, die messbar zu Anfragen führen.»',
       path: 'lead-generation'
@@ -74,21 +74,21 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       title: 'Vertriebsunterstützung',
       desc: 'Vertrieb und Marketing müssen zusammenarbeiten. Wir schaffen gemeinsame Kennzahlen, eine klare Übergabe von Anfragen und Unterlagen für jede Phase des Verkaufs.',
       notText: '«Wir schreiben Verkaufsunterlagen.»',
-      butText: '«Wir machen Ihren Vertrieb wirksamer, mit klaren Abläufen statt mehr Aufwand.»',
+      butText: '«Ihr Vertrieb erhält vorbereitete Anfragen und die Unterlagen, die er im Gespräch braucht.»',
       path: 'sales-enablement'
     },
     {
       num: '06',
       title: 'Marketing, Vertrieb & Daten verbinden',
-      desc: 'Wenn Marketing, Vertrieb und Kundenbetreuung nicht abgestimmt sind, geht Umsatz verloren. Wir schaffen gemeinsame Abläufe, Daten und Systeme für alle Teams.',
+      desc: 'Wenn Marketing, Vertrieb und Kundenbetreuung nicht abgestimmt sind, geht Umsatz verloren. Wir sorgen für gemeinsame Abläufe, Daten und Systeme, damit Anfragen sauber von Team zu Team gehen.',
       notText: '«Wir optimieren Prozesse.»',
-      butText: '«Wir schaffen die Grundlage, auf der Ihr Umsatz planbar wachsen kann.»',
+      butText: '«Marketing, Vertrieb und Service arbeiten mit denselben Daten und klaren Übergaben.»',
       path: 'revenue-operations'
     },
     {
       num: '07',
       title: 'KI & Automatisierung',
-      desc: 'Richtig eingesetzt spart KI Zeit. Wir richten KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen ein, dort, wo sie sich lohnen.',
+      desc: 'Richtig eingesetzt spart KI Ihrem Team Zeit. Wir richten KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen dort ein, wo sie sich lohnen.',
       notText: '«Wir nutzen ChatGPT.»',
       butText: '«Wir setzen KI dort ein, wo sie Ihrem Geschäft messbar hilft.»',
       path: 'ai-automation'
@@ -96,9 +96,9 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '08',
       title: 'Daten & Auswertung',
-      desc: 'Entscheidungen auf Basis von Zahlen statt Bauchgefühl. Wir richten Tracking, Dashboards und Berichte ein, die Ihnen zeigen, was funktioniert und wo Umsatz verloren geht.',
+      desc: 'Sie sollen nach Zahlen entscheiden können, nicht nach Bauchgefühl. Wir richten Tracking, Dashboards und Berichte ein, die Ihnen zeigen, was funktioniert und wo Umsatz verloren geht.',
       notText: '«Wir erstellen Berichte.»',
-      butText: '«Wir schaffen die Datengrundlage, mit der Sie Wachstum steuern können.»',
+      butText: '«Sie sehen, welche Massnahmen Anfragen und Umsatz bringen.»',
       path: 'data-analytics'
     }
   ];
@@ -125,7 +125,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       title: 'Gesamte Vermarktung aus einer Hand',
       combo: 'Wachstumsstrategie + die passenden Leistungen',
-      desc: 'Von der Analyse über die Strategie bis zur Umsetzung und laufenden Betreuung.',
+      desc: 'Wir analysieren, planen, setzen um und betreuen Ihre Vermarktung danach laufend.',
       timeline: 'Richtwert: Zusammenarbeit über 12 Monate oder länger.'
     }
   ];
@@ -170,7 +170,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium"
           >
-            Sie müssen sich nicht zuerst für eine Technologie entscheiden. Starten Sie bei Ihrer Herausforderung oder bei Ihrer Branche: Wir stellen die Lösung aus den Leistungen zusammen, die in Ihrem Fall wirken.
+            Sie müssen sich nicht zuerst für ein Tool oder einen Kanal entscheiden. Starten Sie bei Ihrer Herausforderung oder Ihrer Branche. Wir stellen dann die Leistungen zusammen, die in Ihrem Fall etwas bringen.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -333,7 +333,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           >
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
             <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
-              Einzelne Leistungen wirken für sich. Sinnvoll kombiniert verstärken sie sich gegenseitig.
+              Jede Leistung funktioniert auch allein. Kombiniert bringen Leistungen oft mehr, etwa wenn Kampagnen ins CRM laufen.
             </p>
           </motion.div>
 

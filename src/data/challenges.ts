@@ -34,7 +34,7 @@ export const CHALLENGE_CARDS: ChallengeCard[] = [
   },
   {
     title: 'KI sinnvoll einsetzen',
-    desc: 'Einzelne nutzen ChatGPT, aber in den eigentlichen Abläufen bringt KI noch keinen spürbaren Nutzen.',
+    desc: 'Einzelne nutzen ChatGPT, aber in den eigentlichen Abläufen hat KI noch nichts verändert.',
     href: '/leistungen/ai-automation',
     linkText: 'Zu KI & Automatisierung',
   },
@@ -80,7 +80,7 @@ export const CHALLENGE_PAGES: Record<ChallengeSlug, ChallengePage> = {
     label: 'Geschäftsprozesse automatisieren',
     h1: 'Weniger Handarbeit in Ihren Abläufen.',
     intro:
-      'Prozessautomatisierung heisst: Wiederkehrende Arbeitsschritte, etwa das Übertragen von Daten, Benachrichtigungen, Freigaben oder Berichte, laufen automatisch zwischen Ihren bestehenden Systemen ab. Wir finden heraus, welche Abläufe sich dafür eignen, und setzen sie so um, dass Ihr Team sie versteht und weiterführen kann.',
+      'Bei der Prozessautomatisierung laufen wiederkehrende Arbeitsschritte automatisch zwischen Ihren bestehenden Systemen ab, etwa das Übertragen von Daten, Benachrichtigungen, Freigaben oder Berichte. Wir finden heraus, welche Abläufe sich dafür eignen, und setzen sie so um, dass Ihr Team sie versteht und weiterführen kann.',
     seoTitle: 'Geschäftsprozesse automatisieren für KMU | performanceboost',
     seoDescription:
       'Doppelte Dateneingabe, Excel-Listen, manuelle Übergaben: Wir finden automatisierbare Abläufe und setzen sie mit Ihren bestehenden Tools um.',
@@ -99,7 +99,7 @@ export const CHALLENGE_PAGES: Record<ChallengeSlug, ChallengePage> = {
     ],
     approach: [
       { title: 'Abläufe aufnehmen', desc: 'Wir gehen mit Ihnen die wichtigsten Abläufe durch und halten fest, wo Zeit verloren geht und wo Fehler entstehen.' },
-      { title: 'Priorisieren', desc: 'Wir bewerten jeden Kandidaten nach Häufigkeit, Aufwand und Risiko. Begonnen wird mit dem, was schnell spürbar entlastet.' },
+      { title: 'Priorisieren', desc: 'Wir bewerten jeden Kandidaten nach Häufigkeit, Aufwand und Risiko. Wir beginnen mit dem, was Ihr Team am schnellsten entlastet.' },
       { title: 'Umsetzen und anbinden', desc: 'Wir verbinden Ihre bestehenden Systeme über deren Schnittstellen oder eine Automatisierungsplattform. Neue Software nur, wenn sie eine Lücke schliesst.' },
       { title: 'Dokumentieren und übergeben', desc: 'Jeder Ablauf wird beschrieben und überwacht. Ihr Team weiss, was automatisch passiert und was bei einem Fehler zu tun ist.' },
     ],
@@ -129,7 +129,7 @@ export const CHALLENGE_PAGES: Record<ChallengeSlug, ChallengePage> = {
     label: 'Vertriebsprozesse optimieren',
     h1: 'Aus mehr Anfragen mehr Aufträge machen.',
     intro:
-      'Viele KMU verlieren Umsatz nicht im Marketing, sondern danach: Anfragen werden zu spät beantwortet, Angebote nicht nachgefasst und niemand sieht, wo Verkaufschancen stehen. Wir bringen Struktur in Lead-Management, CRM und Vertriebsabläufe, damit Ihr Vertrieb seine Zeit für die richtigen Gespräche nutzt.',
+      'Viele KMU verlieren Umsatz nicht im Marketing, sondern danach: Anfragen werden zu spät beantwortet, Angebote nicht nachgefasst und niemand sieht, wo Verkaufschancen stehen. Wir bringen Struktur in das Lead-Management, also den Umgang mit neuen Anfragen, in CRM und Vertriebsabläufe, damit Ihr Vertrieb seine Zeit für die richtigen Gespräche nutzt.',
     seoTitle: 'Vertriebsprozesse optimieren | performanceboost',
     seoDescription:
       'Anfragen bleiben liegen, Nachfassen hängt an Einzelnen, die Pipeline ist unklar? Wir bringen Struktur in Lead-Management, CRM und Vertrieb.',

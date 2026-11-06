@@ -81,7 +81,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
           'Zum Beispiel 12, also eines pro Monat.', mandates, setMandates)}
         <div className="space-y-1.5">
           <label htmlFor="gc-quote" className="block text-sm font-semibold text-slate-800">
-            Von zehn Erstgesprächen: Wie viele werden heute ungefähr zu einem Mandat?
+            Wie viele von zehn Erstgesprächen werden heute ungefähr zu einem Mandat?
           </label>
           <div className="flex items-center gap-4">
             <input id="gc-quote" type="range" min={1} max={10} step={1} value={quote}
@@ -107,7 +107,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
             {result.fits === true && <p className="text-slate-300">Das passt in Ihre Kapazität.</p>}
             {result.fits === false && (
               <p className="text-slate-300">
-                Das übersteigt die Kapazität, die Sie angegeben haben. Dann lohnt sich zuerst eine strengere Vorqualifizierung.
+                Das übersteigt die Kapazität, die Sie angegeben haben. Dann lohnt es sich, Anfragen zuerst strenger vorzuqualifizieren.
               </p>
             )}
           </div>

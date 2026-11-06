@@ -106,7 +106,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             Typische Hürden in der Branche {sector.title}
           </h2>
           <p className="text-xs text-slate-500 font-semibold max-w-sm mx-auto">
-            Warum klassische Werbung in dieser Branche oft wenig bringt.
+            Woran die Neukundengewinnung in dieser Branche oft scheitert.
           </p>
         </div>
 

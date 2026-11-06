@@ -48,7 +48,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               />
             </a>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
-              Business Performance Partner für Schweizer KMU. Strategie, Technologie und Wachstum aus einer Hand, inhabergeführt aus Graubünden.
+              Business Performance Partner für Schweizer KMU. Strategie, Technologie und Umsetzung aus einer Hand, inhabergeführt in Graubünden.
             </p>
           </div>
 

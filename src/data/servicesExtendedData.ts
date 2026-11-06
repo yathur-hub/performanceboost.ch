@@ -5,7 +5,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'ai-automation',
     hero: {
       headline: 'KI, die Ihrem Team im Alltag Zeit spart.',
-      subheadline: 'Wir bauen KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen, eingebettet in Ihre bestehenden Tools. Wir setzen KI dort ein, wo sie Ihrem Vertrieb und Marketing nachweisbar Arbeit abnimmt.',
+      subheadline: 'Wir binden KI dort in Ihre bestehenden Tools ein, wo sie Vertrieb und Marketing nachweisbar Arbeit abnimmt, etwa bei Recherche, Personalisierung, Texten und Auswertungen.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
@@ -13,7 +13,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'In vielen Unternehmen nutzen einzelne Mitarbeitende ChatGPT für Texte. In die eigentlichen Abläufe ist KI aber nicht eingebunden, und niemand weiss, ob sie Zeit spart.',
         'Oder es wurden KI-Tools gekauft, die kaum jemand verwendet.',
-        'Zwischen dem, was über KI erzählt wird, und dem, was sie im Alltag bringt, liegt oft eine grosse Lücke. Wir helfen, diese Lücke mit konkreten, überprüfbaren Anwendungen zu schliessen.'
+        'Über KI wird viel versprochen, im Alltag bringt sie oft deutlich weniger. Wir suchen mit Ihnen konkrete Anwendungen, bei denen sich überprüfen lässt, ob sie Zeit sparen.'
       ]
     },
     leistet: {
@@ -21,7 +21,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Persönliche Ansprache für viele Kontakte',
-          desc: 'KI hilft, Hunderte Kontakte persönlich anzusprechen, ohne jeden einzeln von Hand zu bearbeiten: personalisierte E-Mail-Sequenzen, angepasste Website-Inhalte, passende Angebote.'
+          desc: 'Mit KI sprechen Sie Hunderte Kontakte persönlich an, ohne jeden einzeln zu bearbeiten. Etwa mit E-Mail-Sequenzen, Website-Inhalten und Angeboten, die zum jeweiligen Kontakt passen.'
         },
         {
           title: 'Schneller zu Texten und Inhalten',
@@ -33,11 +33,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Chatbots auf der Website',
-          desc: 'Erste Fragen von Interessenten beantworten und Anfragen vorqualifizieren, auch ausserhalb der Bürozeiten. Mit Abläufen, die auf Ihr Angebot zugeschnitten sind.'
+          desc: 'Ein Chatbot beantwortet erste Fragen und klärt vorab, ob eine Anfrage passt, auch ausserhalb der Bürozeiten. Die Abläufe richten wir auf Ihr Angebot aus.'
         },
         {
           title: 'Auswertungen und Erkenntnisse',
-          desc: 'KI-gestützte Auswertung von Verkaufsgesprächen, Kundenfeedback und Marktinformationen. Was von Hand Tage dauert, liegt deutlich schneller vor.'
+          desc: 'KI wertet Verkaufsgespräche, Kundenfeedback und Marktinformationen aus. Was von Hand Tage dauert, liegt so deutlich schneller vor.'
         },
         {
           title: 'Abläufe automatisieren',
@@ -54,7 +54,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Einsatzbereiche priorisieren',
-          desc: 'Nicht alles gleichzeitig. Wir wählen die drei bis fünf Anwendungen aus, die für Ihr Unternehmen am meisten bringen.'
+          desc: 'Wir fangen nicht überall gleichzeitig an, sondern wählen die drei bis fünf Anwendungen, die Ihrem Unternehmen am meisten bringen.'
         },
         {
           title: 'Umsetzung',
@@ -93,7 +93,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Brauchen wir technisches Know-how im Team?',
-        a: 'Nicht zwingend. Viele KI-Anwendungen lassen sich mit No-Code-Tools umsetzen und brauchen nur ein Grundverständnis. Wo es technischer wird, übernehmen wir die Umsetzung und dokumentieren sie.'
+        a: 'Nicht zwingend. Viele KI-Anwendungen lassen sich mit No-Code-Tools umsetzen, also ohne Programmierung, und brauchen nur ein Grundverständnis. Wo es technischer wird, übernehmen wir die Umsetzung und dokumentieren sie.'
       },
       {
         q: 'Wie schnell ist eine Automatisierung im Einsatz?',
@@ -125,8 +125,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       title: 'Viele Daten, wenig Klarheit',
       paragraphs: [
         'Die meisten Unternehmen haben genug Daten. Was fehlt, ist ein klares Bild.',
-        'Tools sammeln Daten, aber es gibt keine Berichte, die bei Entscheidungen helfen. Kennzahlen, die niemand versteht. Dashboards, die Klicks zeigen, aber keinen Umsatz. Und niemand weiss genau, welcher Kanal tatsächlich Kunden bringt.',
-        'Die Folge: Entscheidungen nach Bauchgefühl und Budget, das in die falsche Richtung fliesst.'
+        'Die Tools sammeln Daten, aber es fehlen Berichte, die bei Entscheidungen helfen. Die Kennzahlen versteht kaum jemand, Dashboards zeigen Klicks statt Umsatz, und welcher Kanal tatsächlich Kunden bringt, weiss niemand genau.',
+        'Entschieden wird deshalb nach Bauchgefühl, und das Budget fliesst oft in die falschen Kanäle.'
       ]
     },
     leistet: {
@@ -138,11 +138,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Zuordnung zu Kanälen',
-          desc: 'Welcher Kanal und welcher Kontaktpunkt hat zum Abschluss beigetragen? Wir richten eine Zuordnung ein, die realistisch ist und bei Budgetentscheiden hilft.'
+          desc: 'Welche Kanäle und Kontaktpunkte haben zum Abschluss beigetragen? Wir richten eine realistische Zuordnung ein, auf die Sie Budgetentscheide stützen können.'
         },
         {
           title: 'Dashboards',
-          desc: 'Ein Dashboard, das die wichtigsten Fragen in wenigen Minuten beantwortet. Wöchentlich, monatlich oder pro Kampagne.'
+          desc: 'Ein Dashboard, das Ihre wichtigsten Fragen in wenigen Minuten beantwortet, wahlweise wöchentlich, monatlich oder pro Kampagne.'
         },
         {
           title: 'Analyse des Anfrageprozesses',
@@ -150,11 +150,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Wirkung des Marketings messen',
-          desc: 'Welche Kampagne, welcher Kanal, welche Massnahme bringt was? Ausgewiesen in Franken, nicht nur in Klicks.'
+          desc: 'Sie sehen, was jede Kampagne, jeder Kanal und jede Massnahme bringt, ausgewiesen in Franken statt in Klicks.'
         },
         {
           title: 'A/B-Tests',
-          desc: 'Änderungen werden gezielt getestet, mit klarer Annahme vorab und genug Daten, damit das Ergebnis aussagekräftig ist.'
+          desc: 'Wir testen Änderungen mit einer klaren Annahme vorab und mit genug Daten, damit das Ergebnis aussagekräftig ist.'
         },
         {
           title: 'Regelmässige Berichte',
@@ -175,7 +175,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Einrichtung',
-          desc: 'Tracking umsetzen, Datenquellen verbinden, Dashboards bauen. Technisch sauber und für Ihr Team verständlich.'
+          desc: 'Wir setzen das Tracking um, verbinden die Datenquellen und bauen Dashboards, die technisch sauber und für Ihr Team verständlich sind.'
         },
         {
           title: 'Einführung im Team',
@@ -237,7 +237,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'Viele B2B-Unternehmen kennen dieselbe Situation:',
         'Der Vertrieb verbringt viel Zeit damit, neue Kontakte zu suchen, statt zu verkaufen. Kampagnen bringen Klicks, aber kaum qualifizierte Anfragen. Und niemand weiss genau, welcher Kanal tatsächlich funktioniert.',
-        'Selten liegt das an einem einzelnen Kanal. Meist fehlt die Abstimmung: Zielgruppe, Botschaft, Landingpage und Messung passen nicht zusammen. Genau dort setzen wir an.'
+        'Selten liegt das an einem einzelnen Kanal. Meist passen Zielgruppe, Botschaft, Landingpage und Messung nicht zusammen, und dort setzen wir an.'
       ]
     },
     leistet: {
@@ -245,11 +245,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Zielgruppe schärfen',
-          desc: 'Wen wollen Sie erreichen? Welche Unternehmen, welche Entscheider, in welcher Phase ihrer Kaufentscheidung? Gezielte Ansprache bringt mehr als breite Reichweite.'
+          desc: 'Wen wollen Sie erreichen? Welche Unternehmen, welche Entscheider, in welcher Phase ihrer Kaufentscheidung? Eine klar umrissene Zielgruppe bringt mehr als breite Reichweite.'
         },
         {
           title: 'Kanäle aufeinander abstimmen',
-          desc: 'LinkedIn Ads, Google Ads, Meta, Inhalte, E-Mail und SEO laufen nicht nebeneinander her, sondern haben jeweils eine klare Aufgabe.'
+          desc: 'Jeder Kanal hat eine klare Aufgabe, ob LinkedIn Ads, Google Ads, Meta, Inhalte, E-Mail oder SEO. So arbeiten sie zusammen statt nebeneinander.'
         },
         {
           title: 'Den Weg zur Anfrage gestalten',
@@ -257,15 +257,15 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Anzeigen testen',
-          desc: 'Wir testen verschiedene Botschaften und Formate und schauen, was bei Ihrer Zielgruppe funktioniert. Die Daten entscheiden.'
+          desc: 'Wir testen verschiedene Botschaften und Formate. Was bei Ihrer Zielgruppe ankommt, entscheiden die Zahlen, nicht der Geschmack.'
         },
         {
           title: 'Kampagnenbetreuung',
-          desc: 'Google Ads, LinkedIn Ads und Meta Ads werden laufend betreut und optimiert. Das Budget fliesst dorthin, wo Anfragen entstehen.'
+          desc: 'Wir betreuen und optimieren Ihre Google Ads, LinkedIn Ads und Meta Ads laufend. Das Budget fliesst dorthin, wo Anfragen entstehen.'
         },
         {
           title: 'Laufende Optimierung',
-          desc: 'Wöchentliche Auswertung, monatlicher Bericht. Was funktioniert, bauen wir aus. Was nicht funktioniert, stoppen wir.'
+          desc: 'Wir werten jede Woche aus und berichten monatlich. Was funktioniert, bauen wir aus, was nicht funktioniert, stoppen wir.'
         }
       ]
     },
@@ -274,7 +274,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Ausgangslage verstehen',
-          desc: 'Wir schauen uns Ihr Geschäft, Ihre Zielgruppe und Ihre heutigen Anfragen an. Woher kommen sie? Wo geht Potenzial verloren?'
+          desc: 'Wir schauen uns Ihr Geschäft, Ihre Zielgruppe und Ihre heutigen Anfragen an. Woher kommen sie? Wo gehen heute Anfragen verloren?'
         },
         {
           title: 'Lücken finden',
@@ -282,7 +282,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Plan festlegen',
-          desc: 'Welche Kanäle, welches Budget, welche Prioritäten? Kein Standardpaket, sondern was für Ihr Ziel sinnvoll ist.'
+          desc: 'Welche Kanäle, welches Budget, welche Prioritäten? Wir stellen kein Standardpaket zusammen, sondern das, was zu Ihrem Ziel passt.'
         },
         {
           title: 'Ergebnisse messen',
@@ -308,7 +308,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Wann sehen wir erste Resultate?',
-        a: 'Bei Google Ads sehen Sie die ersten Klicks und Anfragen meist innert Tagen. Belastbare Daten, auf die man Entscheidungen stützen kann, liegen in der Regel nach 4–8 Wochen vor. Bei LinkedIn und längeren Verkaufszyklen kann es länger dauern. SEO und Inhalte brauchen mehrere Monate, bis sie spürbar Anfragen bringen.'
+        a: 'Bei Google Ads sehen Sie die ersten Klicks und Anfragen meist innert Tagen. Belastbare Daten, auf die man Entscheidungen stützen kann, liegen in der Regel nach 4–8 Wochen vor. Bei LinkedIn und längeren Verkaufszyklen kann es länger dauern. SEO und Inhalte brauchen mehrere Monate, bis sie regelmässig Anfragen bringen.'
       },
       {
         q: 'Welche Kanäle sind für uns richtig?',
@@ -342,7 +342,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         'Viele Unternehmen wachsen, ohne genau zu wissen, warum.',
         'Ein Kanal funktioniert, eine Kampagne bringt Anfragen, aber es steht kein Plan dahinter.',
         'Dadurch lässt sich Wachstum schlecht planen und kaum wiederholen.',
-        'Wer nicht weiss, woher die Kunden kommen, kann auch nicht gezielt mehr davon gewinnen.'
+        'Wer nicht weiss, woher die Kunden kommen, kann auch nicht planmässig mehr davon gewinnen.'
       ]
     },
     leistet: {
@@ -350,7 +350,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Wunschkunden festlegen',
-          desc: 'Wer sind Ihre besten Kunden? Nicht nur nach Branche und Grösse, sondern: Wer hat das Problem, das Sie lösen, und wer ist bereit, dafür zu bezahlen?'
+          desc: 'Wer sind Ihre besten Kunden? Branche und Grösse sind nur der Anfang. Wichtiger ist, wer das Problem hat, das Sie lösen, und bereit ist, dafür zu bezahlen.'
         },
         {
           title: 'Positionierung',
@@ -375,7 +375,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Analyse (Woche 1–2)',
-          desc: 'Wir schauen uns Ihre Situation an: Markt, Mitbewerber, bestehende Kunden, bisherige Anfragen. Wo wachsen Sie schon? Wo bleibt Potenzial liegen?'
+          desc: 'Wir schauen uns Ihre Situation an: Markt, Mitbewerber, bestehende Kunden, bisherige Anfragen. Wo wachsen Sie schon? Wo lassen Sie Chancen liegen?'
         },
         {
           title: 'Strategie-Workshop (Woche 2–3)',
@@ -409,7 +409,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Brauchen wir wirklich eine Strategie, bevor wir Massnahmen umsetzen?',
-        a: 'Wenn Sie planbar wachsen wollen, ja. Einzelne Massnahmen können auch ohne Strategie funktionieren, lassen sich aber schwer wiederholen und ausbauen. Mit einem klaren Plan wird jede weitere Massnahme gezielter.'
+        a: 'Wenn Sie planbar wachsen wollen, ja. Einzelne Massnahmen können auch ohne Strategie funktionieren, lassen sich aber schwer wiederholen und ausbauen. Mit einem klaren Plan wissen Sie bei jeder weiteren Massnahme, wozu sie dient.'
       },
       {
         q: 'Wie lange dauert die Strategiearbeit?',
@@ -434,13 +434,13 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'lead-generation',
     hero: {
       headline: 'Aus Website-Besuchern werden Anfragen.',
-      subheadline: 'Wir bauen Wege, über die Interessenten zu Ihnen finden und sich melden: mit Inhalten, SEO und Landingpages, die Anfragen erfassen und bewerten. Bezahlt und organisch.',
+      subheadline: 'Wir sorgen dafür, dass Interessenten Sie finden und sich melden. Dafür setzen wir Inhalte, SEO und Landingpages ein, die Anfragen erfassen und bewerten, bezahlt und organisch.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
       title: 'Besucher ja, Anfragen kaum',
       paragraphs: [
-        'Viele Unternehmen haben Besucher auf der Website, aber kaum Anfragen. Oder Anfragen, die nicht passen. Oder es fehlt ein Weg, aus Interesse eine konkrete Anfrage zu machen.',
+        'Viele Unternehmen haben Besucher auf der Website, aber kaum Anfragen, oder die Anfragen passen nicht. Oft fehlt schlicht ein Weg, aus Interesse eine konkrete Anfrage zu machen.',
         'Inhalte werden erstellt, aber sie werden bei Google nicht gefunden und bringen keine messbaren Ergebnisse.',
         'Gute Inhalte allein reichen nicht. Es braucht einen klaren Weg vom ersten Besuch bis zur Anfrage.'
       ]
@@ -450,11 +450,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Sichtbarkeit bei Google',
-          desc: 'Inhalte und SEO, die Sie bei passenden Suchanfragen sichtbar machen. Wir setzen auf Suchbegriffe, hinter denen eine echte Absicht steht, nicht nur auf grosses Suchvolumen.'
+          desc: 'Inhalte und SEO, die Sie bei passenden Suchanfragen sichtbar machen. Wir wählen Suchbegriffe, hinter denen eine echte Kaufabsicht steht. Grosses Suchvolumen allein reicht nicht.'
         },
         {
           title: 'Wege zur Anfrage',
-          desc: 'Landingpages, nützliche Angebote und klare Handlungsaufforderungen. Nicht nur «Kontakt aufnehmen», sondern passende Schritte für jede Phase der Entscheidung.'
+          desc: 'Landingpages, nützliche Angebote und klare Handlungsaufforderungen. Neben «Kontakt aufnehmen» gibt es Schritte, die zur jeweiligen Phase der Entscheidung passen.'
         },
         {
           title: 'Nützliche Angebote',
@@ -499,7 +499,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Bericht',
-          desc: 'Monatlich: Welche Inhalte werden gefunden? Welche bringen Anfragen? Wo gibt es Lücken? Die Zahlen bestimmen die nächsten Schritte.'
+          desc: 'Jeden Monat sehen Sie, welche Inhalte gefunden werden, welche Anfragen bringen und wo Lücken sind. Danach richten wir die nächsten Schritte aus.'
         }
       ]
     },
@@ -508,13 +508,13 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       {
         title: 'Zeitrahmen',
         type: 'text',
-        text: 'Erste Platzierungen bei Google meist nach drei bis sechs Monaten, spürbar mehr Anfragen eher nach sechs bis neun Monaten. Organische Sichtbarkeit braucht Zeit. Wer schneller Anfragen braucht, ergänzt SEO mit Google Ads.'
+        text: 'Erste Platzierungen bei Google gibt es meist nach drei bis sechs Monaten, nennenswert mehr Anfragen eher nach sechs bis neun Monaten. Organische Sichtbarkeit braucht Zeit. Wer schneller Anfragen braucht, ergänzt SEO mit Google Ads.'
       }
     ],
     faq: [
       {
         q: 'Wie lange dauert es, bis über Google organisch Anfragen kommen?',
-        a: 'Erste Platzierungen sehen Sie meist nach drei bis sechs Monaten, spürbar mehr Anfragen eher nach sechs bis neun Monaten. Das hängt stark davon ab, wie umkämpft Ihre Suchbegriffe sind und wie stark Ihre Website heute schon ist. Wer früher Anfragen braucht, setzt parallel auf Google Ads.'
+        a: 'Erste Platzierungen sehen Sie meist nach drei bis sechs Monaten, nennenswert mehr Anfragen eher nach sechs bis neun Monaten. Das hängt stark davon ab, wie umkämpft Ihre Suchbegriffe sind und wie stark Ihre Website heute schon ist. Wer früher Anfragen braucht, setzt parallel auf Google Ads.'
       },
       {
         q: 'Was, wenn unsere Branche sehr spezialisiert ist?',
@@ -530,7 +530,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       }
     ],
     cta: {
-      headline: 'Mehr Anfragen aus Ihrer Website.',
+      headline: 'Mehr Anfragen über Ihre Website.',
       subheadline: 'In 30 Minuten schauen wir auf Ihre heutige Sichtbarkeit und zeigen, wo Sie ansetzen können.',
       buttonText: 'Erstgespräch vereinbaren'
     }
@@ -545,9 +545,9 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     problem: {
       title: 'Anfragen kommen rein und versanden',
       paragraphs: [
-        'Anfragen kommen herein und dann passiert nichts. Kein Nachfassen, keine weitere Information, kein klarer Ablauf.',
-        'Oder: Vieles läuft von Hand, kostet Zeit und ist fehleranfällig. Zu viele Tools, die nicht miteinander verbunden sind. CRM-Daten, die veraltet oder unvollständig sind.',
-        'Die Folge: Interessenten, die eigentlich kaufen würden, gehen verloren.'
+        'Anfragen kommen herein, und dann passiert nichts. Niemand fasst nach, und einen klaren Ablauf gibt es nicht.',
+        'Oder vieles läuft von Hand, kostet Zeit und ist fehleranfällig. Die Tools sind nicht miteinander verbunden, und die Daten im CRM sind veraltet oder lückenhaft.',
+        'So gehen Interessenten verloren, die eigentlich kaufen würden.'
       ]
     },
     leistet: {
@@ -555,7 +555,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Interessenten automatisch weiterbegleiten',
-          desc: 'Automatische E-Mail-Abläufe, die Kontakten passende Inhalte schicken, je nach Verhalten, Interesse und Stand der Entscheidung. Persönlich statt Massenversand.'
+          desc: 'Automatische E-Mail-Abläufe, die Kontakten passende Inhalte schicken, je nach Verhalten, Interesse und Stand der Entscheidung. Das wirkt persönlich und nicht wie ein Massenversand.'
         },
         {
           title: 'Kontakte bewerten',
@@ -571,11 +571,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Tools verbinden',
-          desc: 'Ihre bestehenden Tools wie HubSpot, Salesforce, Pipedrive, Mailchimp oder Intercom werden verbunden. Daten fliessen automatisch, ohne Abtippen.'
+          desc: 'Wir verbinden Ihre bestehenden Tools wie HubSpot, Salesforce, Pipedrive, Mailchimp oder Intercom. Die Daten fliessen automatisch, niemand muss sie abtippen.'
         },
         {
           title: 'Automatische Berichte',
-          desc: 'Dashboards, die Ihnen regelmässig zeigen, wie die automatisierten Abläufe laufen. Ohne manuelles Zusammensuchen.'
+          desc: 'Dashboards zeigen Ihnen regelmässig, was die automatisierten Abläufe bringen, ohne dass jemand Zahlen zusammensuchen muss.'
         }
       ]
     },
@@ -592,11 +592,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Umsetzung (Woche 3–6)',
-          desc: 'Abläufe aufbauen, Tools verbinden, CRM einrichten. Alles wird getestet, bevor es live geht.'
+          desc: 'Wir bauen die Abläufe auf, verbinden die Tools und richten das CRM ein. Alles wird getestet, bevor es live geht.'
         },
         {
           title: 'Übergabe und Schulung (Woche 6–8)',
-          desc: 'Ihr Team lernt das System kennen. Mit Dokumentation und Feedback-Runden, damit es im Alltag auch genutzt wird.'
+          desc: 'Ihr Team lernt das System kennen, mit Dokumentation und Feedback-Runden, damit es im Alltag auch genutzt wird.'
         },
         {
           title: 'Optimierung (laufend)',
@@ -665,8 +665,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       title: 'Jedes Team misst etwas anderes',
       paragraphs: [
         'Viele Wachstumsprobleme liegen weder im Marketing noch im Vertrieb, sondern in den Abläufen dazwischen.',
-        'Teams arbeiten nebeneinander her. Daten liegen verstreut in verschiedenen Tools. Übergaben sind nicht geregelt. Das Marketing zählt Kontakte, der Vertrieb Abschlüsse, die Kundenbetreuung Kündigungen. Den Umsatz als Ganzes betrachtet niemand.',
-        'Die Folge: Doppelspurigkeiten, verlorene Verkaufschancen und ein Wachstum, das sich kaum vorhersagen lässt.'
+        'Die Teams arbeiten nebeneinander her, die Daten liegen verstreut in verschiedenen Tools, und Übergaben sind nicht geregelt. Das Marketing zählt Kontakte, der Vertrieb Abschlüsse, die Kundenbetreuung Kündigungen. Den Umsatz als Ganzes betrachtet niemand.',
+        'Das führt zu Doppelspurigkeiten und verlorenen Verkaufschancen, und das Wachstum lässt sich kaum vorhersagen.'
       ]
     },
     leistet: {
@@ -674,11 +674,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Gemeinsame Kennzahlen',
-          desc: 'Was messen Sie als Unternehmen? Qualifizierte Anfragen, Verkaufschancen, Kosten pro Neukunde, Kundenwert über die Zeit: Wir legen die Kennzahlen fest, mit denen sich Wachstum steuern lässt.'
+          desc: 'Was messen Sie als Unternehmen? Wir legen die Kennzahlen fest, mit denen sich Wachstum steuern lässt, etwa qualifizierte Anfragen, Verkaufschancen, Kosten pro Neukunde und Kundenwert über die Zeit.'
         },
         {
           title: 'Einheitliche Abläufe',
-          desc: 'Marketing, Vertrieb und Kundenbetreuung arbeiten nach abgestimmten Abläufen. Übergaben funktionieren, niemand fällt durchs Raster.'
+          desc: 'Marketing, Vertrieb und Kundenbetreuung arbeiten nach abgestimmten Abläufen. Übergaben sind geregelt, und kein Kunde fällt durchs Raster.'
         },
         {
           title: 'Tool-Landschaft aufräumen',
@@ -690,7 +690,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Umsatzprognose und Verkaufschancen',
-          desc: 'Wir richten Prognosen und regelmässige Durchsichten der offenen Verkaufschancen ein, die realistisch und belastbar sind.'
+          desc: 'Wir richten realistische Umsatzprognosen ein und sorgen für eine regelmässige Durchsicht der offenen Verkaufschancen.'
         },
         {
           title: 'Berichte',
@@ -703,7 +703,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Bestandsaufnahme (Woche 1–2)',
-          desc: 'Analyse der Abläufe, Prüfung der Tools und der Datenqualität. Wir halten den heutigen Stand fest und zeigen die grössten Lücken.'
+          desc: 'Wir analysieren die Abläufe und prüfen Tools und Datenqualität. Wir halten den heutigen Stand fest und zeigen die grössten Lücken.'
         },
         {
           title: 'Konzept (Woche 2–4)',
@@ -711,7 +711,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Umsetzung (Woche 4–12)',
-          desc: 'Schrittweise Umsetzung, beginnend mit den Bereichen, die am meisten bringen. Nicht alles auf einmal.'
+          desc: 'Wir setzen schrittweise um und beginnen mit den Bereichen, die am meisten bringen, statt alles auf einmal anzugehen.'
         },
         {
           title: 'Einführung und Schulung (laufend)',
@@ -719,7 +719,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Laufende Verbesserung',
-          desc: 'Abläufe und Systeme werden regelmässig überprüft und auf Basis von Daten und Rückmeldungen angepasst.'
+          desc: 'Wir überprüfen Abläufe und Systeme regelmässig und passen sie anhand von Daten und Rückmeldungen an.'
         }
       ]
     },
@@ -745,7 +745,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Ab welcher Unternehmensgrösse ist das sinnvoll?',
-        a: 'Sobald Marketing, Vertrieb und Kundenbetreuung von unterschiedlichen Personen gemacht werden. Das kann schon bei fünf Mitarbeitenden der Fall sein. Je früher die Grundlagen stehen, desto einfacher.'
+        a: 'Sobald Marketing, Vertrieb und Kundenbetreuung von unterschiedlichen Personen betreut werden. Das kann schon bei fünf Mitarbeitenden der Fall sein. Je früher die Grundlagen stehen, desto einfacher.'
       },
       {
         q: 'Wie lange dauert die Umsetzung?',
@@ -757,7 +757,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Ist das nicht einfach ein IT-Projekt?',
-        a: 'Nein. Die Technik ist nur das Mittel. Im Kern geht es darum, wie Marketing, Vertrieb und Kundenbetreuung zusammenarbeiten, damit mehr Anfragen zu Kunden werden.'
+        a: 'Nein. Die Technik ist nur das Mittel. Entscheidend ist, wie Marketing, Vertrieb und Kundenbetreuung zusammenarbeiten, damit mehr Anfragen zu Kunden werden.'
       }
     ],
     cta: {
@@ -778,7 +778,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'In vielen Unternehmen arbeiten Marketing und Vertrieb nebeneinander her.',
         'Das Marketing erstellt Unterlagen, die der Vertrieb nicht nutzt. Der Vertrieb klagt über unpassende Anfragen, das Marketing darüber, dass Anfragen liegen bleiben. Wie die Übergabe genau laufen soll, weiss niemand.',
-        'Die Folge: längere Verkaufszyklen, verlorene Verkaufschancen und Frust auf beiden Seiten.'
+        'Verkaufszyklen werden länger, Verkaufschancen gehen verloren, und auf beiden Seiten wächst der Frust.'
       ]
     },
     leistet: {
@@ -823,11 +823,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Unterlagen erstellen (Woche 3–8)',
-          desc: 'Die wichtigsten Verkaufsunterlagen werden erarbeitet, abgestimmt auf die Situationen, in denen Ihr Vertrieb sie braucht.'
+          desc: 'Wir erarbeiten die wichtigsten Verkaufsunterlagen, abgestimmt auf die Situationen, in denen Ihr Vertrieb sie braucht.'
         },
         {
           title: 'Abläufe umsetzen (laufend)',
-          desc: 'Übergaben werden dokumentiert und eingeführt, CRM-Felder angepasst, feste Routinen etabliert.'
+          desc: 'Wir dokumentieren die Übergaben, führen sie ein, passen CRM-Felder an und etablieren feste Routinen.'
         },
         {
           title: 'Messen und anpassen',
@@ -884,7 +884,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'In den meisten Online-Shops kauft nur ein kleiner Teil der Besucher. Die übrigen gehen wieder, oft kurz vor dem Ziel. Das liegt selten am Algorithmus oder an zu wenig Besuchern, sondern am Ablauf im Shop.',
         'Viele Shops stecken fast ihr ganzes Budget in neue Besucher über Google, Meta oder Influencer. Was danach passiert, bleibt oft unbeachtet: Warum brechen so viele im Warenkorb ab? Warum kauft jemand einmal und nie wieder? Warum steht die Werbung unter Druck, obwohl genug Besucher kommen?',
-        'Nachhaltiges Wachstum im E-Commerce entsteht selten durch mehr Budget allein. Es entsteht durch bessere Produktseiten und einen einfacheren Checkout, durch E-Mails, die Kunden zurückholen, durch Messung, die zeigt, welcher Kanal wirklich rentiert, und durch Werbung, die nach Marge gesteuert wird.'
+        'Mehr Budget allein bringt einen Shop selten dauerhaft weiter. Was hilft, sind bessere Produktseiten und ein einfacherer Checkout, E-Mails, die Kunden zurückholen, eine Messung, die zeigt, welcher Kanal wirklich rentiert, und Werbung, die nach Marge gesteuert wird.'
       ]
     },
     leistet: {
@@ -912,7 +912,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Technische Shop-Optimierung',
-          desc: 'Ladezeiten beeinflussen die Kaufquote. Wir analysieren und verbessern Core Web Vitals, mobile Ladezeiten, die Technik im Checkout und strukturierte Daten.'
+          desc: 'Ladezeiten beeinflussen die Kaufquote. Wir verbessern die Core Web Vitals (Googles Messwerte für das Ladetempo), mobile Ladezeiten, die Technik im Checkout und strukturierte Daten.'
         }
       ]
     },
@@ -933,7 +933,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Ausbauen (ab Monat 3)',
-          desc: 'Rentable Kanäle schrittweise ausbauen, neue Kundengruppen oder Märkte erschliessen, auf einer soliden Grundlage.'
+          desc: 'Sobald die Grundlage steht, bauen wir rentable Kanäle schrittweise aus und erschliessen neue Kundengruppen oder Märkte.'
         }
       ]
     },
@@ -980,9 +980,9 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     problem: {
       title: 'Was viele Online-Marken am Wachsen hindert',
       paragraphs: [
-        'Am Produkt liegt es selten. Viele Schweizer Online-Marken gewinnen ihre ersten Kunden über Empfehlungen, einen erfolgreichen Social-Media-Beitrag oder die ersten Meta-Kampagnen. Wenn das Wachstum dann abflacht, fehlt meist ein System: Das Werbebudget fliesst ohne klare Zuordnung, ohne geplanten Weg zum Kauf und ohne Wissen über den Kundenwert in Meta-Kampagnen.',
+        'Am Produkt liegt es selten. Viele Schweizer Online-Marken gewinnen ihre ersten Kunden über Empfehlungen, einen erfolgreichen Social-Media-Beitrag oder die ersten Meta-Kampagnen. Wenn das Wachstum dann abflacht, fehlt meist ein System. Das Werbebudget fliesst in Meta-Kampagnen, ohne dass klar ist, welche davon Kunden bringen, wie der Weg zum Kauf aussieht und was ein Kunde wert ist.',
         'Die Kosten pro Neukunde steigen oft unbemerkt, weil niemand sie sauber misst. Viele Marken wissen, was ein Neukunde kostet. Was er über zwölf Monate einbringt, wissen die wenigsten. Ohne diese Zahl kaufen Sie Kunden zu Preisen ein, die auf den ersten Blick aufgehen, die Marge aber auffressen. Gleichzeitig bleiben eigene Kanäle liegen: kein SEO, kein Plan für Inhalte, keine E-Mails, die aus Erstkäufern Stammkunden machen.',
-        'Die Abhängigkeit von einem einzigen Kanal ist ein grosses Risiko. Eine Änderung bei Apple oder Meta, ein Algorithmus-Wechsel oder ein gesperrtes Werbekonto, und der Umsatz bricht ein. Unser Ziel ist eine Kundengewinnung, die auf mehreren Kanälen steht und deren Wirkung Sie messen können.'
+        'Wer von einem einzigen Kanal abhängt, geht ein grosses Risiko ein. Es reicht eine Änderung bei Apple oder Meta, ein neuer Algorithmus oder ein gesperrtes Werbekonto, und der Umsatz bricht ein. Unser Ziel ist eine Kundengewinnung, die auf mehreren Kanälen steht und deren Wirkung Sie messen können.'
       ]
     },
     leistet: {
@@ -998,7 +998,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Weg zum Kauf & Shop-Optimierung',
-          desc: 'Klicks allein bringen keinen Umsatz. Wir analysieren Landingpages, Produktseiten und Checkout und finden heraus, wo Interessenten abspringen. Gezielte Verbesserungen senken die Kosten pro Kauf, ohne dass Sie mehr Werbebudget brauchen. Rechenbeispiel: Steigt die Kaufquote von 1 auf 2 Prozent, halbieren sich bei gleichem Budget die Werbekosten pro Kauf.'
+          desc: 'Klicks allein bringen keinen Umsatz. Wir analysieren Landingpages, Produktseiten und Checkout und finden heraus, wo Interessenten abspringen. Wenn wir diese Stellen verbessern, sinken die Kosten pro Kauf, ohne dass Sie mehr Werbebudget brauchen. Rechenbeispiel: Steigt die Kaufquote von 1 auf 2 Prozent, halbieren sich bei gleichem Budget die Werbekosten pro Kauf.'
         },
         {
           title: 'SEO und eigene Kanäle',
@@ -1023,7 +1023,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Grundlagen schaffen',
-          desc: 'Tracking, saubere Kampagnenstruktur, erste Shop-Optimierungen, E-Mail-Abläufe einrichten oder reparieren. Diese Phase ist weniger spektakulär als «einfach mehr Werbung», aber die Voraussetzung dafür, dass späteres Wachstum funktioniert.'
+          desc: 'Wir richten Tracking, Kampagnenstruktur, erste Shop-Optimierungen und E-Mail-Abläufe ein oder reparieren sie. Diese Phase ist weniger spektakulär als «einfach mehr Werbung», aber die Voraussetzung dafür, dass späteres Wachstum funktioniert.'
         },
         {
           title: 'Testen & prüfen',
@@ -1031,7 +1031,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Ausbauen & optimieren',
-          desc: 'Was sich bewährt, wird ausgebaut, was nicht funktioniert, wird abgeschaltet. Monatlicher Bericht mit klaren Kennzahlen, regelmässige Besprechungen, und jeder neue Kaufmonat liefert Daten für die nächste Entscheidung.'
+          desc: 'Was sich bewährt, bauen wir aus, was nicht funktioniert, schalten wir ab. Sie erhalten jeden Monat einen Bericht mit klaren Kennzahlen, wir besprechen ihn regelmässig, und jeder neue Kaufmonat liefert Daten für die nächste Entscheidung.'
         }
       ]
     },
@@ -1039,7 +1039,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       {
         title: 'Typische Ausgangslage',
         type: 'text',
-        text: 'Typische Ausgangslage: Eine Schweizer Online-Marke steckt fast das ganze Werbebudget in Meta, die Kampagnen sind über die Jahre gewachsen und unübersichtlich, und niemand weiss genau, was ein Neukunde kostet. Erste Schritte sind dann meist, das Tracking zu reparieren, die Kampagnen neu zu ordnen, den Checkout zu vereinfachen und E-Mail-Abläufe für Wiederkäufe aufzubauen. Erst danach lohnt es sich, das Budget zu erhöhen oder neue Kanäle zu testen.'
+        text: 'Eine Schweizer Online-Marke steckt fast das ganze Werbebudget in Meta, die Kampagnen sind über die Jahre gewachsen und unübersichtlich, und niemand weiss genau, was ein Neukunde kostet. Erste Schritte sind dann meist, das Tracking zu reparieren, die Kampagnen neu zu ordnen, den Checkout zu vereinfachen und E-Mail-Abläufe für Wiederkäufe aufzubauen. Erst danach lohnt es sich, das Budget zu erhöhen oder neue Kanäle zu testen.'
       }
     ],
     faq: [
@@ -1066,15 +1066,15 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'customer-retention',
     hero: {
       headline: 'Machen Sie aus Erstkäufern Stammkunden.',
-      subheadline: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Trotzdem fehlt vielen Unternehmen ein System, das Bestandskunden gezielt anspricht und inaktive Kunden zurückholt. Wir bauen es auf, für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
+      subheadline: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Trotzdem fehlt vielen Unternehmen ein System, das Bestandskunden regelmässig anspricht und inaktive Kunden zurückholt. Wir bauen es auf, für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
       ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
       title: 'Wachstum nur über Neukunden ist teuer',
       paragraphs: [
-        'Viele Unternehmen kennen ihre Kosten pro Neukunde genau. Was ein Kunde über zwei, drei oder fünf Jahre wert ist, wissen sie nicht, weil sie ihn nie gezielt weiterentwickelt haben. Der Kundenwert bleibt eine Schätzung.',
+        'Viele Unternehmen kennen ihre Kosten pro Neukunde genau. Was ein Kunde über zwei, drei oder fünf Jahre wert ist, wissen sie nicht, weil sich nach dem ersten Kauf niemand mehr um ihn gekümmert hat. Der Kundenwert bleibt eine Schätzung.',
         'Im E-Commerce heisst das: Ein Kunde kauft einmal, verschwindet, und ihn über Werbung zurückzuholen kostet erneut Geld, wenn er überhaupt zurückkommt. Oft fehlt einfach die Kommunikation nach dem Kauf: kein Anlass für den zweiten Kauf, keine Nachricht im richtigen Moment.',
-        'Im B2B ist das Muster ähnlich, nur teurer: Ein Kunde wird gewonnen, eingeführt, und danach passiert wenig. Kein strukturiertes Zusatzangebot, kein regelmässiges Gespräch, kein Warnsignal vor der Kündigung. Abwanderung fällt erst auf, wenn die Rechnung ausbleibt. Einen verlorenen Kunden zurückzugewinnen ist aufwendiger, als ihn zu halten.'
+        'Im B2B ist das Muster ähnlich, nur teurer: Ein Kunde wird gewonnen, eingeführt, und danach passiert wenig. Es gibt kein geplantes Zusatzangebot, kein regelmässiges Gespräch und kein Warnsignal vor der Kündigung. Abwanderung fällt erst auf, wenn die Rechnung ausbleibt. Einen verlorenen Kunden zurückzugewinnen ist aufwendiger, als ihn zu halten.'
       ]
     },
     leistet: {
@@ -1086,7 +1086,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Rückgewinnung & Kündigungen vorbeugen',
-          desc: 'Inaktive Kunden sind nicht verloren. Wir bauen E-Mail-Strecken, die sie gezielt wieder ansprechen. Im B2B ergänzen wir Frühwarnzeichen: Verhaltenssignale, die auf ein Kündigungsrisiko hinweisen, bevor der Kunde kündigt.'
+          desc: 'Inaktive Kunden sind nicht verloren. Wir bauen E-Mail-Strecken, die sie mit einem passenden Anlass wieder ansprechen. Im B2B ergänzen wir Frühwarnzeichen: Verhaltenssignale, die auf ein Kündigungsrisiko hinweisen, bevor der Kunde kündigt.'
         },
         {
           title: 'Treue- und Wiederkaufprogramme',
@@ -1111,7 +1111,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Analyse der Kundenbasis',
-          desc: 'Auswertung Ihrer Kunden nach Kaufhäufigkeit, Kundenwert, Abwanderung und Wiederkaufverhalten. Prüfung der bestehenden E-Mails und Automatisierungen.'
+          desc: 'Wir werten Ihre Kunden nach Kaufhäufigkeit, Kundenwert, Abwanderung und Wiederkaufverhalten aus und prüfen die bestehenden E-Mails und Automatisierungen.'
         },
         {
           title: 'Grundlagen & erste Abläufe',
@@ -1119,7 +1119,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Optimierung & Ausbau',
-          desc: 'Monatliche Überarbeitung der Abläufe anhand von Öffnungen, Klicks und Käufen. Aufbau von Treueprogramm und Zusatzangeboten.'
+          desc: 'Wir überarbeiten die Abläufe monatlich anhand von Öffnungen, Klicks und Käufen und bauen Treueprogramm und Zusatzangebote auf.'
         },
         {
           title: 'Weitere Kanäle',
@@ -1131,7 +1131,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       {
         title: 'Typische Ausgangslage',
         type: 'text',
-        text: 'Typische Ausgangslage: Ein Schweizer Online-Shop hat eine solide Kundenbasis, verschickt aber ausser der Bestellbestätigung kaum E-Mails. Wiederkäufe passieren zufällig, und niemand weiss genau, wie viele Kunden ein zweites Mal bestellen. Wir beginnen dann mit einer Auswertung der Kundenbasis nach Kaufmonat, bauen E-Mails für die Zeit nach dem Kauf und eine Rückgewinnungsstrecke für inaktive Kunden auf und messen von Anfang an, wie sich die Wiederkaufrate entwickelt.'
+        text: 'Ein Schweizer Online-Shop hat eine solide Kundenbasis, verschickt aber ausser der Bestellbestätigung kaum E-Mails. Wiederkäufe passieren zufällig, und niemand weiss genau, wie viele Kunden ein zweites Mal bestellen. Wir beginnen dann mit einer Auswertung der Kundenbasis nach Kaufmonat, bauen E-Mails für die Zeit nach dem Kauf und eine Rückgewinnungsstrecke für inaktive Kunden auf und messen von Anfang an, wie sich die Wiederkaufrate entwickelt.'
       }
     ],
     faq: [
@@ -1141,7 +1141,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Arbeiten Sie mit unserem bestehenden E-Mail-Tool oder müssen wir wechseln?',
-        a: 'Wir arbeiten mit dem, was Sie haben. Die meisten Probleme liegen nicht am Tool, sondern an fehlender Struktur und Segmentierung. Wir arbeiten unter anderem mit Klaviyo, HubSpot, ActiveCampaign und Mailchimp.'
+        a: 'Wir arbeiten mit dem, was Sie haben. Die meisten Probleme liegen nicht am Tool, sondern daran, dass Struktur und eine sinnvolle Einteilung der Kunden in Gruppen fehlen. Wir arbeiten unter anderem mit Klaviyo, HubSpot, ActiveCampaign und Mailchimp.'
       },
       {
         q: 'Was ist realistisch, und wie schnell?',
@@ -1149,8 +1149,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       }
     ],
     cta: {
-      headline: 'Ihre Bestandskunden sind ein oft unterschätzter Hebel.',
-      subheadline: 'In 30 Minuten schauen wir gemeinsam, wie viel Potenzial in Ihrer bestehenden Kundenbasis steckt und was es braucht, es zu nutzen.',
+      headline: 'Ihre Bestandskunden bringen oft mehr, als Sie denken.',
+      subheadline: 'In 30 Minuten schauen wir gemeinsam, wie viel zusätzlicher Umsatz in Ihrer bestehenden Kundenbasis steckt und was es braucht, um ihn zu holen.',
       buttonText: 'Erstgespräch vereinbaren'
     }
   },
@@ -1166,7 +1166,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'Ein Rechenbeispiel: Angenommen, Sie geben CHF 10\'000 pro Monat für Meta Ads aus und der gemeldete ROAS liegt bei 4. Die Berichte sehen gut aus, und trotzdem bleibt am Monatsende weniger übrig als erwartet. Das liegt meist nicht am Zufall, sondern daran, was gemessen wird.',
         'ROAS misst Umsatz pro Werbefranken. Er zeigt nicht, wie hoch Ihre Produktmarge ist, was Versand und Rücksendungen kosten, und dass der Algorithmus oft günstige Produkte mit vielen Klicks bevorzugt statt Ihrer margenstarken Artikel. Rechenbeispiel: Bei 30 Prozent Marge brauchen Sie einen ROAS von rund 3.3, nur um die Werbekosten zu decken, ohne Versand und Retouren. Bei 20 Prozent Marge liegt diese Schwelle bei 5.',
-        'Dazu kommt: Was mit kleinem Budget funktioniert, muss mit grösserem Budget nicht genauso funktionieren. Meta zeigt die Anzeigen dann auch weniger passenden Zielgruppen, und die Kosten pro Kauf steigen. Wer das nicht einplant, baut Kampagnen aus, die sich nicht mehr rechnen. Und auf TikTok kostet Werbung ohne klares Konzept für die Anzeigen viel Geld für Aufrufe ohne Käufe.'
+        'Dazu kommt, dass nicht alles, was mit kleinem Budget funktioniert, auch mit grösserem Budget gleich gut läuft. Meta zeigt die Anzeigen dann auch weniger passenden Zielgruppen, und die Kosten pro Kauf steigen. Wer das nicht einplant, baut Kampagnen aus, die sich nicht mehr rechnen. Auf TikTok wiederum bezahlen Sie ohne klares Anzeigenkonzept viel Geld für Aufrufe, die keine Käufe bringen.'
       ]
     },
     leistet: {
@@ -1178,7 +1178,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Meta Ads: Aufbau & Betreuung',
-          desc: 'Kampagnenaufbau auf Facebook und Instagram, getrennt nach Neukunden, Retargeting und Bestandskunden. Kampagnenziele je nach Phase gewählt, Anzeigentests geplant.'
+          desc: 'Wir bauen Kampagnen auf Facebook und Instagram auf, getrennt nach Neukunden, Retargeting und Bestandskunden. Die Kampagnenziele wählen wir je nach Phase, Anzeigentests planen wir im Voraus.'
         },
         {
           title: 'TikTok Ads & Anzeigenkonzept',
@@ -1194,7 +1194,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Monatliche Gewinnauswertung',
-          desc: 'Kein Bericht, der nur den ROAS zeigt. Jeden Monat werten wir aus: Deckungsbeitrag pro Kampagne, Gewinn nach Marge und Versandkosten, kostendeckender ROAS im Vergleich zum erreichten.'
+          desc: 'Statt nur den ROAS zu zeigen, werten wir jeden Monat aus: Deckungsbeitrag pro Kampagne, Gewinn nach Marge und Versandkosten, kostendeckender ROAS im Vergleich zum erreichten.'
         }
       ]
     },
@@ -1203,7 +1203,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Prüfung & Margenanalyse',
-          desc: 'Wir prüfen bestehende Kampagnen auf Marge und tatsächlichen Gewinn, ausserdem Tracking und Produktmargen, um rasch umsetzbare Verbesserungen zu finden.'
+          desc: 'Wir prüfen, was Ihre bestehenden Kampagnen nach Abzug der Produktmargen tatsächlich verdienen, und kontrollieren das Tracking. So finden wir rasch umsetzbare Verbesserungen.'
         },
         {
           title: 'Struktur & Tracking',
@@ -1211,7 +1211,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Start & erste Tests',
-          desc: 'Kampagnen gehen mit einem Startbudget live, erste Anzeigentests laufen. Wöchentliche Auswertung und Verteilung des Budgets nach Deckungsbeitrag.'
+          desc: 'Die Kampagnen starten mit einem festen Startbudget, die ersten Anzeigentests laufen an. Jede Woche werten wir aus und verteilen das Budget nach Deckungsbeitrag.'
         },
         {
           title: 'Ausbau & Optimierung',
@@ -1223,7 +1223,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       {
         title: 'Typische Ausgangslage',
         type: 'text',
-        text: 'Typische Ausgangslage: Ein Online-Shop bewirbt vor allem Produkte, die viele Klicks bringen, aber wenig Marge haben. Der ROAS im Werbekonto wirkt ordentlich, der Gewinn nach Warenkosten, Versand und Retouren ist es nicht. Wir rechnen dann zuerst für jede Produktgruppe aus, ab welchem ROAS sie kostendeckend ist, richten serverseitiges Tracking ein und bauen die Kampagnen so um, dass margenstarke Produkte mehr Budget erhalten.'
+        text: 'Ein Online-Shop bewirbt vor allem Produkte, die viele Klicks bringen, aber wenig Marge haben. Der ROAS im Werbekonto wirkt ordentlich, der Gewinn nach Warenkosten, Versand und Retouren ist es nicht. Wir rechnen dann zuerst für jede Produktgruppe aus, ab welchem ROAS sie kostendeckend ist, richten serverseitiges Tracking ein und bauen die Kampagnen so um, dass margenstarke Produkte mehr Budget erhalten.'
       }
     ],
     faq: [

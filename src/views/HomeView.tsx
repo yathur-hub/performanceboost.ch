@@ -30,7 +30,7 @@ const reveal = {
 const STEPS = [
   { title: 'Analyse und Verständnis', desc: 'Wir schauen uns Ziele, Zahlen, Abläufe und Systeme an. Danach wissen Sie, wo Umsatz, Zeit oder Daten verloren gehen.' },
   { title: 'Strategie und Prioritäten', desc: 'Sie erhalten einen konkreten Plan mit Aufwand, Budget und Kennzahlen. Wir beginnen mit dem, was am meisten bewirkt.' },
-  { title: 'Umsetzung und Integration', desc: 'Wir setzen selbst um: Kampagnen, Seiten, CRM, Automatisierungen und Auswertungen. Dokumentiert, damit Ihr Team weiterarbeiten kann.' },
+  { title: 'Umsetzung und Integration', desc: 'Wir setzen selbst um: Kampagnen, Seiten, CRM, Automatisierungen und Auswertungen. Alles ist dokumentiert, damit Ihr Team weiterarbeiten kann.' },
   { title: 'Messen und verbessern', desc: 'Regelmässig schauen wir gemeinsam auf die Zahlen. Was funktioniert, bauen wir aus. Was nicht funktioniert, passen wir an oder stoppen es.' },
 ];
 
@@ -43,7 +43,7 @@ const DIFFERENCES = [
 const FAQ = [
   {
     q: 'Was macht ein Business Performance Partner?',
-    a: 'Wir verbessern die Bereiche, in denen KMU heute am meisten Umsatz und Zeit verlieren: Marketing, Vertrieb, Daten und digitale Abläufe. Dazu verbinden wir Strategie, Technologie und Umsetzung und messen die Arbeit an Ihren Geschäftszahlen.',
+    a: 'Wir verbessern die Bereiche, in denen KMU heute am meisten Umsatz und Zeit verlieren: Marketing, Vertrieb, Daten und digitale Abläufe. Wir planen mit Ihnen, setzen selbst um und messen die Arbeit an Ihren Geschäftszahlen statt an Klicks.',
   },
   {
     q: 'Für welche Unternehmen eignet sich performanceboost?',
@@ -51,7 +51,7 @@ const FAQ = [
   },
   {
     q: 'Was unterscheidet Sie von einer Marketingagentur oder einer Unternehmensberatung?',
-    a: 'Eine Marketingagentur betreut meist einzelne Kanäle, eine Unternehmensberatung liefert oft Konzepte. Wir betrachten die ganze Strecke von der Strategie über Systeme und Abläufe bis zum Auftrag und setzen selbst um. Finanz-, Rechts- oder Organisationsberatung bieten wir nicht an.',
+    a: 'Eine Marketingagentur betreut meist einzelne Kanäle, eine Unternehmensberatung liefert oft Konzepte. Wir kümmern uns um die ganze Strecke bis zum Auftrag, also auch um Systeme und Abläufe, und setzen selbst um. Finanz-, Rechts- oder Organisationsberatung bieten wir nicht an.',
   },
   {
     q: 'Müssen wir alle Leistungen beziehen?',
@@ -79,11 +79,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <div className="hero-enter lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
               <h1 className="text-[2.1rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.6rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08]">
                 Mehr Performance für Ihr Unternehmen.{' '}
-                <span className="text-[#696EEF] italic font-serif">Strategie, Technologie, Wachstum.</span>
+                <span className="text-[#696EEF] italic font-serif">Strategie, Technologie und Wachstum.</span>
               </h1>
               <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Wir verbinden Strategie, Technologie und Umsetzung, damit Marketing, Vertrieb und Abläufe in Ihrem Unternehmen besser
-                zusammenarbeiten. Von der Analyse bis zur laufenden Optimierung, persönlich betreut von Inhaber Yathur Nathan.
+                zusammenarbeiten. Wir analysieren, setzen selbst um und verbessern laufend. Ihr Ansprechpartner ist Inhaber Yathur Nathan.
               </p>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center lg:justify-start items-center">
                 <CtaButton label="Potenzial besprechen" location="home_hero" pageSlug="home" />
@@ -162,8 +162,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 wann ein Interessent an den Vertrieb geht. Und die beste Strategie hilft nicht, wenn sie nie umgesetzt wird.
               </p>
               <p className="text-body-sm text-slate-500 leading-relaxed">
-                Deshalb betrachten wir die ganze Strecke: von der Strategie über Systeme und Abläufe bis zum Auftrag. Wir optimieren nicht nur
-                Kampagnen, sondern auch die Prozesse bis zum Verkaufsabschluss.
+                Deshalb schauen wir uns die ganze Strecke an, von der ersten Anzeige bis zum unterschriebenen Auftrag. Wir verbessern die
+                Kampagnen und ebenso die Abläufe danach, bis zum Verkaufsabschluss.
               </p>
             </motion.div>
             <div className="lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end w-full min-w-0">
@@ -209,7 +209,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section>
         <Container className="space-y-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
-            <SectionHeading title="Vier Leistungsfelder, ein Ziel: bessere Ergebnisse" />
+            <SectionHeading title="Vier Leistungsfelder, die ineinandergreifen" />
             <Link href="/leistungen" className="text-xs font-bold text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
               Alle Leistungen ansehen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
@@ -295,7 +295,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <div className="md:col-span-8 space-y-6">
               <div>
                 <h2 className="mt-2 text-2xl sm:text-3xl font-display font-semibold text-slate-900 leading-tight">
-                  Ein Partner für Strategie, Technologie und Wachstum.
+                  Ein Partner, der Strategie auch selbst umsetzt.
                 </h2>
               </div>
               <p className="text-body text-slate-600 leading-relaxed">
@@ -336,7 +336,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="w-full bg-slate-950 text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">
-                Wo liegt in Ihrem Unternehmen das grösste Potenzial?
+                Wo lohnt es sich in Ihrem Unternehmen am meisten?
               </h2>
               <p className="text-body text-slate-300 leading-relaxed">
                 30 Minuten, kostenlos und unverbindlich. Sie schildern Ihre Ausgangslage, wir sagen Ihnen offen, wo wir ansetzen würden und ob

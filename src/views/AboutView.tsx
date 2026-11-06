@@ -73,7 +73,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. Wir helfen Schweizer KMU, ihre Performance in Marketing, Vertrieb und Abläufen zu verbessern, und verbinden dafür Strategie, Technologie und Umsetzung. We boost business performance.
+            performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. Wir helfen Schweizer KMU, mehr aus Marketing, Vertrieb und ihren Abläufen herauszuholen. Dafür planen wir mit Ihnen und setzen selbst um. We boost business performance.
           </motion.p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             Viele KMU investieren in Werbung, eine neue Website, ein CRM oder KI-Tools, aber die Teile arbeiten nicht zusammen. Die Agentur optimiert Klicks, das CRM bildet den Verkauf nicht ab, Daten werden von Hand übertragen und Anfragen zu spät beantwortet. Am Ende weiss niemand, was die Investitionen tatsächlich gebracht haben.
           </p>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-            performanceboost betrachtet deshalb die ganze Strecke: von der Strategie über Systeme und Abläufe bis zu Marketing, Vertrieb und Messung. Erst wenn diese Kette funktioniert, lohnt es sich, mehr Budget oder neue Tools einzusetzen.
+            Deshalb schaut performanceboost auf die ganze Kette: Strategie, Systeme, Abläufe, Marketing, Vertrieb und Messung. Erst wenn das zusammen funktioniert, lohnt es sich, mehr Budget oder neue Tools einzusetzen.
           </p>
         </motion.div>
 
@@ -157,10 +157,10 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
-              Ich unterstütze Schweizer KMU dabei, ihre Unternehmensperformance zu verbessern: mehr passende Kunden, effizientere Abläufe und Zahlen, auf die man sich verlassen kann. Dafür verbinde ich Strategie, Performance Marketing, Webentwicklung, Daten und Automatisierung, Aufgaben, die sonst oft auf mehrere Dienstleister verteilt sind und dabei aneinander vorbeilaufen.
+              Ich helfe Schweizer KMU, mehr passende Kunden zu gewinnen, effizienter zu arbeiten und Zahlen zu haben, auf die man sich verlassen kann. Dafür bringe ich Strategie, Performance Marketing, Webentwicklung, Daten und Automatisierung zusammen. Diese Aufgaben sind sonst oft auf mehrere Dienstleister verteilt, die aneinander vorbeiarbeiten.
             </p>
             <p>
-              In den vergangenen Jahren habe ich mit Unternehmen aus unterschiedlichen Branchen gearbeitet, vom Onlineshop über Beratungsunternehmen bis zum Dienstleister, für den ich Website und ERP-System entwickelt habe. Dabei hat sich immer wieder gezeigt: Gute Ergebnisse entstehen nicht durch eine einzelne Kampagne oder ein neues Tool, sondern wenn Strategie, Systeme, Abläufe und Messung zusammenpassen. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
+              In den vergangenen Jahren habe ich mit Unternehmen aus unterschiedlichen Branchen gearbeitet, vom Onlineshop über Beratungsunternehmen bis zum Dienstleister, für den ich Website und ERP-System entwickelt habe. Dabei habe ich immer wieder gesehen, dass eine einzelne Kampagne oder ein neues Tool selten reicht. Gute Ergebnisse entstehen, wenn Strategie, Systeme, Abläufe und Messung zusammenpassen. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
             </p>
           </div>
         </motion.div>
@@ -268,7 +268,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           >
             <span className="text-xs font-mono font-bold text-[#686DF4]">Grundsatz 2: Aufbauen, was bleibt</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-              Eine einzelne Kampagne läuft irgendwann aus. Wir bauen zusätzlich Dinge auf, die Ihnen langfristig gehören: saubere Daten, CRM-Abläufe, Automatisierungen, Landingpages und Auswertungen. Alles ist dokumentiert, damit Ihr Team damit weiterarbeiten kann.
+              Eine einzelne Kampagne läuft irgendwann aus. Wir bauen deshalb auch auf, was Ihnen langfristig bleibt: saubere Daten, CRM-Abläufe, Automatisierungen, Landingpages und Auswertungen. Alles ist dokumentiert, damit Ihr Team damit weiterarbeiten kann.
             </p>
           </motion.div>
         </div>

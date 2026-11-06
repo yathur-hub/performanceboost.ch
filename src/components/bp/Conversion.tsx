@@ -31,7 +31,7 @@ export function HeroTrust({ className = '', align = 'left' }: { className?: stri
 }
 
 export function LeadCtaSection({
-  title = 'Lassen Sie uns über Ihr Potenzial sprechen.',
+  title = 'Lassen Sie uns über Ihre Ziele sprechen.',
   intro = 'Schildern Sie kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort und einen Terminvorschlag für ein kostenloses Erstgespräch.',
   formLocation,
   points = [

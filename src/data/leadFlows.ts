@@ -51,7 +51,7 @@ export const LEAD_FLOWS: Record<string, LeadFlow> = {
     {
       id: 'situation',
       label: 'Was beschreibt Ihre Situation am besten?',
-      options: ['Wir wachsen, aber nicht planbar', 'Viel Handarbeit, zu wenig Zeit', 'Tools sind da, greifen aber nicht ineinander', 'Wir wollen etwas Neues angehen'],
+      options: ['Wir wachsen, aber nicht planbar', 'Viel Handarbeit, zu wenig Zeit', 'Tools sind da, arbeiten aber nicht zusammen', 'Wir wollen etwas Neues angehen'],
     },
   ]),
   strategy: flow('strategy', 'Strategie besprechen', [
@@ -70,7 +70,7 @@ export const LEAD_FLOWS: Record<string, LeadFlow> = {
     {
       id: 'goal',
       label: 'Was ist Ihr wichtigstes Ziel?',
-      options: ['Mehr qualifizierte Anfragen', 'Tiefere Kosten pro Anfrage', 'Neue Zielgruppe oder Region', 'Bessere Sichtbarkeit bei Google'],
+      options: ['Mehr passende Anfragen', 'Tiefere Kosten pro Anfrage', 'Neue Zielgruppe oder Region', 'Bessere Sichtbarkeit bei Google'],
     },
     {
       id: 'channels',

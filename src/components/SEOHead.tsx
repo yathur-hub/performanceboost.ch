@@ -26,7 +26,7 @@ const ORGANIZATION = {
   image: SITE.portraitUrl,
   slogan: 'We boost business performance.',
   description:
-    'Business Performance Partner für Schweizer KMU: Strategie, Technologie und Wachstum aus einer Hand. Wachstums- und Digitalstrategie, Automatisierung und KI, CRM und Revenue Operations, Performance Marketing und SEO.',
+    'Business Performance Partner für Schweizer KMU. Strategie, Technologie und Umsetzung aus einer Hand: Wachstums- und Digitalstrategie, Automatisierung und KI, CRM und Revenue Operations, Performance Marketing und SEO.',
   knowsAbout: [
     'Wachstumsstrategie',
     'Digitalstrategie',
@@ -106,7 +106,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'home': {
       const title = 'Business Performance Partner für Schweizer KMU | performanceboost';
       const description =
-        'Strategie, Technologie und Wachstum aus einer Hand: Wir verbessern Marketing, Vertrieb und Abläufe von Schweizer KMU. Pragmatisch, datenbasiert, persönlich betreut.';
+        'Wir verbessern Marketing, Vertrieb und Abläufe von Schweizer KMU. Strategie, Technologie und Umsetzung aus einer Hand, persönlich betreut vom Inhaber.';
       return {
         ...base,
         title,
@@ -189,7 +189,7 @@ export function buildMeta(route: ParsedRoute): Meta {
       }
       const title = 'Leistungen: Strategie, Technologie, Wachstum, Vertrieb | performanceboost';
       const description =
-        'Von der Wachstumsstrategie über KI und Automatisierung bis zu Kampagnen und CRM: alle Leistungen von performanceboost für Schweizer KMU im Überblick.';
+        'Alle Leistungen von performanceboost für Schweizer KMU im Überblick: Wachstumsstrategie, KI und Automatisierung, Kampagnen, CRM und Vertrieb.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'loesungen': {
@@ -279,7 +279,7 @@ export function buildMeta(route: ParsedRoute): Meta {
       return { ...base, title: 'Datenschutzerklärung | performanceboost', description: 'Wie performanceboost Personendaten nach Schweizer DSG und DSGVO bearbeitet.', schema: null };
     case 'skills': {
       const title = 'Skill-Factory: Checks & Rechner für KMU | performanceboost';
-      const description = 'Die Skill-Factory: kostenlose Checks und Rechner zu Strategie, Vertrieb, CRM, Automatisierung, KI und Daten. Finden Sie Ihren grössten Hebel.';
+      const description = 'Die Skill-Factory: kostenlose Checks und Rechner zu Strategie, Vertrieb, CRM, Automatisierung, KI und Daten. Prüfen Sie selbst, wo es bremst.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'ressourcen': {

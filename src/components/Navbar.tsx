@@ -314,7 +314,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       </div>
                     </div>
                     <p className="relative mt-4 text-sm text-slate-300 leading-relaxed">
-                      30 Minuten, kostenlos: Wir schauen gemeinsam, wo in Ihrem Unternehmen der grösste Hebel liegt.
+                      In 30 kostenlosen Minuten schauen wir gemeinsam, wo sich in Ihrem Unternehmen am meisten bewegen lässt.
                     </p>
                     <a
                       href="/kontakt"

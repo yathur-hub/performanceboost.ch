@@ -9,7 +9,7 @@ export const SERVICES: ServiceDetail[] = [
     description: 'Planbares Wachstum beginnt mit klaren Entscheidungen. Wir schauen uns Ihren Markt und Ihre bestehenden Kunden an, beschreiben Ihre Wunschkunden und legen fest, über welche Kanäle und mit welchen Botschaften Sie diese erreichen. So fliesst Ihr Budget dorthin, wo Anfragen entstehen.',
     benefits: [
       'Klares Zielkundenprofil, damit Werbung und Vertrieb die richtigen Firmen ansprechen',
-      'Geschärfte Positionierung: warum Kunden Sie wählen und nicht die Konkurrenz',
+      'Eine klare Antwort darauf, warum Kunden Sie wählen und nicht die Konkurrenz',
       'Umsetzbarer Vermarktungsplan, abgestimmt auf den Schweizer und DACH-Markt',
       'Budgetplanung auf Basis realistischer Annahmen statt Bauchgefühl'
     ],
@@ -32,7 +32,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'demand-generation',
     title: 'Online-Werbung & Nachfrageaufbau',
     slug: 'demand-generation',
-    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn, die Ihre Zielgruppe gezielt erreichen.',
+    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn für die Firmen und Personen, die Sie gewinnen wollen.',
     description: 'Viele Ihrer künftigen Kunden suchen heute noch nicht aktiv. Mit Kampagnen auf LinkedIn, Google und Meta sorgen wir dafür, dass Ihr Unternehmen bekannt ist, wenn der Bedarf entsteht, und dass Interessenten, die bereits suchen, bei Ihnen landen. Anzeigen, Inhalte und Landingpages stimmen wir aufeinander ab.',
     benefits: [
       'Regelmässige Sichtbarkeit bei den Firmen und Personen, die für Sie relevant sind',
@@ -43,14 +43,14 @@ export const SERVICES: ServiceDetail[] = [
     deliverables: [
       'Anzeigenvorlagen und Werbetexte',
       'Kampagnen-Setup auf LinkedIn, Google und Meta',
-      'Listen von Zielfirmen für gezielte Ansprache',
+      'Listen von Zielfirmen für die direkte Ansprache',
       'Laufendes Reporting für Geschäftsleitung und Team'
     ],
     iconName: 'Megaphone',
     metrics: [],
     processSteps: [
-      { title: 'Zielgruppe festlegen', desc: 'Abgleich nach Funktion, Branche und Unternehmensgrösse.' },
-      { title: 'Anzeigen erstellen', desc: 'Entwicklung von Bild-, Video- und Textanzeigen.' },
+      { title: 'Zielgruppe festlegen', desc: 'Wir legen fest, wen wir ansprechen: nach Funktion, Branche und Firmengrösse.' },
+      { title: 'Anzeigen erstellen', desc: 'Wir entwickeln Bild-, Video- und Textanzeigen.' },
       { title: 'Testphase', desc: 'Start mit aufgeteiltem Budget, um herauszufinden, welche Botschaften wirken.' },
       { title: 'Ausbau', desc: 'Mehr Budget dort, wo die Kosten pro Anfrage stabil bleiben.' }
     ]
@@ -60,7 +60,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Lead-Generierung: SEO, Content & Direktansprache',
     slug: 'lead-generation',
     shortDesc: 'Qualifizierte Anfragen über Suchmaschinen, nützliche Inhalte und persönliche Direktansprache.',
-    description: 'Wir sorgen dafür, dass passende Interessenten zu Ihnen finden und Sie gezielt auf passende Firmen zugehen können. Dazu gehören Inhalte, die bei Google gefunden werden, Landingpages mit nützlichen Angeboten wie Checklisten oder Leitfäden sowie eine persönliche Direktansprache per E-Mail und LinkedIn.',
+    description: 'Wir sorgen dafür, dass passende Interessenten Sie finden und dass Sie selbst aktiv auf Wunschfirmen zugehen können. Dazu gehören Inhalte, die bei Google gefunden werden, Landingpages mit nützlichen Angeboten wie Checklisten oder Leitfäden sowie eine persönliche Direktansprache per E-Mail und LinkedIn.',
     benefits: [
       'Regelmässige Anfragen für Erstgespräche statt Zufallskontakte',
       'Sichtbarkeit bei Google, die nicht vom Werbebudget abhängt',
@@ -77,7 +77,7 @@ export const SERVICES: ServiceDetail[] = [
     metrics: [],
     processSteps: [
       { title: 'Angebot entwickeln', desc: 'Wir erstellen Inhalte und kleine Werkzeuge, die für Ihre Zielgruppe nützlich sind.' },
-      { title: 'Technik einrichten', desc: 'Postfächer, Versand und SEO-Grundlagen werden sauber aufgesetzt.' },
+      { title: 'Technik einrichten', desc: 'Wir richten Postfächer, Versand und die SEO-Grundlagen sauber ein.' },
       { title: 'Start', desc: 'Die Direktansprache startet, die ersten SEO-Inhalte gehen online.' },
       { title: 'Auswerten & nachschärfen', desc: 'Wir passen laufend an, damit weniger unpassende Kontakte ankommen.' }
     ]
@@ -105,7 +105,7 @@ export const SERVICES: ServiceDetail[] = [
     processSteps: [
       { title: 'Ablauf aufzeichnen', desc: 'Wir halten fest, wo Interessenten mit Ihnen in Kontakt kommen.' },
       { title: 'CRM-Struktur', desc: 'Aufbau der Verkaufsphasen, Deals und Kontakteigenschaften.' },
-      { title: 'Abläufe einrichten', desc: 'Systeme verbinden und alle Auslöser testen.' },
+      { title: 'Abläufe einrichten', desc: 'Wir verbinden die Systeme und testen jeden Auslöser.' },
       { title: 'Schulung & Start', desc: 'Ihr Team lernt die neuen Abläufe kennen und arbeitet damit.' }
     ]
   },
@@ -119,7 +119,7 @@ export const SERVICES: ServiceDetail[] = [
       'Neue Mitarbeitende im Verkauf werden schneller sicher',
       'Einheitlicher, professioneller Auftritt beim Kunden',
       'Präsentationen, die den Nutzen für den Kunden klar zeigen',
-      'Kundenstimmen und Referenzen gezielt einsetzen'
+      'Kundenstimmen und Referenzen im richtigen Moment einsetzen'
     ],
     deliverables: [
       'Vertriebsleitfaden als interne Wissenssammlung',
@@ -131,7 +131,7 @@ export const SERVICES: ServiceDetail[] = [
     metrics: [],
     processSteps: [
       { title: 'Analyse & Gespräche', desc: 'Wo kommen Abschlüsse ins Stocken? Was sagen Kunden über Mitbewerber?' },
-      { title: 'Leitfaden erstellen', desc: 'Argumente und Antworten werden strukturiert ausformuliert.' },
+      { title: 'Leitfaden erstellen', desc: 'Wir formulieren Argumente und Antworten so aus, dass sie im Gespräch griffbereit sind.' },
       { title: 'Unterlagen gestalten', desc: 'Präsentationen und Vorlagen im Erscheinungsbild Ihres Unternehmens.' },
       { title: 'Üben', desc: 'Testgespräche mit dem Team, um die Unterlagen in der Praxis zu prüfen.' }
     ]
@@ -158,9 +158,9 @@ export const SERVICES: ServiceDetail[] = [
     metrics: [],
     processSteps: [
       { title: 'Tool-Analyse', desc: 'Wir listen alle Programme, ihre Kosten und Datenflüsse auf.' },
-      { title: 'Verkaufsphasen vereinheitlichen', desc: 'Klare Definition, wann aus einem Kontakt eine Anfrage und ein Deal wird.' },
+      { title: 'Verkaufsphasen vereinheitlichen', desc: 'Wir legen fest, wann aus einem Kontakt eine Anfrage und wann eine Verkaufschance wird.' },
       { title: 'Daten zusammenführen', desc: 'Die wichtigsten Daten laufen im CRM zusammen.' },
-      { title: 'Laufende Abstimmung', desc: 'Monatlicher Review, um Abläufe und Systeme nachzuschärfen.' }
+      { title: 'Laufende Abstimmung', desc: 'Einmal im Monat prüfen wir gemeinsam, wo Abläufe und Systeme noch haken.' }
     ]
   },
   {
@@ -185,8 +185,8 @@ export const SERVICES: ServiceDetail[] = [
     metrics: [],
     processSteps: [
       { title: 'Einsatzbereiche finden', desc: 'Welche wiederkehrenden Aufgaben kosten im Vertrieb am meisten Zeit?' },
-      { title: 'Ablauf entwerfen', desc: 'Entwurf der Automatisierung mit geeigneten KI-Modellen wie GPT oder Gemini.' },
-      { title: 'Datenschutz prüfen', desc: 'Verarbeitung der Daten im Rahmen von DSG und DSGVO.' },
+      { title: 'Ablauf entwerfen', desc: 'Wir entwerfen die Automatisierung mit passenden KI-Modellen wie GPT oder Gemini.' },
+      { title: 'Datenschutz prüfen', desc: 'Wir stellen sicher, dass die Daten nach DSG und DSGVO verarbeitet werden.' },
       { title: 'Übergabe', desc: 'Umsetzung, Dokumentation und Übergabe inklusive Plan für Störungen.' }
     ]
   },
@@ -195,9 +195,9 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Tracking, Analyse & Reporting',
     slug: 'data-analytics',
     shortDesc: 'Datenschutzkonformes Tracking und Berichte, die zeigen, welche Kanäle Kunden bringen.',
-    description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit serverseitigem Tagging, Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',
+    description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit serverseitigem Tagging (die Messdaten laufen über Ihren eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',
     benefits: [
-      'Berichte nach Umsatz statt nur nach dem letzten Klick',
+      'Berichte, die Umsatz zuordnen, statt nur den letzten Klick zu zählen',
       'Tracking im Rahmen von Schweizer DSG und DSGVO',
       'Bessere Daten für die Kampagnensteuerung auf Meta und LinkedIn',
       'Nachvollziehbare Darstellung, wie Kunden zu Ihnen finden'
@@ -225,7 +225,7 @@ export const SERVICES: ServiceDetail[] = [
     description: 'Wir verbessern Ihren Online-Shop dort, wo Umsatz verloren geht: weniger Kaufabbrüche, grössere Warenkörbe und mehr Kunden, die wieder bestellen. Jede Massnahme messen wir, damit Sie sehen, was sie bringt.',
     benefits: [
       'Höhere Kaufquote durch Änderungen, die auf Daten beruhen',
-      'Werbebudget wird gezielter eingesetzt, mit Blick auf den Umsatz pro Franken',
+      'Werbebudget fliesst in Kampagnen, die pro Franken am meisten Umsatz bringen',
       'Bestehende Kunden bestellen häufiger',
       'Schnellere Ladezeiten und bessere Core Web Vitals'
     ],
@@ -252,7 +252,7 @@ export const SERVICES: ServiceDetail[] = [
     description: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine verlässliche Kundengewinnung. Oft fliesst viel Budget ohne klare Struktur in Meta, und über Google oder E-Mail kommt kaum etwas. Wir bauen eine Kundengewinnung auf, die auf mehreren Kanälen steht und deren Kosten Sie kennen.',
     benefits: [
       'Sie kennen Ihre Kosten pro Neukunde je Kanal',
-      'Kundenwert nach Kaufmonat: Sie sehen, welche Kampagnen rentable Kunden bringen',
+      'Der Kundenwert pro Kaufmonat zeigt, welche Kampagnen rentable Kunden bringen',
       'Bessere Kaufquote auf Produktseiten und im Checkout',
       'Weniger Abhängigkeit von einem einzelnen Werbekanal'
     ],
@@ -276,7 +276,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Kundenbindung & Wiederkäufe',
     slug: 'customer-retention',
     shortDesc: 'Automatische E-Mails, Rückgewinnung inaktiver Kunden und Treueprogramme für E-Commerce und B2B.',
-    description: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Trotzdem fehlt in vielen Unternehmen ein System, das Bestandskunden gezielt anspricht und inaktive Kunden zurückholt. Wir bauen diese Abläufe auf, für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
+    description: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Trotzdem fehlt in vielen Unternehmen ein System, das Bestandskunden regelmässig anspricht und inaktive Kunden zurückholt. Wir bauen diese Abläufe auf, für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
     benefits: [
       'Mehr Wiederkäufe durch automatische E-Mails nach dem Kauf',
       'Kundenwert wird nach Kaufmonat gemessen statt geschätzt',
@@ -303,7 +303,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Meta & TikTok Ads für Online-Shops',
     slug: 'paid-social-ecommerce',
     shortDesc: 'Meta- und TikTok-Kampagnen, gesteuert nach Deckungsbeitrag statt nur nach ROAS.',
-    description: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen fliessen dort nicht ein. Wir steuern Ihre Kampagnen nach Deckungsbeitrag, damit Werbung nicht nur Umsatz bringt, sondern Gewinn.',
+    description: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen fliessen dort nicht ein. Wir steuern Ihre Kampagnen nach Deckungsbeitrag, also nach dem, was nach all diesen Kosten übrig bleibt.',
     benefits: [
       'Sie wissen, ab welchem ROAS Ihre Werbung kostendeckend ist',
       'Kampagnen werden nach Deckungsbeitrag gesteuert, nicht nach Klicks oder Reichweite',
@@ -351,7 +351,7 @@ export const SOLUTIONS: SolutionArea[] = [
     description: 'Viele Dienstleister leben von Empfehlungen, die unregelmässig kommen. Wir ergänzen das Empfehlungsgeschäft um einen planbaren Weg zu neuen Anfragen und machen Ihre Fachkompetenz online sichtbar, damit Sie im Schweizer Markt als Ansprechpartner für Ihr Thema wahrgenommen werden.',
     idealFor: [
       'weniger abhängig von Kaltakquise und Empfehlungen sein wollen',
-      'gezielt grössere Mandate gewinnen wollen',
+      'häufiger grössere Mandate gewinnen wollen',
       'Ihre Beratungskompetenz online besser zeigen möchten'
     ],
     includedServices: ['growth-strategy', 'lead-generation', 'ai-automation', 'data-analytics'],
@@ -367,7 +367,7 @@ export const SOLUTIONS: SolutionArea[] = [
     idealFor: [
       'an Messen weniger neue Kontakte gewinnen als früher',
       'erklärungsbedürftige Produkte online verständlich darstellen wollen',
-      'Ihre Händler und Partner online gezielt unterstützen wollen'
+      'Ihre Händler und Partner auch online unterstützen wollen'
     ],
     includedServices: ['growth-strategy', 'demand-generation', 'sales-enablement', 'revenue-operations'],
     recommendedCombo: 'Saubere Abläufe zwischen Marketing und Vertrieb, kombiniert mit LinkedIn-Kampagnen für Entscheider und Vertriebsleitfäden.',
