@@ -27,6 +27,7 @@ import type { ChallengeSlug } from './data/challenges';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
 import { StickyMobileCta } from './components/bp/Conversion';
+import { useScrollReveal } from './lib/useScrollReveal';
 import { motion, AnimatePresence } from 'motion/react';
 import { pageTransitionVariants } from './lib/motion';
 import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
@@ -86,6 +87,7 @@ function AppContent() {
   };
 
   const parsed = React.useMemo(() => parseRoute(currentPath), [currentPath]);
+  useScrollReveal(parsed.path);
 
   return (
     <div className="min-h-screen bg-[#f6f6f6] text-[#505050] flex flex-col justify-between selection:bg-[#686DF4] selection:text-white font-sans antialiased">
@@ -97,7 +99,7 @@ function AppContent() {
       {/* Main responsive viewport routing */}
       <main className="flex-grow overflow-hidden relative">
         <Suspense fallback={<div className="min-h-[80vh]" aria-busy="true" />}>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={parsed.view + (parsed.slug || '') + (parsed.subSection || '')}
             variants={pageTransitionVariants}

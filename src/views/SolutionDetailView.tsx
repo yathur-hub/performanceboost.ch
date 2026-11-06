@@ -73,7 +73,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           </button>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-5 space-y-4 pr-0 lg:pr-6">
+            <div className="hero-enter lg:col-span-5 space-y-4 pr-0 lg:pr-6">
               <h1 className="text-3xl sm:text-4.5xl font-display font-medium text-slate-955 tracking-tight leading-[1.1]">
                 {sector.subtitle}
               </h1>

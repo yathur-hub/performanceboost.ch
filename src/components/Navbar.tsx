@@ -261,7 +261,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             <span className="block mt-1 text-[13px] text-slate-500 leading-snug">{area.teaser}</span>
                           </span>
                         </a>
-                        <div id={`menu-area-${area.id}`} className={`${openArea === area.id ? 'flex' : 'hidden'} sm:flex flex-col flex-1`}>
+                        <div id={`menu-area-${area.id}`} className={`menu-accordion flex-1 ${openArea === area.id ? 'is-open' : ''}`}>
+                        <div className="flex flex-col h-full">
                         <ul className="mt-4 pt-3 border-t border-slate-100 space-y-0.5">
                           {services.map((s) => {
                             const active = currentPath === s.href && s.href !== `/leistungen/${area.id}`;
@@ -289,6 +290,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         >
                           Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                         </a>
+                        </div>
                         </div>
                       </motion.div>
                     );

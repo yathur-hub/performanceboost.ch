@@ -22,7 +22,7 @@ export default function ReferencesView() {
       <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Referenzen' }]} />
-          <div className="max-w-3xl space-y-6">
+          <div className="hero-enter max-w-3xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               Was unsere Kundinnen und Kunden sagen.
             </h1>

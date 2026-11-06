@@ -188,3 +188,87 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-rocket { animation: none; }
 }
+
+/* =========================================================================
+ * Animationssystem (06.11.2026)
+ * - .hero-enter: Kinder des Hero-Inhalts erscheinen beim Laden gestaffelt (reines CSS, auch im Prerender)
+ * - .reveal / .reveal-item: Abschnitte und ihre Karten beim ersten Sichtkontakt (src/lib/useScrollReveal.ts)
+ * - .diagram-enter: Knoten der Themengrafiken erscheinen nacheinander (--d = Index)
+ * - .menu-accordion: weiches Auf-/Zuklappen im mobilen Mega-Menü
+ * - FAQ (<details>): weiches Öffnen/Schliessen, wo der Browser es unterstützt
+ * Alles deaktiviert bei prefers-reduced-motion.
+ * ========================================================================= */
+@keyframes enterUp {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: none; }
+}
+.hero-enter > * { animation: enterUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-enter > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-enter > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-enter > *:nth-child(4) { animation-delay: 0.24s; }
+.hero-enter > *:nth-child(5) { animation-delay: 0.32s; }
+.hero-enter > *:nth-child(n + 6) { animation-delay: 0.4s; }
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal .reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 70ms + 120ms);
+}
+.reveal.is-visible .reveal-item { opacity: 1; transform: none; }
+
+.diagram-enter [style*='--d'] {
+  animation: enterUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0) * 90ms + 250ms);
+}
+.reveal:not(.is-visible) .diagram-enter [style*='--d'] { animation-play-state: paused; }
+
+@keyframes rocketIn {
+  from { transform: translate3d(-28px, 70px, 0); }
+  to { transform: none; }
+}
+.rocket-in { animation: rocketIn 1.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes smokeIn {
+  from { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+.smoke-in { animation: smokeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; transform-origin: 50% 100%; }
+
+.menu-accordion {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+.menu-accordion.is-open { grid-template-rows: 1fr; opacity: 1; }
+.menu-accordion > * { min-height: 0; overflow: hidden; }
+.menu-accordion:not(.is-open) > * { visibility: hidden; transition: visibility 0s linear 0.35s; }
+.menu-accordion.is-open > * { visibility: visible; }
+@media (min-width: 640px) {
+  .menu-accordion { grid-template-rows: 1fr; opacity: 1; }
+  .menu-accordion > * { overflow: visible; visibility: visible !important; }
+}
+
+details[open] > :not(summary) { animation: enterUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@supports (interpolate-size: allow-keywords) {
+  details { interpolate-size: allow-keywords; }
+  details::details-content {
+    height: 0;
+    overflow: clip;
+    transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), content-visibility 0.35s allow-discrete;
+  }
+  details[open]::details-content { height: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter > *, .diagram-enter [style*='--d'], .rocket-in, .smoke-in, details[open] > :not(summary) { animation: none !important; }
+  .reveal, .reveal .reveal-item { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .menu-accordion { transition: none; }
+  details::details-content { transition: none !important; }
+}

@@ -34,7 +34,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
       <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Lösungen', href: '/loesungen' }, { label: page.label }]} />
-          <div className="max-w-4xl space-y-6">
+          <div className="hero-enter max-w-4xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">{page.h1}</h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">{page.intro}</p>
             <CtaButton label={page.ctaLabel} location={`challenge_${slug}_hero`} pageSlug={slug} />
