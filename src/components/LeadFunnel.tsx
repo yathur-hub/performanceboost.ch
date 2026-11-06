@@ -294,7 +294,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           {status === 'error' && (
             <p role="alert" className="flex gap-2 rounded-xl bg-red-50 border border-red-100 p-3 text-sm text-red-700">
               <AlertCircle className="w-4.5 h-4.5 shrink-0 mt-0.5" aria-hidden="true" />
-              Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie an: {SITE.phoneDisplay}.
+              Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an {SITE.email}.
             </p>
           )}
 

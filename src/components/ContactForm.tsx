@@ -293,7 +293,6 @@ export default function ContactForm({
               <p className="font-semibold">Ihre Anfrage konnte leider nicht gesendet werden.</p>
               <p className="text-red-800">
                 Ihre Eingaben sind noch da. Bitte versuchen Sie es erneut, oder erreichen Sie uns direkt unter{' '}
-                <a href={SITE.phoneHref} className="underline font-semibold">{SITE.phoneDisplay}</a> bzw.{' '}
                 <a href={`mailto:${SITE.email}`} className="underline font-semibold">{SITE.email}</a>.
               </p>
             </div>

@@ -4,7 +4,7 @@
  * sie sind über die Leistungsfeld-Hubs, /leistungen und /loesungen verlinkt.
  */
 import React from 'react';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { SITE } from '../config/site';
 import { SERVICE_AREAS } from '../data/serviceAreas';
 
@@ -90,10 +90,6 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#696EEF] shrink-0" aria-hidden="true" />
                 <a href={`mailto:${SITE.email}`} className={linkClass}>{SITE.email}</a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#696EEF] shrink-0" aria-hidden="true" />
-                <a href={SITE.phoneHref} className={linkClass}>{SITE.phoneDisplay}</a>
               </li>
             </ul>
           </div>

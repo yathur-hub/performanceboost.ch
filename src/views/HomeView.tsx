@@ -343,9 +343,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 wir der richtige Partner dafür sind.
               </p>
               <p className="text-sm text-slate-300">
-                Lieber direkt telefonieren?{' '}
-                <a href={SITE.phoneHref} className="font-semibold text-white underline underline-offset-2">
-                  {SITE.phoneDisplay}
+                Lieber direkt schreiben?{' '}
+                <a href={`mailto:${SITE.email}`} className="font-semibold text-white underline underline-offset-2">
+                  {SITE.email}
                 </a>
               </p>
             </div>

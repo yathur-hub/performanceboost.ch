@@ -1,31 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Menu, 
-  X, 
-  ArrowRight, 
-  Sparkles, 
-  TrendingUp, 
-  Layers, 
-  Users, 
-  Cpu, 
-  Megaphone, 
-  ShieldAlert, 
-  PieChart, 
-  Mail, 
-  Calendar, 
-  MapPin,
-  ChevronRight,
-  ArrowUpRight,
-  CheckCircle2,
-  Clock,
-  Phone,
-  ShoppingCart,
-  RefreshCcw,
-  Landmark,
-  Compass,
-  Handshake,
-  Plus
-} from 'lucide-react';
+import { Menu, X, ArrowRight, Sparkles, TrendingUp, Layers, Users, Cpu, Megaphone, ShieldAlert, PieChart, Mail, Calendar, MapPin, ChevronRight, ArrowUpRight, CheckCircle2, Clock, ShoppingCart, RefreshCcw, Landmark, Compass, Handshake, Plus } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { motion, AnimatePresence } from 'motion/react';
 import { SITE } from '../config/site';
@@ -351,9 +325,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       Potenzial besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </a>
                     <div className="relative mt-4 flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs text-slate-400">
-                      <a href={SITE.phoneHref} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
-                        <Phone className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.phoneDisplay}
-                      </a>
                       <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
                         <Mail className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.email}
                       </a>

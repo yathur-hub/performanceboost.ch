@@ -4,15 +4,7 @@
  */
 
 import React from 'react';
-import { 
-  Calendar, 
-  Clock, 
-  Mail, 
-  Linkedin, 
-  MapPin, 
-  MessageSquare,
-  Phone
-} from 'lucide-react';
+import { Calendar, Clock, Mail, Linkedin, MapPin, MessageSquare } from 'lucide-react';
 import { motion } from 'motion/react';
 import LeadFunnel from '../components/LeadFunnel';
 import { LEAD_FLOWS } from '../data/leadFlows';
@@ -24,13 +16,6 @@ import { SITE } from '../config/site';
 
 export default function ContactView() {
   const DIRECT_CHANNELS = [
-    {
-      icon: Phone,
-      label: 'Telefon',
-      value: SITE.phoneDisplay,
-      href: SITE.phoneHref,
-      external: false
-    },
     {
       icon: Mail,
       label: 'E-Mail',
