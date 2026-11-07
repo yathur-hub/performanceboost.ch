@@ -46,7 +46,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* HERO */}
       <section className="pt-36 md:pt-40 pb-4 bg-white/60">
         <Container className="space-y-7">
-          <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Leistungen', href: '/leistungen' }, { label: area.label }]} />
+          <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Leistungen', href: '/leistungen' }, { label: area.shortLabel }]} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="hero-enter lg:col-span-8 max-w-4xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">

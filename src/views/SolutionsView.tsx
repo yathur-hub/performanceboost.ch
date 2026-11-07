@@ -214,7 +214,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           </h2>
           <p className="text-slate-600 leading-relaxed">
             Neukundengewinnung funktioniert in einer Treuhandkanzlei anders als in einem Handwerksbetrieb. Wählen Sie Ihre Branche,
-            um typische Hürden, unser Vorgehen und einen passenden Rechner zu sehen.
+            um typische Hürden, unser Vorgehen und Ihren Nutzen zu sehen.
           </p>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

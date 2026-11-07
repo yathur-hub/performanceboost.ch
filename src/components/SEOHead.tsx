@@ -145,7 +145,7 @@ export function buildMeta(route: ParsedRoute): Meta {
                 })),
               },
             },
-            crumbList([HOME_CRUMB, { name: 'Leistungen', url: `${SITE.baseUrl}/leistungen` }, { name: area.label, url }]),
+            crumbList([HOME_CRUMB, { name: 'Leistungen', url: `${SITE.baseUrl}/leistungen` }, { name: area.shortLabel, url }]),
             faqPage(url, area.faq),
           ],
         },
@@ -161,7 +161,7 @@ export function buildMeta(route: ParsedRoute): Meta {
         const crumbs = [
           HOME_CRUMB,
           { name: 'Leistungen', url: `${SITE.baseUrl}/leistungen` },
-          ...(area ? [{ name: area.label, url: `${SITE.baseUrl}/leistungen/${area.id}` }] : []),
+          ...(area ? [{ name: area.shortLabel, url: `${SITE.baseUrl}/leistungen/${area.id}` }] : []),
           { name: service.title, url },
         ];
         return {
@@ -179,7 +179,7 @@ export function buildMeta(route: ParsedRoute): Meta {
                 url,
                 provider: { '@id': ORG_ID },
                 areaServed: { '@type': 'Country', name: 'Schweiz' },
-                ...(area ? { category: area.label } : {}),
+                ...(area ? { category: area.shortLabel } : {}),
               },
               crumbList(crumbs),
               ...(faq.length ? [faqPage(url, faq)] : []),
