@@ -13,7 +13,7 @@ import { readRememberedResult } from '../data/problemFinder';
 import { SERVICE_AREAS, primaryAreaOf, relatedServices } from '../data/serviceAreas';
 import Link from '../components/Link';
 import { Breadcrumb, TeaserCard } from '../components/bp/Blocks';
-import { HeroTrust, LeadCtaSection } from '../components/bp/Conversion';
+import { HeroTrust, LeadCtaSection, OpenLeadButton } from '../components/bp/Conversion';
 import { Diagram } from '../components/diagrams/Diagram';
 import { SERVICE_DIAGRAMS } from '../data/diagrams';
 import { trackEvent } from '../lib/analytics';
@@ -23,6 +23,24 @@ interface ServicesViewProps {
   currentSlug?: string;
   onNavigate: (path: string) => void;
 }
+
+const WORK_MODES = [
+  {
+    title: 'Performance-Analyse',
+    forWhom: 'Wenn Sie wissen möchten, wo es sich am meisten lohnt',
+    desc: 'Wir prüfen Marketing, Vertrieb, Systeme und Abläufe und zeigen, wo Umsatz und Zeit verloren gehen. Sie erhalten eine schriftliche Auswertung mit Prioritäten und einem Plan für die nächsten 90 Tage. In der Regel dauert die Analyse zwei bis drei Wochen.',
+  },
+  {
+    title: 'Umsetzungsprojekt',
+    forWhom: 'Für ein klar umrissenes Vorhaben',
+    desc: 'Zum Beispiel ein CRM mit sauberen Abläufen, eine Kampagne mit Landingpage und Messung oder eine Automatisierung zwischen zwei Systemen. Umfang, Termin und Kosten stehen vor dem Start fest.',
+  },
+  {
+    title: 'Laufende Begleitung',
+    forWhom: 'Wenn Ihr Unternehmen dauerhaft besser werden soll',
+    desc: 'Wir betreuen Kampagnen, Systeme und Auswertungen fortlaufend und legen einmal im Monat anhand der Zahlen die nächsten Schritte fest. Sie haben einen festen Ansprechpartner und einen planbaren monatlichen Aufwand.',
+  },
+];
 
 export default function ServicesView({ currentSlug, onNavigate }: ServicesViewProps) {
   // Ergebnis aus dem Problem-Finder der Startseite (nur in dieser Sitzung).
@@ -131,7 +149,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 { label: 'Startseite', href: '/' },
                 { label: 'Leistungen', href: '/leistungen' },
                 ...(primaryAreaOf(service.slug)
-                  ? [{ label: primaryAreaOf(service.slug)!.label, href: `/leistungen/${primaryAreaOf(service.slug)!.id}` }]
+                  ? [{ label: primaryAreaOf(service.slug)!.shortLabel, href: `/leistungen/${primaryAreaOf(service.slug)!.id}` }]
                   : []),
                 { label: service.title },
               ]}
@@ -478,6 +496,31 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         </div>
       </section>
 
+      {/* So beginnt eine Zusammenarbeit */}
+      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-24 animate-fadeIn" id="zusammenarbeit">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center space-y-3">
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">So beginnt eine Zusammenarbeit</h2>
+            <p className="text-body-sm text-slate-500 max-w-xl mx-auto leading-relaxed font-medium">
+              Drei Arten, mit uns zu arbeiten. Die meisten Kunden starten mit der Analyse.
+            </p>
+          </div>
+          <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {WORK_MODES.map((m, idx) => (
+              <li key={m.title} className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl shadow-[var(--shadow-premium-sm)] flex flex-col gap-4">
+                <span className="w-fit text-[11px] font-bold font-mono bg-[#686DF4]/5 text-[#686DF4] px-3 py-1 rounded-lg border border-[#CACCFB]/30">0{idx + 1}</span>
+                <h3 className="text-base font-bold text-slate-900 leading-tight">{m.title}</h3>
+                <p className="text-body-sm text-[#4f54d6] font-semibold leading-relaxed">{m.forWhom}</p>
+                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{m.desc}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="flex justify-center">
+            <OpenLeadButton location="leistungen-zusammenarbeit" />
+          </div>
+        </div>
+      </section>
+
       {/* Leistungen nach Leistungsfeld */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 animate-fadeIn">
         {SERVICE_AREAS.map((area) => {
@@ -607,7 +650,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           <div className="text-center max-w-xl mx-auto space-y-3">
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Lösungen für Schweizer Branchen</h2>
             <p className="text-body-sm text-slate-500 font-medium leading-relaxed">
-              Wählen Sie Ihre Branche und schätzen Sie mit unseren Rechnern grob ab, wie viele zusätzliche Anfragen und wie viel Umsatz möglich wären.
+              Wählen Sie Ihre Branche. Sie sehen, woran die Neukundengewinnung dort oft scheitert, wie wir vorgehen und was Sie davon haben.
             </p>
           </div>
 
@@ -738,7 +781,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   
                   <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                     <span className="text-[11px] font-mono font-bold text-[#686DF4]">
-                      {ind.tool}
+                      Zur Branchenseite
                     </span>
                     <span className="text-xs text-[#686DF4] group-hover:translate-x-0.5 transition-transform">
                       →

@@ -28,10 +28,26 @@ const reveal = {
 };
 
 const STEPS = [
-  { title: 'Analyse und Verständnis', desc: 'Wir schauen uns Ziele, Zahlen, Abläufe und Systeme an. Danach wissen Sie, wo Umsatz, Zeit oder Daten verloren gehen.' },
-  { title: 'Strategie und Prioritäten', desc: 'Sie erhalten einen konkreten Plan mit Aufwand, Budget und Kennzahlen. Wir beginnen mit dem, was am meisten bewirkt.' },
-  { title: 'Umsetzung und Integration', desc: 'Wir setzen selbst um: Kampagnen, Seiten, CRM, Automatisierungen und Auswertungen. Alles ist dokumentiert, damit Ihr Team weiterarbeiten kann.' },
-  { title: 'Messen und verbessern', desc: 'Regelmässig schauen wir gemeinsam auf die Zahlen. Was funktioniert, bauen wir aus. Was nicht funktioniert, passen wir an oder stoppen es.' },
+  {
+    title: 'Performance-Analyse',
+    desc: 'Wir sehen uns Ihre Zahlen, Abläufe, Systeme und Kampagnen an und sprechen mit den Personen, die täglich damit arbeiten.',
+    result: 'Sie wissen, an welchen Stellen Umsatz und Zeit verloren gehen und welche davon sich zuerst lohnen.',
+  },
+  {
+    title: 'Plan für die nächsten 90 Tage',
+    desc: 'Wir legen gemeinsam fest, was zuerst kommt, was es kostet und woran wir den Fortschritt messen.',
+    result: 'Ein Massnahmenplan mit Aufwand, Budget, Verantwortlichkeiten und wenigen klaren Kennzahlen.',
+  },
+  {
+    title: 'Umsetzung',
+    desc: 'Wir setzen selbst um, von Kampagnen und Landingpages über das CRM bis zu Automatisierungen und Auswertungen.',
+    result: 'Die Massnahmen sind live, dokumentiert und Ihr Team kann damit arbeiten.',
+  },
+  {
+    title: 'Laufende Begleitung',
+    desc: 'Einmal im Monat schauen wir gemeinsam auf die Zahlen. Was wirkt, bauen wir aus. Was nicht wirkt, ändern wir oder stoppen es.',
+    result: 'Ihr Unternehmen wird Schritt für Schritt besser, mit einem festen Ansprechpartner.',
+  },
 ];
 
 const DIFFERENCES = [
@@ -155,15 +171,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <motion.div {...reveal} className="lg:col-span-6 xl:col-span-7 space-y-5">
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight text-balance">
-                Eine Kampagne, ein Tool oder ein Strategiepapier allein reicht selten.
+                Zuerst der Engpass, dann das nächste Tool.
               </h2>
               <p className="text-body text-slate-700 leading-relaxed">
-                Gute Anzeigen verpuffen, wenn Anfragen im Postfach liegen bleiben. Ein neues CRM bringt wenig, wenn niemand festgelegt hat,
-                wann ein Interessent an den Vertrieb geht. Und die beste Strategie hilft nicht, wenn sie nie umgesetzt wird.
+                Interessenten werden auf Sie aufmerksam, fragen an, erhalten eine Offerte, werden Kunden und bleiben es im besten Fall.
+                Dahinter laufen Abläufe, Systeme und Zahlen, die das Ganze tragen. Wenn ein Glied dieser Kette schwach ist, bringt mehr
+                Werbebudget oder eine neue Software wenig. Die zusätzlichen Anfragen bleiben dann einfach an derselben Stelle liegen.
               </p>
               <p className="text-body-sm text-slate-500 leading-relaxed">
-                Deshalb schauen wir uns die ganze Strecke an, von der ersten Anzeige bis zum unterschriebenen Auftrag. Wir verbessern die
-                Kampagnen und ebenso die Abläufe danach, bis zum Verkaufsabschluss.
+                Deshalb schauen wir uns die ganze Kette an und messen, wo heute am meisten verloren geht. Dort beginnen wir. Ist dieser
+                Engpass behoben, nehmen wir uns den nächsten vor. Typische Engpässe sind Anfragen, die tagelang liegen bleiben, Kampagnen
+                ohne Messung bis zum Auftrag oder Daten, die von Hand zwischen Systemen übertragen werden.
               </p>
             </motion.div>
             <div className="lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end w-full min-w-0">
@@ -256,7 +274,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 5 VORGEHEN */}
       <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-28">
         <Container className="space-y-12">
-          <SectionHeading align="center" title="So arbeiten wir zusammen" />
+          <SectionHeading align="center" title="So arbeiten wir zusammen" intro="Sie starten mit einer Analyse und entscheiden danach, wie es weitergeht." />
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {STEPS.map((step, idx) => (
               <li
@@ -268,9 +286,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </span>
                 <h3 className="text-base font-bold text-slate-900 font-display leading-tight">{step.title}</h3>
                 <p className="text-body-sm text-slate-600 leading-relaxed">{step.desc}</p>
+                <p className="text-body-sm text-slate-800 leading-relaxed">
+                  <span className="font-bold text-[#686DF4]">Ergebnis:</span> {step.result}
+                </p>
               </li>
             ))}
           </ol>
+          <p className="text-body-sm text-slate-500 leading-relaxed text-center max-w-2xl mx-auto">
+            Die Analyse ist ein eigener, abgeschlossener Auftrag. Ob Sie danach mit uns weiterarbeiten, entscheiden Sie auf Basis der Ergebnisse.
+          </p>
         </Container>
       </section>
 
