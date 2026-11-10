@@ -38,6 +38,10 @@ export const VISUALS = {
   'energy-core': 'portrait',
   satellite: 'landscape',
   'rocket-alt': 'landscape',
+  // Vol. 3 Immobilien (Landingpages Erstvermietung / Verkaufsmandate)
+  'residential-building': 'square',
+  'alpine-chalet': 'square',
+  'precision-key': 'square',
 } as const satisfies Record<string, keyof typeof ASPECT>;
 
 export type VisualId = keyof typeof VISUALS;

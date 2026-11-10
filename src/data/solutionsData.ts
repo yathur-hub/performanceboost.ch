@@ -23,13 +23,15 @@ export interface SolutionSector {
     q: string;
     a: string;
   }[];
-  /** Querverweis auf eine verwandte Seite (interne Verlinkung, z. B. zu den Finanz-Landingpages). */
-  related?: {
-    href: string;
-    title: string;
-    desc: string;
-    linkText: string;
-  };
+  /** Querverweis auf eine oder mehrere verwandte Seiten (interne Verlinkung, z. B. zu den Finanz-Landingpages). */
+  related?: RelatedLink | RelatedLink[];
+}
+
+export interface RelatedLink {
+  href: string;
+  title: string;
+  desc: string;
+  linkText: string;
 }
 
 export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
@@ -184,12 +186,26 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Automatische Einladungen zu Besichtigungen per E-Mail oder SMS',
       'Ein digitaler Auftritt, der Sie bei Eigentümern als kompetenten Makler zeigt'
     ],
-    related: {
-      href: '/loesungen/hypothekarberatung',
-      title: 'Sie beraten zur Finanzierung?',
-      desc: 'Für Hypothekarberatungen gibt es eine eigene Seite: Anfragen von Erstkäufern und zu auslaufenden Festhypotheken über die eigene Website statt über Vergleichsportale.',
-      linkText: 'Mehr zu Hypothekarberatung',
-    },
+    related: [
+      {
+        href: '/loesungen/erstvermietung-ostschweiz',
+        title: 'Sie vermieten Neubauten in der Ostschweiz?',
+        desc: 'Für Entwickler und Verwaltungen mit Erstvermietungen in St. Gallen, im Thurgau und im Rheintal: weniger Leerstand dank eigener Projektvermarktung.',
+        linkText: 'Mehr zur Erstvermietung',
+      },
+      {
+        href: '/loesungen/verkaufsmandate-makler',
+        title: 'Sie sind Makler und suchen Verkaufsmandate?',
+        desc: 'Für Maklerinnen und Makler in Graubünden: mehr Anfragen von Eigentümern, die einen Verkauf planen.',
+        linkText: 'Mehr zu Verkaufsmandaten',
+      },
+      {
+        href: '/loesungen/hypothekarberatung',
+        title: 'Sie beraten zur Finanzierung?',
+        desc: 'Für Hypothekarberatungen gibt es eine eigene Seite: Anfragen von Erstkäufern und zu auslaufenden Festhypotheken über die eigene Website statt über Vergleichsportale.',
+        linkText: 'Mehr zu Hypothekarberatung',
+      },
+    ],
     faqs: [
       {
         q: 'Lohnt sich das auch für kleinere, regionale Makler?',

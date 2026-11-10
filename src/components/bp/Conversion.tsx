@@ -40,6 +40,7 @@ export function LeadCtaSection({
     'Danach entscheiden Sie in Ruhe. Kein Verkaufsdruck, keine Verpflichtung.',
   ],
   visual,
+  ctaLabel,
 }: {
   title?: string;
   intro?: string;
@@ -47,6 +48,8 @@ export function LeadCtaSection({
   points?: string[];
   /** Dekoratives 3D-Objekt oben in der dunklen Spalte. */
   visual?: VisualId;
+  /** Beschriftung des Buttons, Standard «Potenzial besprechen». */
+  ctaLabel?: string;
 }) {
   return (
     <section id="lead-cta" className="scroll-mt-28">
@@ -111,7 +114,7 @@ export function LeadCtaSection({
               ))}
             </ol>
             <div className="mt-7">
-              <OpenLeadButton location={formLocation} />
+              <OpenLeadButton location={formLocation} label={ctaLabel} />
             </div>
           </div>
         </div>
@@ -138,7 +141,7 @@ export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { l
 }
 
 /** Fixierter CTA-Balken auf Mobile. Erscheint nach dem Hero, verschwindet beim Abschluss-Block. */
-export const StickyMobileCta: React.FC<{ onFallback: () => void }> = ({ onFallback }) => {
+export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string }> = ({ onFallback, label = 'Potenzial besprechen' }) => {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const onScroll = () => {
@@ -170,7 +173,7 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void }> = ({ onFallba
           }}
           className="flex-1 inline-flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap"
         >
-          Potenzial besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </button>
       </div>
     </div>
