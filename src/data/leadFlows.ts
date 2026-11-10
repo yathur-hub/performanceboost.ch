@@ -162,6 +162,50 @@ export const LEAD_FLOWS: Record<string, LeadFlow> = {
       options: ['Nur ich', '2–5', '6–15', 'Mehr als 15'],
     },
   ]),
+  // Immobilien-Landingpages (Fragen aus Research/Immobiliendienstleistung/09_Landingpages).
+  erstvermietung: flow('erstvermietung', 'Leerstand-Check anfragen', [
+    {
+      id: 'role',
+      label: 'Wer sind Sie?',
+      options: ['Projektentwickler oder Bauherr', 'Investor oder Eigentümer', 'Verwaltung mit Erstvermietung', 'Andere'],
+    },
+    {
+      id: 'units',
+      label: 'Wie viele Wohnungen sind in Vermarktung oder geplant?',
+      options: ['Bis 10', '11–30', '31–80', 'Mehr als 80'],
+    },
+    {
+      id: 'region',
+      label: 'Wo liegt das Projekt?',
+      options: ['Stadt St. Gallen und Umgebung', 'Bodensee und Rorschach', 'Thurgau', 'Rheintal oder Werdenberg', 'Anderswo'],
+    },
+  ]),
+  verkaufsmandate: flow('verkaufsmandate', 'Mandats-Check anfragen', [
+    {
+      id: 'role',
+      label: 'Wer sind Sie?',
+      options: ['Inhaber eines Maklerbüros', 'Verkaufsleitung in einer Verwaltung oder Treuhand', 'Lizenznehmer einer Maklermarke', 'Andere'],
+    },
+    {
+      id: 'sales',
+      label: 'Wie viele Objekte verkaufen Sie pro Jahr?',
+      options: ['Bis 5', '6–15', '16–40', 'Mehr als 40'],
+    },
+    {
+      id: 'source',
+      label: 'Woher kommen Ihre Mandate heute?',
+      hint: 'Mehrfachauswahl möglich',
+      multi: true,
+      options: [
+        'Empfehlungen',
+        'Bestandskunden',
+        'Bank oder Treuhand',
+        'Eigene Website und Online-Werbung',
+        'Gekaufte Kontakte von Plattformen',
+        'Tippgeber',
+      ],
+    },
+  ]),
   branch: flow('branch', 'Potenzial besprechen', [
     {
       id: 'goal',
@@ -201,6 +245,8 @@ const AREA_FLOW: Record<string, string> = {
 const CHALLENGE_FLOW: Record<string, string> = {
   prozessautomatisierung: 'automation',
   'vertrieb-optimieren': 'sales',
+  'erstvermietung-ostschweiz': 'erstvermietung',
+  'verkaufsmandate-makler': 'verkaufsmandate',
 };
 
 /** Bestimmt die Strecke anhand des Pfads; Fallback ist die allgemeine Strecke. */

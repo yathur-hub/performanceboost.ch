@@ -15,6 +15,7 @@ const SolutionDetailView = lazy(() => import('./views/SolutionDetailView'));
 const FinanceLandingView = lazy(() => import('./views/FinanceLandingView'));
 const ServiceAreaView = lazy(() => import('./views/ServiceAreaView'));
 const ChallengeView = lazy(() => import('./views/ChallengeView'));
+const RealEstateLandingView = lazy(() => import('./views/RealEstateLandingView'));
 const ReferencesView = lazy(() => import('./views/ReferencesView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -24,6 +25,7 @@ import { parseRoute } from './lib/routes';
 import type { FinanceSlug } from './data/financeLanding';
 import type { AreaId } from './data/serviceAreas';
 import type { ChallengeSlug } from './data/challenges';
+import { REAL_ESTATE_PAGES, type RealEstateSlug } from './data/realEstateLanding';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
 import { StickyMobileCta } from './components/bp/Conversion';
@@ -129,6 +131,9 @@ function AppContent() {
             {parsed.view === 'loesung_herausforderung' && parsed.slug && (
               <ChallengeView slug={parsed.slug as ChallengeSlug} />
             )}
+            {parsed.view === 'immobilien_landing' && parsed.slug && (
+              <RealEstateLandingView slug={parsed.slug as RealEstateSlug} />
+            )}
             {parsed.view === 'referenzen' && <ReferencesView />}
             {parsed.view === 'leistungen' && (
               <ServicesView currentSlug={parsed.slug} onNavigate={handleNavigate} />
@@ -162,7 +167,11 @@ function AppContent() {
 
       {/* Mobiler Sticky-CTA (nicht auf der Kontaktseite und den Finanz-Landingpages mit eigenem Formular) */}
       {parsed.view !== 'kontakt' && parsed.view !== 'finanz' && parsed.view !== 'not_found' && (
-        <StickyMobileCta key={parsed.path} onFallback={openContactModal} />
+        <StickyMobileCta
+          key={parsed.path}
+          onFallback={openContactModal}
+          label={parsed.view === 'immobilien_landing' && parsed.slug ? REAL_ESTATE_PAGES[parsed.slug as RealEstateSlug]?.ctaLabel : undefined}
+        />
       )}
 
     </div>

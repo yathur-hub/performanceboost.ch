@@ -8,6 +8,7 @@ import { SITE } from '../config/site';
 import type { ParsedRoute } from '../lib/routes';
 import { isAreaId, getArea, primaryAreaOf, servicesOf } from '../data/serviceAreas';
 import { CHALLENGE_PAGES, isChallengeSlug } from '../data/challenges';
+import { REAL_ESTATE_PAGES, isRealEstateSlug } from '../data/realEstateLanding';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
 
 interface SEOHeadProps {
@@ -210,6 +211,28 @@ export function buildMeta(route: ParsedRoute): Meta {
           '@graph': [
             { ...webPage('WebPage', url, page.seoTitle, page.seoDescription), '@context': undefined },
             crumbList([HOME_CRUMB, { name: 'Lösungen', url: `${SITE.baseUrl}/loesungen` }, { name: page.label, url }]),
+            faqPage(url, page.faq),
+          ],
+        },
+      };
+    }
+    case 'immobilien_landing': {
+      if (!route.slug || !isRealEstateSlug(route.slug)) return { title: 'Seite nicht gefunden | performanceboost', description: '', schema: null, ogType: 'website', indexable: false };
+      const page = REAL_ESTATE_PAGES[route.slug];
+      return {
+        ...base,
+        title: page.seoTitle,
+        description: truncate(page.seoDescription),
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            { ...webPage('WebPage', url, page.seoTitle, page.seoDescription), '@context': undefined },
+            crumbList([
+              HOME_CRUMB,
+              { name: 'Lösungen', url: `${SITE.baseUrl}/loesungen` },
+              { name: 'Immobilien', url: `${SITE.baseUrl}/loesungen/immobilien` },
+              { name: page.label, url },
+            ]),
             faqPage(url, page.faq),
           ],
         },

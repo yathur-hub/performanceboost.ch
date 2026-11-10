@@ -4,6 +4,7 @@ import { RESOURCES_DATA } from '../data/resources';
 import { FINANCE_SLUGS, isFinanceSlug } from '../data/financeLanding';
 import { AREA_IDS, isAreaId } from '../data/serviceAreas';
 import { CHALLENGE_SLUGS, isChallengeSlug } from '../data/challenges';
+import { REAL_ESTATE_SLUGS, isRealEstateSlug } from '../data/realEstateLanding';
 
 export type RouteView =
   | 'home'
@@ -12,6 +13,7 @@ export type RouteView =
   | 'loesungen_detail'
   | 'finanz'
   | 'loesung_herausforderung'
+  | 'immobilien_landing'
   | 'leistungsfeld'
   | 'referenzen'
   | 'about'
@@ -57,6 +59,7 @@ export function parseRoute(pathname: string): ParsedRoute {
     // Finanz-Landingpages (Übersicht + Schwerpunkte) haben eine eigene Ansicht.
     if (isFinanceSlug(slug)) return { view: 'finanz', slug, path, pageType: 'finanz_landing' };
     if (isChallengeSlug(slug)) return { view: 'loesung_herausforderung', slug, path, pageType: 'loesung_herausforderung' };
+    if (isRealEstateSlug(slug)) return { view: 'immobilien_landing', slug, path, pageType: 'immobilien_landing' };
     if (!SOLUTION_SLUGS.includes(slug)) return notFound;
     return { view: 'loesungen_detail', slug, path, pageType: 'loesung' };
   }
@@ -100,6 +103,7 @@ export function indexablePaths(): string[] {
     '/loesungen',
     ...CHALLENGE_SLUGS.map((slug) => `/loesungen/${slug}`),
     ...SOLUTION_SLUGS.map((slug) => `/loesungen/${slug}`),
+    ...REAL_ESTATE_SLUGS.map((slug) => `/loesungen/${slug}`),
     ...FINANCE_SLUGS.filter((slug) => !SOLUTION_SLUGS.includes(slug)).map((slug) => `/loesungen/${slug}`),
     '/ressourcen',
     ...RESOURCES_DATA.filter((r) => r.type !== 'case-study').map((r) => `/ressourcen/${r.slug}`),
