@@ -3,7 +3,7 @@ import { ServiceDetail, SolutionArea } from '../types';
 export const SERVICES: ServiceDetail[] = [
   {
     id: 'growth-strategy',
-    title: 'Marketing- & Wachstumsstrategie',
+    title: 'KI-gestützte Marketing- & Wachstumsstrategie',
     slug: 'growth-strategy',
     shortDesc: 'Klarer Plan für die Neukundengewinnung: Wunschkunden, Positionierung, Kanäle und Budget.',
     description: 'Wachstum lässt sich steuern, wenn ein paar Grundentscheide gefallen sind. Wir schauen uns Ihren Markt und Ihre bestehenden Kunden an, beschreiben Ihre Wunschkunden und legen fest, über welche Kanäle und mit welchen Botschaften Sie diese erreichen. So fliesst Ihr Budget dorthin, wo Anfragen entstehen.',
@@ -30,7 +30,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'demand-generation',
-    title: 'Performance Marketing & Online-Werbung',
+    title: 'Performance Marketing mit KI-Agenten',
     slug: 'demand-generation',
     shortDesc: 'Kampagnen auf Google, Meta und LinkedIn für die Firmen und Personen, die Sie gewinnen wollen.',
     description: 'Viele Ihrer künftigen Kunden suchen heute noch nicht aktiv. Mit Kampagnen auf LinkedIn, Google und Meta sorgen wir dafür, dass Ihr Unternehmen bekannt ist, wenn der Bedarf entsteht, und dass Interessenten, die bereits suchen, bei Ihnen landen. Anzeigen, Inhalte und Landingpages stimmen wir aufeinander ab.',
@@ -57,7 +57,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'lead-generation',
-    title: 'Lead-Generierung: SEO, Content & Direktansprache',
+    title: 'KI-gestützte Lead-Generierung & SEO',
     slug: 'lead-generation',
     shortDesc: 'Qualifizierte Anfragen über Suchmaschinen, nützliche Inhalte und persönliche Direktansprache.',
     description: 'Wir sorgen dafür, dass passende Interessenten Sie finden und dass Sie selbst aktiv auf Wunschfirmen zugehen können. Dazu gehören Inhalte, die bei Google gefunden werden, Landingpages mit nützlichen Angeboten wie Checklisten oder Leitfäden sowie eine persönliche Direktansprache per E-Mail und LinkedIn.',
@@ -84,7 +84,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'marketing-automation',
-    title: 'CRM & Marketing Automation',
+    title: 'KI-gestütztes CRM & Marketing Automation',
     slug: 'marketing-automation',
     shortDesc: 'Automatische Folge-E-Mails und ein CRM, in dem keine Anfrage mehr verloren geht.',
     description: 'Nicht jeder Interessent ist sofort kaufbereit. Mit automatisierten Abläufen in HubSpot, ActiveCampaign oder Salesforce begleiten wir Kontakte weiter, bis ein Gespräch sinnvoll ist. Ihr Vertrieb sieht im CRM, wer sich wofür interessiert, und muss nicht jedem Kontakt manuell nachgehen.',
@@ -111,7 +111,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'sales-enablement',
-    title: 'Vertriebsunterstützung & Leitfäden',
+    title: 'Sales Enablement mit KI-Recherche',
     slug: 'sales-enablement',
     shortDesc: 'Argumentarien, Unterlagen und Gesprächsvorbereitung, damit Ihr Vertrieb besser vorbereitet ins Gespräch geht, auf Wunsch mit Recherche durch einen KI-Agenten.',
     description: 'Gutes Marketing verpufft, wenn im Verkaufsgespräch improvisiert wird. Wir erarbeiten mit Ihrem Team Referenzbeispiele, Antworten auf häufige Einwände, Preisrechner und Präsentationen. So treten alle Verkäufer einheitlich auf und neue Mitarbeitende finden sich schneller zurecht.',
@@ -138,7 +138,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'revenue-operations',
-    title: 'Marketing, Vertrieb & Daten verbinden (RevOps)',
+    title: 'Agentic Revenue Operations (RevOps)',
     slug: 'revenue-operations',
     shortDesc: 'Gemeinsame Zahlen, Abläufe und Tools für Marketing, Vertrieb und Kundenbetreuung.',
     description: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir sorgen dafür, dass alle mit denselben Daten arbeiten, legen gemeinsame Kennzahlen fest und verbinden Ihre Systeme so, dass Übergaben funktionieren.',
@@ -165,7 +165,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'ai-automation',
-    title: 'KI-Einführung & Schulung',
+    title: 'KI-Enablement: Einführung & Schulung',
     slug: 'ai-automation',
     shortDesc: 'KI dort einführen, wo sie etwas bringt: Standortbestimmung, Schulung, Regeln für Daten und Tools.',
     description: 'Viele Mitarbeitende nutzen KI bereits, jede Person auf ihre Weise. Wir klären, wo KI in Marketing, Vertrieb und Verwaltung tatsächlich etwas bringt, binden sie in die bestehenden Abläufe ein und schulen Ihr Team. Dazu legen wir schriftlich fest, welche Daten in welches Tool dürfen und wer Inhalte freigibt. Was nicht zuverlässig funktioniert, setzen wir nicht ein.',
@@ -192,7 +192,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'ki-agenten',
-    title: 'KI-Agenten für Marketing & Vertrieb',
+    title: 'KI-Agenten & Agentic Automation',
     slug: 'ki-agenten',
     shortDesc: 'KI-Agenten, die Anfragen prüfen, Firmen recherchieren und das Nachfassen vorbereiten, mit Freigabe durch Ihr Team.',
     description: 'Ein KI-Agent erledigt eine Aufgabe über mehrere Schritte selbständig: eine Anfrage prüfen und einordnen, das Unternehmen recherchieren, alles ins CRM eintragen und eine Antwort vorbereiten. Ihr Team prüft und gibt frei, bevor etwas nach aussen geht. So laufen Abläufe auch dann weiter, wenn niemand im Büro ist.',
@@ -219,7 +219,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'martech-stack',
-    title: 'MarTech-Stack aufräumen & verbinden',
+    title: 'KI-fähiger MarTech-Stack',
     slug: 'martech-stack',
     shortDesc: 'Weniger Tools, besser verbunden: Stack-Check, Umbau und Betrieb von CRM, Website, E-Mail und Tracking.',
     description: 'Viele KMU zahlen für mehr Programme, als sie brauchen, und trotzdem werden Daten von Hand übertragen. Wir erfassen Ihren MarTech-Stack, also alle Tools für Marketing, Vertrieb und Kundenbetreuung, mit Kosten, Nutzung und Datenflüssen. Danach räumen wir auf, verbinden, was zusammengehört, und sorgen dafür, dass jede Anfrage bis zum Auftrag nachvollziehbar ist.',
@@ -246,7 +246,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'data-analytics',
-    title: 'Tracking, Attribution & Reporting',
+    title: 'Tracking & Attribution mit KI-Reporting',
     slug: 'data-analytics',
     shortDesc: 'Datenschutzkonformes Tracking und Berichte, die zeigen, welche Kanäle Kunden bringen.',
     description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit Server-Side Tagging (die Messdaten laufen zuerst über einen eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',

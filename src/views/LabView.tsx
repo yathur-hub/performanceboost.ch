@@ -60,7 +60,7 @@ export default function LabView() {
         <Container className="space-y-8">
           <SectionHeading title="Vom Labor in Ihr Unternehmen" intro="Was sich im eigenen Betrieb bewährt, biete ich als Leistung an, mit Festpreis und klar definiertem Ergebnis." />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <TeaserCard href="/leistungen/ki-agenten" title="KI-Agenten für Marketing & Vertrieb" desc="Agenten, die ganze Abläufe übernehmen, mit Freigabe durch Ihr Team." linkText="Zur Leistung" />
+            <TeaserCard href="/leistungen/ki-agenten" title="KI-Agenten & Agentic Automation" desc="Agenten, die ganze Abläufe übernehmen, mit Freigabe durch Ihr Team." linkText="Zur Leistung" />
             <TeaserCard href="/leistungen/ki-im-unternehmen" title="Governance für KI-Agenten" desc="Wann eine Regel reicht, wann KI hilft und wann ein Agent arbeitet." linkText="Mehr erfahren" />
             <TeaserCard href="/werkzeuge" title="Werkzeuge" desc="Womit ich arbeite, nach Schicht geordnet." linkText="Werkzeuge ansehen" />
           </div>

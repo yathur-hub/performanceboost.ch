@@ -41,7 +41,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Auswertung, Messmodelle, KI-Agenten',
     desc: 'Dashboards, Attribution und Marketing-Mix-Modelle, dazu KI-Agenten, die auf den Daten arbeiten. Was hier herauskommt, ist nur so gut wie die Schichten darunter.',
     examples: ['BI und Dashboards', 'Attribution und MMM', 'KI-Agenten', 'GEO-Monitoring'],
-    service: { href: '/leistungen/ki-agenten', label: 'KI-Agenten für Marketing & Vertrieb' },
+    service: { href: '/leistungen/ki-agenten', label: 'KI-Agenten & Agentic Automation' },
   },
   {
     id: 'orchestrierung',
@@ -59,7 +59,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Erfassung, Pipelines, Warehouse',
     desc: 'Wie Ereignisse erfasst, geprüft und gespeichert werden: Tagging im Browser und auf dem Server, Pipelines, Data Warehouse und Customer Data Platform.',
     examples: ['Tag Manager und Server-Side Tagging', 'GA4 und Ereignismodelle', 'Data Warehouse', 'CDP und Reverse ETL'],
-    service: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
+    service: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
   },
   {
     id: 'systeme',
@@ -130,7 +130,7 @@ Mit sauber definierten Stufen werden Umwandlungsquoten pro Stufe, Durchlaufzeite
 
 Diese Einordnung ist eine fachliche Einschätzung aus der Arbeit mit CRM-Datenstrukturen, keine Studie.`,
     sources: [],
-    related: { href: '/leistungen/revenue-operations', label: 'Marketing, Vertrieb & Daten verbinden (RevOps)' },
+    related: { href: '/leistungen/revenue-operations', label: 'Agentic Revenue Operations (RevOps)' },
   },
   {
     slug: 'server-side-tagging',
@@ -169,7 +169,7 @@ Dienste wie Stape übernehmen das Hosting des Containers. Damit ist aber noch ni
       { label: 'Meta: Pixel- und Server-Events deduplizieren', url: 'https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events' },
       { label: 'Stape: About', url: 'https://stape.io/about-us' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
   },
   {
     slug: 'composable-cdp',
@@ -208,7 +208,7 @@ Die MarTech-Landschaft 2026 von chiefmartec wird unter anderem von Hightouch ges
       { label: 'Fivetran: Übernahme von Census', url: 'https://www.fivetran.com/press/fivetran-signs-agreement-to-acquire-census-delivering-the-first-end-to-end-data-movement-platform-for-the-ai-era' },
       { label: 'chiefmartec: Marketing Technology Landscape 2026', url: 'https://chiefmartec.com/2026-marketing-technology-landscape/' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
   },
   {
     slug: 'integration-ist-keine-architektur',
@@ -244,7 +244,7 @@ Bei den Feldern mit dem grössten Schaden: Einwilligung und Abmeldung, Lifecycle
     sources: [
       { label: 'Martech Stack Builder: Stack Visualization', url: 'https://www.martechstackbuilder.com/solutions/stack-visualization/' },
     ],
-    related: { href: '/leistungen/martech-stack', label: 'MarTech-Stack aufräumen & verbinden' },
+    related: { href: '/leistungen/martech-stack', label: 'KI-fähiger MarTech-Stack' },
   },
   {
     slug: 'idempotenz-webhooks',
@@ -281,7 +281,7 @@ Die Formularstrecke dieser Website bestätigt eine Anfrage, sobald sie gespeiche
       { label: 'Stripe: Webhooks', url: 'https://docs.stripe.com/webhooks' },
       { label: 'Meta: Pixel- und Server-Events deduplizieren', url: 'https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events' },
     ],
-    related: { href: '/leistungen/marketing-automation', label: 'CRM & Marketing Automation' },
+    related: { href: '/leistungen/marketing-automation', label: 'KI-gestütztes CRM & Marketing Automation' },
   },
   {
     slug: 'attribution-inkrementalitaet-mmm',
@@ -329,7 +329,7 @@ Ein MMM lohnt sich erst ab einem gewissen Budget und mehreren Kanälen. Für kle
       { label: 'Google: Meridian, Marketing-Mix-Modell für alle verfügbar', url: 'https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/' },
       { label: 'GitHub: LightweightMMM (archiviert)', url: 'https://github.com/google/lightweight_mmm' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
   },
   {
     slug: 'mcp-berechtigungen',
@@ -369,7 +369,7 @@ Das eigene ERP von performanceboost stellt Agenten seine Funktionen über MCP be
       { label: 'HubSpot: MCP Server', url: 'https://developers.hubspot.com/mcp' },
       { label: 'Zapier: MCP', url: 'https://zapier.com/mcp' },
     ],
-    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten für Marketing & Vertrieb' },
+    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten & Agentic Automation' },
   },
   {
     slug: 'agenten-beobachten',
@@ -407,7 +407,7 @@ Ein Protokoll enthält, was der Agent verarbeitet hat, also oft Personendaten. A
     sources: [
       { label: 'ClickHouse: Übernahme von Langfuse', url: 'https://clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability' },
     ],
-    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten für Marketing & Vertrieb' },
+    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten & Agentic Automation' },
   },
   {
     slug: 'geo-monitoring',
@@ -484,7 +484,7 @@ Verzeichnisse bilden diese Unterschiede kaum ab. Bei OpenAlternative fehlte am 1
       { label: 'Snowplow: Limited Use License FAQ', url: 'https://docs.snowplow.io/docs/licensing/limited-use-license-faq/' },
       { label: 'OpenAlternative', url: 'https://openalternative.co/' },
     ],
-    related: { href: '/leistungen/martech-stack', label: 'MarTech-Stack aufräumen & verbinden' },
+    related: { href: '/leistungen/martech-stack', label: 'KI-fähiger MarTech-Stack' },
   },
 ];
 
