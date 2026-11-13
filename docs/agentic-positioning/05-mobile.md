@@ -68,8 +68,20 @@ Ohne Befund: kein Dokument-Überlauf ausser durch den Header, keine Konsolenfehl
 
 **Tests:** Typecheck, 36/36 Tests und Produktions-Build (73 Seiten) laufen durch.
 
+## Mobile Performance (echte Cloudflare-Vorschau)
+Messung mit 390 × 844 px und DPR 3, Netz gedrosselt (1.6 Mbit/s, 150 ms Latenz), CPU 4-fach verlangsamt. Gemessen wurde nach Laden, Menü öffnen und schliessen und Scrollen.
+
+| Seite | LCP | CLS | blockierende Zeit | längste Interaktion |
+|---|---|---|---|---|
+| / | 2.64 s (vorher 2.77 s) | 0.002 | ≈ 46 ms | 56 ms |
+| /leistungen/sales | 2.17 s | 0.000 | ≈ 45 ms | 56 ms |
+| /ansatz | 1.77 s | 0.007 | ≈ 46 ms | 56 ms |
+
+Die Hero-Staffel ist auf Mobile verkürzt: Subheadline ab 160 statt 300 ms, kürzere Dauern. Danach den Rest des LCP bestimmt das Laden der Google Fonts.
+
 ## 5. Einschränkungen und offene Punkte
 - Echte Geräte (iPhone mit Safari, Android mit Chrome) sind nicht getestet. Emulation bildet die Bildschirmtastatur, Safe Areas mit Notch und das Scrollverhalten von iOS nur näherungsweise ab.
 - Footer-Links mit kurzen Wörtern («Labor», «Sales») sind 44 px hoch, aber schmaler als 44 px. Sie erfüllen WCAG 2.5.8 (24 px), nicht die strengere 44-px-Empfehlung in der Breite.
 - Der Startseiten-Hero ist auf Mobile durch die Rakete höher (320 px: 1172 statt 996 px). Der primäre CTA bleibt bei 390 × 844 px im ersten Bildschirm.
+- LCP der Startseite liegt bei gedrosseltem Netz knapp über 2.5 s. Grösster Hebel wäre das Selbst-Hosten und Vorladen der Schriften (Inter, Plus Jakarta Sans). Das ist eine Infrastruktur-Entscheidung und hier nicht umgesetzt.
 - Bei 768 px bleibt der Hero zentriert und einspaltig. Ein zweispaltiges Tablet-Layout wäre eine Designentscheidung, keine Fehlerbehebung.
