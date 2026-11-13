@@ -262,6 +262,15 @@
 .hero-enter > *:nth-child(4) { animation-delay: 380ms; }
 .hero-enter > *:nth-child(5) { animation-delay: 460ms; }
 .hero-enter > *:nth-child(n + 6) { animation-delay: 540ms; }
+/* Mobile: kürzere Staffel, damit Subheadline und CTA (oft das LCP-Element) früher stehen */
+@media (max-width: 639px) {
+  .hero-enter > *:nth-child(3) { animation-delay: 160ms; }
+  .hero-enter > *:nth-child(4) { animation-delay: 220ms; }
+  .hero-enter > *:nth-child(5) { animation-delay: 280ms; }
+  .hero-enter > *:nth-child(n + 6) { animation-delay: 340ms; }
+  .hero-enter > * { animation-duration: 600ms; }
+  .hero-enter > h1 { animation-duration: 850ms; }
+}
 /* H1 in jedem Hero: maskierter Reveal statt Fade */
 .hero-enter > h1 { animation: maskUp var(--dur-hero) var(--ease-out) both; }
 .hero-enter > *:nth-child(1):is(h1) { animation-delay: 80ms; }
