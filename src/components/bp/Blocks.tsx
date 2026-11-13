@@ -92,9 +92,9 @@ export function CtaButton({
         trackEvent('cta_click', { cta_location: location, cta_target: 'overlay', page_slug: pageSlug });
         openContactModal();
       }}
-      className={`btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold whitespace-nowrap px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 ${styles} ${className}`}
+      className={`btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 max-sm:min-h-[50px] font-display font-semibold max-sm:text-[15px] whitespace-nowrap px-7 py-3.5 max-sm:py-3 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 ${styles} ${className}`}
     >
-      {label} <ArrowRight className="w-5 h-5" aria-hidden="true" />
+      {label} <ArrowRight className="w-5 h-5 max-sm:w-4 max-sm:h-4" aria-hidden="true" />
     </a>
   );
 }

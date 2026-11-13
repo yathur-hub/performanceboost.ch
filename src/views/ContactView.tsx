@@ -61,7 +61,7 @@ export default function ContactView() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.15]"
+            className="text-[clamp(1.85rem,8vw,2.25rem)] sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.12] sm:leading-[1.15] text-balance"
           >
             Erzählen Sie uns, wo Sie stehen.
           </motion.h1>
@@ -69,7 +69,7 @@ export default function ContactView() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
-            className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold animate-fadeIn"
+            className="text-slate-600 sm:text-slate-500 text-[15px] sm:text-base max-w-xl mx-auto leading-relaxed font-normal sm:font-semibold animate-fadeIn"
           >
             Schildern Sie kurz Ihre Situation, ob es um Marketing, Vertrieb, Abläufe oder Daten geht. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
           </motion.p>

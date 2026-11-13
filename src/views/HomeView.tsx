@@ -67,10 +67,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="home-view">
       {/* 1 HERO: Claim, konkreter Nutzen, Rakete wie bisher */}
-      <section className="relative pt-28 pb-10 sm:pt-36 sm:pb-14 md:pt-40 md:pb-16 overflow-hidden bg-white">
+      <section className="relative pt-[8.25rem] pb-8 sm:pt-36 sm:pb-14 md:pt-40 md:pb-16 overflow-hidden bg-white">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 items-center">
-            <div className="hero-enter lg:col-span-8 xl:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
+            <div className="hero-enter lg:col-span-8 xl:col-span-7 lg:space-y-7 text-left">
               <p className="text-xs sm:text-[13px] font-mono font-bold uppercase tracking-[0.18em] text-[#686CFA]">
                 Business Performance Partner für Schweizer KMU
               </p>
@@ -78,13 +78,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <span className="hero-line"><span>Boost your performance</span></span>{' '}
                 <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>
               </h1>
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-slate-600 lg:text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl">
                 Wir verbinden Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter zu einem System. KI-Agenten übernehmen dabei klar
                 umrissene Aufgaben, die Entscheidungen bleiben bei Ihrem Team.
               </p>
-              <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2.5 justify-center lg:justify-start text-left max-w-2xl mx-auto lg:mx-0">
+              <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-3.5 sm:gap-y-2.5 justify-start text-left max-w-2xl">
                 {HERO_OUTCOMES.map((o) => (
-                  <li key={o} className="flex items-center gap-2 text-sm sm:text-[15px] font-semibold text-slate-900">
+                  <li key={o} className="flex items-center gap-2.5 sm:gap-2 text-sm sm:text-[15px] font-semibold text-slate-900">
                     <span className="w-5 h-5 rounded-full bg-[#686CFA]/12 text-[#686CFA] flex items-center justify-center shrink-0">
                       <Check className="w-3.5 h-3.5" aria-hidden="true" />
                     </span>
@@ -92,24 +92,24 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center lg:justify-start items-center pt-1">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 justify-start items-stretch sm:items-center lg:pt-1">
                 <CtaButton label="Ausgangslage besprechen" location="home_hero" pageSlug="home" />
                 <button
                   type="button"
                   onClick={() => setShowProblemFinder(true)}
                   data-cta="hero_secondary"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 whitespace-nowrap text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 whitespace-nowrap text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 max-sm:min-h-11 max-sm:border-transparent max-sm:bg-transparent max-sm:hover:bg-transparent max-sm:px-0 max-sm:py-2 max-sm:text-[15px] max-sm:font-medium max-sm:text-slate-700 max-sm:active:text-[#4f54d6]"
                 >
-                  Welches Problem möchten Sie lösen?
+                  Welches Problem möchten Sie lösen? <ArrowRight className="w-4 h-4 shrink-0 sm:hidden" aria-hidden="true" />
                 </button>
               </div>
-              <p className="text-sm text-slate-500">
+              <p className="text-[13px] sm:text-sm text-slate-500 max-sm:leading-relaxed">
                 Für Unternehmen ab rund CHF 1 Mio. Umsatz. Ihr Ansprechpartner ist Inhaber Yathur Nathan.
               </p>
             </div>
 
             {/* Rakete in zwei Ebenen: Rauch statisch, Rakete animiert */}
-            <div className="lg:col-span-4 xl:col-span-5 flex justify-center lg:justify-end hero-parallax -mt-2 lg:mt-0">
+            <div className="lg:col-span-4 xl:col-span-5 flex justify-end hero-parallax -mt-6 sm:-mt-2 lg:mt-0">
               <div className="relative w-[132px] min-[380px]:w-[150px] sm:w-[190px] lg:w-[280px] xl:w-[400px] aspect-[650/1024] select-none">
                 <img
                   src="/images/hero-smoke-650.webp"

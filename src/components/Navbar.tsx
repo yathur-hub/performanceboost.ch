@@ -196,7 +196,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       }`}
       id="main-navigation"
     >
-      <div className="max-w-7xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] min-[380px]:px-6 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto pl-[max(var(--page-gutter),env(safe-area-inset-left))] pr-[max(var(--page-gutter),env(safe-area-inset-right))] sm:px-8 lg:px-10">
         <div className="flex justify-between items-center gap-3 min-[380px]:gap-4">
           <a
             href="/"

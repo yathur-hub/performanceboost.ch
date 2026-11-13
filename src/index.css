@@ -45,19 +45,23 @@
 }
 
 :root {
-  --font-size-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-body: clamp(0.9375rem, 0.86rem + 0.4vw, 1.125rem);
   --font-size-body-sm: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
-  --font-size-body-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --font-size-body-lg: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
   --line-height-body: 1.65;
   --line-height-relaxed: 1.7;
   --content-reading-width: 68ch;
 }
 
 @layer base {
+  /* rem-Basis bleibt auf der bisherigen Skala, damit Abstände und 44-px-Ziele nicht mitschrumpfen */
+  html { font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); }
   html, body {
     font-family: var(--font-sans);
     background-color: var(--color-brand-white2);
     color: var(--color-brand-font);
+  }
+  body {
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     font-weight: 400;
@@ -78,7 +82,7 @@
 
 /* Custom typography classes for running copy & cards */
 .text-body {
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem) !important;
+  font-size: clamp(0.9375rem, 0.86rem + 0.4vw, 1.125rem) !important;
   line-height: 1.65 !important;
 }
 
@@ -88,7 +92,7 @@
 }
 
 .text-body-lg {
-  font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem) !important;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem) !important;
   line-height: 1.6 !important;
 }
 
@@ -448,4 +452,51 @@ details[open] > :not(summary) { animation: swapIn var(--dur-accordion) var(--eas
   #site-footer li > a, #site-footer a[href^='mailto'], #site-footer a[href='/impressum'], #site-footer a[href='/datenschutz'] { display: inline-flex; align-items: center; min-height: 44px; }
   /* Kein «klebender» Hover-Zustand nach dem Antippen */
   .visual-zoom:hover img { transform: none; }
+}
+
+/* =========================================================================
+ * MOBILE RHYTHMUS & TYPOGRAFIE (13.11.2026) · Doku: docs/agentic-positioning/07-mobile-design.md
+ * Gilt nur unter 1024 px (Abstände) bzw. 640 px (Schriftgrössen). Desktop bleibt unverändert.
+ * ========================================================================= */
+:root {
+  /* Seitenrand: 20 px bei 320, 24 px ab 375, bis 28 px bei 430 */
+  --page-gutter: clamp(20px, 6.4vw, 28px);
+  /* Vertikaler Rhythmus im Hero: eng innerhalb einer Gruppe, weit zwischen Gruppen */
+  --hero-gap-eyebrow: 18px;
+  --hero-gap-h1: 26px;
+  --hero-gap-group: 36px;
+  --hero-gap-tight: 16px;
+}
+@media (min-width: 640px) {
+  :root { --page-gutter: 24px; }
+}
+@media (max-width: 639px) {
+  /* Alle Seitencontainer (Container-Baustein und gleich aufgebaute Inline-Container) */
+  .mx-auto.px-4 { padding-left: var(--page-gutter); padding-right: var(--page-gutter); }
+}
+
+@media (max-width: 1023px) {
+  /* Hero: Gruppen statt gleichmässiger Abstände */
+  .hero-enter > * { margin-block-end: 0 !important; margin-block-start: 0; }
+  .hero-enter > * + * { margin-block-start: var(--hero-gap-group); }
+  .hero-enter > h1 { margin-block-start: var(--hero-gap-eyebrow); }
+  .hero-enter > :first-child:is(h1) { margin-block-start: 0; }
+  .hero-enter > h1 + p { margin-block-start: var(--hero-gap-h1); }
+  .hero-enter > div + div, .hero-enter > div + p, .hero-enter > div + ul { margin-block-start: var(--hero-gap-tight); }
+  /* Leistungsseiten: Icon-Kachel über der H1 */
+  .hero-enter > div:first-child + h1 { margin-block-start: 22px; }
+}
+
+@media (max-width: 639px) {
+  /* Headline kräftig, aber nicht bildschirmfüllend; Fliesstext klar leichter als die Überschriften */
+  .hero-enter > h1 { font-size: clamp(1.75rem, 7.7vw, 2.1rem) !important; line-height: 1.12 !important; letter-spacing: -0.02em; }
+  .hero-enter > h1 + p { font-size: 15.5px !important; line-height: 1.65 !important; }
+  .hero-enter > p:first-child { font-size: 11px; letter-spacing: 0.16em; line-height: 1.6; text-wrap: balance; }
+  /* Abschnittsüberschriften: klare Stufe unter der H1 */
+  main h2.text-2xl { font-size: 1.4rem; line-height: 1.25; }
+  main section { scroll-margin-top: 96px; }
+}
+@media (max-width: 639px) {
+  /* Abstand zwischen grossen Sektionen: 80 px statt 64 px (Seiten-Wrapper der Views) */
+  .space-y-16:is(.md\:space-y-28, .md\:space-y-24) > :not(:last-child) { margin-block-end: 5rem; }
 }
