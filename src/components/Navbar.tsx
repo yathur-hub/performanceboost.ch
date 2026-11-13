@@ -5,10 +5,10 @@
  * Mega-Menü: Panel direkt unter dem Header, öffnet und schliesst per Klick auf den Menü-Button,
  * schliesst mit Escape, Klick auf den abgedunkelten Hintergrund und bei Seitenwechsel.
  * Fokus springt beim Öffnen ins Menü, bleibt darin (Tab-Schleife inkl. Menü-Button) und kehrt beim Schliessen zurück.
- * Informationsarchitektur unverändert: Marketing · Sales · Prozesse (mit Leistungen) · Ansatz · Agentic AI · Wissen · Unternehmen · Kontakt.
+ * Informationsarchitektur: Agentic Marketing · Agentic Sales · Agentic Processes (mit Leistungen) · Ansatz · Governance · Wissen · Unternehmen · Kontakt.
  */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, TrendingUp, Handshake, Cpu, Mail, Plus, Sparkles, Layers } from 'lucide-react';
+import { ArrowRight, TrendingUp, Handshake, Cpu, Mail, Plus, ShieldCheck, Layers } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion, type Variants } from 'motion/react';
 import { EASE_OUT, EASE_EXIT, DURATIONS } from '../lib/motion';
 import { SITE } from '../config/site';
@@ -24,7 +24,7 @@ const AREA_ICONS: Record<string, typeof TrendingUp> = {
 
 const APPROACH_LINKS = [
   { href: '/ansatz', label: 'Unser Ansatz', desc: 'Vier Phasen, Einstieg dort, wo Sie stehen', icon: Layers },
-  { href: '/leistungen/ki-im-unternehmen', label: 'Agentic AI', desc: 'Regel, KI oder Agent, und wer entscheidet', icon: Sparkles },
+  { href: '/leistungen/ki-im-unternehmen', label: 'Governance', desc: 'Rechte, Freigaben und Kontrolle für KI-Agenten', icon: ShieldCheck },
 ];
 
 const KNOWLEDGE_LINKS = [

@@ -170,7 +170,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
             <SectionHeading
               title="Drei Bereiche, ein System"
-              intro="Marketing gewinnt Nachfrage, der Vertrieb macht daraus Aufträge, und die Abläufe dahinter verbinden beides. Wir verbessern die drei Bereiche gemeinsam, weil ein Engpass in einem Bereich auch die anderen bremst."
+              intro="Agentic Marketing gewinnt Nachfrage, Agentic Sales macht daraus Aufträge, und Agentic Processes verbinden beides. In allen drei Bereichen arbeiten KI-Agenten mit klar begrenzten Rechten mit. Wir verbessern die Bereiche gemeinsam, weil ein Engpass in einem auch die anderen bremst."
             />
             <Link href="/leistungen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
               Alle Leistungen ansehen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -245,7 +245,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 intro="Nicht jede Aufgabe braucht KI. Wir wählen pro Ablauf die einfachste Lösung, die verlässlich funktioniert, und legen fest, wo ein Mensch freigibt."
               />
               <Link href="/leistungen/ki-im-unternehmen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
-                Wie wir Agentic AI einsetzen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                Governance für KI-Agenten <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </div>
             <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

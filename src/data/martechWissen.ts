@@ -50,7 +50,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Workflows, Integrationen, Ereignisse',
     desc: 'Die Verbindungen zwischen den Systemen: Workflows, Webhooks, Integrationsplattformen und die Regeln, welches System bei einem Widerspruch recht hat.',
     examples: ['n8n, Make, Zapier, Windmill', 'Webhooks und APIs', 'Synchronisation', 'Event-Routing'],
-    service: { href: '/leistungen/prozesse', label: 'Prozesse und Systemintegration' },
+    service: { href: '/leistungen/prozesse', label: 'Agentic Processes' },
   },
   {
     id: 'daten',

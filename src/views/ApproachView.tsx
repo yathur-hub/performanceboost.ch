@@ -44,7 +44,7 @@ export default function ApproachView() {
                 Vier Phasen, die sich nach Ihrer Ausgangslage richten.
               </h1>
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
-                Wir verbessern Marketing, Vertrieb und Prozesse nach einem klaren Vorgehen: Zielbild festlegen, umsetzen und stabil in Betrieb
+                Wir verbessern Agentic Marketing, Sales und Processes nach einem klaren Vorgehen: Zielbild festlegen, umsetzen und stabil in Betrieb
                 nehmen, Ihr Team befähigen und laufend optimieren. Nicht jedes Vorhaben braucht alle vier Phasen. Wir steigen dort ein, wo
                 Ihr Unternehmen heute steht.
               </p>
@@ -137,7 +137,7 @@ export default function ApproachView() {
             ))}
           </ul>
           <Link href="/leistungen/ki-im-unternehmen" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#4f54d6]">
-            Wie wir Agentic AI einsetzen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            Governance für KI-Agenten <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </Link>
         </Container>
       </section>

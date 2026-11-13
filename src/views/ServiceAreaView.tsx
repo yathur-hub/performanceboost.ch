@@ -56,7 +56,8 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="hero-enter lg:col-span-8 max-w-4xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
-              {area.headline}
+              <span className="block text-[#686CFA]">{area.label}</span>
+              <span className="block mt-2 sm:mt-3 text-[0.62em] leading-[1.2] font-medium text-slate-800">{area.headline}</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">{area.definition}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -362,7 +363,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         <Container className="space-y-8">
           <SectionHeading
             title={isArea ? 'Ein System, drei Bereiche' : 'Die drei Bereiche'}
-            intro="Marketing, Sales und Prozesse hängen voneinander ab. Am meisten bringt es, wenn man sie zusammen betrachtet und den grössten Engpass zuerst angeht."
+            intro="Agentic Marketing, Sales und Processes hängen voneinander ab. Am meisten bringt es, wenn man sie zusammen betrachtet und den grössten Engpass zuerst angeht."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {others.map((o) => (

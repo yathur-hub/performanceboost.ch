@@ -71,3 +71,8 @@ Definiert in `src/index.css`, Abschnitt «MOBILE RHYTHMUS & TYPOGRAFIE».
 - Die Eyebrow-Zeilen über den Hero-Headlines sind entfernt, auf Mobile und Desktop. Betroffen sind die Startseite («Business Performance Partner für Schweizer KMU»), die Bereichsseiten und Agentic AI («Marketing · Nachfrage gewinnen» usw.), der Ansatz, das MarTech-Wissen (Übersicht und Fachthemen) und die Immobilien-Landingpages.
 - Die H1 folgt jetzt direkt auf den Header bzw. den Seitenpfad.
 - Bewusst geblieben sind Labels mit eigener Funktion: Phasennamen, Bereichsnamen in der Leistungsübersicht, Gruppen im Mega-Menü und Badges auf Karten.
+
+## Nachtrag 13.11.2026: Agentic first
+- Die Bereiche heissen jetzt überall «Agentic Marketing», «Agentic Sales» und «Agentic Processes»: Navigation, Mega-Menü, Footer, Breadcrumbs, Karten, Diagramm, Seitentitel und Meta Descriptions. Das ist ein Entscheid des Inhabers, einheitlich Englisch wie der Claim.
+- Die H1 der Bereichsseiten beginnt mit dem Bereichsnamen. Der erste Satz der Definition erklärt, was «agentic» dort konkret heisst. Bei den Kompetenzfeldern stehen die Agenten an erster Stelle.
+- «Agentic AI» ist kein eigener Menüpunkt mehr. Die übergreifende Seite heisst jetzt «Governance» und behandelt Rechte, Freigaben, Protokolle, Regeln für Daten und Tools sowie Schulung. Die URL `/leistungen/ki-im-unternehmen` bleibt aus SEO-Gründen.

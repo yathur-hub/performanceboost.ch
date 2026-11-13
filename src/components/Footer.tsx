@@ -1,5 +1,5 @@
 /**
- * Footer: Marke + Claim · Leistungen (3 Bereiche, Ansatz, Agentic AI) · Wissen · Unternehmen · Kontakt.
+ * Footer: Marke + Claim · Leistungen (3 Bereiche, Ansatz, Governance) · Wissen · Unternehmen · Kontakt.
  * Einzelleistungen sind bewusst nicht im Footer; sie sind über die Bereichsseiten und /leistungen verlinkt.
  */
 import React from 'react';
@@ -14,7 +14,7 @@ interface FooterProps {
 const SERVICE_LINKS = [
   ...AREAS.map((a) => ({ href: `/leistungen/${a.id}`, label: a.label })),
   { href: '/ansatz', label: 'Ansatz' },
-  { href: '/leistungen/ki-im-unternehmen', label: 'Agentic AI' },
+  { href: '/leistungen/ki-im-unternehmen', label: 'Governance' },
   { href: '/loesungen', label: 'Lösungen nach Branche' },
 ];
 
@@ -62,7 +62,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               Boost your performance through agentic marketing, sales &amp; processes.
             </p>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
-              Business Performance Partner für Schweizer KMU. Marketing, Sales und Prozesse als ein System, inhabergeführt in Graubünden.
+              Business Performance Partner für Schweizer KMU. Agentic Marketing, Sales und Processes als ein System, inhabergeführt in Graubünden.
             </p>
           </div>
 

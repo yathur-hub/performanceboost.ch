@@ -37,6 +37,9 @@ const ORGANIZATION = {
     'Künstliche Intelligenz',
     'KI-Agenten',
     'Agentic AI',
+    'Agentic Marketing',
+    'Agentic Sales',
+    'KI-Governance',
     'CRM',
     'Marketing Automation',
     'Revenue Operations',
@@ -108,7 +111,7 @@ export function buildMeta(route: ParsedRoute): Meta {
 
   switch (route.view) {
     case 'home': {
-      const title = 'performanceboost: Marketing, Vertrieb & Prozesse mit KI-Agenten für KMU';
+      const title = 'performanceboost: Agentic Marketing, Sales & Processes für Schweizer KMU';
       const description =
         'Wir verbinden Marketing, Vertrieb und Abläufe von Schweizer KMU, damit passende Anfragen schneller zu Aufträgen werden. KI-Agenten übernehmen Teilaufgaben, Ihr Team gibt frei.';
       return {
@@ -191,7 +194,7 @@ export function buildMeta(route: ParsedRoute): Meta {
           },
         };
       }
-      const title = 'Leistungen: Marketing, Sales & Prozesse für KMU | performanceboost';
+      const title = 'Leistungen: Agentic Marketing, Sales & Processes für KMU | performanceboost';
       const description =
         'Alle Leistungen von performanceboost im Überblick: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
