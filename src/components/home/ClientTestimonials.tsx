@@ -27,7 +27,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Mission13',
     quote: 'Die Zusammenarbeit mit Yathur gibt uns genau die Unterstützung, die wir für den Aufbau unserer digitalen Kundengewinnung brauchen. Er verbindet Performance Marketing, Technologie und Webentwicklung mit einem klaren Verständnis für unser Geschäftsmodell und denkt dabei immer über einzelne Kampagnen hinaus. Gemeinsam bauen wir Strukturen und Prozesse auf, mit denen wir qualifizierte Anfragen planbarer generieren und unsere Marketingaktivitäten laufend weiterentwickeln können, ohne als Geschäftsführer selbst unnötigen mehr Aufwand zu betreiben.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Simon%20Karrica.png',
-    highlight: 'Planbare Kundengewinnung & Entlastung der Geschäftsleitung'
+    highlight: 'Digitale Kundengewinnung, weniger Aufwand für die Geschäftsführung'
   },
   {
     id: 'janis-bloechliger',
@@ -36,7 +36,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Marigin - Zentrum für Tiermedizin',
     quote: 'Yathur unterstützt uns dabei, unseren E-Commerce gezielt weiterzuentwickeln und Marketingmassnahmen konsequent auf Wachstum auszurichten. Besonders wertvoll ist für uns die Kombination aus Performance Marketing, strategischem Sparring und der Entwicklung passender Ad-Visuals. Dadurch entstehen Kampagnen, bei denen Strategie, Umsetzung und kreative Assets aus einer Hand zusammenspielen. Die Zusammenarbeit ist unkompliziert, schnell und immer lösungsorientiert.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Janis%20Blo%CC%88chliger.jpg',
-    highlight: 'Strategie, Ad-Visuals & Performance aus einer Hand'
+    highlight: 'E-Commerce, Kampagnen und Ad-Visuals'
   },
   {
     id: 'tiago-garcia',
@@ -45,7 +45,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'CUIRA Partners',
     quote: 'Mit Yathur haben wir einen Partner, der Marketing nicht isoliert betrachtet, sondern unsere gesamte digitale Kundengewinnung im Blick hat. Von der Strategie über Performance Marketing und Leadgenerierung bis hin zu den technischen Grundlagen bringt er die verschiedenen Disziplinen sinnvoll zusammen. Besonders schätzen wir, dass er unsere Ziele versteht, proaktiv mitdenkt und daraus konkrete Massnahmen ableitet, die uns als Unternehmen weiterbringen.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Tiago%20Garcia.png',
-    highlight: 'Ganzheitliche Leadgenerierung & proaktive Weiterentwicklung'
+    highlight: 'Strategie, Leadgenerierung und technische Grundlagen'
   },
   {
     id: 'kathirsan-kathirgamanathan',
@@ -54,7 +54,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Kathiago',
     quote: 'Yathur unterstützt uns sehr umfassend, von Performance Marketing, MarTech und Webentwicklung bis hin zur Produktion von Videos und Fotos. Dadurch greifen Strategie, Kampagnen, Technologie und Content sauber ineinander, anstatt von verschiedenen Stellen unabhängig voneinander umgesetzt zu werden. Die Zusammenarbeit ist unkompliziert, lösungsorientiert und darauf ausgerichtet, unsere Sichtbarkeit zu erhöhen und kontinuierlich neue Kundenanfragen zu generieren.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Kathirsan%20Kathirgamanathan.png',
-    highlight: 'MarTech, Content & Webentwicklung nahtlos vereint'
+    highlight: 'MarTech, Webentwicklung und Content'
   },
   {
     id: 'sirac-akyol',
@@ -63,7 +63,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'EVIM',
     quote: 'Yathur unterstützt uns dabei, unser Online-Geschäft strukturiert weiterzuentwickeln und Performance Marketing gezielt für weiteres Wachstum einzusetzen. Besonders schätzen wir, dass er nicht nur einzelne Kampagnen betrachtet, sondern auch den Shop, die Customer Journey und die Vermarktung als Ganzes im Blick behält. Die Zusammenarbeit ist unkompliziert, verlässlich und geprägt von konkreten Empfehlungen, die wir direkt umsetzen können.',
     imageUrl: null,
-    highlight: 'Shop-Optimierung & gezieltes Performance Marketing'
+    highlight: 'Onlineshop, Customer Journey und Performance Marketing'
   },
   {
     id: 'ibrahim-akyol',
@@ -72,7 +72,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Carpethouse',
     quote: 'Mit Yathur entwickeln wir die Performance unseres Onlineshops kontinuierlich weiter. Er verbindet Performance Marketing mit einer sehr datengetriebenen Herangehensweise und hilft uns dadurch, schneller zu erkennen, wo Potenzial liegt und welche Massnahmen wirklich relevant sind. Besonders wertvoll ist für uns, dass er nicht nur Zahlen analysiert, sondern daraus konkrete nächste Schritte für Marketing und Shop ableitet. Die Zusammenarbeit ist schnell, pragmatisch und auf nachhaltiges Wachstum ausgerichtet.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Ibrahim%20Akyol%20.jpeg',
-    highlight: 'Datengetriebene Shop-Skalierung & pragmatische Umsetzung'
+    highlight: 'Shop-Performance mit klaren nächsten Schritten'
   },
   {
     id: 'carla-carcaiso',
@@ -81,7 +81,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'CarlaCares',
     quote: 'Die Zusammenarbeit mit Yathur hat unsere internen Abläufe und unseren digitalen Auftritt grundlegend weitergebracht. Er hat für CarlaCares nicht nur die komplette Webseite konzipiert, gestaltet und technisch umgesetzt, sondern auch ein auf unsere Bedürfnisse zugeschnittenes ERP-System entwickelt. Besonders wertvoll ist für uns, dass er unsere Anforderungen schnell versteht und daraus Lösungen entwickelt, die im Alltag wirklich funktionieren. So haben wir heute professionelle digitale Strukturen, die unsere Prozesse vereinfachen und uns eine solide Basis für die weitere Entwicklung von CarlaCares geben.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Carla%20Carcaiso.jpeg',
-    highlight: 'Webauftritt & massgeschneiderte Prozess- und ERP-Lösungen'
+    highlight: 'Website und eigenes ERP-System'
   }
 ];
 
@@ -177,10 +177,10 @@ export function ClientTestimonials() {
         <div className="space-y-2">
           <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight flex items-center gap-4">
             <Visual3D id="trophy" sizes="80px" className="hidden sm:block h-20 w-auto shrink-0" />
-            <span>Was Schweizer Gründer &amp; Führungskräfte sagen</span>
+            <span>Stimmen aus der Zusammenarbeit</span>
           </h2>
           <p className="text-slate-500 text-body-sm leading-relaxed font-medium max-w-2xl">
-            Kundinnen und Kunden erzählen in eigenen Worten, wie die Zusammenarbeit abläuft und was sie ihnen gebracht hat.
+            Unternehmerinnen und Unternehmer beschreiben in eigenen Worten, wie die Zusammenarbeit abläuft und was sie ihnen gebracht hat. Die Zitate sind unverändert.
           </p>
         </div>
 

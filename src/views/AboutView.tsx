@@ -35,7 +35,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
     {
       icon: RefreshCw,
       title: 'Umsetzen, dann verbessern',
-      desc: 'Ein Konzept in der Schublade bringt keine Ergebnisse. Wir bringen Massnahmen zügig live und verbessern sie anhand echter Zahlen.'
+      desc: 'Wir bringen Massnahmen früh live und verbessern sie anhand der Zahlen, die dann tatsächlich hereinkommen.'
     },
     {
       icon: Award,
@@ -140,10 +140,10 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
-              Ich bin Marketer mit sehr tiefem technischem Können. Ich komme aus dem Performance Marketing, von Search, Shopping, Performance Max und Video bis Social Ads, und bin heute vor allem dort zu Hause, wo Marketing auf Technologie trifft: CRM-Datenmodelle, Tracking im Browser und auf dem Server, Integrationen über APIs und Workflows, Webentwicklung und KI-Agenten, die ganze Abläufe übernehmen.
+              Ich bin Marketer und baue die Technik dahinter selbst. Angefangen habe ich im Performance Marketing, mit Search, Shopping, Performance Max, Video und Social Ads. Heute arbeite ich vor allem dort, wo Marketing auf Technologie trifft, also an CRM-Datenmodellen, Tracking im Browser und auf dem Server, Integrationen über APIs und Workflows, Webentwicklung und KI-Agenten, die ganze Abläufe übernehmen.
             </p>
             <p>
-              Diese Aufgaben sind sonst auf mehrere Dienstleister verteilt, die aneinander vorbeiarbeiten. Bei mir kommen sie aus einer Hand, und ich setze sie selbst um. Was ich empfehle, habe ich meistens zuerst selbst gebaut und betrieben, vom eigenen ERP bis zum Lead-Eingang ohne Abtippen. Gemessen wird die Arbeit an Anfragen, Aufträgen und eingesparten Stunden. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
+              In vielen Unternehmen sind diese Aufgaben auf mehrere Dienstleister verteilt, und an den Übergaben geht Wissen verloren. Bei mir liegen sie bei einer Person, und ich setze sie selbst um. Was ich empfehle, habe ich meistens zuerst selbst gebaut und betrieben, vom eigenen ERP bis zum Lead-Eingang ohne Abtippen. Gemessen wird die Arbeit an Anfragen, Aufträgen und eingesparten Stunden. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
             </p>
             <div className="border-t border-slate-200 pt-4">
               <p className="text-slate-900 font-bold">Ausbildung und Zertifikate</p>
@@ -196,9 +196,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <div className="w-10 h-10 rounded-xl bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center border border-[#CBCBFC]/20">
                 <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">Strategie und Umsetzung aus einer Hand</h3>
+              <h3 className="text-sm font-bold text-slate-900">Wer plant, setzt auch um</h3>
               <p className="text-xs text-slate-500 leading-relaxed font-semibold">
-                Strategie, Systeme, Automatisierungen, Tracking und Kampagnen kommen aus einer Hand. Dadurch gehen bei Übergaben keine Informationen verloren, und Sie haben einen einzigen Ansprechpartner.
+                Strategie, Systeme, Automatisierungen, Tracking und Kampagnen liegen bei derselben Person. So gehen bei Übergaben keine Informationen verloren, und Sie haben einen Ansprechpartner für alles.
               </p>
             </motion.div>
 
@@ -231,7 +231,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <div 
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
-            <span className="text-xs font-mono font-bold text-[#686CFA]">Grundsatz 1: Erst verstehen, dann handeln</span>
+            <span className="text-xs font-mono font-bold text-[#686CFA]">Zuerst das Geschäft verstehen, dann Werkzeuge wählen</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
               Bevor wir Massnahmen oder Tools empfehlen, verstehen wir Ihr Geschäft: Wer sind Ihre besten Kunden, was ist ein Auftrag wert, wie laufen Verkauf und Abläufe heute? Software wählen wir erst, wenn klar ist, was sie abbilden soll.
             </p>
@@ -240,7 +240,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <div 
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
-            <span className="text-xs font-mono font-bold text-[#686CFA]">Grundsatz 2: Aufbauen, was bleibt</span>
+            <span className="text-xs font-mono font-bold text-[#686CFA]">Grundlagen aufbauen, die bleiben</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
               Eine einzelne Kampagne läuft irgendwann aus. Wir bauen deshalb auch auf, was Ihnen langfristig bleibt: saubere Daten, CRM-Abläufe, Automatisierungen, Landingpages und Auswertungen. Alles ist dokumentiert, damit Ihr Team damit weiterarbeiten kann.
             </p>

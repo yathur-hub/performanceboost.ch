@@ -386,7 +386,7 @@ export default function CacLtvCalculator() {
           <LeadCaptureForm
             pageId="dtc-growth-acquisition"
             secondaryCTAText="Wie senken Sie Ihre Akquisekosten? Einschätzung per E-Mail →"
-            danachText="Vielen Dank! Wir senden Ihnen in Kürze eine Einschätzung, wie Sie das Verhältnis von Kundenwert zu Akquisekosten verbessern können."
+            danachText="Vielen Dank. Wir senden Ihnen in Kürze eine Einschätzung, wie Sie das Verhältnis von Kundenwert zu Akquisekosten verbessern können."
             additionalFields={[
               {
                 type: 'select',

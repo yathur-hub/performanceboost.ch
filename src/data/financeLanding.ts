@@ -138,7 +138,7 @@ export const ICP_CARDS: { slug: FinanceSlug; title: string; desc: string; linkTe
   {
     slug: 'hypothekarberatung',
     title: 'Hypothek & Eigenheim',
-    desc: 'Erstkäufer, auslaufende Festhypotheken, Tragbarkeitsfragen: Anlässe, nach denen Menschen konkret suchen. Wir bringen sie auf Ihre Anfrageseite statt auf ein Vergleichsportal.',
+    desc: 'Erstkäufer, auslaufende Festhypotheken und Tragbarkeitsfragen sind Anlässe, nach denen Menschen konkret suchen. Wir bringen sie auf Ihre Anfrageseite statt auf ein Vergleichsportal.',
     linkText: 'Mehr zu Hypothekarberatung',
   },
   {
@@ -150,7 +150,7 @@ export const ICP_CARDS: { slug: FinanceSlug; title: string; desc: string; linkTe
   {
     slug: 'versicherungsbroker',
     title: 'Versicherung: Broker & Generalagenturen',
-    desc: 'Ob ungebundener Broker oder Generalagentur: Mit einer lokalen Anfrageseite und Online-Terminbuchung gewinnen Sie eigene Anfragen, statt Kontakte zu kaufen.',
+    desc: 'Ob ungebundener Broker oder Generalagentur, mit einer lokalen Anfrageseite und Online-Terminbuchung gewinnen Sie eigene Anfragen, statt Kontakte zu kaufen.',
     linkText: 'Mehr zu Versicherungsbroker',
   },
 ];
@@ -211,7 +211,7 @@ export const PROCESS_STEPS: TextCard[] = [
   },
   {
     title: 'Neukunden-Diagnose (optional, kostenpflichtig)',
-    desc: 'Wenn Sie es genauer wissen wollen: Wir rechnen mit Klickpreisen und Suchnachfrage Ihrer Region und mit Ihren eigenen Werten pro Mandat. Sie erhalten eine zweiseitige Einschätzung. Lohnt sich ein Pilot nicht, sagen wir es Ihnen. Die Kosten rechnen wir voll an, wenn Sie innert 60 Tagen starten.',
+    desc: 'Wenn Sie es genauer wissen wollen, rechnen wir mit Klickpreisen und Suchnachfrage Ihrer Region und mit Ihren eigenen Werten pro Mandat. Sie erhalten eine zweiseitige Einschätzung. Lohnt sich ein Pilot nicht, sagen wir es Ihnen. Die Kosten rechnen wir voll an, wenn Sie innert 60 Tagen starten.',
   },
   {
     title: 'Pilot mit festem Zeitraum',
@@ -315,7 +315,7 @@ const FAQ = {
   },
   allein: {
     q: 'Ich arbeite allein. Lohnt sich das für mich?',
-    a: 'Ehrlich gesagt: oft nicht. Ein Pilot braucht laufend Werbebudget und freie Beratungszeit, und er rechnet sich nur, wenn ein neues Mandat genug einbringt. Im Gespräch rechnen wir das mit Ihren eigenen Zahlen durch. Wenn es nicht aufgeht, raten wir ab oder empfehlen nur einzelne Massnahmen, etwa eine bessere Anfrageseite.',
+    a: 'Ehrlich gesagt oft nicht. Ein Pilot braucht laufend Werbebudget und freie Beratungszeit, und er rechnet sich nur, wenn ein neues Mandat genug einbringt. Im Gespräch rechnen wir das mit Ihren eigenen Zahlen durch. Wenn es nicht aufgeht, raten wir ab oder empfehlen nur einzelne Massnahmen, etwa eine bessere Anfrageseite.',
   },
   konten: {
     q: 'Wem gehören die Werbekonten, die Daten und die Website?',
@@ -465,10 +465,10 @@ export const FINANCE_PAGES: Record<FinanceSlug, FinancePage> = {
     label: 'Versicherungsbroker',
     seoTitle: 'Eigene Anfragen für Versicherungsbroker und Generalagenturen | performanceboost',
     seoDescription:
-      'Statt Leads einzukaufen: eine lokale Anfrageseite mit Online-Terminbuchung, Kampagnen in Ihrer Region und eine Messung, die Ihnen gehört. Für Broker und Generalagenturen.',
+      'Eigene Anfragen statt gekaufter Leads, mit lokaler Anfrageseite, Online-Terminbuchung, Kampagnen in Ihrer Region und einer Messung, die Ihnen gehört. Für Broker und Generalagenturen.',
     overline: 'Versicherung: Broker & Generalagenturen',
     h1: 'Eigene Anfragen für Broker und Generalagenturen',
-    sub: 'Statt Leads einzukaufen, die auch Ihre Mitbewerber erhalten: eine lokale Anfrageseite mit Online-Terminbuchung, Kampagnen in Ihrer Region und eine Messung, die Ihnen gehört.',
+    sub: 'Gekaufte Leads erhalten oft auch Ihre Mitbewerber. Wir bauen Ihnen eine lokale Anfrageseite mit Online-Terminbuchung, Kampagnen in Ihrer Region und eine Messung, die Ihnen gehört.',
     defaultSegment: 'VM',
     pains: [
       PAIN_REFERRALS,

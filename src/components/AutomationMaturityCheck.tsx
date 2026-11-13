@@ -148,7 +148,7 @@ export default function AutomationMaturityCheck() {
         return {
           title: "Stufe 4: Fortgeschritten",
           color: "#57CC99",
-          main: "Sie sind gut aufgestellt, ein wichtiger Punkt fehlt noch. Ihre Abläufe sind klar geregelt. Der letzte offene Punkt ist keine Grundvoraussetzung mehr, bringt aber spürbar mehr Qualität und Effizienz.",
+          main: "Sie sind gut aufgestellt, ein wichtiger Punkt fehlt noch. Ihre Abläufe sind klar geregelt. Der letzte offene Punkt ist keine Grundvoraussetzung mehr, bringt aber mehr Qualität und weniger Handarbeit.",
           context: ""
         };
       default:

@@ -130,14 +130,14 @@ export default function AuftragsPipelineRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben lässt Ihr Betrieb spürbar Umsatz liegen. Entweder erhalten zu wenige Anfragen eine Offerte, oder zu wenige Offerten werden zum Auftrag, oft weil nicht nachgefasst wird. Mit einfachen, klaren Abläufen lässt sich hier meist schnell etwas verbessern.',
+      label: 'Viel Umsatz bleibt liegen',
+      desc: 'Nach Ihren Angaben lässt Ihr Betrieb einiges an Umsatz liegen. Entweder erhalten zu wenige Anfragen eine Offerte, oder zu wenige Offerten werden zum Auftrag, oft weil nicht nachgefasst wird. Mit einfachen, klaren Abläufen lässt sich hier meist schnell etwas verbessern.',
       rec: 'Offerten schneller erstellen und ein paar Tage nach Versand systematisch nachtelefonieren.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
+      label: 'Umsatz bleibt liegen',
       desc: 'Ihr Weg von der Anfrage zum Auftrag läuft solide, es bleibt aber noch Umsatz liegen. Häufige Ursachen sind fehlendes Nachfassen bei Offerten oder eine unklare erste Einschätzung der Anfragen.',
       rec: 'Offerten einheitlich aufbauen, das Nachfassen klar regeln und offene Offerten in einem CRM im Blick behalten.',
     },
@@ -146,14 +146,14 @@ export default function AuftragsPipelineRechner() {
       badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
       desc: 'Ihre Quoten liegen nahe an den angenommenen Richtwerten oder darüber. Das ist eine solide Basis. Um weiter zu wachsen, brauchen Sie vor allem mehr passende Anfragen aus Ihrer Region.',
-      rec: 'Lokale Sichtbarkeit bei Google ausbauen und gezielte Suchanzeigen für Ihre margenstärksten Arbeiten schalten.',
+      rec: 'Lokale Sichtbarkeit bei Google ausbauen und Suchanzeigen für Ihre margenstärksten Arbeiten schalten.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
-      desc: 'Sie machen nach Ihren Angaben bereits sehr viel aus Ihren Anfragen. Der nächste Schritt: gezielt mehr Anfragen für die Projekte gewinnen, die Sie am liebsten ausführen.',
-      rec: 'Sichtbarkeit gezielt auf lukrative Projekte wie Umbau oder Sanierung ausrichten.',
+      desc: 'Sie machen nach Ihren Angaben bereits sehr viel aus Ihren Anfragen. Als Nächstes lohnt es sich, mehr Anfragen für die Projekte zu gewinnen, die Sie am liebsten ausführen.',
+      rec: 'Sichtbarkeit auf lukrative Projekte wie Umbau oder Sanierung ausrichten.',
     },
   };
 
@@ -281,7 +281,7 @@ export default function AuftragsPipelineRechner() {
 
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich durch konsequentes Nachfassen</span>
+                    <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich durch regelmässiges Nachfassen</span>
                     <p className="text-[11px] text-slate-500 font-semibold">Geschätztes Plus, wenn die Zuschlagsquote um 10 Prozentpunkte steigt</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.potenzial_jahr)} / J.</h4>

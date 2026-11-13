@@ -141,7 +141,7 @@ export default function SaasRevenueLeckRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-100 text-red-800 border-red-200',
-      label: 'Grosses Potenzial',
+      label: 'Umsatz geht verloren',
       desc: 'Nach Ihren Angaben geht an zwei Stellen Umsatz verloren: bei der Umwandlung von Tests in zahlende Kunden und bei Kündigungen.',
       btnText: 'Ergebnis besprechen',
     },
@@ -149,7 +149,7 @@ export default function SaasRevenueLeckRechner() {
       color: 'text-amber-700 bg-amber-50 border-amber-200/50',
       badgeBg: 'bg-amber-100 text-amber-800 border-amber-200',
       label: 'Aufbauphase',
-      desc: 'Die Grundlagen sind da, es bleibt aber noch spürbar Potenzial.',
+      desc: 'Die Grundlagen sind da, es bleibt aber noch Umsatz liegen.',
       btnText: 'Ergebnis besprechen',
     },
     wachstumsmodus: {
@@ -284,7 +284,7 @@ export default function SaasRevenueLeckRechner() {
 
                 <div className="sm:col-span-2 bg-[#686CFA]/5 border border-[#CBCBFC]/40 rounded-xl p-4 flex items-center justify-between">
                   <div>
-                    <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-wider block">Mögliches Potenzial pro Jahr</span>
+                    <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-wider block">Möglicher Mehrumsatz pro Jahr</span>
                     <p className="text-[11px] text-slate-400 font-semibold mb-1">Annahme: 22% Umwandlung, 2% Kündigungen</p>
                   </div>
                   <h4 className="text-xl font-black text-[#686CFA]">{formatCHFKompakt(results.arr_potenzial)} / Jahr</h4>
@@ -321,7 +321,7 @@ export default function SaasRevenueLeckRechner() {
                 <p className="text-xs text-slate-650 leading-relaxed font-semibold">
                   {results.stufe === 'kritisch' && `Bei ${inputs.conversion}% Umwandlung und ${inputs.churn}% monatlicher Kündigungsrate liegt der jährliche Verlust grob geschätzt bei ${formatCHF(results.total_leck_arr)}. Das deutet auf ein grundsätzliches Problem in der Vermarktung hin. Am meisten bringen meist: Interessenten nach dem Test weiterbegleiten, Anfragen nach Abschlusschance bewerten und ein sauberes CRM.`}
                   {results.stufe === 'aufbauphase' && `Mit den angenommenen Richtwerten wären grob geschätzt ${formatCHFKompakt(results.arr_potenzial)} mehr Jahresumsatz möglich. Ansatzpunkte: E-Mail-Serien, die Testnutzer weiterbegleiten, und eine genaue Analyse der Kündigungen.`}
-                  {results.stufe === 'wachstumsmodus' && `Mit ${inputs.conversion}% Umwandlung und ${inputs.churn}% Kündigungsrate liegen Sie nahe an den angenommenen Richtwerten. Der nächste Schritt: mehr qualifizierte Testanmeldungen, etwa durch gezielte Ansprache von Wunschkunden.`}
+                  {results.stufe === 'wachstumsmodus' && `Mit ${inputs.conversion}% Umwandlung und ${inputs.churn}% Kündigungsrate liegen Sie nahe an den angenommenen Richtwerten. Als Nächstes lohnt es sich, mehr qualifizierte Testanmeldungen zu gewinnen, etwa indem Sie Wunschkunden direkt ansprechen.`}
                   {results.stufe === 'scale_ready' && `Ihre Werte liegen über den angenommenen Richtwerten. Damit kann es sich lohnen, mehr Budget in die Gewinnung neuer Interessenten zu stecken.`}
                 </p>
               </div>

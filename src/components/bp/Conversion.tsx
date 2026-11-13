@@ -31,13 +31,13 @@ export function HeroTrust({ className = '', align = 'left' }: { className?: stri
 }
 
 export function LeadCtaSection({
-  title = 'Lassen Sie uns über Ihre Ziele sprechen.',
+  title = 'Sprechen wir über Ihre Ausgangslage.',
   intro = 'Schildern Sie kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort und einen Terminvorschlag für ein kostenloses Erstgespräch.',
   formLocation,
   points = [
     'Wir schauen uns Ihre heutige Situation und Ihre Ziele an.',
     'Sie erfahren, wo wir den grössten Hebel sehen, und ob wir der richtige Partner sind.',
-    'Danach entscheiden Sie in Ruhe. Kein Verkaufsdruck, keine Verpflichtung.',
+    'Danach entscheiden Sie in Ruhe, ob und wie es weitergeht. Es entsteht keine Verpflichtung.',
   ],
   visual,
   ctaLabel,
@@ -48,7 +48,7 @@ export function LeadCtaSection({
   points?: string[];
   /** Dekoratives 3D-Objekt oben in der dunklen Spalte. */
   visual?: VisualId;
-  /** Beschriftung des Buttons, Standard «Potenzial besprechen». */
+  /** Beschriftung des Buttons, Standard «Erstgespräch vereinbaren». */
   ctaLabel?: string;
 }) {
   return (
@@ -124,7 +124,7 @@ export function LeadCtaSection({
 }
 
 /** Öffnet das Overlay mit der Formularstrecke der aktuellen Seite. */
-export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { location: string; label?: string }) {
+export function OpenLeadButton({ location, label = 'Erstgespräch vereinbaren' }: { location: string; label?: string }) {
   const { openContactModal } = useContactModal();
   return (
     <button

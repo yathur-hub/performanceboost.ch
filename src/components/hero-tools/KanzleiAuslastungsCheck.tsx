@@ -131,14 +131,14 @@ export default function KanzleiAuslastungsCheck() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben binden administrative Aufgaben viel Zeit, oder die abrechenbaren Stunden pro Woche sind eher tief. Das kostet spürbar Honorarumsatz. Klare Abläufe, etwa eine digitale Vorabklärung neuer Mandate, können hier Zeit freimachen.',
+      label: 'Viel Administration',
+      desc: 'Nach Ihren Angaben binden administrative Aufgaben viel Zeit, oder die abrechenbaren Stunden pro Woche sind eher tief. Das kostet Honorarumsatz. Klare Abläufe, etwa eine digitale Vorabklärung neuer Mandate, können hier Zeit freimachen.',
       rec: 'Mandatsaufnahme automatisieren, den Start mit neuen Mandanten vereinheitlichen und die Zeiterfassung vereinfachen.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
+      label: 'Spielraum vorhanden',
       desc: 'Ihre Kanzlei arbeitet solide, administrative Aufgaben binden aber noch juristische Kapazität. Wie viel eine Entlastung bei der Administration bringen könnte, sehen Sie oben in der Schätzung.',
       rec: 'Dokumentvorlagen ordnen, Fristen digital kontrollieren und wiederkehrende Sekretariatsarbeiten automatisieren.',
     },
@@ -146,15 +146,15 @@ export default function KanzleiAuslastungsCheck() {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-700 text-white',
       label: 'Gut aufgestellt',
-      desc: 'Ihre Werte liegen nahe am angenommenen Richtwert. Das ist eine gute Basis. Weiteres Wachstum ist meist über eine klarere Spezialisierung möglich, die höhere Stundensätze und passendere Mandate ermöglicht.',
-      rec: 'Positionierung schärfen und auf LinkedIn gezielt bei Wirtschaftsmandanten sichtbar werden.',
+      desc: 'Ihre Werte liegen nahe am angenommenen Richtwert. Das ist eine gute Basis. Wachsen können Sie meist über eine klarere Spezialisierung. Sie erlaubt höhere Stundensätze und bringt passendere Mandate.',
+      rec: 'Positionierung schärfen und auf LinkedIn bei Wirtschaftsmandanten sichtbar werden.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihre Kanzlei ist nach Ihren Angaben sehr effizient organisiert, mit wenig administrativem Aufwand. Weiteres Wachstum kommt dann vor allem über zusätzliche Anwältinnen und Anwälte, sofern genug Mandate vorhanden sind.',
-      rec: 'Juristische Fachkräfte gezielt ansprechen und die Kanzlei schrittweise vergrössern.',
+      rec: 'Juristische Fachkräfte aktiv ansprechen und die Kanzlei schrittweise vergrössern.',
     },
   };
 

@@ -138,23 +138,23 @@ export default function AngebotsPipelineRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben geht zwischen Anfrage und Auftrag deutlich mehr Umsatz verloren als nötig. Oft helfen schon einfache Schritte: Offerten konsequent nachfassen und einen klaren Ablauf für Angebote festlegen. Der grösste Hebel ist meist nicht die bessere Offerte, sondern dass überhaupt nachgefasst wird.',
+      label: 'Viel Umsatz bleibt liegen',
+      desc: 'Nach Ihren Angaben geht zwischen Anfrage und Auftrag deutlich mehr Umsatz verloren als nötig. Oft helfen schon einfache Schritte: Offerten verlässlich nachfassen und einen klaren Ablauf für Angebote festlegen. Oft bringt es mehr, überhaupt nachzufassen, als die Offerte selbst zu verbessern.',
       rec: `CRM einrichten, Ablauf für das Nachfassen festlegen und die Abschlussquote schrittweise von ${inputs.abschlussquote}% Richtung 35% entwickeln.`,
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
-      desc: 'Ihr Weg von der Anfrage zum Auftrag funktioniert, es bleibt aber spürbar Umsatz liegen. Häufige Ursachen sind Lücken beim Nachfassen oder eine unklare erste Einschätzung der Anfragen. Hier lohnt es sich, gezielt anzusetzen.',
-      rec: 'Nachfassen systematisch regeln, Interessenten bei langen Entscheidungszeiten weiterbegleiten und das CRM konsequenter nutzen.',
+      label: 'Umsatz bleibt liegen',
+      desc: 'Ihr Weg von der Anfrage zum Auftrag funktioniert, es bleibt aber Umsatz liegen. Häufige Ursachen sind Lücken beim Nachfassen oder eine unklare erste Einschätzung der Anfragen. Dort lohnt es sich anzusetzen.',
+      rec: 'Nachfassen systematisch regeln, Interessenten bei langen Entscheidungszeiten weiterbegleiten und das CRM im Alltag nutzen.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/60',
       badgeBg: 'bg-green-700 text-white',
       label: 'Gut, aber ausbaufähig',
       desc: 'Ihre Quoten liegen nahe an den angenommenen Richtwerten oder darüber. Das ist eine solide Basis. Als Nächstes geht es darum, mehr passende Anfragen zu gewinnen und die Abschlussquote weiter zu verbessern.',
-      rec: 'Mehr qualifizierte Anfragen gewinnen, Wunschkunden gezielt ansprechen und Interessenten weiterbegleiten.',
+      rec: 'Mehr qualifizierte Anfragen gewinnen, Wunschkunden direkt ansprechen und Interessenten weiterbegleiten.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
@@ -289,7 +289,7 @@ export default function AngebotsPipelineRechner() {
 
             <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
               <div className="space-y-0.5">
-                <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich durch konsequentes Nachfassen</span>
+                <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich durch regelmässiges Nachfassen</span>
                 <p className="text-[11px] text-slate-450 font-semibold">Geschätztes Plus, wenn die Abschlussquote um 10 Prozentpunkte steigt</p>
               </div>
               <h4 className="text-lg font-black text-green-700 ml-4">+{formatCHF(results.follow_up_potenzial)} / J.</h4>

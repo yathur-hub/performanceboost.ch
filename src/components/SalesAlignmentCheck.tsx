@@ -69,7 +69,7 @@ export default function SalesAlignmentCheck() {
     } else if (score <= 12) {
       return {
         key: "spuerbar",
-        label: "Spürbare Reibung",
+        label: "Deutliche Reibung",
         color: "#F4A261",
         desc: "Marketing und Vertrieb arbeiten zusammen, aber noch nicht als eingespieltes Team. An den Übergaben geht etwas verloren: Anfragen werden zu spät bearbeitet, Unterlagen zu wenig genutzt oder die Übergabe vom Marketing an den Vertrieb ist nicht klar geregelt."
       };

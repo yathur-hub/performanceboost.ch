@@ -247,7 +247,7 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
   },
   marketing: {
     title: 'Marketing entlang der ganzen Strecke',
-    text: 'Wir verbessern den Weg vom ersten Kontakt bis zum Auftrag, nicht nur einzelne Kampagnen. An jeder Stufe messen wir, wo Interessenten abspringen, und geben die Zahlen an den Vertrieb weiter.',
+    text: 'Wir verbessern den ganzen Weg vom ersten Kontakt bis zum Auftrag. An jeder Stufe messen wir, wo Interessenten abspringen, und geben die Zahlen an den Vertrieb weiter.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -334,7 +334,7 @@ export function sectorDiagram(slug: string, sectorTitle: string): PageDiagram {
       nodes: [
         { title: 'Gefunden werden', sub: g.first, icon: 'Search' },
         { title: 'Vertrauen aufbauen', sub: 'Klare Website, Referenzen, Inhalte', icon: 'Star' },
-        { title: 'Anfrage', sub: 'Einfacher Weg per Formular oder Telefon', icon: 'MousePointerClick' },
+        { title: 'Anfrage', sub: 'Einfacher Weg per Formular oder E-Mail', icon: 'MousePointerClick' },
         { title: 'Schnelle Reaktion', sub: 'Im CRM erfasst, nachgefasst', icon: 'Zap' },
         { title: g.goal, sub: g.sub, icon: 'Handshake' },
       ],

@@ -457,7 +457,7 @@ export default function DataClarityCheck() {
                     Keine Lücken gefunden
                   </h5>
                   <p className="text-xs text-emerald-700 leading-relaxed font-semibold mt-1">
-                    Nach Ihren Angaben ist Ihre Datenbasis vollständig. Damit können Sie Marketing und Vertrieb gezielt nach Zahlen steuern.
+                    Nach Ihren Angaben ist Ihre Datenbasis vollständig. Damit können Sie Marketing und Vertrieb anhand Ihrer Zahlen steuern.
                   </p>
                 </div>
               </div>

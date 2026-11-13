@@ -218,7 +218,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   onClick={handleConsultation}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
                 >
-                  {primaryAreaOf(service.slug)?.ctaLabel ?? 'Potenzial besprechen'} <ArrowRight className="w-4 h-4 text-white" />
+                  {primaryAreaOf(service.slug)?.ctaLabel ?? 'Erstgespräch vereinbaren'} <ArrowRight className="w-4 h-4 text-white" />
                 </button>
               </div>
               <HeroTrust className="pt-1" />

@@ -103,7 +103,7 @@ export default function RetentionRevenueRechner() {
             Rechner: Umsatz mit Bestandskunden
           </h3>
           <p className="text-xs text-slate-500 leading-normal mt-1 font-medium select-none">
-            Wie viel Umsatz steckt in Ihren bestehenden Kunden? Schätzen Sie Ihr Potenzial aus Wiederkäufen in rund 30 Sekunden.
+            Wie viel Umsatz steckt in Ihren bestehenden Kunden? Schätzen Sie in rund 30 Sekunden, was mehr Wiederkäufe bringen könnten.
           </p>
         </div>
       </div>
@@ -171,7 +171,7 @@ export default function RetentionRevenueRechner() {
             >
               <option value="">Bitte wählen</option>
               <option value="unter_20">Unter 20%: kaum Stammkunden</option>
-              <option value="20_40">20% – 40%: Potenzial vorhanden</option>
+              <option value="20_40">20% – 40%: ausbaufähig</option>
               <option value="40_60">40% – 60%: solide Basis</option>
               <option value="60_80">60% – 80%: gut, aber steigerbar</option>
               <option value="ueber_80">Über 80%: viele Stammkunden</option>
@@ -272,12 +272,12 @@ export default function RetentionRevenueRechner() {
                       )}
                       {result.diagnose === 'ausbaufähig' && (
                         <span>
-                          Sie haben eine Basis, aber das Potenzial ist noch nicht ausgeschöpft. Die Rechnung oben geht von 15 Prozentpunkten mehr Wiederkäufen aus. Ob das bei Ihnen erreichbar ist, hängt von Sortiment und Kundschaft ab. Gute erste Schritte: E-Mails nach dem Kauf, eine Rückgewinnungs-Serie für Kunden, die länger nicht gekauft haben, und ein eigenes Segment für Ihre Stammkunden.
+                          Sie haben eine Basis, aber es gibt noch Luft nach oben. Die Rechnung oben geht von 15 Prozentpunkten mehr Wiederkäufen aus. Ob das bei Ihnen erreichbar ist, hängt von Sortiment und Kundschaft ab. Gute erste Schritte: E-Mails nach dem Kauf, eine Rückgewinnungs-Serie für Kunden, die länger nicht gekauft haben, und ein eigenes Segment für Ihre Stammkunden.
                         </span>
                       )}
                       {result.diagnose === 'stark' && (
                         <span>
-                          Ihre Kundenbindung ist bereits gut. Weiteres Potenzial liegt weniger in der Kaufhäufigkeit als im Kundenwert: passende Zusatzangebote, eine Einteilung nach Kundenwert und gezielte Pflege Ihrer wichtigsten Kunden. Die Schätzung von {formatCHF(result.mehrUmsatz)} ist so möglich, etwa mit Ergänzungs- und Upgrade-Angeboten zum richtigen Zeitpunkt.
+                          Ihre Kundenbindung ist bereits gut. Spielraum gibt es weniger bei der Kaufhäufigkeit als beim Kundenwert: passende Zusatzangebote, eine Einteilung nach Kundenwert und die Pflege Ihrer wichtigsten Kunden. Die geschätzten {formatCHF(result.mehrUmsatz)} wären etwa mit Ergänzungs- und Upgrade-Angeboten zum richtigen Zeitpunkt.
                         </span>
                       )}
                     </div>
@@ -325,7 +325,7 @@ export default function RetentionRevenueRechner() {
           <LeadCaptureForm
             pageId="customer-retention"
             secondaryCTAText="Berechnung und Einschätzung per E-Mail erhalten →"
-            danachText="Vielen Dank! Wir senden Ihnen in Kürze eine persönliche Einschätzung zur Kundenbindung per E-Mail."
+            danachText="Vielen Dank. Wir senden Ihnen in Kürze eine persönliche Einschätzung zur Kundenbindung per E-Mail."
             additionalFields={[
               {
                 type: 'select',

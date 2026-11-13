@@ -437,7 +437,7 @@ export default function InteractiveGrowthCalculator() {
 
             {/* Total Uplift representation */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center shadow-xs">
-              <p className="text-[11px] text-slate-400 mb-1.5 font-bold uppercase tracking-widest font-mono">Mögliches zusätzliches Umsatzpotenzial pro Jahr</p>
+              <p className="text-[11px] text-slate-400 mb-1.5 font-bold uppercase tracking-widest font-mono">Möglicher Mehrumsatz pro Jahr</p>
               <div className="text-2xl sm:text-3.5xl font-display font-extrabold text-[#686CFA] tracking-tight">
                 +{formattedValue((boostedMetrics.monthlyRevenue - currentMetrics.monthlyRevenue) * 12)}
               </div>

@@ -73,7 +73,7 @@ export default function GrowthStrategyIndicator() {
     } else if (level.key === "teilstrukturiert") {
       let hebel = "";
       if (weakest === "icp") {
-        hebel = "→ Wunschkunden genauer beschreiben: Sie haben eine Vorstellung Ihrer Zielgruppe, aber noch keine klare Definition. Ein genaueres Zielkundenprofil hilft, Kampagnen gezielter auszurichten und Verkaufsgespräche zu verkürzen.";
+        hebel = "→ Wunschkunden genauer beschreiben: Sie haben eine Vorstellung Ihrer Zielgruppe, aber noch keine klare Definition. Ein genaueres Zielkundenprofil hilft, Kampagnen genauer auszurichten und Verkaufsgespräche zu verkürzen.";
       } else if (weakest === "pipeline") {
         hebel = "→ Anfragen planbar machen: Ohne Prognose lässt sich Wachstum kaum steuern. Welche Kanäle liefern verlässlich Anfragen? Ein einfaches Tracking zeigt das.";
       } else {
@@ -299,7 +299,7 @@ export default function GrowthStrategyIndicator() {
             {/* Accordion form logic */}
             <LeadCaptureForm
               secondaryCTAText="Ausführliche Auswertung per E-Mail erhalten →"
-              danachText={`Vielen Dank! Sie erhalten die Auswertung in Kürze.\nOder vereinbaren Sie direkt ein Erstgespräch: https://calendar.app.google/7oGfyaAEKsdWRTFW8`}
+              danachText={`Vielen Dank. Sie erhalten die Auswertung in Kürze.\nOder vereinbaren Sie direkt ein Erstgespräch: https://calendar.app.google/7oGfyaAEKsdWRTFW8`}
               pageId="growth-strategy"
             />
 

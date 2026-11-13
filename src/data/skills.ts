@@ -232,7 +232,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'agentic-automation-opportunity-scanner',
     title: 'Einsatzfelder für KI-Agenten',
-    description: 'Abläufe finden, die KI-Agenten selbständig übernehmen könnten, nach Nutzen geordnet.',
+    description: 'Abläufe finden, bei denen KI-Agenten Arbeit übernehmen könnten, nach Nutzen geordnet.',
     category: 'ki-automatisierung',
     categoryLabel: 'KI & Automatisierung',
     github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/agentic-automation-opportunity-scanner.md',

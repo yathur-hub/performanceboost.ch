@@ -79,16 +79,16 @@ export default function LeadGenerationScore() {
       note = "B";
       color = "#57CC99"; // Hellgrün
       title = "Über dem Richtwert, mit Luft nach oben.";
-      benefitText = "Ihre Website liegt über dem angenommenen Richtwert. Mit gezielten Verbesserungen ist oft noch mehr möglich.";
+      benefitText = "Ihre Website liegt über dem angenommenen Richtwert. Mit einzelnen Verbesserungen ist oft noch mehr möglich.";
     } else if (cr >= 0.01) {
       note = "C";
       color = "#F4A261"; // Orange
-      title = "Im Mittelfeld, mit ungenutztem Potenzial.";
+      title = "Im Mittelfeld, mit Luft nach oben.";
       benefitText = "Sie liegen im Bereich des Richtwerts. Das heisst aber auch: Jeden Monat gehen Besucher verloren, die mit dem passenden Angebot angefragt hätten.";
     } else if (cr >= 0.005) {
       note = "D";
       color = "#E9C46A"; // Gelb-Orange
-      title = "Unter dem Richtwert, viel Potenzial ungenutzt.";
+      title = "Unter dem Richtwert, hier bleiben Anfragen liegen.";
       benefitText = "Fast alle Besucher verlassen Ihre Website, ohne einen nächsten Schritt zu machen. Das liegt meist weniger an zu wenigen Besuchern als daran, wie Anfragen auf der Website ermöglicht werden.";
     } else {
       note = "F";
@@ -371,7 +371,7 @@ export default function LeadGenerationScore() {
               {calculatedOutput.verloreneLeads_median > 0 && (
                 <div className="bg-red-50 p-5 rounded-xl border border-red-100/30 text-left space-y-1">
                   <p className="text-[11px] text-[#E63946] font-bold uppercase tracking-widest font-mono">
-                    Mögliches Potenzial gegenüber dem Richtwert
+                    Abstand zum Richtwert
                   </p>
                   <div className="text-2xl sm:text-3xl font-black font-display text-[#E63946]">
                     ca. {formatNumber(calculatedOutput.verloreneLeads_median)} Anfragen / Monat möglich

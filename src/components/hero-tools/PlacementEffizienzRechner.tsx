@@ -138,15 +138,15 @@ export default function PlacementEffizienzRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben gibt es deutliche Lücken bei der Vermittlungsquote oder bei der Gewinnung neuer Mandate. Oft helfen schon ein sauber geführtes CRM und konsequentes Nachfassen nach Erstgesprächen, um aus denselben Mandaten mehr Vermittlungen zu machen.',
-      rec: 'Nachfassen automatisieren, offene Mandate im CRM bereinigen und auf LinkedIn gezielt neue Auftraggeber ansprechen.',
+      label: 'Deutliche Lücken',
+      desc: 'Nach Ihren Angaben gibt es deutliche Lücken bei der Vermittlungsquote oder bei der Gewinnung neuer Mandate. Oft helfen schon ein sauber geführtes CRM und verlässliches Nachfassen nach Erstgesprächen, um aus denselben Mandaten mehr Vermittlungen zu machen.',
+      rec: 'Nachfassen automatisieren, offene Mandate im CRM bereinigen und auf LinkedIn neue Auftraggeber direkt ansprechen.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
-      desc: 'Sie haben eine funktionierende Basis, es bleibt aber spürbar Umsatz liegen. Häufig fehlt ein systematisches Nachfassen oder ein Kanal für neue Mandate, der über das persönliche Netzwerk hinausgeht.',
+      label: 'Spielraum vorhanden',
+      desc: 'Sie haben eine funktionierende Basis, es bleibt aber Umsatz liegen. Häufig fehlt ein systematisches Nachfassen oder ein Kanal für neue Mandate, der über das persönliche Netzwerk hinausgeht.',
       rec: 'Nach Offerten systematisch nachfassen, Inhalte aufbauen, die Anfragen bringen, und das CRM einheitlich nutzen.',
     },
     gut: {
@@ -161,7 +161,7 @@ export default function PlacementEffizienzRechner() {
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihre Vermittlungsquote und Mandatsgewinnung sind nach Ihren Angaben sehr gut. Weiteres Wachstum kommt vor allem über mehr qualifizierte Mandate, etwa aus neuen Branchen oder Regionen.',
-      rec: 'Neue Märkte erschliessen, Wunschkunden gezielt ansprechen und Inhalte breiter verteilen.',
+      rec: 'Neue Märkte erschliessen, Wunschkunden direkt ansprechen und Inhalte breiter verteilen.',
     },
   };
 
@@ -296,7 +296,7 @@ export default function PlacementEffizienzRechner() {
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich bei 10 Prozentpunkten mehr Quote</span>
-                    <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung, z.B. durch konsequentes Nachfassen</p>
+                    <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung, z.B. durch regelmässiges Nachfassen</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.potenzial_jahr)} / J.</h4>
                 </div>

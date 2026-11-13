@@ -15,7 +15,7 @@ export default function ToolsView() {
               Werkzeuge, mit denen ich arbeite.
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
-              Keine Logo-Wand, sondern die Werkzeuge, die ich selbst einsetze, geordnet nach den Schichten der MarTech-Landkarte und mit einem Satz dazu, wofür.
+              Statt einer Logo-Wand finden Sie hier die Werkzeuge, die ich selbst einsetze, geordnet nach den Schichten der MarTech-Landkarte und mit einem Satz dazu, wofür.
               Welche Werkzeuge in Ihrem Unternehmen passen, entscheiden Ihre Abläufe, nicht diese Liste. Ich bin an keinen Anbieter gebunden.
             </p>
             <p className="text-sm text-slate-500">Yathur Nathan, Inhaber von performanceboost</p>

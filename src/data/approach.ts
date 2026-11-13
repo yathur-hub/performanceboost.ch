@@ -68,7 +68,7 @@ export const WORK_MODES = [
 /** Grundsätze, die in jeder Phase gelten (Seite /ansatz). */
 export const PRINCIPLES = [
   { title: 'Zuerst der Engpass', desc: 'Wir beginnen dort, wo heute am meisten verloren geht, nicht dort, wo das nächste Tool lockt.' },
-  { title: 'Gemessen an Geschäftszahlen', desc: 'Anfragen, Aufträge, Reaktionszeiten oder eingesparte Stunden statt Klicks und Reichweite.' },
+  { title: 'Gemessen an Geschäftszahlen', desc: 'Fortschritt messen wir an Anfragen, Aufträgen, Reaktionszeiten oder eingesparten Stunden, die zu Beginn vereinbart sind.' },
   { title: 'Die einfachste verlässliche Lösung', desc: 'Oft ist das eine Regel und kein Agent. KI setzen wir ein, wo sie mehr leistet als eine Regel.' },
   { title: 'Ihr Team behält die Kontrolle', desc: 'Was nach aussen geht, Geld kostet oder Daten löscht, gibt ein Mensch frei.' },
 ];

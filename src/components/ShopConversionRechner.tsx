@@ -122,9 +122,9 @@ export default function ShopConversionRechner() {
 
   // Diagnose text based on CR
   const getDiagnoseText = (cr: number) => {
-    if (cr <= 0.005) return "Eine Conversion-Rate unter 0.5% deutet meist auf ein grundlegendes Problem hin, etwa beim Vertrauen, bei der mobilen Darstellung oder im Checkout. Hier liegt das grösste Potenzial.";
-    if (cr <= 0.01)  return "In diesem Bereich liegen die Ursachen oft in der Struktur: ein umständlicher Checkout, fehlende Vertrauenselemente oder eine zu komplexe Navigation. Das lässt sich gezielt verbessern.";
-    if (cr <= 0.015) return "Eine solide Basis. Verbesserungen sind jetzt vor allem im Checkout und mit gezielten A/B-Tests auf den meistbesuchten Produktseiten möglich.";
+    if (cr <= 0.005) return "Eine Conversion-Rate unter 0.5% deutet meist auf ein grundlegendes Problem hin, etwa beim Vertrauen, bei der mobilen Darstellung oder im Checkout. Hier lohnt es sich am meisten anzusetzen.";
+    if (cr <= 0.01)  return "In diesem Bereich liegen die Ursachen oft in der Struktur: ein umständlicher Checkout, fehlende Vertrauenselemente oder eine zu komplexe Navigation. Das lässt sich Schritt für Schritt verbessern.";
+    if (cr <= 0.015) return "Eine solide Basis. Verbesserungen sind jetzt vor allem im Checkout und mit A/B-Tests auf den meistbesuchten Produktseiten möglich.";
     if (cr <= 0.02)  return "Ein guter Stand. Als Nächstes lohnt sich der Blick auf die Produktseiten, Kundenbewertungen und die Ladezeit, besonders auf dem Smartphone.";
     return "Ihr Shop konvertiert bereits gut. Weitere Verbesserungen kommen eher aus sauber aufgesetzten Tests als aus offensichtlichen Korrekturen.";
   };
@@ -302,7 +302,7 @@ export default function ShopConversionRechner() {
                   <div className="p-4 rounded-xl bg-[#686CFA]/5 border border-[#686CFA]/10 space-y-2">
                     <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block">Ihr nächster Ansatzpunkt:</span>
                     <p className="text-xs text-[#686CFA] font-bold leading-relaxed">
-                      Mehr Potenzial liegt jetzt meist nicht in der Erstbestellung, sondern bei <strong>Wiederholungskäufen (Bestandskunden)</strong> und einem <strong>höheren Warenkorbwert</strong>.
+                      Mehr Umsatz holen Sie jetzt meist über <strong>Wiederholungskäufe (Bestandskunden)</strong> und einen <strong>höheren Warenkorbwert</strong>, weniger über die Erstbestellung.
                     </p>
                     <p className="text-[11px] text-slate-500 italic leading-snug font-medium pt-1 border-t border-slate-100/55">
                       ↑ Bestehende Kunden zu einem weiteren Kauf zu bewegen, ist in dieser Phase oft einfacher, als die Conversion-Rate nochmals deutlich zu steigern.
@@ -327,7 +327,7 @@ export default function ShopConversionRechner() {
                     }}
                     className="w-full bg-[#686CFA] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
-                    <span>Bestandskunden-Potenzial besprechen</span>
+                    <span>Bestandskunden besprechen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
                 </div>
@@ -347,7 +347,7 @@ export default function ShopConversionRechner() {
                     <div className="bg-red-50 border border-red-200/60 rounded-xl p-3 flex gap-2 items-start shrink-0">
                       <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                       <p className="text-[11px] text-red-700 leading-snug font-bold">
-                        Das ist mehr als eine kleine Optimierung. Eine geschätzte Differenz von {formatCHF(result.mehrUmsatz)} pro Monat zeigt, wie viel Potenzial in Ihrer Conversion-Rate liegen kann.
+                        Das ist mehr als eine kleine Optimierung. Eine geschätzte Differenz von {formatCHF(result.mehrUmsatz)} pro Monat zeigt, wie viel Umsatz an Ihrer Conversion-Rate hängen kann.
                       </p>
                     </div>
                   )}
@@ -428,7 +428,7 @@ export default function ShopConversionRechner() {
           <LeadCaptureForm
             pageId="ecommerce-performance"
             secondaryCTAText="Ausführliche Einschätzung per E-Mail →"
-            danachText="Vielen Dank! Wir senden Ihnen in Kürze eine Einschätzung, wo Ihr Shop am schnellsten besser konvertieren kann."
+            danachText="Vielen Dank. Wir senden Ihnen in Kürze eine Einschätzung, wo Ihr Shop am schnellsten besser konvertieren kann."
             additionalFields={[
               {
                 type: 'select',

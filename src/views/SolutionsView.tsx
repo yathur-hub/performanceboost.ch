@@ -71,7 +71,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '05',
       title: 'Vertriebsunterstützung',
-      desc: 'Vertrieb und Marketing müssen zusammenarbeiten. Wir schaffen gemeinsame Kennzahlen, eine klare Übergabe von Anfragen und Unterlagen für jede Phase des Verkaufs.',
+      desc: 'Zwischen Marketing und Vertrieb gehen oft Anfragen verloren. Wir schaffen gemeinsame Kennzahlen, eine klare Übergabe von Anfragen und Unterlagen für jede Phase des Verkaufs.',
       notText: '«Wir schreiben Verkaufsunterlagen.»',
       butText: '«Ihr Vertrieb erhält vorbereitete Anfragen und die Unterlagen, die er im Gespräch braucht.»',
       path: 'sales-enablement'
@@ -87,7 +87,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '07',
       title: 'KI & Automatisierung',
-      desc: 'Richtig eingesetzt spart KI Ihrem Team Zeit. Wir richten KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen dort ein, wo sie sich lohnen.',
+      desc: 'Richtig eingesetzt spart KI Ihrem Team Zeit. Wir richten KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen dort ein, wo sie sich lohnen. Freigaben bleiben bei Ihrem Team.',
       notText: '«Wir nutzen ChatGPT.»',
       butText: '«Wir setzen KI dort ein, wo sie Ihrem Geschäft messbar hilft.»',
       path: 'ai-automation'
@@ -95,7 +95,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '08',
       title: 'Daten & Auswertung',
-      desc: 'Sie sollen nach Zahlen entscheiden können, nicht nach Bauchgefühl. Wir richten Tracking, Dashboards und Berichte ein, die Ihnen zeigen, was funktioniert und wo Umsatz verloren geht.',
+      desc: 'Damit Sie Budget nach Zahlen verteilen können, richten wir Tracking, Dashboards und Berichte ein. Sie zeigen, was funktioniert und wo Umsatz verloren geht.',
       notText: '«Wir erstellen Berichte.»',
       butText: '«Sie sehen, welche Massnahmen Anfragen und Umsatz bringen.»',
       path: 'data-analytics'
@@ -122,7 +122,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       timeline: 'Richtwert: Grundstruktur in rund 6–8 Wochen, danach laufende Optimierung.'
     },
     {
-      title: 'Gesamte Vermarktung aus einer Hand',
+      title: 'Strategie und Umsetzung zusammen',
       combo: 'Wachstumsstrategie + die passenden Leistungen',
       desc: 'Wir analysieren, planen, setzen um und betreuen Ihre Vermarktung danach laufend.',
       timeline: 'Richtwert: Zusammenarbeit über 12 Monate oder länger.'
@@ -247,7 +247,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686CFA]/10 rounded-full blur-3xl pointer-events-none" />
           <span className="text-[11px] font-mono font-bold tracking-widest text-[#686CFA] uppercase">Zuerst die Analyse</span>
           <blockquote className="text-body-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
-            «Viele Unternehmen fragen zuerst nach dem richtigen Kanal oder Tool. Wichtiger ist, wo heute passende Anfragen verloren gehen, warum Interessenten nicht zu Kunden werden und wie Wachstum planbar wird.»
+            «Viele Unternehmen fragen zuerst nach dem richtigen Kanal oder Tool. Wichtiger ist, wo heute passende Anfragen verloren gehen und warum Interessenten nicht zu Kunden werden.»
           </blockquote>
           <p className="text-[11px] text-slate-400 font-mono tracking-wide uppercase">
             Darum beginnen wir mit einer Analyse Ihrer Situation, nicht mit einem Pauschalangebot.

@@ -6,7 +6,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Marketing- & Wachstumsstrategie',
     slug: 'growth-strategy',
     shortDesc: 'Klarer Plan für die Neukundengewinnung: Wunschkunden, Positionierung, Kanäle und Budget.',
-    description: 'Planbares Wachstum beginnt mit klaren Entscheidungen. Wir schauen uns Ihren Markt und Ihre bestehenden Kunden an, beschreiben Ihre Wunschkunden und legen fest, über welche Kanäle und mit welchen Botschaften Sie diese erreichen. So fliesst Ihr Budget dorthin, wo Anfragen entstehen.',
+    description: 'Wachstum lässt sich steuern, wenn ein paar Grundentscheide gefallen sind. Wir schauen uns Ihren Markt und Ihre bestehenden Kunden an, beschreiben Ihre Wunschkunden und legen fest, über welche Kanäle und mit welchen Botschaften Sie diese erreichen. So fliesst Ihr Budget dorthin, wo Anfragen entstehen.',
     benefits: [
       'Klares Zielkundenprofil, damit Werbung und Vertrieb die richtigen Firmen ansprechen',
       'Eine klare Antwort darauf, warum Kunden Sie wählen und nicht die Konkurrenz',
@@ -38,7 +38,7 @@ export const SERVICES: ServiceDetail[] = [
       'Regelmässige Sichtbarkeit bei den Firmen und Personen, die für Sie relevant sind',
       'Tiefere Kosten pro Anfrage durch sauberes Retargeting',
       'LinkedIn, Google und Meta ergänzen sich, statt nebeneinander zu laufen',
-      'Begleitung über alle Kanäle aus einer Hand'
+      'Ein Ansprechpartner für alle Kanäle statt mehrerer Dienstleister'
     ],
     deliverables: [
       'Anzeigenvorlagen und Werbetexte',
@@ -130,7 +130,7 @@ export const SERVICES: ServiceDetail[] = [
     iconName: 'ShieldAlert', // Fills the gap, representing strength/governance
     metrics: [],
     processSteps: [
-      { title: 'Analyse & Gespräche', desc: 'Wo kommen Abschlüsse ins Stocken? Was sagen Kunden über Mitbewerber?' },
+      { title: 'Analyse & Gespräche', desc: 'Wir klären, wo Abschlüsse ins Stocken geraten und was Kunden über Mitbewerber sagen.' },
       { title: 'Leitfaden erstellen', desc: 'Wir formulieren Argumente und Antworten so aus, dass sie im Gespräch griffbereit sind.' },
       { title: 'Unterlagen gestalten', desc: 'Präsentationen und Vorlagen im Erscheinungsbild Ihres Unternehmens.' },
       { title: 'Üben', desc: 'Testgespräche mit dem Team, um die Unterlagen in der Praxis zu prüfen.' }
@@ -184,7 +184,7 @@ export const SERVICES: ServiceDetail[] = [
     iconName: 'Sparkles',
     metrics: [],
     processSteps: [
-      { title: 'Standortbestimmung', desc: 'Wo wird KI heute genutzt, wo geht Zeit verloren, welche Daten sind vorhanden?' },
+      { title: 'Standortbestimmung', desc: 'Wir erfassen, wo KI heute genutzt wird, wo Zeit verloren geht und welche Daten vorhanden sind.' },
       { title: 'Anwendungen wählen', desc: 'Drei bis fünf Anwendungen mit Nutzenrechnung, der Rest kommt später.' },
       { title: 'Einführen und schulen', desc: 'Anwendungen einrichten und das Team mit eigenen Beispielen schulen.' },
       { title: 'Regeln festlegen', desc: 'Daten, Tools und Freigaben schriftlich festhalten, abgestimmt auf das DSG.' },
@@ -194,7 +194,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'ki-agenten',
     title: 'KI-Agenten für Marketing & Vertrieb',
     slug: 'ki-agenten',
-    shortDesc: 'KI-Agenten, die ganze Abläufe übernehmen: Anfragen prüfen, recherchieren, nachfassen, mit Freigabe durch Ihr Team.',
+    shortDesc: 'KI-Agenten, die Anfragen prüfen, Firmen recherchieren und das Nachfassen vorbereiten, mit Freigabe durch Ihr Team.',
     description: 'Ein KI-Agent erledigt eine Aufgabe über mehrere Schritte selbständig: eine Anfrage prüfen und einordnen, das Unternehmen recherchieren, alles ins CRM eintragen und eine Antwort vorbereiten. Ihr Team prüft und gibt frei, bevor etwas nach aussen geht. So laufen Abläufe auch dann weiter, wenn niemand im Büro ist.',
     benefits: [
       'Anfragen liegen nicht mehr übers Wochenende, sondern sind am Montag geprüft und vorbereitet',
@@ -221,10 +221,10 @@ export const SERVICES: ServiceDetail[] = [
     id: 'martech-stack',
     title: 'MarTech-Stack aufräumen & verbinden',
     slug: 'martech-stack',
-    shortDesc: 'Weniger Tools, die zusammenarbeiten: Stack-Check, Umbau und Betrieb von CRM, Website, E-Mail und Tracking.',
+    shortDesc: 'Weniger Tools, besser verbunden: Stack-Check, Umbau und Betrieb von CRM, Website, E-Mail und Tracking.',
     description: 'Viele KMU zahlen für mehr Programme, als sie brauchen, und trotzdem werden Daten von Hand übertragen. Wir erfassen Ihren MarTech-Stack, also alle Tools für Marketing, Vertrieb und Kundenbetreuung, mit Kosten, Nutzung und Datenflüssen. Danach räumen wir auf, verbinden, was zusammengehört, und sorgen dafür, dass jede Anfrage bis zum Auftrag nachvollziehbar ist.',
     benefits: [
-      'Weniger Lizenzen und Lizenzkosten, die Sie kennen',
+      'Weniger Lizenzen und eine Kostenübersicht für alle Tools',
       'Daten werden nur einmal erfasst',
       'Jede Anfrage ist von der Quelle bis zum Auftrag nachvollziehbar',
       'Ein unabhängiger Blick auf Tools, ohne Bindung an einen Anbieter',
@@ -249,7 +249,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Tracking, Attribution & Reporting',
     slug: 'data-analytics',
     shortDesc: 'Datenschutzkonformes Tracking und Berichte, die zeigen, welche Kanäle Kunden bringen.',
-    description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit serverseitigem Tagging (die Messdaten laufen über Ihren eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',
+    description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit Server-Side Tagging (die Messdaten laufen zuerst über einen eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',
     benefits: [
       'Berichte, die Umsatz zuordnen, statt nur den letzten Klick zu zählen',
       'Tracking im Rahmen von Schweizer DSG und DSGVO',
@@ -400,9 +400,9 @@ export const SOLUTIONS: SolutionArea[] = [
   {
     id: 'professional-services',
     title: 'Beratung, Agenturen & Dienstleister',
-    tagline: 'Neue Mandate planbar gewinnen, nicht nur über Empfehlungen.',
+    tagline: 'Neue Mandate gewinnen, auch ohne Empfehlung.',
     targetGroup: 'Unternehmensberater, Personalberater, IT-Dienstleister und Agenturen',
-    description: 'Viele Dienstleister leben von Empfehlungen, die unregelmässig kommen. Wir ergänzen das Empfehlungsgeschäft um einen planbaren Weg zu neuen Anfragen und machen Ihre Fachkompetenz online sichtbar, damit Sie im Schweizer Markt als Ansprechpartner für Ihr Thema wahrgenommen werden.',
+    description: 'Viele Dienstleister leben von Empfehlungen, die unregelmässig kommen. Wir ergänzen das Empfehlungsgeschäft um einen eigenen, regelmässigen Weg zu neuen Anfragen und machen Ihre Fachkompetenz online sichtbar, damit Sie im Schweizer Markt als Ansprechpartner für Ihr Thema wahrgenommen werden.',
     idealFor: [
       'weniger abhängig von Kaltakquise und Empfehlungen sein wollen',
       'häufiger grössere Mandate gewinnen wollen',

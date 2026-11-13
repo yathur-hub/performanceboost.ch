@@ -117,14 +117,14 @@ export default function LeerstandskostenRechner() {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
       accent: 'border-red-500',
-      label: 'Grosses Potenzial',
-      desc: `Nach Ihren Angaben liessen sich über ${formatCHF(100000)} pro Jahr an Leerstandskosten einsparen. Eine systematische Vermarktung ist hier ein naheliegender Ansatzpunkt.`,
+      label: 'Hohe Leerstandskosten',
+      desc: `Nach Ihren Angaben liessen sich grob geschätzt über ${formatCHF(100000)} pro Jahr an Leerstandskosten einsparen. Eine systematische Vermarktung ist hier ein naheliegender Ansatzpunkt.`,
     },
     B: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
       accent: 'border-orange-500',
-      label: 'Potenzial vorhanden',
+      label: 'Spielraum vorhanden',
       desc: `Wenn Sie die Vermarktungsdauer um rund ${results?.diff_tage} Tage pro Objekt verkürzen, sind grob geschätzt ${results ? formatCHF(results.einsparung_jahr) : ''} pro Jahr Einsparung möglich.`,
     },
     C: {
@@ -132,7 +132,7 @@ export default function LeerstandskostenRechner() {
       badgeBg: 'bg-green-700 text-white',
       accent: 'border-green-500',
       label: 'Solide Basis',
-      desc: 'Sie sind schon gut aufgestellt. Konsequentes Nachfassen bei Interessenten und eine gute Vorauswahl können das restliche Potenzial noch heben.',
+      desc: 'Sie sind schon gut aufgestellt. Verlässliches Nachfassen bei Interessenten und eine gute Vorauswahl können die Leerstandszeit weiter verkürzen.',
     },
     D: {
       color: 'text-[#686CFA] bg-[#686CFA]/5 border-[#686CFA]/10',

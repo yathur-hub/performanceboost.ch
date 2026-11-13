@@ -119,11 +119,11 @@ export default function BeratungsPipelineRechner() {
     },
     entwicklung: {
       badge: 'Effizienz: ausbaufähig',
-      headline: 'Solide Basis mit spürbarem Potenzial.',
+      headline: 'Solide Basis, aber es bleibt Umsatz liegen.',
       color: 'text-amber-700 bg-amber-50 border-amber-200/50',
       iconColor: 'text-amber-500',
       btnText: 'Ergebnis besprechen',
-      text: `Sie erreichen rund ${results.effizienz_score}% des Umsatzes, den die angenommenen Richtwerte für Ihr Team ergeben. Die Lücke von etwa ${formatCHF(results.revenue_leck)} pro Jahr zeigt, wo es sich lohnt, Interessenten besser weiterzubegleiten und das CRM konsequent zu nutzen. Mit 10 Prozentpunkten mehr Abschlussquote wären grob geschätzt ${formatCHF(results.potenzial_optimiert)} mehr Jahresumsatz möglich.`,
+      text: `Sie erreichen rund ${results.effizienz_score}% des Umsatzes, den die angenommenen Richtwerte für Ihr Team ergeben. Die Lücke von etwa ${formatCHF(results.revenue_leck)} pro Jahr zeigt, wo es sich lohnt, Interessenten besser weiterzubegleiten und das CRM im Alltag zu nutzen. Mit 10 Prozentpunkten mehr Abschlussquote wären grob geschätzt ${formatCHF(results.potenzial_optimiert)} mehr Jahresumsatz möglich.`,
     },
     benchmark: {
       badge: 'Effizienz: nahe am Richtwert',
@@ -131,7 +131,7 @@ export default function BeratungsPipelineRechner() {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       iconColor: 'text-green-500',
       btnText: 'Ergebnis besprechen',
-      text: `Sie liegen nahe an den angenommenen Richtwerten. Das ist eine gute Ausgangslage für den nächsten Schritt: Mit einem zusätzlichen digitalen Kanal für Neukunden könnten Sie mehr Erstgespräche führen und Ihre bewährte Beratung auf mehr Interessenten anwenden. Grob geschätztes Potenzial bei 10 Prozentpunkten mehr Abschlussquote: ${formatCHF(results.potenzial_optimiert)}.`,
+      text: `Sie liegen nahe an den angenommenen Richtwerten. Das ist eine gute Ausgangslage für den nächsten Schritt: Mit einem zusätzlichen digitalen Kanal für Neukunden könnten Sie mehr Erstgespräche führen und Ihre bewährte Beratung auf mehr Interessenten anwenden. Bei 10 Prozentpunkten mehr Abschlussquote wären grob geschätzt ${formatCHF(results.potenzial_optimiert)} zusätzlich möglich.`,
     },
     wachstum: {
       badge: 'Effizienz: über Richtwert',
@@ -139,7 +139,7 @@ export default function BeratungsPipelineRechner() {
       color: 'text-[#686CFA] bg-[#686CFA]/5 border-[#686CFA]/10',
       iconColor: 'text-[#686CFA]',
       btnText: 'Ergebnis besprechen',
-      text: `Ihre Abschlussquote und Ihre Anzahl Gespräche liegen über den angenommenen Richtwerten. Damit lohnt es sich, einen zweiten digitalen Kanal für Neukunden aufzubauen: mehr qualifizierte Erstgespräche bei gleich guter Beratung. Grob geschätztes Potenzial bei 10 Prozentpunkten mehr Abschlussquote: ${formatCHF(results.potenzial_optimiert)}.`,
+      text: `Ihre Abschlussquote und Ihre Anzahl Gespräche liegen über den angenommenen Richtwerten. Damit lohnt es sich, einen zweiten digitalen Kanal für Neukunden aufzubauen: mehr qualifizierte Erstgespräche bei gleich guter Beratung. Bei 10 Prozentpunkten mehr Abschlussquote wären grob geschätzt ${formatCHF(results.potenzial_optimiert)} zusätzlich möglich.`,
     },
   };
 
@@ -153,7 +153,7 @@ export default function BeratungsPipelineRechner() {
           <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Beratungs-Rechner</h3>
         </div>
         <p className="text-xs text-slate-500 mt-1 font-semibold leading-relaxed">
-          Schätzen Sie, wie viel Umsatz Ihre Beratungsgespräche heute bringen und wo Potenzial liegt. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
+          Schätzen Sie, wie viel Umsatz Ihre Beratungsgespräche heute bringen und wo Umsatz liegen bleibt. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
         </p>
       </div>
 
@@ -250,7 +250,7 @@ export default function BeratungsPipelineRechner() {
             </div>
 
             <div className="bg-slate-50/50 border border-slate-200/60 rounded-2xl p-4.5 space-y-1">
-              <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Potenzial +10% Abschlussquote</span>
+              <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Plus bei +10% Abschlussquote</span>
               <h4 className="text-xl font-bold text-green-700 leading-none">
                 {inputs.abschlussquote >= 60 ? 'Bereits am Maximum' : `+${formatCHF(results.potenzial_optimiert)}`}
               </h4>

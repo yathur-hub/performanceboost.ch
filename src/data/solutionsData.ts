@@ -39,11 +39,11 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'finanzdienstleister',
     title: 'Finanzdienstleister',
     subtitle: 'Mehr qualifizierte Erstgespräche für Hypotheken-, Vorsorge- und Versicherungsberatungen',
-    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz: Kampagnen, Landingpage und Terminweg für Ihren Beratungsanlass, gemessen bis zum Termin.',
+    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz bauen wir Kampagnen, Landingpage und Terminweg für Ihren Beratungsanlass auf und messen bis zum vereinbarten Termin.',
     calculatorComponent: 'BeratungsPipelineRechner',
     problems: [
       {
-        title: 'Empfehlungen allein reichen nicht mehr',
+        title: 'Empfehlungen sind kein verlässlicher Kanal',
         desc: 'Weiterempfehlungen bleiben wichtig, kommen aber unregelmässig und meist aus dem bestehenden Umfeld. Klassische Inserate lassen sich kaum messen.'
       },
       {
@@ -52,7 +52,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Strenge Regeln für Werbung (FIDLEG)',
-        desc: 'Werbung für Finanzdienstleistungen muss als solche erkennbar sein und darf keine falschen Erwartungen wecken. Unbedachte Formulierungen schaffen unnötige Risiken.'
+        desc: 'Werbung für Finanzdienstleistungen muss als solche erkennbar sein und darf keine falschen Erwartungen wecken. Schon eine unbedachte Rendite- oder Garantieaussage in einer Anzeige kann zum Problem werden.'
       }
     ],
     approach: [
@@ -69,13 +69,13 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Kampagnen auf LinkedIn und Google',
-        desc: 'Wir setzen sachliche Kampagnen auf, die Vertrauen aufbauen. Texte, Hinweise und Disclaimer stimmen wir mit Ihnen bzw. Ihrer Compliance ab.'
+        desc: 'Wir setzen sachliche Kampagnen zu konkreten Anlässen auf, etwa Pensionierung oder auslaufende Festhypothek. Texte, Hinweise und Disclaimer stimmen wir mit Ihnen bzw. Ihrer Compliance ab.'
       }
     ],
     benefits: [
-      'Regelmässiger Eingang von Anfragen für Erstgespräche',
+      'Anfragen für Erstgespräche, die nicht nur über Empfehlungen kommen',
       'Weniger Beratungszeit für Interessenten, die nicht zu Ihnen passen',
-      'Kampagnen, die die Werbevorschriften Ihrer Branche berücksichtigen',
+      'Anzeigentexte ohne Rendite- oder Garantieversprechen',
       'Mehr Sichtbarkeit als Ansprechperson in Ihrer Region'
     ],
     faqs: [
@@ -85,7 +85,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Wie gehen Sie mit FIDLEG und den Werbevorschriften um?',
-        a: 'Wir berücksichtigen die Werbevorschriften Ihrer Branche bei Texten, Formularen und Disclaimern und stimmen alles mit Ihnen ab. Die rechtliche Freigabe liegt bei Ihnen bzw. Ihrer Compliance-Stelle; eine Rechtsberatung ersetzen wir nicht.'
+        a: 'Wir prüfen Texte, Formulare und Disclaimer auf Werbekennzeichnung und Renditeaussagen und stimmen alles mit Ihnen ab. Die rechtliche Freigabe liegt bei Ihnen bzw. Ihrer Compliance-Stelle; eine Rechtsberatung ersetzen wir nicht.'
       }
     ]
   },
@@ -147,12 +147,12 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'immobilien',
     title: 'Immobilien',
     subtitle: 'Passende Miet- und Kaufinteressenten für Ihre Immobilien',
-    heroDesc: 'Für Projektentwickler, Makler und Verwaltungen gewinnen wir Interessenten für Neubauprojekte, Gewerbeflächen und Bestandsobjekte. Mit eigenen Projektseiten, regionalen Kampagnen und einer Vorqualifizierung, die Ihr Team entlastet.',
+    heroDesc: 'Für Projektentwickler, Makler und Verwaltungen gewinnen wir Interessenten für Neubauprojekte, Gewerbeflächen und Bestandsobjekte. Dazu gehören eigene Projektseiten, regionale Kampagnen und eine Vorqualifizierung, die Ihrem Team unpassende Anfragen erspart.',
     calculatorComponent: 'LeerstandskostenRechner',
     problems: [
       {
         title: 'Leerstand kostet jeden Monat',
-        desc: 'Jeder Monat ohne Mieter oder Käufer schmälert die Rendite. Die grossen Portale allein reichen dafür oft nicht.'
+        desc: 'Jeder Monat ohne Mieter oder Käufer schmälert die Rendite. Ein Inserat auf den grossen Portalen füllt ein Neubauprojekt oft nicht rechtzeitig.'
       },
       {
         title: 'Viele Anfragen, wenige ernsthafte',
@@ -182,7 +182,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     ],
     benefits: [
       'Mehr passende Interessenten pro Objekt',
-      'Weniger Aufwand mit unpassenden Anfragen dank Vorqualifizierung',
+      'Budget und Einzugstermin liegen vor, bevor jemand zurückruft',
       'Automatische Einladungen zu Besichtigungen per E-Mail oder SMS',
       'Ein digitaler Auftritt, der Sie bei Eigentümern als kompetenten Makler zeigt'
     ],
@@ -221,7 +221,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'treuhand-unternehmensberatung',
     title: 'Treuhand & Unternehmensberatung',
     subtitle: 'Mehr Mandatsanfragen für Treuhand- und Beratungsbüros',
-    heroDesc: 'Wir helfen Treuhand- und Beratungsbüros, die KMU-Mandate zu gewinnen, die fachlich und wirtschaftlich zu ihnen passen. Dafür schärfen wir Ihr Profil und fragen Eckdaten vorab ab. Das spart Aufwand im Erstkontakt.',
+    heroDesc: 'Wir schärfen das Profil Ihres Büros und bauen einen Anfrageweg, der Umsatz, Mitarbeiterzahl und Buchhaltungssoftware schon vor dem Erstgespräch erfasst. Ziel sind KMU-Mandate, die fachlich und wirtschaftlich zu Ihnen passen.',
     calculatorComponent: 'KanzleiWachstumsCheck',
     problems: [
       {
@@ -256,7 +256,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     ],
     benefits: [
       'Anfragen von Mandanten, die fachlich zu Ihrem Büro passen',
-      'Weniger Erstgespräche mit Interessenten, die nicht passen',
+      'Erstgespräche, in denen die Eckdaten bereits vorliegen',
       'Ein geordneter, teilweise automatisierter Ablauf für neue Mandate',
       'Mehr Zeit im Team für anspruchsvolle Beratungsmandate'
     ],
@@ -281,7 +281,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'b2b-industrie-kmu',
     title: 'Industrie & KMU',
     subtitle: 'Mehr qualifizierte Anfragen für Industrie- und B2B-Unternehmen',
-    heroDesc: 'Wir helfen Produktions- und B2B-Unternehmen, online von Einkäufern und Technikern gefunden zu werden. Und wir sorgen dafür, dass Offerten nachgefasst werden, bis ein Entscheid vorliegt.',
+    heroDesc: 'Viele Einkäufer und Techniker informieren sich online über Lieferanten, lange bevor sie eine Offerte anfragen. Wir sorgen dafür, dass sie Ihr Unternehmen finden, und richten ein Nachfassen ein, das jede Offerte bis zum Entscheid begleitet.',
     calculatorComponent: 'AngebotsPipelineRechner',
     problems: [
       {
@@ -315,7 +315,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       }
     ],
     benefits: [
-      'Regelmässige Anfragen von Einkäufern und Technikern',
+      'Anfragen von Einkäufern und Technikern, auch ohne Messe',
       'Weniger Offerten ohne Rückmeldung dank systematischem Nachfassen',
       'Entlastung des Aussendiensts bei der Neukundensuche',
       'Alle offenen Offerten und Verkaufschancen übersichtlich im CRM'
@@ -335,7 +335,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'it-dienstleister-msps',
     title: 'IT-Dienstleister & MSPs',
     subtitle: 'Mehr Anfragen für Managed Services von Schweizer KMU',
-    heroDesc: 'Wir helfen IT-Dienstleistern, Anfragen für Managed Services, IT-Sicherheit und Cloud-Projekte von Schweizer KMU zu gewinnen. Ziel sind mehr laufende Serviceverträge statt einzelner Einsätze.',
+    heroDesc: 'Für IT-Dienstleister gewinnen wir Anfragen von Schweizer KMU zu Managed Services, IT-Sicherheit und Cloud-Projekten. Ziel sind laufende Serviceverträge statt einzelner Einsätze auf Abruf.',
     calculatorComponent: 'RecurringRevenuePotenzialRechner',
     problems: [
       {
@@ -355,7 +355,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Klare Servicepakete',
-        desc: 'Wir helfen Ihnen, Ihre Leistungen in verständliche Pakete mit festen Preisen und Servicezeiten zu bündeln, deren Nutzen ein Geschäftsführer sofort versteht.'
+        desc: 'Wir bündeln mit Ihnen Ihre Leistungen in verständliche Pakete mit festen Preisen und Servicezeiten, deren Nutzen ein Geschäftsführer sofort versteht.'
       },
       {
         step: '02',
@@ -372,7 +372,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Mehr Anfragen für laufende Serviceverträge',
       'Positionierung als IT-Partner statt als austauschbarer Lieferant',
       'Regelmässige Anfragen für Sicherheitsberatungen',
-      'Bessere Planbarkeit bei Personal und Ressourcen'
+      'Personal lässt sich besser planen, wenn mehr Umsatz aus Verträgen kommt'
     ],
     faqs: [
       {
@@ -389,7 +389,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'ingenieur-planungsbuero',
     title: 'Ingenieur- & Planungsbüros',
     subtitle: 'Mehr private Aufträge und Bewerbungen für Ihr Planungsbüro',
-    heroDesc: 'Wir helfen Ingenieur- und Planungsbüros, neben Ausschreibungen auch private Bauherren und Gewerbekunden direkt zu erreichen. Und wir machen Ihr Büro für Fachkräfte sichtbar.',
+    heroDesc: 'Viele Ingenieur- und Planungsbüros leben von Ausschreibungen. Wir bauen einen zweiten Weg zu privaten Bauherren und Gewerbekunden auf und machen Ihr Büro für Bauingenieure, Zeichnerinnen und Projektleiter als Arbeitgeber sichtbar.',
     calculatorComponent: 'ProjektpipelineCheck',
     problems: [
       {
@@ -397,7 +397,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
         desc: 'Fällt ein grosser Bauherr oder eine Gemeinde als Auftraggeber weg, ist die Auslastung des Büros schnell in Gefahr.'
       },
       {
-        title: 'Nur reagieren auf Ausschreibungen',
+        title: 'Warten auf Ausschreibungen',
         desc: 'Viele Büros warten auf Ausschreibungen. Direktaufträge von Industrie- und Gewerbebauherren gehen so an andere.'
       },
       {
@@ -443,7 +443,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'personalvermittler-recruiting',
     title: 'Personalvermittler & Recruiting',
     subtitle: 'Mehr Suchmandate und passende Kandidaten für Ihre Vermittlung',
-    heroDesc: 'Wir helfen Personalvermittlern, mehr Suchaufträge von Arbeitgebern zu gewinnen und passende Kandidaten für diese Stellen zu finden. So besetzen Sie schneller und arbeiten weniger auf gut Glück.',
+    heroDesc: 'Für Personalvermittler gewinnen wir Suchaufträge von Arbeitgebern und erreichen die Fachkräfte, die zu diesen Stellen passen. So arbeiten Sie seltener auf gut Glück und besetzen schneller.',
     calculatorComponent: 'PlacementEffizienzRechner',
     problems: [
       {
@@ -452,7 +452,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Zu wenige passende Kandidaten',
-        desc: 'Stellenportale liefern immer weniger brauchbare Bewerbungen. Gute Kandidaten müssen dort erreicht werden, wo sie sich ohnehin aufhalten.'
+        desc: 'Stellenportale liefern immer weniger brauchbare Bewerbungen. Gute Kandidaten suchen meist nicht aktiv und sind dort kaum zu finden.'
       },
       {
         title: 'Langsamer Besetzungsprozess',
@@ -497,7 +497,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'bildung-weiterbildung',
     title: 'Bildung & Weiterbildung',
     subtitle: 'Mehr Anmeldungen für Ihre Lehrgänge, Kurse und Seminare',
-    heroDesc: 'Wir helfen Akademien, Instituten und Weiterbildungsanbietern, Lehrgänge, Seminare und CAS-Studiengänge mit passenden Teilnehmenden zu füllen. Dafür braucht es Kampagnen, die die richtigen Personen erreichen, und eine Anmeldung ohne Umwege.',
+    heroDesc: 'Lehrgänge, Seminare und CAS-Studiengänge füllen sich, wenn Kampagnen die passenden Personen erreichen und die Anmeldung ohne Umwege funktioniert. Beides bauen wir für Akademien, Institute und Weiterbildungsanbieter auf.',
     calculatorComponent: 'KursFunnelRechner',
     problems: [
       {
@@ -533,7 +533,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     benefits: [
       'Bessere Auslastung Ihrer Kurse, Lehrgänge und Studiengänge',
       'Weniger Beratungsgespräche mit Personen, die die Voraussetzungen nicht erfüllen',
-      'Mehr Zeit für die Studienberatung dank vorqualifizierter Anfragen',
+      'Mehr Angemeldete, die am Infoabend tatsächlich erscheinen',
       'Klare Sicht auf die Werbekosten pro Anmeldung'
     ],
     faqs: [
@@ -551,7 +551,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'gesundheitswesen',
     title: 'Gesundheitswesen',
     subtitle: 'Mehr Neupatienten für Ihre Praxis oder Fachklinik',
-    heroDesc: 'Wir helfen Spezialpraxen und Fachkliniken, mit sachlicher Patienteninformation online gefunden zu werden, zum Beispiel für Selbstzahler-Leistungen. Die Werbevorschriften Ihrer Branche berücksichtigen wir dabei von Anfang an.',
+    heroDesc: 'Spezialpraxen und Fachkliniken machen wir mit sachlicher Patienteninformation online auffindbar, etwa für Selbstzahler-Leistungen. Die Werbevorschriften für Gesundheitsberufe beachten wir von Anfang an.',
     calculatorComponent: 'NeupatientenPotenzialCheck',
     problems: [
       {
@@ -560,7 +560,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Wenig Sichtbarkeit bei spezifischen Themen',
-        desc: 'Patientinnen und Patienten informieren sich online über Beschwerden und Behandlungen. Wer dort nicht auftaucht, wird nicht gefunden.'
+        desc: 'Patientinnen und Patienten informieren sich online über Beschwerden und Behandlungen. Eine Praxis ohne verständliche Seiten zu ihren Schwerpunkten taucht dort nicht auf.'
       },
       {
         title: 'Aufwendige Terminvergabe und Aufnahme',
@@ -586,14 +586,14 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     ],
     benefits: [
       'Mehr Anfragen für Ihre Schwerpunkte und Selbstzahler-Leistungen',
-      'Inhalte, die die Werbevorschriften Ihrer Branche berücksichtigen',
+      'Sachliche Patienteninformation statt Werbeversprechen',
       'Weniger Telefonaufwand für das Praxisteam bei der Terminvergabe',
       'Besser informierte Patientinnen und Patienten schon vor dem ersten Termin'
     ],
     faqs: [
       {
         q: 'Ist Werbung für Ärztinnen und Ärzte in der Schweiz nicht stark eingeschränkt?',
-        a: 'Ja, es gelten enge Regeln, etwa aus den kantonalen Gesundheitsgesetzen, den Standesregeln und dem Heilmittelwerberecht. Wir setzen deshalb auf sachliche Patienteninformation statt auf Werbeversprechen und berücksichtigen die Werbevorschriften Ihrer Branche. Die abschliessende Prüfung liegt bei Ihnen; eine Rechtsberatung ersetzen wir nicht.'
+        a: 'Ja, es gelten enge Regeln, etwa aus den kantonalen Gesundheitsgesetzen, den Standesregeln und dem Heilmittelwerberecht. Wir setzen deshalb auf sachliche Patienteninformation statt auf Werbeversprechen. Die abschliessende Prüfung liegt bei Ihnen; eine Rechtsberatung ersetzen wir nicht.'
       },
       {
         q: 'Unterstützen Sie auch die Suche nach Fachpersonal (MPA, Pflege)?',
@@ -605,7 +605,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'handwerk',
     title: 'Handwerk & Bauwesen',
     subtitle: 'Mehr Direktaufträge aus Ihrer Region für Ihren Handwerksbetrieb',
-    heroDesc: 'Wir helfen Handwerks- und Baubetrieben, mehr passende Aufträge von Privat- und Gewerbekunden in ihrer Region zu gewinnen. Und wir vereinfachen den Weg von der Anfrage bis zur Offerte.',
+    heroDesc: 'Für Handwerks- und Baubetriebe gewinnen wir Aufträge von Privat- und Gewerbekunden aus der eigenen Region. Die Anfragen kommen mit den nötigen Angaben an, damit die Offerte schneller steht.',
     calculatorComponent: 'AuftragsPipelineRechner',
     problems: [
       {
@@ -642,7 +642,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Mehr Direktaufträge von Bauherren aus Ihrer Region',
       'Schnellere Offerten, weil die Angaben vollständig vorliegen',
       'Offerten werden nachgefasst, ohne dass jemand daran denken muss',
-      'Mehr Sichtbarkeit bei Fachkräften in Ihrer Region'
+      'Ein sichtbarer Auftritt als Arbeitgeber für Monteure und Poliere'
     ],
     faqs: [
       {
@@ -659,7 +659,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'rechtsanwaelte',
     title: 'Rechtsanwälte',
     subtitle: 'Mehr passende Mandatsanfragen für Anwaltskanzleien',
-    heroDesc: 'Wir helfen Kanzleien, mehr Mandate in ihren Fachgebieten zu gewinnen und unpassende Anfragen früh auszusortieren. Die Standes- und Werberegeln für Anwältinnen und Anwälte berücksichtigen wir dabei.',
+    heroDesc: 'Wir machen die Fachgebiete Ihrer Kanzlei online sichtbar und sortieren unpassende Anfragen vor dem Erstgespräch aus. Den Rahmen setzen die Standes- und Werberegeln für Anwältinnen und Anwälte.',
     calculatorComponent: 'KanzleiAuslastungsCheck',
     problems: [
       {
@@ -672,7 +672,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Wenig sichtbar im Netz',
-        desc: 'Unternehmer suchen Anwälte vermehrt über Google und LinkedIn. Wer dort nicht auftaucht, wird bei der Auswahl oft nicht berücksichtigt.'
+        desc: 'Unternehmer suchen Anwälte vermehrt über Google und LinkedIn. Eine Kanzlei ohne erkennbare Schwerpunkte kommt so oft gar nicht in die engere Wahl.'
       }
     ],
     approach: [
@@ -694,7 +694,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     ],
     benefits: [
       'Mehr Anfragen in Ihren Fachgebieten',
-      'Weniger Zeitaufwand für unpassende Erstanfragen',
+      'Rechtsgebiet und Gegenpartei bekannt, bevor jemand zurückruft',
       'Auftritt, der die Standes- und Werberegeln berücksichtigt',
       'Kontakt zu Unternehmen, die eine längerfristige Begleitung suchen'
     ],
@@ -713,7 +713,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'logistik-transport',
     title: 'Logistik & Transport',
     subtitle: 'Mehr Direktkunden und weniger Leerfahrten für Ihr Transportunternehmen',
-    heroDesc: 'Wir helfen Transport- und Logistikunternehmen, Direktkunden aus Industrie und Handel auf ihren Stammstrecken zu gewinnen. So sind Sie weniger auf Frachtenbörsen angewiesen.',
+    heroDesc: 'Für Transport- und Logistikunternehmen gewinnen wir Direktkunden aus Industrie und Handel entlang der eigenen Stammstrecken. Je mehr feste Frachten Sie haben, desto weniger sind Sie auf Frachtenbörsen angewiesen.',
     calculatorComponent: 'FlottenauslastungsRechner',
     problems: [
       {
@@ -749,7 +749,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     benefits: [
       'Weniger Leerfahrten auf Ihren Stammstrecken',
       'Bessere Margen durch direkten Kontakt zu Versendern',
-      'Regelmässige Bewerbungen von Berufschauffeuren',
+      'Bewerbungen von Chauffeuren der Kategorie C/CE',
       'Weniger Abhängigkeit von Frachtenbörsen'
     ],
     faqs: [
@@ -767,7 +767,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'hospitality',
     title: 'Hospitality',
     subtitle: 'Mehr Direktbuchungen für Ihr Hotel, weniger Provisionen',
-    heroDesc: 'Wir helfen Hotels und Resorts, mehr Gäste direkt über die eigene Website buchen zu lassen statt über Buchungsplattformen. Das spart Provisionen und Sie behalten den direkten Kontakt zum Gast.',
+    heroDesc: 'Wir richten Website und Kampagnen Ihres Hotels so aus, dass mehr Gäste direkt bei Ihnen buchen statt über Buchungsplattformen. Bei jeder Direktbuchung entfällt die Provision, und der Kontakt zum Gast bleibt bei Ihnen.',
     calculatorComponent: 'DirektbuchungsRechner',
     problems: [
       {
@@ -787,7 +787,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Ihr Haus überzeugend zeigen',
-        desc: 'Mit guten Bildern und Texten zeigen wir, was Ihr Haus und Ihre Gastgeberqualität ausmacht.'
+        desc: 'Bilder und Texte zeigen Zimmer, Lage und Gastgeber so, dass Gäste den Unterschied zum Nachbarhotel erkennen.'
       },
       {
         step: '02',

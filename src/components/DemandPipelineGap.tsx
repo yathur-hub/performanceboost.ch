@@ -272,7 +272,7 @@ export default function DemandPipelineGap() {
                 {!results.istAufKurs && (
                   <div className="bg-red-50/40 p-5 rounded-xl border border-red-100/20 text-left space-y-1.5">
                     <p className="text-[11px] text-[#E63946] mb-0.5 font-bold uppercase tracking-widest font-mono">
-                      Mögliches Umsatzpotenzial
+                      Umsatz, der heute fehlt
                     </p>
                     <div className="text-xl sm:text-2xl font-bold font-display text-[#E63946] leading-none">
                       {formatCHF(results.revenuePotenzial)} <span className="text-[11px] text-red-400 font-normal">/ Monat</span>

@@ -108,7 +108,7 @@ export default function ApproachView() {
         <Container className="space-y-8">
           <SectionHeading
             title="Damit es nach dem Start hält"
-            intro="Die meisten Lösungen scheitern nicht beim Bauen, sondern im Betrieb. Deshalb klären wir in Roll-out & Hypercare und im Enablement zwei Dinge, bevor etwas live geht: welche Aufgaben nach dem Start anfallen und wer sie mit Namen übernimmt."
+            intro="Bei den meisten Lösungen zeigen sich die Schwierigkeiten erst im Betrieb. Deshalb klären wir in Roll-out & Hypercare und im Enablement vor dem Start, welche Aufgaben danach anfallen und wer sie mit Namen übernimmt."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10 max-w-4xl">
             <BrandVisual
@@ -169,7 +169,7 @@ export default function ApproachView() {
         <Container className="space-y-8">
           <SectionHeading
             title="Dasselbe Vorgehen in jedem Bereich"
-            intro="Ob Kampagnen, CRM oder ein KI-Agent: Die Phasen bleiben gleich, die Arbeit darin unterscheidet sich."
+            intro="Die Phasen bleiben gleich, ob es um Kampagnen, ein CRM oder einen KI-Agenten geht. Was in ihnen passiert, unterscheidet sich."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {AREAS.map((a) => (

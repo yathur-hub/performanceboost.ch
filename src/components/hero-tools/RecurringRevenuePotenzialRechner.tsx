@@ -131,9 +131,9 @@ export default function RecurringRevenuePotenzialRechner() {
     'ungenutztes-potenzial': {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
+      label: 'Viel Umsatz ungenutzt',
       desc: 'Ihr wiederkehrender Umsatz ist noch im Aufbau. Ein grosser Teil Ihrer Kunden hat noch keinen Managed-Services-Vertrag, und Kündigungen schmälern Ihre Basis regelmässig. Gerade hier lohnt es sich, systematisch anzusetzen.',
-      rec: 'Bestehende Kunden gezielt auf Verträge umstellen, Kündigungssignale früh erkennen und ein CRM einrichten.',
+      rec: 'Bestehende Kunden schrittweise auf Verträge umstellen, Kündigungssignale früh erkennen und ein CRM einrichten.',
     },
     'aufbauphase': {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
@@ -154,7 +154,7 @@ export default function RecurringRevenuePotenzialRechner() {
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Bereit für Wachstum',
       desc: 'Ihr wiederkehrender Umsatz ist nach Ihren Angaben sehr gut abgestützt: hohe Vertragsquote, wenige Kündigungen. Jetzt lohnt es sich, die Neukundengewinnung deutlich auszubauen.',
-      rec: 'Neukundengewinnung ausbauen, Nachfrage gezielt aufbauen und auf LinkedIn als Fachexperte sichtbar werden.',
+      rec: 'Neukundengewinnung ausbauen und auf LinkedIn als Fachexperte sichtbar werden.',
     },
   };
 
@@ -275,7 +275,7 @@ export default function RecurringRevenuePotenzialRechner() {
                 </div>
 
                 <div className="bg-green-50 border border-green-150 rounded-xl p-4">
-                  <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Mögliches Potenzial bei Bestandskunden</span>
+                  <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglicher Mehrumsatz bei Bestandskunden</span>
                   <h4 className="text-base font-black text-green-700 mt-1">+{formatCHF(results.ungenutztes_arr)} / J.</h4>
                   <p className="text-[11px] text-green-600 leading-normal font-semibold">
                     {inputs.vertragsanteil === 100 ? 'Alle Kunden haben bereits einen Vertrag' : `Grobe Schätzung, wenn alle Kunden einen Vertrag hätten`}

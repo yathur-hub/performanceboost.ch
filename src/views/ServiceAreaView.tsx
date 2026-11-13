@@ -94,7 +94,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       <section>
         <Container className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10 space-y-6">
-            <SectionHeading title="Kommt Ihnen das bekannt vor?" />
+            <SectionHeading title="Typische Ausgangslagen" />
             <ul className="space-y-3">
               {area.challenges.map((c) => (
                 <li key={c} className="flex gap-3 text-body-sm text-slate-700 leading-relaxed">
@@ -294,7 +294,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {id === 'marketing' && (
         <section>
           <Container className="space-y-6">
-            <SectionHeading title="Kundengewinnung für Ihre Branche" intro="Wie Neukundengewinnung in Ihrer Branche funktioniert: typische Hürden, unser Vorgehen und ein passender Rechner." />
+            <SectionHeading title="Kundengewinnung für Ihre Branche" intro="Für jede Branche beschreiben wir die typischen Hürden bei der Neukundengewinnung, unser Vorgehen und einen passenden Rechner." />
             <ul className="flex flex-wrap gap-2.5">
               {Object.values(SOLUTIONS_SECTORS).map((sector) => (
                 <li key={sector.slug}>
@@ -365,7 +365,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         <Container className="space-y-8">
           <SectionHeading
             title={isArea ? 'Ein System, drei Bereiche' : 'Die drei Bereiche'}
-            intro="Marketing, Sales und Processes hängen voneinander ab. Die besten Ergebnisse entstehen, wenn sie gemeinsam verbessert werden."
+            intro="Marketing, Sales und Processes hängen voneinander ab. Am meisten bringt es, wenn man sie zusammen betrachtet und den grössten Engpass zuerst angeht."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {others.map((o) => (

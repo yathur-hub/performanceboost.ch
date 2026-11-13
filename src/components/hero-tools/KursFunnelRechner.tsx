@@ -134,15 +134,15 @@ export default function KursFunnelRechner() {
     rot: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben fragen nur wenige Besucher Infos an, oder die Buchungsquote liegt deutlich unter dem angenommenen Richtwert von 30%. Zusammen kostet das Ihre Institution spürbar Umsatz. Eine Website, die Interessenten klar zur Anfrage führt, ist hier meist der erste Ansatzpunkt.',
+      label: 'Interessenten gehen verloren',
+      desc: 'Nach Ihren Angaben fragen nur wenige Besucher Infos an, oder die Buchungsquote liegt deutlich unter dem angenommenen Richtwert von 30%. Zusammen kostet das Ihre Institution Umsatz. Eine Website, die Interessenten klar zur Anfrage führt, ist hier meist der erste Ansatzpunkt.',
       rec: 'Den Weg zur Anfrage auf der Website vereinfachen, klarere Handlungsaufforderungen einsetzen und Interessenten vor dem Infoabend weiterbegleiten.',
     },
     orange: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
-      desc: 'Ihr Anfrageprozess funktioniert, unterwegs gehen aber Interessenten verloren. Häufige Ursache: Wer eine Beratung oder Infos angefragt hat, wird danach nicht konsequent weiterbegleitet.',
+      label: 'Spielraum vorhanden',
+      desc: 'Ihr Anfrageprozess funktioniert, unterwegs gehen aber Interessenten verloren. Häufig wird, wer eine Beratung oder Infos angefragt hat, danach nicht weiterbegleitet.',
       rec: 'Nachfassen systematisch regeln: Teilnehmende des Infoabends innert 48 Stunden kontaktieren und mit einer E-Mail-Serie weiterbegleiten.',
     },
     gruen: {
@@ -156,7 +156,7 @@ export default function KursFunnelRechner() {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
-      desc: 'Ihr Anfrageprozess läuft nach Ihren Angaben sehr gut, mit hohen Quoten bei Anfragen und Buchungen. Jetzt kann es sich lohnen, das Budget gezielt in die Kanäle zu lenken, die sich bereits bewährt haben.',
+      desc: 'Ihr Anfrageprozess läuft nach Ihren Angaben sehr gut, mit hohen Quoten bei Anfragen und Buchungen. Jetzt kann es sich lohnen, mehr Budget in die Kanäle zu lenken, die sich bereits bewährt haben.',
       rec: 'Kampagnenbudget schrittweise erhöhen, neue Zielgruppen ansprechen und die Marke Ihrer Institution stärken.',
     },
   };
@@ -290,7 +290,7 @@ export default function KursFunnelRechner() {
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich bei 8 Prozentpunkten mehr Buchungen</span>
-                    <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung, z.B. durch konsequentes Weiterbegleiten vor der Buchung</p>
+                    <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung, z.B. durch verlässliches Weiterbegleiten vor der Buchung</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.potenzial_jahr)} / J.</h4>
                 </div>

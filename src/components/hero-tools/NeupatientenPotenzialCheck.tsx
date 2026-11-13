@@ -131,14 +131,14 @@ export default function NeupatientenPotenzialCheck() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
+      label: 'Viele Besucher buchen nicht',
       desc: 'Nach Ihren Angaben werden aus vielen Website-Besuchern keine Patienten, etwa weil eine einfache Online-Terminbuchung fehlt oder die Praxis bei lokalen Suchanfragen schlecht gefunden wird. Eine unkomplizierte Online-Terminlösung (z.B. OneDoc) und eine gute lokale Auffindbarkeit bei Google sind hier meist die ersten Schritte.',
       rec: 'Online-Terminkalender einbinden und das Google-Unternehmensprofil vollständig pflegen.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
+      label: 'Spielraum vorhanden',
       desc: 'Sie gewinnen bereits Patienten online, auf dem Weg zum Termin gehen aber noch einige verloren. Häufige Gründe sind ein unvollständiges Google-Profil oder ein umständlicher Buchungsweg auf der Website.',
       rec: 'Den Buchungsbutton sichtbarer platzieren, die Ladezeit der Website verkürzen und Patienten aktiv um Google-Bewertungen bitten.',
     },
@@ -153,8 +153,8 @@ export default function NeupatientenPotenzialCheck() {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
-      desc: 'Der Weg von der Website zum Termin funktioniert nach Ihren Angaben sehr gut, mit vielen Online-Buchungen. Jetzt können Sie die Auslastung gezielt steuern und mehr Patienten für Ihre Behandlungsschwerpunkte gewinnen.',
-      rec: 'Spezialisierte Leistungen (z.B. Implantologie, Ästhetik) online gezielt bekannt machen.',
+      desc: 'Der Weg von der Website zum Termin funktioniert nach Ihren Angaben sehr gut, mit vielen Online-Buchungen. Jetzt können Sie die Auslastung bewusster steuern und mehr Patienten für Ihre Behandlungsschwerpunkte gewinnen.',
+      rec: 'Spezialisierte Leistungen (z.B. Implantologie, Ästhetik) online bekannt machen.',
     },
   };
 

@@ -26,10 +26,10 @@ interface HomeViewProps {
 }
 
 
-const HERO_OUTCOMES = ['Mehr passende Anfragen', 'Schneller vom Erstkontakt zum Auftrag', 'Weniger Handarbeit in Vertrieb und Administration'];
+const HERO_OUTCOMES = ['Anfragen, die zu Ihrem Angebot passen', 'Kürzere Wege vom Erstkontakt zur Offerte', 'Weniger Abtippen und Nachfassen von Hand'];
 
 const DIFFERENCES = [
-  { title: 'Strategie und Umsetzung aus einer Hand', desc: 'Kein Konzept, das in der Schublade landet, und keine Lücken zwischen drei Dienstleistern.' },
+  { title: 'Wer plant, setzt auch um', desc: 'Die Person, die mit Ihnen die Prioritäten festlegt, baut danach auch Kampagnen, CRM und Automatisierungen.' },
   { title: 'Gemessen an Ihren Geschäftszahlen', desc: 'Anfragen, Aufträge, Reaktionszeiten oder eingesparte Stunden statt Klicks und Reichweite.' },
   { title: 'Direkt mit dem Inhaber', desc: 'Yathur Nathan arbeitet persönlich an Ihrem Projekt, ohne Account Manager dazwischen.' },
 ];

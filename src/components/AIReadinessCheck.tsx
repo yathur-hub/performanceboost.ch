@@ -56,7 +56,7 @@ const useCaseStore: Record<string, UseCaseData> = {
   personalization_scale: {
     id: "personalization_scale",
     titel: "Personalisierte Ansprache für viele Kontakte",
-    warum: "Die Grundlagen sind vorhanden. Jetzt können Sie Kundengruppen gezielt ansprechen, was von Hand kaum zu bewältigen wäre.",
+    warum: "Die Grundlagen sind vorhanden. Jetzt können Sie einzelne Kundengruppen passend ansprechen, was von Hand kaum zu bewältigen wäre.",
     was: "Personalisierte E-Mail-Strecken, Website-Inhalte, die sich an den Besucher anpassen, und massgeschneiderte B2B-Angebote. Basierend auf aktuellem Verhalten, Unternehmensdaten und bisherigen Kontakten.",
     impact: "Relevantere Kommunikation statt Einheitsbotschaften für alle.",
     zeitrahmen: "Richtwert: erste Abläufe nach ca. 3–4 Wochen"
@@ -99,7 +99,7 @@ export default function AIReadinessCheck() {
         key: "beginner",
         label: "Einstieg",
         color: "#F4A261",
-        desc: "Sie müssen nicht perfekt vorbereitet sein, um mit KI anzufangen. Sinnvoll sind erste Schritte, die schnell einen spürbaren Nutzen bringen und keine grosse technische Infrastruktur brauchen."
+        desc: "Sie müssen nicht perfekt vorbereitet sein, um mit KI anzufangen. Sinnvoll sind erste Schritte, die schnell einen sichtbaren Nutzen bringen und keine grosse technische Infrastruktur brauchen."
       };
     } else if (score <= 4) {
       return {
@@ -323,7 +323,7 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[11px] text-slate-400 font-medium font-sans">Viel Handarbeit heisst meist: viel Potenzial für Automatisierung.</p>
+          <p className="text-[11px] text-slate-400 font-medium font-sans">Viel Handarbeit heisst meist, dass sich Automatisierung lohnt.</p>
         </div>
 
         {/* F4 */}

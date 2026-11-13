@@ -222,7 +222,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
 
       {/* ANFRAGE (eingebettetes Formular) */}
       <LeadCtaSection
-        title={`Mehr passende Anfragen für ${sector.title}?`}
+        title="Wo stehen Sie heute bei der Kundengewinnung?"
         intro="Schildern Sie kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort und einen Terminvorschlag für ein kostenloses Erstgespräch."
         formLocation={`branche_${slug}`}
       />

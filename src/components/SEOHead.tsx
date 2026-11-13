@@ -110,7 +110,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'home': {
       const title = 'performanceboost: Marketing, Vertrieb & Prozesse mit KI-Agenten für KMU';
       const description =
-        'Wir verbinden Marketing, Vertrieb und Abläufe von Schweizer KMU zu einem System: mehr passende Anfragen, schnellere Aufträge, weniger Handarbeit. Mit KI-Agenten und klaren Freigaben.';
+        'Wir verbinden Marketing, Vertrieb und Abläufe von Schweizer KMU, damit passende Anfragen schneller zu Aufträgen werden. KI-Agenten übernehmen Teilaufgaben, Ihr Team gibt frei.';
       return {
         ...base,
         title,

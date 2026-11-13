@@ -280,7 +280,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
               onClick={handleBookMeeting}
               className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5558e0] text-white rounded-xl px-6 py-3 text-xs font-extrabold tracking-wide uppercase shadow-[0_4px_14px_rgba(104,109,244,0.4)] transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer select-none"
             >
-              Potenzial besprechen
+              Ausgangslage besprechen
             </a>
 
             <a 

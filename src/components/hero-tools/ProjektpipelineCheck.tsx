@@ -131,15 +131,15 @@ export default function ProjektpipelineCheck() {
     rot: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben gibt es zwei Warnsignale: Die Zuschlagsquote liegt unter dem angenommenen Richtwert von 45%, und ein grosser Teil des Umsatzes hängt an wenigen Auftraggebern. Beides lässt sich angehen: Mit gezielter Sichtbarkeit kommen passendere Anfragen, und mit einer geplanten Akquise wird die Auftraggeberbasis breiter.',
+      label: 'Deutlicher Handlungsbedarf',
+      desc: 'Nach Ihren Angaben gibt es zwei Warnsignale: Die Zuschlagsquote liegt unter dem angenommenen Richtwert von 45%, und ein grosser Teil des Umsatzes hängt an wenigen Auftraggebern. Beides lässt sich angehen: Mit besserer Sichtbarkeit bei den richtigen Auftraggebern kommen passendere Anfragen, und mit einer geplanten Akquise wird die Auftraggeberbasis breiter.',
       rec: 'Zuerst die Positionierung auf LinkedIn, die Sichtbarkeit bei Google und ein CRM aufbauen.',
     },
     orange: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
-      desc: 'Ihr Auftragseingang funktioniert, bei Umsatz und Stabilität ist aber noch Potenzial vorhanden. Entweder liegt die Zuschlagsquote unter dem angenommenen Richtwert, oder zu viel Umsatz hängt an wenigen Auftraggebern.',
+      label: 'Spielraum vorhanden',
+      desc: 'Ihr Auftragseingang funktioniert, bei Umsatz und Stabilität gibt es aber noch Spielraum. Entweder liegt die Zuschlagsquote unter dem angenommenen Richtwert, oder zu viel Umsatz hängt an wenigen Auftraggebern.',
       rec: 'Beim schwächeren Wert ansetzen: Zuschlagsquote verbessern oder die Auftraggeberbasis verbreitern.',
     },
     gruen: {
@@ -154,7 +154,7 @@ export default function ProjektpipelineCheck() {
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihr Büro ist nach Ihren Angaben sehr gut aufgestellt, mit hoher Zuschlagsquote und breiter Auftraggeberbasis. Weiteres Wachstum kommt jetzt vor allem über mehr Anfragen.',
-      rec: 'Mehr Anfragen gewinnen und auf LinkedIn gezielt Wunschauftraggeber ansprechen.',
+      rec: 'Mehr Anfragen gewinnen und auf LinkedIn Wunschauftraggeber direkt ansprechen.',
     },
   };
 

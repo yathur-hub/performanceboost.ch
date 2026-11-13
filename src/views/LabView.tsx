@@ -18,7 +18,7 @@ export default function LabView() {
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen', href: '/martech' }, { label: 'Labor' }]} />
           <div className="max-w-4xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
-              Das Labor: was ich selbst baue.
+              Was ich im Labor selbst baue.
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
               Bevor ich Ihnen einen Agenten oder eine Automatisierung empfehle, habe ich sie meistens selbst gebaut und betrieben. Hier stehen die eigenen Experimente,

@@ -173,7 +173,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ctaLabel: 'Vertriebsprozess besprechen',
     seoTitle: 'Sales & CRM für KMU: Lead-Management und Revenue Operations | performanceboost',
     seoDescription:
-      'CRM, Lead-Management, Vertriebsautomatisierung und Revenue Operations für Schweizer KMU, damit aus Anfragen planbar Aufträge werden.',
+      'CRM, Lead-Management, Vertriebsautomatisierung und Revenue Operations für Schweizer KMU, damit Anfragen schneller und verlässlicher zu Aufträgen werden.',
     services: ['marketing-automation', 'revenue-operations', 'sales-enablement'],
     agentic: {
       title: 'Wo Agenten im Vertrieb mitarbeiten',

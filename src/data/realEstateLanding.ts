@@ -173,8 +173,8 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
         desc: 'Reichweite und Klickraten zeigen wir auch, entscheidend sind für uns Besichtigungen und unterschriebene Verträge.',
       },
       {
-        title: 'Strategie und Umsetzung aus einer Hand.',
-        desc: 'Projektseite, Kampagnen, Messung und die Anbindung an Ihre Abläufe kommen von uns. Es gibt keine Lücke zwischen Agentur, Webdesigner und Technik.',
+        title: 'Wir bauen Seite, Kampagnen und Messung.',
+        desc: 'Dazu kommt die Anbindung an Ihre Abläufe. Sie müssen nicht zwischen mehreren Dienstleistern koordinieren, damit alles zusammenpasst.',
       },
       { title: 'Persönlich und aus der Region.', desc: SHARED_OWNER },
     ],
@@ -281,7 +281,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         title: 'Kein Kontakt geht verloren.',
-        desc: 'Wer heute noch nicht verkaufen will, erhält in grösseren Abständen nützliche Informationen von Ihnen, etwa zur Marktentwicklung in seiner Gemeinde. Wenn der Zeitpunkt kommt, sind Sie die erste Adresse.',
+        desc: 'Wer heute noch nicht verkaufen will, erhält in grösseren Abständen nützliche Informationen von Ihnen, etwa zur Marktentwicklung in seiner Gemeinde. Wenn der Zeitpunkt kommt, kennt er Sie bereits.',
       },
       {
         title: 'Sie wissen, was ein Mandat kostet.',
@@ -292,7 +292,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
     approach: [
       {
         title: 'Region und Eigentümer klären',
-        desc: 'Welche Gemeinden, welche Objekte, welche Eigentümer: Ferienwohnung, Erbschaft, Pensionierung, Umzug ins Unterland. Wir legen fest, wen Sie erreichen wollen.',
+        desc: 'Wir legen fest, welche Gemeinden und Objekte im Fokus stehen und welche Eigentümer Sie erreichen wollen, etwa bei Ferienwohnung, Erbschaft, Pensionierung oder Umzug ins Unterland.',
       },
       {
         title: 'Anfrageseiten aufbauen',

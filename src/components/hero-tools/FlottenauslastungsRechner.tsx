@@ -130,13 +130,13 @@ export default function FlottenauslastungsRechner() {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
       label: 'Tiefe Auslastung',
-      desc: 'Ihre Auslastung liegt spürbar unter dem angenommenen Richtwert von 85%. Das heisst: Fahrzeuge verursachen Fixkosten, ohne genug Deckungsbeitrag zu bringen. Mit gezielter digitaler Neukundengewinnung, etwa für Teilladungen oder direkte Geschäftskunden, lässt sich hier ansetzen.',
+      desc: 'Ihre Auslastung liegt deutlich unter dem angenommenen Richtwert von 85%. Ihre Fahrzeuge verursachen also Fixkosten, ohne genug Deckungsbeitrag zu bringen. Mit digitaler Neukundengewinnung, etwa für Teilladungen oder direkte Geschäftskunden, lässt sich hier ansetzen.',
       rec: 'Einen digitalen Kanal für Direktkunden aufbauen, um Leerfahrten und die Abhängigkeit vom Spotmarkt zu senken.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
+      label: 'Auslastung ausbaufähig',
       desc: 'Ihre Flotte läuft ordentlich, es bleibt aber Umsatz liegen. Was schon 5 Prozentpunkte mehr Auslastung bringen könnten, sehen Sie oben in der Schätzung.',
       rec: 'Bei bestehenden Kunden präsent bleiben und freie Kapazitäten regelmässig direkt bei Geschäftskunden anbieten.',
     },
@@ -144,7 +144,7 @@ export default function FlottenauslastungsRechner() {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-700 text-white',
       label: 'Solide Auslastung',
-      desc: 'Ihre Werte liegen nahe an den angenommenen Richtwerten. Das ist eine gesunde Basis. Weiteres Potenzial liegt bei den Betriebskosten oder einem höheren Frachtsatz pro Kilometer durch eine bessere Tourenplanung.',
+      desc: 'Ihre Werte liegen nahe an den angenommenen Richtwerten. Das ist eine gesunde Basis. Spielraum gibt es noch bei den Betriebskosten oder einem höheren Frachtsatz pro Kilometer durch eine bessere Tourenplanung.',
       rec: 'Mehr margenstarke Direktkunden gewinnen statt nur als Subunternehmer zu fahren.',
     },
     top: {
@@ -152,7 +152,7 @@ export default function FlottenauslastungsRechner() {
       badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihre Flotte ist nach Ihren Angaben sehr gut ausgelastet, mit wenig Leerlauf. Damit kann es sinnvoll sein, über zusätzliche Fahrzeuge nachzudenken, sofern genug neue Aufträge in Sicht sind.',
-      rec: 'Gezielt Neukunden gewinnen, um eine grössere Flotte und neue Linienverkehre auszulasten.',
+      rec: 'Neukunden gewinnen, um eine grössere Flotte und neue Linienverkehre auszulasten.',
     },
   };
 

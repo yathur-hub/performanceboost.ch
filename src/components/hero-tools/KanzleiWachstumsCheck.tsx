@@ -133,7 +133,7 @@ export default function KanzleiWachstumsCheck() {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-100 text-green-800 border-green-250',
       label: 'Ausgewogen, aber ausbaufähig',
-      desc: 'Ihre Mandate kommen bereits aus mehreren Quellen, und der digitale Kanal trägt etwas bei. Hier ist noch Potenzial vorhanden: Wenn Sie den digitalen Kanal systematisch ausbauen, kann sein Anteil weiter wachsen.',
+      desc: 'Ihre Mandate kommen bereits aus mehreren Quellen, und der digitale Kanal trägt etwas bei. Hier gibt es noch Spielraum. Wenn Sie den digitalen Kanal systematisch ausbauen, kann sein Anteil weiter wachsen.',
     },
     diversifiziert: {
       color: 'text-indigo-700 bg-[#686CFA]/5 border-[#686CFA]/10',

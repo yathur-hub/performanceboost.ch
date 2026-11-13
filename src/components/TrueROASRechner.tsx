@@ -390,7 +390,7 @@ export default function TrueROASRechner() {
           <LeadCaptureForm
             pageId="paid-social-ecommerce"
             secondaryCTAText="Ergebnis per E-Mail erhalten →"
-            danachText="Vielen Dank! Wir senden Ihnen in Kürze Ihre persönliche Auswertung per E-Mail."
+            danachText="Vielen Dank. Wir senden Ihnen in Kürze Ihre persönliche Auswertung per E-Mail."
             additionalFields={[
               {
                 type: 'select',

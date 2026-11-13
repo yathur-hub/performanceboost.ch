@@ -94,7 +94,7 @@ Wenn diese Fragen beantwortet sind, schrumpft die Auswahl meist auf zwei oder dr
 
 ## Fazit
 
-Das beste CRM ist das, das Ihre Abläufe abbildet und im Alltag genutzt wird. Ein Wechsel lohnt sich selten wegen einzelner Funktionen, sondern dann, wenn das bestehende System Ihre Arbeitsweise grundsätzlich nicht abbilden kann. Oft lässt sich ein vorhandenes CRM mit klaren Phasen, wenigen Feldern und sauberen Verbindungen deutlich besser nutzen.`
+Das beste CRM ist das, das Ihre Abläufe abbildet und im Alltag genutzt wird. Ein Wechsel lohnt sich selten wegen einzelner Funktionen. Er lohnt sich dann, wenn das bestehende System Ihre Arbeitsweise grundsätzlich nicht abbilden kann. Oft lässt sich ein vorhandenes CRM mit klaren Phasen, wenigen Feldern und sauberen Verbindungen deutlich besser nutzen.`
   },
   {
     id: 'blog-martech-open-source-lizenz',
@@ -118,7 +118,7 @@ Manche Anbieter veröffentlichen ihren Code, schränken die Nutzung aber ein. Da
 
 ## Kosten über mehrere Jahre vergleichen
 
-Vergleichen Sie nicht nur den Monatspreis, sondern die Kosten über drei bis fünf Jahre. Ein Rechenbeispiel mit angenommenen Werten:
+Vergleichen Sie die Kosten über drei bis fünf Jahre statt nur den Monatspreis. Ein Rechenbeispiel mit angenommenen Werten:
 
 - Gemietete Lösung: 10 Nutzerinnen und Nutzer zu CHF 50 pro Monat ergeben CHF 6'000 pro Jahr.
 - Selbst betriebene Lösung: Server und Sicherung für CHF 50 pro Monat, dazu zwei Stunden Pflege pro Monat und eine einmalige Einrichtung.
@@ -137,7 +137,7 @@ Eine selbst betriebene Lösung kann in einem Rechenzentrum in der Schweiz laufen
 
 ## Fazit
 
-Die Frage ist nicht, ob Open Source oder Lizenz besser ist, sondern was zu Ihren Abläufen, Ihrem Budget und Ihrer Betreuung passt. Prüfen Sie die Lizenz, rechnen Sie über mehrere Jahre und klären Sie den Speicherort der Daten.`
+Weder Open Source noch Lizenz ist grundsätzlich besser. Entscheidend ist, was zu Ihren Abläufen, Ihrem Budget und Ihrer Betreuung passt. Prüfen Sie die Lizenz, rechnen Sie über mehrere Jahre und klären Sie den Speicherort der Daten.`
   },
   {
     id: 'blog-martech-daten-einmal-erfassen',
@@ -194,7 +194,7 @@ Ein KI-Agent, der Anfragen einordnen oder Kunden recherchieren soll, braucht sau
 
 - **Grundlage:** saubere Daten, ein führendes System für Kundendaten und klar beschriebene Abläufe
 - **Verbindungen:** Systeme, die Daten automatisch austauschen, statt dass jemand sie kopiert
-- **KI-Anwendungen und Agenten:** Werkzeuge, die auf dieser Grundlage Vorarbeit leisten oder ganze Abläufe übernehmen
+- **KI-Anwendungen und Agenten:** Werkzeuge, die auf dieser Grundlage Vorarbeit leisten oder wiederkehrende Abläufe übernehmen
 
 Wer mit der dritten Ebene beginnt, baut auf Sand.
 
@@ -223,7 +223,7 @@ Zuerst eine Inventur des Stacks, dann die wichtigsten Verbindungen, dann die ers
 
 ## Fazit
 
-KI ist kein Ersatz für einen aufgeräumten Stack, sondern der Grund, ihn endlich aufzuräumen. Wer die Grundlage schafft, kann danach Agenten einsetzen, die tatsächlich Arbeit abnehmen.`
+KI ersetzt keinen aufgeräumten Stack, sie ist aber ein guter Anlass, ihn aufzuräumen. Wer die Grundlage schafft, kann danach Agenten einsetzen, die tatsächlich Arbeit abnehmen.`
   },
   {
     id: 'guide-b2b-playbook-2026',
@@ -271,7 +271,7 @@ Starten Sie lieber mit einem oder zwei Kanälen, die Sie sauber betreuen, als mi
 
 ## 4. Gemeinsame Kennzahlen für Marketing und Vertrieb
 
-Marketing sollte sich nicht an Klicks messen, sondern daran, wie viele qualifizierte Anfragen und Abschlüsse entstehen. Dafür braucht es ein CRM, in dem jede Anfrage mit ihrer Herkunft erfasst wird, und ein einfaches gemeinsames Reporting.
+Marketing sollte sich daran messen, wie viele qualifizierte Anfragen und Abschlüsse entstehen, und nicht an Klicks. Dafür braucht es ein CRM, in dem jede Anfrage mit ihrer Herkunft erfasst wird, und ein einfaches gemeinsames Reporting.
 
 Vereinbaren Sie ausserdem, wie schnell der Vertrieb auf neue Anfragen reagiert. Wer sich erst nach Tagen meldet, trifft oft auf einen Interessenten, der bereits mit jemand anderem spricht.
 
@@ -353,7 +353,7 @@ Statt Wissen hinter Formularen zu verstecken, zeigen Sie es offen. Erklären Sie
 
 Dieser Ansatz wird oft als Demand Generation bezeichnet, auf Deutsch: Nachfrage aufbauen. Die Anfragen kommen unter Umständen seltener, sind aber meist besser vorbereitet. Im Erstgespräch müssen Sie weniger erklären und können schneller über die konkrete Situation sprechen.
 
-## Heisst das: keine Formulare mehr?
+## Heisst das, keine Formulare mehr?
 
 Nein. Ein Kontaktformular oder eine Terminbuchung braucht es weiterhin. Der Unterschied liegt darin, wofür Sie Kontaktdaten verlangen. Wer ein Gespräch möchte, gibt seine Daten gerne an. Wer nur eine Checkliste lesen will, sollte das ohne Anmeldung können.
 
