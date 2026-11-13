@@ -105,7 +105,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         title: 'Ihr Team spricht mit den passenden Interessenten.',
-        desc: 'Die Projektseite fragt vorab Einzugstermin, Haushaltsgrösse und Budget ab. Jede Anfrage wird automatisch auf Vollständigkeit und Passung zum Wohnungsangebot geprüft. Passende Interessenten erhalten freie Besichtigungstermine zur Auswahl, die anderen eine freundliche Antwort, ohne dass jemand telefonieren muss. Wer die Wohnung bekommt, entscheiden Sie.',
+        desc: 'Die Projektseite fragt vorab Einzugstermin, Haushaltsgrösse und Budget ab. Feste Regeln prüfen jede Anfrage auf Vollständigkeit und Passung zum Wohnungsangebot. Passende Interessenten erhalten freie Besichtigungstermine zur Auswahl, die anderen eine freundliche Antwort, beides mit Texten, die Sie einmal als Vorlage freigeben. Wer die Wohnung bekommt, entscheiden Sie.',
       },
       {
         title: 'Sie erreichen Menschen, die noch nicht auf den Portalen suchen.',
@@ -161,7 +161,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
     ],
     scopeNote:
-      'Das Bewerbungsdossier, die Bonitätsprüfung und den Mietvertrag übernehmen Sie oder Ihre Verwaltung wie bisher. Wir sorgen dafür, dass genug passende Interessenten dort ankommen. Die automatische Prüfung sortiert nach Kriterien vor, die Sie festlegen. Wer den Mietvertrag erhält, entscheiden Sie.',
+      'Das Bewerbungsdossier, die Bonitätsprüfung und den Mietvertrag übernehmen Sie oder Ihre Verwaltung wie bisher. Wir sorgen dafür, dass genug passende Interessenten dort ankommen. Die Prüfung nach festen Regeln sortiert nach Kriterien vor, die Sie festlegen. Wer den Mietvertrag erhält, entscheiden Sie.',
     example: {
       heading: 'Was ein Monat Leerstand kostet',
       text: "Ein Beispiel: Ein Projekt mit 40 Wohnungen und einer durchschnittlichen Miete von CHF 1'800 verliert pro Monat Leerstand über alle Wohnungen CHF 72'000 Mietertrag. Wird das Projekt einen Monat früher voll vermietet, bleibt dieser Betrag beim Eigentümer.",
@@ -388,7 +388,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         q: 'Schreibt eine KI in unserem Namen an Eigentümer?',
-        a: 'Nicht ohne Ihre Freigabe. Ein Sprachmodell fasst Anfragen zusammen und entwirft Nachfass-Nachrichten, versendet wird erst, wenn Sie oder Ihr Team den Entwurf geprüft haben. Feste Abläufe wie die Eingangsbestätigung und Erinnerungen laufen automatisch, mit Texten, die Sie einmal freigeben.',
+        a: 'Nicht ohne Ihre Freigabe. Ein Sprachmodell fasst Anfragen zusammen und entwirft Nachfass-Nachrichten, versendet wird erst, wenn Sie oder Ihr Team den Entwurf geprüft haben. Feste Abläufe wie die Eingangsbestätigung und Erinnerungen laufen automatisch, mit Texten, die Sie einmal als Vorlage freigeben.',
       },
       {
         q: 'Lässt sich unsere Maklersoftware anbinden?',

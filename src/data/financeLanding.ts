@@ -126,7 +126,7 @@ export const BUILDING_BLOCKS: { title: string; desc: string; points: string[] }[
   },
   {
     title: 'Nachfassen',
-    desc: 'Damit keine Anfrage liegen bleibt und Sie vorbereitet ins Erstgespräch gehen. KI fasst Anfragen zusammen und bereitet Entwürfe vor. Was hinausgeht, geben Sie frei.',
+    desc: 'Damit keine Anfrage liegen bleibt und Sie vorbereitet ins Erstgespräch gehen. KI fasst Anfragen zusammen und bereitet Entwürfe vor. Standardtexte wie die Bestätigung geben Sie einmal als Vorlage frei, alles andere vor dem Versand.',
     points: [
       'Sofortige Benachrichtigung mit Zusammenfassung der Anfrage',
       'Bestätigung an Ihre Interessenten mit einem Text, den Sie einmal freigeben',
@@ -342,7 +342,7 @@ const FAQ = {
   },
   ki: {
     q: 'Setzen Sie KI ein, und spricht sie mit meinen Interessenten?',
-    a: 'KI arbeitet bei uns im Hintergrund, nie im Kundenkontakt. Feste Regeln übernehmen die Übergabe ins CRM, die Bestätigung und die Erinnerungen. Ein Sprachmodell fasst Anfragen zusammen, ordnet sie Ihrem Beratungsthema zu und stellt vor dem Erstgespräch eine kurze Recherche bereit. Es berät niemanden und schreibt Ihren Interessenten nicht selbständig. Nachfass-Entwürfe gehen erst hinaus, wenn Sie oder Ihr Team sie freigegeben haben.',
+    a: 'KI arbeitet bei uns im Hintergrund, nie im Kundenkontakt. Feste Regeln übernehmen die Übergabe ins CRM, die Bestätigung und die Erinnerungen, mit Texten, die Sie einmal als Vorlage freigeben. Ein Sprachmodell fasst Anfragen zusammen und ordnet sie Ihrem Beratungsthema zu, und vor dem Erstgespräch stellt ein Agent eine kurze Recherche bereit. Beide beraten niemanden und schreiben Ihren Interessenten nicht selbständig. Nachfass-Entwürfe und alle anderen Nachrichten gehen erst hinaus, wenn Sie oder Ihr Team sie freigegeben haben.',
   },
   agentur: {
     q: 'Wir haben schon eine Agentur oder einen Webdesigner. Geht das trotzdem?',

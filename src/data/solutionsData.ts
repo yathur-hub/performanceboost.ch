@@ -74,7 +74,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Vorbereitete Erstgespräche',
-        desc: 'Ein Beispiel: Vor dem Termin fasst ein Agent die Angaben aus dem Formular und den bisherigen Kontakt zu einer kurzen Gesprächsnotiz zusammen. Die Beratung und jede Empfehlung bleiben bei Ihnen.'
+        desc: 'Vor dem Termin trägt ein Agent die Angaben aus dem Formular, den bisherigen Kontakt im CRM und öffentliche Informationen etwa zur Firma des Interessenten zu einer kurzen Gesprächsnotiz zusammen. Die Beratung und jede Empfehlung bleiben bei Ihnen.'
       }
     ],
     benefits: [
@@ -94,7 +94,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Wo setzen Sie in der Finanzberatung KI ein und wo nicht?',
-        a: 'Bei der Vorarbeit, etwa beim Vorbereiten von Gesprächsnotizen oder beim Entwerfen von Inhalten. Beratung und Produktempfehlungen bleiben bei Ihnen, und kein Text geht ohne Freigabe hinaus. Personendaten bearbeiten wir nach dem Schweizer Datenschutzgesetz (DSG), mit geregelten Zugriffsrechten und protokollierten Abläufen.'
+        a: 'Bei der Vorarbeit, etwa beim Vorbereiten von Gesprächsnotizen oder beim Entwerfen von Inhalten. Beratung und Produktempfehlungen bleiben bei Ihnen, und kein Text geht ohne Freigabe hinaus. Die Gesprächsnotiz liegt in Ihrem CRM, und ein Sprachmodell sieht nur die Angaben, die Sie dafür freigeben. Personendaten bearbeiten wir nach dem Schweizer Datenschutzgesetz (DSG), mit geregelten Zugriffsrechten und protokollierten Abläufen.'
       }
     ]
   },
@@ -122,7 +122,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Durchgehende Messung bis zum Abschluss',
-        desc: 'Wir verbinden Website-Tracking, Produktnutzung und CRM, damit Sie Anfragen, Verkaufschancen und Umsatz an einem Ort sehen. Diese Daten sind die Grundlage für alles, was später automatisch läuft.'
+        desc: 'Wir verbinden Website-Tracking, Produktnutzung und CRM, damit Sie Anfragen, Verkaufschancen und Umsatz an einem Ort sehen. Das CRM bleibt das führende System für Kontakte und Verkaufschancen, auf dessen Daten später jede Regel und jeder Agent aufbaut.'
       },
       {
         step: '02',
@@ -132,7 +132,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Begleitung nach Verhalten',
-        desc: 'Testnutzer erhalten Nachrichten je nachdem, was sie im Produkt tun oder auslassen. Standardschritte laufen als feste Abläufe, persönliche Nachfassmails entwirft KI, und versendet werden sie nach Freigabe.'
+        desc: 'Testnutzer erhalten Nachrichten je nachdem, was sie im Produkt tun oder auslassen. Standardschritte laufen als feste Abläufe mit Texten, die Sie einmal als Vorlage freigeben. Persönliche Nachfassmails entwirft KI, versendet werden sie nach Freigabe.'
       }
     ],
     benefits: [
@@ -152,7 +152,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Kann ein Agent Testnutzer selbständig anschreiben?',
-        a: 'Technisch ja, wir empfehlen es aber nur in eng gefassten Fällen. Standardnachrichten laufen als fester Ablauf, der zuverlässig und günstig ist. Persönliche Nachrichten entwirft ein Agent, versendet werden sie nach Freigabe. Welche Daten er dafür lesen darf, legen wir mit Ihnen fest.'
+        a: 'So richten wir es nicht ein. Standardnachrichten laufen als fester Ablauf mit Texten, die Sie einmal als Vorlage freigeben, das ist zuverlässig und günstig. Persönliche Nachrichten entwirft ein Agent aus Produktnutzung und CRM, versendet werden sie nach Freigabe. Welche Nutzungsdaten er dafür lesen darf, legen wir mit Ihnen fest.'
       }
     ]
   },
@@ -185,12 +185,12 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Vorqualifizierung online',
-        desc: 'Interessenten geben vorab Budget, gewünschten Einzugstermin und weitere relevante Angaben an. Feste Regeln sortieren die Anfragen, und passende Personen erhalten automatisch eine Einladung zur Besichtigung.'
+        desc: 'Interessenten geben vorab Budget, gewünschten Einzugstermin und weitere relevante Angaben an. Feste Regeln sortieren die Anfragen nach Kriterien, die Sie festlegen, und passende Personen erhalten automatisch eine Einladung zur Besichtigung, mit einem Text, den Sie einmal als Vorlage freigeben.'
       },
       {
         step: '03',
         title: 'Vorgeprüfte Dossiers',
-        desc: 'Ein Beispiel: Eingereichte Bewerbungsunterlagen werden KI-unterstützt auf Vollständigkeit geprüft, und für fehlende Dokumente liegt ein Entwurf der Nachforderung bereit. Über Zusage oder Absage entscheidet Ihr Team.'
+        desc: 'Ein Beispiel: Ein Modell prüft eingereichte Bewerbungsunterlagen auf Vollständigkeit, und für fehlende Dokumente liegt ein Entwurf der Nachforderung bereit. Voraussetzung ist, dass Speicherort und Zugriff für diese sensiblen Unterlagen geklärt sind. Über Zusage oder Absage entscheidet Ihr Team.'
       }
     ],
     benefits: [
@@ -268,7 +268,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Belege, die vorsortiert ankommen',
-        desc: 'Ein Beispiel: Mandanten laden Unterlagen hoch, ein Modell erkennt die Dokumentart und liest Felder wie Datum, Betrag und Lieferant aus. Ihr Team prüft den Vorschlag und bucht. Unklare Belege landen in einer eigenen Liste statt im Stapel.'
+        desc: 'Ein Beispiel: Mandanten laden Unterlagen hoch, ein Modell erkennt die Dokumentart und liest Felder wie Datum, Betrag und Lieferant aus. Ihr Team prüft den Vorschlag in der Buchhaltungssoftware und bucht. Unklare Belege landen in einer eigenen Liste statt im Stapel. Wo die Belege verarbeitet werden, legen wir vorab mit Ihnen fest.'
       }
     ],
     benefits: [
@@ -290,7 +290,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Bucht die KI dann selbständig?',
-        a: 'Nein. Die Software schlägt Dokumentart und Werte vor, die Buchung und jede fachliche Beurteilung bleiben bei Ihrem Team. Wir legen fest, wo die Daten verarbeitet werden, wer Zugriff hat und wie jeder Schritt protokolliert wird. Das ist die Grundlage für die Vertraulichkeit Ihrer Mandantendaten und für den Datenschutz nach DSG.'
+        a: 'Nein. Das Modell schlägt Dokumentart und Werte vor, die Buchung und jede fachliche Beurteilung bleiben bei Ihrem Team. Wir legen fest, wo die Daten verarbeitet werden, wer Zugriff hat und wie jeder Schritt protokolliert wird. Das ist die Grundlage für die Vertraulichkeit Ihrer Mandantendaten und für den Datenschutz nach DSG.'
       },
       {
         q: 'Unterstützen Sie Büros auch bei der Suche nach Fachkräften?',
@@ -332,7 +332,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Nachfassen im CRM',
-        desc: 'Wir richten klare Verkaufsphasen und automatische Wiedervorlagen für Offerten ein. Zur Wiedervorlage liegt ein Entwurf für die Nachfassmail bereit, den der Verkäufer anpasst und selbst versendet.'
+        desc: 'Wir richten klare Verkaufsphasen ein, und Wiedervorlagen für Offerten laufen als feste Regel im CRM. Zur Wiedervorlage legt KI einen Entwurf für die Nachfassmail bereit, den der Verkäufer anpasst und selbst versendet.'
       }
     ],
     benefits: [
@@ -390,7 +390,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Servicebedarf bei Bestandskunden erkennen',
-        desc: 'Ein Beispiel: Ein Agent wertet Tickets und Einsätze der letzten Monate aus und zeigt, welche Kunden regelmässig Hilfe auf Abruf brauchen. Ob und wie Sie ihnen einen Vertrag anbieten, entscheidet Ihr Team.'
+        desc: 'Ein Beispiel: Feste Regeln zählen Tickets und Einsätze der letzten Monate pro Kunde, ein Modell fasst die Anliegen zusammen. So sehen Sie, wer regelmässig Hilfe auf Abruf braucht. Voraussetzung ist ein Lesezugriff auf Ihr Ticketsystem. Ob und wie Sie einen Vertrag anbieten, entscheidet Ihr Team.'
       }
     ],
     benefits: [
@@ -409,8 +409,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
         a: 'Ja. Wir entwickeln mit Ihnen ein Vorgehen und passende Argumente, um Projektkunden schrittweise für einen laufenden Vertrag zu gewinnen.'
       },
       {
-        q: 'Dürfen Agenten auf unser Ticketsystem und Kundendaten zugreifen?',
-        a: 'Nur lesend und nur auf das, was für die Auswertung nötig ist. Wir richten eigene Zugänge mit eng gefassten Rechten ein, protokollieren die Abfragen und klären mit Ihnen, welche Kundendaten ein Sprachmodell überhaupt sehen darf. Den Rahmen setzen Ihre Kundenverträge und das Datenschutzgesetz.'
+        q: 'Greift das System auf unser Ticketsystem und Kundendaten zu?',
+        a: 'Nur auf Ihren Wunsch, nur lesend und nur auf das, was für die Auswertung nötig ist. Wir richten eigene Zugänge mit eng gefassten Rechten ein, protokollieren die Abfragen und klären mit Ihnen, welche Kundendaten ein Sprachmodell überhaupt sehen darf. Den Rahmen setzen Ihre Kundenverträge und das Datenschutzgesetz.'
       }
     ]
   },
@@ -443,7 +443,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Passende Projekte früh sehen',
-        desc: 'Ein Beispiel: Ein Agent sichtet öffentliche Ausschreibungen und Baugesuche, ordnet sie nach Ihren Schwerpunkten und Regionen und fasst die relevanten einmal pro Woche zusammen. Ob Sie sich bewerben oder einen Bauherrn ansprechen, entscheiden Sie.'
+        desc: 'Ein Beispiel: Ein fester Ablauf holt neue Ausschreibungen und Baugesuche aus den angebundenen Quellen, ein Modell ordnet sie nach Ihren Schwerpunkten und Regionen ein und fasst die relevanten einmal pro Woche zusammen. Welche Quellen sich anbinden lassen, klären wir vorab. Ob Sie sich bewerben oder einen Bauherrn ansprechen, entscheiden Sie.'
       },
       {
         step: '03',
@@ -476,7 +476,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'personalvermittler-recruiting',
     title: 'Personalvermittler & Recruiting',
     subtitle: 'Mehr Suchmandate und passende Kandidaten für Ihre Vermittlung',
-    heroDesc: 'Für Personalvermittler gewinnen wir Suchaufträge von Arbeitgebern und erreichen die Fachkräfte, die zu diesen Stellen passen. Dahinter steht eine Kandidatendatenbank, die Lebensläufe strukturiert erfasst und zu jedem Auftrag passende Profile vorschlägt, damit Sie schneller besetzen.',
+    heroDesc: 'Für Personalvermittler gewinnen wir Suchaufträge von Arbeitgebern und erreichen die Fachkräfte, die zu diesen Stellen passen. Dahinter richten wir eine Kandidatendatenbank ein, in der Lebensläufe strukturiert erfasst sind, damit Sie bei einem neuen Auftrag zuerst in den eigenen Profilen suchen.',
     calculatorComponent: 'PlacementEffizienzRechner',
     problems: [
       {
@@ -501,12 +501,12 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Lebensläufe strukturiert erfassen',
-        desc: 'Eingehende Bewerbungen werden KI-unterstützt ausgelesen. Fähigkeiten, Erfahrung, Region und Verfügbarkeit stehen danach als Felder in Ihrem System statt in einem PDF. Ihr Team prüft und ergänzt die Angaben.'
+        desc: 'Eingehende Bewerbungen werden KI-unterstützt ausgelesen. Fähigkeiten, Erfahrung, Region und Verfügbarkeit stehen danach als Felder in Ihrer Kandidatendatenbank statt in einem PDF. Welche Angaben ausgelesen werden und wo die Daten verarbeitet werden, legen wir vorher mit Ihnen fest. Ihr Team prüft die Angaben, Löschfristen laufen als feste Regel.'
       },
       {
         step: '03',
         title: 'Vorschläge für das Matching',
-        desc: 'Ein Beispiel: Zu einem neuen Suchauftrag schlägt das System passende Kandidaten aus Ihrer Datenbank vor und begründet jeden Vorschlag. Wen Sie ansprechen und dem Kunden vorstellen, entscheiden Ihre Beraterinnen und Berater.'
+        desc: 'Ein Beispiel: Zu einem neuen Suchauftrag schlägt das System Kandidaten aus Ihrer Datenbank vor, die zu den Kriterien des Auftrags passen, und begründet jeden Vorschlag. Die Kriterien legen Sie fest. Wen Sie ansprechen und dem Kunden vorstellen, entscheiden Ihre Beraterinnen und Berater.'
       }
     ],
     benefits: [
@@ -518,11 +518,11 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     faqs: [
       {
         q: 'Wie sprechen wir passive Kandidaten an, ohne unseriös zu wirken?',
-        a: 'Mit einem professionellen Auftritt und nützlichen Inhalten, zum Beispiel Lohnvergleichen oder Marktberichten. Kandidaten in Ihrer Datenbank erhalten regelmässig solche Informationen, damit Sie im richtigen Moment präsent sind. Diskretion steht dabei an erster Stelle.'
+        a: 'Mit einem professionellen Auftritt und nützlichen Inhalten, zum Beispiel Lohnvergleichen oder Marktberichten. Kandidaten in Ihrer Datenbank, die zugestimmt haben, erhalten regelmässig solche Informationen, damit Sie im richtigen Moment präsent sind. Diskretion steht dabei an erster Stelle.'
       },
       {
         q: 'Entscheidet die KI, wer weiterkommt?',
-        a: 'Nein. Das System macht Vorschläge mit Begründung, die Auswahl treffen Ihre Beraterinnen und Berater. Die Kriterien legen Sie fest, Merkmale wie Alter oder Herkunft gehören nicht dazu. Wir prüfen die Vorschläge mit echten Fällen, damit sie nachvollziehbar bleiben. Kandidatendaten bearbeiten wir nach dem Datenschutzgesetz, mit klaren Zugriffsrechten und Löschfristen.'
+        a: 'Nein. Das System macht Vorschläge mit Begründung, die Auswahl treffen Ihre Beraterinnen und Berater. Die Kriterien legen Sie fest, Merkmale wie Alter oder Herkunft gehören nicht dazu. Vor dem Einsatz testen wir die Vorschläge mit abgeschlossenen Suchaufträgen, damit Sie sehen, wie sie zustande kommen. Kandidatendaten bearbeiten wir nach dem Datenschutzgesetz, mit klaren Zugriffsrechten und Löschfristen.'
       },
       {
         q: 'Funktioniert das auch für Executive Search?',
@@ -580,7 +580,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Beantwortet dann ein Chatbot unsere Interessenten?',
-        a: 'Nur wenn Sie das möchten und die Fragen klar abgegrenzt sind, etwa zu Daten, Ort und Anmeldeschluss. Bei Zulassung und Anrechnung empfehlen wir Entwürfe, die das Sekretariat freigibt. Die Antworten stützen sich auf Ihre eigenen Dokumente und werden mit echten Anfragen getestet, bevor sie im Einsatz sind.'
+        a: 'Nicht mit frei formulierten Antworten. Fragen zu Daten, Ort und Anmeldeschluss beantworten feste Antworten aus Ihren Kursdaten, deren Texte Sie einmal als Vorlage freigeben. Bei Zulassung und Anrechnung entstehen Entwürfe, die das Sekretariat prüft und versendet. Die Entwürfe stützen sich auf Ihre eigenen Reglemente und werden mit echten Anfragen getestet, bevor sie im Einsatz sind.'
       },
       {
         q: 'Wir bieten Nischenkurse an. Finden wir online genug Teilnehmende?',
@@ -617,12 +617,12 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Vorab-Fragebogen und Online-Termin',
-        desc: 'Patienten beantworten vor der Terminanfrage einige Fragen, etwa zum Anliegen und zur Versicherung, und buchen Erst- und Beratungstermine online. Die Angaben gehen strukturiert an die Praxis, ohne dass jemand sie aus einer E-Mail abschreibt.'
+        desc: 'Patienten beantworten vor der Terminanfrage einige Fragen, etwa zum Anliegen und zur Versicherung, und buchen Erst- und Beratungstermine online. Die Angaben gehen strukturiert in Ihre Praxissoftware, soweit diese eine Schnittstelle bietet, ohne dass jemand sie aus einer E-Mail abschreibt.'
       },
       {
         step: '03',
         title: 'Zuweisungen vorbereitet',
-        desc: 'Ein Beispiel: Bei Zuweisungsschreiben liest ein Modell administrative Angaben wie Zuweiser, Versicherung und gewünschten Fachbereich aus und legt sie zur Kontrolle bereit. Medizinische Einschätzungen bleiben vollständig bei Ihrem Fachpersonal.'
+        desc: 'Ein Beispiel: Bei Zuweisungsschreiben liest ein Modell administrative Angaben wie Zuweiser, Versicherung und gewünschten Fachbereich aus und legt sie zur Kontrolle bereit. Das setzt voraus, dass Verarbeitungsort, Zugriffsrechte und Vertrag mit dem Anbieter geklärt sind. Medizinische Einschätzungen bleiben vollständig bei Ihrem Fachpersonal.'
       }
     ],
     benefits: [
@@ -680,7 +680,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Offerte vorbereitet',
-        desc: 'Ein Beispiel: Ein Modell fasst die Anfrage zusammen, markiert fehlende Angaben und erstellt aus Ihren Standardpositionen einen ersten Offertentwurf. Sie prüfen, ergänzen und versenden. Wiedervorlagen für offene Offerten laufen automatisch im CRM.'
+        desc: 'Ein Beispiel: Ein Modell fasst die Anfrage zusammen, markiert fehlende Angaben und erstellt aus Ihren Standardpositionen einen ersten Offertentwurf. Sie prüfen, ergänzen und versenden. Wiedervorlagen für offene Offerten laufen als feste Regel im CRM.'
       }
     ],
     benefits: [
@@ -738,7 +738,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '03',
         title: 'Sachverhalt vorbereitet',
-        desc: 'Ein Beispiel: Aus der Schilderung im Formular und den hochgeladenen Unterlagen entsteht eine kurze, geordnete Zusammenfassung für die zuständige Anwältin oder den Anwalt. Fehlende Unterlagen werden automatisch angefordert. Die rechtliche Einschätzung bleibt bei Ihnen.'
+        desc: 'Ein Beispiel: Aus der Schilderung im Formular und den hochgeladenen Unterlagen entsteht eine kurze, geordnete Zusammenfassung für die zuständige Anwältin oder den Anwalt. Für fehlende Unterlagen liegt eine Nachforderung bereit, die Ihr Sekretariat vor dem Versand prüft. Die rechtliche Einschätzung bleibt bei Ihnen.'
       }
     ],
     benefits: [
@@ -787,7 +787,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Transportanfragen ohne Abtippen',
-        desc: 'Handels- und Industriefirmen geben Frachtvolumen, Rhythmus und Termine mit wenigen Klicks an. Ein Beispiel für Anfragen per E-Mail: Ein Modell liest Abholort, Ziel, Gewicht und Wunschtermin aus und legt sie der Disposition als Entwurf vor. Offeriert wird von Ihrem Team.'
+        desc: 'Handels- und Industriefirmen geben Frachtvolumen, Rhythmus und Termine mit wenigen Klicks an. Ein Beispiel für Anfragen per E-Mail: Ein Modell liest Abholort, Ziel, Gewicht und Wunschtermin aus und legt sie der Disposition als Entwurf in Ihrem Transportsystem vor, soweit dieses eine Schnittstelle hat. Offeriert wird von Ihrem Team.'
       },
       {
         step: '03',
@@ -845,7 +845,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Einfacher buchen, schneller antworten',
-        desc: 'Wir gestalten Ihre Website so, dass eine Direktbuchung mindestens so einfach ist wie auf einer Plattform. Ein Beispiel für Anfragen per E-Mail: Zu einer Gruppen- oder Seminaranfrage entsteht ein Antwortentwurf mit Verfügbarkeiten aus Ihrem Hotelsystem, den die Rezeption prüft und versendet.'
+        desc: 'Wir gestalten Ihre Website so, dass eine Direktbuchung mindestens so einfach ist wie auf einer Plattform. Ein Beispiel für Anfragen per E-Mail: Zu einer Gruppen- oder Seminaranfrage entsteht ein Antwortentwurf mit Verfügbarkeiten aus Ihrem Hotelsystem, den die Rezeption prüft und versendet. Voraussetzung ist, dass Ihr Hotelsystem diese Daten über eine Schnittstelle liefert.'
       },
       {
         step: '03',
@@ -866,7 +866,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Können wir unser Hotelsystem (PMS) wie Protel oder Mews anbinden?',
-        a: 'In der Regel ja. Wir binden die Buchungsmaschine Ihres Hauses so ein, dass Verfügbarkeiten und Preise aktuell bleiben. Die Details hängen von Ihrem System ab.'
+        a: 'Die Buchungsmaschine Ihres Hauses binden wir in der Regel so ein, dass Verfügbarkeiten und Preise auf der Website aktuell bleiben. Ob Ihr Hotelsystem auch Daten für Antwortentwürfe liefern kann, hängt von seinen Schnittstellen ab und wird vorab geprüft.'
       },
       {
         q: 'Antwortet dann eine KI unseren Gästen?',

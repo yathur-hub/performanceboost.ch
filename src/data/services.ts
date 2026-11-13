@@ -32,8 +32,8 @@ export const SERVICES: ServiceDetail[] = [
     id: 'demand-generation',
     title: 'Performance Marketing mit KI-Agenten',
     slug: 'demand-generation',
-    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn, die aus Aufträgen lernen und die ein Agent täglich überwacht.',
-    description: 'Wir planen und betreuen Ihr Performance Marketing auf LinkedIn, Google und Meta, abgestimmt mit Inhalten und Landingpages. Qualifizierte Anfragen und Aufträge fliessen aus dem CRM an die Werbekonten zurück, damit deren Gebotsalgorithmen auf Aufträge statt auf Klicks optimieren. Ein Agent überwacht die Kampagnen täglich, über Budget und Gebote entscheidet ein Mensch.',
+    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn, die aus Aufträgen lernen und täglich automatisch geprüft werden.',
+    description: 'Wir planen und betreuen Ihr Performance Marketing auf LinkedIn, Google und Meta, abgestimmt mit Inhalten und Landingpages. Qualifizierte Anfragen und Aufträge fliessen aus dem CRM an die Werbekonten zurück, wo die Plattform es zulässt, damit deren Gebotsalgorithmen auf Aufträge optimieren. Feste Prüfungen laufen täglich, bei Abweichungen schlägt ein agentischer Ablauf eine Massnahme vor. Über Budget und Gebote entscheidet ein Mensch.',
     benefits: [
       'Regelmässige Sichtbarkeit bei den Firmen und Personen, die für Sie relevant sind',
       'Kampagnen, die auf qualifizierte Anfragen optimieren statt auf Klicks',
@@ -42,8 +42,8 @@ export const SERVICES: ServiceDetail[] = [
     ],
     deliverables: [
       'Kampagnen-Setup auf LinkedIn, Google und Meta',
-      'Rückmeldung qualifizierter Anfragen aus dem CRM an die Werbekonten',
-      'Tägliche Überwachung mit Meldungen und Vorschlägen',
+      'Rückmeldung qualifizierter Anfragen aus dem CRM, wo die Plattform es zulässt',
+      'Tägliche Prüfung mit Ursachensuche und Vorschlägen',
       'Anzeigenvarianten, Testplan und monatliches Reporting'
     ],
     iconName: 'Megaphone',
@@ -51,7 +51,7 @@ export const SERVICES: ServiceDetail[] = [
     processSteps: [
       { title: 'Zielgruppe festlegen', desc: 'Wir legen fest, wen wir ansprechen: nach Funktion, Branche und Firmengrösse.' },
       { title: 'Messung und Signale', desc: 'Conversions definieren und die Rückmeldung aus dem CRM einrichten.' },
-      { title: 'Testphase', desc: 'Start mit aufgeteiltem Budget und täglicher Überwachung, um herauszufinden, welche Botschaften wirken.' },
+      { title: 'Testphase', desc: 'Start mit aufgeteiltem Budget und täglicher Prüfung, um herauszufinden, welche Botschaften wirken.' },
       { title: 'Ausbau', desc: 'Mehr Budget dort, wo die Kosten pro Anfrage stabil bleiben, nach Freigabe.' }
     ]
   },
@@ -70,7 +70,7 @@ export const SERVICES: ServiceDetail[] = [
     deliverables: [
       'SEO- und GEO-Analyse mit Keyword- und Themenstruktur',
       'Landingpage mit Download-Angebot',
-      'Lead-Scoring und automatische Anreicherung neuer Anfragen',
+      'Lead-Scoring mit Begründung und automatische Anreicherung neuer Anfragen',
       'Recherche und Nachrichtenentwürfe für die Direktansprache'
     ],
     iconName: 'Users',
@@ -140,18 +140,18 @@ export const SERVICES: ServiceDetail[] = [
     id: 'revenue-operations',
     title: 'Agentic Revenue Operations (RevOps)',
     slug: 'revenue-operations',
-    shortDesc: 'Gemeinsame Zahlen, Definitionen und Abläufe für Marketing und Vertrieb, mit automatischen Prüfungen und Agenten für Datenqualität und Pipeline.',
-    description: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir legen gemeinsame Definitionen und Kennzahlen fest und verbinden Ihre Systeme so, dass Übergaben automatisch funktionieren. Darauf prüfen feste Regeln und Agenten laufend Datenqualität und Pipeline, Korrekturen gibt Ihr Team frei.',
+    shortDesc: 'Gemeinsame Zahlen, Definitionen und Abläufe für Marketing und Vertrieb, mit festen Prüfungen für Datenqualität und Pipeline und einem Agenten für unklare Fälle.',
+    description: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir legen gemeinsame Definitionen und Kennzahlen fest und verbinden Ihre Systeme so, dass Übergaben automatisch funktionieren. Darauf prüfen feste Regeln laufend Datenqualität und Pipeline, unklare Fälle bereitet ein Agent auf, Korrekturen gibt Ihr Team frei.',
     benefits: [
       'Überblick, welche Kunden über die Zeit wie viel Umsatz bringen',
       'Daten im CRM, auf die sich Menschen und Automatisierungen verlassen können',
-      'Verlässlichere Umsatzprognosen für die Geschäftsleitung',
+      'Umsatzprognosen, deren Herleitung die Geschäftsleitung nachvollziehen kann',
       'Stillstehende Verkaufschancen fallen auf, bevor sie verloren sind'
     ],
     deliverables: [
       'Gemeinsame Definitionen und Kennzahlen-Dashboard',
       'Automatische Prüfungen für Datenqualität und Übergaben',
-      'Wöchentliche Pipeline-Zusammenfassung durch einen Agenten',
+      'Wöchentliche Pipeline-Zusammenfassung mit Hinweisen auf stehende Chancen',
       'Plan zur Bereinigung der Tool-Landschaft und Prozess-Handbuch'
     ],
     iconName: 'Layers',
@@ -172,7 +172,7 @@ export const SERVICES: ServiceDetail[] = [
     benefits: [
       'Ein Team, das KI sicher und wirksam einsetzt, statt jede Person für sich',
       'Abläufe, in denen KI fest eingeplant ist und nicht nebenher läuft',
-      'Klarheit darüber, welche Daten in welches Tool dürfen',
+      'Freigegebene Tools und klare Datenregeln statt Schatten-KI',
       'KI-Lizenzen, deren Nutzen Sie pro Fall beziffern können',
     ],
     deliverables: [
@@ -197,7 +197,7 @@ export const SERVICES: ServiceDetail[] = [
     shortDesc: 'KI-Agenten, die Anfragen prüfen, Firmen recherchieren und das Nachfassen vorbereiten, mit begrenzten Rechten und Freigabe durch Ihr Team.',
     description: 'Ein KI-Agent erledigt eine Aufgabe über mehrere Schritte und Systeme, etwa eine Anfrage prüfen und einordnen, das Unternehmen recherchieren, alles ins CRM eintragen und eine Antwort vorbereiten. Er arbeitet nur mit den Rechten, die er dafür braucht, jeder Schritt wird protokolliert, und bevor etwas nach aussen geht, gibt Ihr Team frei. Wo ein fester Workflow reicht, empfehlen wir den Workflow.',
     benefits: [
-      'Anfragen liegen nicht mehr übers Wochenende, sondern sind am Montag geprüft und vorbereitet',
+      'Anfragen vom Wochenende sind am Montag geprüft und vorbereitet',
       'Ihr Team prüft und entscheidet, statt abzutippen und zu suchen',
       'Jeder Schritt ist protokolliert, die Kosten pro Fall sind bekannt',
       'Abläufe, die nicht an einzelnen Personen hängen',
@@ -206,7 +206,7 @@ export const SERVICES: ServiceDetail[] = [
       'Agenten für zwei bis drei klar definierte Abläufe',
       'Rechte, Limits und Freigabestufen pro Agent',
       'Anbindung an CRM, E-Mail und Website',
-      'Tests mit echten Fällen, Monitoring und Einweisung Ihres Teams',
+      'Testset mit echten Fällen, Testphase mit Vorschlägen, Monitoring und Einweisung',
     ],
     iconName: 'Bot',
     metrics: [],
@@ -248,18 +248,18 @@ export const SERVICES: ServiceDetail[] = [
     id: 'data-analytics',
     title: 'Tracking, Attribution & Reporting',
     slug: 'data-analytics',
-    shortDesc: 'Datenschutzkonformes Tracking, Attribution und Berichte, die zeigen, welche Kanäle Kunden bringen, und die Werbealgorithmen mit den richtigen Signalen versorgen.',
-    description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit Server-Side Tagging (die Messdaten laufen zuerst über einen eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. Qualifizierte Anfragen und Aufträge gehen an Google, Meta und LinkedIn zurück, feste Regeln prüfen täglich, ob die Messung funktioniert, und ein Modell ordnet Auffälligkeiten ein.',
+    shortDesc: 'Tracking mit geklärter Einwilligung, Attribution und Berichte, die zeigen, welche Kanäle Kunden bringen, und den Werbealgorithmen bessere Signale geben.',
+    description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten Tracking mit geklärter Einwilligung ein, nach Schweizer DSG und, wo nötig, DSGVO, etwa mit Server-Side Tagging (die Messdaten laufen zuerst über einen eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. Qualifizierte Anfragen und Aufträge gehen an Google, Meta und LinkedIn zurück, wo die Plattform es zulässt. Feste Regeln prüfen täglich, ob die Messung funktioniert, und ein Modell ordnet Auffälligkeiten ein.',
     benefits: [
       'Berichte, die Umsatz zuordnen, statt nur den letzten Klick zu zählen',
-      'Tracking im Rahmen von Schweizer DSG und DSGVO',
+      'Einwilligung und Datenweitergabe nach DSG und, wo nötig, DSGVO geklärt',
       'Bessere Signale für die Gebotsalgorithmen von Google, Meta und LinkedIn',
       'Ausfälle in der Messung fallen am selben Tag auf'
     ],
     deliverables: [
       'Serverseitiges Google Tag Manager Setup',
       'Saubere Einrichtung von GA4 oder Matomo inklusive Dashboards',
-      'Rückmeldung von Anfragen und Aufträgen an Google, Meta und LinkedIn',
+      'Rückmeldung von Anfragen und Aufträgen an Google, Meta und LinkedIn, wo zulässig',
       'Tägliche automatische Prüfung und Bericht für die Geschäftsleitung'
     ],
     iconName: 'PieChart',
@@ -267,7 +267,7 @@ export const SERVICES: ServiceDetail[] = [
     processSteps: [
       { title: 'Tracking- und Cookie-Check', desc: 'Prüfung des Cookie-Banners, der Einwilligungen und der bestehenden Messung.' },
       { title: 'Serverseitiges Tracking', desc: 'Einrichtung eines eigenen Tracking-Servers, z. B. bei Google Cloud oder AWS.' },
-      { title: 'Umsatz zuordnen und zurückmelden', desc: 'Verkäufe aus dem CRM werden mit den Kampagnen verknüpft und an die Werbekonten übermittelt.' },
+      { title: 'Umsatz zuordnen und zurückmelden', desc: 'Verkäufe aus dem CRM werden mit den Kampagnen verknüpft und, wo die Plattform es zulässt, an die Werbekonten übermittelt.' },
       { title: 'Dashboards und Prüfungen', desc: 'Übersichtliche Berichte in Looker Studio und tägliche Kontrolle der Messung.' }
     ]
   },
@@ -275,8 +275,8 @@ export const SERVICES: ServiceDetail[] = [
     id: 'ecommerce-performance',
     title: 'E-Commerce Performance',
     slug: 'ecommerce-performance',
-    shortDesc: 'Mehr Käufe aus bestehendem Traffic: Shop-Optimierung, Wiederkäufe und Werbung, die nach Marge steuert und täglich überwacht wird.',
-    description: 'Wir verbessern Ihren Online-Shop dort, wo Umsatz verloren geht, mit weniger Kaufabbrüchen, grösseren Warenkörben und mehr Kunden, die wieder bestellen. Shop, Werbekonten und Warenkosten verbinden wir so, dass Google und Meta nach Marge optimieren und Abweichungen täglich auffallen. Produkttexte und Feeds entstehen mit KI-Unterstützung und festen Prüfregeln. Jede Massnahme messen wir.',
+    shortDesc: 'Mehr Käufe aus bestehendem Traffic: Shop-Optimierung, Wiederkäufe und Werbung, die nach Marge steuert und täglich geprüft wird.',
+    description: 'Wir verbessern Ihren Online-Shop dort, wo Umsatz verloren geht, mit weniger Kaufabbrüchen, grösseren Warenkörben und mehr Kunden, die wieder bestellen. Shop, Werbekonten und Warenkosten verbinden wir so, dass Abweichungen täglich auffallen und Google und Meta nach Marge optimieren, sofern Margen im Shop oder ERP verfügbar sind. Produkttexte und Feeds entstehen mit KI-Unterstützung und festen Prüfregeln. Jede Massnahme messen wir.',
     benefits: [
       'Höhere Kaufquote durch Änderungen, die auf Daten beruhen',
       'Werbebudget fliesst in Kampagnen, die pro Franken am meisten Deckungsbeitrag bringen',
@@ -286,15 +286,15 @@ export const SERVICES: ServiceDetail[] = [
     deliverables: [
       'Optimierung von Produktseiten und Checkout',
       'Automatische E-Mails für Wiederkäufe und Kundenbindung',
-      'Google Shopping und Performance Max mit Margenwerten',
-      'Serverseitiges Tracking, Feed-Prüfung und tägliche Überwachung'
+      'Google Shopping und Performance Max mit Margenwerten, sofern verfügbar',
+      'Serverseitiges Tracking, Feed-Prüfung und tägliche Kontrolle'
     ],
     iconName: 'ShoppingCart',
     metrics: [],
     processSteps: [
       { title: 'Analyse', desc: 'Wir suchen die Stellen, an denen Besucher den Kauf abbrechen.' },
       { title: 'Grundlagen schaffen', desc: 'Tracking reparieren, Margendaten anbinden, Produktfeeds bereinigen, erste E-Mail-Abläufe aufbauen.' },
-      { title: 'Testen & verbessern', desc: 'A/B-Tests auf Produkt- und Checkout-Seiten, tägliche Überwachung der Kennzahlen.' },
+      { title: 'Testen & verbessern', desc: 'A/B-Tests auf Produkt- und Checkout-Seiten, tägliche Prüfung der Kennzahlen.' },
       { title: 'Ausbauen', desc: 'Mehr Budget für rentable Kanäle, weitere Kategorien und Märkte.' }
     ]
   },
@@ -303,7 +303,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Kundengewinnung für Online-Marken (D2C)',
     slug: 'dtc-growth-acquisition',
     shortDesc: 'Neukundengewinnung für Schweizer Online-Marken, mit laufend berechneten Kosten pro Kunde, Kundenwert und Marge.',
-    description: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine verlässliche Kundengewinnung. Oft fliesst viel Budget ohne klare Struktur in Meta, und über Google oder E-Mail kommt kaum etwas. Wir bauen eine Kundengewinnung auf mehreren Kanälen auf, verbinden Werbekonten mit Shop- und Kundendaten und testen Anzeigen in einem festen Rhythmus, bei dem KI Briefings vorbereitet und ein Agent nachlassende Anzeigen meldet.',
+    description: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine verlässliche Kundengewinnung. Oft fliesst viel Budget ohne klare Struktur in Meta, und über Google oder E-Mail kommt kaum etwas. Wir bauen eine Kundengewinnung auf mehreren Kanälen auf, verbinden Werbekonten mit Shop- und Kundendaten und testen Anzeigen in einem festen Rhythmus, bei dem KI Briefings vorbereitet und feste Regeln nachlassende Anzeigen melden.',
     benefits: [
       'Sie kennen Ihre Kosten pro Neukunde je Kanal, jede Woche aktualisiert',
       'Der Kundenwert pro Kaufmonat zeigt, welche Kampagnen rentable Kunden bringen',
@@ -357,7 +357,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Meta & TikTok Ads für Online-Shops',
     slug: 'paid-social-ecommerce',
     shortDesc: 'Meta- und TikTok-Kampagnen, gesteuert nach Deckungsbeitrag statt nur nach ROAS und täglich gegen die Gewinnschwelle geprüft.',
-    description: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen fliessen dort nicht ein. Wir steuern Ihre Kampagnen nach Deckungsbeitrag, also nach dem, was nach all diesen Kosten übrig bleibt, und übermitteln den Plattformen margenbasierte Werte, damit ihre Algorithmen darauf optimieren. Ein fester Ablauf prüft täglich, ob jede Kampagne über der Gewinnschwelle liegt.',
+    description: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen fliessen dort nicht ein. Wir steuern Ihre Kampagnen nach Deckungsbeitrag, also nach dem, was nach all diesen Kosten übrig bleibt, und übermitteln den Plattformen margenbasierte Werte, sofern Margen im Shop oder ERP verfügbar sind. Ein fester Ablauf prüft täglich, ob jede Kampagne über der Gewinnschwelle liegt.',
     benefits: [
       'Sie wissen, ab welchem ROAS Ihre Werbung kostendeckend ist',
       'Kampagnen werden nach Deckungsbeitrag gesteuert, nicht nach Klicks oder Reichweite',
@@ -367,14 +367,14 @@ export const SERVICES: ServiceDetail[] = [
     deliverables: [
       'Kampagnenstruktur nach Produktmargen',
       'Testplan und Briefings für neue Anzeigen',
-      'Serverseitiges Tracking mit margenbasierten Werten für Meta und TikTok',
+      'Serverseitiges Tracking für Meta und TikTok, mit Margenwerten sofern verfügbar',
       'Tägliche Deckungsbeitrags-Kontrolle und monatlicher Gewinnbericht'
     ],
     iconName: 'TrendingUp',
     metrics: [],
     processSteps: [
       { title: 'Margen-Analyse', desc: 'Auswertung der tatsächlichen Marge je Artikel und Prüfung des Trackings.' },
-      { title: 'Tracking einrichten', desc: 'Verkäufe und Margenwerte werden serverseitig an Meta und TikTok übermittelt.' },
+      { title: 'Tracking einrichten', desc: 'Verkäufe und, wo vorhanden, Margenwerte werden serverseitig an Meta und TikTok übermittelt.' },
       { title: 'Start & Tests', desc: 'Kampagnen gehen mit festgelegtem Budget live, erste Anzeigentests laufen.' },
       { title: 'Kontrolliert ausbauen', desc: 'Budget schrittweise erhöhen, ohne die Marge aus den Augen zu verlieren.' }
     ]
@@ -409,7 +409,7 @@ export const SOLUTIONS: SolutionArea[] = [
       'Ihre Beratungskompetenz online besser zeigen möchten'
     ],
     includedServices: ['growth-strategy', 'lead-generation', 'ai-automation', 'data-analytics'],
-    recommendedCombo: 'Anfragen über nützliche Inhalte wie Leitfäden, kombiniert mit datenschutzkonformem Tracking und KI-gestützter Direktansprache.',
+    recommendedCombo: 'Anfragen über nützliche Inhalte wie Leitfäden, kombiniert mit Tracking mit geklärter Einwilligung und KI-gestützter Direktansprache.',
     resultMetric: { label: 'Wichtigste Kennzahl', value: 'Gebuchte Erstgespräche' }
   },
   {

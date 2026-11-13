@@ -29,7 +29,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'demand-generation': {
     title: 'Kampagnen, die aus Aufträgen lernen',
-    text: 'Die Werbeplattformen optimieren auf das, was man ihnen meldet. Deshalb fliessen qualifizierte Anfragen aus dem CRM zurück in die Werbekonten. Ein Agent überwacht täglich, und über Budget und Gebote entscheidet ein Mensch.',
+    text: 'Die Werbeplattformen optimieren auf das, was man ihnen meldet. Deshalb fliessen qualifizierte Anfragen aus dem CRM zurück in die Werbekonten, wo die Plattform es zulässt. Feste Prüfungen laufen täglich, über Budget und Gebote entscheidet ein Mensch.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -52,8 +52,8 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
         { title: 'Inhalte', sub: 'KI-Entwurf, Fachwissen von Ihnen', icon: 'FileText' },
         { title: 'Direktansprache', sub: 'Recherchiert, nach Freigabe versendet', icon: 'Send' },
         { title: 'Landingpages', sub: 'Pro Angebot eine Seite', icon: 'MousePointerClick' },
-        { title: 'Anreicherung', sub: 'Firmendaten automatisch ergänzt', icon: 'Database' },
-        { title: 'Lead-Scoring', sub: 'Nachvollziehbare Punkte', icon: 'Star' },
+        { title: 'Anreicherung', sub: 'Firmendaten aus öffentlichen Quellen', icon: 'Database' },
+        { title: 'Lead-Scoring', sub: 'Regel mit Begründung', icon: 'Star' },
       ],
     },
   },
@@ -87,7 +87,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'revenue-operations': {
     title: 'Ein gemeinsames Fundament für alle Teams',
-    text: 'Revenue Operations (RevOps) sorgt dafür, dass Marketing, Vertrieb und Kundenbetreuung mit denselben Daten, Definitionen und Zielen arbeiten. Auf diesem Fundament prüfen Regeln und Agenten laufend Datenqualität und Pipeline.',
+    text: 'Revenue Operations (RevOps) sorgt dafür, dass Marketing, Vertrieb und Kundenbetreuung mit denselben Daten, Definitionen und Zielen arbeiten. Auf diesem Fundament prüfen feste Regeln laufend Datenqualität und Pipeline, ein Agent übernimmt die unklaren Fälle.',
     spec: {
       type: 'hub',
       center: { title: 'Gemeinsame Daten & Definitionen', sub: 'Alle sehen dieselben Zahlen', icon: 'Target' },
@@ -96,34 +96,34 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
         { title: 'Vertrieb', sub: 'Verkaufschancen', icon: 'Handshake' },
         { title: 'Kundenbetreuung', sub: 'Bestandskunden', icon: 'Users' },
         { title: 'CRM', sub: 'Saubere, geprüfte Daten', icon: 'Database' },
-        { title: 'Prüfungen & Agenten', sub: 'Datenqualität, stehende Deals', icon: 'Bot' },
+        { title: 'Prüfungen & KI', sub: 'Regeln zuerst, Agent für Unklares', icon: 'Bot' },
         { title: 'Reporting', sub: 'Gemeinsame Kennzahlen', icon: 'BarChart3' },
       ],
     },
   },
   'ai-automation': {
     title: 'Für jeden Schritt die passende Stufe',
-    text: 'KI bringt erst dann etwas, wenn Daten und Abläufe stimmen. Wir bauen von unten nach oben auf und wählen pro Schritt die einfachste Lösung, die verlässlich funktioniert. Die Entscheidung bleibt bei Ihrem Team.',
+    text: 'KI bringt erst dann etwas, wenn Daten, Unternehmenskontext und Abläufe stimmen. Wir bauen von unten nach oben auf und wählen pro Schritt die einfachste Lösung, die verlässlich funktioniert. Die Entscheidung bleibt bei Ihrem Team.',
     spec: {
       type: 'layers',
       nodes: [
         { title: 'Ihr Team entscheidet', sub: 'Prüft, gibt frei, spricht mit Kunden', icon: 'UserCheck' },
         { title: 'KI-Unterstützung', sub: 'Recherche, Entwürfe, Zusammenfassungen', icon: 'Sparkles' },
         { title: 'Feste Regeln', sub: 'Wiederkehrende Schritte laufen allein', icon: 'Settings' },
-        { title: 'Saubere Daten & klare Regeln', sub: 'Was in welches Tool darf', icon: 'Database' },
+        { title: 'Daten, Kontext & Regeln', sub: 'Freigegebene Tools und Unterlagen', icon: 'Database' },
       ],
     },
   },
   'ki-agenten': {
     title: 'Ein Ablauf, den ein Agent übernimmt',
-    text: 'Eine feste Regel filtert den offensichtlichen Rest, der Agent erledigt die Schritte zwischen den Systemen. Bevor etwas nach aussen geht, prüft und entscheidet Ihr Team.',
+    text: 'Eine feste Regel filtert den offensichtlichen Spam, der Agent erledigt die Schritte zwischen den Systemen und legt das Ergebnis im CRM ab. Bevor etwas nach aussen geht, prüft und entscheidet Ihr Team.',
     spec: {
       type: 'flow',
       nodes: [
         { title: 'Neue Anfrage', sub: 'Formular oder E-Mail, auch am Wochenende', icon: 'Mail' },
         { title: 'Prüfen und einordnen', sub: 'Regel für Spam, Agent für den Rest', icon: 'Filter' },
         { title: 'Recherche und CRM', sub: 'Firma, Kontakt, Anfrage angelegt', icon: 'Database' },
-        { title: 'Antwortentwurf', sub: 'In Ihrem Stil vorbereitet', icon: 'Bot' },
+        { title: 'Antwortentwurf', sub: 'Aus Ihrem Unternehmenskontext', icon: 'Bot' },
         { title: 'Freigabe', sub: 'Ihr Team prüft und sendet', icon: 'UserCheck' },
       ],
     },
@@ -148,9 +148,9 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
     spec: {
       type: 'flow',
       nodes: [
-        { title: 'Sauberes Tracking', sub: 'Tag Manager, auch serverseitig, DSG-konform', icon: 'MousePointerClick' },
+        { title: 'Sauberes Tracking', sub: 'Tag Manager, auch serverseitig, mit Einwilligung', icon: 'MousePointerClick' },
         { title: 'Verknüpfung mit dem CRM', sub: 'Anfrage, Angebot, Auftrag', icon: 'Database' },
-        { title: 'Rückmeldung', sub: 'Aufträge an Google, Meta, LinkedIn', icon: 'Repeat' },
+        { title: 'Rückmeldung', sub: 'Aufträge an die Plattformen, wo zulässig', icon: 'Repeat' },
         { title: 'Tägliche Prüfung', sub: 'Regeln prüfen, ein Modell ordnet ein', icon: 'Zap' },
         { title: 'Bessere Entscheidungen', sub: 'Budget dorthin, wo Aufträge entstehen', icon: 'LineChart' },
       ],
@@ -158,7 +158,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'ecommerce-performance': {
     title: 'Wo Ihr Shop Käufer verliert',
-    text: 'Wir untersuchen jede Stufe vom Besuch bis zum Kauf, finden die grössten Abbrüche und verbessern sie mit überprüfbaren Tests. Feste Prüfungen beobachten die Stufen täglich, damit ein Einbruch nicht erst im Monatsbericht auffällt.',
+    text: 'Wir untersuchen jede Stufe vom Besuch bis zum Kauf, finden die grössten Abbrüche und verbessern sie mit überprüfbaren Tests. Feste Prüfungen laufen täglich über alle Stufen, damit ein Einbruch nicht erst im Monatsbericht auffällt.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -177,7 +177,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
       type: 'cycle',
       center: 'Profitables Wachstum',
       nodes: [
-        { title: 'Kunden gewinnen', sub: 'Algorithmen suchen Neukunden', icon: 'Target' },
+        { title: 'Kunden gewinnen', sub: 'Mit Neukundensignal, wo verfügbar', icon: 'Target' },
         { title: 'Erstkauf', sub: 'Shop, Angebot, Vertrauen', icon: 'ShoppingCart' },
         { title: 'Wiederkauf', sub: 'Kundenwert steigern', icon: 'Repeat' },
         { title: 'Budget reinvestieren', sub: 'Nach wöchentlich berechnetem Kundenwert', icon: 'PiggyBank' },
@@ -200,7 +200,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'paid-social-ecommerce': {
     title: 'Vom Umsatz zum tatsächlichen Gewinn',
-    text: 'Ein guter ROAS heisst noch nicht, dass Sie verdienen. Wir steuern Meta und TikTok nach dem, was nach allen Kosten übrig bleibt, und melden den Plattformen genau diesen Wert zurück.',
+    text: 'Ein guter ROAS heisst noch nicht, dass Sie verdienen. Wir steuern Meta und TikTok nach dem, was nach allen Kosten übrig bleibt, und melden den Plattformen diesen Wert zurück, sofern Margen im Shop oder ERP verfügbar sind.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -208,7 +208,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
         { title: 'Abzüglich Warenkosten', sub: 'Einkauf, Produktion', icon: 'ShoppingCart' },
         { title: 'Abzüglich Versand & Retouren', sub: 'Logistik, Rücksendungen', icon: 'RefreshCw' },
         { title: 'Abzüglich Werbekosten', sub: 'Mediabudget', icon: 'Megaphone' },
-        { title: 'Deckungsbeitrag', sub: 'Danach steuern die Algorithmen', icon: 'Wallet' },
+        { title: 'Deckungsbeitrag', sub: 'Danach steuern Budget und Gebote', icon: 'Wallet' },
       ],
     },
   },

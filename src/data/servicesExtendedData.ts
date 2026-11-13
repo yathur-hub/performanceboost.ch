@@ -12,7 +12,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       title: 'Jede Person nutzt KI anders, die Abläufe bleiben gleich',
       paragraphs: [
         'In vielen Unternehmen arbeiten einzelne Mitarbeitende mit ChatGPT oder anderen Tools, jede Person auf ihre Weise. Der Ablauf selbst hat sich nicht verändert. Eine Offerte entsteht wie vor fünf Jahren, eine Anfrage wird gleich bearbeitet, nur ein einzelner Handgriff geht etwas schneller.',
-        'Gleichzeitig ist unklar, welche Kundendaten schon in KI-Tools gelandet sind, wer die Ergebnisse prüft und ob sich die Lizenzen lohnen.',
+        'Fehlen freigegebene Werkzeuge und klare Regeln, landen Kundendaten in privaten Konten. Man nennt das Schatten-KI. Offen bleibt auch, wer die Ergebnisse prüft und ob sich die Lizenzen lohnen.',
         'Wir setzen deshalb beim Ablauf an und nicht beim Tool. Für jede Aufgabe klären wir, was eine feste Regel erledigen kann, wo ein Modell einen Entwurf liefert und wo Ihr Team prüft und entscheidet. Erst danach wählen wir das Werkzeug.'
       ]
     },
@@ -20,11 +20,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       title: 'Was die Einführung umfasst',
       items: [
         { title: 'KI-Standortbestimmung', desc: 'Wir erfassen, wo KI heute genutzt wird, wo Zeit verloren geht und welche Daten vorhanden sind. Daraus entsteht eine priorisierte Liste mit drei bis fünf Anwendungen und einer Nutzenrechnung pro Anwendung.' },
-        { title: 'Abläufe neu zuschneiden', desc: 'Für die gewählten Aufgaben legen wir fest, welcher Schritt fest geregelt läuft, welchen ein Modell vorbereitet und wo ein Mensch freigibt. Oft fällt dabei ein Schritt ganz weg.' },
-        { title: 'Anwendungen einrichten', desc: 'Wir binden KI in Ihre bestehenden Tools ein, etwa für Recherche, Zusammenfassungen, Entwürfe von Offerten und E-Mails oder die Einordnung eingehender Anfragen. Mit gemeinsamen Vorlagen statt individueller Prompts.' },
-        { title: 'Schulung an eigenen Fällen', desc: 'Ihr Team übt mit echten Aufgaben aus dem Alltag. Es lernt, Ergebnisse zu prüfen und zu erkennen, wann ein Modell danebenliegt. Dazu gibt es kurze Anleitungen.' },
-        { title: 'Regeln für Daten und Tools', desc: 'Welche Daten in welches Tool dürfen, welche nie, wer prüft und freigibt und was protokolliert wird. Kurz formuliert und abgestimmt auf das Schweizer DSG.' },
-        { title: 'Nutzen messen', desc: 'Wir messen, ob die Anwendungen genutzt werden, wie viel Zeit pro Fall wegfällt und was ein Fall an Lizenz- und Nutzungskosten verursacht. Lohnt sich ein ganzer Ablauf, wird er zum Kandidaten für einen KI-Agenten.' }
+        { title: 'Abläufe neu zuschneiden', desc: 'Für die gewählten Aufgaben legen wir fest, welcher Schritt fest geregelt läuft, welchen ein Modell vorbereitet und wo ein Mensch freigibt. Massstab ist, was ein Fehler kosten würde und ob er sich rückgängig machen lässt. Oft fällt dabei ein Schritt ganz weg.' },
+        { title: 'Anwendungen einrichten', desc: 'Wir binden KI in Ihre bestehenden Tools ein, etwa für Recherche, Zusammenfassungen, Offert- und E-Mail-Entwürfe oder die Einordnung eingehender Anfragen. Grundlage sind gemeinsame Vorlagen und Ihr Unternehmenskontext, also Angebote, Markenregeln und freigegebene Unterlagen.' },
+        { title: 'Schulung an eigenen Fällen', desc: 'Ihr Team übt mit echten Aufgaben aus dem Alltag. Es lernt, Ergebnisse zu prüfen und zu erkennen, wann ein Modell plausibel klingt, aber danebenliegt. Dazu gibt es kurze Anleitungen.' },
+        { title: 'Regeln für Daten und Tools', desc: 'Welche Tools freigegeben sind, welche Daten hinein dürfen und welche nie, wer prüft und was protokolliert wird. Freigegebene Werkzeuge nehmen der Schatten-KI den Grund. Kurz formuliert und auf das Schweizer DSG abgestimmt.' },
+        { title: 'Nutzen messen', desc: 'Wir messen Nutzung, Fehler und Kosten pro Fall. Eingesparte Stunden weisen wir getrennt von tatsächlich gesparten Kosten aus, gezählt wird nur gemessener Nutzen. Lohnt sich ein ganzer Ablauf, wird er zum Kandidaten für einen KI-Agenten.' }
       ]
     },
     approach: {
@@ -32,7 +32,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         { title: 'Standortbestimmung', desc: 'In ein bis zwei Wochen klären wir, wo KI heute genutzt wird, wo Zeit verloren geht und welche Daten vorhanden sind.' },
         { title: 'Anwendungen priorisieren', desc: 'Wir wählen die drei bis fünf Anwendungen, die Ihrem Unternehmen am meisten bringen, und ordnen jeden Schritt einer Stufe zu, von der festen Regel bis zur KI-Unterstützung mit Freigabe. Alles andere kommt später oder gar nicht.' },
-        { title: 'Einführen und schulen', desc: 'Wir richten die Anwendungen in Ihren Abläufen ein und schulen das Team mit eigenen Beispielen.' },
+        { title: 'Einführen und schulen', desc: 'Wir prüfen jede Anwendung mit echten Fällen, deren richtiges Ergebnis bekannt ist, richten sie in Ihren Abläufen ein und schulen das Team mit eigenen Beispielen.' },
         { title: 'Regeln verabschieden', desc: 'Die Regeln für Daten, Tools und Freigaben werden schriftlich festgehalten und mit der Geschäftsleitung verabschiedet.' },
         { title: 'Messen und ausbauen', desc: 'Nach einigen Wochen prüfen wir Nutzung, eingesparte Zeit und Fehler. Dann entscheiden wir, was angepasst, ausgebaut oder wieder abgeschaltet wird.' }
       ]
@@ -45,7 +45,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         items: [
           { title: 'Feste Regel', desc: 'Eine Anfrage landet mit Quelle im CRM, eine Aufgabe wird angelegt. Immer gleich, günstig und vollständig nachvollziehbar.' },
           { title: 'KI-Unterstützung', desc: 'Ein Modell fasst eine lange E-Mail zusammen, ordnet ein Dokument ein oder entwirft eine Antwort. Das Ergebnis ist ein Vorschlag, den eine Person prüft.' },
-          { title: 'KI-Agent', desc: 'Mehrere Schritte über verschiedene Systeme, etwa recherchieren, im CRM ergänzen und eine Antwort vorbereiten. Lohnt sich erst, wenn Regel und Vorschlag nicht reichen.' }
+          { title: 'KI-Agent', desc: 'Wählt die Schritte über mehrere Systeme selbst, etwa recherchieren, im CRM ergänzen und eine Antwort vorbereiten, und prüft das Ergebnis. Lohnt sich erst, wenn Regel und Vorschlag nicht reichen.' }
         ]
       },
       {
@@ -63,7 +63,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         type: 'grid',
         subtitle: 'Wir sind an kein Tool gebunden und arbeiten mit dem, was zu Ihnen passt.',
         items: [
-          { title: 'Sprachmodelle', desc: 'ChatGPT, Claude oder Gemini für Texte, Recherche und Auswertungen, mit Datenschutzbedingungen, die zu Ihren Anforderungen passen.' },
+          { title: 'Sprachmodelle', desc: 'ChatGPT, Claude oder Gemini für Texte, Recherche und Auswertungen. Vorab geklärt ist, ob der Anbieter Eingaben speichert und wo.' },
           { title: 'Automatisierung', desc: 'n8n, Windmill, Make oder Zapier, um KI in bestehende Abläufe einzubinden. n8n und Windmill lassen sich auch auf eigenen Servern betreiben.' },
           { title: 'Ihre bestehenden Tools', desc: 'KI-Funktionen in CRM, E-Mail und Office, die Sie oft schon bezahlen, aber kaum nutzen.' }
         ]
@@ -78,7 +78,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       { q: 'Wir haben schon ChatGPT-Lizenzen. Reicht das nicht?', a: 'Lizenzen sind der kleinere Teil. Entscheidend ist, ob KI in die Abläufe eingebunden ist, ob das Team weiss, was es damit tun darf, und ob sich der Nutzen messen lässt. Vorhandene Lizenzen lassen sich oft weiter nutzen.' },
       { q: 'Brauchen wir technisches Know-how im Team?', a: 'Nicht zwingend. Viele KI-Anwendungen lassen sich ohne Programmierung umsetzen und brauchen nur ein Grundverständnis, das wir in der Schulung vermitteln. Wo es technischer wird, übernehmen wir die Umsetzung und dokumentieren sie.' },
       { q: 'Wie stellen Sie sicher, dass KI-generierte Inhalte gut sind?', a: 'Wir testen jede Anwendung vor dem Start mit echten Fällen aus Ihrem Alltag und bauen eine Prüfung in den Ablauf ein. Die KI liefert Entwürfe, Menschen prüfen und geben frei. Bei Kundendaten legen wir vorab fest, welche Daten überhaupt an ein KI-Modell gehen dürfen.' },
-      { q: 'Wann wird aus einer Anwendung ein KI-Agent?', a: 'Wenn eine Aufgabe regelmässig mehrere Schritte über verschiedene Systeme braucht und die einzelnen Schritte verlässlich funktionieren. Dann kann ein Agent den Ablauf mit begrenzten Rechten übernehmen. Ob sich das lohnt, prüfen wir mit echten Fällen und den Kosten pro Fall, bevor wir ihn bauen.' },
+      { q: 'Wann wird aus einer Anwendung ein KI-Agent?', a: 'Wenn eine Aufgabe regelmässig mehrere Schritte über verschiedene Systeme braucht und die einzelnen Schritte verlässlich funktionieren. Dann kann ein Agent den Ablauf mit begrenzten Rechten übernehmen. Zuerst schlägt er im laufenden Betrieb nur vor, Ihr Team entscheidet wie bisher, und wir vergleichen beides. Ob sich das lohnt, zeigen echte Fälle und die Kosten pro Fall.' },
       { q: 'Was kosten KI-Tools?', a: 'Die Lizenzkosten hängen vom Tool und von der Zahl der Nutzerinnen und Nutzer ab, bei Anwendungen über eine Schnittstelle von der Menge der verarbeiteten Fälle. Oft lassen sich vorhandene Lizenzen weiter nutzen. In der Standortbestimmung rechnen wir aus, welche Kosten zusätzlich entstehen und was dem gegenübersteht.' },
       { q: 'Was kostet die Einführung?', a: 'Wir arbeiten mit Festpreisen für ein klar definiertes Ergebnis, nicht nach Stunden. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit Umfang, Ergebnis und Preis.' }
     ],
@@ -91,8 +91,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'ki-agenten',
     hero: {
-      headline: 'KI-Agenten, die ganze Abläufe übernehmen.',
-      subheadline: 'Ein Agent erledigt eine Aufgabe über mehrere Schritte und Systeme, mit eng gefassten Rechten. Ein Beispiel: Eine Anfrage kommt am Freitagabend, am Montag liegt sie geprüft, recherchiert und mit Antwortentwurf im CRM. Ihr Team prüft und gibt frei.',
+      headline: 'KI-Agenten für die Arbeit zwischen Ihren Systemen.',
+      subheadline: 'Ein Agent erledigt eine Aufgabe über mehrere Schritte. Er holt Informationen, wägt ab, nutzt Werkzeuge wie CRM oder E-Mail und prüft das Ergebnis, mit eng gefassten Rechten. Was nach aussen geht, gibt Ihr Team frei.',
       ctaText: 'Ablauf besprechen'
     },
     problem: {
@@ -100,46 +100,47 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'Anfragen kommen per Formular oder E-Mail, werden abgetippt, im CRM erfasst, recherchiert und beantwortet. Jeder Schritt ist einfach. Zusammen kosten sie viel Zeit, und am Wochenende bleibt alles liegen.',
         'Einzelne KI-Tools helfen bei einzelnen Handgriffen. Feste Workflows übernehmen, was immer gleich abläuft. Sobald Anfragen unvollständig, unklar oder jedes Mal etwas anders sind, landet der Fall trotzdem wieder bei einer Person.',
-        'Ein KI-Agent übernimmt genau diese Schritte dazwischen. Er liest, recherchiert, trägt ein und bereitet vor, nur mit den Rechten, die er dafür braucht. Ihr Team kümmert sich um das, was Urteil braucht.'
+        'Ein KI-Agent übernimmt genau diese Schritte dazwischen. Was für Ihr Unternehmen richtig ist, weiss er aus einem gepflegten Unternehmenskontext mit Angeboten, Kriterien, Markenregeln und freigegebenen Quellen. Ihr Team kümmert sich um das, was Urteil braucht.'
       ]
     },
     leistet: {
-      title: 'Typische Agenten in Marketing, Vertrieb und Administration',
+      title: 'Typische Abläufe in Marketing, Vertrieb und Administration',
       items: [
-        { title: 'Anfrage-Agent', desc: 'Prüft neue Anfragen, ordnet sie nach Ihren Kriterien ein, legt Kontakt und Firma im CRM an und bereitet eine Antwort vor. Unklare Fälle gehen mit Begründung an eine Person.' },
-        { title: 'Recherche-Agent', desc: 'Recherchiert vor einem Termin Firma und Gesprächspartner auf der Website, in öffentlichen Quellen und im CRM und fasst das Wichtigste auf einer Seite zusammen.' },
-        { title: 'Nachfass-Agent', desc: 'Erkennt offene Offerten und liegengebliebene Anfragen, liest den bisherigen Verlauf und bereitet die nächste Nachricht vor. Versendet wird nach Freigabe.' },
-        { title: 'Dokumenten-Agent', desc: 'Liest eingehende Dokumente wie Bestellungen oder Formulare, extrahiert die Angaben und überträgt sie ins richtige System. Was nicht eindeutig ist, landet zur Prüfung bei Ihrem Team.' },
-        { title: 'Reporting-Agent', desc: 'Die Zahlen aus CRM, Website und Kampagnen führt ein fester Ablauf zusammen. Der Agent erkennt auffällige Abweichungen, prüft mögliche Ursachen und beschreibt sie in wenigen Sätzen.' },
-        { title: 'Daten-Agent', desc: 'Eindeutige Dubletten findet eine Regel zuverlässiger. Der Agent übernimmt die unklaren Fälle, ergänzt fehlende Firmendaten und schlägt Korrekturen vor, bevor sie Auswertungen verfälschen.' }
+        { title: 'Anfrage-Agent', desc: 'Prüft neue Anfragen, ordnet sie nach Ihren Kriterien ein, holt fehlende Firmendaten, legt Kontakt und Firma im CRM an und entwirft eine Antwort. Unklare Fälle gehen mit Begründung an eine Person.' },
+        { title: 'Recherche-Agent', desc: 'Recherchiert vor einem Termin Firma und Gesprächspartner auf der Website, in öffentlichen Quellen und im CRM und fasst das Wichtigste mit Quellenangaben auf einer Seite zusammen.' },
+        { title: 'Nachfassen vorbereiten', desc: 'Eine Regel erkennt offene Offerten und liegengebliebene Anfragen. Ein Modell liest den bisherigen Verlauf und entwirft die nächste Nachricht. Versendet wird nach Freigabe.' },
+        { title: 'Dokumente verarbeiten', desc: 'Ein Modell liest Bestellungen oder Formulare, ordnet sie ein und extrahiert die Angaben. Fehlt etwas, holt ein agentischer Schritt es aus angebundenen Systemen. Was unklar bleibt, landet mit Begründung bei Ihrem Team.' },
+        { title: 'Abweichungen erklären', desc: 'Ein fester Ablauf führt die Zahlen aus CRM, Website und Kampagnen zusammen, feste Schwellen markieren Abweichungen. Erst dann sucht ein Agent in den Quellsystemen nach der Ursache und beschreibt sie in wenigen Sätzen.' },
+        { title: 'Datenpflege', desc: 'Eindeutige Dubletten findet eine Regel zuverlässiger. Ein Agent übernimmt die unklaren Fälle, sucht fehlende Firmendaten und schlägt Korrekturen vor, die Ihr Team übernimmt.' }
       ]
     },
     approach: {
       title: 'So gehen wir vor',
       items: [
-        { title: 'Ablauf auswählen', desc: 'Wir beginnen mit einem Ablauf, der häufig vorkommt, heute viel Handarbeit verursacht und bei dem ein Fehler nicht teuer ist.' },
-        { title: 'Stufe und Rechte festlegen', desc: 'Für jeden Schritt entscheiden wir, ob eine Regel genügt oder ein Modell nötig ist. Dann halten wir fest, was der Agent lesen und schreiben darf, wo ein Mensch freigibt und welche Daten er verarbeitet.' },
-        { title: 'Mit echten Fällen testen', desc: 'Wir bauen den Agenten auf Ihren Systemen und testen ihn mit echten, auch schwierigen Fällen. Live geht er erst, wenn Ergebnisse und Kosten pro Fall stimmen.' },
-        { title: 'Einführen', desc: 'Ihr Team wird eingewiesen und weiss, wie es Entwürfe prüft, wie es korrigiert und was bei Fehlern passiert.' },
-        { title: 'Überwachen und messen', desc: 'Protokolle, Fehlerquote, Kosten pro Fall und eingesparte Zeit werten wir laufend aus. Danach entscheiden wir, welcher Ablauf als Nächstes kommt.' }
+        { title: 'Ablauf auswählen', desc: 'Wir beginnen mit einem Ablauf, der häufig vorkommt, heute viel Handarbeit verursacht und bei dem ein Fehler wenig kostet und sich rückgängig machen lässt.' },
+        { title: 'Stufe und Rechte festlegen', desc: 'Für jeden Schritt entscheiden wir, ob eine Regel genügt oder ein Modell nötig ist. Dann halten wir fest, was der Agent lesen und schreiben darf und welche Daten er verarbeitet. Selbst ausführen darf er nur, was wenig Schaden anrichtet und umkehrbar ist.' },
+        { title: 'Mit echten Fällen testen', desc: 'Wir binden den Agenten über Schnittstellen an, nicht über die Bedienoberfläche, und prüfen ihn mit einem Testset aus echten, auch schwierigen Fällen. Danach schlägt er im laufenden Betrieb nur vor, Ihr Team entscheidet wie bisher.' },
+        { title: 'Einführen', desc: 'Mehr Spielraum erhält der Agent erst, wenn seine Vorschläge nachweislich halten. Ihr Team weiss, wie es prüft, korrigiert und den Agenten stoppt.' },
+        { title: 'Überwachen und messen', desc: 'Pro Agent sehen wir Fehler- und Eskalationsquote, Kosten pro Fall und Laufzeit, jede Aktion ist protokolliert. Gezählt wird nur gemessener Nutzen, danach entscheiden wir über den nächsten Ablauf.' }
       ]
     },
     extraSections: [
       {
         title: 'Ein Beispiel aus dem Alltag',
         type: 'text',
-        text: 'Ein Beispiel: Eine Anfrage kommt am Freitagabend über das Formular. Offensichtlichen Spam filtert eine feste Regel. Den Rest liest der Agent, prüft, ob die Angaben vollständig sind, ordnet die Anfrage nach Ihren Kriterien ein, legt Kontakt und Firma im CRM an, recherchiert das Unternehmen und bereitet eine Antwort vor. Am Montagmorgen findet Ihr Team die Anfrage geprüft und mit Entwurf vor. Es liest, passt an und sendet.'
+        text: 'Ein Beispiel: Eine Anfrage kommt am Freitagabend über das Formular. Offensichtlichen Spam filtert eine feste Regel. Den Rest liest der Agent. Er prüft die Angaben, ordnet die Anfrage nach Ihren Kriterien ein, recherchiert das Unternehmen, legt Kontakt und Firma im CRM an und entwirft eine Antwort. Am Montagmorgen liegt alles im CRM bereit, Ihr Team passt an und sendet.'
       },
       {
         title: 'Was zu jedem Agenten gehört',
         type: 'list',
         bullets: [
-          'Eine schriftliche Beschreibung, was der Agent allein darf und was nicht',
-          'Ein eigener Zugang mit nur den nötigen Rechten und festen Limits, etwa für die Zahl der Aktionen pro Tag',
-          'Ein Protokoll jedes Schritts, damit sich jede Entscheidung nachvollziehen lässt',
-          'Nach aussen geht nichts ohne Freigabe durch Ihr Team',
-          'Eine Übergabe an eine Person, sobald der Agent unsicher ist oder ein Fehler auftritt',
-          'Vor dem Start geklärt, welche Daten verarbeitet werden und wo sie liegen'
+          'Ein Unternehmenskontext aus Angeboten, Kriterien, Markenregeln und freigegebenen Quellen',
+          'Eine schriftliche Beschreibung, was er allein darf, und ein eigener Zugang mit minimalen Rechten und festen Limits',
+          'Ein Testset mit echten Fällen und eine Testphase, in der er nur vorschlägt',
+          'Ein Protokoll jeder Aktion und Kennzahlen wie Fehlerquote und Kosten pro Fall',
+          'Ein Fehlerpfad, der unsichere Fälle an eine Person übergibt',
+          'Schutz gegen Anweisungen, die in E-Mails, Formularen oder Webseiten eingeschleust werden (Prompt Injection)',
+          'Vor dem Start geklärt, welche Daten an welchen Modellanbieter gehen und wo sie liegen'
         ]
       },
       {
@@ -156,9 +157,9 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       { q: 'Was ist der Unterschied zu einem Chatbot?', a: 'Ein Chatbot beantwortet Fragen im Gespräch. Ein KI-Agent erledigt Aufgaben im Hintergrund über mehrere Schritte und Systeme hinweg, etwa vom Formular über das CRM bis zum Antwortentwurf.' },
       { q: 'Was ist der Unterschied zu einem Workflow?', a: 'Ein Workflow führt immer dieselben Schritte in derselben Reihenfolge aus. Ein Agent entscheidet innerhalb eines festen Rahmens, welchen Schritt er als Nächstes braucht, etwa ob eine Anfrage zusätzliche Recherche verlangt. Viele Abläufe brauchen keinen Agenten. Das sagen wir Ihnen dann auch.' },
-      { q: 'Kann ein Agent Fehler machen?', a: 'Ja. Deshalb legen wir vorab fest, was er allein darf, testen mit echten Fällen und lassen alles, was nach aussen geht, von einem Menschen freigeben. Fehler werden protokolliert und gemeldet, unsichere Fälle gehen an eine Person.' },
+      { q: 'Kann ein Agent Fehler machen?', a: 'Ja. Sprachmodelle können plausibel klingende Fehler machen. Deshalb legen wir vorab fest, was er allein darf, testen mit echten Fällen und lassen alles, was nach aussen geht, von einem Menschen freigeben. Fehler werden protokolliert und gemeldet, unsichere Fälle gehen an eine Person.' },
       { q: 'Welche Systeme brauchen wir dafür?', a: 'Meist reichen die vorhandenen: ein CRM, E-Mail und Ihre Website. Fehlt eine saubere Grundlage, etwa ein gepflegtes CRM oder eine Schnittstelle, schaffen wir sie zuerst.' },
-      { q: 'Wo liegen unsere Daten?', a: 'Das klären wir vor dem Start. Je nach Anforderung laufen Agenten bei Anbietern mit Rechenzentren in der Schweiz oder der EU oder auf eigener Infrastruktur. Welche Daten an ein KI-Modell gehen, halten wir schriftlich fest.' },
+      { q: 'Wo liegen unsere Daten?', a: 'Das klären wir vor dem Start, auf Basis des Schweizer DSG. Je nach Anforderung laufen Agenten bei Anbietern mit Rechenzentren in der Schweiz oder der EU oder auf eigener Infrastruktur. Welche Personendaten an welchen Modellanbieter gehen und ob er sie speichert, halten wir schriftlich fest.' },
       { q: 'Was kostet ein KI-Agent?', a: 'Aufbau und Einführung bieten wir zum Festpreis für einen klar definierten Ablauf an. Dazu kommen laufende Kosten für die eingesetzten Dienste, die wir vorab offenlegen und im Betrieb pro Fall ausweisen.' }
     ],
     cta: {
@@ -187,8 +188,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         { title: 'Stack-Check', desc: 'Wir erfassen alle Tools mit Kosten, Nutzung, Verantwortlichen, Datenflüssen und Schnittstellen. Sie erhalten eine klare Liste, was bleibt, was weg kann und was fehlt. Auf Wunsch ist der Check Teil der Performance-Analyse.' },
         { title: 'Datenmodell und Zielbild', desc: 'Wir legen fest, welches System für welche Daten führend ist, etwa das CRM für Kontakte und Verkaufschancen. Darauf bauen Berichte, Workflows und Agenten auf, statt jeweils eigene Kopien zu pflegen.' },
-        { title: 'Aufräumen und verbinden', desc: 'Wir schalten überflüssige Tools ab, bereinigen Daten und verbinden die Systeme über Schnittstellen (APIs) oder Automatisierungsplattformen wie n8n. Daten werden nur einmal erfasst, und jede Anfrage ist bis zum Auftrag nachvollziehbar. Als Projekt zum Festpreis.' },
-        { title: 'Rechte und Protokolle', desc: 'Jeder Workflow und jeder Agent erhält einen eigenen Zugang mit nur den Rechten, die er braucht. Schreibende Aktionen werden protokolliert, und wir halten fest, welche Personendaten an welches KI-Modell gehen dürfen.' },
+        { title: 'Aufräumen und verbinden', desc: 'Wir schalten überflüssige Tools ab, bereinigen Daten und verbinden die Systeme über Schnittstellen (APIs) oder Automatisierungsplattformen wie n8n, nicht über Bots, die eine Bedienoberfläche nachklicken. Daten werden nur einmal erfasst, und jede Anfrage ist bis zum Auftrag nachvollziehbar. Als Projekt zum Festpreis.' },
+        { title: 'Rechte und Protokolle', desc: 'Jeder Workflow und jeder Agent erhält einen eigenen Zugang mit minimalen Rechten, schreibende Aktionen werden protokolliert. Wir halten fest, welche Personendaten an welchen Modellanbieter gehen, und schützen Abläufe, die fremde Texte lesen, gegen eingeschleuste Anweisungen.' },
         { title: 'Laufend betreiben', desc: 'Wir prüfen neue Tools, bevor sie gekauft werden, überwachen Schnittstellen und Automatisierungen auf Fehler und überprüfen die Kosten einmal im Jahr, die Nutzungskosten für KI-Modelle eingeschlossen. Als Teil der laufenden Begleitung.' }
       ]
     },
@@ -208,10 +209,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         type: 'list',
         bullets: [
           'Kundendaten, die an einem Ort gepflegt und nicht mehrfach erfasst werden',
-          'Schnittstellen (APIs) oder Automatisierungsplattformen, über die Workflows und Agenten lesen und schreiben können',
-          'Zugänge pro Agent mit nur den Rechten, die er braucht, und ein Protokoll jeder Aktion',
-          'Eine Überwachung, die meldet, wenn eine Schnittstelle oder Automatisierung ausfällt',
-          'Klare Regeln, welche Personendaten an welches KI-Modell gehen dürfen'
+          'Angebote, Definitionen und freigegebene Unterlagen an einem Ort, als Kontext für Modelle und Agenten',
+          'Schnittstellen (APIs) oder Automatisierungsplattformen, über die Workflows und Agenten lesen und schreiben',
+          'Zugänge pro Agent mit minimalen Rechten und ein Protokoll jeder Aktion',
+          'Fehlerpfade und eine Überwachung, die meldet, wenn eine Schnittstelle oder Automatisierung ausfällt',
+          'Klare Regeln nach Schweizer DSG, welche Personendaten an welchen Modellanbieter gehen'
         ]
       },
       {
@@ -222,9 +224,9 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           { title: 'CRM', desc: 'Kundendaten, Verkaufschancen und Aufgaben an einem Ort, als gemeinsame Grundlage für Marketing, Vertrieb und alle Automatisierungen.' },
           { title: 'Website und Formulare', desc: 'Anfragen landen mit Quelle und Angaben direkt im CRM, ohne Abtippen.' },
           { title: 'E-Mail und Newsletter', desc: 'Versand und Abmeldungen laufen mit dem CRM zusammen, nicht in einer separaten Liste.' },
-          { title: 'Werbekonten', desc: 'Google, Meta und LinkedIn erhalten zurück, welche Anfragen zu Aufträgen wurden, und ihre Gebotsalgorithmen lernen daraus.' },
+          { title: 'Werbekonten', desc: 'Google, Meta und LinkedIn erhalten zurück, welche Anfragen zu Aufträgen wurden, wo die Plattform es zulässt und die Einwilligung vorliegt.' },
           { title: 'Tracking und Reporting', desc: 'Eine Auswertung mit denselben Zahlen für alle, von der Anfrage bis zum Auftrag.' },
-          { title: 'Automatisierung', desc: 'n8n, Windmill, Make oder Zapier verbinden die Systeme und führen feste Abläufe aus. Darauf setzen auch KI-Agenten auf.' },
+          { title: 'Automatisierung', desc: 'n8n, Windmill, Make oder Zapier steuern die festen Abläufe mit Wiederholungen und Fehlerpfaden. KI-Agenten arbeiten als einzelne Schritte darin.' },
           { title: 'Sprachmodelle', desc: 'Über eine Schnittstelle angebunden, mit Regeln, welche Daten sie erhalten, und einem Überblick über die Kosten pro Fall.' }
         ]
       },
@@ -252,7 +254,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'data-analytics',
     hero: {
       headline: 'Sehen, welche Kanäle Ihnen Kunden bringen.',
-      subheadline: 'Wir richten Tracking, Attribution und Berichte so ein, dass Sie sehen, welche Kampagnen Anfragen und Umsatz bringen. Dieselben Daten gehen an Google, Meta und LinkedIn zurück, damit deren Gebotsalgorithmen auf Aufträge statt auf Klicks optimieren.',
+      subheadline: 'Wir richten Tracking, Attribution und Berichte so ein, dass Sie sehen, welche Kampagnen Anfragen und Umsatz bringen. Wo die Plattform es zulässt und die Einwilligung vorliegt, gehen dieselben Daten an Google, Meta und LinkedIn zurück, damit deren Gebotsalgorithmen auf Aufträge optimieren.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
@@ -277,7 +279,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Rückmeldung an die Werbekonten',
-          desc: 'Qualifizierte Anfragen und Aufträge aus dem CRM werden automatisch an Google Ads, Meta und LinkedIn übermittelt, etwa als Offline-Conversions oder über die Conversions API. So lernen die Gebotsalgorithmen, welche Klicks zu Umsatz führen.'
+          desc: 'Qualifizierte Anfragen und Aufträge aus dem CRM übermitteln wir an Google Ads, Meta und LinkedIn, etwa als Offline-Conversions oder über die Conversions API, wo die Plattform es zulässt. Voraussetzung sind Einwilligung und meist ein serverseitiges Setup.'
         },
         {
           title: 'Automatische Prüfung der Daten',
@@ -285,7 +287,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Auffälligkeiten eingeordnet',
-          desc: 'Ein Modell vergleicht die Zahlen mit den Vorwochen, markiert ungewöhnliche Abweichungen und schreibt eine kurze Einordnung mit möglichen Ursachen. Die Schlüsse zieht Ihr Team.'
+          desc: 'Feste Schwellen markieren ungewöhnliche Abweichungen gegenüber den Vorwochen. Ein Modell schreibt dazu eine kurze Einordnung mit möglichen Ursachen. Die Schlüsse zieht Ihr Team.'
         },
         {
           title: 'Dashboards',
@@ -334,7 +336,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       {
         title: 'Warum Messung heute auch die Werbung steuert',
         type: 'text',
-        text: 'Smart Bidding bei Google, Advantage+ bei Meta und die Gebotsstrategien von LinkedIn entscheiden selbst, wem eine Anzeige gezeigt wird. Sie lernen aus den Conversions, die Sie ihnen melden. Wer nur Formularabsendungen meldet, bekommt mehr Formularabsendungen, auch unpassende. Wer qualifizierte Anfragen oder Auftragswerte zurückmeldet, gibt dem Algorithmus ein besseres Ziel. Einwilligung und Datenschutz klären wir dabei vorab, nach Schweizer DSG und, wo nötig, nach DSGVO.'
+        text: 'Smart Bidding bei Google, Advantage+ bei Meta und die Gebotsstrategien von LinkedIn entscheiden selbst, wem eine Anzeige gezeigt wird. Sie lernen aus den Conversions, die Sie ihnen melden. Wer nur Formularabsendungen meldet, bekommt mehr Formularabsendungen, auch unpassende. Wer qualifizierte Anfragen oder Auftragswerte zurückmeldet, gibt dem Algorithmus ein besseres Ziel. So entsteht ein Regelkreis, in dem Ergebnisse aus dem CRM in Gebote und Budgetplanung zurückfliessen. Einwilligung und Datenweitergabe klären wir vorab, nach Schweizer DSG und, wo nötig, nach DSGVO.'
       },
       {
         title: 'Tools, mit denen wir arbeiten',
@@ -382,7 +384,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'demand-generation',
     hero: {
       headline: 'Regelmässig qualifizierte Anfragen für Ihren Vertrieb.',
-      subheadline: 'Wir planen und betreuen Ihr Performance Marketing auf Google, LinkedIn und Meta. Die Kampagnen lernen aus echten Aufträgen statt aus Klicks. Ein Agent überwacht sie täglich und meldet Auffälligkeiten, über Budget und Gebote entscheidet ein Mensch.',
+      subheadline: 'Wir planen und betreuen Ihr Performance Marketing auf Google, LinkedIn und Meta. Die Kampagnen lernen aus echten Aufträgen statt aus Klicks, wo die Plattform es zulässt. Feste Prüfungen laufen täglich, über Budget und Gebote entscheidet ein Mensch.',
       ctaText: 'Kampagnen besprechen'
     },
     problem: {
@@ -406,23 +408,23 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Signale aus dem CRM',
-          desc: 'Qualifizierte Anfragen und Aufträge fliessen automatisch aus dem CRM zurück in Google Ads, Meta und LinkedIn. So optimieren die Gebotsstrategien auf Aufträge statt auf Klicks.'
+          desc: 'Qualifizierte Anfragen und Aufträge fliessen aus dem CRM zurück in Google Ads, Meta und LinkedIn, wo die Plattform es zulässt. Voraussetzung sind Einwilligung und ein serverseitiges Setup. So optimieren die Gebotsstrategien auf Aufträge.'
         },
         {
           title: 'Kampagnenbetreuung',
           desc: 'Wir bauen und betreuen Ihre Google Ads, LinkedIn Ads und Meta Ads, von der Kontostruktur über Suchbegriffe bis zu den Landingpages. Das Budget fliesst dorthin, wo Anfragen entstehen.'
         },
         {
-          title: 'Tägliche Überwachung',
-          desc: 'Ein Agent prüft täglich Kosten pro Anfrage, Suchbegriffe und Auslieferung und meldet Abweichungen mit einem Vorschlag. Budget- und Gebotsänderungen geben wir oder Ihr Team frei.'
+          title: 'Tägliche Prüfung und Ursachensuche',
+          desc: 'Feste Prüfungen laufen täglich über Kosten pro Anfrage, Suchbegriffe und Auslieferung. Bei Abweichungen sucht ein agentischer Ablauf die Ursache in Konto- und CRM-Daten und schlägt eine Massnahme vor. Budget- und Gebotsänderungen geben wir oder Ihr Team frei.'
         },
         {
           title: 'Anzeigen entwickeln und testen',
-          desc: 'Varianten für Anzeigentexte entstehen als Entwurf aus Ihrer Positionierung und echten Kundenfragen. Wir wählen aus, schärfen nach und testen. Was ankommt, entscheiden die Zahlen.'
+          desc: 'Anzeigenvarianten entwirft ein Modell aus Ihrem Unternehmenskontext, also Positionierung, Angeboten, Markenregeln und echten Kundenfragen. Wir wählen aus und schärfen nach. Was ankommt, zeigt der Test gegen die bestehende Anzeige.'
         },
         {
           title: 'Laufende Optimierung',
-          desc: 'Wir werten jede Woche aus und berichten monatlich. Was funktioniert, bauen wir aus, was nicht funktioniert, stoppen wir.'
+          desc: 'Wir werten jede Woche aus und berichten monatlich. Was aus den Anfragen im CRM wird, fliesst in Budget, Botschaften und Prüfregeln zurück.'
         }
       ]
     },
@@ -452,8 +454,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         title: 'Wer in Ihren Kampagnen was entscheidet',
         type: 'list',
         bullets: [
-          'Feste Regeln übertragen Anfragen mit Quelle ins CRM und melden qualifizierte Anfragen an die Werbekonten zurück',
-          'Ein Agent überwacht täglich Kosten, Suchbegriffe und Auslieferung und meldet Auffälligkeiten mit Vorschlag',
+          'Feste Regeln übertragen Anfragen mit Quelle ins CRM und melden qualifizierte Anfragen an die Werbekonten zurück, wo die Plattform es zulässt',
+          'Feste Prüfungen laufen täglich, bei Abweichungen sucht ein agentischer Ablauf die Ursache und schlägt eine Massnahme vor',
           'Anzeigenvarianten entstehen als Entwurf, online gehen sie erst nach Prüfung',
           'Budget, Gebote und neue Kampagnen gibt ein Mensch frei, und jede Änderung ist protokolliert'
         ]
@@ -483,7 +485,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Steuert ein KI-Agent unser Werbebudget?',
-        a: 'Nein. Der Agent überwacht, meldet und schlägt vor. Kleine, vorher definierte Korrekturen, etwa das Ausschliessen eindeutig unpassender Suchbegriffe, kann er auf Wunsch innerhalb fester Grenzen selbst ausführen. Budget, Gebotsstrategie und neue Kampagnen gibt immer ein Mensch frei.'
+        a: 'Nein. Feste Prüfungen melden Abweichungen, ein agentischer Ablauf sucht die Ursache und schlägt eine Massnahme vor. Nach einer Bewährungsphase und innerhalb fester Limits kann er auf Wunsch kleine, umkehrbare Korrekturen selbst ausführen, etwa eindeutig unpassende Suchbegriffe ausschliessen. Budget, Gebotsstrategie und neue Kampagnen gibt immer ein Mensch frei.'
       },
       {
         q: 'Brauchen wir ein grosses Budget?',
@@ -491,7 +493,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Was unterscheidet Sie von einer Werbeagentur?',
-        a: 'Wir messen den Erfolg an Anfragen und Verkaufschancen, nicht an Klicks und Impressionen, und verbinden die Kampagnen dafür mit Ihrem CRM. Kampagnen, Landingpages, Tracking und die Übergabe an Ihren Vertrieb betreut Yathur Nathan persönlich, die tägliche Überwachung übernimmt ein Agent.'
+        a: 'Wir messen den Erfolg an Anfragen und Verkaufschancen, nicht an Klicks und Impressionen, und verbinden die Kampagnen dafür mit Ihrem CRM. Kampagnen, Landingpages, Tracking und die Übergabe an Ihren Vertrieb betreut Yathur Nathan persönlich. Die täglichen Prüfungen laufen automatisch.'
       }
     ],
     cta: {
@@ -525,11 +527,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Markt- und Wettbewerbsrecherche',
-          desc: 'Ein agentischer Workflow sammelt Angebote, Preise und Positionierungen von Mitbewerbern und verdichtet sie. Wir prüfen die Quellen und nutzen das Ergebnis als Grundlage für den Workshop.'
+          desc: 'Ein agentischer Ablauf sammelt Angebote, Preise und Positionierungen von Mitbewerbern aus öffentlichen Quellen und verdichtet sie mit Quellenangabe. Wir prüfen die Quellen und nutzen das Ergebnis als Grundlage für den Workshop.'
         },
         {
           title: 'Ihre eigenen Daten auswerten',
-          desc: 'Bisherige Anfragen, Offerten und gewonnene Aufträge werten wir mit KI-Unterstützung nach Mustern aus, etwa welche Branchen oder Anlässe zu Aufträgen führen. Ihr Team ordnet die Ergebnisse ein.'
+          desc: 'Bisherige Anfragen, Offerten und gewonnene Aufträge werten wir mit KI-Unterstützung nach Mustern aus, etwa welche Branchen oder Anlässe zu Aufträgen führen. Bei wenigen Aufträgen pro Jahr sind das Hinweise, keine Beweise, Ihr Team ordnet sie ein.'
         },
         {
           title: 'Positionierung',
@@ -545,7 +547,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Kennzahlen festlegen',
-          desc: 'Wir legen wenige Kennzahlen fest, an denen Sie den Fortschritt ablesen, etwa Anfragen pro Monat oder Kosten pro Neukunde, und klären, aus welchen Systemen sie automatisch kommen.'
+          desc: 'Wir legen wenige Kennzahlen fest, an denen Sie den Fortschritt ablesen, etwa Anfragen pro Monat oder Kosten pro Neukunde, und klären, aus welchen Systemen sie kommen und wie die Ergebnisse in die Planung zurückfliessen.'
         }
       ]
     },
@@ -554,7 +556,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Analyse (Woche 1–2)',
-          desc: 'Ein agentischer Workflow recherchiert Markt und Mitbewerber, und wir werten Ihre bisherigen Anfragen und Kunden aus. So sehen wir, wo Sie schon wachsen und wo Chancen liegen bleiben.'
+          desc: 'Ein agentischer Ablauf recherchiert Markt und Mitbewerber, und wir werten Ihre bisherigen Anfragen und Kunden aus. So sehen wir, wo Sie schon wachsen und wo Chancen liegen bleiben.'
         },
         {
           title: 'Strategie-Workshop (Woche 2–3)',
@@ -574,7 +576,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       {
         title: 'Warum eine Strategie heute auch Kriterien liefern muss',
         type: 'text',
-        text: 'Automatisierte Abläufe und KI arbeiten nur so gut wie die Vorgaben, die sie erhalten. Ein Agent, der Anfragen einordnet, braucht nachvollziehbare Kriterien, und die Gebotsalgorithmen von Google oder LinkedIn brauchen ein messbares Ziel. Deshalb halten wir die Ergebnisse der Strategiearbeit so fest, dass Menschen und Systeme damit arbeiten können. Die Entscheide über Zielkunden, Positionierung und Budget treffen Sie mit uns, nicht ein Modell.'
+        text: 'Automatisierte Abläufe und KI arbeiten nur so gut wie die Vorgaben, die sie erhalten. Ein Agent, der Anfragen einordnet, braucht nachvollziehbare Kriterien, und die Gebotsalgorithmen von Google oder LinkedIn brauchen ein messbares Ziel. Deshalb halten wir Zielkunden, Angebote, Kernbotschaften und Begriffe als Unternehmenskontext fest, auf den Ihr Team und Ihre Systeme zugreifen. Die Entscheide über Zielkunden, Positionierung und Budget treffen Sie mit uns, nicht ein Modell.'
       },
       {
         title: 'Was Sie danach wissen',
@@ -637,36 +639,28 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       title: 'Was wir für Sie aufbauen',
       items: [
         {
-          title: 'Sichtbarkeit bei Google',
-          desc: 'Inhalte und SEO, die Sie bei passenden Suchanfragen sichtbar machen. Wir wählen Suchbegriffe, hinter denen eine echte Kaufabsicht steht, auch wenn das Suchvolumen dann kleiner ist.'
+          title: 'SEO mit Kaufabsicht',
+          desc: 'Technisches SEO, strukturierte Daten und thematisch verknüpfte Inhalte. Wir wählen Suchbegriffe, hinter denen eine echte Kaufabsicht steht, auch wenn das Suchvolumen dann kleiner ist.'
         },
         {
           title: 'Sichtbarkeit in KI-Antworten (GEO)',
-          desc: 'Generative Engine Optimization heisst, Inhalte so aufzubereiten, dass KI-Assistenten Ihr Angebot verstehen und korrekt wiedergeben. Dazu gehören klare Definitionen, strukturierte Daten und Fachinhalte mit Quellen. Wie die Assistenten Sie nennen, prüfen wir regelmässig mit einem festen Satz von Fragen.'
-        },
-        {
-          title: 'SEO-Grundlagen',
-          desc: 'Technisches SEO, Keyword-Planung, strukturierte Daten und thematisch verknüpfte Inhalte. So entsteht Sichtbarkeit, die langfristig Anfragen bringt, ohne für jeden Klick zu bezahlen.'
+          desc: 'Generative Engine Optimization heisst, Inhalte so aufzubereiten, dass KI-Assistenten Ihr Angebot verstehen und korrekt wiedergeben. Dazu gehören klare Definitionen, strukturierte Daten und Fachinhalte mit Quellen. Wie die Assistenten Sie beschreiben, prüfen wir regelmässig mit einem festen Fragenset. Eine Nennung garantiert das nicht, es zeigt aber, wo Inhalte fehlen oder falsch wiedergegeben werden.'
         },
         {
           title: 'Inhalte mit Plan',
-          desc: 'Ein Themenplan, der sich an echten Fragen Ihrer Kunden orientiert, aus Gesprächen, Anfragen und Suchdaten. Entwürfe entstehen mit KI-Unterstützung, Fachwissen, eigene Beispiele und die Freigabe kommen von Ihnen und uns.'
+          desc: 'Ein Themenplan, der sich an echten Fragen Ihrer Kunden orientiert, aus Gesprächen, Anfragen und Suchdaten. Entwürfe entstehen mit KI aus Ihren freigegebenen Unterlagen, Faktenaussagen nur mit Quellenbezug. Fachwissen, eigene Beispiele und die Freigabe kommen von Ihnen und uns.'
         },
         {
           title: 'Wege zur Anfrage',
-          desc: 'Landingpages, nützliche Angebote und klare Handlungsaufforderungen. Neben «Kontakt aufnehmen» gibt es Schritte, die zur jeweiligen Phase der Entscheidung passen.'
-        },
-        {
-          title: 'Nützliche Angebote',
-          desc: 'Leitfäden, Checklisten, Rechner oder Selbsttests, die für Ihre Zielgruppe echten Nutzen haben und gegen Kontaktangaben heruntergeladen werden.'
+          desc: 'Landingpages mit klaren Handlungsaufforderungen und nützlichen Angeboten wie Leitfäden, Checklisten oder Selbsttests. Neben «Kontakt aufnehmen» gibt es Schritte, die zur jeweiligen Phase der Entscheidung passen.'
         },
         {
           title: 'Anfragen anreichern und bewerten',
-          desc: 'Jede neue Anfrage wird mit Firmendaten ergänzt und erhält per Lead-Scoring Punkte nach Ihren Kriterien, etwa Branche, Firmengrösse oder Verhalten auf der Website. Die Punkte vergibt eine nachvollziehbare Regel, die Zusammenfassung schreibt ein Modell, und Ihr Vertrieb kann beides ändern.'
+          desc: 'Ein agentischer Schritt ergänzt jede neue Anfrage mit Firmendaten aus Website und öffentlichen Quellen. Die Lead-Scoring-Punkte vergibt eine nachvollziehbare Regel nach Ihren Kriterien, etwa Branche oder Firmengrösse, und jede Bewertung nennt ihren Grund. Ihr Vertrieb kann beides korrigieren.'
         },
         {
           title: 'Direktansprache mit Recherche',
-          desc: 'Für Wunschfirmen recherchiert ein Agent Anlass und Ansprechpartner und entwirft eine persönliche Nachricht per E-Mail oder LinkedIn. Verschickt wird erst, wenn jemand den Entwurf geprüft hat.'
+          desc: 'Zum Beispiel recherchiert ein Agent für Wunschfirmen Anlass und Ansprechpartner und entwirft eine persönliche Nachricht per E-Mail oder LinkedIn. Verschickt wird erst nach Prüfung, die Regeln zur Kaltakquise gelten.'
         }
       ]
     },
@@ -695,7 +689,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Bericht',
-          desc: 'Jeden Monat sehen Sie, welche Inhalte gefunden werden, wie KI-Assistenten Sie nennen, welche Inhalte Anfragen bringen und wo Lücken sind. Danach richten wir die nächsten Schritte aus.'
+          desc: 'Jeden Monat sehen Sie, welche Inhalte gefunden werden, wie KI-Assistenten Sie beschreiben, welche Inhalte Anfragen bringen und wo Lücken sind. Danach richten wir die nächsten Schritte aus.'
         }
       ]
     },
@@ -706,14 +700,9 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         bullets: [
           'Recherche zu Suchbegriffen und zu Fragen an KI-Assistenten läuft KI-gestützt, die Auswahl treffen wir mit Ihnen',
           'Entwürfe für Fachinhalte prüfen und schärfen wir mit Ihrem Fachwissen, bevor etwas online geht',
-          'Anreicherung und Lead-Scoring laufen automatisch, die Kriterien legt Ihr Vertrieb fest',
+          'Anreicherung und Lead-Scoring laufen automatisch, die Kriterien legt Ihr Vertrieb fest, und jede Bewertung nennt ihren Grund',
           'Nachrichten an Wunschfirmen gehen nur nach Freigabe hinaus'
         ]
-      },
-      {
-        title: 'Zeitrahmen',
-        type: 'text',
-        text: 'Erste Platzierungen bei Google gibt es meist nach drei bis sechs Monaten, nennenswert mehr Anfragen eher nach sechs bis neun Monaten. Organische Sichtbarkeit braucht Zeit. Wer schneller Anfragen braucht, ergänzt SEO mit Google Ads.'
       }
     ],
     faq: [
@@ -776,7 +765,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Kontakte bewerten',
-          desc: 'Lead-Scoring im CRM, also eine Punktebewertung nach Profil und Verhalten, zeigt, welche Kontakte bereit für ein Gespräch sind. Wir beginnen mit einfachen, nachvollziehbaren Punkten und prüfen erst danach, ob ein Modell die Bewertung verbessert.'
+          desc: 'Lead-Scoring im CRM, also eine Punktebewertung nach Profil und Verhalten, zeigt, welche Kontakte bereit für ein Gespräch sind. Wir beginnen mit einfachen Punkten, deren Herkunft jeder sieht, und prüfen erst danach, ob ein Modell die Bewertung verbessert.'
         },
         {
           title: 'Interessenten weiterbegleiten',
@@ -792,7 +781,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Tools verbinden',
-          desc: 'Wir verbinden Ihre bestehenden Tools wie HubSpot, Salesforce, Pipedrive, Mailchimp oder Intercom. Die Daten fliessen automatisch, niemand muss sie abtippen.'
+          desc: 'Wir verbinden Ihre bestehenden Tools wie HubSpot, Salesforce, Pipedrive, Mailchimp oder Intercom. Schlägt eine Übertragung fehl, wird sie wiederholt oder landet als Klärfall bei einer zuständigen Person.'
         },
         {
           title: 'Automatische Berichte',
@@ -833,7 +822,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           'Erfassung, Zuweisung, Erinnerungen und Abmeldungen laufen nach festen Regeln',
           'Zusammenfassungen, Datenergänzung und Entwürfe für Folge-E-Mails bereitet KI vor',
           'Was persönlich an einen Kunden geht und jede Änderung an den Kriterien gibt Ihr Team frei',
-          'Vor dem Start schriftlich festgelegt, welche Daten an ein KI-Modell gehen dürfen und wer auf welche Felder zugreift'
+          'Vor dem Start schriftlich festgelegt, welche Daten an welchen Modellanbieter gehen dürfen und wer auf welche Felder zugreift'
         ]
       },
       {
@@ -893,13 +882,13 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'revenue-operations',
     hero: {
       headline: 'Marketing, Vertrieb und Kundenbetreuung arbeiten mit denselben Zahlen.',
-      subheadline: 'Wenn Ihre Teams mit unterschiedlichen Daten und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir bringen Abläufe, Daten und Kennzahlen zusammen und bauen darauf Prüfungen und Agenten, die Datenqualität und Pipeline laufend im Blick behalten. Im Englischen heisst das Revenue Operations, kurz RevOps.',
+      subheadline: 'Wenn Ihre Teams mit unterschiedlichen Daten und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir bringen Abläufe, Daten und Kennzahlen zusammen. Feste Prüfungen halten Datenqualität und Pipeline sauber, die unklaren Fälle bereitet ein Agent auf. Im Englischen heisst das Revenue Operations, kurz RevOps.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
       title: 'Jedes Team misst etwas anderes',
       paragraphs: [
-        'Viele Wachstumsprobleme liegen weder im Marketing noch im Vertrieb, sondern in den Abläufen dazwischen.',
+        'Viele Wachstumsprobleme liegen in den Abläufen zwischen Marketing und Vertrieb.',
         'Die Teams arbeiten nebeneinander her, die Daten liegen verstreut in verschiedenen Tools, und Übergaben sind nicht geregelt. Das Marketing zählt Kontakte, der Vertrieb Abschlüsse, die Kundenbetreuung Kündigungen. Den Umsatz als Ganzes betrachtet niemand.',
         'Das führt zu Doppelspurigkeiten und verlorenen Verkaufschancen, und das Wachstum lässt sich kaum vorhersagen. Automatisierung macht es nicht besser, solange jedes System etwas anderes unter einer qualifizierten Anfrage versteht.'
       ]
@@ -925,15 +914,15 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Laufende Prüfung der Datenqualität',
-          desc: 'Feste Prüfungen finden fehlende Pflichtfelder und eindeutige Dubletten. Ein Agent nimmt sich die unklaren Fälle vor, ergänzt Angaben und schlägt Korrekturen vor, die Ihr Team freigibt.'
+          desc: 'Feste Prüfungen finden fehlende Pflichtfelder und eindeutige Dubletten. Für die unklaren Fälle sucht ein Agent fehlende Angaben in angebundenen Quellen und schlägt Korrekturen vor, die Ihr Team freigibt.'
         },
         {
           title: 'Pipeline im Blick',
-          desc: 'Verkaufschancen, die seit Wochen stillstehen, und überfällige Nachfass-Schritte werden automatisch erkannt. Vor der wöchentlichen Pipeline-Besprechung fasst ein Agent die wichtigsten Veränderungen zusammen.'
+          desc: 'Regeln erkennen Verkaufschancen, die seit Wochen stillstehen, und überfällige Nachfass-Schritte. Vor der wöchentlichen Pipeline-Besprechung fasst ein Modell die wichtigsten Veränderungen zusammen.'
         },
         {
           title: 'Umsatzprognose',
-          desc: 'Die Prognose rechnet nach festen Regeln aus Phasen und Erfahrungswerten, ein Modell kommentiert die Abweichungen. Die Zahl, auf die sich die Geschäftsleitung verlässt, verantwortet Ihr Vertrieb.'
+          desc: 'Die Prognose rechnet nach festen Regeln aus Phasen und Erfahrungswerten, ein Modell kommentiert die Abweichungen. Bei wenigen Abschlüssen pro Jahr bringen saubere Phasen und Risikosignale mehr als ein Prognosemodell. Die Zahl verantwortet Ihr Vertrieb.'
         },
         {
           title: 'Berichte',
@@ -972,7 +961,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         type: 'list',
         bullets: [
           'Feste Regeln prüfen Pflichtfelder, Fristen und Übergaben',
-          'Agenten bearbeiten unklare Datensätze und bereiten Pipeline-Zusammenfassungen vor',
+          'Ein Agent bearbeitet unklare Datensätze, ein Modell fasst die Pipeline-Woche zusammen',
           'Korrekturen an Daten, Prognose und Prioritäten gibt Ihr Team frei',
           'Jeder automatische Schritt wird protokolliert, Zahlen und Entscheide bleiben nachvollziehbar'
         ]
@@ -1010,7 +999,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Ändern Agenten Daten in unserem CRM?',
-        a: 'Nur in dem Rahmen, den Sie festlegen. Üblich ist, dass ein Agent Korrekturen vorschlägt und Ihr Team sie freigibt. Einfache, eindeutige Ergänzungen können automatisch übernommen werden, wenn Sie das wünschen. Jede Änderung wird protokolliert und lässt sich zurücknehmen.'
+        a: 'Nur in dem Rahmen, den Sie festlegen. Üblich ist, dass ein Agent Korrekturen vorschlägt und Ihr Team sie freigibt. Eindeutige Ergänzungen, die wenig Schaden anrichten und sich zurücknehmen lassen, können nach einer Testphase automatisch übernommen werden, wenn Sie das wünschen. Jede Änderung wird protokolliert.'
       },
       {
         q: 'Ist das nicht einfach ein IT-Projekt?',
@@ -1047,7 +1036,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Verkaufswissen an einem Ort',
-          desc: 'Referenzbeispiele, Vergleiche mit Mitbewerbern, Antworten auf häufige Einwände und Angebotsvorlagen, strukturiert abgelegt. Ihr Vertrieb findet sie schnell, und ein Agent kann sie für die Gesprächsvorbereitung nutzen.'
+          desc: 'Referenzbeispiele, Vergleiche mit Mitbewerbern, Antworten auf häufige Einwände und Angebotsvorlagen, strukturiert abgelegt. Ihr Vertrieb findet sie schnell, und ein Agent greift für die Gesprächsvorbereitung darauf zu, immer mit Verweis auf die Quelle.'
         },
         {
           title: 'Recherche vor dem Gespräch',
@@ -1055,7 +1044,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Nach dem Gespräch',
-          desc: 'Gesprächsnotizen werden zusammengefasst, nächste Schritte als Aufgaben im CRM angelegt und ein Entwurf für die Nachfass-Nachricht vorbereitet. Was hinausgeht, entscheidet Ihr Vertrieb.'
+          desc: 'Gesprächsnotizen werden zusammengefasst, nächste Schritte als Aufgaben im CRM angelegt und ein Entwurf für die Nachfass-Nachricht vorbereitet. Was hinausgeht, entscheidet Ihr Vertrieb. Stimmen oder Emotionen werten wir nicht aus.'
         },
         {
           title: 'Klare Übergabe',
@@ -1067,7 +1056,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Gewonnene und verlorene Abschlüsse auswerten',
-          desc: 'Gesprächsnotizen und Absagegründe werten wir mit KI-Unterstützung nach Mustern aus. Die Erkenntnisse fliessen in Botschaften, Positionierung und Verkaufsargumente zurück.'
+          desc: 'Gesprächsnotizen und Absagegründe werten wir mit KI-Unterstützung nach Mustern aus, Ihr Team prüft sie. Die Erkenntnisse fliessen in Botschaften, Positionierung und Verkaufsargumente zurück.'
         },
         {
           title: 'Einarbeitung neuer Mitarbeitender',
@@ -1116,7 +1105,6 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         type: 'list',
         bullets: [
           'Ihr Vertrieb weiss, welche Anfragen Vorrang haben.',
-          'Jedes Gespräch beginnt mit Recherche und passenden Referenzen statt bei null.',
           'Das Marketing weiss, was der Vertrieb wirklich braucht.',
           'Verkaufsunterlagen sind aktuell und werden genutzt.',
           'Neue Mitarbeitende im Vertrieb finden sich schneller zurecht.'
@@ -1155,13 +1143,13 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'ecommerce-performance',
     hero: {
       headline: 'Ihr Shop hat Besucher. Wir helfen, daraus Käufer zu machen.',
-      subheadline: 'Wir verbessern, was zwischen Besuch und Kauf liegt, von der Kaufquote über Wiederkäufe bis zur Werbeeffizienz. Dafür verbinden wir Shop, Werbekonten und Warenkosten so, dass Abweichungen täglich auffallen und Google und Meta nach Marge statt nach Umsatz optimieren.',
+      subheadline: 'Wir verbessern, was zwischen Besuch und Kauf liegt, von der Kaufquote über Wiederkäufe bis zur Werbeeffizienz. Shop, Werbekonten und Warenkosten verbinden wir so, dass Abweichungen täglich auffallen. Sofern Margen im Shop oder ERP verfügbar sind, optimieren Google und Meta nach Marge statt nach Umsatz.',
       ctaText: 'Shop-Zahlen besprechen'
     },
     problem: {
       title: 'Viele Shops verlieren Umsatz, den sie schon fast hatten',
       paragraphs: [
-        'In den meisten Online-Shops kauft nur ein kleiner Teil der Besucher. Die übrigen gehen wieder, oft kurz vor dem Ziel. Das liegt selten am Algorithmus oder an zu wenig Besuchern, sondern am Ablauf im Shop.',
+        'In den meisten Online-Shops kauft nur ein kleiner Teil der Besucher. Die übrigen gehen wieder, oft kurz vor dem Ziel. Meist liegt das am Ablauf im Shop.',
         'Viele Shops stecken fast ihr ganzes Budget in neue Besucher über Google, Meta oder Influencer. Was danach passiert, bleibt oft unbeachtet: warum so viele im Warenkorb abbrechen, warum jemand einmal kauft und nie wieder und warum die Werbung unter Druck steht, obwohl genug Besucher kommen.',
         'Mehr Budget allein bringt einen Shop selten dauerhaft weiter. Was hilft, sind bessere Produktseiten, ein einfacherer Checkout, E-Mails, die Kunden zurückholen, und Werbung, die nach Marge gesteuert wird. Dafür braucht es Daten, die täglich zeigen, wo Umsatz verloren geht, und nicht erst im Monatsbericht.'
       ]
@@ -1175,11 +1163,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Werbung mit Blick auf die Marge',
-          desc: 'Betreuung von Google Shopping, Meta und Performance Max. Wir übermitteln Margen oder Deckungsbeiträge als Conversion-Werte, damit die Gebotsalgorithmen margenstarke Produkte bevorzugen, und bauen nur aus, was rentiert.'
+          desc: 'Betreuung von Google Shopping, Meta und Performance Max. Sofern Margen im Shop oder ERP verfügbar sind, übermitteln wir Deckungsbeiträge als Conversion-Werte, damit die Gebotsalgorithmen margenstarke Produkte bevorzugen. Ausgebaut wird nur, was rentiert.'
         },
         {
           title: 'Produktfeed & Katalog',
-          desc: 'Titel, Beschreibungen und Attribute für das Google Merchant Center und den Meta-Katalog entstehen mit KI-Unterstützung aus Ihren Produktdaten. Feste Regeln prüfen Pflichtfelder und Richtlinien, bevor ein Feed live geht.'
+          desc: 'Titel, Beschreibungen und Attribute für das Google Merchant Center und den Meta-Katalog entwirft ein Modell aus Ihren Produktdaten. Angaben wie Masse oder Material stammen nur aus diesen Daten. Feste Regeln prüfen Pflichtfelder und Richtlinien, bevor ein Feed live geht.'
         },
         {
           title: 'Wiederkäufe & E-Mail-Marketing',
@@ -1190,8 +1178,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Damit Sie sehen, welcher Kanal rentable Kunden bringt und wo Besucher abspringen, richten wir GA4, serverseitiges Tracking, Attribution, den Einbezug der Warenkosten und verständliche Dashboards ein.'
         },
         {
-          title: 'Tägliche Überwachung',
-          desc: 'Feste Prüfungen und ein Agent beobachten täglich Kaufquote, Checkout-Abbrüche, Feed-Fehler und Kampagnenkosten. Fällt etwas aus dem Rahmen, erhalten Sie eine kurze Meldung mit möglicher Ursache.'
+          title: 'Tägliche Prüfung',
+          desc: 'Feste Prüfungen laufen täglich über Kaufquote, Checkout-Abbrüche, Feed-Fehler und Kampagnenkosten. Fällt etwas aus dem Rahmen, sucht ein agentischer Ablauf in Shop- und Kontodaten nach der Ursache, und Sie erhalten eine kurze Meldung mit Vorschlag.'
         },
         {
           title: 'Technische Shop-Optimierung',
@@ -1208,7 +1196,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Grundlagen (2–4 Wochen)',
-          desc: 'Tracking reparieren, Margendaten an die Werbekonten anbinden, Produktfeeds bereinigen, die tägliche Überwachung einrichten und die wichtigsten E-Mail-Abläufe aufsetzen.'
+          desc: 'Tracking reparieren, vorhandene Margendaten an die Werbekonten anbinden, Produktfeeds bereinigen, die täglichen Prüfungen einrichten und die wichtigsten E-Mail-Abläufe aufsetzen.'
         },
         {
           title: 'Testen & verbessern (ab Woche 5, laufend)',
@@ -1225,7 +1213,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         title: 'Was automatisch läuft und was Sie entscheiden',
         type: 'list',
         bullets: [
-          'Bestellungen, Margen und Feed-Daten fliessen nach festen Regeln zwischen Shop und Werbekonten',
+          'Bestellungen, Feed-Daten und, sofern im Shop oder ERP vorhanden, Margen fliessen nach festen Regeln zwischen Shop und Werbekonten',
           'Produkttexte und E-Mail-Varianten entwirft KI, veröffentlicht wird nach Prüfung',
           'Preise, Sortiment, Rabatte und Budget entscheiden Sie'
         ]
@@ -1286,7 +1274,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Struktur für bezahlte Werbung',
-          desc: 'Wir ordnen Ihre Werbekonten neu, mit sauberer Kampagnenstruktur, getrennten Kampagnen für Bekanntheit und Verkauf und kontrollierter Anzeigenhäufigkeit. Meta und Google erfahren, ob ein Kauf von einem Neukunden kam, damit ihre Algorithmen gezielt neue Kunden suchen.'
+          desc: 'Wir ordnen Ihre Werbekonten neu, mit sauberer Kampagnenstruktur, getrennten Kampagnen für Bekanntheit und Verkauf und kontrollierter Anzeigenhäufigkeit. Liefern Shop oder ERP das Neukundensignal, erfahren Meta und Google, ob ein Kauf von einem Neukunden kam, und ihre Algorithmen suchen gezielter neue Kunden.'
         },
         {
           title: 'Kosten pro Kunde und Kundenwert',
@@ -1294,7 +1282,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Anzeigen im festen Testrhythmus',
-          desc: 'Briefings und Textvarianten entstehen mit KI-Unterstützung aus Kundenbewertungen und den Ergebnissen früherer Tests. Ein Agent meldet, wenn eine Anzeige nachlässt oder zu oft ausgespielt wird. Was live geht, entscheiden wir mit Ihnen.'
+          desc: 'Briefings und Textvarianten entwirft ein Modell aus Kundenbewertungen und den Ergebnissen früherer Tests. Feste Regeln melden, wenn eine Anzeige nachlässt oder zu oft ausgespielt wird. Was live geht, entscheiden wir mit Ihnen.'
         },
         {
           title: 'Weg zum Kauf & Shop-Optimierung',
@@ -1346,7 +1334,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         type: 'list',
         bullets: [
           'Kosten pro Neukunde, Kundenwert und Gewinnschwelle berechnet ein fester Ablauf jede Woche neu',
-          'Ein Agent beobachtet Anzeigenhäufigkeit und nachlassende Anzeigen und meldet sie mit Vorschlag',
+          'Feste Regeln melden zu häufig ausgespielte und nachlassende Anzeigen, ein Modell entwirft neue Varianten',
           'Neue Anzeigen, Budget und Rabatte gibt ein Mensch frei'
         ]
       }
@@ -1354,7 +1342,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Wir schalten bereits Meta-Anzeigen. Was machen Sie anders?',
-        a: 'Wir bringen Struktur in die Kampagnen, richten eine Messung ein, die nicht allein auf den Zahlen von Meta beruht, und bauen einen festen Ablauf für das Testen neuer Anzeigen auf. Der Algorithmus erhält bessere Signale, etwa ob ein Kauf von einem Neukunden kam. Ziel ist nicht mehr Budget in Meta, sondern mehr Ergebnis pro eingesetztem Franken.'
+        a: 'Wir bringen Struktur in die Kampagnen, richten eine Messung ein, die nicht allein auf den Zahlen von Meta beruht, und bauen einen festen Ablauf für das Testen neuer Anzeigen auf. Der Algorithmus erhält bessere Signale, etwa ob ein Kauf von einem Neukunden kam, sofern Shop oder ERP diese Angabe liefern. Ziel ist mehr Ergebnis pro eingesetztem Franken.'
       },
       {
         q: 'Wie lange dauert es, bis wir Ergebnisse sehen?',
@@ -1362,7 +1350,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Wir haben ein kleines Team und wenig Zeit. Passt das zu uns?',
-        a: 'Ja. Wir übernehmen Umsetzung, Überwachung und Optimierung, die laufende Kontrolle der Kampagnen ist weitgehend automatisiert. Sie erhalten regelmässige Berichte und klare Entscheidungsgrundlagen. Von Ihrer Seite braucht es vor allem Zugänge, Produktwissen und kurze Freigaben.'
+        a: 'Ja. Wir übernehmen Umsetzung, Überwachung und Optimierung, die tägliche Kontrolle der Kampagnen übernehmen feste Prüfungen. Sie erhalten regelmässige Berichte und klare Entscheidungsgrundlagen. Von Ihrer Seite braucht es vor allem Zugänge, Produktwissen und kurze Freigaben.'
       }
     ],
     cta: {
@@ -1375,7 +1363,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'customer-retention',
     hero: {
       headline: 'Machen Sie aus Erstkäufern Stammkunden.',
-      subheadline: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Wir bauen ein System, das auf Signale wie Kaufzeitpunkt, Nutzung oder Inaktivität reagiert und Abwanderung früh erkennt. Für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
+      subheadline: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Wir bauen ein System, das auf Signale wie Kaufzeitpunkt, Nutzung oder Inaktivität reagiert und Hinweise auf Abwanderung früh sichtbar macht. Für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
       ctaText: 'Kundenbindung besprechen'
     },
     problem: {
@@ -1399,11 +1387,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Rückgewinnung & Kündigungen vorbeugen',
-          desc: 'Inaktive Kunden sind nicht verloren. Wir bauen E-Mail-Strecken, die sie mit einem passenden Anlass wieder ansprechen. Im B2B verbinden wir Frühwarnzeichen wie sinkende Nutzung, offene Supportfälle oder ausbleibende Bestellungen zu einem Hinweis an die Kundenbetreuung.'
+          desc: 'Inaktive Kunden sind nicht verloren. Wir bauen E-Mail-Strecken, die sie mit einem passenden Anlass wieder ansprechen. Im B2B lassen sich zum Beispiel Frühwarnzeichen wie sinkende Nutzung, offene Supportfälle oder ausbleibende Bestellungen per Regel zu einem Hinweis an die Kundenbetreuung verbinden.'
         },
         {
           title: 'Kundengespräche vorbereiten',
-          desc: 'Vor einem Verlängerungs- oder Jahresgespräch fasst ein Agent die Kundenhistorie aus CRM, Bestellungen und Supportfällen zusammen. Ihre Kundenbetreuung geht mit einem vollständigen Bild ins Gespräch.'
+          desc: 'Vor einem Verlängerungs- oder Jahresgespräch holt ein fester Ablauf die Kundenhistorie aus CRM, Bestellungen und Supportfällen, ein Modell fasst sie zusammen. Ihre Kundenbetreuung geht mit einem vollständigen Bild ins Gespräch.'
         },
         {
           title: 'Treue- und Wiederkaufprogramme',
@@ -1411,7 +1399,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Zusatzangebote automatisieren',
-          desc: 'Welche Ergänzung zu wem passt, schlägt ein Modell auf Basis von Kaufhistorie, Nutzung und Kundengruppe vor. Welche Angebote und Rabatte es überhaupt gibt, legen Sie fest.'
+          desc: 'Welche Ergänzung zu wem passt, schlägt ein Modell auf Basis von Kaufhistorie, Nutzung und Kundengruppe vor. Welche Angebote und Rabatte es überhaupt gibt, legen Sie fest. Individuelle Preise pro Person setzen wir nicht ein.'
         },
         {
           title: 'Kundenwert & Wiederkäufe messen',
@@ -1428,7 +1416,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         {
           title: 'Analyse der Kundenbasis',
-          desc: 'Wir werten Ihre Kunden nach Kaufhäufigkeit, Kundenwert, Abwanderung und Wiederkaufverhalten aus. KI hilft dabei, Gruppen mit ähnlichem Verhalten zu finden, die wir anschliessend mit Ihnen prüfen.'
+          desc: 'Wir werten Ihre Kunden nach Kaufhäufigkeit, Kundenwert, Abwanderung und Wiederkaufverhalten aus. Oft reichen einfache Gruppen nach Kaufzeitpunkt, Häufigkeit und Wert. KI hilft, weitere Muster zu finden, die wir mit Ihnen prüfen.'
         },
         {
           title: 'Grundlagen & erste Abläufe',
@@ -1467,7 +1455,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Arbeiten Sie mit unserem bestehenden E-Mail-Tool oder müssen wir wechseln?',
-        a: 'Wir arbeiten mit dem, was Sie haben. Die meisten Probleme liegen nicht am Tool, sondern daran, dass Struktur und eine sinnvolle Einteilung der Kunden in Gruppen fehlen. Wir arbeiten unter anderem mit Klaviyo, HubSpot, ActiveCampaign und Mailchimp.'
+        a: 'Wir arbeiten mit dem, was Sie haben. Meist fehlen Struktur und eine sinnvolle Einteilung der Kunden in Gruppen, selten liegt es am Tool. Wir arbeiten unter anderem mit Klaviyo, HubSpot, ActiveCampaign und Mailchimp.'
       },
       {
         q: 'Was ist realistisch, und wie schnell?',
@@ -1484,7 +1472,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'paid-social-ecommerce',
     hero: {
       headline: 'Ihr ROAS sieht gut aus. Aber verdienen Sie auch daran?',
-      subheadline: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen stecken darin nicht. Wir steuern nach Deckungsbeitrag und melden den Plattformen Werte, die die Marge abbilden, damit ihre Algorithmen auf Gewinn statt auf Umsatz optimieren.',
+      subheadline: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen stecken darin nicht. Wir steuern nach Deckungsbeitrag. Sofern Margen im Shop oder ERP verfügbar sind, melden wir den Plattformen Werte, die die Marge abbilden, damit ihre Algorithmen auf Gewinn optimieren.',
       ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
@@ -1512,7 +1500,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Tracking & Margensignale',
-          desc: 'Serverseitiges Tracking (Server-Side Tagging) über die Meta Conversions API und die TikTok Events API, damit auch nach den Tracking-Einschränkungen von Apple möglichst vollständige Daten ankommen. Statt des Bestellwerts kann ein margenbasierter Wert übermittelt werden, auf den die Algorithmen dann optimieren.'
+          desc: 'Serverseitiges Tracking (Server-Side Tagging) über die Meta Conversions API und, wo Ihr Shop es unterstützt, die TikTok Events API, damit auch nach den Tracking-Einschränkungen von Apple möglichst vollständige Daten ankommen. Sofern Margen in Shop oder ERP vorliegen, übermitteln wir statt des Bestellwerts einen margenbasierten Wert.'
         },
         {
           title: 'Anzeigen systematisch testen',
@@ -1520,7 +1508,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Tägliche Deckungsbeitrags-Kontrolle',
-          desc: 'Ein fester Ablauf verbindet täglich Werbekosten, Bestellungen und Warenkosten. Fällt eine Kampagne unter die vereinbarte Schwelle, meldet ein Agent das mit einer kurzen Einordnung.'
+          desc: 'Ein fester Ablauf verbindet täglich Werbekosten, Bestellungen und Warenkosten. Fällt eine Kampagne unter die vereinbarte Schwelle, meldet eine Regel das, und ein Modell schreibt eine kurze Einordnung.'
         },
         {
           title: 'Monatliche Gewinnauswertung',
@@ -1537,7 +1525,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Struktur & Tracking',
-          desc: 'Kampagnen werden nach Marge und Phase neu aufgebaut oder umgebaut. Serverseitiges Tracking über die Meta Conversions API und die TikTok Events API wird eingerichtet oder repariert, die Margenwerte und die tägliche Kontrolle werden angebunden.'
+          desc: 'Kampagnen werden nach Marge und Phase neu aufgebaut oder umgebaut. Serverseitiges Tracking über die Meta Conversions API und, wo möglich, die TikTok Events API wird eingerichtet oder repariert, vorhandene Margenwerte und die tägliche Kontrolle werden angebunden.'
         },
         {
           title: 'Start & erste Tests',
@@ -1559,8 +1547,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         title: 'Wer was entscheidet',
         type: 'list',
         bullets: [
-          'Bestellungen und Margenwerte fliessen nach festen Regeln an Meta und TikTok',
-          'Ein Agent meldet, wenn eine Kampagne unter die Gewinnschwelle fällt oder eine Anzeige nachlässt',
+          'Bestellungen und, sofern im Shop oder ERP vorhanden, Margenwerte fliessen nach festen Regeln an Meta und TikTok',
+          'Feste Regeln melden, wenn eine Kampagne unter die Gewinnschwelle fällt oder eine Anzeige nachlässt, ein Modell ordnet ein',
           'Budget, neue Anzeigen und den Ausbau entscheidet ein Mensch'
         ]
       }
@@ -1568,7 +1556,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Was machen Sie anders als eine klassische Performance-Agentur?',
-        a: 'Viele Agenturen berichten vor allem über den ROAS, weil er einfach zu messen ist. Wir beziehen Ihre Produktmargen ein, steuern die Kampagnen nach Deckungsbeitrag und geben den Plattformen Werte, mit denen ihre Algorithmen auf Gewinn optimieren können.'
+        a: 'Viele Agenturen berichten vor allem über den ROAS, weil er einfach zu messen ist. Wir beziehen Ihre Produktmargen ein, steuern die Kampagnen nach Deckungsbeitrag und geben den Plattformen, wo die Daten es erlauben, Werte, mit denen ihre Algorithmen auf Gewinn optimieren können.'
       },
       {
         q: 'Müssen wir bestehende Kampagnen komplett neu aufbauen?',

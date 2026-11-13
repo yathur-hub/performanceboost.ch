@@ -112,7 +112,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       title: 'Anfragen gewinnen und weiterbegleiten',
       combo: 'Nachfrage aufbauen + Marketing-Automation + CRM',
-      desc: 'Nachfrage aufbauen, Interessenten weiterbegleiten, automatisch bewerten und an den Vertrieb übergeben.',
+      desc: 'Nachfrage aufbauen, Interessenten weiterbegleiten, nach festen Kriterien bewerten und an den Vertrieb übergeben.',
       timeline: 'Richtwert: Aufbau in rund 8–12 Wochen.'
     },
     {

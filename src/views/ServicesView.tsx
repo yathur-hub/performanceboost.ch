@@ -78,11 +78,11 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     },
     'demand-generation': {
       benefit: 'Regelmässig passende Anfragen für Ihren Vertrieb.',
-      desc: 'Kampagnen auf Google, LinkedIn und Meta, die mit Daten aus dem CRM auf Anfragen und Aufträge optimieren. Ein Agent überwacht täglich, Budget und Gebote gibt ein Mensch frei.'
+      desc: 'Kampagnen auf Google, LinkedIn und Meta, die mit CRM-Daten auf Aufträge optimieren. Feste Prüfungen laufen täglich, bei Abweichungen schlägt ein agentischer Ablauf eine Massnahme vor. Budget und Gebote gibt ein Mensch frei.'
     },
     'lead-generation': {
       benefit: 'Aus Besuchern bei Google und in KI-Antworten werden Anfragen.',
-      desc: 'SEO und GEO, Landingpages, die Anfragen erfassen, und eine Bewertung, die zeigt, welche Anfragen Vorrang haben. KI-Entwürfe für Inhalte prüfen wir mit Ihrem Fachwissen.'
+      desc: 'SEO und GEO, Landingpages, die Anfragen erfassen, und ein Lead-Scoring, das zeigt, welche Anfragen Vorrang haben und warum. KI-Entwürfe für Inhalte prüfen wir mit Ihrem Fachwissen.'
     },
     'marketing-automation': {
       benefit: 'Weniger Handarbeit, keine vergessenen Anfragen.',
@@ -94,15 +94,15 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     },
     'revenue-operations': {
       benefit: 'Marketing, Vertrieb und Kundenbetreuung arbeiten mit denselben Zahlen.',
-      desc: 'Gemeinsame Definitionen, saubere CRM-Daten und eine Pipeline, auf die Verlass ist. Regeln und Agenten prüfen Datenqualität und stehende Verkaufschancen, Korrekturen gibt Ihr Team frei.'
+      desc: 'Gemeinsame Definitionen, saubere CRM-Daten und eine Pipeline, auf die Verlass ist. Feste Regeln prüfen Datenqualität und stehende Verkaufschancen, ein Agent klärt Unklares, Korrekturen gibt Ihr Team frei.'
     },
     'ai-automation': {
       benefit: 'Ihr Team arbeitet sicher und wirksam mit KI.',
-      desc: 'Standortbestimmung, Einführung in die bestehenden Abläufe und Schulung mit eigenen Beispielen. Pro Aufgabe legen wir fest, was eine Regel erledigt, was KI entwirft und wer freigibt.'
+      desc: 'Standortbestimmung, Einführung in die bestehenden Abläufe und Schulung mit eigenen Beispielen. Pro Aufgabe legen wir fest, was eine Regel erledigt, was KI entwirft und wer freigibt, dazu Regeln gegen Schatten-KI.'
     },
     'ki-agenten': {
       benefit: 'Agenten übernehmen Schritte, Ihr Team gibt frei.',
-      desc: 'Agenten recherchieren, ordnen Anfragen ein, ergänzen das CRM und bereiten Antworten vor, mit eigenen Rechten, Protokollen und Tests an echten Fällen. Nach aussen geht nichts ohne Freigabe.'
+      desc: 'Agenten recherchieren, ordnen Anfragen ein, ergänzen das CRM und bereiten Antworten vor, mit eigenen Rechten, Protokollen und einer Testphase mit echten Fällen. Nach aussen geht nichts ohne Freigabe.'
     },
     'martech-stack': {
       benefit: 'Weniger Tools, die zusammenarbeiten.',
@@ -110,11 +110,11 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     },
     'data-analytics': {
       benefit: 'Sie sehen, was funktioniert und wo Budget verloren geht.',
-      desc: 'Datenschutzkonformes Tracking bis zum Auftrag, Dashboards und Daten, die an die Werbeplattformen zurückfliessen. Regeln prüfen die Messung täglich, ein Modell erklärt Abweichungen.'
+      desc: 'Tracking bis zum Auftrag mit geklärter Einwilligung, Dashboards und Daten, die an die Werbeplattformen zurückfliessen, wo diese es zulassen. Regeln prüfen die Messung täglich, ein Modell erklärt Abweichungen.'
     },
     'dtc-growth-acquisition': {
       benefit: 'Kundengewinnung, deren Kosten Sie kennen.',
-      desc: 'Wir ordnen Ihre Kampagnen, verbessern den Shop und messen jede Woche Kosten pro Neukunde und Kundenwert. Ein Agent meldet nachlassende Anzeigen, neue Varianten geben Sie frei.'
+      desc: 'Wir ordnen Ihre Kampagnen, verbessern den Shop und messen jede Woche Kosten pro Neukunde und Kundenwert. Feste Regeln melden nachlassende Anzeigen, neue Varianten geben Sie frei.'
     },
     'customer-retention': {
       benefit: 'Bestehende Kunden halten und Inaktive zurückholen.',
@@ -122,7 +122,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     },
     'paid-social-ecommerce': {
       benefit: 'Anzeigen nach Deckungsbeitrag statt nur nach ROAS.',
-      desc: 'Wir beziehen Marge, Versand und Retouren ein, übermitteln die Werte an Meta und TikTok und prüfen täglich gegen den Break-even. Was am Ende übrig bleibt, steuert das Budget.'
+      desc: 'Wir beziehen Marge, Versand und Retouren ein, übermitteln die Werte an Meta und TikTok, sofern Shop oder ERP sie liefern, und prüfen täglich gegen den Break-even. Was übrig bleibt, steuert das Budget.'
     }
   };
 

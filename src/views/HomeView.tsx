@@ -46,6 +46,10 @@ const FAQ = [
     a: 'Eine Automatisierung folgt festen Regeln und läuft immer gleich ab, zum Beispiel wenn eine Anfrage ins CRM übernommen wird. Ein KI-Agent bearbeitet eine Aufgabe über mehrere Schritte und wählt innerhalb eines festen Rahmens selbst den nächsten Schritt, zum Beispiel wenn er ein Unternehmen recherchiert und eine Gesprächsvorbereitung schreibt. In der Praxis werden beide kombiniert.',
   },
   {
+    q: 'Woher weiss ein Agent, was in unserem Unternehmen richtig ist?',
+    a: 'Aus dem Kontext, den wir mit Ihnen aufbauen. Dazu gehören Angebote, Zielkunden-Kriterien, Markenregeln sowie freigegebene Texte und Unterlagen. Faktenaussagen wie Preise oder Leistungsumfang stützt ein Agent nur auf diese Quellen. Fehlt eine Quelle, geht nichts hinaus. Den Kontext pflegen wir laufend, denn er bestimmt die Qualität mehr als das Sprachmodell.',
+  },
+  {
     q: 'Für welche Unternehmen eignet sich performanceboost?',
     a: 'Für Schweizer KMU, meist ab rund CHF 1 Mio. Jahresumsatz, die wachsen oder effizienter arbeiten möchten, vor allem Dienstleister und B2B-Unternehmen, aber auch Onlineshops. Wichtig ist eine Geschäftsleitung, die mitentscheidet, und die Bereitschaft, Abläufe zu verändern.',
   },
@@ -78,8 +82,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>
               </h1>
               <p className="text-slate-600 lg:text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl">
-                Wir gestalten Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter als ein System, in dem Automatisierung und KI-Agenten
-                von Anfang an mitgedacht sind. Agenten übernehmen klar umrissene Aufgaben, die Entscheidungen bleiben bei Ihrem Team.
+                Wir bauen Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter als ein System, das auf KI aufbaut. Daten, Automatisierung
+                und Agenten greifen ineinander, die Entscheidungen bleiben bei Ihrem Team.
               </p>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 justify-start items-stretch sm:items-center lg:pt-1">
                 <CtaButton label="Ausgangslage besprechen" location="home_hero" pageSlug="home" />
@@ -232,9 +236,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Systemen, Daten und Abläufen. Auf genau dieser Grundlage arbeiten auch die Agenten.
               </p>
               <p className="text-body-sm text-slate-500 leading-relaxed">
-                Wenn ein Glied dieser Kette schwach ist, bringt mehr Werbebudget oder eine neue Software wenig. Deshalb schauen wir uns das
-                ganze System an und beginnen dort, wo heute am meisten verloren geht. Typische Engpässe sind Anfragen, die tagelang liegen
-                bleiben, Kampagnen ohne Messung bis zum Auftrag oder Daten, die von Hand zwischen Systemen übertragen werden.
+                Viele Unternehmen setzen KI heute für einzelne Aufgaben ein, etwa für Texte oder Zusammenfassungen. Wirkung entsteht erst,
+                wenn ein Ablauf von der Anfrage bis zum Auftrag durchgehend verbunden ist. Deshalb beginnen wir beim grössten Engpass, etwa
+                Anfragen, die tagelang liegen bleiben, Kampagnen ohne Messung bis zum Auftrag oder Daten, die von Hand übertragen werden.
               </p>
             </div>
             <div className="lg:col-span-7 min-w-0">
@@ -247,7 +251,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <SectionHeading
                 as="h3"
                 title="Agenten arbeiten, Ihr Team entscheidet"
-                intro="Nicht jede Aufgabe braucht KI. Wir legen pro Schritt fest, ob eine Regel, ein Modell oder ein Agent ihn übernimmt, welche Rechte er erhält und wo ein Mensch freigibt."
+                intro="Wir legen pro Schritt fest, ob eine Regel, ein Modell oder ein Agent ihn übernimmt. Wie viel ein Agent selbst ausführen darf, hängt davon ab, wie teuer ein Fehler wäre und ob er sich rückgängig machen lässt."
               />
               <Link href="/leistungen/ki-im-unternehmen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
                 Governance für KI-Agenten <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
