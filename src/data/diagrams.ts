@@ -47,7 +47,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
       type: 'hub',
       center: { title: 'Ihre Website', sub: 'Klares Angebot, einfacher Weg zur Anfrage', icon: 'Globe' },
       nodes: [
-        { title: 'SEO', sub: 'Gefunden werden', icon: 'Search' },
+        { title: 'SEO & GEO', sub: 'Bei Google und in KI-Antworten', icon: 'Search' },
         { title: 'Inhalte', sub: 'Fachwissen zeigen', icon: 'FileText' },
         { title: 'Direktansprache', sub: 'LinkedIn, E-Mail', icon: 'Send' },
         { title: 'Landingpages', sub: 'Pro Angebot eine Seite', icon: 'MousePointerClick' },

@@ -5,7 +5,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'growth-strategy',
     title: 'KI-gestützte Marketing- & Wachstumsstrategie',
     slug: 'growth-strategy',
-    shortDesc: 'Klarer Plan für die Neukundengewinnung: Wunschkunden, Positionierung, Kanäle und Budget.',
+    shortDesc: 'Klarer Plan für die Neukundengewinnung, mit KI-gestützter Markt- und Wettbewerbsrecherche.',
     description: 'Wachstum lässt sich steuern, wenn ein paar Grundentscheide gefallen sind. Wir schauen uns Ihren Markt und Ihre bestehenden Kunden an, beschreiben Ihre Wunschkunden und legen fest, über welche Kanäle und mit welchen Botschaften Sie diese erreichen. So fliesst Ihr Budget dorthin, wo Anfragen entstehen.',
     benefits: [
       'Klares Zielkundenprofil, damit Werbung und Vertrieb die richtigen Firmen ansprechen',
@@ -32,7 +32,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'demand-generation',
     title: 'Performance Marketing mit KI-Agenten',
     slug: 'demand-generation',
-    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn für die Firmen und Personen, die Sie gewinnen wollen.',
+    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn, die ein KI-Agent täglich überwacht.',
     description: 'Viele Ihrer künftigen Kunden suchen heute noch nicht aktiv. Mit Kampagnen auf LinkedIn, Google und Meta sorgen wir dafür, dass Ihr Unternehmen bekannt ist, wenn der Bedarf entsteht, und dass Interessenten, die bereits suchen, bei Ihnen landen. Anzeigen, Inhalte und Landingpages stimmen wir aufeinander ab.',
     benefits: [
       'Regelmässige Sichtbarkeit bei den Firmen und Personen, die für Sie relevant sind',
@@ -57,9 +57,9 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'lead-generation',
-    title: 'KI-gestützte Lead-Generierung & SEO',
+    title: 'KI-gestützte Lead-Generierung & GEO',
     slug: 'lead-generation',
-    shortDesc: 'Qualifizierte Anfragen über Suchmaschinen, nützliche Inhalte und persönliche Direktansprache.',
+    shortDesc: 'Anfragen über Google, KI-Assistenten (GEO), Inhalte und Direktansprache, mit KI-gestützter Vorqualifizierung.',
     description: 'Wir sorgen dafür, dass passende Interessenten Sie finden und dass Sie selbst aktiv auf Wunschfirmen zugehen können. Dazu gehören Inhalte, die bei Google gefunden werden, Landingpages mit nützlichen Angeboten wie Checklisten oder Leitfäden sowie eine persönliche Direktansprache per E-Mail und LinkedIn.',
     benefits: [
       'Regelmässige Anfragen für Erstgespräche statt Zufallskontakte',
@@ -86,7 +86,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'marketing-automation',
     title: 'KI-gestütztes CRM & Marketing Automation',
     slug: 'marketing-automation',
-    shortDesc: 'Automatische Folge-E-Mails und ein CRM, in dem keine Anfrage mehr verloren geht.',
+    shortDesc: 'CRM und Folge-E-Mails, in denen KI Anfragen zusammenfasst und Entwürfe vorbereitet.',
     description: 'Nicht jeder Interessent ist sofort kaufbereit. Mit automatisierten Abläufen in HubSpot, ActiveCampaign oder Salesforce begleiten wir Kontakte weiter, bis ein Gespräch sinnvoll ist. Ihr Vertrieb sieht im CRM, wer sich wofür interessiert, und muss nicht jedem Kontakt manuell nachgehen.',
     benefits: [
       'Keine vergessenen Anfragen dank automatischer Folge-E-Mails',
@@ -140,7 +140,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'revenue-operations',
     title: 'Agentic Revenue Operations (RevOps)',
     slug: 'revenue-operations',
-    shortDesc: 'Gemeinsame Zahlen, Abläufe und Tools für Marketing, Vertrieb und Kundenbetreuung.',
+    shortDesc: 'Gemeinsame Zahlen und Abläufe für Marketing und Vertrieb, mit Agenten für Datenqualität und Pipeline.',
     description: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir sorgen dafür, dass alle mit denselben Daten arbeiten, legen gemeinsame Kennzahlen fest und verbinden Ihre Systeme so, dass Übergaben funktionieren.',
     benefits: [
       'Überblick, welche Kunden über die Zeit wie viel Umsatz bringen',
@@ -221,7 +221,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'martech-stack',
     title: 'KI-fähiger MarTech-Stack',
     slug: 'martech-stack',
-    shortDesc: 'Weniger Tools, besser verbunden: Stack-Check, Umbau und Betrieb von CRM, Website, E-Mail und Tracking.',
+    shortDesc: 'Weniger Tools, besser verbunden und bereit für KI-Agenten mit klaren Rechten.',
     description: 'Viele KMU zahlen für mehr Programme, als sie brauchen, und trotzdem werden Daten von Hand übertragen. Wir erfassen Ihren MarTech-Stack, also alle Tools für Marketing, Vertrieb und Kundenbetreuung, mit Kosten, Nutzung und Datenflüssen. Danach räumen wir auf, verbinden, was zusammengehört, und sorgen dafür, dass jede Anfrage bis zum Auftrag nachvollziehbar ist.',
     benefits: [
       'Weniger Lizenzen und eine Kostenübersicht für alle Tools',
@@ -246,7 +246,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'data-analytics',
-    title: 'Tracking & Attribution mit KI-Reporting',
+    title: 'Tracking, Attribution & Reporting',
     slug: 'data-analytics',
     shortDesc: 'Datenschutzkonformes Tracking und Berichte, die zeigen, welche Kanäle Kunden bringen.',
     description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit Server-Side Tagging (die Messdaten laufen zuerst über einen eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',

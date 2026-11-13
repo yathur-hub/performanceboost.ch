@@ -152,7 +152,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'martech-stack',
     hero: {
       headline: 'Weniger Tools, besser verbunden.',
-      subheadline: 'Wir räumen Ihren MarTech-Stack auf, also alle Tools für Marketing und Vertrieb. Ziel sind weniger Lizenzen, weniger Abtippen und Zahlen, die in allen Systemen übereinstimmen.',
+      subheadline: 'Wir räumen Ihren MarTech-Stack auf, also alle Tools für Marketing und Vertrieb, und machen ihn bereit für KI-Agenten. Ziel sind weniger Lizenzen, Daten, die in allen Systemen übereinstimmen, und Schnittstellen, über die Agenten mit klaren Rechten arbeiten können.',
       ctaText: 'Stack-Check besprechen'
     },
     problem: {
@@ -168,7 +168,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       items: [
         { title: 'Stack-Check', desc: 'Wir erfassen alle Tools mit Kosten, Nutzung, Verantwortlichen und Datenflüssen. Sie erhalten eine klare Liste, was bleibt, was weg kann und was fehlt. Auf Wunsch ist der Check Teil der Performance-Analyse.' },
         { title: 'Aufräumen und verbinden', desc: 'Wir schalten überflüssige Tools ab, bereinigen Daten und verbinden die Systeme so, dass Daten nur einmal erfasst werden und jede Anfrage bis zum Auftrag nachvollziehbar ist. Als Projekt zum Festpreis.' },
-        { title: 'Laufend betreiben', desc: 'Damit der Stack aufgeräumt bleibt, prüfen wir neue Tools, bevor sie gekauft werden, überwachen die Schnittstellen und überprüfen die Kosten einmal im Jahr. Als Teil der laufenden Begleitung.' }
+        { title: 'Laufend betreiben', desc: 'Damit der Stack aufgeräumt bleibt, prüfen wir neue Tools, bevor sie gekauft werden, überwachen die Schnittstellen und überprüfen die Kosten einmal im Jahr. Als Teil der laufenden Begleitung.' },
+        { title: 'Bereit für KI-Agenten', desc: 'Agenten brauchen saubere Daten, dokumentierte Schnittstellen und eng gefasste Zugänge. Wir prüfen, welche Tools das bieten, richten Rechte pro Agent ein und halten fest, welche Daten wohin dürfen.' }
       ]
     },
     approach: {
@@ -182,6 +183,16 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       ]
     },
     extraSections: [
+      {
+        title: 'Was einen Stack KI-fähig macht',
+        type: 'list',
+        bullets: [
+          'Kundendaten, die an einem Ort gepflegt und nicht mehrfach erfasst werden',
+          'Schnittstellen (APIs) oder Automatisierungsplattformen, über die Agenten lesen und schreiben können',
+          'Zugänge pro Agent mit nur den Rechten, die er braucht, und ein Protokoll jeder Aktion',
+          'Klare Regeln, welche Personendaten an welches KI-Modell gehen dürfen'
+        ]
+      },
       {
         title: 'Typische Bausteine',
         type: 'grid',
@@ -329,7 +340,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'demand-generation',
     hero: {
       headline: 'Regelmässig qualifizierte Anfragen für Ihren Vertrieb.',
-      subheadline: 'Wir planen und betreuen Ihr Performance Marketing auf Google, LinkedIn und Meta. Wir messen, welche Kampagnen Anfragen bringen, und verschieben das Budget dorthin.',
+      subheadline: 'Wir planen und betreuen Ihr Performance Marketing auf Google, LinkedIn und Meta. Ein KI-Agent überwacht die Kampagnen täglich und meldet Auffälligkeiten, wir verschieben das Budget dorthin, wo Anfragen entstehen.',
       ctaText: 'Kampagnen besprechen'
     },
     problem: {
@@ -366,7 +377,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         {
           title: 'Laufende Optimierung',
           desc: 'Wir werten jede Woche aus und berichten monatlich. Was funktioniert, bauen wir aus, was nicht funktioniert, stoppen wir.'
-        }
+        },
+        { title: 'Kampagnen-Agent', desc: 'Ein KI-Agent prüft täglich Kosten pro Anfrage, Suchbegriffe und Auslieferung und meldet Abweichungen mit einem Vorschlag. Budget- und Gebotsänderungen geben wir oder Ihr Team frei.' }
       ]
     },
     approach: {
@@ -391,6 +403,16 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       ]
     },
     extraSections: [
+      {
+        title: 'Wo KI-Agenten mitarbeiten',
+        type: 'list',
+        bullets: [
+          'Tägliche Überwachung von Kosten, Suchbegriffen und Auslieferung',
+          'Entwürfe für Anzeigentexte und Varianten auf Basis Ihrer Positionierung',
+          'Hinweise auf auszuschliessende Suchbegriffe und auffällige Kampagnen',
+          'Was live geht und wie viel Budget fliesst, entscheidet ein Mensch'
+        ]
+      },
       {
         title: 'Kanäle, die wir einsetzen',
         type: 'grid',
@@ -433,7 +455,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'growth-strategy',
     hero: {
       headline: 'Ein klarer Plan, wie Sie neue Kunden gewinnen.',
-      subheadline: 'Wir legen mit Ihnen fest, wen Sie ansprechen, womit Sie überzeugen und über welche Kanäle Sie Ihre Wunschkunden erreichen. Mit einem Plan, den Ihr Team umsetzen kann.',
+      subheadline: 'Wir legen mit Ihnen fest, wen Sie ansprechen, womit Sie überzeugen und über welche Kanäle Sie Ihre Wunschkunden erreichen. KI-Agenten übernehmen dabei die Markt- und Wettbewerbsrecherche, die Entscheidungen treffen Sie.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
@@ -467,7 +489,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         {
           title: 'Kennzahlen festlegen',
           desc: 'Wir legen wenige Kennzahlen fest, an denen Sie den Fortschritt ablesen, etwa Anfragen pro Monat oder Kosten pro Neukunde.'
-        }
+        },
+        { title: 'KI-gestützte Recherche', desc: 'Agenten sammeln und verdichten Informationen zu Markt, Mitbewerbern und Zielkunden, etwa Angebote, Preise und Positionierungen. Wir prüfen die Ergebnisse und nutzen sie als Grundlage für den Workshop.' }
       ]
     },
     approach: {
@@ -492,6 +515,16 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       ]
     },
     extraSections: [
+      {
+        title: 'Wo KI in der Strategiearbeit mitarbeitet',
+        type: 'list',
+        bullets: [
+          'Recherche zu Markt, Mitbewerbern und Zielkunden vor dem Workshop',
+          'Auswertung bestehender Anfragen, Offerten und Kundendaten nach Mustern',
+          'Erste Entwürfe für Zielkundenprofile und Kernbotschaften, die wir gemeinsam schärfen',
+          'Prioritäten, Budget und Plan legen Sie mit uns fest, nicht ein Modell'
+        ]
+      },
       {
         title: 'Was Sie danach wissen',
         type: 'list',
@@ -534,7 +567,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'lead-generation',
     hero: {
       headline: 'Aus Website-Besuchern werden Anfragen.',
-      subheadline: 'Wir sorgen dafür, dass Interessenten Sie finden und sich melden. Dafür setzen wir SEO, Inhalte und Landingpages ein, und mit Lead-Scoring sieht Ihr Vertrieb, welche Anfragen Vorrang haben.',
+      subheadline: 'Wir sorgen dafür, dass Interessenten Sie bei Google und in KI-Assistenten wie ChatGPT finden und sich melden. Dafür setzen wir SEO, GEO, Inhalte und Landingpages ein, und mit Lead-Scoring sieht Ihr Vertrieb, welche Anfragen Vorrang haben.',
       ctaText: 'Ausgangslage besprechen'
     },
     problem: {
@@ -571,7 +604,9 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         {
           title: 'Inhalte mit Plan',
           desc: 'Statt einzelner Blogartikel entsteht ein Themenplan, der Interessenten vom ersten Kontakt bis zur Entscheidung begleitet.'
-        }
+        },
+        { title: 'Sichtbarkeit in KI-Antworten (GEO)', desc: 'Generative Engine Optimization heisst, Inhalte so aufzubereiten, dass KI-Assistenten wie ChatGPT, Perplexity oder die KI-Übersichten von Google Ihr Angebot verstehen und korrekt wiedergeben. Dazu gehören klare Definitionen, strukturierte Daten und Fachinhalte mit Quellen.' },
+        { title: 'KI-gestützte Vorqualifizierung', desc: 'Neue Anfragen werden automatisch mit Firmendaten angereichert und nach Ihren Kriterien eingeordnet. Ihr Vertrieb sieht die Begründung und kann sie jederzeit ändern.' }
       ]
     },
     approach: {
@@ -604,6 +639,16 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       ]
     },
     extraSections: [
+      {
+        title: 'Wo KI mitarbeitet',
+        type: 'list',
+        bullets: [
+          'Themen- und Suchbegriff-Recherche, auch für Fragen, die Menschen KI-Assistenten stellen',
+          'Entwürfe für Fachinhalte, die wir prüfen, ergänzen und mit Ihrem Fachwissen schärfen',
+          'Regelmässige Prüfung, ob und wie KI-Assistenten Ihr Unternehmen nennen',
+          'Anreicherung und Einordnung neuer Anfragen vor der Übergabe an den Vertrieb'
+        ]
+      },
 
       {
         title: 'Zeitrahmen',
@@ -612,6 +657,10 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       }
     ],
     faq: [
+      {
+        q: 'Was ist GEO, und ersetzt es SEO?',
+        a: 'GEO steht für Generative Engine Optimization. Ziel ist, dass KI-Assistenten Ihr Angebot korrekt verstehen und nennen. GEO baut auf SEO auf und ersetzt es nicht, denn saubere Technik, klare Struktur und gute Fachinhalte helfen beiden. Eine Nennung in KI-Antworten kann niemand garantieren, klare und belegte Inhalte verbessern aber die Grundlage.'
+      },
       {
         q: 'Wie lange dauert es, bis über Google organisch Anfragen kommen?',
         a: 'Erste Platzierungen sehen Sie meist nach drei bis sechs Monaten, nennenswert mehr Anfragen eher nach sechs bis neun Monaten. Das hängt stark davon ab, wie umkämpft Ihre Suchbegriffe sind und wie stark Ihre Website heute schon ist. Wer früher Anfragen braucht, setzt parallel auf Google Ads.'
@@ -639,7 +688,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'marketing-automation',
     hero: {
       headline: 'Keine Anfrage mehr, die im Posteingang liegen bleibt.',
-      subheadline: 'Wir richten Marketing Automation und CRM so ein, dass Interessenten automatisch weiterbegleitet werden und Ihr Vertrieb sieht, wer bereit für ein Gespräch ist.',
+      subheadline: 'Wir richten Marketing Automation und CRM so ein, dass Interessenten automatisch weiterbegleitet werden und Ihr Vertrieb sieht, wer bereit für ein Gespräch ist. KI fasst Anfragen zusammen, ergänzt Daten und bereitet Folge-E-Mails vor.',
       ctaText: 'CRM und Abläufe besprechen'
     },
     problem: {
@@ -676,7 +725,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         {
           title: 'Automatische Berichte',
           desc: 'Dashboards zeigen Ihnen regelmässig, was die automatisierten Abläufe bringen, ohne dass jemand Zahlen zusammensuchen muss.'
-        }
+        },
+        { title: 'KI im CRM', desc: 'Eingehende Anfragen werden zusammengefasst, Firmen- und Kontaktdaten ergänzt und Dubletten erkannt. Entwürfe für Folge-E-Mails liegen bereit, versendet wird erst nach Freigabe.' }
       ]
     },
     approach: {
@@ -705,6 +755,16 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       ]
     },
     extraSections: [
+      {
+        title: 'Wo KI mitarbeitet',
+        type: 'list',
+        bullets: [
+          'Zusammenfassung und Einordnung neuer Anfragen direkt im CRM',
+          'Ergänzen fehlender Firmendaten und Erkennen von Dubletten',
+          'Entwürfe für Folge-E-Mails und Nachfass-Nachrichten im Stil Ihres Unternehmens',
+          'Regeln, Freigaben und Datenschutz legen wir vor dem Start schriftlich fest'
+        ]
+      },
       {
         title: 'Tools, mit denen wir arbeiten',
         type: 'grid',
@@ -758,7 +818,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'revenue-operations',
     hero: {
       headline: 'Marketing, Vertrieb und Kundenbetreuung arbeiten mit denselben Zahlen.',
-      subheadline: 'Wenn Ihre Teams mit unterschiedlichen Daten und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir sorgen dafür, dass Abläufe, Daten, Tools und Kennzahlen zusammenpassen. Im Englischen heisst das Revenue Operations, kurz RevOps.',
+      subheadline: 'Wenn Ihre Teams mit unterschiedlichen Daten und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir sorgen dafür, dass Abläufe, Daten und Kennzahlen zusammenpassen, und setzen Agenten ein, die Daten prüfen und Auffälligkeiten melden. Im Englischen heisst das Revenue Operations, kurz RevOps.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
@@ -795,7 +855,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         {
           title: 'Berichte',
           desc: 'Ein Dashboard zeigt jede Woche, wie viele Verkaufschancen offen sind, wo Sie gegenüber den Zielen stehen und was Vorrang hat.'
-        }
+        },
+        { title: 'Agenten für Daten und Pipeline', desc: 'Agenten prüfen die CRM-Daten auf Lücken und Widersprüche, erkennen Verkaufschancen, die seit Wochen stillstehen, und fassen die Pipeline für die Geschäftsleitung zusammen. Korrekturen gibt Ihr Team frei.' }
       ]
     },
     approach: {
@@ -824,6 +885,16 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       ]
     },
     extraSections: [
+      {
+        title: 'Wo Agenten mitarbeiten',
+        type: 'list',
+        bullets: [
+          'Laufende Prüfung der Datenqualität im CRM',
+          'Hinweise auf stehende Verkaufschancen und überfällige Nachfass-Schritte',
+          'Wöchentliche Zusammenfassung der Pipeline mit den wichtigsten Veränderungen',
+          'Jeder Schritt wird protokolliert, Zahlen und Entscheide bleiben nachvollziehbar'
+        ]
+      },
       {
         title: 'Warum sich das früh lohnt',
         type: 'text',
@@ -870,7 +941,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     slug: 'sales-enablement',
     hero: {
       headline: 'Ihr Vertrieb geht besser vorbereitet in jedes Gespräch.',
-      subheadline: 'Wir bringen Marketing und Vertrieb zusammen: mit gemeinsamen Abläufen, Unterlagen, die im Verkaufsgespräch tatsächlich helfen, und klaren Regeln für die Übergabe von Anfragen.',
+      subheadline: 'Ihr Vertrieb geht vorbereitet in jedes Gespräch. Wir erarbeiten Unterlagen und Abläufe, die im Verkauf tatsächlich helfen, und ein KI-Agent recherchiert vor jedem Termin das Unternehmen und fasst das Wichtigste zusammen.',
       ctaText: 'Vertriebsprozess besprechen'
     },
     problem: {
@@ -907,7 +978,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         {
           title: 'Gewonnene und verlorene Abschlüsse auswerten',
           desc: 'Warum werden Aufträge gewonnen, warum verloren? Die Erkenntnisse fliessen in Botschaften, Positionierung und Verkaufsargumente zurück.'
-        }
+        },
+        { title: 'Recherche vor dem Gespräch', desc: 'Vor einem Termin recherchiert ein KI-Agent das Unternehmen, die Gesprächspartner und aktuelle Themen und fasst das Wichtigste auf einer Seite zusammen. So arbeiten wir auch im eigenen Betrieb.' }
       ]
     },
     approach: {
@@ -936,6 +1008,16 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       ]
     },
     extraSections: [
+      {
+        title: 'Wo KI mitarbeitet',
+        type: 'list',
+        bullets: [
+          'Recherche zu Firma und Gesprächspartnern vor jedem Termin',
+          'Entwürfe für Offerten-Texte und Antworten auf häufige Einwände',
+          'Zusammenfassung von Gesprächsnotizen und nächsten Schritten im CRM',
+          'Was dem Kunden gesagt oder geschickt wird, entscheidet Ihr Vertrieb'
+        ]
+      },
       {
         title: 'Was sich für Sie ändert',
         type: 'list',

@@ -59,7 +59,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Erfassung, Pipelines, Warehouse',
     desc: 'Wie Ereignisse erfasst, geprüft und gespeichert werden: Tagging im Browser und auf dem Server, Pipelines, Data Warehouse und Customer Data Platform.',
     examples: ['Tag Manager und Server-Side Tagging', 'GA4 und Ereignismodelle', 'Data Warehouse', 'CDP und Reverse ETL'],
-    service: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
+    service: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     id: 'systeme',
@@ -169,7 +169,7 @@ Dienste wie Stape übernehmen das Hosting des Containers. Damit ist aber noch ni
       { label: 'Meta: Pixel- und Server-Events deduplizieren', url: 'https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events' },
       { label: 'Stape: About', url: 'https://stape.io/about-us' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'composable-cdp',
@@ -208,7 +208,7 @@ Die MarTech-Landschaft 2026 von chiefmartec wird unter anderem von Hightouch ges
       { label: 'Fivetran: Übernahme von Census', url: 'https://www.fivetran.com/press/fivetran-signs-agreement-to-acquire-census-delivering-the-first-end-to-end-data-movement-platform-for-the-ai-era' },
       { label: 'chiefmartec: Marketing Technology Landscape 2026', url: 'https://chiefmartec.com/2026-marketing-technology-landscape/' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'integration-ist-keine-architektur',
@@ -329,7 +329,7 @@ Ein MMM lohnt sich erst ab einem gewissen Budget und mehreren Kanälen. Für kle
       { label: 'Google: Meridian, Marketing-Mix-Modell für alle verfügbar', url: 'https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/' },
       { label: 'GitHub: LightweightMMM (archiviert)', url: 'https://github.com/google/lightweight_mmm' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking & Attribution mit KI-Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'mcp-berechtigungen',
