@@ -113,7 +113,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'home': {
       const title = 'performanceboost: Agentic Marketing, Sales & Processes für Schweizer KMU';
       const description =
-        'Marketing, Vertrieb und Abläufe für Schweizer KMU als ein System, mit Automatisierung und KI-Agenten von Anfang an mitgedacht. Ihr Team gibt frei und entscheidet.';
+        'Der AI-First-Scaling-Partner für Schweizer KMU. Wir bauen Marketing, Vertrieb und Abläufe als ein System, das auf KI aufbaut, und verbessern es im Betrieb.';
       return {
         ...base,
         title,

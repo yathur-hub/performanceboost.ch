@@ -27,9 +27,18 @@ interface HomeViewProps {
 
 
 const DIFFERENCES = [
-  { title: 'Wer plant, setzt auch um', desc: 'Die Person, die mit Ihnen die Prioritäten festlegt, baut danach auch Kampagnen, CRM und Automatisierungen.' },
-  { title: 'Gemessen an Ihren Geschäftszahlen', desc: 'Anfragen, Aufträge, Reaktionszeiten oder eingesparte Stunden statt Klicks und Reichweite.' },
-  { title: 'Direkt mit dem Inhaber', desc: 'Yathur Nathan arbeitet persönlich an Ihrem Projekt, ohne Account Manager dazwischen.' },
+  { title: 'Bauen statt nur beraten', desc: 'Wir entwerfen die Architektur und setzen sie selbst um, von der Datenbasis bis zum Agenten.' },
+  { title: 'Im eigenen Betrieb erprobt', desc: 'Anfragen, Recherche und Entwürfe laufen bei uns über dieselben Systeme, die wir empfehlen.' },
+  { title: 'Direkt mit dem Inhaber', desc: 'Yathur Nathan arbeitet persönlich an Ihrem System, ohne Account Manager dazwischen.' },
+];
+
+/** Vergleich klassisches Wachstum vs. AI First (Startseite). Keine Zahlen, keine Versprechen. */
+const COMPARISON = [
+  { topic: 'Wachstum', classic: 'Mehr Aufträge brauchen mehr Personal, mehr Dienstleister und mehr Abstimmung.', aiFirst: 'Kapazität wächst über Abläufe, in denen Regeln und Agenten die Vorarbeit übernehmen.' },
+  { topic: 'Systeme', classic: 'Einzelne Tools, Daten werden von Hand übertragen.', aiFirst: 'Ein verbundenes System mit gemeinsamer Datenbasis und einem führenden System pro Datentyp.' },
+  { topic: 'Rolle der KI', classic: 'Einzelne Mitarbeitende nutzen KI für Texte, jede Person auf ihre Weise.', aiFirst: 'KI ist Teil jedes Ablaufs, mit Unternehmenskontext, festen Rechten, Freigaben und Protokollen.' },
+  { topic: 'Steuerung', classic: 'Gemessen werden Klicks, Reichweite und Aktivitäten.', aiFirst: 'Gemessen werden Anfragen, Aufträge, Reaktionszeiten und Kosten pro Fall, die Daten fliessen zurück.' },
+  { topic: 'Zusammenarbeit', classic: 'Konzept, Umsetzung und Betrieb liegen bei verschiedenen Partnern.', aiFirst: 'Wir entwerfen, bauen und verbessern das System mit Ihrem Team, ohne Übergaben zwischen Partnern.' },
 ];
 
 const FAQ = [
@@ -38,8 +47,8 @@ const FAQ = [
     a: 'Wir gestalten Marketing, Vertrieb und die Abläufe dahinter als ein System und planen Automatisierung und KI von Anfang an mit. Feste Regeln übernehmen, was immer gleich abläuft. KI-Agenten bearbeiten Aufgaben über mehrere Schritte, etwa recherchieren, vorqualifizieren oder Entwürfe vorbereiten, mit klar begrenzten Rechten. Ihr Team gibt frei und entscheidet.',
   },
   {
-    q: 'Sind Sie eine KI-Agentur?',
-    a: 'Nein. Wir konzipieren, bauen und verbessern Systeme für Marketing, Vertrieb und Prozesse, in denen KI von Anfang an Teil der Architektur ist. Gemessen wird an Ihren Geschäftszahlen, nicht an der Zahl der Agenten. Wo eine einfache Regel verlässlicher ist, empfehlen wir die Regel.',
+    q: 'Sind Sie eine Agentur oder eine Beratung?',
+    a: 'Keines von beiden im klassischen Sinn. Eine Agentur liefert Kampagnen, eine Beratung liefert Konzepte. Wir entwerfen mit Ihnen die Architektur, bauen das System selbst und verbessern es im Betrieb. Kampagnen, CRM und Automatisierungen sind Bausteine dieses Systems. Gemessen wird an Ihren Geschäftszahlen, und wo eine einfache Regel verlässlicher ist als ein Agent, bauen wir die Regel.',
   },
   {
     q: 'Was ist der Unterschied zwischen Automatisierung und einem KI-Agenten?',
@@ -82,8 +91,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>
               </h1>
               <p className="text-slate-600 lg:text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl">
-                Wir bauen Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter als ein System, das auf KI aufbaut. Daten, Automatisierung
-                und Agenten greifen ineinander, die Entscheidungen bleiben bei Ihrem Team.
+                performanceboost ist der AI-First-Scaling-Partner für Schweizer KMU. Wir bauen Marketing, Vertrieb und Abläufe als ein System,
+                das auf KI aufbaut, damit Ihr Unternehmen wachsen kann, ohne dass mit jedem Auftrag die Handarbeit mitwächst.
               </p>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 justify-start items-stretch sm:items-center lg:pt-1">
                 <CtaButton label="Ausgangslage besprechen" location="home_hero" pageSlug="home" />
@@ -96,9 +105,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   Welches Problem möchten Sie lösen? <ArrowRight className="w-4 h-4 shrink-0 sm:hidden" aria-hidden="true" />
                 </button>
               </div>
-              <p className="text-[13px] sm:text-sm text-slate-500 max-sm:leading-relaxed">
-                Für Unternehmen ab rund CHF 1 Mio. Umsatz. Ihr Ansprechpartner ist Inhaber Yathur Nathan.
-              </p>
             </div>
 
             {/* Rakete in zwei Ebenen: Rauch statisch, Rakete animiert */}
@@ -141,13 +147,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             <div className="lg:col-span-8 space-y-5">
               <SectionHeading
-                title="Wo KMU heute Umsatz und Zeit verlieren"
-                intro="Selten liegt es an einem einzelnen Kanal oder Tool. Meist greifen Marketing, Vertrieb und Abläufe nicht sauber ineinander."
+                title="Wachstum, das heute an Handarbeit hängt"
+                intro="In vielen KMU wächst der Aufwand mit jedem Auftrag mit. Mehr Anfragen bedeuten mehr Abtippen, mehr Nachfassen und mehr Abstimmung, und KI wird nur für einzelne Aufgaben genutzt."
               />
               <p className="text-body-sm text-slate-500 leading-relaxed max-w-2xl">
-                Sichtbar wird oft nur das Symptom: zu wenige Anfragen, liegengebliebene Offerten, Zahlen, die nicht stimmen. Die Ursachen
-                liegen meist tiefer, in Abläufen, Daten und Übergaben, die niemand verantwortet. Dort setzen wir an, denn erst wenn Ablauf und
-                Daten stimmen, lohnt es sich, Teile davon zu automatisieren oder einem Agenten zu übergeben.
+                Sichtbar wird oft nur das Symptom, etwa liegengebliebene Anfragen, Offerten ohne Nachfassen oder Zahlen, die nicht stimmen.
+                Die Ursache liegt meist in Abläufen, Daten und Übergaben, die nie als System gebaut wurden. Genau dort setzen wir an.
               </p>
             </div>
             <div className="hidden lg:block lg:col-span-4">
@@ -173,13 +178,45 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </Container>
       </section>
 
+      {/* 2b VERGLEICH: klassisch wachsen vs. AI First */}
+      <section>
+        <Container className="space-y-8">
+          <SectionHeading
+            title="Klassisch wachsen oder AI First"
+            intro="Der Unterschied zeigt sich darin, wie Abläufe, Daten und KI zusammengebaut sind."
+          />
+          <div className="rounded-3xl border border-[#E0E0E0]/80 bg-white overflow-hidden">
+            <div className="hidden md:grid md:grid-cols-12 gap-6 px-8 py-4 border-b border-slate-200/80 bg-[#f6f6f6]/60 text-[11px] font-mono font-bold uppercase tracking-widest">
+              <span className="md:col-span-2 text-slate-400">Thema</span>
+              <span className="md:col-span-5 text-slate-500">Klassisch</span>
+              <span lang="en" className="md:col-span-5 text-[#4f54d6]">AI First</span>
+            </div>
+            <dl className="divide-y divide-slate-200/80">
+              {COMPARISON.map((row) => (
+                <div key={row.topic} className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 px-6 sm:px-8 py-5">
+                  <dt className="md:col-span-2 font-display font-semibold text-slate-900">{row.topic}</dt>
+                  <dd className="md:col-span-5 text-body-sm text-slate-500 leading-relaxed">
+                    <span className="md:hidden text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">Klassisch</span>
+                    {row.classic}
+                  </dd>
+                  <dd className="md:col-span-5 text-body-sm text-slate-800 leading-relaxed">
+                    <span lang="en" className="md:hidden text-[11px] font-mono font-bold uppercase tracking-widest text-[#4f54d6] block mb-1 mt-2">AI First</span>
+                    {row.aiFirst}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </Container>
+      </section>
+
       {/* 3 DREI BEREICHE, EIN SYSTEM */}
       <section>
         <Container className="space-y-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
             <SectionHeading
-              title="Drei Bereiche, ein System"
-              intro="Agentic Marketing gewinnt Nachfrage, Agentic Sales macht daraus Aufträge, und Agentic Processes verbinden beides. Alle drei teilen dieselbe Datenbasis, auf der Regeln, KI und Agenten mit klar begrenzten Rechten arbeiten. Wir verbessern die Bereiche gemeinsam, weil ein Engpass in einem auch die anderen bremst."
+              title="Drei Bereiche, eine gemeinsame KI-Basis"
+              intro="Agentic Marketing, Agentic Sales und Agentic Processes laufen auf derselben Datenbasis, demselben Unternehmenskontext und denselben Regeln für Agenten. Deshalb bauen wir sie als ein System und beginnen dort, wo der Engpass heute am grössten ist."
             />
             <Link href="/leistungen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
               Alle Leistungen ansehen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -331,13 +368,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
             <div className="md:col-span-8 space-y-6">
               <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 leading-tight">
-                Ein Partner, der Strategie auch selbst umsetzt.
+                Wir bauen, was wir empfehlen, und betreiben es selbst.
               </h2>
               <p className="text-body text-slate-600 leading-relaxed">
-                performanceboost ist inhabergeführt und in Graubünden zu Hause. Yathur Nathan verbindet Marketing, Vertrieb, Daten,
-                Systemintegration und KI-Agenten, also Aufgaben, die sonst oft auf mehrere Dienstleister verteilt sind. Was wir Ihnen
-                empfehlen, betreiben wir im eigenen Unternehmen, von automatisch geprüften Website-Anfragen bis zum Agenten, der
-                Erstgespräche vorbereitet.
+                performanceboost ist inhabergeführt und in Graubünden zu Hause. Unser eigenes Unternehmen läuft auf denselben Systemen, die
+                wir bei Kunden bauen. Website-Anfragen gehen automatisch geprüft in ein selbst gebautes ERP, ein Agent bereitet Erstgespräche
+                vor, und Entwürfe gehen erst nach Freigabe hinaus. Yathur Nathan verbindet Marketing, Vertrieb, Daten, Integration und
+                KI-Agenten in einer Person, ohne Übergaben zwischen Dienstleistern.
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {DIFFERENCES.map((d) => (
@@ -380,11 +417,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="w-full bg-slate-950 text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">
-                Wo verliert Ihr Unternehmen heute am meisten?
+                Wo bremst Handarbeit heute Ihr Wachstum?
               </h2>
               <p className="text-body text-slate-300 leading-relaxed">
-                30 Minuten, kostenlos. Sie schildern Ihre Ausgangslage in Marketing, Vertrieb oder Abläufen. Wir sagen Ihnen offen, wo wir
-                ansetzen würden und ob wir der richtige Partner dafür sind.
+                30 Minuten, kostenlos. Sie schildern einen Ablauf in Marketing, Vertrieb oder Administration, der heute viel Handarbeit
+                kostet. Wir sagen Ihnen offen, wie wir ihn als System bauen würden und ob wir der richtige Partner dafür sind.
               </p>
               <p className="text-sm text-slate-300">
                 Lieber direkt schreiben?{' '}
