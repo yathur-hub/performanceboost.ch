@@ -34,7 +34,6 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
           />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="hero-enter lg:col-span-8 space-y-6">
-              <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686CFA]">{page.overline}</p>
               <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
                 {page.h1}
                 <span className="block mt-2 italic text-[#686CFA]">{page.accent}</span>

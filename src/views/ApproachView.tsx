@@ -40,7 +40,6 @@ export default function ApproachView() {
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Ansatz' }]} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="hero-enter lg:col-span-8 max-w-4xl space-y-6">
-              <p className="text-xs sm:text-[13px] font-mono font-bold uppercase tracking-[0.18em] text-[#686CFA]">Unser Ansatz</p>
               <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
                 Vier Phasen, die sich nach Ihrer Ausgangslage richten.
               </h1>

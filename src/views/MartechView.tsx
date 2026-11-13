@@ -36,7 +36,6 @@ function HubPage() {
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen' }]} />
           <div className="max-w-4xl space-y-6">
-            <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686CFA]">MarTech · Daten · KI-Agenten</p>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               MarTech-Wissen aus der Praxis.
             </h1>
@@ -108,9 +107,6 @@ function TopicPage({ slug }: { slug: string }) {
         <section className="pt-36 md:pt-40 pb-4 bg-white/60">
           <Container className="max-w-4xl space-y-7">
             <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen', href: '/martech' }, { label: topic.title }]} />
-            <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686CFA]">
-              Schicht {layer.nr} · {layer.title}
-            </p>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">{topic.title}</h1>
             <div className="flex flex-wrap items-center justify-between gap-4">
               <AuthorLine />

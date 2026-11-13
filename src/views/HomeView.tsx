@@ -69,9 +69,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 items-center">
             <div className="hero-enter lg:col-span-8 xl:col-span-7 lg:space-y-7 text-left">
-              <p className="text-xs sm:text-[13px] font-mono font-bold uppercase tracking-[0.18em] text-[#686CFA]">
-                Business Performance Partner für Schweizer KMU
-              </p>
               <h1 lang="en" className="text-[2.1rem] sm:text-5xl lg:text-[2.75rem] xl:text-[3.5rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08] text-balance">
                 <span className="hero-line"><span>Boost your performance</span></span>{' '}
                 <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>

@@ -66,3 +66,8 @@ Definiert in `src/index.css`, Abschnitt «MOBILE RHYTHMUS & TYPOGRAFIE».
 ## 5. Offen
 - Sichtprüfung auf einem echten iPhone. Die Emulation entspricht der Breite, nicht exakt der iOS-Schriftdarstellung.
 - Bei 768 px steht der Hero jetzt linksbündig mit der Rakete rechts darunter. Ein zweispaltiges Tablet-Layout bleibt eine mögliche spätere Designentscheidung.
+
+## Nachtrag 13.11.2026
+- Die Eyebrow-Zeilen über den Hero-Headlines sind entfernt, auf Mobile und Desktop. Betroffen sind die Startseite («Business Performance Partner für Schweizer KMU»), die Bereichsseiten und Agentic AI («Marketing · Nachfrage gewinnen» usw.), der Ansatz, das MarTech-Wissen (Übersicht und Fachthemen) und die Immobilien-Landingpages.
+- Die H1 folgt jetzt direkt auf den Header bzw. den Seitenpfad.
+- Bewusst geblieben sind Labels mit eigener Funktion: Phasennamen, Bereichsnamen in der Leistungsübersicht, Gruppen im Mega-Menü und Badges auf Karten.
