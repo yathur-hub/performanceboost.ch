@@ -91,7 +91,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     labelZu: 'Agentic Marketing',
     subtitle: 'Nachfrage gewinnen',
     role: 'Agentic Marketing erzeugt Nachfrage und begleitet sie bis zur Anfrage. Daten aus Kampagnen, Website und CRM bilden die Grundlage, auf der Regeln, KI und Agenten mitarbeiten.',
-    headline: 'Nachfrage, die zu Ihrem Angebot passt, gemessen bis zum Auftrag.',
+    headline: 'Nachfrage als System, das auf Aufträge optimiert.',
     definition:
       'Agentic Marketing heisst, Kampagnen, Website, Inhalte und CRM als ein System zu bauen, in dem KI von Anfang an die Grundlage ist. Anfragen und Aufträge fliessen aus dem CRM zurück, damit Kampagnen auf Aufträge statt auf Klicks optimieren. Auf dieser Datenbasis und mit Ihren Angeboten, Kriterien und Markenregeln als Kontext übernehmen KI-Agenten die laufende Arbeit dazwischen, etwa Ursachen von Abweichungen finden, Inhalte entwerfen und neue Anfragen einordnen. Performance Marketing, SEO, GEO und Marketing Automation setzen wir selbst um. Was veröffentlicht wird und wohin das Budget fliesst, entscheidet Ihr Team.',
     cardTitle: 'Nachfrage als System',
@@ -170,7 +170,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     labelZu: 'Agentic Sales',
     subtitle: 'Aufträge gewinnen',
     role: 'Agentic Sales macht aus Nachfrage Aufträge. Das CRM ist die gemeinsame Datenbasis, auf der Agenten vorqualifizieren, recherchieren und das Nachfassen vorbereiten.',
-    headline: 'Aus Anfragen werden planbar Aufträge.',
+    headline: 'Ein Vertrieb, der mit der Nachfrage mitwächst.',
     definition:
       'Agentic Sales heisst, den Vertrieb um ein CRM als gemeinsame Datenbasis zu bauen, auf der KI die Vorarbeit übernimmt. Feste Regeln erledigen Zuweisung, Erinnerungen und Übergaben. Agenten ordnen Anfragen nach Ihren Kriterien mit nachvollziehbarer Begründung ein, bereiten Gespräche mit Recherche vor und entwerfen das Nachfassen. Das CRM hält fest, was passiert ist, und meldet, wo ein nächster Schritt fehlt. Gespräch, Offerte, Preis und Zusage bleiben bei Ihren Mitarbeitenden.',
     cardTitle: 'Vertrieb mit einem CRM, das mitarbeitet',
@@ -238,7 +238,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     labelZu: 'Agentic Processes',
     subtitle: 'Abläufe verbinden und automatisieren',
     role: 'Agentic Processes verbinden Marketing und Vertrieb mit den Systemen dahinter. Für jeden Schritt wählen wir zwischen fester Regel, KI-Unterstützung und Agent.',
-    headline: 'Systeme, die zusammenspielen, und Abläufe ohne Handarbeit.',
+    headline: 'Abläufe, die mit dem Unternehmen wachsen.',
     definition:
       'Agentic Processes sind Abläufe, die von Beginn an für feste Regeln, KI und Agenten entworfen werden. Wir nehmen Ihre Abläufe in Marketing, Vertrieb und Administration auf, verbinden die Systeme und legen für jeden Schritt fest, was automatisch läuft, was ein Modell vorschlägt und wo ein Mensch entscheidet. Klar geregelte Schritte erledigen Workflows. KI-Agenten setzen wir ein, wo Dokumente gelesen, Fälle eingeordnet oder mehrere Schritte kombiniert werden müssen, mit festgelegten Rechten und Freigaben.',
     cardTitle: 'Abläufe, die mit dem Unternehmen wachsen',
@@ -333,7 +333,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       { title: 'Risiken von Sprachmodellen', desc: 'Modelle können plausibel klingende Fehler machen, und eingehende Texte können versuchen, einen Agenten umzulenken. Faktenaussagen stützen wir deshalb auf freigegebene Quellen, harte Grenzen liegen ausserhalb des Modells, und wir halten fest, welche Daten an welchen Anbieter gehen.' },
       { title: 'Schulung des Teams', desc: 'Schulungen mit Ihren eigenen Abläufen und Beispielen, damit KI im Alltag genutzt und nicht nur ausprobiert wird.' },
       { title: 'Regeln für den KI-Einsatz', desc: 'Welche Daten in welches Tool dürfen, welche nie, wer Inhalte freigibt und wie das dokumentiert wird. Kurz, verständlich und abgestimmt auf das Schweizer DSG.' },
-      { title: 'Laufende Begleitung', desc: 'Neue Anwendungen prüfen und einführen, Werkzeuge aktuell halten und die Regeln nachführen, wenn sich Tools oder Abläufe ändern.' },
+      { title: 'Betrieb und Weiterentwicklung', desc: 'Neue Anwendungen prüfen und einführen, Werkzeuge aktuell halten und die Regeln nachführen, wenn sich Tools oder Abläufe ändern.' },
     ],
     challenges: [
       'Mitarbeitende nutzen ChatGPT und andere Tools, jede Person auf ihre Weise und teils mit Kundendaten.',

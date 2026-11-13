@@ -4,8 +4,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'ai-automation',
     hero: {
-      headline: 'KI im Alltag Ihres Teams, eingebaut statt ausprobiert.',
-      subheadline: 'Wir klären, welche Aufgaben in Marketing, Vertrieb und Verwaltung sich mit KI anders erledigen lassen, bauen die Anwendungen in Ihre bestehenden Abläufe ein und schulen Ihr Team an eigenen Fällen. Dazu kommen schriftliche Regeln, welche Daten in welches Tool dürfen.',
+      headline: 'KI als fester Teil Ihrer Abläufe.',
+      subheadline: 'Wir bauen KI in die Abläufe von Marketing, Vertrieb und Verwaltung ein, damit mehr Fälle möglich werden, ohne dass die Handarbeit mitwächst. Ihr Team lernt an eigenen Fällen, was es prüft und freigibt. Schriftliche Regeln halten fest, welche Daten in welches Tool dürfen.',
       ctaText: 'KI-Einsatz prüfen lassen'
     },
     problem: {
@@ -13,18 +13,18 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'In vielen Unternehmen arbeiten einzelne Mitarbeitende mit ChatGPT oder anderen Tools, jede Person auf ihre Weise. Der Ablauf selbst hat sich nicht verändert. Eine Offerte entsteht wie vor fünf Jahren, eine Anfrage wird gleich bearbeitet, nur ein einzelner Handgriff geht etwas schneller.',
         'Fehlen freigegebene Werkzeuge und klare Regeln, landen Kundendaten in privaten Konten. Man nennt das Schatten-KI. Offen bleibt auch, wer die Ergebnisse prüft und ob sich die Lizenzen lohnen.',
-        'Wir setzen deshalb beim Ablauf an und nicht beim Tool. Für jede Aufgabe klären wir, was eine feste Regel erledigen kann, wo ein Modell einen Entwurf liefert und wo Ihr Team prüft und entscheidet. Erst danach wählen wir das Werkzeug.'
+        'Wir setzen deshalb beim Ablauf an. Für jede Aufgabe klären wir, was eine feste Regel erledigen kann, wo ein Modell einen Entwurf liefert und wo Ihr Team prüft und entscheidet. Erst danach wählen wir das Werkzeug.'
       ]
     },
     leistet: {
-      title: 'Was die Einführung umfasst',
+      title: 'Was wir einrichten und mit Ihrem Team betreiben',
       items: [
         { title: 'KI-Standortbestimmung', desc: 'Wir erfassen, wo KI heute genutzt wird, wo Zeit verloren geht und welche Daten vorhanden sind. Daraus entsteht eine priorisierte Liste mit drei bis fünf Anwendungen und einer Nutzenrechnung pro Anwendung.' },
         { title: 'Abläufe neu zuschneiden', desc: 'Für die gewählten Aufgaben legen wir fest, welcher Schritt fest geregelt läuft, welchen ein Modell vorbereitet und wo ein Mensch freigibt. Massstab ist, was ein Fehler kosten würde und ob er sich rückgängig machen lässt. Oft fällt dabei ein Schritt ganz weg.' },
         { title: 'Anwendungen einrichten', desc: 'Wir binden KI in Ihre bestehenden Tools ein, etwa für Recherche, Zusammenfassungen, Offert- und E-Mail-Entwürfe oder die Einordnung eingehender Anfragen. Grundlage sind gemeinsame Vorlagen und Ihr Unternehmenskontext, also Angebote, Markenregeln und freigegebene Unterlagen.' },
         { title: 'Schulung an eigenen Fällen', desc: 'Ihr Team übt mit echten Aufgaben aus dem Alltag. Es lernt, Ergebnisse zu prüfen und zu erkennen, wann ein Modell plausibel klingt, aber danebenliegt. Dazu gibt es kurze Anleitungen.' },
         { title: 'Regeln für Daten und Tools', desc: 'Welche Tools freigegeben sind, welche Daten hinein dürfen und welche nie, wer prüft und was protokolliert wird. Freigegebene Werkzeuge nehmen der Schatten-KI den Grund. Kurz formuliert und auf das Schweizer DSG abgestimmt.' },
-        { title: 'Nutzen messen', desc: 'Wir messen Nutzung, Fehler und Kosten pro Fall. Eingesparte Stunden weisen wir getrennt von tatsächlich gesparten Kosten aus, gezählt wird nur gemessener Nutzen. Lohnt sich ein ganzer Ablauf, wird er zum Kandidaten für einen KI-Agenten.' }
+        { title: 'Im Betrieb messen', desc: 'Im Betrieb messen wir Nutzung, Fehler und Kosten pro Fall. Eingesparte Stunden weisen wir getrennt von tatsächlich gesparten Kosten aus, gezählt wird nur gemessener Nutzen. Lohnt sich ein ganzer Ablauf, wird er zum Kandidaten für einen KI-Agenten.' }
       ]
     },
     approach: {
@@ -91,15 +91,15 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'ki-agenten',
     hero: {
-      headline: 'KI-Agenten für die Arbeit zwischen Ihren Systemen.',
-      subheadline: 'Ein Agent erledigt eine Aufgabe über mehrere Schritte. Er holt Informationen, wägt ab, nutzt Werkzeuge wie CRM oder E-Mail und prüft das Ergebnis, mit eng gefassten Rechten. Was nach aussen geht, gibt Ihr Team frei.',
+      headline: 'KI-Agenten übernehmen die Arbeit zwischen Ihren Systemen.',
+      subheadline: 'Wir bauen und betreiben Agenten, die eine Aufgabe über mehrere Schritte erledigen. Sie holen Informationen, wägen ab, nutzen Werkzeuge wie CRM oder E-Mail und prüfen das Ergebnis, mit eng gefassten Rechten. Was nach aussen geht, gibt Ihr Team frei.',
       ctaText: 'Ablauf besprechen'
     },
     problem: {
       title: 'Die Arbeit zwischen den Systemen bleibt an Menschen hängen',
       paragraphs: [
-        'Anfragen kommen per Formular oder E-Mail, werden abgetippt, im CRM erfasst, recherchiert und beantwortet. Jeder Schritt ist einfach. Zusammen kosten sie viel Zeit, und am Wochenende bleibt alles liegen.',
-        'Einzelne KI-Tools helfen bei einzelnen Handgriffen. Feste Workflows übernehmen, was immer gleich abläuft. Sobald Anfragen unvollständig, unklar oder jedes Mal etwas anders sind, landet der Fall trotzdem wieder bei einer Person.',
+        'Anfragen kommen per Formular oder E-Mail, werden abgetippt, im CRM erfasst, recherchiert und beantwortet. Jeder Schritt ist einfach. Zusammen kosten sie viel Zeit, mit jeder weiteren Anfrage wächst der Aufwand mit, und am Wochenende bleibt alles liegen.',
+        'Einzelne KI-Tools helfen bei einzelnen Handgriffen, feste Workflows übernehmen, was immer gleich abläuft. Sobald Anfragen unvollständig, unklar oder jedes Mal etwas anders sind, landet der Fall trotzdem wieder bei einer Person.',
         'Ein KI-Agent übernimmt genau diese Schritte dazwischen. Was für Ihr Unternehmen richtig ist, weiss er aus einem gepflegten Unternehmenskontext mit Angeboten, Kriterien, Markenregeln und freigegebenen Quellen. Ihr Team kümmert sich um das, was Urteil braucht.'
       ]
     },
@@ -171,26 +171,26 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'martech-stack',
     hero: {
-      headline: 'Weniger Tools, besser verbunden.',
-      subheadline: 'Wir räumen Ihren MarTech-Stack auf, also alle Tools für Marketing und Vertrieb, und bauen ihn so um, dass Automatisierungen und KI-Agenten verlässlich darauf arbeiten können. Mit weniger Lizenzen, einem gemeinsamen Datenstand und Schnittstellen mit klaren Rechten.',
+      headline: 'Ein Stack, auf dem Ihr System wachsen kann.',
+      subheadline: 'Wir räumen Ihren MarTech-Stack auf, also alle Tools für Marketing und Vertrieb, und bauen ihn zur gemeinsamen Grundlage, auf der Automatisierungen und KI-Agenten verlässlich arbeiten. Mit weniger Lizenzen, einem Datenstand und Schnittstellen mit klaren Rechten.',
       ctaText: 'Stack-Check besprechen'
     },
     problem: {
       title: 'Viele Programme, wenig Zusammenhang',
       paragraphs: [
         'Über die Jahre kommt ein Tool zum anderen: CRM, Newsletter, Formulare, Terminbuchung, Werbekonten, Tracking und Tabellen. Jedes wurde aus gutem Grund eingeführt.',
-        'Heute reden die Programme kaum miteinander. Daten werden von Hand kopiert, Zahlen widersprechen sich, und bei einigen Lizenzen weiss niemand mehr, wer sie nutzt.',
-        'Für Automatisierung ist das ein Hindernis. Ein Ablauf, der Daten aus drei Systemen braucht, scheitert an widersprüchlichen Feldern, und ein Agent mit Zugang zu allem ist ein Risiko. Wir bringen den Werkzeugkasten in eine Form, auf der Regeln und Agenten sauber arbeiten und die Ihr Team weiterführen kann.'
+        'Heute reden die Programme kaum miteinander. Daten werden von Hand kopiert, und mit jedem neuen Kunden wächst diese Arbeit mit. Bei einigen Lizenzen weiss niemand mehr, wer sie nutzt.',
+        'Für Automatisierung ist das ein Hindernis. Ein Ablauf, der Daten aus drei Systemen braucht, scheitert an widersprüchlichen Feldern, und ein Agent mit Zugang zu allem ist ein Risiko. Wir bauen den Werkzeugkasten zu einer Grundlage um, auf der Regeln und Agenten sauber arbeiten und die Ihr Team mitbetreibt.'
       ]
     },
     leistet: {
-      title: 'Was wir übernehmen',
+      title: 'Was wir bauen und betreiben',
       items: [
         { title: 'Stack-Check', desc: 'Wir erfassen alle Tools mit Kosten, Nutzung, Verantwortlichen, Datenflüssen und Schnittstellen. Sie erhalten eine klare Liste, was bleibt, was weg kann und was fehlt. Auf Wunsch ist der Check Teil der Performance-Analyse.' },
         { title: 'Datenmodell und Zielbild', desc: 'Wir legen fest, welches System für welche Daten führend ist, etwa das CRM für Kontakte und Verkaufschancen. Darauf bauen Berichte, Workflows und Agenten auf, statt jeweils eigene Kopien zu pflegen.' },
         { title: 'Aufräumen und verbinden', desc: 'Wir schalten überflüssige Tools ab, bereinigen Daten und verbinden die Systeme über Schnittstellen (APIs) oder Automatisierungsplattformen wie n8n, nicht über Bots, die eine Bedienoberfläche nachklicken. Daten werden nur einmal erfasst, und jede Anfrage ist bis zum Auftrag nachvollziehbar. Als Projekt zum Festpreis.' },
         { title: 'Rechte und Protokolle', desc: 'Jeder Workflow und jeder Agent erhält einen eigenen Zugang mit minimalen Rechten, schreibende Aktionen werden protokolliert. Wir halten fest, welche Personendaten an welchen Modellanbieter gehen, und schützen Abläufe, die fremde Texte lesen, gegen eingeschleuste Anweisungen.' },
-        { title: 'Laufend betreiben', desc: 'Wir prüfen neue Tools, bevor sie gekauft werden, überwachen Schnittstellen und Automatisierungen auf Fehler und überprüfen die Kosten einmal im Jahr, die Nutzungskosten für KI-Modelle eingeschlossen. Als Teil der laufenden Begleitung.' }
+        { title: 'Laufend betreiben', desc: 'Wir prüfen neue Tools, bevor sie gekauft werden, überwachen Schnittstellen und Automatisierungen auf Fehler und überprüfen die Kosten einmal im Jahr, die Nutzungskosten für KI-Modelle eingeschlossen. Gemeinsam mit Ihrem Team, als Teil des Betriebs.' }
       ]
     },
     approach: {
@@ -200,7 +200,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         { title: 'Zielbild', desc: 'Wir entscheiden gemeinsam, was bleibt, was ersetzt wird und was wegfällt, welches System für welche Daten führend ist und welche Abläufe später automatisch laufen sollen. Mit den Kosten vorher und nachher.' },
         { title: 'Umbau', desc: 'Systeme verbinden, Daten übernehmen und bereinigen, Zugänge mit eingeschränkten Rechten einrichten und alte Tools sauber abschalten.' },
         { title: 'Übergabe', desc: 'Dokumentation und Einweisung, damit Ihr Team weiss, welches Tool wofür da ist, was automatisch passiert und wer bei einem Fehler reagiert.' },
-        { title: 'Betrieb', desc: 'Auf Wunsch halten wir den Stack laufend sauber, überwachen die Schnittstellen und prüfen jede neue Anschaffung.' }
+        { title: 'Betrieb', desc: 'Auf Wunsch betreiben wir den Stack mit Ihrem Team weiter, überwachen die Schnittstellen und prüfen jede neue Anschaffung.' }
       ]
     },
     extraSections: [
@@ -253,8 +253,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'data-analytics',
     hero: {
-      headline: 'Sehen, welche Kanäle Ihnen Kunden bringen.',
-      subheadline: 'Wir richten Tracking, Attribution und Berichte so ein, dass Sie sehen, welche Kampagnen Anfragen und Umsatz bringen. Wo die Plattform es zulässt und die Einwilligung vorliegt, gehen dieselben Daten an Google, Meta und LinkedIn zurück, damit deren Gebotsalgorithmen auf Aufträge optimieren.',
+      headline: 'Messung als Regelkreis vom Klick bis zum Auftrag.',
+      subheadline: 'Wir bauen Tracking, Attribution und Berichte als einen Regelkreis. Sie sehen, welche Kampagnen Umsatz bringen, und wo die Plattform es zulässt und die Einwilligung vorliegt, gehen Aufträge an Google, Meta und LinkedIn zurück. Wohin das Budget fliesst, entscheiden Sie.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
@@ -263,7 +263,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         'Die meisten Unternehmen haben genug Daten, aber kein klares Bild davon, was ihr Marketing bringt.',
         'Es fehlen Berichte, die bei Entscheidungen helfen. Dashboards zeigen Klicks statt Umsatz, die Kennzahlen versteht kaum jemand, und welcher Kanal tatsächlich Kunden bringt, weiss niemand genau.',
         'Dazu kommt, dass Werbeplattformen heute mit lernenden Algorithmen steuern, wem eine Anzeige gezeigt wird. Sie optimieren auf das Signal, das sie erhalten. Ist das ein Formularklick statt einer qualifizierten Anfrage, kauft das Konto mehr Formularklicks ein.',
-        'Entschieden wird deshalb oft nach Bauchgefühl, und Fehler in der Messung fallen erst auf, wenn der Monatsbericht nicht mehr stimmt.'
+        'Zahlen werden jeden Monat von Hand aus mehreren Tools zusammengesucht. Entschieden wird oft nach Bauchgefühl, und Fehler in der Messung fallen erst im Monatsbericht auf.'
       ]
     },
     leistet: {
@@ -327,8 +327,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Ein Dashboard nützt nur, wenn es gelesen wird. Wir zeigen Ihrem Team, wie es die Zahlen und die automatischen Hinweise liest und daraus Entscheidungen ableitet.'
         },
         {
-          title: 'Laufende Auswertung',
-          desc: 'Die Prüfungen laufen täglich. Einmal im Monat werten wir gemeinsam aus, was sich verändert hat, und geben konkrete Empfehlungen.'
+          title: 'Betrieb und Auswertung',
+          desc: 'Im Betrieb laufen die Prüfungen täglich. Einmal im Monat werten wir mit Ihrem Team aus, was sich verändert hat, und verbessern Messung und Regeln.'
         }
       ]
     },
@@ -355,7 +355,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Brauchen wir eine Datenspezialistin oder einen Datenspezialisten im Team?',
-        a: 'Nicht unbedingt. Wir richten die Berichte so ein, dass sie auch ohne Datenhintergrund verständlich sind, und die automatischen Prüfungen melden sich, wenn etwas nicht stimmt. Bei komplexeren Fragen begleiten wir Sie weiter.'
+        a: 'Nicht unbedingt. Wir richten die Berichte so ein, dass sie auch ohne Datenhintergrund verständlich sind, und die automatischen Prüfungen melden sich, wenn etwas nicht stimmt. Den Betrieb der Messung übernehmen wir mit Ihrem Team.'
       },
       {
         q: 'Unsere Daten sind ein Durcheinander. Lässt sich das beheben?',
@@ -383,8 +383,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'demand-generation',
     hero: {
-      headline: 'Regelmässig qualifizierte Anfragen für Ihren Vertrieb.',
-      subheadline: 'Wir planen und betreuen Ihr Performance Marketing auf Google, LinkedIn und Meta. Die Kampagnen lernen aus echten Aufträgen statt aus Klicks, wo die Plattform es zulässt. Feste Prüfungen laufen täglich, über Budget und Gebote entscheidet ein Mensch.',
+      headline: 'Performance Marketing als System, das aus Aufträgen lernt.',
+      subheadline: 'Wir bauen Google Ads, LinkedIn und Meta mit Ihrem CRM zu einem System, das aus echten Aufträgen lernt, wo die Plattform es zulässt. Feste Prüfungen laufen täglich über alle Konten. Über Budget und Gebote entscheidet ein Mensch.',
       ctaText: 'Kampagnen besprechen'
     },
     problem: {
@@ -392,11 +392,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'Viele B2B-Unternehmen kennen diese Situation. Kampagnen bringen Klicks, aber kaum qualifizierte Anfragen, und niemand weiss genau, welcher Kanal tatsächlich funktioniert.',
         'Google, Meta und LinkedIn steuern heute mit eigenen Algorithmen, wem eine Anzeige gezeigt wird. Diese optimieren auf das, was das Konto als Erfolg meldet. Zählt dort jeder Formularklick, werden mehr Formularklicks eingekauft, auch unpassende.',
-        'Selten liegt das Problem an einem einzelnen Kanal. Meist passen Zielgruppe, Botschaft, Landingpage und Messung nicht zusammen, und die Kontrolle hängt an jemandem, der einmal pro Woche ins Konto schaut. Dort setzen wir an.'
+        'Selten liegt das Problem an einem einzelnen Kanal. Meist wurden Zielgruppe, Botschaft, Landingpage und Messung nie als ein System gebaut, und die Kontrolle hängt an jemandem, der einmal pro Woche ins Konto schaut. Mehr Budget heisst dann mehr Handarbeit.'
       ]
     },
     leistet: {
-      title: 'Was wir für Sie übernehmen',
+      title: 'Die Bausteine des Systems',
       items: [
         {
           title: 'Zielgruppe schärfen',
@@ -411,8 +411,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Qualifizierte Anfragen und Aufträge fliessen aus dem CRM zurück in Google Ads, Meta und LinkedIn, wo die Plattform es zulässt. Voraussetzung sind Einwilligung und ein serverseitiges Setup. So optimieren die Gebotsstrategien auf Aufträge.'
         },
         {
-          title: 'Kampagnenbetreuung',
-          desc: 'Wir bauen und betreuen Ihre Google Ads, LinkedIn Ads und Meta Ads, von der Kontostruktur über Suchbegriffe bis zu den Landingpages. Das Budget fliesst dorthin, wo Anfragen entstehen.'
+          title: 'Kampagnen aufbauen und betreiben',
+          desc: 'Wir bauen Ihre Google Ads, LinkedIn Ads und Meta Ads als Teil des Systems, von der Kontostruktur über Suchbegriffe bis zu den Landingpages, und betreiben sie mit Ihrem Team. Das Budget fliesst dorthin, wo Anfragen entstehen.'
         },
         {
           title: 'Tägliche Prüfung und Ursachensuche',
@@ -423,7 +423,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Anzeigenvarianten entwirft ein Modell aus Ihrem Unternehmenskontext, also Positionierung, Angeboten, Markenregeln und echten Kundenfragen. Wir wählen aus und schärfen nach. Was ankommt, zeigt der Test gegen die bestehende Anzeige.'
         },
         {
-          title: 'Laufende Optimierung',
+          title: 'Im Betrieb verbessern',
           desc: 'Wir werten jede Woche aus und berichten monatlich. Was aus den Anfragen im CRM wird, fliesst in Budget, Botschaften und Prüfregeln zurück.'
         }
       ]
@@ -493,27 +493,27 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Was unterscheidet Sie von einer Werbeagentur?',
-        a: 'Wir messen den Erfolg an Anfragen und Verkaufschancen, nicht an Klicks und Impressionen, und verbinden die Kampagnen dafür mit Ihrem CRM. Kampagnen, Landingpages, Tracking und die Übergabe an Ihren Vertrieb betreut Yathur Nathan persönlich. Die täglichen Prüfungen laufen automatisch.'
+        a: 'Eine Werbeagentur betreut Kampagnen. Wir bauen Kampagnen, CRM, Landingpages und Tracking zu einem System, das an Anfragen und Verkaufschancen gemessen wird, und verbessern es mit Ihrem Team im Betrieb. Die täglichen Prüfungen laufen automatisch, Yathur Nathan arbeitet persönlich an Ihrem System.'
       }
     ],
     cta: {
-      headline: 'Mehr passende Anfragen für Ihren Vertrieb.',
-      subheadline: 'Wir schauen auf Ihre heutigen Kampagnen, Ihre Messung und Ihre Anfragen und skizzieren, welche Kanäle und welches Budget für Sie sinnvoll wären.',
+      headline: 'Wie viel Handarbeit steckt heute in Ihren Kampagnen?',
+      subheadline: 'Wir schauen auf Ihre Kampagnen, Ihre Messung und Ihre Anfragen und skizzieren, wie daraus ein System wird, das mit dem Budget wachsen kann.',
       buttonText: 'Erstgespräch vereinbaren'
     }
   },
   {
     slug: 'growth-strategy',
     hero: {
-      headline: 'Ein klarer Plan, wie Sie neue Kunden gewinnen.',
-      subheadline: 'Wir legen mit Ihnen fest, wen Sie ansprechen, womit Sie überzeugen und über welche Kanäle Sie Ihre Wunschkunden erreichen. Der Plan zeigt auch, welche Schritte der Kundengewinnung künftig automatisch laufen und welche Daten es dafür braucht.',
+      headline: 'Eine Wachstumsstrategie, nach der Ihr System arbeiten kann.',
+      subheadline: 'Wir legen mit Ihnen fest, wen Sie ansprechen, womit Sie überzeugen und über welche Kanäle. Daraus entstehen Kriterien und Ziele, mit denen Kampagnen, Lead-Scoring und Agenten arbeiten. Die Grundentscheide treffen Sie.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
       title: 'Wachstum, das eher zufällig entsteht',
       paragraphs: [
         'Viele Unternehmen wachsen, ohne genau zu wissen, warum.',
-        'Ein Kanal funktioniert, eine Kampagne bringt Anfragen, aber es steht kein Plan dahinter. Dadurch lässt sich Wachstum schlecht planen und kaum wiederholen.',
+        'Ein Kanal funktioniert, eine Kampagne bringt Anfragen, aber es steht kein Plan dahinter. Wachstum hängt dann an einzelnen Personen und lässt sich kaum wiederholen.',
         'Spätestens wenn ein Kanal nachlässt oder das Budget steigen soll, fehlt die Grundlage für den Entscheid.',
         'Dasselbe zeigt sich, sobald Abläufe automatisiert werden sollen. Ein Lead-Scoring braucht eine schriftliche Beschreibung des Wunschkunden, eine Kampagne ein messbares Ziel. Fehlt beides, automatisiert man das Durcheinander.'
       ]
@@ -567,8 +567,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Sie erhalten einen umsetzbaren Plan mit Prioritäten, Zeitplan und Kennzahlen. Er beschreibt auch, welche Daten und Automatisierungen die Umsetzung braucht.'
         },
         {
-          title: 'Begleitung der Umsetzung (laufend)',
-          desc: 'Die Kennzahlen laufen automatisch in ein Dashboard. Wir besprechen sie regelmässig, helfen beim Priorisieren und passen den Plan an, wenn sich Ihre Situation ändert.'
+          title: 'Umsetzung und Betrieb (laufend)',
+          desc: 'Wir setzen den Plan mit Ihnen um. Die Kennzahlen laufen automatisch in ein Dashboard, wir besprechen sie regelmässig und passen den Plan an, wenn sich Ihre Situation ändert.'
         }
       ]
     },
@@ -599,7 +599,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Wie lange dauert die Strategiearbeit?',
-        a: 'Die erste Phase bis zum fertigen Plan dauert in der Regel drei bis vier Wochen. Auf Ihrer Seite rechnen Sie mit einem Workshop und einigen kürzeren Abstimmungen. Die Begleitung danach richtet sich nach Ihrem Bedarf, monatlich oder pro Quartal.'
+        a: 'Die erste Phase bis zum fertigen Plan dauert in der Regel drei bis vier Wochen. Auf Ihrer Seite rechnen Sie mit einem Workshop und einigen kürzeren Abstimmungen. Umsetzung und Betrieb danach richten sich nach Ihrem Bedarf.'
       },
       {
         q: 'Übernimmt KI die Strategiearbeit?',
@@ -607,7 +607,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Was ist der Unterschied zu einer klassischen Strategieberatung?',
-        a: 'Wir erarbeiten die Strategie und setzen sie auch um, von Kampagnen über Landingpages bis zum Tracking und den Automatisierungen dahinter. Sie erhalten keinen Bericht, mit dem Sie danach allein bleiben.'
+        a: 'Eine Strategieberatung liefert ein Konzept. Wir leiten aus der Strategie Kriterien und Ziele ab und bauen damit das System, von Kampagnen und Landingpages bis zu Tracking und Automatisierungen, das wir mit Ihrem Team betreiben.'
       },
       {
         q: 'Was kostet die Strategiearbeit?',
@@ -623,15 +623,15 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'lead-generation',
     hero: {
-      headline: 'Aus Website-Besuchern werden Anfragen.',
-      subheadline: 'Wir sorgen dafür, dass Interessenten Sie bei Google und in KI-Assistenten wie ChatGPT finden und sich melden. Dafür setzen wir SEO, GEO, Inhalte und Landingpages ein. Jede neue Anfrage wird automatisch angereichert und per Lead-Scoring eingeordnet, bevor sie beim Vertrieb ankommt.',
+      headline: 'Ein System, das aus Sichtbarkeit Anfragen macht.',
+      subheadline: 'Wir bauen SEO, GEO, Inhalte und Landingpages zu einem System, über das Interessenten Sie bei Google und in KI-Assistenten wie ChatGPT finden. Jede neue Anfrage wird automatisch angereichert und per Lead-Scoring eingeordnet. Kriterien und Freigaben bleiben bei Ihnen.',
       ctaText: 'Ausgangslage besprechen'
     },
     problem: {
       title: 'Besucher ja, Anfragen kaum',
       paragraphs: [
         'Viele Unternehmen haben Besucher auf der Website, aber kaum Anfragen, oder die Anfragen passen nicht. Oft fehlt schlicht ein Weg, aus Interesse eine konkrete Anfrage zu machen.',
-        'Inhalte werden erstellt, aber bei Google nicht gefunden. Gleichzeitig informieren sich Entscheider zunehmend über ChatGPT, Perplexity oder die KI-Übersichten von Google und erhalten dort eine Antwort, ohne eine Website zu besuchen.',
+        'Inhalte entstehen einzeln und von Hand, werden bei Google aber nicht gefunden. Gleichzeitig informieren sich Entscheider zunehmend über ChatGPT, Perplexity oder die KI-Übersichten von Google und erhalten dort eine Antwort, ohne eine Website zu besuchen.',
         'Was fehlt, ist ein klarer Weg vom ersten Kontakt bis zur Anfrage, mit Inhalten, die Menschen und KI-Assistenten verstehen. Und wenn die Anfrage kommt, zählt die Reaktion. Bleibt sie einen Tag liegen, hat der Interessent oft schon weitergesucht.'
       ]
     },
@@ -724,7 +724,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Können wir das nicht selbst machen?',
-        a: 'Doch. Rechnen Sie aber mit mehreren Stunden pro Woche für Planung, Schreiben, Technik und Auswertung, und zwar über Monate. Wenn Sie diese Zeit lieber in Ihr Kerngeschäft stecken, übernehmen wir das.'
+        a: 'Doch. Rechnen Sie aber mit mehreren Stunden pro Woche für Planung, Schreiben, Technik und Auswertung, über Monate. Wir bauen die Abläufe so, dass Recherche, Entwürfe und Auswertung vorbereitet ankommen, und betreiben sie mit Ihnen.'
       },
       {
         q: 'Brauchen wir zusätzlich bezahlte Werbung?',
@@ -740,20 +740,20 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'marketing-automation',
     hero: {
-      headline: 'Keine Anfrage mehr, die im Posteingang liegen bleibt.',
-      subheadline: 'Wir richten CRM und Marketing Automation so ein, dass jede Anfrage automatisch erfasst, zugewiesen und weiterbegleitet wird. KI fasst Anfragen zusammen und bereitet Folge-E-Mails vor, und Ihr Vertrieb sieht, wer bereit für ein Gespräch ist.',
+      headline: 'Ein CRM, das mit Ihren Anfragen mitwächst.',
+      subheadline: 'Wir bauen CRM und Marketing Automation so, dass jede Anfrage automatisch erfasst, zugewiesen und weiterbegleitet wird, auch wenn es mehr werden. KI fasst zusammen und bereitet Folge-E-Mails vor. Ihr Vertrieb entscheidet, wer bereit für ein Gespräch ist.',
       ctaText: 'CRM und Abläufe besprechen'
     },
     problem: {
       title: 'Anfragen kommen rein und versanden',
       paragraphs: [
         'Eine Anfrage trifft ein, und dann passiert nichts. Niemand fasst nach, weil nicht geregelt ist, wer zuständig ist.',
-        'Oder vieles läuft von Hand, kostet Zeit und ist fehleranfällig. Die Tools sind nicht miteinander verbunden, und die Daten im CRM sind veraltet oder lückenhaft.',
+        'Oder vieles läuft von Hand, und jede zusätzliche Anfrage bringt mehr Abtippen und Nachfassen. Die Tools sind nicht verbunden, und die Daten im CRM sind veraltet oder lückenhaft.',
         'So gehen Interessenten verloren, die eigentlich kaufen würden. Und solange die Daten im CRM nicht stimmen, kann auch keine Automatisierung und kein KI-Agent verlässlich darauf arbeiten.'
       ]
     },
     leistet: {
-      title: 'Was wir für Sie einrichten',
+      title: 'Was wir einrichten und betreiben',
       items: [
         {
           title: 'CRM aufbauen oder aufräumen',
@@ -809,8 +809,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Ihr Team lernt das System kennen, mit Dokumentation und Feedback-Runden, damit es im Alltag auch genutzt wird.'
         },
         {
-          title: 'Optimierung (laufend)',
-          desc: 'Anhand der Zahlen und der Fehlerprotokolle passen wir Abläufe an, testen E-Mail-Strecken und schärfen die Bewertungskriterien nach.'
+          title: 'Betrieb und Verbesserung (laufend)',
+          desc: 'Im Betrieb passen wir anhand der Zahlen und Fehlerprotokolle die Abläufe an, testen E-Mail-Strecken und schärfen die Bewertungskriterien nach.'
         }
       ]
     },
@@ -881,8 +881,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'revenue-operations',
     hero: {
-      headline: 'Marketing, Vertrieb und Kundenbetreuung arbeiten mit denselben Zahlen.',
-      subheadline: 'Wenn Ihre Teams mit unterschiedlichen Daten und Tools arbeiten, gehen Anfragen und Umsatz verloren. Wir bringen Abläufe, Daten und Kennzahlen zusammen. Feste Prüfungen halten Datenqualität und Pipeline sauber, die unklaren Fälle bereitet ein Agent auf. Im Englischen heisst das Revenue Operations, kurz RevOps.',
+      headline: 'Ein Umsatzsystem für Marketing, Vertrieb und Kundenbetreuung.',
+      subheadline: 'Wir bauen Abläufe, Daten und Kennzahlen der drei Teams zu einem System, im Englischen Revenue Operations, kurz RevOps. Feste Prüfungen halten Datenqualität und Pipeline sauber, die unklaren Fälle bereitet ein Agent auf. Korrekturen und Prognose verantwortet Ihr Team.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
@@ -890,7 +890,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'Viele Wachstumsprobleme liegen in den Abläufen zwischen Marketing und Vertrieb.',
         'Die Teams arbeiten nebeneinander her, die Daten liegen verstreut in verschiedenen Tools, und Übergaben sind nicht geregelt. Das Marketing zählt Kontakte, der Vertrieb Abschlüsse, die Kundenbetreuung Kündigungen. Den Umsatz als Ganzes betrachtet niemand.',
-        'Das führt zu Doppelspurigkeiten und verlorenen Verkaufschancen, und das Wachstum lässt sich kaum vorhersagen. Automatisierung macht es nicht besser, solange jedes System etwas anderes unter einer qualifizierten Anfrage versteht.'
+        'Das führt zu Doppelspurigkeiten und verlorenen Verkaufschancen, und mit jedem neuen Kunden wächst der Abstimmungsaufwand mit. Automatisierung macht es nicht besser, solange jedes System etwas anderes unter einer qualifizierten Anfrage versteht.'
       ]
     },
     leistet: {
@@ -946,8 +946,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Wir setzen schrittweise um und beginnen mit den Bereichen, die am meisten bringen, statt alles auf einmal anzugehen. Agenten kommen erst dazu, wenn Daten und Abläufe stehen.'
         },
         {
-          title: 'Einführung und Schulung (laufend)',
-          desc: 'Wir begleiten die Einführung mit Schulung, Dokumentation und regelmässigen Abstimmungen, damit die neuen Abläufe genutzt werden.'
+          title: 'Einführung und Betrieb (laufend)',
+          desc: 'Wir führen die Abläufe mit Schulung und Dokumentation ein und betreiben sie mit Ihrem Team weiter, damit sie im Alltag genutzt werden.'
         },
         {
           title: 'Laufende Verbesserung',
@@ -1003,7 +1003,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Ist das nicht einfach ein IT-Projekt?',
-        a: 'Nein. Die Technik ist nur das Mittel. Entscheidend ist, wie Marketing, Vertrieb und Kundenbetreuung zusammenarbeiten, damit mehr Anfragen zu Kunden werden.'
+        a: 'Nein. Die Technik ist das Mittel. Wir bauen das System so, dass Marketing, Vertrieb und Kundenbetreuung damit zusammenarbeiten und mehr Anfragen zu Kunden werden, ohne dass die Abstimmung im gleichen Mass wächst.'
       }
     ],
     cta: {
@@ -1015,8 +1015,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'sales-enablement',
     hero: {
-      headline: 'Ihr Vertrieb geht besser vorbereitet in jedes Gespräch.',
-      subheadline: 'Wir erarbeiten Argumentarien, Unterlagen und Abläufe, die im Verkauf tatsächlich helfen, und legen sie so ab, dass Ihr Team und ein KI-Agent darauf zugreifen können. Vor jedem Termin recherchiert der Agent das Unternehmen und fasst das Wichtigste mit passenden Referenzen zusammen.',
+      headline: 'Jedes Gespräch vorbereitet, auch wenn es mehr werden.',
+      subheadline: 'Wir bauen eine Wissensbasis aus Argumentarien, Unterlagen und Referenzen, auf die Ihr Team und ein KI-Agent zugreifen. Vor jedem Termin recherchiert der Agent das Unternehmen und fasst das Wichtigste zusammen. Gespräch und Offerte bleiben bei Ihrem Vertrieb.',
       ctaText: 'Vertriebsprozess besprechen'
     },
     problem: {
@@ -1024,11 +1024,11 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'In vielen Unternehmen arbeiten Marketing und Vertrieb nebeneinander her.',
         'Das Marketing erstellt Unterlagen, die der Vertrieb nicht nutzt. Der Vertrieb klagt über unpassende Anfragen, das Marketing darüber, dass Anfragen liegen bleiben. Wie die Übergabe genau laufen soll, weiss niemand.',
-        'Verkaufszyklen werden länger, und Verkaufschancen gehen verloren. Das Wissen, wie man ein Gespräch gewinnt, steckt in den Köpfen weniger Personen statt in Unterlagen, die alle nutzen können.'
+        'Verkaufszyklen werden länger, und jeder zusätzliche Termin kostet wieder dieselbe Vorbereitung. Das Wissen, wie man ein Gespräch gewinnt, steckt in den Köpfen weniger Personen statt in Unterlagen, die alle nutzen können.'
       ]
     },
     leistet: {
-      title: 'Was wir für Sie erarbeiten',
+      title: 'Was wir aufbauen',
       items: [
         {
           title: 'Gemeinsames Verständnis',
@@ -1084,7 +1084,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Übergaben, CRM-Felder und die Gesprächsvorbereitung durch den Agenten werden eingeführt und mit echten Terminen getestet, bis die Ergebnisse verlässlich sind.'
         },
         {
-          title: 'Messen und anpassen',
+          title: 'Im Betrieb verbessern',
           desc: 'Wir messen, wie schnell Anfragen bearbeitet werden, wie die Vorbereitung im Gespräch hilft und mit welchem Ergebnis, und passen die Abläufe daran an.'
         }
       ]
@@ -1142,8 +1142,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'ecommerce-performance',
     hero: {
-      headline: 'Ihr Shop hat Besucher. Wir helfen, daraus Käufer zu machen.',
-      subheadline: 'Wir verbessern, was zwischen Besuch und Kauf liegt, von der Kaufquote über Wiederkäufe bis zur Werbeeffizienz. Shop, Werbekonten und Warenkosten verbinden wir so, dass Abweichungen täglich auffallen. Sofern Margen im Shop oder ERP verfügbar sind, optimieren Google und Meta nach Marge statt nach Umsatz.',
+      headline: 'Ein Shop, der auf Marge optimiert.',
+      subheadline: 'Wir verbinden Shop, Werbekonten und Warenkosten zu einem System, in dem Abweichungen täglich auffallen und Verbesserungen getestet werden. Sofern Margen im Shop oder ERP verfügbar sind, optimieren Google und Meta nach Marge statt nach Umsatz. Sortiment, Preise und Budget entscheiden Sie.',
       ctaText: 'Shop-Zahlen besprechen'
     },
     problem: {
@@ -1151,7 +1151,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       paragraphs: [
         'In den meisten Online-Shops kauft nur ein kleiner Teil der Besucher. Die übrigen gehen wieder, oft kurz vor dem Ziel. Meist liegt das am Ablauf im Shop.',
         'Viele Shops stecken fast ihr ganzes Budget in neue Besucher über Google, Meta oder Influencer. Was danach passiert, bleibt oft unbeachtet: warum so viele im Warenkorb abbrechen, warum jemand einmal kauft und nie wieder und warum die Werbung unter Druck steht, obwohl genug Besucher kommen.',
-        'Mehr Budget allein bringt einen Shop selten dauerhaft weiter. Was hilft, sind bessere Produktseiten, ein einfacherer Checkout, E-Mails, die Kunden zurückholen, und Werbung, die nach Marge gesteuert wird. Dafür braucht es Daten, die täglich zeigen, wo Umsatz verloren geht, und nicht erst im Monatsbericht.'
+        'Mehr Budget allein bringt einen Shop selten weiter, und von Hand lässt sich kaum täglich prüfen, ob alles läuft. Was hilft, sind bessere Produktseiten, ein einfacherer Checkout, E-Mails, die Kunden zurückholen, und Werbung, die nach Marge gesteuert wird. Dafür braucht es Daten, die täglich zeigen, wo Umsatz verloren geht, und nicht erst im Monatsbericht.'
       ]
     },
     leistet: {
@@ -1163,7 +1163,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         },
         {
           title: 'Werbung mit Blick auf die Marge',
-          desc: 'Betreuung von Google Shopping, Meta und Performance Max. Sofern Margen im Shop oder ERP verfügbar sind, übermitteln wir Deckungsbeiträge als Conversion-Werte, damit die Gebotsalgorithmen margenstarke Produkte bevorzugen. Ausgebaut wird nur, was rentiert.'
+          desc: 'Google Shopping, Meta und Performance Max als Teil des Systems. Sofern Margen im Shop oder ERP verfügbar sind, übermitteln wir Deckungsbeiträge als Conversion-Werte, damit die Gebotsalgorithmen margenstarke Produkte bevorzugen. Ausgebaut wird nur, was rentiert.'
         },
         {
           title: 'Produktfeed & Katalog',
@@ -1236,8 +1236,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
         a: 'Wir arbeiten mit Shopify, WooCommerce, Shopware und anderen gängigen Systemen. Analyse, Werbung, E-Mail-Abläufe und die Optimierung der Kaufquote funktionieren auf jeder Plattform. Für tiefere Eingriffe im Shop-Backend arbeiten wir mit erfahrenen Entwicklern zusammen.'
       },
       {
-        q: 'Übernehmen Sie die Kampagnen komplett oder nur die Strategie?',
-        a: 'Beides ist möglich. Wir übernehmen die Kampagnen vollständig oder prüfen und begleiten Ihr internes Team bzw. Ihre bestehende Agentur.'
+        q: 'Bauen Sie das ganze System oder arbeiten Sie mit unserem Team?',
+        a: 'Beides ist möglich. Wir bauen und betreiben das System mit Kampagnen, Tracking und Prüfungen selbst, oder wir richten es so ein, dass Ihr internes Team oder Ihre bestehenden Dienstleister darauf arbeiten.'
       },
       {
         q: 'Verändert KI automatisch unsere Produktdaten?',
@@ -1257,8 +1257,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'dtc-growth-acquisition',
     hero: {
-      headline: 'Ihr Produkt ist gut. Jetzt braucht es eine verlässliche Kundengewinnung.',
-      subheadline: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine stabile Kundengewinnung. Wir bauen sie auf mehreren Kanälen auf und verbinden Werbekonten mit Shop- und Kundendaten, damit Kosten pro Neukunde und Kundenwert laufend berechnet werden statt einmal im Quartal geschätzt.',
+      headline: 'Kundengewinnung, die ihre Kosten kennt.',
+      subheadline: 'Wir bauen die Kundengewinnung Ihrer Online-Marke auf mehreren Kanälen und verbinden Werbekonten mit Shop- und Kundendaten. Kosten pro Neukunde und Kundenwert berechnet ein fester Ablauf laufend, statt sie einmal im Quartal zu schätzen. Budget und neue Anzeigen geben Sie frei.',
       ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
@@ -1342,7 +1342,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Wir schalten bereits Meta-Anzeigen. Was machen Sie anders?',
-        a: 'Wir bringen Struktur in die Kampagnen, richten eine Messung ein, die nicht allein auf den Zahlen von Meta beruht, und bauen einen festen Ablauf für das Testen neuer Anzeigen auf. Der Algorithmus erhält bessere Signale, etwa ob ein Kauf von einem Neukunden kam, sofern Shop oder ERP diese Angabe liefern. Ziel ist mehr Ergebnis pro eingesetztem Franken.'
+        a: 'Wir machen die Kampagnen zum Teil eines Systems. Dazu gehören eine klare Struktur, eine Messung, die nicht allein auf den Zahlen von Meta beruht, und ein fester Ablauf für das Testen neuer Anzeigen. Der Algorithmus erhält bessere Signale, etwa ob ein Kauf von einem Neukunden kam, sofern Shop oder ERP diese Angabe liefern.'
       },
       {
         q: 'Wie lange dauert es, bis wir Ergebnisse sehen?',
@@ -1350,7 +1350,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Wir haben ein kleines Team und wenig Zeit. Passt das zu uns?',
-        a: 'Ja. Wir übernehmen Umsetzung, Überwachung und Optimierung, die tägliche Kontrolle der Kampagnen übernehmen feste Prüfungen. Sie erhalten regelmässige Berichte und klare Entscheidungsgrundlagen. Von Ihrer Seite braucht es vor allem Zugänge, Produktwissen und kurze Freigaben.'
+        a: 'Ja. Wir bauen und betreiben das System mit Ihnen, die tägliche Kontrolle der Kampagnen übernehmen feste Prüfungen. So muss nicht jemand aus Ihrem Team täglich in die Konten schauen. Von Ihrer Seite braucht es vor allem Zugänge, Produktwissen und kurze Freigaben.'
       }
     ],
     cta: {
@@ -1362,14 +1362,14 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'customer-retention',
     hero: {
-      headline: 'Machen Sie aus Erstkäufern Stammkunden.',
-      subheadline: 'Einen bestehenden Kunden zu halten ist in der Regel deutlich günstiger, als einen neuen zu gewinnen. Wir bauen ein System, das auf Signale wie Kaufzeitpunkt, Nutzung oder Inaktivität reagiert und Hinweise auf Abwanderung früh sichtbar macht. Für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
+      headline: 'Kundenbindung, die auf Signale reagiert.',
+      subheadline: 'Wir bauen ein System, das auf Signale wie Kaufzeitpunkt, Nutzung oder Inaktivität reagiert und Hinweise auf Abwanderung früh sichtbar macht, auch wenn die Kundenbasis wächst. Angebote und Rabatte legt Ihr Team fest. Für Online-Shops, Software-Anbieter und B2B-Dienstleister.',
       ctaText: 'Kundenbindung besprechen'
     },
     problem: {
       title: 'Wachstum nur über Neukunden ist teuer',
       paragraphs: [
-        'Viele Unternehmen kennen ihre Kosten pro Neukunde genau. Was ein Kunde über zwei, drei oder fünf Jahre wert ist, wissen sie nicht, weil sich nach dem ersten Kauf niemand mehr um ihn gekümmert hat. Der Kundenwert bleibt eine Schätzung.',
+        'Viele Unternehmen kennen ihre Kosten pro Neukunde genau. Was ein Kunde über zwei, drei oder fünf Jahre wert ist, wissen sie nicht, weil nach dem ersten Kauf niemand Zeit hatte, sich um ihn zu kümmern. Der Kundenwert bleibt eine Schätzung.',
         'Im E-Commerce heisst das: Ein Kunde kauft einmal, verschwindet, und ihn über Werbung zurückzuholen kostet erneut Geld, wenn er überhaupt zurückkommt. Oft fehlt einfach die Kommunikation nach dem Kauf, also ein Anlass für den zweiten Kauf und eine Nachricht im richtigen Moment.',
         'Im B2B ist das Muster ähnlich, nur teurer. Ein Kunde wird gewonnen, eingeführt, und danach passiert wenig. Es gibt kein geplantes Zusatzangebot, kein regelmässiges Gespräch und kein Warnsignal vor der Kündigung. Dabei liegen die Signale oft schon in CRM, Shop oder Supportsystem, nur schaut niemand hin.'
       ]
@@ -1423,8 +1423,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'CRM und E-Mail-System einrichten, Kundengruppen und Auslöser festlegen, Dashboard aufsetzen. Die ersten Abläufe für Begrüssung und die Zeit nach dem Kauf gehen live.'
         },
         {
-          title: 'Optimierung & Ausbau',
-          desc: 'Wir überarbeiten die Abläufe monatlich anhand von Öffnungen, Klicks und Käufen und bauen Treueprogramm, Zusatzangebote und Frühwarnzeichen auf.'
+          title: 'Betrieb & Ausbau',
+          desc: 'Im Betrieb überarbeiten wir die Abläufe monatlich anhand von Öffnungen, Klicks und Käufen und bauen Treueprogramm, Zusatzangebote und Frühwarnzeichen auf.'
         },
         {
           title: 'Weitere Kanäle',
@@ -1471,8 +1471,8 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'paid-social-ecommerce',
     hero: {
-      headline: 'Ihr ROAS sieht gut aus. Aber verdienen Sie auch daran?',
-      subheadline: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen stecken darin nicht. Wir steuern nach Deckungsbeitrag. Sofern Margen im Shop oder ERP verfügbar sind, melden wir den Plattformen Werte, die die Marge abbilden, damit ihre Algorithmen auf Gewinn optimieren.',
+      headline: 'Paid Social, gesteuert nach Deckungsbeitrag.',
+      subheadline: 'Viele Online-Shops steuern Meta und TikTok nach ROAS, also Umsatz pro Werbefranken, ohne Marge, Versand und Rücksendungen. Wir bauen ein System, das täglich gegen den Deckungsbeitrag prüft und den Plattformen margenbasierte Werte meldet, sofern Shop oder ERP sie liefern. Budget und Ausbau entscheiden Sie.',
       ctaText: 'Erstgespräch vereinbaren'
     },
     problem: {
@@ -1491,7 +1491,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
           desc: 'Bevor wir eine Kampagne aufsetzen, schauen wir uns Ihre Produktmargen an. Margenstarke Produkte werden bevorzugt beworben, Kampagnen nach Margengruppen getrennt und das Budget nach möglichem Deckungsbeitrag verteilt.'
         },
         {
-          title: 'Meta Ads: Aufbau & Betreuung',
+          title: 'Meta Ads: Aufbau & Betrieb',
           desc: 'Wir bauen Kampagnen auf Facebook und Instagram auf, getrennt nach Neukunden, Retargeting und Bestandskunden. Die Kampagnenziele wählen wir je nach Phase, Anzeigentests planen wir im Voraus.'
         },
         {
@@ -1556,7 +1556,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
     faq: [
       {
         q: 'Was machen Sie anders als eine klassische Performance-Agentur?',
-        a: 'Viele Agenturen berichten vor allem über den ROAS, weil er einfach zu messen ist. Wir beziehen Ihre Produktmargen ein, steuern die Kampagnen nach Deckungsbeitrag und geben den Plattformen, wo die Daten es erlauben, Werte, mit denen ihre Algorithmen auf Gewinn optimieren können.'
+        a: 'Eine Agentur betreut Kampagnen und berichtet meist über den ROAS, weil er einfach zu messen ist. Wir bauen ein System, das Ihre Produktmargen einbezieht, nach Deckungsbeitrag steuert und den Plattformen, wo die Daten es erlauben, Werte meldet, mit denen ihre Algorithmen auf Gewinn optimieren.'
       },
       {
         q: 'Müssen wir bestehende Kampagnen komplett neu aufbauen?',
@@ -1564,7 +1564,7 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       },
       {
         q: 'Wie lange dauert es, bis Paid Social rentabel ist, und was kostet es?',
-        a: 'In den ersten vier bis acht Wochen sammeln wir Daten, testen Anzeigen und lassen die Algorithmen lernen. In dieser Zeit liegen die Kampagnen oft erst etwa bei der Gewinnschwelle. Ein rentabler Ausbau ist meist ab Woche acht bis zwölf realistisch. Welches Werbebudget sinnvoll ist und wie die Betreuung aufgebaut wird, besprechen wir im Erstgespräch.'
+        a: 'In den ersten vier bis acht Wochen sammeln wir Daten, testen Anzeigen und lassen die Algorithmen lernen. In dieser Zeit liegen die Kampagnen oft erst etwa bei der Gewinnschwelle. Ein rentabler Ausbau ist meist ab Woche acht bis zwölf realistisch. Welches Werbebudget sinnvoll ist und wie wir das System mit Ihnen betreiben, besprechen wir im Erstgespräch.'
       }
     ],
     cta: {

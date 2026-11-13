@@ -144,7 +144,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'data-analytics': {
     title: 'Vom Klick bis zum Umsatz, und zurück an die Werbekonten',
-    text: 'Wir verbinden Website-Messung mit den Daten aus Ihrem CRM. So sehen Sie, welcher Kanal Aufträge bringt, und die Gebotsalgorithmen der Werbeplattformen lernen aus denselben Daten.',
+    text: 'Wir verbinden Website-Messung und CRM zu einem Regelkreis. So sehen Sie, welcher Kanal Aufträge bringt, und die Gebotsalgorithmen der Werbeplattformen lernen aus denselben Daten.',
     spec: {
       type: 'flow',
       nodes: [
@@ -158,7 +158,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'ecommerce-performance': {
     title: 'Wo Ihr Shop Käufer verliert',
-    text: 'Wir untersuchen jede Stufe vom Besuch bis zum Kauf, finden die grössten Abbrüche und verbessern sie mit überprüfbaren Tests. Feste Prüfungen laufen täglich über alle Stufen, damit ein Einbruch nicht erst im Monatsbericht auffällt.',
+    text: 'Wir untersuchen jede Stufe vom Besuch bis zum Kauf und verbessern die grössten Abbrüche mit überprüfbaren Tests. Feste Prüfungen laufen täglich über alle Stufen, damit ein Einbruch nicht erst im Monatsbericht auffällt.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -200,7 +200,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'paid-social-ecommerce': {
     title: 'Vom Umsatz zum tatsächlichen Gewinn',
-    text: 'Ein guter ROAS heisst noch nicht, dass Sie verdienen. Wir steuern Meta und TikTok nach dem, was nach allen Kosten übrig bleibt, und melden den Plattformen diesen Wert zurück, sofern Margen im Shop oder ERP verfügbar sind.',
+    text: 'Ein guter ROAS heisst noch nicht, dass Sie verdienen. Wir richten Meta und TikTok auf das aus, was nach allen Kosten übrig bleibt, und melden den Plattformen diesen Wert zurück, sofern Margen im Shop oder ERP verfügbar sind.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -329,7 +329,7 @@ export function sectorDiagram(slug: string, sectorTitle: string): PageDiagram {
   const g = SECTOR_GOAL[slug] ?? { goal: 'Auftrag', sub: 'Neue Kundin, neuer Kunde', first: 'Google, LinkedIn, Meta' };
   return {
     title: `So entstehen Anfragen für ${sectorTitle}`,
-    text: 'Wir kümmern uns um den ganzen Weg vom ersten Kontakt bis zum Abschluss und messen, wie viele Interessenten von einer Stufe zur nächsten kommen. Erfassung und Nachfassen laufen automatisch, damit keine Anfrage liegen bleibt.',
+    text: 'Wir bauen den Weg vom ersten Kontakt bis zum Abschluss als ein System und messen, wie viele Interessenten von einer Stufe zur nächsten kommen. Erfassung und Nachfassen laufen automatisch, damit keine Anfrage liegen bleibt.',
     spec: {
       type: 'flow',
       nodes: [

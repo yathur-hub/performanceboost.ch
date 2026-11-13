@@ -89,7 +89,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
 
       <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-24">
         <Container className="space-y-10">
-          <SectionHeading title="So gehen wir vor" />
+          <SectionHeading title="So bauen wir das System auf" />
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {page.approach.map((a, i) => (
               <li key={a.title} className="bg-[#f6f6f6]/60 border border-[#E0E0E0]/80 rounded-2xl p-6 space-y-3">

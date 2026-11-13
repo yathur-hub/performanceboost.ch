@@ -60,7 +60,7 @@ const FAQ = [
   },
   {
     q: 'Für welche Unternehmen eignet sich performanceboost?',
-    a: 'Für Schweizer KMU, meist ab rund CHF 1 Mio. Jahresumsatz, die wachsen oder effizienter arbeiten möchten, vor allem Dienstleister und B2B-Unternehmen, aber auch Onlineshops. Wichtig ist eine Geschäftsleitung, die mitentscheidet, und die Bereitschaft, Abläufe zu verändern.',
+    a: 'Für Schweizer KMU, die wachsen möchten, ohne dass der Aufwand im gleichen Mass mitwächst, vor allem Dienstleister und B2B-Unternehmen, aber auch Onlineshops. Wichtig ist eine Geschäftsleitung, die mitentscheidet, und die Bereitschaft, Abläufe zu verändern.',
   },
   {
     q: 'Müssen wir alle drei Bereiche und alle Phasen beziehen?',

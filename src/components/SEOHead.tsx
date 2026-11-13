@@ -28,7 +28,7 @@ const ORGANIZATION = {
   image: SITE.portraitUrl,
   slogan: 'Boost your performance through agentic marketing, sales & processes.',
   description:
-    'Business Performance Partner für Schweizer KMU. Wir konzipieren, bauen und optimieren Marketing, Sales und Geschäftsprozesse als ein System, in dem KI von Anfang an Teil der Architektur ist: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten mit klaren Freigaben.',
+    'AI-First-Scaling-Partner für Schweizer KMU. Wir konzipieren, bauen und optimieren Marketing, Sales und Geschäftsprozesse als ein System, in dem KI von Anfang an Teil der Architektur ist: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten mit klaren Freigaben.',
   knowsAbout: [
     'Wachstumsstrategie',
     'Digitalstrategie',
@@ -196,7 +196,7 @@ export function buildMeta(route: ParsedRoute): Meta {
       }
       const title = 'Leistungen: Agentic Marketing, Sales & Processes für KMU | performanceboost';
       const description =
-        'Alle Leistungen von performanceboost im Überblick: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten.';
+        'Die Bausteine eines Systems, das auf KI aufbaut: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'loesungen': {
@@ -288,7 +288,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'about': {
       const title = 'Über uns: Yathur Nathan & performanceboost | performanceboost';
       const description =
-        'Yathur Nathan: Marketingfachmann mit eidg. Fachausweis und Experte für MarTech und KI in Marketing und Growth. Inhaber von performanceboost in Fläsch (GR).';
+        'performanceboost ist der AI-First-Scaling-Partner für Schweizer KMU. Inhaber Yathur Nathan baut Daten, Systeme und KI-Agenten selbst. Sitz in Fläsch (GR).';
       return {
         ...base,
         title,

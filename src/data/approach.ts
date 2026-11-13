@@ -51,7 +51,7 @@ export const WORK_MODES = [
   {
     title: 'Performance-Analyse',
     forWhom: 'Wenn Sie wissen möchten, wo es sich am meisten lohnt',
-    desc: 'Wir prüfen Marketing, Vertrieb, Systeme und Abläufe und zeigen, wo Umsatz und Zeit verloren gehen. Sie erhalten eine schriftliche Auswertung mit Prioritäten und einem Plan für die nächsten 90 Tage. In der Regel dauert die Analyse zwei bis drei Wochen.',
+    desc: 'Wir prüfen Marketing, Vertrieb, Daten und Abläufe und zeigen, wo Wachstum heute an Handarbeit hängt und welche Teile sich als System auf KI-Basis bauen lassen. Sie erhalten eine schriftliche Auswertung mit Prioritäten und einem Plan für die nächsten 90 Tage. In der Regel dauert die Analyse zwei bis drei Wochen.',
   },
   {
     title: 'Umsetzungsprojekt',
@@ -59,9 +59,9 @@ export const WORK_MODES = [
     desc: 'Zum Beispiel ein Lead-System von der Landingpage bis ins CRM, ein aufgeräumter MarTech-Stack oder ein KI-Agent für einen definierten Ablauf, inklusive Tests, Rechten und Freigaben. Umfang, Termin, Festpreis und das Ergebnis, an dem wir die Arbeit abnehmen, stehen vor dem Start fest.',
   },
   {
-    title: 'Laufende Begleitung',
-    forWhom: 'Wenn Ihr Unternehmen dauerhaft besser werden soll',
-    desc: 'Wir übernehmen die Verantwortung für eine vereinbarte Kennzahl, etwa qualifizierte Anfragen pro Monat, und legen jeden Monat anhand der Zahlen fest, was als Nächstes kommt. Sie haben einen festen Ansprechpartner und einen festen Monatspreis.',
+    title: 'Betrieb und Weiterentwicklung',
+    forWhom: 'Wenn das System mit Ihrem Unternehmen wachsen soll',
+    desc: 'Wir betreiben und verbessern das System mit Ihrem Team und übernehmen die Verantwortung für eine vereinbarte Kennzahl, etwa qualifizierte Anfragen pro Monat. Jeden Monat legen wir anhand der Zahlen fest, was als Nächstes ausgebaut wird. Sie haben einen festen Ansprechpartner und einen festen Monatspreis.',
   },
 ];
 

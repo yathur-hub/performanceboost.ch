@@ -30,12 +30,12 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
     {
       icon: Eye,
       title: 'Transparenz',
-      desc: 'Sie sehen, wofür Ihr Budget eingesetzt wird, was es bringt und was nicht. Werbekonten und Auswertungen sind für Sie jederzeit einsehbar.'
+      desc: 'Sie sehen, was das System tut und was es bringt. Protokolle, Kennzahlen, Werbekonten und Auswertungen sind für Sie jederzeit einsehbar.'
     },
     {
       icon: RefreshCw,
       title: 'Umsetzen, dann verbessern',
-      desc: 'Wir bringen Massnahmen früh live und verbessern sie anhand der Zahlen, die dann tatsächlich hereinkommen.'
+      desc: 'Wir bringen Abläufe früh in Betrieb, zuerst so, dass Agenten nur vorschlagen, und verbessern sie anhand der Zahlen, die tatsächlich hereinkommen.'
     },
     {
       icon: Award,
@@ -63,7 +63,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Ein Marketer, der die Technik selbst baut.
+            Ein AI-First-Scaling-Partner, der selbst baut und betreibt.
           </motion.h1>
           
           <motion.p 
@@ -72,7 +72,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            Hinter performanceboost steht Yathur Nathan: Marketingfachmann mit eidgenössischem Fachausweis und Experte für MarTech und KI in Marketing und Growth. Kampagnen, Daten, Systeme und KI-Agenten baut er selbst. performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. Boost your performance through agentic marketing, sales & processes.
+            performanceboost baut mit Schweizer KMU Systeme für Marketing, Vertrieb und Abläufe, die auf KI aufbauen. Dahinter steht Yathur Nathan, Marketingfachmann mit eidgenössischem Fachausweis und Experte für MarTech und KI. Daten, Integrationen und KI-Agenten baut er selbst, und das eigene Unternehmen läuft auf denselben Systemen. performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch.
           </motion.p>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             Viele KMU investieren in Werbung, eine neue Website, ein CRM oder KI-Tools, aber die Teile arbeiten nicht zusammen. Die Agentur optimiert Klicks, das CRM bildet den Verkauf nicht ab, Daten werden von Hand übertragen und Anfragen zu spät beantwortet. Am Ende weiss niemand, was die Investitionen tatsächlich gebracht haben.
           </p>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-            Deshalb schaut performanceboost auf die ganze Kette: Strategie, Systeme, Abläufe, Marketing, Vertrieb und Messung. Erst wenn das zusammen funktioniert, lohnt es sich, mehr Budget, neue Tools oder KI-Agenten einzusetzen.
+            Deshalb baut performanceboost die ganze Kette als ein System, das auf KI aufbaut, von den Daten über Marketing und Vertrieb bis zur Messung. Erst dann kann ein Unternehmen wachsen, ohne dass die Handarbeit im gleichen Mass mitwächst.
           </p>
         </div>
 

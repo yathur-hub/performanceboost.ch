@@ -39,9 +39,9 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '01',
       title: 'Wachstumsstrategie',
-      desc: 'Bevor wir Massnahmen umsetzen, legen wir die Richtung fest: über welche Kanäle, bei welchen Zielkunden und mit welchem Angebot Ihre neuen Kunden kommen sollen.',
+      desc: 'Bevor wir bauen, legen wir die Richtung fest: über welche Kanäle, bei welchen Zielkunden und mit welchem Angebot Ihr Unternehmen wachsen soll.',
       notText: '«Wir machen eine Kampagne.»',
-      butText: '«Das ist Ihr Plan für die Vermarktung in den nächsten 12 Monaten.»',
+      butText: '«Das ist Ihr Plan für Wachstum und System in den nächsten 12 Monaten.»',
       path: 'growth-strategy'
     },
     {
@@ -49,7 +49,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       title: 'Nachfrage aufbauen',
       desc: 'Ihre Zielkunden sollen Sie kennen, bevor der Vertrieb anruft. Wir machen Ihr Angebot über mehrere Kanäle sichtbar und begleiten Interessenten bis zur Anfrage.',
       notText: '«Wir schalten Anzeigen.»',
-      butText: '«Wir sorgen für einen stetigen Eingang passender Anfragen.»',
+      butText: '«Kampagnen und CRM bilden ein System für passende Anfragen.»',
       path: 'demand-generation'
     },
     {
@@ -124,7 +124,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       title: 'Strategie und Umsetzung zusammen',
       combo: 'Wachstumsstrategie + die passenden Leistungen',
-      desc: 'Wir analysieren, planen, setzen um und betreuen Ihre Vermarktung danach laufend.',
+      desc: 'Wir analysieren, bauen das System mit Ihnen auf und verbessern es im laufenden Betrieb.',
       timeline: 'Richtwert: Zusammenarbeit über 12 Monate oder länger.'
     }
   ];
@@ -173,7 +173,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium"
           >
-            Sie müssen sich nicht zuerst für ein Tool oder einen Kanal entscheiden. Starten Sie bei Ihrer Herausforderung oder Ihrer Branche. Wir überlegen dann mit Ihnen, wie Kundengewinnung, Vertrieb und Abläufe aussehen, wenn Automatisierung und KI von Anfang an mitgedacht sind, und setzen um, was sich in Ihrem Fall lohnt.
+            Starten Sie bei Ihrer Herausforderung oder Ihrer Branche. Wir entwerfen mit Ihnen ein System für Marketing, Vertrieb und Abläufe, das auf KI aufbaut, damit Ihr Unternehmen wachsen kann, ohne dass die Handarbeit im gleichen Mass mitwächst. Wir bauen und betreiben, was sich in Ihrem Fall lohnt.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -199,7 +199,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             Nach Herausforderung
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Wo drückt der Schuh? Wählen Sie die Situation, die am ehesten auf Ihr Unternehmen zutrifft.
+            Wo bremst heute Ihr Wachstum? Wählen Sie die Situation, die am ehesten auf Ihr Unternehmen zutrifft.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -216,8 +216,8 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             Nach Branche
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Neukundengewinnung funktioniert in einer Treuhandkanzlei anders als in einem Handwerksbetrieb, und auch KI arbeitet dort an anderen
-            Stellen mit. Wählen Sie Ihre Branche, um typische Hürden, konkrete Beispiele und unser Vorgehen zu sehen.
+            Eine Treuhandkanzlei wächst anders als ein Handwerksbetrieb, und KI arbeitet dort an anderen Stellen mit. Wählen Sie
+            Ihre Branche, um typische Hürden, konkrete Beispiele und das passende System zu sehen.
           </p>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -254,7 +254,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             «Viele Unternehmen fragen zuerst nach dem richtigen Kanal, Tool oder KI-Agenten. Wichtiger ist, wo heute passende Anfragen verloren gehen und welche Schritte bis zum Auftrag noch Handarbeit sind.»
           </blockquote>
           <p className="text-[11px] text-slate-400 font-mono tracking-wide uppercase">
-            Darum beginnen wir mit einer Analyse Ihrer Situation, nicht mit einem Pauschalangebot.
+            Darum beginnen wir mit einer Analyse Ihrer Situation.
           </p>
         </div>
       </section>
@@ -319,7 +319,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
           >
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
             <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
-              Jede Leistung funktioniert auch allein. Kombiniert bringen Leistungen oft mehr, etwa wenn Kampagnen ins CRM laufen.
+              Jede Leistung funktioniert auch allein. Als Teile eines Systems bringen sie oft mehr, etwa wenn Kampagnen ins CRM laufen.
             </p>
           </div>
 

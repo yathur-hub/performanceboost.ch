@@ -27,7 +27,7 @@ const FAQ = [
   },
   {
     q: 'Wie lange dauert ein Vorhaben?',
-    a: 'Eine Performance-Analyse dauert meist zwei bis drei Wochen, ein Umsetzungsprojekt je nach Umfang einige Wochen bis wenige Monate. Die laufende Optimierung ist eine Begleitung ohne festes Ende, mit einer monatlichen Auswertung.',
+    a: 'Eine Performance-Analyse dauert meist zwei bis drei Wochen, ein Umsetzungsprojekt je nach Umfang einige Wochen bis wenige Monate. Betrieb und Weiterentwicklung laufen ohne festes Ende, mit einer monatlichen Auswertung.',
   },
   {
     q: 'Was passiert, wenn wir nach einem Projekt selbst weitermachen?',

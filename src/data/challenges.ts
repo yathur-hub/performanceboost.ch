@@ -18,22 +18,22 @@ export interface ChallengeCard {
 export const CHALLENGE_CARDS: ChallengeCard[] = [
   {
     area: 'Agentic Marketing',
-    title: 'Mehr passende Kunden gewinnen',
-    desc: 'Das Wachstum stockt, obwohl Sie in Marketing investieren, oder neue Kunden kommen fast nur über Empfehlungen. Kampagnen, Website und CRM arbeiten noch nicht als ein System.',
+    title: 'Neue Kunden planbar gewinnen',
+    desc: 'Neue Kunden kommen fast nur über Empfehlungen, oder das Wachstum stockt trotz Marketingbudget. Kampagnen, Website und CRM arbeiten noch nicht als ein System.',
     href: '/leistungen/marketing',
     linkText: 'Zu Agentic Marketing',
   },
   {
     area: 'Agentic Sales',
     title: 'Vertriebsprozesse verbessern',
-    desc: 'Anfragen bleiben liegen, das Nachfassen hängt an Einzelnen, und das CRM zeigt nicht, wo Verkaufschancen stehen.',
+    desc: 'Mehr Anfragen bedeuten mehr Vorarbeit, und das Nachfassen hängt an Einzelnen. Wo Verkaufschancen stehen, zeigt das CRM nicht.',
     href: '/loesungen/vertrieb-optimieren',
     linkText: 'Vertrieb optimieren',
   },
   {
     area: 'Agentic Processes',
     title: 'Geschäftsprozesse automatisieren',
-    desc: 'Ihr Team überträgt Daten von Hand und pflegt Excel-Listen, obwohl viele dieser Schritte klaren Regeln folgen.',
+    desc: 'Jeder Auftrag bringt Handarbeit in Excel-Listen und Datenübertragung, obwohl viele Schritte klaren Regeln folgen.',
     href: '/loesungen/prozessautomatisierung',
     linkText: 'Prozesse automatisieren',
   },
@@ -86,9 +86,9 @@ export const CHALLENGE_PAGES: Record<ChallengeSlug, ChallengePage> = {
   prozessautomatisierung: {
     slug: 'prozessautomatisierung',
     label: 'Geschäftsprozesse automatisieren',
-    h1: 'Weniger Handarbeit in Ihren Abläufen, auch bei den Ausnahmen.',
+    h1: 'Abläufe, die mit Ihrem Wachstum mitkommen, auch bei Ausnahmen.',
     intro:
-      'Prozessautomatisierung beginnt bei uns mit dem Ablauf, wie Ihr Team ihn tatsächlich arbeitet. Ein fester Workflow gibt den Rahmen vor und übernimmt alles, was immer gleich abläuft, etwa Daten von einem System ins nächste übertragen oder eine Aufgabe anlegen. KI kommt in klar abgegrenzten Schritten dazu, wo Inhalte gelesen und eingeordnet werden müssen, zum Beispiel bei einer unklaren E-Mail oder einem Dokument mit fehlenden Angaben. Das Ergebnis landet in dem System, in dem Ihr Team ohnehin arbeitet, und was der Ablauf nicht sicher lösen kann, geht an eine Person.',
+      'Wächst ein Unternehmen, wächst die Handarbeit in den Abläufen oft im gleichen Mass mit. Prozessautomatisierung beginnt bei uns deshalb mit dem Ablauf, wie Ihr Team ihn tatsächlich arbeitet. Ein fester Workflow gibt den Rahmen vor und übernimmt, was immer gleich abläuft, etwa Daten zwischen Systemen übertragen. KI kommt in klar abgegrenzten Schritten dazu, wo Inhalte gelesen und eingeordnet werden müssen, zum Beispiel bei einer unklaren E-Mail. Das Ergebnis landet in dem System, in dem Ihr Team ohnehin arbeitet, und was der Ablauf nicht sicher lösen kann, geht an eine Person.',
     seoTitle: 'Geschäftsprozesse automatisieren für KMU | performanceboost',
     seoDescription:
       'Doppelte Dateneingabe, Excel-Listen, manuelle Übergaben? Wir automatisieren Abläufe mit festen Workflows und setzen KI in klar abgegrenzten Schritten ein, mit Freigabe.',
@@ -140,9 +140,9 @@ export const CHALLENGE_PAGES: Record<ChallengeSlug, ChallengePage> = {
   'vertrieb-optimieren': {
     slug: 'vertrieb-optimieren',
     label: 'Vertriebsprozesse optimieren',
-    h1: 'Aus Anfragen Aufträge machen, mit dem CRM als Grundlage.',
+    h1: 'Aus mehr Anfragen Aufträge machen, ohne dass die Vorarbeit mitwächst.',
     intro:
-      'Viele KMU verlieren Umsatz erst nach dem Marketing. Anfragen werden zu spät beantwortet und Angebote nicht nachgefasst. Wo Verkaufschancen stehen, weiss oft niemand genau. Wir richten Ihre Vertriebsabläufe so ein, dass das CRM die gemeinsame Datengrundlage ist, auf die Regeln, KI und Ihr Team zugreifen. Zuweisung und Erinnerungen laufen als feste Regeln, KI bereitet Gespräche und Nachfass-Entwürfe vor. Gespräch, Offerte, Preis und Zusage bleiben bei Ihrem Vertrieb.',
+      'Viele KMU verlieren Umsatz erst nach dem Marketing, und mit jeder zusätzlichen Anfrage wird es mehr. Anfragen werden zu spät beantwortet und Angebote nicht nachgefasst. Wir bauen Ihre Vertriebsabläufe so auf, dass das CRM die gemeinsame Datengrundlage ist, auf die Regeln, KI und Ihr Team zugreifen. Zuweisung und Erinnerungen laufen als feste Regeln, KI bereitet Gespräche und Nachfass-Entwürfe vor. Gespräch, Offerte, Preis und Zusage bleiben bei Ihrem Vertrieb.',
     seoTitle: 'Vertriebsprozesse optimieren | performanceboost',
     seoDescription:
       'Anfragen bleiben liegen, Nachfassen hängt an Einzelnen? Wir machen das CRM zur Datengrundlage Ihres Vertriebs, mit festen Regeln und KI-Vorarbeit, die Ihr Team freigibt.',

@@ -5,7 +5,7 @@ Stand 14.11.2026 (Version 2, quellenbasiert). Verbindlich zusammen mit `docs/cop
 ## Leitfrage
 Wie würden wir Marketing, Vertrieb und Geschäftsprozesse heute gestalten, wenn intelligente Automatisierung und agentische Systeme von Anfang an Teil der Architektur wären?
 
-performanceboost konzipiert, implementiert und optimiert **AI-First-Business-Systeme** für Marketing, Sales und Prozesse. Wir sind keine Agentur, die neuerdings KI anbietet, und kein reiner Agent-Builder. Die Technologie wählen wir nach dem geschäftlichen Nutzen.
+performanceboost ist der **AI-First-Scaling-Partner** für Schweizer KMU (seit 14.11.2026, ersetzt «Business Performance Partner»). Wir entwerfen, bauen und betreiben mit Kunden Systeme für Marketing, Sales und Prozesse, die auf KI aufbauen. Wachstum entsteht über Systeme und Agenten, nicht nur über mehr Personal und mehr Dienstleister. Sprachlich heisst das: «wir bauen», «wir betreiben», «wir verbessern im Betrieb», nicht «wir betreuen Ihre Kampagnen». Wir sind keine Agentur, die neuerdings KI anbietet, und kein reiner Agent-Builder. Die Technologie wählen wir nach dem geschäftlichen Nutzen.
 
 ## Grundhaltung: KI als Enabler des ganzen Systems
 KI ist bei performanceboost kein Zusatz zu einer Leistung, sondern die Grundlage, auf der Marketing, Vertrieb und Prozesse geplant werden. Jede Leistung (Kampagnen, CRM, Tracking, Shop, Schulung) ist ein Teil desselben Systems aus fünf Schichten: Daten und Systeme, Unternehmenskontext, Ablaufsteuerung, KI und Agenten, Aufsicht und Messung (`research/06`, Abschnitt 1). KI wirkt in der vierten Schicht, ihr Nutzen entsteht erst durch die anderen vier. Daraus folgt:

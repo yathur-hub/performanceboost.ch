@@ -29,8 +29,8 @@ export default function ReferencesView() {
               Was unsere Kundinnen und Kunden sagen.
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              Hier lesen Sie, was Unternehmen über die Zusammenarbeit mit performanceboost sagen, ob es um Kampagnen, einen
-              Onlineshop oder ein eigenes ERP-System ging. Alle Aussagen sind unverändert und namentlich gezeichnet.
+              Hier lesen Sie, was Unternehmen über die Zusammenarbeit mit performanceboost sagen, ob wir mit ihnen Kampagnen, einen
+              Onlineshop oder ein eigenes ERP-System aufgebaut haben. Alle Aussagen sind unverändert und namentlich gezeichnet.
             </p>
           </div>
           <div className="hidden lg:flex lg:col-span-4 justify-center rocket-in">
@@ -85,7 +85,7 @@ export default function ReferencesView() {
 
       <section>
         <Container className="space-y-8">
-          <SectionHeading title="Woran wir mit unseren Kunden arbeiten" />
+          <SectionHeading title="Was wir mit unseren Kunden aufbauen" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICE_AREAS.map((a) => (
               <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.label} desc={a.teaser} />

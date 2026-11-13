@@ -62,7 +62,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               Boost your performance through agentic marketing, sales &amp; processes.
             </p>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
-              Business Performance Partner für Schweizer KMU. Agentic Marketing, Sales und Processes als ein System, inhabergeführt in Graubünden.
+              AI-First-Scaling-Partner für Schweizer KMU. Agentic Marketing, Sales und Processes als ein System, das auf KI aufbaut, inhabergeführt in Graubünden.
             </p>
           </div>
 

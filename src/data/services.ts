@@ -5,7 +5,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'growth-strategy',
     title: 'KI-gestützte Marketing- & Wachstumsstrategie',
     slug: 'growth-strategy',
-    shortDesc: 'Klarer Plan für die Neukundengewinnung, mit KI-gestützter Recherche und Kriterien, mit denen auch Ihre Automatisierungen arbeiten.',
+    shortDesc: 'Ein Plan für die Neukundengewinnung, der Kriterien und Ziele für Kampagnen, Lead-Scoring und Automatisierungen liefert.',
     description: 'Wachstum lässt sich steuern, wenn ein paar Grundentscheide gefallen sind. Ein agentischer Workflow recherchiert Markt und Mitbewerber, wir werten Ihre bisherigen Anfragen und Kunden aus und legen mit Ihnen Wunschkunden, Botschaften und Kanäle fest. Der Plan hält auch fest, welche Schritte automatisch laufen sollen und welche Daten es dafür braucht.',
     benefits: [
       'Klares Zielkundenprofil, damit Werbung, Lead-Scoring und Vertrieb die richtigen Firmen ansprechen',
@@ -32,13 +32,13 @@ export const SERVICES: ServiceDetail[] = [
     id: 'demand-generation',
     title: 'Performance Marketing mit KI-Agenten',
     slug: 'demand-generation',
-    shortDesc: 'Kampagnen auf Google, Meta und LinkedIn, die aus Aufträgen lernen und täglich automatisch geprüft werden.',
-    description: 'Wir planen und betreuen Ihr Performance Marketing auf LinkedIn, Google und Meta, abgestimmt mit Inhalten und Landingpages. Qualifizierte Anfragen und Aufträge fliessen aus dem CRM an die Werbekonten zurück, wo die Plattform es zulässt, damit deren Gebotsalgorithmen auf Aufträge optimieren. Feste Prüfungen laufen täglich, bei Abweichungen schlägt ein agentischer Ablauf eine Massnahme vor. Über Budget und Gebote entscheidet ein Mensch.',
+    shortDesc: 'Google, Meta und LinkedIn als Teil eines Systems, das aus Aufträgen lernt und täglich automatisch geprüft wird.',
+    description: 'Wir bauen Ihr Performance Marketing auf LinkedIn, Google und Meta mit Inhalten, Landingpages und CRM als System und betreiben es mit Ihrem Team. Qualifizierte Anfragen und Aufträge fliessen aus dem CRM an die Werbekonten zurück, wo die Plattform es zulässt, damit deren Gebotsalgorithmen auf Aufträge optimieren. Feste Prüfungen laufen täglich, bei Abweichungen schlägt ein agentischer Ablauf eine Massnahme vor. Über Budget und Gebote entscheidet ein Mensch.',
     benefits: [
       'Regelmässige Sichtbarkeit bei den Firmen und Personen, die für Sie relevant sind',
       'Kampagnen, die auf qualifizierte Anfragen optimieren statt auf Klicks',
       'Auffälligkeiten bei Kosten und Suchbegriffen fallen am selben Tag auf',
-      'Ein Ansprechpartner für alle Kanäle statt mehrerer Dienstleister'
+      'Ein System für alle Kanäle statt mehrerer Dienstleister mit eigenen Zahlen'
     ],
     deliverables: [
       'Kampagnen-Setup auf LinkedIn, Google und Meta',
@@ -60,7 +60,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'KI-gestützte Lead-Generierung & GEO',
     slug: 'lead-generation',
     shortDesc: 'Anfragen über Google, KI-Assistenten (GEO), Inhalte und Direktansprache, automatisch angereichert und per Lead-Scoring eingeordnet.',
-    description: 'Wir sorgen dafür, dass passende Interessenten Sie bei Google und in KI-Assistenten finden und dass Sie selbst aktiv auf Wunschfirmen zugehen können. Inhalte entstehen mit KI-Unterstützung und Ihrem Fachwissen, Landingpages bieten nützliche Angebote wie Checklisten oder Leitfäden. Jede neue Anfrage wird automatisch angereichert und bewertet, und Nachrichten an Wunschfirmen gehen erst nach Freigabe hinaus.',
+    description: 'Wir bauen SEO, GEO, Inhalte und Landingpages zu einem System, über das passende Interessenten Sie bei Google und in KI-Assistenten finden und Sie selbst auf Wunschfirmen zugehen können. Inhalte entstehen mit KI-Unterstützung und Ihrem Fachwissen, Landingpages bieten nützliche Angebote wie Checklisten oder Leitfäden. Jede neue Anfrage wird automatisch angereichert und bewertet, und Nachrichten an Wunschfirmen gehen erst nach Freigabe hinaus.',
     benefits: [
       'Regelmässige Anfragen für Erstgespräche statt Zufallskontakte',
       'Sichtbarkeit bei Google und in KI-Antworten, die nicht vom Werbebudget abhängt',
@@ -114,7 +114,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Sales Enablement mit KI-Recherche',
     slug: 'sales-enablement',
     shortDesc: 'Argumentarien, Unterlagen und Gesprächsvorbereitung, bei der ein KI-Agent vor jedem Termin recherchiert und das Wichtigste zusammenfasst.',
-    description: 'Gutes Marketing verpufft, wenn im Verkaufsgespräch improvisiert wird. Wir erarbeiten mit Ihrem Team Referenzbeispiele, Antworten auf häufige Einwände und Angebotsvorlagen und legen sie so ab, dass Mensch und Agent darauf zugreifen. Vor jedem Termin recherchiert ein Agent das Unternehmen, nach dem Gespräch liegen Zusammenfassung und Nachfass-Entwurf im CRM bereit.',
+    description: 'Gutes Marketing verpufft, wenn im Verkaufsgespräch improvisiert wird. Wir bauen mit Ihrem Team eine Wissensbasis aus Referenzbeispielen, Antworten auf häufige Einwände und Angebotsvorlagen, auf die Mensch und Agent zugreifen. Vor jedem Termin recherchiert ein Agent das Unternehmen, nach dem Gespräch liegen Zusammenfassung und Nachfass-Entwurf im CRM bereit.',
     benefits: [
       'Jedes Gespräch beginnt mit Recherche und passenden Referenzen',
       'Weniger Zeit für Vorbereitung, Notizen und Nachfassen',
@@ -275,8 +275,8 @@ export const SERVICES: ServiceDetail[] = [
     id: 'ecommerce-performance',
     title: 'E-Commerce Performance',
     slug: 'ecommerce-performance',
-    shortDesc: 'Mehr Käufe aus bestehendem Traffic: Shop-Optimierung, Wiederkäufe und Werbung, die nach Marge steuert und täglich geprüft wird.',
-    description: 'Wir verbessern Ihren Online-Shop dort, wo Umsatz verloren geht, mit weniger Kaufabbrüchen, grösseren Warenkörben und mehr Kunden, die wieder bestellen. Shop, Werbekonten und Warenkosten verbinden wir so, dass Abweichungen täglich auffallen und Google und Meta nach Marge optimieren, sofern Margen im Shop oder ERP verfügbar sind. Produkttexte und Feeds entstehen mit KI-Unterstützung und festen Prüfregeln. Jede Massnahme messen wir.',
+    shortDesc: 'Mehr Käufe aus bestehendem Traffic, mit einem System aus Shop-Optimierung, Wiederkäufen und Werbung nach Marge, täglich geprüft.',
+    description: 'Wir verbessern Ihren Online-Shop dort, wo Umsatz verloren geht, mit weniger Kaufabbrüchen, grösseren Warenkörben und mehr Wiederkäufen. Dafür verbinden wir Shop, Werbekonten und Warenkosten zu einem System, in dem Abweichungen täglich auffallen und Google und Meta nach Marge optimieren, sofern Margen im Shop oder ERP verfügbar sind. Produkttexte und Feeds entstehen mit KI-Unterstützung und festen Prüfregeln.',
     benefits: [
       'Höhere Kaufquote durch Änderungen, die auf Daten beruhen',
       'Werbebudget fliesst in Kampagnen, die pro Franken am meisten Deckungsbeitrag bringen',
@@ -357,7 +357,7 @@ export const SERVICES: ServiceDetail[] = [
     title: 'Meta & TikTok Ads für Online-Shops',
     slug: 'paid-social-ecommerce',
     shortDesc: 'Meta- und TikTok-Kampagnen, gesteuert nach Deckungsbeitrag statt nur nach ROAS und täglich gegen die Gewinnschwelle geprüft.',
-    description: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen fliessen dort nicht ein. Wir steuern Ihre Kampagnen nach Deckungsbeitrag, also nach dem, was nach all diesen Kosten übrig bleibt, und übermitteln den Plattformen margenbasierte Werte, sofern Margen im Shop oder ERP verfügbar sind. Ein fester Ablauf prüft täglich, ob jede Kampagne über der Gewinnschwelle liegt.',
+    description: 'Viele Online-Shops steuern ihre Meta- und TikTok-Kampagnen nach ROAS, also Umsatz pro Werbefranken. Produktmarge, Versandkosten und Rücksendungen fliessen dort nicht ein. Wir bauen ein System, in dem Ihre Kampagnen nach Deckungsbeitrag gesteuert werden, also nach dem, was nach all diesen Kosten übrig bleibt, und übermitteln den Plattformen margenbasierte Werte, sofern Margen im Shop oder ERP verfügbar sind. Ein fester Ablauf prüft täglich, ob jede Kampagne über der Gewinnschwelle liegt.',
     benefits: [
       'Sie wissen, ab welchem ROAS Ihre Werbung kostendeckend ist',
       'Kampagnen werden nach Deckungsbeitrag gesteuert, nicht nach Klicks oder Reichweite',
@@ -387,7 +387,7 @@ export const SOLUTIONS: SolutionArea[] = [
     title: 'B2B Software & Tech',
     tagline: 'Mehr qualifizierte Anfragen für Ihr Softwaregeschäft.',
     targetGroup: 'Gründer, Geschäftsführer und Vertriebsleiter von B2B-Softwarefirmen',
-    description: 'Gute Software verkauft sich nicht von allein. Interessenten müssen ihr Problem erkennen, bevor sie den Nutzen einer Lösung sehen. Wir kümmern uns um den ganzen Weg bis zur Anfrage: Kampagnen und Inhalte, automatisierte Produktdemos und ein sauber geführtes CRM, zum Beispiel in HubSpot.',
+    description: 'Gute Software verkauft sich nicht von allein. Interessenten müssen ihr Problem erkennen, bevor sie den Nutzen einer Lösung sehen. Wir bauen den Weg bis zur Anfrage als ein System aus Kampagnen, Inhalten, automatisierten Produktdemos und einem sauber geführten CRM, zum Beispiel in HubSpot.',
     idealFor: [
       'Ihre wiederkehrenden Software-Umsätze steigern wollen',
       'Ihren Verkaufszyklus verkürzen möchten',

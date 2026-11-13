@@ -73,19 +73,19 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
   const servicesCopyOverride: { [key: string]: { benefit: string, desc: string } } = {
     'growth-strategy': {
-      benefit: 'Sie wissen, wen Sie ansprechen und womit.',
+      benefit: 'Ein Plan, nach dem Team und Systeme arbeiten.',
       desc: 'Wir legen mit Ihnen Wunschkunden, Positionierung und Kanäle fest. Markt- und Wettbewerbsrecherche bereitet ein agentischer Ablauf vor, die Entscheide treffen Sie. Daraus entsteht ein Plan, mit dem Team und Systeme arbeiten können.'
     },
     'demand-generation': {
-      benefit: 'Regelmässig passende Anfragen für Ihren Vertrieb.',
-      desc: 'Kampagnen auf Google, LinkedIn und Meta, die mit CRM-Daten auf Aufträge optimieren. Feste Prüfungen laufen täglich, bei Abweichungen schlägt ein agentischer Ablauf eine Massnahme vor. Budget und Gebote gibt ein Mensch frei.'
+      benefit: 'Performance Marketing, das aus Aufträgen lernt.',
+      desc: 'Google, LinkedIn und Meta als Teil eines Systems, das mit CRM-Daten auf Aufträge optimiert. Feste Prüfungen laufen täglich, bei Abweichungen schlägt ein agentischer Ablauf eine Massnahme vor. Budget gibt ein Mensch frei.'
     },
     'lead-generation': {
       benefit: 'Aus Besuchern bei Google und in KI-Antworten werden Anfragen.',
       desc: 'SEO und GEO, Landingpages, die Anfragen erfassen, und ein Lead-Scoring, das zeigt, welche Anfragen Vorrang haben und warum. KI-Entwürfe für Inhalte prüfen wir mit Ihrem Fachwissen.'
     },
     'marketing-automation': {
-      benefit: 'Weniger Handarbeit, keine vergessenen Anfragen.',
+      benefit: 'Ein CRM, das mit Ihren Anfragen mitwächst.',
       desc: 'Ein CRM als gemeinsame Datenbasis und automatische Abläufe, die Interessenten weiterbegleiten. Regeln übernehmen Übergabe und Zuweisung, KI fasst Anfragen zusammen und entwirft Folge-E-Mails zur Freigabe.'
     },
     'sales-enablement': {
@@ -97,7 +97,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       desc: 'Gemeinsame Definitionen, saubere CRM-Daten und eine Pipeline, auf die Verlass ist. Feste Regeln prüfen Datenqualität und stehende Verkaufschancen, ein Agent klärt Unklares, Korrekturen gibt Ihr Team frei.'
     },
     'ai-automation': {
-      benefit: 'Ihr Team arbeitet sicher und wirksam mit KI.',
+      benefit: 'KI als fester Teil der Abläufe Ihres Teams.',
       desc: 'Standortbestimmung, Einführung in die bestehenden Abläufe und Schulung mit eigenen Beispielen. Pro Aufgabe legen wir fest, was eine Regel erledigt, was KI entwirft und wer freigibt, dazu Regeln gegen Schatten-KI.'
     },
     'ki-agenten': {
@@ -114,7 +114,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     },
     'dtc-growth-acquisition': {
       benefit: 'Kundengewinnung, deren Kosten Sie kennen.',
-      desc: 'Wir ordnen Ihre Kampagnen, verbessern den Shop und messen jede Woche Kosten pro Neukunde und Kundenwert. Feste Regeln melden nachlassende Anzeigen, neue Varianten geben Sie frei.'
+      desc: 'Wir bauen Kampagnen, Shop und Kundendaten zu einem System, das jede Woche Kosten pro Neukunde und Kundenwert berechnet. Feste Regeln melden nachlassende Anzeigen, neue Varianten geben Sie frei.'
     },
     'customer-retention': {
       benefit: 'Bestehende Kunden halten und Inaktive zurückholen.',
@@ -509,7 +509,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             Agentic Marketing, Sales und Processes als ein System.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-2xl mx-auto leading-relaxed font-medium">
-            Wir konzipieren und bauen Marketing, Vertrieb und Abläufe so, dass Automatisierung und KI-Agenten von Anfang an Teil der Architektur sind, und setzen Agenten dort ein, wo sie verlässlich arbeiten. Jede Leistung gehört zu einem Bereich, das Vorgehen ist in allen gleich. Inhaber Yathur Nathan setzt sie persönlich um.
+            Jede Leistung ist ein Baustein desselben Systems, das auf KI aufbaut. Wir entwerfen es mit Ihnen, bauen es und verbessern es im Betrieb, damit Ihr Unternehmen wachsen kann, ohne dass die Handarbeit mitwächst. Jeder Baustein gehört zu einem Bereich, das Vorgehen ist in allen gleich. Inhaber Yathur Nathan setzt sie persönlich um.
           </p>
         </div>
       </section>

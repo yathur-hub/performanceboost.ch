@@ -104,7 +104,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             Typische Hürden in der Branche {sector.title}
           </h2>
           <p className="text-xs text-slate-500 font-semibold max-w-sm mx-auto">
-            Wo in dieser Branche heute Zeit und Aufträge verloren gehen.
+            Was Wachstum in dieser Branche heute bremst.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-8 sm:p-12 space-y-12 shadow-[var(--shadow-premium-lg)]">
           <div className="text-center space-y-2">
-            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir für Sie aufbauen</h2>
+            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir mit Ihnen aufbauen</h2>
             <p className="text-body-sm text-slate-300 font-medium max-w-md mx-auto">
               Drei Bausteine von der Anfrage bis zum Auftrag. Bei jedem ist festgelegt, was automatisch läuft und wo Ihr Team entscheidet.
             </p>

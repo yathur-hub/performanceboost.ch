@@ -43,8 +43,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'finanzdienstleister': {
     slug: 'finanzdienstleister',
     title: 'Finanzdienstleister',
-    subtitle: 'Mehr qualifizierte Erstgespräche für Hypotheken-, Vorsorge- und Versicherungsberatungen',
-    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz bauen wir den Weg vom Beratungsanlass bis zum Termin so auf, dass Ihr Team vor allem die Gespräche führt, die passen. Kampagnen und Vorqualifizierung führen zu einem vorbereiteten Gespräch, und jede Aussage nach aussen geben Sie bzw. Ihre Compliance frei.',
+    subtitle: 'Mehr Erstgespräche für Hypotheken-, Vorsorge- und Versicherungsberatungen, mit weniger Vorarbeit',
+    heroDesc: 'Hypotheken-, Vorsorge- und Versicherungsberatungen wachsen über passende Erstgespräche. Dafür bauen wir den Weg vom Beratungsanlass bis zum Termin als ein System, in dem KI Anfragen einordnet und Gespräche vorbereitet, damit Rückrufe und Abklärungen nicht im gleichen Mass zunehmen. Ihr Team führt die Gespräche, jede Aussage nach aussen geben Sie bzw. Ihre Compliance frei.',
     calculatorComponent: 'BeratungsPipelineRechner',
     problems: [
       {
@@ -101,8 +101,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'saas-software': {
     slug: 'saas-software',
     title: 'SaaS & Software',
-    subtitle: 'Mehr qualifizierte Demo-Anfragen für Schweizer Softwarefirmen',
-    heroDesc: 'Für Schweizer Softwarefirmen verbinden wir Kampagnen, Website, Produktnutzung und CRM. So sehen Sie, aus welchen Kanälen Ihre Abschlüsse stammen, und Ihr Vertrieb weiss vor jeder Demo, was der Interessent im Produkt schon ausprobiert hat.',
+    subtitle: 'Mehr Demo-Anfragen für Schweizer Softwarefirmen, ohne jede Demo von Hand vorzubereiten',
+    heroDesc: 'Schweizer Softwarefirmen wachsen, wenn aus mehr Testnutzern Kunden werden. Dafür verbinden wir Kampagnen, Produktnutzung und CRM zu einem System, in dem KI die Signale auswertet. So kennt Ihr Vertrieb vor jeder Demo den Stand im Produkt.',
     calculatorComponent: 'SaasRevenueLeckRechner',
     problems: [
       {
@@ -144,7 +144,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     faqs: [
       {
         q: 'Unterstützen Sie auch Kampagnen ausserhalb der Schweiz?',
-        a: 'Ja. Wir betreuen Kampagnen für die Deutschschweiz, die Romandie und den übrigen DACH-Raum. Für weitere Märkte klären wir im Erstgespräch, was sinnvoll ist.'
+        a: 'Ja. Wir richten Kampagnen und Abläufe für die Deutschschweiz, die Romandie und den übrigen DACH-Raum ein. Für weitere Märkte klären wir im Erstgespräch, was sinnvoll ist.'
       },
       {
         q: 'Mit welchen CRM- und Analyse-Tools arbeiten Sie?',
@@ -159,8 +159,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'immobilien': {
     slug: 'immobilien',
     title: 'Immobilien',
-    subtitle: 'Passende Miet- und Kaufinteressenten für Ihre Immobilien',
-    heroDesc: 'Für Projektentwickler, Makler und Verwaltungen gewinnen wir Miet- und Kaufinteressenten für Neubauprojekte, Gewerbeflächen und Bestandsobjekte. Projektseiten und regionale Kampagnen bringen die Anfragen. Vorqualifizierung und vorgeprüfte Dossiers entlasten Ihr Team bei der Bearbeitung.',
+    subtitle: 'Passende Miet- und Kaufinteressenten für Ihre Immobilien, mit weniger Handarbeit',
+    heroDesc: 'Projektentwickler, Makler und Verwaltungen vermieten und verkaufen schneller, wenn mehr passende Interessenten kommen. Von der Projektseite bis zum vorgeprüften Dossier entsteht ein durchgehender Ablauf, in dem Regeln und KI die Vorprüfung übernehmen, damit Terminabstimmung und Nachforderungen nicht im selben Mass wachsen.',
     calculatorComponent: 'LeerstandskostenRechner',
     problems: [
       {
@@ -237,8 +237,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'treuhand-unternehmensberatung': {
     slug: 'treuhand-unternehmensberatung',
     title: 'Treuhand & Unternehmensberatung',
-    subtitle: 'Mehr Mandatsanfragen für Treuhand- und Beratungsbüros',
-    heroDesc: 'Für Treuhand- und Beratungsbüros bauen wir einen Anfrageweg, der Umsatz, Mitarbeiterzahl und Buchhaltungssoftware schon vor dem Erstgespräch erfasst. Dahinter richten wir Abläufe ein, in denen Mandantenunterlagen vorsortiert ankommen, bevor Ihr Team sie prüft.',
+    subtitle: 'Mehr Mandatsanfragen für Treuhand- und Beratungsbüros, ohne dass die Belegarbeit mitwächst',
+    heroDesc: 'Treuhand- und Beratungsbüros wachsen über passende Mandate. Wir bauen mit Ihnen ein System auf KI-Basis, in dem Mandatsanfragen mit den Eckdaten ankommen und Mandantenunterlagen vorsortiert bereitliegen. Geprüft und gebucht wird von Ihrem Team.',
     calculatorComponent: 'KanzleiWachstumsCheck',
     problems: [
       {
@@ -294,15 +294,15 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Unterstützen Sie Büros auch bei der Suche nach Fachkräften?',
-        a: 'Ja. Mit denselben Mitteln, also Kampagnen und einfachen Bewerbungsseiten, erreichen wir auch Treuhänderinnen und Sachbearbeiter.'
+        a: 'Ja. Dasselbe System mit Kampagnen und einfachen Bewerbungsseiten erreicht auch Treuhänderinnen und Sachbearbeiter.'
       }
     ]
   },
   'b2b-industrie-kmu': {
     slug: 'b2b-industrie-kmu',
     title: 'Industrie & KMU',
-    subtitle: 'Mehr qualifizierte Anfragen für Industrie- und B2B-Unternehmen',
-    heroDesc: 'Viele Einkäufer und Techniker informieren sich online über Lieferanten, lange bevor sie eine Offerte anfragen. Wir sorgen dafür, dass sie Ihr Unternehmen finden, und gestalten den Weg bis zur Offerte so, dass Ihr Innendienst nicht bei null beginnt und keine Offerte ohne Nachfassen bleibt.',
+    subtitle: 'Mehr qualifizierte Anfragen für Industrie- und B2B-Unternehmen, mit weniger Abklärung',
+    heroDesc: 'Einkäufer und Techniker suchen Lieferanten online, lange bevor sie eine Offerte anfragen. Wir richten den Weg so ein, dass sie Ihr Unternehmen finden und Anfragen von KI vorbereitet beim Innendienst ankommen. Mehr Offerten bringen so nicht im gleichen Mass mehr Rückfragen.',
     calculatorComponent: 'AngebotsPipelineRechner',
     problems: [
       {
@@ -359,8 +359,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'it-dienstleister-msps': {
     slug: 'it-dienstleister-msps',
     title: 'IT-Dienstleister & MSPs',
-    subtitle: 'Mehr Anfragen für Managed Services von Schweizer KMU',
-    heroDesc: 'Für IT-Dienstleister gewinnen wir Anfragen von Schweizer KMU zu Managed Services, IT-Sicherheit und Cloud-Projekten. Ziel sind laufende Serviceverträge statt einzelner Einsätze auf Abruf. Auf Wunsch nutzen wir dafür auch die Daten, die in Ihrem Ticketsystem bereits liegen.',
+    subtitle: 'Mehr Serviceverträge für Managed Services, mit einem Vertrieb, der planbar arbeitet',
+    heroDesc: 'IT-Dienstleister wachsen planbar über Serviceverträge mit Schweizer KMU. Dafür entsteht ein System, das Anfragen zu Managed Services und IT-Sicherheit vorbereitet ins Erstgespräch bringt und auf Wunsch Servicebedarf aus Ihrem Ticketsystem zeigt.',
     calculatorComponent: 'RecurringRevenuePotenzialRechner',
     problems: [
       {
@@ -417,8 +417,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'ingenieur-planungsbuero': {
     slug: 'ingenieur-planungsbuero',
     title: 'Ingenieur- & Planungsbüros',
-    subtitle: 'Mehr private Aufträge und Bewerbungen für Ihr Planungsbüro',
-    heroDesc: 'Viele Ingenieur- und Planungsbüros leben von Ausschreibungen. Wir bauen einen zweiten Weg zu privaten Bauherren und Gewerbekunden auf, verkürzen die Suche nach passenden Projekten und machen Ihr Büro für Bauingenieure, Zeichnerinnen und Projektleiter als Arbeitgeber sichtbar.',
+    subtitle: 'Mehr private Aufträge für Ihr Planungsbüro, mit weniger Zeit für die Projektsuche',
+    heroDesc: 'Viele Ingenieur- und Planungsbüros leben von Ausschreibungen. Wir öffnen einen zweiten Weg zu privaten Bauherren, bei dem KI die Sichtung von Projekten vorbereitet und die Website Anfragen geordnet weitergibt. Zugleich wird Ihr Büro für Bauingenieure und Projektleiter als Arbeitgeber sichtbar.',
     calculatorComponent: 'ProjektpipelineCheck',
     problems: [
       {
@@ -475,8 +475,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'personalvermittler-recruiting': {
     slug: 'personalvermittler-recruiting',
     title: 'Personalvermittler & Recruiting',
-    subtitle: 'Mehr Suchmandate und passende Kandidaten für Ihre Vermittlung',
-    heroDesc: 'Für Personalvermittler gewinnen wir Suchaufträge von Arbeitgebern und erreichen die Fachkräfte, die zu diesen Stellen passen. Dahinter richten wir eine Kandidatendatenbank ein, in der Lebensläufe strukturiert erfasst sind, damit Sie bei einem neuen Auftrag zuerst in den eigenen Profilen suchen.',
+    subtitle: 'Mehr Suchmandate und passende Kandidaten, schneller vorgeschlagen',
+    heroDesc: 'Personalvermittler wachsen über Suchaufträge und passende Fachkräfte. Im System, das wir mit Ihnen bauen, landen Lebensläufe strukturiert in Ihrer Kandidatendatenbank. Bei einem neuen Auftrag suchen Sie zuerst in den eigenen Profilen, und wen Sie vorstellen, entscheidet Ihr Team.',
     calculatorComponent: 'PlacementEffizienzRechner',
     problems: [
       {
@@ -533,8 +533,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'bildung-weiterbildung': {
     slug: 'bildung-weiterbildung',
     title: 'Bildung & Weiterbildung',
-    subtitle: 'Mehr Anmeldungen für Ihre Lehrgänge, Kurse und Seminare',
-    heroDesc: 'Lehrgänge, Seminare und CAS-Studiengänge füllen sich, wenn Kampagnen die passenden Personen erreichen und die Anmeldung ohne Umwege funktioniert. Für Akademien, Institute und Weiterbildungsanbieter bauen wir beides auf und entlasten das Sekretariat bei wiederkehrenden Fragen zu Zulassung und Ablauf.',
+    subtitle: 'Mehr Anmeldungen für Lehrgänge, Kurse und Seminare, ohne dass das Sekretariat mitwächst',
+    heroDesc: 'Lehrgänge, Seminare und CAS-Studiengänge füllen sich, wenn die passenden Personen erreicht werden und die Anmeldung einfach ist. Für Akademien und Weiterbildungsanbieter bauen wir ein System auf KI-Basis von der Kampagne bis zur Anmeldung, das auch das Sekretariat bei Zulassungsfragen entlastet.',
     calculatorComponent: 'KursFunnelRechner',
     problems: [
       {
@@ -591,8 +591,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'gesundheitswesen': {
     slug: 'gesundheitswesen',
     title: 'Gesundheitswesen',
-    subtitle: 'Mehr Neupatienten für Ihre Praxis oder Fachklinik',
-    heroDesc: 'Spezialpraxen und Fachkliniken machen wir mit sachlicher Patienteninformation online auffindbar, etwa für Selbstzahler-Leistungen. Terminanfrage und Aufnahme richten wir so ein, dass Ihr Praxisteam weniger abtippt. Die Werbevorschriften für Gesundheitsberufe und den Schutz von Gesundheitsdaten beachten wir von Anfang an.',
+    subtitle: 'Mehr Neupatienten für Ihre Praxis oder Fachklinik, mit weniger Abtipparbeit',
+    heroDesc: 'Spezialpraxen und Fachkliniken wachsen, wenn Patienten ihre Schwerpunkte online finden, etwa Selbstzahler-Leistungen. Wir bauen ein System von der Patienteninformation bis zur Aufnahme, in dem Ihr Team weniger abtippt. Die Werbevorschriften für Gesundheitsberufe und den Schutz von Gesundheitsdaten beachten wir von Anfang an.',
     calculatorComponent: 'NeupatientenPotenzialCheck',
     problems: [
       {
@@ -642,15 +642,15 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         q: 'Unterstützen Sie auch die Suche nach Fachpersonal (MPA, Pflege)?',
-        a: 'Ja. Mit Kampagnen und einfachen Bewerbungsseiten erreichen wir auch medizinisches Fachpersonal.'
+        a: 'Ja. Kampagnen und einfache Bewerbungsseiten im selben System erreichen auch medizinisches Fachpersonal.'
       }
     ]
   },
   'handwerk': {
     slug: 'handwerk',
     title: 'Handwerk & Bauwesen',
-    subtitle: 'Mehr Direktaufträge aus Ihrer Region für Ihren Handwerksbetrieb',
-    heroDesc: 'Für Handwerks- und Baubetriebe gewinnen wir Aufträge von Privat- und Gewerbekunden aus der eigenen Region. Anfragen kommen mit den nötigen Angaben an, und für die Offerte liegen eine Zusammenfassung und ein erster Entwurf bereit.',
+    subtitle: 'Mehr Direktaufträge für Ihren Handwerksbetrieb, mit schnelleren Offerten',
+    heroDesc: 'Handwerks- und Baubetriebe wachsen über Neukunden aus der eigenen Region. Im System, das wir mit Ihnen bauen, kommen Anfragen mit den nötigen Angaben an, und für die Offerte legt KI einen ersten Entwurf bereit.',
     calculatorComponent: 'AuftragsPipelineRechner',
     problems: [
       {
@@ -707,8 +707,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'rechtsanwaelte': {
     slug: 'rechtsanwaelte',
     title: 'Rechtsanwälte',
-    subtitle: 'Mehr passende Mandatsanfragen für Anwaltskanzleien',
-    heroDesc: 'Wir machen die Fachgebiete Ihrer Kanzlei online sichtbar und gestalten die Mandatsaufnahme so, dass Rechtsgebiet, Gegenpartei und Sachverhalt vor dem Erstgespräch geordnet vorliegen. Den Rahmen setzen die Standes- und Werberegeln für Anwältinnen und Anwälte und das Berufsgeheimnis.',
+    subtitle: 'Mehr passende Mandatsanfragen für Anwaltskanzleien, mit geordneter Mandatsaufnahme',
+    heroDesc: 'Kanzleien wachsen über Mandate in ihren Fachgebieten. Wir bauen ein System auf KI-Basis, in dem Rechtsgebiet, Gegenpartei und Sachverhalt vor dem Erstgespräch geordnet vorliegen. Den Rahmen setzen die Standes- und Werberegeln für Anwältinnen und Anwälte und das Berufsgeheimnis.',
     calculatorComponent: 'KanzleiAuslastungsCheck',
     problems: [
       {
@@ -761,8 +761,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'logistik-transport': {
     slug: 'logistik-transport',
     title: 'Logistik & Transport',
-    subtitle: 'Mehr Direktkunden und weniger Leerfahrten für Ihr Transportunternehmen',
-    heroDesc: 'Für Transport- und Logistikunternehmen gewinnen wir Direktkunden aus Industrie und Handel entlang der eigenen Stammstrecken. Transportanfragen kommen so an, dass die Disposition direkt offerieren kann. Je mehr feste Frachten Sie haben, desto weniger sind Sie auf Frachtenbörsen angewiesen.',
+    subtitle: 'Mehr Direktkunden für Ihr Transportunternehmen, mit weniger Abtippen',
+    heroDesc: 'Transportunternehmen wachsen über feste Frachten von Direktkunden entlang der eigenen Stammstrecken, unabhängiger von Frachtenbörsen. Wir richten den Anfrageweg so ein, dass Transportanfragen mit allen Angaben ankommen und die Disposition direkt offerieren kann.',
     calculatorComponent: 'FlottenauslastungsRechner',
     problems: [
       {
@@ -782,7 +782,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Sichtbar auf Ihren Stammstrecken',
-        desc: 'Wir schalten Anzeigen in den Regionen entlang Ihrer Stammstrecken. So erreichen Sie Versender dort, wo Sie ohnehin fahren.'
+        desc: 'Anzeigen laufen in den Regionen entlang Ihrer Stammstrecken. So erreichen Sie Versender dort, wo Sie ohnehin fahren.'
       },
       {
         step: '02',
@@ -819,8 +819,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'hospitality': {
     slug: 'hospitality',
     title: 'Hospitality',
-    subtitle: 'Mehr Direktbuchungen für Ihr Hotel, weniger Provisionen',
-    heroDesc: 'Wir richten Website und Kampagnen Ihres Hotels so aus, dass mehr Gäste direkt bei Ihnen buchen statt über Buchungsplattformen. Bei jeder Direktbuchung entfällt die Provision, und der Kontakt zum Gast bleibt bei Ihnen. Anfragen per E-Mail beantwortet Ihr Team mit vorbereiteten Entwürfen schneller.',
+    subtitle: 'Mehr Direktbuchungen für Ihr Hotel, mit weniger Provisionen und Handarbeit',
+    heroDesc: 'Ein Hotel wächst profitabler, wenn mehr Gäste direkt buchen, denn dann entfällt die Provision und der Kontakt zum Gast bleibt bei Ihnen. Dafür verbinden wir Website, Buchung und E-Mail zu einem System, in dem Ihr Team Anfragen mit vorbereiteten Entwürfen schneller beantwortet.',
     calculatorComponent: 'DirektbuchungsRechner',
     problems: [
       {
