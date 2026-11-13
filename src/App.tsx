@@ -65,6 +65,9 @@ export function preloadRoute(pathname: string): Promise<void> {
 }
 /** Im Leerlauf alle Seiten vorladen, damit spätere Seitenwechsel ohne Wartezeit laufen. */
 function prefetchAllViews() {
+  // Kein Prefetch bei Datensparmodus oder langsamer Verbindung (Mobile)
+  const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+  if (conn?.saveData || /(^|-)2g$/.test(conn?.effectiveType || '')) return;
   const run = () => Object.values(VIEW_PRELOAD).forEach((fn) => fn?.().catch(() => undefined));
   const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number };
   if (w.requestIdleCallback) w.requestIdleCallback(run, { timeout: 4000 });

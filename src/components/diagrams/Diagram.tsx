@@ -46,10 +46,10 @@ function NodeIcon({ name, active }: { name?: IconName; active?: boolean }) {
   );
 }
 
-const NodeCard: React.FC<{ node: DiagramNode; index?: number; active?: boolean; compact?: boolean }> = ({ node, index, active, compact }) => {
+const NodeCard: React.FC<{ node: DiagramNode; index?: number; active?: boolean; compact?: boolean; stacked?: boolean }> = ({ node, index, active, compact, stacked }) => {
   return (
     <div
-      className={`relative flex items-start gap-3 rounded-2xl border ${compact ? 'p-3' : 'p-3.5 sm:p-4'} ${
+      className={`relative flex ${stacked ? 'flex-col gap-2 h-full' : 'items-start gap-3'} rounded-2xl border ${compact ? 'p-3' : 'p-3.5 sm:p-4'} ${
         active
           ? 'bg-[#686CFA] border-[#686CFA] text-white shadow-[0_12px_30px_-12px_rgba(105,110,239,0.6)]'
           : 'bg-white border-slate-200/80 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.12)]'
@@ -62,7 +62,7 @@ const NodeCard: React.FC<{ node: DiagramNode; index?: number; active?: boolean; 
             {String(index + 1).padStart(2, '0')}
           </span>
         )}
-        <span className={`block text-sm font-display font-semibold leading-snug ${active ? 'text-white' : 'text-slate-900'}`}>
+        <span className={`block text-sm font-display font-semibold leading-snug [overflow-wrap:anywhere] hyphens-auto ${active ? 'text-white' : 'text-slate-900'}`}>
           {node.title}
         </span>
         {node.sub && <span className={`block mt-0.5 text-xs leading-snug ${active ? 'text-white/80' : 'text-slate-500'}`}>{node.sub}</span>}
@@ -119,7 +119,7 @@ function Hub({ center, nodes }: { center: DiagramNode; nodes: DiagramNode[] }) {
       <div className="sm:hidden space-y-3">
         <div style={{ ['--d' as string]: 0 } as React.CSSProperties}><NodeCard node={center} active /></div>
         <div className="grid grid-cols-2 gap-2.5">
-          {nodes.map((n, i) => <div key={n.title} style={{ ['--d' as string]: i + 1 } as React.CSSProperties}><NodeCard node={{ ...n, sub: undefined }} compact /></div>)}
+          {nodes.map((n, i) => <div key={n.title} style={{ ['--d' as string]: i + 1 } as React.CSSProperties}><NodeCard node={{ ...n, sub: undefined }} compact stacked /></div>)}
         </div>
       </div>
     </div>

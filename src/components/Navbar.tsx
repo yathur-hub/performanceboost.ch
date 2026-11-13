@@ -196,8 +196,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       }`}
       id="main-navigation"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="flex justify-between items-center gap-4">
+      <div className="max-w-7xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] min-[380px]:px-6 sm:px-8 lg:px-10">
+        <div className="flex justify-between items-center gap-3 min-[380px]:gap-4">
           <a
             href="/"
             onClick={(e) => go('/', e)}
@@ -210,7 +210,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               alt="performanceboost Logo"
               width={240}
               height={90}
-              className="h-[72px] md:h-[90px] w-auto object-contain transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
+              className="h-[60px] min-[380px]:h-[72px] md:h-[90px] w-auto object-contain transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
               referrerPolicy="no-referrer"
             />
           </a>
@@ -232,7 +232,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               aria-expanded={isOpen}
               aria-controls="mega-menu"
               aria-haspopup="dialog"
-              className={`inline-flex items-center justify-center gap-2 min-h-11 min-w-[8.75rem] pl-3.5 pr-4 sm:pr-5 rounded-full border font-display font-semibold text-sm transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 ${
+              className={`inline-flex items-center justify-center gap-2 min-h-11 sm:min-w-[8.75rem] pl-3.5 pr-4 sm:pr-5 rounded-full border shrink-0 font-display font-semibold text-sm transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 ${
                 isOpen ? 'bg-slate-950 border-slate-950 text-white' : 'bg-white border-slate-200/80 text-slate-900 hover:border-[#686CFA]/40 hover:text-[#4f54d6]'
               }`}
             >
@@ -276,7 +276,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               className="absolute inset-x-0 top-full overflow-y-auto overscroll-contain bg-white border-b border-[#E0E0E0] shadow-[0_40px_80px_-40px_rgba(15,23,42,0.35)] rounded-b-[2rem]"
               style={{ maxHeight: `calc(100dvh - ${headerHeight}px)` }}
             >
-              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-6 pb-8 md:pt-10 md:pb-12">
+              <div className="max-w-7xl mx-auto px-4 min-[380px]:px-6 sm:px-8 lg:px-10 pt-5 md:pt-10 pb-[max(2rem,calc(env(safe-area-inset-bottom)+1.5rem))] md:pb-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                   {/* LINKS: Was wir verbessern (Bereiche mit Leistungen) und wie wir vorgehen */}
                   <div className="lg:col-span-8 space-y-8">
@@ -328,7 +328,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                             href={href}
                                             onClick={(e) => go(href, e)}
                                             aria-current={isCurrent(href) ? 'page' : undefined}
-                                            className={`block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(href)}`}
+                                            className={`flex items-center min-h-11 md:min-h-0 md:block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(href)}`}
                                           >
                                             <span className="link-underline">{s.title}</span>
                                           </a>
@@ -336,7 +336,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                       );
                                     })}
                                   </ul>
-                                  <a href={hub} onClick={(e) => go(hub, e)} className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#686CFA] hover:text-[#4f54d6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] rounded">
+                                  <a href={hub} onClick={(e) => go(hub, e)} className="mt-1 md:mt-3 inline-flex items-center gap-1.5 min-h-11 md:min-h-0 text-[13px] font-semibold text-[#686CFA] hover:text-[#4f54d6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] rounded">
                                     Alles zu {area.label} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                                   </a>
                                 </div>
@@ -381,14 +381,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       ].map((g) => (
                         <nav key={g.label} aria-label={g.label}>
                           <p className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-slate-400">{g.label}</p>
-                          <ul className="mt-3 space-y-1">
+                          <ul className="mt-2 md:mt-3 md:space-y-1">
                             {g.links.map((l) => (
                               <li key={l.href}>
                                 <a
                                   href={l.href}
                                   onClick={(e) => go(l.href, e)}
                                   aria-current={isCurrent(l.href) ? 'page' : undefined}
-                                  className={`block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(l.href)}`}
+                                  className={`flex items-center min-h-11 md:min-h-0 md:block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(l.href)}`}
                                 >
                                   <span className="link-underline">{l.label}</span>
                                 </a>
@@ -419,7 +419,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       >
                         Gespräch anfragen <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </a>
-                      <a href={`mailto:${SITE.email}`} className="relative mt-4 flex justify-center items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors">
+                      <a href={`mailto:${SITE.email}`} className="relative mt-2 flex justify-center items-center gap-1.5 min-h-11 text-xs text-slate-400 hover:text-white transition-colors">
                         <Mail className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.email}
                       </a>
                     </motion.div>

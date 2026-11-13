@@ -143,12 +143,12 @@ export function FaqList({ items }: { items: { q: string; a: string }[] }) {
   return (
     <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl divide-y divide-slate-100 shadow-[var(--shadow-premium-sm)]">
       {items.map((f) => (
-        <details key={f.q} className="group px-6 sm:px-8 py-5">
-          <summary className="flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-slate-900 text-sm sm:text-base hover:text-[#686CFA] transition-colors [&::-webkit-details-marker]:hidden">
+        <details key={f.q} className="group px-6 sm:px-8">
+          <summary className="flex justify-between items-center gap-4 py-5 min-h-11 cursor-pointer list-none font-semibold text-slate-900 text-sm sm:text-base hover:text-[#686CFA] transition-colors [&::-webkit-details-marker]:hidden">
             <span>{f.q}</span>
             <ChevronDown className="w-4 h-4 text-slate-400 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
           </summary>
-          <p className="mt-3 text-body-sm text-slate-600 leading-relaxed">{f.a}</p>
+          <p className="-mt-2 pb-5 text-body-sm text-slate-600 leading-relaxed">{f.a}</p>
         </details>
       ))}
     </div>

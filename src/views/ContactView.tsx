@@ -117,9 +117,9 @@ export default function ContactView() {
                     <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-550 flex items-center justify-center shrink-0 group-hover:bg-[#686CFA] group-hover:text-white transition-all">
                       <IconComp className="w-4 h-4" />
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-1 min-w-0">
                       <span className="block text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest">{ch.label}</span>
-                      <span className="block text-xs font-bold text-slate-805 group-hover:text-[#686CFA] transition-colors">{ch.value}</span>
+                      <span className="block text-xs font-bold text-slate-805 group-hover:text-[#686CFA] transition-colors [overflow-wrap:anywhere]">{ch.value.replace('@', '\u200B@')}</span>
                     </div>
                   </a>
                 );

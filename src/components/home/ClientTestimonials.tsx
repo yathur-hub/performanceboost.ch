@@ -301,14 +301,14 @@ export function ClientTestimonials() {
                 </div>
 
                 {/* Micro pagination dots for direct navigation */}
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 [@media(pointer:coarse)]:gap-3.5">
                   {TESTIMONIALS_DATA.map((_, dotIdx) => (
                     <button
                       key={dotIdx}
                       type="button"
                       onClick={() => goToIndex(dotIdx)}
                       aria-label={`Gehe zu Kundenstimme ${dotIdx + 1}`}
-                      className={`h-2 rounded-full transition-all cursor-pointer ${
+                      className={`relative h-2 rounded-full transition-all cursor-pointer before:absolute before:content-[''] before:-inset-y-[18px] before:-inset-x-[7px] ${
                         dotIdx === currentIndex
                           ? 'w-6 bg-[#686CFA]'
                           : 'w-2 bg-slate-200 hover:bg-slate-350'

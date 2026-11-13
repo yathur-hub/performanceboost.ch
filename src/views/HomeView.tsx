@@ -67,14 +67,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="home-view">
       {/* 1 HERO: Claim, konkreter Nutzen, Rakete wie bisher */}
-      <section className="relative pt-36 pb-14 md:pt-40 md:pb-16 overflow-hidden bg-white">
+      <section className="relative pt-28 pb-10 sm:pt-36 sm:pb-14 md:pt-40 md:pb-16 overflow-hidden bg-white">
         <Container className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="hero-enter lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 items-center">
+            <div className="hero-enter lg:col-span-8 xl:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
               <p className="text-xs sm:text-[13px] font-mono font-bold uppercase tracking-[0.18em] text-[#686CFA]">
                 Business Performance Partner für Schweizer KMU
               </p>
-              <h1 lang="en" className="text-[2.1rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08] text-balance">
+              <h1 lang="en" className="text-[2.1rem] sm:text-5xl lg:text-[2.75rem] xl:text-[3.5rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08] text-balance">
                 <span className="hero-line"><span>Boost your performance</span></span>{' '}
                 <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>
               </h1>
@@ -109,12 +109,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
 
             {/* Rakete in zwei Ebenen: Rauch statisch, Rakete animiert */}
-            <div className="hidden lg:col-span-5 lg:flex justify-end hero-parallax">
-              <div className="relative w-[260px] sm:w-[320px] lg:w-[400px] aspect-[650/1024] select-none">
+            <div className="lg:col-span-4 xl:col-span-5 flex justify-center lg:justify-end hero-parallax -mt-2 lg:mt-0">
+              <div className="relative w-[132px] min-[380px]:w-[150px] sm:w-[190px] lg:w-[280px] xl:w-[400px] aspect-[650/1024] select-none">
                 <img
                   src="/images/hero-smoke-650.webp"
                   srcSet="/images/hero-smoke-400.webp 400w, /images/hero-smoke-650.webp 650w"
-                  sizes="(min-width: 1024px) 400px, (min-width: 640px) 320px, 260px"
+                  sizes="(min-width: 1280px) 400px, (min-width: 1024px) 280px, (min-width: 640px) 190px, 150px"
                   width={650}
                   height={1024}
                   alt=""
@@ -126,7 +126,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   <img
                     src="/images/hero-rocket-650.webp"
                     srcSet="/images/hero-rocket-400.webp 400w, /images/hero-rocket-650.webp 650w"
-                    sizes="(min-width: 1024px) 400px, (min-width: 640px) 320px, 260px"
+                    sizes="(min-width: 1280px) 400px, (min-width: 1024px) 280px, (min-width: 640px) 190px, 150px"
                     width={650}
                     height={1024}
                     alt="Startende Rakete in den Farben von performanceboost"

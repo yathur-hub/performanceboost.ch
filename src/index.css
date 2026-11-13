@@ -413,3 +413,30 @@ details[open] > :not(summary) { animation: swapIn var(--dur-accordion) var(--eas
   .visual-zoom:hover img, a:hover svg.lucide-arrow-right { transform: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }
+
+/* =========================================================================
+ * MOBILE & TOUCH (13.11.2026) · Doku: docs/agentic-positioning/05-mobile.md
+ * Nur für kleine Viewports und grobe Zeiger (Touch). Desktop mit Maus bleibt unverändert.
+ * ========================================================================= */
+/* iOS zoomt bei Eingabefeldern unter 16 px automatisch hinein */
+@media (max-width: 767px), (pointer: coarse) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']), select, textarea { font-size: 16px !important; }
+}
+/* Mikro-Labels (Badges, Mono-Labels) auf kleinen Displays nicht unter 11 px */
+@media (max-width: 639px) {
+  .text-\[10px\] { font-size: 11px; }
+}
+/* Touch-Ziele mindestens 44 px hoch, ohne die Optik zu verändern */
+@media (pointer: coarse) {
+  main a.inline-flex:not(.btn-press):not([class*='min-h-']),
+  main a.flex.w-full:not([class*='min-h-']),
+  main a.inline-block,
+  main button:not([class*='min-h-']):not([class*='h-']):not([role='switch']) { min-height: 44px; }
+  main a.inline-flex:not(.btn-press) { align-items: center; }
+  main a.inline-block { display: inline-flex; align-items: center; }
+  nav[aria-label='Seitenpfad'] a { display: inline-flex; align-items: center; min-height: 44px; }
+  #site-footer ul > li + li { margin-top: 0; }
+  #site-footer li > a, #site-footer a[href^='mailto'], #site-footer a[href='/impressum'], #site-footer a[href='/datenschutz'] { display: inline-flex; align-items: center; min-height: 44px; }
+  /* Kein «klebender» Hover-Zustand nach dem Antippen */
+  .visual-zoom:hover img { transform: none; }
+}
