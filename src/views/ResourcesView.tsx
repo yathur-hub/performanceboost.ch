@@ -17,8 +17,22 @@ import {
   buttonPressProps 
 } from '../lib/motion';
 
+/** Einfache Hervorhebung: **fett** im Artikeltext. */
+function renderInline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') ? (
+      <strong key={i} className="text-slate-800">{part.slice(2, -2)}</strong>
+    ) : (
+      <React.Fragment key={i}>{part}</React.Fragment>
+    ),
+  );
+}
+
+/** Ratgeber-Bereich MarTech (Ziel für die LinkedIn-Serie): Artikel mit dem Tag «MarTech». */
+export const MARTECH_TAG = 'MarTech';
+
 interface ResourcesViewProps {
-  subSection?: string; // 'blog', 'guides' or empty for all
+  subSection?: string; // 'blog', 'guides', 'martech' or empty for all
   onNavigate: (path: string) => void;
   activeItemSlug?: string; // If viewing a single resource detail
 }
@@ -98,7 +112,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                   <ul key={index} className="space-y-3.5 pl-5">
                     {paragraph.split('\n').map((li, liIdx) => (
                       <li key={liIdx} className="list-disc list-inside text-slate-500 text-xs font-semibold leading-relaxed">
-                        {li.replace('- ', '')}
+                        {renderInline(li.replace('- ', ''))}
                       </li>
                     ))}
                   </ul>
@@ -106,7 +120,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
               }
               return (
                 <p key={index} className="text-xs sm:text-sm leading-relaxed text-slate-500 font-semibold">
-                  {paragraph}
+                  {renderInline(paragraph)}
                 </p>
               );
             })}
@@ -115,6 +129,17 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
 
 
         </article>
+
+          {item.tags.includes(MARTECH_TAG) && (
+            <aside className="mt-12 rounded-3xl border border-[#CACCFB]/60 bg-[#686DF4]/[0.04] p-7 sm:p-9 space-y-4">
+              <h2 className="text-lg font-display font-semibold text-slate-900">Weiter zum Thema MarTech</h2>
+              <ul className="space-y-2 text-sm font-semibold">
+                <li><Link href="/ressourcen/martech" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Alle Beiträge zu MarTech für KMU <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/leistungen/martech-stack" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">MarTech-Stack aufräumen und verbinden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/skills" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Checkliste «Stack-Inventur» in der Skill-Factory <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+              </ul>
+            </aside>
+          )}
 
       </motion.div>
     );
@@ -129,6 +154,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
     
     if (subSection === 'blog' && item.type !== 'blog') return false;
     if (subSection === 'guides' && item.type !== 'guide') return false;
+    if (subSection === 'martech' && !item.tags.includes(MARTECH_TAG)) return false;
     
     // Search terms
     if (searchTerm) {
@@ -152,7 +178,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Leitfäden und Beiträge
+            {subSection === 'martech' ? 'MarTech für KMU' : 'Leitfäden und Beiträge'}
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
@@ -160,7 +186,9 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            Hier zeigen wir, wie wir bei Neukundengewinnung, Tracking und Automatisierung vorgehen. Alle Beiträge lesen Sie ohne Anmeldung.
+            {subSection === 'martech'
+              ? 'Welche Tools ein KMU für Marketing und Vertrieb braucht, wie sie zusammenarbeiten und wo KI dazugehört. Alle Beiträge lesen Sie ohne Anmeldung.'
+              : 'Hier zeigen wir, wie wir bei Neukundengewinnung, KI, MarTech und Automatisierung vorgehen. Alle Beiträge lesen Sie ohne Anmeldung.'}
           </motion.p>
         </div>
       </section>
@@ -193,6 +221,14 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
               }`}
             >
               Leitfäden
+            </button>
+            <button
+              onClick={() => onNavigate('/ressourcen/martech')}
+              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                subSection === 'martech' ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+              }`}
+            >
+              MarTech für KMU
             </button>
           </div>
 

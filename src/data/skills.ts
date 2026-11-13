@@ -125,6 +125,15 @@ export const SKILLS: Skill[] = [
     difficulty: 'Einstieg',
   },
   {
+    id: 'martech-stack-inventory',
+    title: 'Stack-Inventur',
+    description: 'Alle Tools für Marketing und Vertrieb mit Kosten, Nutzung und Datenflüssen erfassen und entscheiden, was bleibt.',
+    category: 'revenue-operations',
+    categoryLabel: 'Prozesse & Daten',
+    github: 'https://github.com/performanceboost/performanceboost-skill-factory/blob/main/martech-stack-inventory.md',
+    difficulty: 'Einstieg',
+  },
+  {
     id: 'crm-data-quality-check',
     title: 'Datenqualität im CRM',
     description: 'Vollständigkeit, Aktualität und Dubletten im CRM systematisch bewerten.',

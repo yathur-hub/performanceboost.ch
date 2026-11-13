@@ -3,9 +3,10 @@ import { Menu, X, ArrowRight, Sparkles, TrendingUp, Layers, Users, Cpu, Megaphon
 import { SERVICES } from '../data/services';
 import { motion, AnimatePresence } from 'motion/react';
 import { SITE } from '../config/site';
-import { SERVICE_AREAS } from '../data/serviceAreas';
+import { SERVICE_AREAS, menuServicesOf } from '../data/serviceAreas';
 
 const AREA_ICONS = {
+  'ki-im-unternehmen': Sparkles,
   strategie: Compass,
   'technologie-automation': Cpu,
   'wachstum-marketing': TrendingUp,
@@ -79,12 +80,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   };
 
   // Mega-Menü nach Leistungsfeldern gruppiert; jede Leistung erscheint nur in ihrem Hauptfeld.
-  // Links pro Leistungsfeld: alle zugeordneten Leistungen; Felder mit weniger als 3 Leistungen
+  // Links pro Leistungsfeld: `menuServices` (ohne Werbe- und Shop-Seiten); Felder mit weniger als 4 Links
   // werden mit ihren Themen ergänzt (Link auf den Hub), damit die Karten ausgewogen sind.
-  const navGroups = SERVICE_AREAS.map((area) => {
-    const services = area.services
-      .map((slug) => SERVICES.find((s) => s.slug === slug))
-      .filter((s): s is (typeof SERVICES)[number] => Boolean(s))
+  // Das hervorgehobene Feld (KI im Unternehmen) steht zuerst und über die ganze Breite.
+  const navGroups = [...SERVICE_AREAS].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured))).map((area) => {
+    const services = menuServicesOf(area)
       .map((s) => ({ key: s.slug, title: s.title, href: `/leistungen/${s.slug}` }));
     const topics = area.topics
       .filter((t) => !services.some((s) => s.title.split(' ')[0] === t.title.split(' ')[0]))
@@ -203,7 +203,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       <motion.div
                         key={area.id}
                         variants={menuItem}
-                        className="group/card flex flex-col rounded-2xl sm:rounded-3xl bg-white border border-slate-200/70 p-4 sm:p-6 transition-all duration-300 hover:border-[#696EEF]/40 hover:shadow-[0_12px_40px_-12px_rgba(105,110,239,0.25)]"
+                        className={`${area.featured ? 'sm:col-span-2 ' : ''}group/card flex flex-col rounded-2xl sm:rounded-3xl bg-white border border-slate-200/70 p-4 sm:p-6 transition-all duration-300 hover:border-[#696EEF]/40 hover:shadow-[0_12px_40px_-12px_rgba(105,110,239,0.25)]`}
                       >
                         {/* Mobil: Titel mit Plus, öffnet die Unterpunkte */}
                         <button
@@ -237,7 +237,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         </a>
                         <div id={`menu-area-${area.id}`} className={`menu-accordion flex-1 ${openArea === area.id ? 'is-open' : ''}`}>
                         <div className="flex flex-col h-full">
-                        <ul className="mt-4 pt-3 border-t border-slate-100 space-y-0.5">
+                        <ul className={`mt-4 pt-3 border-t border-slate-100 space-y-0.5 ${area.featured ? 'sm:grid sm:grid-cols-2 sm:gap-x-8 sm:space-y-0' : ''}`}>
                           {services.map((s) => {
                             const active = currentPath === s.href && s.href !== `/leistungen/${area.id}`;
                             return (

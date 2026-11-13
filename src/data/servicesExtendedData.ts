@@ -4,84 +4,58 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
   {
     slug: 'ai-automation',
     hero: {
-      headline: 'KI, die Ihrem Team im Alltag Zeit spart.',
-      subheadline: 'Wir binden KI dort in Ihre bestehenden Tools ein, wo sie Vertrieb und Marketing nachweisbar Arbeit abnimmt, etwa bei Recherche, Personalisierung, Texten und Auswertungen.',
+      headline: 'KI im Alltag einsetzen, sicher und mit messbarem Nutzen.',
+      subheadline: 'Wir klären, wo KI in Ihrem Unternehmen etwas bringt, führen sie in die bestehenden Abläufe ein, schulen Ihr Team und legen fest, welche Daten in welches Tool dürfen.',
       ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
     },
     problem: {
-      title: 'KI wird genutzt, aber selten dort, wo sie etwas bewirkt',
+      title: 'KI wird genutzt, aber ohne Plan und ohne Regeln',
       paragraphs: [
-        'In vielen Unternehmen nutzen einzelne Mitarbeitende ChatGPT für Texte. In die eigentlichen Abläufe ist KI aber nicht eingebunden, und niemand weiss, ob sie Zeit spart.',
-        'Oder es wurden KI-Tools gekauft, die kaum jemand verwendet.',
-        'Über KI wird viel versprochen, im Alltag bringt sie oft deutlich weniger. Wir suchen mit Ihnen konkrete Anwendungen, bei denen sich überprüfen lässt, ob sie Zeit sparen.'
+        'In vielen Unternehmen nutzen einzelne Mitarbeitende ChatGPT oder andere Tools, jede Person auf ihre Weise. In die eigentlichen Abläufe ist KI nicht eingebunden, und niemand weiss, ob sie Zeit spart.',
+        'Gleichzeitig ist unklar, welche Kundendaten schon in KI-Tools gelandet sind und wer für die Inhalte verantwortlich ist, die damit entstehen.',
+        'Wir bringen Ordnung hinein: wenige Anwendungen, die sich lohnen, ein geschultes Team und Regeln, die jede Person versteht.'
       ]
     },
     leistet: {
-      title: 'Wo KI in Marketing und Vertrieb hilft',
+      title: 'Was die Einführung umfasst',
       items: [
-        {
-          title: 'Persönliche Ansprache für viele Kontakte',
-          desc: 'Mit KI sprechen Sie Hunderte Kontakte persönlich an, ohne jeden einzeln zu bearbeiten. Etwa mit E-Mail-Sequenzen, Website-Inhalten und Angeboten, die zum jeweiligen Kontakt passen.'
-        },
-        {
-          title: 'Schneller zu Texten und Inhalten',
-          desc: 'KI übernimmt Recherche, Erstentwürfe, Varianten und Übersetzungen. Ihr Team konzentriert sich auf Inhalt, Strategie und die Qualitätskontrolle.'
-        },
-        {
-          title: 'Recherche und Anreicherung von Kontakten',
-          desc: 'KI-gestützte Tools recherchieren Zielfirmen, ergänzen fehlende Informationen und bereiten sie auf. Ihr Vertrieb geht vorbereitet ins Gespräch.'
-        },
-        {
-          title: 'Chatbots auf der Website',
-          desc: 'Ein Chatbot beantwortet erste Fragen und klärt vorab, ob eine Anfrage passt, auch ausserhalb der Bürozeiten. Die Abläufe richten wir auf Ihr Angebot aus.'
-        },
-        {
-          title: 'Auswertungen und Erkenntnisse',
-          desc: 'KI wertet Verkaufsgespräche, Kundenfeedback und Marktinformationen aus. Was von Hand Tage dauert, liegt so deutlich schneller vor.'
-        },
-        {
-          title: 'Abläufe automatisieren',
-          desc: 'Wiederkehrende Aufgaben wie E-Mails sortieren, Daten bereinigen, Berichte erstellen oder Meetings nachbereiten werden automatisiert. Die gewonnene Zeit fliesst in Kundengespräche.'
-        }
+        { title: 'KI-Standortbestimmung', desc: 'Wir erfassen, wo KI heute genutzt wird, wo Zeit verloren geht und welche Daten vorhanden sind. Daraus entsteht eine priorisierte Liste mit drei bis fünf Anwendungen und einer Nutzenrechnung.' },
+        { title: 'Anwendungen einrichten', desc: 'Wir binden KI in Ihre bestehenden Tools und Abläufe ein, etwa für Recherche, Entwürfe, Zusammenfassungen, Auswertungen oder die Vorqualifizierung von Anfragen.' },
+        { title: 'Schulung des Teams', desc: 'Schulungen mit Ihren eigenen Abläufen und Beispielen, dazu kurze Anleitungen. Ziel ist, dass KI im Alltag genutzt und nicht nur ausprobiert wird.' },
+        { title: 'Regeln für Daten und Tools', desc: 'Welche Daten in welches Tool dürfen, welche nie, wer Inhalte prüft und freigibt. Kurz, verständlich und abgestimmt auf das Schweizer DSG.' },
+        { title: 'KI-Agenten für ganze Abläufe', desc: 'Wo es sich lohnt, übernimmt ein KI-Agent mehrere Schritte eines Ablaufs selbständig. Bevor etwas nach aussen geht, gibt Ihr Team frei.' },
+        { title: 'Laufende Begleitung', desc: 'Neue Anwendungen prüfen, Werkzeuge aktuell halten und die Regeln nachführen, wenn sich Tools oder Abläufe ändern.' }
       ]
     },
     approach: {
       title: 'So gehen wir vor',
       items: [
-        {
-          title: 'Bestandsaufnahme',
-          desc: 'Wo verliert Ihr Team am meisten Zeit? Wo würde mehr Tempo helfen? Welche Daten sind vorhanden, mit denen KI arbeiten kann?'
-        },
-        {
-          title: 'Einsatzbereiche priorisieren',
-          desc: 'Wir fangen nicht überall gleichzeitig an, sondern wählen die drei bis fünf Anwendungen, die Ihrem Unternehmen am meisten bringen.'
-        },
-        {
-          title: 'Umsetzung',
-          desc: 'Wir binden KI in Ihre bestehenden Abläufe und Tools ein, damit sie im Alltag tatsächlich genutzt wird.'
-        },
-        {
-          title: 'Schulung und Einführung',
-          desc: 'Ihr Team muss die Tools auch verwenden. Wir begleiten die Einführung mit Schulung, klaren Anleitungen und Unterstützung bei Fragen.'
-        },
-        {
-          title: 'Messen und verbessern',
-          desc: 'Eingesparte Zeit, Qualität der Anfragen, Abschlussquoten: Wir prüfen, ob die KI-Abläufe wirken, und passen sie laufend an.'
-        }
+        { title: 'Standortbestimmung', desc: 'In ein bis zwei Wochen klären wir, wo KI heute genutzt wird, wo Zeit verloren geht und welche Daten vorhanden sind.' },
+        { title: 'Anwendungen priorisieren', desc: 'Wir wählen die drei bis fünf Anwendungen, die Ihrem Unternehmen am meisten bringen. Alles andere kommt später oder gar nicht.' },
+        { title: 'Einführen und schulen', desc: 'Wir richten die Anwendungen in Ihren Abläufen ein und schulen das Team mit eigenen Beispielen.' },
+        { title: 'Regeln verabschieden', desc: 'Die Regeln für Daten, Tools und Freigaben werden schriftlich festgehalten und mit der Geschäftsleitung verabschiedet.' },
+        { title: 'Messen und verbessern', desc: 'Wir prüfen, ob die Anwendungen genutzt werden und Zeit sparen, und passen sie an.' }
       ]
     },
     extraSections: [
       {
-        title: 'Tools und Technologien',
+        title: 'Was Ihr Team danach selbst kann',
+        type: 'list',
+        bullets: [
+          'KI für Recherche, Entwürfe und Auswertungen im Alltag nutzen',
+          'Erkennen, welche Daten in ein KI-Tool dürfen und welche nicht',
+          'KI-Ergebnisse prüfen, bevor sie nach aussen gehen',
+          'Neue Anwendungen einschätzen, bevor Geld in weitere Tools fliesst'
+        ]
+      },
+      {
+        title: 'Werkzeuge',
         type: 'grid',
         subtitle: 'Wir sind an kein Tool gebunden und arbeiten mit dem, was zu Ihnen passt.',
         items: [
-          { title: 'Sprachmodelle', desc: 'GPT, Claude, Gemini für Texte, Recherche und Auswertungen.' },
-          { title: 'Datenanreicherung', desc: 'Clay, Apollo, Clearbit für Kontaktdaten und Personalisierung.' },
-          { title: 'Automatisierung', desc: 'Make, Zapier, n8n, um KI in Abläufe einzubinden.' },
-          { title: 'Chatbots', desc: 'Intercom, Drift, Tidio für die Website.' },
-          { title: 'Vertrieb', desc: 'Gong, Chorus, Salesforce Einstein für die Auswertung von Gesprächen.' },
-          { title: 'Texte', desc: 'Jasper, Copy.ai oder eigene Abläufe für die Erstellung von Inhalten.' }
+          { title: 'Sprachmodelle', desc: 'ChatGPT, Claude oder Gemini für Texte, Recherche und Auswertungen, mit Datenschutzbedingungen, die zu Ihren Anforderungen passen.' },
+          { title: 'Automatisierung', desc: 'n8n, Make oder Zapier, um KI in bestehende Abläufe einzubinden. n8n lässt sich auch auf eigenen Servern betreiben.' },
+          { title: 'Ihre bestehenden Tools', desc: 'KI-Funktionen in CRM, E-Mail und Office, die Sie oft schon bezahlen, aber kaum nutzen.' }
         ]
       },
       {
@@ -91,26 +65,152 @@ export const EXTENDED_SERVICES_DATA: ExtendedServiceContent[] = [
       }
     ],
     faq: [
-      {
-        q: 'Brauchen wir technisches Know-how im Team?',
-        a: 'Nicht zwingend. Viele KI-Anwendungen lassen sich mit No-Code-Tools umsetzen, also ohne Programmierung, und brauchen nur ein Grundverständnis. Wo es technischer wird, übernehmen wir die Umsetzung und dokumentieren sie.'
-      },
-      {
-        q: 'Wie schnell ist eine Automatisierung im Einsatz?',
-        a: 'Einfache Abläufe sind oft innert ein bis zwei Wochen eingerichtet. Komplexere Integrationen brauchen meist vier bis acht Wochen, bis sie im Alltag stabil laufen. Ob sich der Aufwand lohnt, zeigt sich meist erst nach einigen Wochen Nutzung, wenn die eingesparte Zeit messbar wird.'
-      },
-      {
-        q: 'Was kosten KI-Tools?',
-        a: 'Die Lizenzkosten hängen vom Tool ab. Der grössere Aufwand liegt in Einrichtung, Tests und Schulung. Diesen schätzen wir nach dem Erstgespräch konkret für Ihren Fall.'
-      },
-      {
-        q: 'Wie stellen Sie sicher, dass KI-generierte Inhalte gut sind?',
-        a: 'Wir bauen eine Prüfung in jeden Ablauf ein. Die KI liefert Entwürfe, Menschen prüfen und geben frei. Bei Kundendaten achten wir darauf, welche Daten überhaupt an ein KI-Modell gehen dürfen.'
-      }
+      { q: 'Wir haben schon ChatGPT-Lizenzen. Reicht das nicht?', a: 'Lizenzen sind der kleinere Teil. Entscheidend ist, ob KI in die Abläufe eingebunden ist, ob das Team weiss, was es damit tun darf, und ob sich der Nutzen messen lässt. Vorhandene Lizenzen lassen sich oft weiter nutzen.' },
+      { q: 'Brauchen wir technisches Know-how im Team?', a: 'Nicht zwingend. Viele KI-Anwendungen lassen sich ohne Programmierung umsetzen und brauchen nur ein Grundverständnis, das wir in der Schulung vermitteln. Wo es technischer wird, übernehmen wir die Umsetzung und dokumentieren sie.' },
+      { q: 'Wie stellen Sie sicher, dass KI-generierte Inhalte gut sind?', a: 'Wir bauen eine Prüfung in jeden Ablauf ein. Die KI liefert Entwürfe, Menschen prüfen und geben frei. Bei Kundendaten legen wir vorab fest, welche Daten überhaupt an ein KI-Modell gehen dürfen.' },
+      { q: 'Was kosten KI-Tools?', a: 'Die Lizenzkosten hängen vom Tool und von der Zahl der Nutzerinnen und Nutzer ab. Oft lassen sich vorhandene Lizenzen weiter nutzen. In der Standortbestimmung rechnen wir aus, welche Kosten zusätzlich entstehen und was dem gegenübersteht.' },
+      { q: 'Was kostet die Einführung?', a: 'Wir arbeiten mit Festpreisen für ein klar definiertes Ergebnis, nicht nach Stunden. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit Umfang, Ergebnis und Preis.' }
     ],
     cta: {
       headline: 'Wo kann KI Ihrem Team Arbeit abnehmen?',
       subheadline: 'In 30 Minuten besprechen wir, welche Anwendungen für Ihr Unternehmen sinnvoll sind und welche nicht.',
+      buttonText: 'Erstgespräch vereinbaren'
+    }
+  },
+  {
+    slug: 'ki-agenten',
+    hero: {
+      headline: 'KI-Agenten, die ganze Abläufe übernehmen.',
+      subheadline: 'Eine Anfrage kommt am Freitagabend. Am Montag liegt sie geprüft, eingeordnet und mit Antwortentwurf im CRM. Ihr Team prüft und gibt frei.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
+    },
+    problem: {
+      title: 'Die Arbeit zwischen den Systemen bleibt an Menschen hängen',
+      paragraphs: [
+        'Anfragen kommen per Formular oder E-Mail, werden abgetippt, im CRM erfasst, recherchiert und beantwortet. Jeder Schritt ist einfach. Zusammen kosten sie viel Zeit, und am Wochenende bleibt alles liegen.',
+        'Einzelne KI-Tools helfen bei einzelnen Handgriffen. Der Ablauf dazwischen läuft trotzdem von Hand.',
+        'Ein KI-Agent übernimmt den ganzen Ablauf. Ihr Team kümmert sich um das, was Urteil braucht: prüfen, entscheiden und mit Kunden sprechen.'
+      ]
+    },
+    leistet: {
+      title: 'Typische Agenten in Marketing und Vertrieb',
+      items: [
+        { title: 'Anfrage-Agent', desc: 'Prüft neue Anfragen, ordnet sie nach Ihren Kriterien ein, legt Kontakt und Firma im CRM an und bereitet eine Antwort vor.' },
+        { title: 'Recherche-Agent', desc: 'Recherchiert Zielfirmen und Gesprächspartner vor einem Termin und fasst das Wichtigste auf einer Seite zusammen.' },
+        { title: 'Nachfass-Agent', desc: 'Erkennt offene Offerten und liegengebliebene Anfragen und bereitet die nächste Nachricht vor.' },
+        { title: 'Reporting-Agent', desc: 'Stellt die wichtigsten Zahlen aus CRM, Website und Kampagnen zusammen und weist auf Abweichungen hin.' },
+        { title: 'Inhalts-Agent', desc: 'Bereitet Entwürfe für Beiträge, Newsletter oder Offerten vor, in Ihrem Stil und nach Ihren Vorgaben.' },
+        { title: 'Daten-Agent', desc: 'Findet Dubletten und Lücken im CRM und schlägt Korrekturen vor, bevor sie Auswertungen verfälschen.' }
+      ]
+    },
+    approach: {
+      title: 'So gehen wir vor',
+      items: [
+        { title: 'Ablauf auswählen', desc: 'Wir beginnen mit einem Ablauf, der häufig vorkommt, klar geregelt ist und heute viel Handarbeit verursacht.' },
+        { title: 'Regeln festlegen', desc: 'Wir halten fest, was der Agent allein darf, wo ein Mensch freigibt und welche Daten er verarbeiten darf.' },
+        { title: 'Bauen und testen', desc: 'Wir bauen den Agenten und testen ihn mit echten Fällen, bis die Ergebnisse verlässlich sind.' },
+        { title: 'Einführen', desc: 'Ihr Team wird eingewiesen und weiss, wie es Entwürfe prüft und was bei Fehlern passiert.' },
+        { title: 'Messen', desc: 'Wir messen eingesparte Zeit und Reaktionszeiten und entscheiden dann, welcher Ablauf als Nächstes kommt.' }
+      ]
+    },
+    extraSections: [
+      {
+        title: 'Ein Beispiel aus dem Alltag',
+        type: 'text',
+        text: 'Eine Anfrage kommt am Freitagabend über das Formular. Der Agent prüft, ob sie vollständig ist und kein Spam, ordnet sie nach Ihren Kriterien ein, legt Kontakt und Firma im CRM an, recherchiert das Unternehmen und bereitet eine Antwort vor. Am Montagmorgen findet Ihr Team die Anfrage geprüft und mit Entwurf vor. Es liest, passt an und sendet.'
+      },
+      {
+        title: 'Wo die Kontrolle bleibt',
+        type: 'list',
+        bullets: [
+          'Vorab festgelegt, was der Agent allein darf und was nicht',
+          'Nach aussen geht nichts ohne Freigabe durch Ihr Team',
+          'Jeder Schritt wird protokolliert und ist nachvollziehbar',
+          'Vor dem Start klar, welche Daten verarbeitet werden und wo sie liegen'
+        ]
+      },
+      {
+        title: 'So läuft es bei performanceboost selbst',
+        type: 'text',
+        text: 'Jede Anfrage über unsere Website wird automatisch geprüft, gespeichert und in unser eigenes ERP übernommen. Dort entstehen Kontakt, Firma, Anfrage und die Aufgabe, sie zu beantworten. Vor Erstgesprächen recherchiert ein Agent das Unternehmen, und Antwortentwürfe gehen erst nach Freigabe hinaus. Wir empfehlen Ihnen Abläufe, die wir aus dem eigenen Betrieb kennen.'
+      }
+    ],
+    faq: [
+      { q: 'Was ist der Unterschied zu einem Chatbot?', a: 'Ein Chatbot beantwortet Fragen im Gespräch. Ein KI-Agent erledigt Aufgaben im Hintergrund über mehrere Schritte und Systeme hinweg, etwa vom Formular über das CRM bis zum Antwortentwurf.' },
+      { q: 'Kann ein Agent Fehler machen?', a: 'Ja. Deshalb legen wir vorab fest, was er allein darf, testen mit echten Fällen und lassen alles, was nach aussen geht, von einem Menschen freigeben. Fehler werden protokolliert und gemeldet.' },
+      { q: 'Welche Systeme brauchen wir dafür?', a: 'Meist reichen die vorhandenen: ein CRM, E-Mail und Ihre Website. Fehlt eine saubere Grundlage, etwa ein gepflegtes CRM, schaffen wir sie zuerst.' },
+      { q: 'Wo liegen unsere Daten?', a: 'Das klären wir vor dem Start. Je nach Anforderung laufen Agenten bei Anbietern mit Rechenzentren in der Schweiz oder der EU oder auf eigener Infrastruktur. Welche Daten an ein KI-Modell gehen, halten wir schriftlich fest.' },
+      { q: 'Was kostet ein KI-Agent?', a: 'Aufbau und Einführung bieten wir zum Festpreis für einen klar definierten Ablauf an. Dazu kommen laufende Kosten für die eingesetzten Dienste, die wir vorab offenlegen.' }
+    ],
+    cta: {
+      headline: 'Welchen Ablauf könnte bei Ihnen ein Agent übernehmen?',
+      subheadline: 'In 30 Minuten schauen wir, welcher Ablauf sich lohnt und wo weiterhin ein Mensch entscheiden sollte.',
+      buttonText: 'Erstgespräch vereinbaren'
+    }
+  },
+  {
+    slug: 'martech-stack',
+    hero: {
+      headline: 'Weniger Tools, die zusammenarbeiten.',
+      subheadline: 'Wir räumen Ihren MarTech-Stack auf: weniger Lizenzen, weniger Handarbeit und Zahlen, auf die Sie sich verlassen können.',
+      ctaText: 'Erstgespräch vereinbaren (30 Min., kostenlos)'
+    },
+    problem: {
+      title: 'Viele Programme, wenig Zusammenhang',
+      paragraphs: [
+        'Über die Jahre kommt ein Tool zum anderen: CRM, Newsletter, Formulare, Terminbuchung, Werbekonten, Tracking und Tabellen. Jedes wurde aus gutem Grund eingeführt.',
+        'Heute reden die Programme kaum miteinander. Daten werden von Hand kopiert, Zahlen widersprechen sich, und bei einigen Lizenzen weiss niemand mehr, wer sie nutzt.',
+        'Wir schauen den ganzen Werkzeugkasten an und bringen ihn in eine Form, die Ihr Team versteht und weiterführen kann.'
+      ]
+    },
+    leistet: {
+      title: 'Drei Stufen',
+      items: [
+        { title: 'Stack-Check', desc: 'Wir erfassen alle Tools mit Kosten, Nutzung, Verantwortlichen und Datenflüssen. Sie erhalten eine klare Liste, was bleibt, was weg kann und was fehlt. Auf Wunsch ist der Check Teil der Performance-Analyse.' },
+        { title: 'Aufräumen und verbinden', desc: 'Wir schalten überflüssige Tools ab, bereinigen Daten und verbinden die Systeme so, dass Daten nur einmal erfasst werden und jede Anfrage bis zum Auftrag nachvollziehbar ist. Als Projekt zum Festpreis.' },
+        { title: 'Laufend betreiben', desc: 'Der Stack bleibt sauber: Wir prüfen neue Tools, bevor sie gekauft werden, überwachen die Schnittstellen und überprüfen die Kosten einmal im Jahr. Als Teil der laufenden Begleitung.' }
+      ]
+    },
+    approach: {
+      title: 'So gehen wir vor',
+      items: [
+        { title: 'Inventur', desc: 'Alle Tools, Lizenzen, Kosten und Verantwortlichen auf einer Liste, dazu die Datenflüsse zwischen den Systemen.' },
+        { title: 'Zielbild', desc: 'Wir entscheiden gemeinsam, was bleibt, was ersetzt wird und was wegfällt, mit den Kosten vorher und nachher.' },
+        { title: 'Umbau', desc: 'Systeme verbinden, Daten übernehmen und bereinigen, alte Tools sauber abschalten.' },
+        { title: 'Übergabe', desc: 'Dokumentation und Einweisung, damit Ihr Team weiss, welches Tool wofür da ist.' },
+        { title: 'Betrieb', desc: 'Auf Wunsch halten wir den Stack laufend sauber und prüfen jede neue Anschaffung.' }
+      ]
+    },
+    extraSections: [
+      {
+        title: 'Typische Bausteine',
+        type: 'grid',
+        subtitle: 'Wir sind an kein Tool gebunden und arbeiten mit dem, was zu Ihnen passt.',
+        items: [
+          { title: 'CRM', desc: 'Kundendaten, Verkaufschancen und Aufgaben an einem Ort, als gemeinsame Grundlage für Marketing und Vertrieb.' },
+          { title: 'Website und Formulare', desc: 'Anfragen landen mit Quelle und Angaben direkt im CRM, ohne Abtippen.' },
+          { title: 'E-Mail und Newsletter', desc: 'Versand und Abmeldungen laufen mit dem CRM zusammen, nicht in einer separaten Liste.' },
+          { title: 'Werbekonten', desc: 'Google, Meta und LinkedIn erhalten zurück, welche Anfragen zu Aufträgen wurden.' },
+          { title: 'Tracking und Reporting', desc: 'Eine Auswertung mit denselben Zahlen für alle, von der Anfrage bis zum Auftrag.' },
+          { title: 'Automatisierung', desc: 'n8n, Make oder Zapier verbinden die Systeme und übernehmen wiederkehrende Schritte.' }
+        ]
+      },
+      {
+        title: 'Lizenz, Open Source oder eigene Lösung?',
+        type: 'text',
+        text: 'Nicht jede Lösung muss eine Lizenz pro Person kosten. Für manche Aufgaben gibt es Open-Source-Software, die sich in der Schweiz oder der EU betreiben lässt, dafür aber Pflege braucht. Wir vergleichen die Varianten nach Kosten über mehrere Jahre, Aufwand und Datenschutz und empfehlen, was zu Ihrem Team passt. Dabei prüfen wir die Lizenz genau, denn nicht jedes Tool, das als Open Source bezeichnet wird, darf ohne Einschränkungen kommerziell genutzt werden.'
+      }
+    ],
+    faq: [
+      { q: 'Wie viele Tools braucht ein KMU?', a: 'Eine richtige Zahl gibt es nicht. Wichtiger ist, dass jedes Tool einen klaren Zweck hat, eine Person dafür verantwortlich ist und die Daten dorthin fliessen, wo sie gebraucht werden.' },
+      { q: 'Müssen wir unser CRM wechseln?', a: 'Selten. Oft lässt sich das vorhandene CRM besser nutzen und mit den anderen Tools verbinden. Ein Wechsel lohnt sich erst, wenn das System Ihre Abläufe grundsätzlich nicht abbilden kann.' },
+      { q: 'Was bringt ein Stack-Check?', a: 'Sie wissen danach, welche Tools Sie haben, was sie kosten, wer sie nutzt und wo Daten von Hand übertragen werden. Häufig zeigt sich dabei, dass sich Lizenzen einsparen lassen. Wie viel, hängt vom Einzelfall ab.' },
+      { q: 'Können wir den Check selbst machen?', a: 'Ja, für einen ersten Überblick. In der Skill-Factory finden Sie die Checkliste «Stack-Inventur» kostenlos und ohne Anmeldung. Für das Zielbild und den Umbau lohnt sich ein Blick von aussen.' },
+      { q: 'Was kostet das?', a: 'Wir arbeiten mit Festpreisen für ein klar definiertes Ergebnis, nicht nach Stunden. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit Umfang, Ergebnis und Preis.' }
+    ],
+    cta: {
+      headline: 'Wie sieht Ihr Werkzeugkasten heute aus?',
+      subheadline: 'In 30 Minuten schauen wir, wo Ihre Tools zusammenarbeiten und wo nicht.',
       buttonText: 'Erstgespräch vereinbaren'
     }
   },

@@ -1,6 +1,6 @@
 /**
- * Hub-Seite eines Leistungsfelds (/leistungen/strategie, /technologie-automation, /wachstum-marketing,
- * /sales-revenue-operations). Inhalte aus src/data/serviceAreas.ts.
+ * Hub-Seite eines Leistungsfelds (/leistungen/ki-im-unternehmen, /strategie, /technologie-automation,
+ * /wachstum-marketing, /sales-revenue-operations). Inhalte aus src/data/serviceAreas.ts.
  */
 import { Visual3D, VISUAL_BY_AREA } from '../components/Visual3D';
 import React from 'react';
@@ -27,10 +27,11 @@ import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import Link from '../components/Link';
 
 
-/** Passende Kundenstimme je Feld (nur bestehende, wörtliche Zitate). */
+/** Passende Kundenstimme je Feld (nur bestehende, wörtliche Zitate). KI im Unternehmen: Systembau bei CarlaCares. */
 const AREA_TESTIMONIAL: Record<AreaId, string> = {
+  'ki-im-unternehmen': 'carla-carcaiso',
   strategie: 'tiago-garcia',
-  'technologie-automation': 'carla-carcaiso',
+  'technologie-automation': 'kathirsan-kathirgamanathan',
   'wachstum-marketing': 'ibrahim-akyol',
   'sales-revenue-operations': 'simon-karrica',
 };
@@ -139,6 +140,23 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       </section>
 
 
+      {/* EIGENE PRAXIS (z. B. KI im Unternehmen): bestätigte Abläufe aus dem eigenen Betrieb */}
+      {area.practice && (
+        <section>
+          <Container className="space-y-8">
+            <SectionHeading title={area.practice.title} intro={area.practice.intro} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {area.practice.items.map((it) => (
+                <div key={it.title} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-8 space-y-2">
+                  <h3 className="font-display font-semibold text-slate-900">{it.title}</h3>
+                  <p className="text-body-sm text-slate-600 leading-relaxed">{it.desc}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* BRANCHEN (nur Growth): bestehende Branchenseiten */}
       {id === 'wachstum-marketing' && (
         <section>
@@ -212,8 +230,8 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* ANDERE FELDER */}
       <section>
         <Container className="space-y-8">
-          <SectionHeading title="Die anderen Leistungsfelder" intro="Die besten Ergebnisse entstehen, wenn Strategie, Technologie, Marketing und Vertrieb aufeinander abgestimmt sind." />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <SectionHeading title="Die anderen Leistungsfelder" intro="Die besten Ergebnisse entstehen, wenn Strategie, KI, Systeme, Marketing und Vertrieb aufeinander abgestimmt sind." />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {others.map((o) => (
               <TeaserCard key={o.id} href={`/leistungen/${o.id}`} title={o.shortLabel} desc={o.teaser} />
             ))}

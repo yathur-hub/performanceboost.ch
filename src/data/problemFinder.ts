@@ -55,8 +55,20 @@ export const PROBLEM_OPTIONS: Record<BusinessModel, ProblemOption[]> = {
     {
       id: 'zu_viel_handarbeit',
       label: 'Zu viel Handarbeit in Marketing und Vertrieb',
+      serviceSlug: 'ki-agenten',
+      reason: 'KI-Agenten übernehmen wiederkehrende Abläufe von der Anfrage bis zum Nachfassen, mit Freigabe durch Ihr Team. So bleibt mehr Zeit für Kunden.',
+    },
+    {
+      id: 'ki_ohne_plan',
+      label: 'KI wird genutzt, aber ohne Plan und Regeln',
       serviceSlug: 'ai-automation',
-      reason: 'Wir automatisieren wiederkehrende Aufgaben von der Anfrage bis zum Nachfassen, damit Ihr Team mehr Zeit für Kunden hat.',
+      reason: 'Wir klären, wo KI etwas bringt, schulen Ihr Team und legen fest, welche Daten in welches Tool dürfen.',
+    },
+    {
+      id: 'zu_viele_tools',
+      label: 'Zu viele Tools, die nicht zusammenarbeiten',
+      serviceSlug: 'martech-stack',
+      reason: 'Wir räumen Ihren Werkzeugkasten auf, verbinden die Systeme und sorgen dafür, dass Daten nur einmal erfasst werden.',
     },
   ],
   shop: [

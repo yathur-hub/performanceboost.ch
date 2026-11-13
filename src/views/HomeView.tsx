@@ -13,7 +13,7 @@ import { ClientTestimonials } from '../components/home/ClientTestimonials';
 import { SITE } from '../config/site';
 import Link from '../components/Link';
 import { Container, CtaButton, FaqList, SectionHeading, TeaserCard } from '../components/bp/Blocks';
-import { PILLARS, SERVICE_AREAS, servicesOf } from '../data/serviceAreas';
+import { PILLARS, SERVICE_AREAS, menuServicesOf } from '../data/serviceAreas';
 import { CHALLENGE_CARDS } from '../data/challenges';
 
 interface HomeViewProps {
@@ -40,20 +40,20 @@ const STEPS = [
   },
   {
     title: 'Umsetzung',
-    desc: 'Wir setzen selbst um, von Kampagnen und Landingpages über das CRM bis zu Automatisierungen und Auswertungen.',
+    desc: 'Wir setzen selbst um, von Landingpages und CRM über Automatisierungen und KI-Agenten bis zu Auswertungen. Umfang, Ergebnis und Festpreis stehen vorher fest.',
     result: 'Die Massnahmen sind live, dokumentiert und Ihr Team kann damit arbeiten.',
   },
   {
     title: 'Laufende Begleitung',
-    desc: 'Einmal im Monat schauen wir gemeinsam auf die Zahlen. Was wirkt, bauen wir aus. Was nicht wirkt, ändern wir oder stoppen es.',
-    result: 'Ihr Unternehmen wird Schritt für Schritt besser, mit einem festen Ansprechpartner.',
+    desc: 'Wir übernehmen die Verantwortung für vereinbarte Kennzahlen, etwa die Zahl qualifizierter Anfragen pro Monat. Einmal im Monat schauen wir gemeinsam auf die Zahlen. Was wirkt, bauen wir aus, was nicht wirkt, ändern oder stoppen wir.',
+    result: 'Ihr Unternehmen wird Schritt für Schritt besser, gemessen an den vereinbarten Zahlen.',
   },
 ];
 
 const DIFFERENCES = [
   { title: 'Strategie und Umsetzung aus einer Hand', desc: 'Kein Konzept, das in der Schublade landet, und keine Lücken zwischen drei Dienstleistern.' },
   { title: 'Gemessen an Ihren Geschäftszahlen', desc: 'Anfragen, Aufträge, Reaktionszeiten oder eingesparte Stunden statt Klicks und Reichweite.' },
-  { title: 'Direkt mit dem Inhaber', desc: 'Yathur Nathan betreut Ihr Projekt persönlich, ohne Account Manager dazwischen.' },
+  { title: 'Direkt mit dem Inhaber', desc: 'Yathur Nathan arbeitet persönlich an Ihrem Projekt, ohne Account Manager dazwischen.' },
 ];
 
 const FAQ = [
@@ -63,11 +63,15 @@ const FAQ = [
   },
   {
     q: 'Für welche Unternehmen eignet sich performanceboost?',
-    a: 'Für Schweizer KMU, meist ab rund CHF 1 Mio. Jahresumsatz, die wachsen oder effizienter arbeiten möchten: Dienstleister, B2B-Unternehmen und Onlineshops. Wichtig ist eine Geschäftsleitung, die mitentscheidet, und die Bereitschaft, Abläufe zu verändern.',
+    a: 'Für Schweizer KMU, meist ab rund CHF 1 Mio. Jahresumsatz, die wachsen oder effizienter arbeiten möchten, vor allem Dienstleister und B2B-Unternehmen, aber auch Onlineshops. Wichtig ist eine Geschäftsleitung, die mitentscheidet, und die Bereitschaft, Abläufe zu verändern.',
   },
   {
     q: 'Was unterscheidet Sie von einer Marketingagentur oder einer Unternehmensberatung?',
-    a: 'Eine Marketingagentur betreut meist einzelne Kanäle, eine Unternehmensberatung liefert oft Konzepte. Wir kümmern uns um die ganze Strecke bis zum Auftrag, also auch um Systeme und Abläufe, und setzen selbst um. Finanz-, Rechts- oder Organisationsberatung bieten wir nicht an.',
+    a: 'Eine Marketingagentur betreut meist einzelne Kanäle und rechnet nach Aufwand ab, eine Unternehmensberatung liefert oft Konzepte. Wir kümmern uns um die ganze Strecke bis zum Auftrag, also auch um Systeme, Abläufe und den Einsatz von KI, und setzen selbst um. Vor dem Start vereinbaren wir, welches Ergebnis wir liefern, und messen uns daran. Finanz-, Rechts- oder Organisationsberatung bieten wir nicht an.',
+  },
+  {
+    q: 'Wie setzen Sie selbst KI ein?',
+    a: 'Jede Anfrage über unsere Website wird automatisch geprüft, gespeichert und in unser eigenes ERP übernommen, inklusive der Aufgabe, sie zu beantworten. Vor Erstgesprächen recherchiert ein KI-Agent das Unternehmen, und Antwortentwürfe gehen erst nach Freigabe hinaus. Wir empfehlen Ihnen Abläufe, die wir aus dem eigenen Betrieb kennen.',
   },
   {
     q: 'Müssen wir alle Leistungen beziehen?',
@@ -79,7 +83,7 @@ const FAQ = [
   },
   {
     q: 'Was kostet eine Zusammenarbeit?',
-    a: 'Das hängt vom Umfang ab: Eine einmalige Analyse ist etwas anderes als die laufende Betreuung. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit klar definiertem Umfang. Das Erstgespräch selbst ist kostenlos.',
+    a: 'Wir arbeiten mit Festpreisen für definierte Ergebnisse, nicht nach Stunden. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit Umfang, Ergebnis und Preis. Das Erstgespräch selbst ist kostenlos.',
   },
 ];
 
@@ -98,7 +102,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <span className="text-[#696EEF] italic font-serif">Strategie, Technologie und Wachstum.</span>
               </h1>
               <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Wir verbinden Strategie, Technologie und Umsetzung, damit Marketing, Vertrieb und Abläufe in Ihrem Unternehmen besser
+                Wir verbinden Strategie, KI und Umsetzung, damit Marketing, Vertrieb und Abläufe in Ihrem Unternehmen besser
                 zusammenarbeiten. Wir analysieren, setzen selbst um und verbessern laufend. Ihr Ansprechpartner ist Inhaber Yathur Nathan.
               </p>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center lg:justify-start items-center">
@@ -227,14 +231,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section>
         <Container className="space-y-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
-            <SectionHeading title="Vier Leistungsfelder, die ineinandergreifen" />
+            <SectionHeading title="Fünf Leistungsfelder, die ineinandergreifen" />
             <Link href="/leistungen" className="text-xs font-bold text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
               Alle Leistungen ansehen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {SERVICE_AREAS.map((a) => (
-              <article key={a.id} className="relative bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 flex flex-col">
+              <article key={a.id} className={`relative bg-white border rounded-3xl p-7 sm:p-9 flex flex-col ${a.featured ? 'md:col-span-2 border-[#CACCFB] bg-gradient-to-br from-white to-[#686DF4]/[0.04]' : 'border-[#E0E0E0]/80'}`}>
                 <Visual3D id={VISUAL_BY_AREA[a.id]} sizes="112px" className="hidden sm:block absolute top-6 right-6 h-24 w-28" />
                 <h3 className="mt-3 text-xl font-display font-semibold text-slate-900 sm:pr-32">
                   <Link href={`/leistungen/${a.id}`} className="hover:text-[#4f54d6] transition-colors">
@@ -243,13 +247,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </h3>
                 <p className="mt-2 text-body-sm text-slate-600 leading-relaxed sm:pr-32">{a.teaser}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
-                  {servicesOf(a).length < 3 &&
-                    a.topics.slice(0, 3 - servicesOf(a).length).map((t) => (
+                  {menuServicesOf(a).length < 3 &&
+                    a.topics.slice(0, 3 - menuServicesOf(a).length).map((t) => (
                       <li key={t.title} className="inline-block text-xs font-semibold text-slate-500 bg-white border border-dashed border-slate-200 rounded-full px-3 py-1.5">
                         {t.title}
                       </li>
                     ))}
-                  {servicesOf(a)
+                  {menuServicesOf(a)
                     .slice(0, 4)
                     .map((s) => (
                       <li key={s.slug}>

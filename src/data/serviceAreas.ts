@@ -9,7 +9,7 @@
  */
 import { SERVICES } from './services';
 
-export type AreaId = 'strategie' | 'technologie-automation' | 'wachstum-marketing' | 'sales-revenue-operations';
+export type AreaId = 'ki-im-unternehmen' | 'strategie' | 'technologie-automation' | 'wachstum-marketing' | 'sales-revenue-operations';
 export type Pillar = 'strategy' | 'technology' | 'growth';
 
 export interface ServiceArea {
@@ -31,6 +31,15 @@ export interface ServiceArea {
   services: string[];
   /** Untergruppe innerhalb des Feldes (z. B. E-Commerce), nur Anzeige. */
   serviceGroups?: { label: string; services: string[] }[];
+  /**
+   * Leistungen, die im Mega-Menü und auf der Startseite erscheinen (Standard: `services`).
+   * So stehen Werbung und Onlineshops nicht mehr vorne, die Seiten bleiben aber erreichbar.
+   */
+  menuServices?: string[];
+  /** Hervorgehobenes Feld: im Mega-Menü und auf der Startseite über die ganze Breite. */
+  featured?: boolean;
+  /** Belege aus dem eigenen Betrieb (nur bestätigte Abläufe, keine Kundennamen, keine erfundenen Zahlen). */
+  practice?: { title: string; intro: string; items: { title: string; desc: string }[] };
   /** Themen ohne eigene Detailseite. */
   topics: { title: string; desc: string }[];
   challenges: string[];
@@ -45,6 +54,60 @@ export interface ServiceArea {
 }
 
 export const SERVICE_AREAS: ServiceArea[] = [
+  {
+    id: 'ki-im-unternehmen',
+    pillar: 'technology',
+    label: 'AI Enablement',
+    shortLabel: 'KI im Unternehmen',
+    featured: true,
+    headline: 'KI im Alltag einsetzen, mit klaren Regeln und messbarem Nutzen.',
+    definition:
+      'Wir klären mit Ihnen, wo KI in Ihrem Unternehmen tatsächlich etwas bringt, führen sie in die bestehenden Abläufe ein und schulen Ihr Team. Dazu legen wir fest, welche Daten in welches Tool dürfen und wer was freigibt. KI-Agenten übernehmen danach ganze Abläufe, die Entscheidung bleibt bei Ihren Mitarbeitenden.',
+    teaser: 'Klären, wo KI etwas bringt, das Team schulen, Regeln festlegen und KI-Agenten ganze Abläufe übernehmen lassen.',
+    ctaLabel: 'KI-Einsatz besprechen',
+    seoTitle: 'KI im Unternehmen: Einführung, Schulung & KI-Agenten für KMU | performanceboost',
+    seoDescription:
+      'Wir führen KI in Schweizer KMU ein: Standortbestimmung, Schulung, Regeln für Daten und Tools, KI-Agenten für Marketing und Vertrieb und laufende Begleitung.',
+    services: ['ai-automation', 'ki-agenten'],
+    topics: [
+      { title: 'KI-Standortbestimmung', desc: 'Wo nutzen Ihre Mitarbeitenden KI heute schon, wo entstehen Risiken und welche drei Anwendungen bringen am meisten? Sie erhalten eine priorisierte Liste mit einer Nutzenrechnung pro Anwendung.' },
+      { title: 'Schulung des Teams', desc: 'Schulungen mit Ihren eigenen Abläufen und Beispielen, damit KI im Alltag genutzt und nicht nur ausprobiert wird.' },
+      { title: 'Regeln für den KI-Einsatz', desc: 'Welche Daten in welches Tool dürfen, welche nie, wer Inhalte freigibt und wie das dokumentiert wird. Kurz, verständlich und abgestimmt auf das Schweizer DSG.' },
+      { title: 'Laufende Begleitung', desc: 'Neue Anwendungen prüfen und einführen, Werkzeuge aktuell halten und die Regeln nachführen, wenn sich Tools oder Abläufe ändern.' },
+    ],
+    challenges: [
+      'Mitarbeitende nutzen ChatGPT und andere Tools, aber jede Person auf ihre Weise.',
+      'Niemand weiss genau, welche Kundendaten schon in KI-Tools gelandet sind.',
+      'Es gibt KI-Lizenzen, aber keinen Nutzen, den jemand beziffern kann.',
+      'In den eigentlichen Abläufen von Marketing und Vertrieb hat KI noch nichts verändert.',
+    ],
+    outcomes: [
+      'Drei bis fünf KI-Anwendungen, die im Alltag tatsächlich genutzt werden',
+      'Ein Team, das KI sicher und wirksam einsetzt',
+      'Schriftliche Regeln für Daten, Tools und Freigaben',
+      'Abläufe, die KI-Agenten übernehmen, mit Freigabe durch Ihr Team',
+    ],
+    tools: ['ai-readiness-assessment', 'ai-use-case-discovery', 'agentic-automation-opportunity-scanner', 'workflow-opportunity-scanner'],
+    resources: ['ai-automation-b2b-sales', 'martech-open-source-oder-lizenz'],
+    solutions: ['/loesungen/prozessautomatisierung'],
+    practice: {
+      title: 'So arbeiten wir selbst',
+      intro: 'Bei performanceboost laufen dieselben Werkzeuge, die wir Ihnen empfehlen. Einige Beispiele aus dem eigenen Betrieb:',
+      items: [
+        { title: 'Website-Anfragen', desc: 'Jede Anfrage über unsere Website wird automatisch geprüft, gespeichert und in unser eigenes ERP übernommen. Dort entstehen Kontakt, Firma, Anfrage und die Aufgabe, sie zu beantworten. Die Bestätigung an die anfragende Person kommt in unter einer Sekunde.' },
+        { title: 'Recherche vor dem Gespräch', desc: 'Vor einem Erstgespräch recherchiert ein Agent das Unternehmen und bereitet die wichtigsten Informationen auf. Das Gespräch beginnt so nicht bei null.' },
+        { title: 'Entwürfe mit Freigabe', desc: 'Antworten und Inhalte bereitet ein Agent vor. Versendet oder veröffentlicht wird erst, wenn ein Mensch den Entwurf geprüft und freigegeben hat.' },
+        { title: 'Eigenes ERP', desc: 'Unser System für Kunden, Aufträge und Aufgaben haben wir selbst gebaut. Wir wissen deshalb aus eigener Erfahrung, was es braucht, damit verbundene Systeme im Alltag halten.' },
+      ],
+    },
+    faq: [
+      { q: 'Wo fangen wir mit KI am besten an?', a: 'Mit einer Standortbestimmung. Wir schauen, wo KI heute schon genutzt wird, wo Zeit verloren geht und welche Daten vorhanden sind. Daraus wählen wir drei bis fünf Anwendungen, die sich zuerst lohnen. Alles andere kommt später oder gar nicht.' },
+      { q: 'Wir haben schon ChatGPT-Lizenzen. Reicht das nicht?', a: 'Lizenzen sind der kleinere Teil. Entscheidend ist, ob KI in die Abläufe eingebunden ist, ob das Team weiss, was es damit tun darf, und ob sich der Nutzen messen lässt. Vorhandene Lizenzen lassen sich oft weiter nutzen.' },
+      { q: 'Was ist ein KI-Agent?', a: 'Ein KI-Agent erledigt eine Aufgabe über mehrere Schritte selbständig, zum Beispiel eine Anfrage prüfen, ins CRM eintragen und eine Antwort vorbereiten. Bevor etwas nach aussen geht, gibt ein Mensch frei.' },
+      { q: 'Wie gehen Sie mit Datenschutz um?', a: 'Bevor eine Anwendung live geht, legen wir fest, welche Personendaten verarbeitet werden, bei welchem Anbieter sie liegen und ob sie die Schweiz oder die EU verlassen. Diese Regeln halten wir schriftlich fest, damit Sie Ihre Pflichten nach dem Schweizer DSG erfüllen können. Eine Rechtsberatung ersetzt das nicht.' },
+      { q: 'Wie lange dauert eine Einführung?', a: 'Die Standortbestimmung dauert meist ein bis zwei Wochen, die Einführung mit Schulung je nach Umfang drei bis sechs Wochen. Danach entscheiden Sie, ob wir Sie weiter begleiten.' },
+    ],
+  },
   {
     id: 'strategie',
     pillar: 'strategy',
@@ -91,42 +154,43 @@ export const SERVICE_AREAS: ServiceArea[] = [
   {
     id: 'technologie-automation',
     pillar: 'technology',
-    label: 'Technology & Automation',
-    shortLabel: 'Technologie & Automatisierung',
+    label: 'MarTech & Automation',
+    shortLabel: 'MarTech & Automatisierung',
     headline: 'Weniger Handarbeit, weil Ihre Systeme zusammenspielen.',
     definition:
-      'Wir verbinden Ihre Systeme, automatisieren wiederkehrende Abläufe und setzen KI dort ein, wo sie Ihrem Team nachweisbar Arbeit abnimmt. Dabei bauen wir auf den Tools auf, die Sie bereits nutzen, und führen neue nur ein, wenn sie einen klaren Zweck haben.',
-    teaser: 'Systeme verbinden, Abläufe automatisieren und KI dort einsetzen, wo sie Arbeit abnimmt.',
-    ctaLabel: 'Prozesse besprechen',
-    seoTitle: 'KI, Automatisierung & Systemintegration für KMU | performanceboost',
+      'Wir räumen Ihren MarTech-Stack auf, also die Programme, mit denen Sie Kunden gewinnen und betreuen: CRM, Website, E-Mail, Tracking und Reporting. Wir verbinden sie, damit Daten nur einmal erfasst werden, und automatisieren wiederkehrende Abläufe. Neue Tools führen wir nur ein, wenn sie einen klaren Zweck haben.',
+    teaser: 'Tools aufräumen und verbinden, Abläufe automatisieren und Zahlen schaffen, auf die man sich verlassen kann.',
+    ctaLabel: 'Systeme besprechen',
+    seoTitle: 'MarTech-Stack, CRM & Automatisierung für KMU | performanceboost',
     seoDescription:
-      'Wir verbinden Ihre Systeme, automatisieren wiederkehrende Abläufe und setzen KI dort ein, wo sie Ihrem Team nachweisbar Arbeit abnimmt.',
-    services: ['ai-automation', 'marketing-automation', 'data-analytics'],
+      'Wir räumen den MarTech-Stack von Schweizer KMU auf: weniger Tools, die zusammenarbeiten, Daten nur einmal erfasst, automatisierte Abläufe und verlässliche Zahlen.',
+    services: ['martech-stack', 'marketing-automation', 'data-analytics'],
     topics: [
       { title: 'Prozessautomatisierung', desc: 'Wiederkehrende Abläufe wie Datenübertragungen, Benachrichtigungen, Freigaben oder Berichte laufen automatisch statt von Hand.' },
       { title: 'Systemintegration', desc: 'Website, Formulare, CRM, E-Mail und weitere Tools tauschen Daten direkt aus. Weniger doppelte Erfassung, weniger Übertragungsfehler.' },
       { title: 'Datenintegration und Reporting', desc: 'Zahlen aus verschiedenen Quellen in einer Auswertung zusammenführen, damit alle mit denselben Werten arbeiten.' },
-      { title: 'KI-Anwendungen', desc: 'Recherche, Texte, Zusammenfassungen und Vorqualifizierung mit KI, eingebettet in bestehende Abläufe und mit menschlicher Kontrolle.' },
+      { title: 'Tool-Auswahl ohne Anbieterbindung', desc: 'Wir vergleichen Lizenz- und Open-Source-Lösungen sowie Hosting in der Schweiz oder der EU anhand Ihrer Abläufe, Kosten und Datenschutzanforderungen.' },
     ],
     challenges: [
       'Daten werden mehrfach erfasst oder per Excel zwischen Systemen kopiert.',
       'Wichtige Abläufe hängen an einzelnen Personen.',
       'Die Tools sind vorhanden, werden aber kaum oder unterschiedlich genutzt.',
-      'Es ist unklar, wo KI im eigenen Unternehmen tatsächlich hilft.',
+      'Die Lizenzkosten steigen, und niemand weiss genau, welche Tools noch gebraucht werden.',
     ],
     outcomes: [
-      'Weniger manuelle Arbeit in wiederkehrenden Abläufen',
-      'Weniger Übertragungsfehler und eine höhere Datenqualität',
+      'Weniger Tools, die zusammenarbeiten, und Lizenzkosten, die Sie kennen',
+      'Daten, die nur einmal erfasst werden, und weniger Übertragungsfehler',
       'Schnellere Bearbeitung von Anfragen und Aufgaben',
       'Ein dokumentierter Ablauf, den Ihr Team versteht und weiterführen kann',
     ],
-    tools: ['workflow-opportunity-scanner', 'process-automation-assessment', 'ai-readiness-assessment', 'ai-use-case-discovery'],
-    resources: ['ai-automation-b2b-sales', 'swiss-dsg-tracking-compliance'],
+    tools: ['martech-stack-inventory', 'process-automation-assessment', 'crm-data-quality-check', 'marketing-automation-maturity-assessment'],
+    resources: ['martech-stack-inventur', 'martech-welches-crm', 'martech-daten-nur-einmal-erfassen', 'swiss-dsg-tracking-compliance'],
     solutions: ['/loesungen/prozessautomatisierung'],
     faq: [
       { q: 'Müssen wir neue Software kaufen?', a: 'Meist nicht. Wir prüfen zuerst, was Ihre bestehenden Tools können und welche Abläufe sich damit verbinden lassen. Neue Software empfehlen wir nur, wenn sie eine konkrete Lücke schliesst.' },
       { q: 'Wo fängt man mit Automatisierung am besten an?', a: 'Bei Abläufen, die häufig vorkommen, klar geregelt sind und heute viel Handarbeit verursachen, zum Beispiel die Übernahme von Anfragen ins CRM oder wiederkehrende Berichte. Automatisierung repariert allerdings keinen unklaren Ablauf: Der Prozess muss zuerst sauber definiert sein.' },
-      { q: 'Wie setzen KMU KI sinnvoll ein?', a: 'Schrittweise und entlang konkreter Anwendungsfälle. Ziel ist selten die vollautomatische Lösung, sondern eine Kombination aus der Erfahrung Ihres Teams und KI, die Vorarbeit leistet. Voraussetzung sind brauchbare Daten und klare Abläufe.' },
+      { q: 'Was ist ein MarTech-Stack?', a: 'Alle Programme, mit denen ein Unternehmen Kunden gewinnt und betreut: CRM, Website und Formulare, E-Mail-Versand, Werbekonten, Tracking und Reporting. Entscheidend ist weniger, welche Tools es sind, als ob sie zusammenarbeiten.' },
+      { q: 'Empfehlen Sie bestimmte Anbieter?', a: 'Nein, wir sind an kein Tool gebunden. Wir empfehlen, was zu Ihren Abläufen und Ihrem Budget passt, auch wenn das bedeutet, ein Tool abzuschaffen statt ein neues einzuführen.' },
       { q: 'Wie gehen Sie mit Datenschutz um?', a: 'Wir klären vor der Umsetzung, welche Personendaten wohin fliessen, wählen Anbieter mit passenden Datenschutzbedingungen und dokumentieren die Datenflüsse, damit Sie Ihre Pflichten nach dem Schweizer DSG erfüllen können.' },
     ],
   },
@@ -135,24 +199,26 @@ export const SERVICE_AREAS: ServiceArea[] = [
     pillar: 'growth',
     label: 'Growth & Marketing',
     shortLabel: 'Wachstum & Marketing',
-    headline: 'Mehr passende Anfragen aus Werbung, SEO und Website.',
+    headline: 'Mehr passende Anfragen, gemessen bis zum Auftrag.',
     definition:
-      'Wir sorgen dafür, dass Ihr Unternehmen planbar mehr Anfragen erhält: mit Kampagnen auf Google, Meta und LinkedIn, mit Suchmaschinenoptimierung und Landingpages. Gemessen wird an Anfragen und Umsatz, nicht an Klicks, und jede Massnahme verbessern wir laufend anhand der Zahlen.',
-    teaser: 'Kampagnen, SEO, Landingpages und Conversion-Optimierung, ausgerichtet auf Anfragen und Umsatz.',
+      'Wir sorgen dafür, dass Ihr Unternehmen planbar mehr passende Anfragen erhält, und messen jede Massnahme bis zur Anfrage und zum Auftrag. Landingpages, Suchmaschinenoptimierung und Kampagnen auf Google, Meta und LinkedIn sind dabei Werkzeuge, kein Selbstzweck. Was wirkt, bauen wir aus, was nicht wirkt, stoppen wir.',
+    teaser: 'Landingpages, SEO, Conversion und Kampagnen, ausgerichtet auf Anfragen und Aufträge statt auf Klicks.',
     ctaLabel: 'Wachstumspotenzial prüfen',
     seoTitle: 'Performance Marketing, SEO & Conversion für KMU | performanceboost',
     seoDescription:
       'Kampagnen auf Google, Meta und LinkedIn, SEO, Landingpages und Conversion-Optimierung, abgestimmt auf Ihre Umsatzziele statt auf Klicks.',
     services: ['demand-generation', 'lead-generation', 'ecommerce-performance', 'dtc-growth-acquisition', 'paid-social-ecommerce', 'customer-retention'],
     serviceGroups: [
-      { label: 'B2B und Dienstleistung', services: ['demand-generation', 'lead-generation'] },
-      { label: 'E-Commerce und Online-Marken', services: ['ecommerce-performance', 'dtc-growth-acquisition', 'paid-social-ecommerce', 'customer-retention'] },
+      { label: 'B2B und Dienstleistung', services: ['lead-generation', 'demand-generation'] },
+      { label: 'Für Onlineshops', services: ['ecommerce-performance', 'dtc-growth-acquisition', 'paid-social-ecommerce', 'customer-retention'] },
     ],
+    // Werbung und Onlineshops sind Werkzeuge, nicht das Produkt: im Menü und auf der Startseite nur Lead-Generierung.
+    menuServices: ['lead-generation'],
     topics: [
-      { title: 'Performance Marketing', desc: 'Google Ads, Meta Ads und LinkedIn Ads, gesteuert nach Kosten pro Anfrage und Abschluss.' },
-      { title: 'Suchmaschinenoptimierung und GEO', desc: 'Inhalte und Technik so aufbereiten, dass Suchmaschinen und KI-Assistenten Ihr Angebot verstehen und empfehlen können.' },
-      { title: 'Conversion-Optimierung', desc: 'Wir finden heraus, warum Besucher nicht anfragen, formulieren überprüfbare Hypothesen und testen Verbesserungen.' },
       { title: 'Landingpages', desc: 'Seiten, die in wenigen Sekunden erklären, was Sie anbieten und für wen, und den Weg zur Anfrage einfach machen.' },
+      { title: 'Conversion-Optimierung', desc: 'Wir finden heraus, warum Besucher nicht anfragen, formulieren überprüfbare Hypothesen und testen Verbesserungen.' },
+      { title: 'Suchmaschinenoptimierung und GEO', desc: 'Inhalte und Technik so aufbereiten, dass Suchmaschinen und KI-Assistenten Ihr Angebot verstehen und empfehlen können.' },
+      { title: 'Performance Marketing', desc: 'Google Ads, Meta Ads und LinkedIn Ads, gesteuert nach Kosten pro Anfrage und Abschluss.' },
     ],
     challenges: [
       'Das Werbebudget steigt, die Zahl passender Anfragen nicht.',
@@ -246,10 +312,12 @@ const CROSS_LINKS: Record<string, string[]> = {
   'growth-strategy': ['data-analytics', 'revenue-operations', 'demand-generation'],
   'demand-generation': ['lead-generation', 'data-analytics', 'marketing-automation'],
   'lead-generation': ['demand-generation', 'marketing-automation', 'growth-strategy'],
-  'marketing-automation': ['revenue-operations', 'ai-automation', 'sales-enablement'],
-  'sales-enablement': ['revenue-operations', 'marketing-automation', 'ai-automation'],
+  'marketing-automation': ['martech-stack', 'revenue-operations', 'ki-agenten'],
+  'sales-enablement': ['revenue-operations', 'marketing-automation', 'ki-agenten'],
   'revenue-operations': ['marketing-automation', 'data-analytics', 'sales-enablement'],
-  'ai-automation': ['marketing-automation', 'data-analytics', 'sales-enablement'],
+  'ai-automation': ['ki-agenten', 'martech-stack', 'marketing-automation'],
+  'ki-agenten': ['ai-automation', 'marketing-automation', 'martech-stack'],
+  'martech-stack': ['marketing-automation', 'data-analytics', 'ki-agenten'],
   'data-analytics': ['revenue-operations', 'growth-strategy', 'demand-generation'],
   'ecommerce-performance': ['paid-social-ecommerce', 'customer-retention', 'data-analytics'],
   'dtc-growth-acquisition': ['paid-social-ecommerce', 'ecommerce-performance', 'customer-retention'],
@@ -263,6 +331,13 @@ export function relatedServices(serviceSlug: string, limit = 3) {
     .map((slug) => SERVICES.find((s) => s.slug === slug))
     .filter((s): s is (typeof SERVICES)[number] => Boolean(s))
     .slice(0, limit);
+}
+
+/** Leistungen für Mega-Menü und Startseite (ohne Werbe- und Shop-Seiten, siehe `menuServices`). */
+export function menuServicesOf(area: ServiceArea) {
+  return (area.menuServices ?? area.services)
+    .map((slug) => SERVICES.find((s) => s.slug === slug))
+    .filter((s): s is (typeof SERVICES)[number] => Boolean(s));
 }
 
 export function servicesOf(area: ServiceArea) {
@@ -284,17 +359,17 @@ export const PILLARS: { id: Pillar; label: string; title: string; desc: string; 
   {
     id: 'technology',
     label: 'Technology',
-    title: 'Systeme, die zusammenarbeiten',
-    desc: 'Wir verbinden Ihre Tools, automatisieren Routinearbeit und setzen KI dort ein, wo sie hilft.',
-    points: ['Prozessautomatisierung und Integration', 'CRM und Marketing Automation', 'Tracking, Daten und Reporting'],
-    href: '/leistungen/technologie-automation',
+    title: 'Systeme und KI, die mitarbeiten',
+    desc: 'Wir bauen Systeme und KI-Agenten, die Abläufe übernehmen, und befähigen Ihr Team, sicher damit zu arbeiten.',
+    points: ['KI-Einführung, Schulung und Regeln', 'KI-Agenten und Prozessautomatisierung', 'MarTech-Stack, CRM und Tracking'],
+    href: '/leistungen/ki-im-unternehmen',
   },
   {
     id: 'growth',
     label: 'Growth',
     title: 'Nachfrage, die zu Aufträgen wird',
     desc: 'Wir gewinnen passende Interessenten und sorgen dafür, dass der Vertrieb sie in Aufträge verwandelt.',
-    points: ['Performance Marketing und SEO', 'Landingpages und Conversion', 'Lead-Management und Vertrieb'],
+    points: ['Landingpages und Conversion', 'Lead-Management und Vertrieb', 'SEO und Kampagnen'],
     href: '/leistungen/wachstum-marketing',
   },
 ];
