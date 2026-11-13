@@ -96,7 +96,7 @@ export const BENEFITS: TextCard[] = [
   },
   {
     title: 'Ihre Beraterinnen und Berater sprechen mit den richtigen Personen.',
-    desc: 'Die Anfrageseite fragt vorab ab, worum es geht und wie dringend es ist. Sie entscheiden, wer einen Termin erhält.',
+    desc: 'Die Anfrageseite fragt vorab ab, worum es geht und wie dringend es ist. Jede Anfrage kommt mit einer kurzen Zusammenfassung in Ihrem CRM an. Wer einen Termin erhält, entscheiden Sie.',
   },
   {
     title: 'Sie entscheiden auf Basis von Zahlen, die Sie prüfen können.',
@@ -111,8 +111,8 @@ export const BENEFITS: TextCard[] = [
 export const BUILDING_BLOCKS: { title: string; desc: string; points: string[] }[] = [
   {
     title: 'Anfrageseite',
-    desc: 'Eine Seite pro Beratungsthema, die erklärt, vorqualifiziert und direkt zur Terminwahl führt.',
-    points: ['Landingpage auf Ihrer Domain', 'Formular mit wenigen Fragen zum Anliegen', 'Online-Terminbuchung'],
+    desc: 'Eine Seite pro Beratungsthema, die erklärt, vorqualifiziert und direkt zur Terminwahl führt. Jede Anfrage läuft automatisch mit Anliegen und Quelle in Ihr CRM.',
+    points: ['Landingpage auf Ihrer Domain', 'Formular mit wenigen Fragen zum Anliegen', 'Online-Terminbuchung', 'Automatische Übergabe ins CRM'],
   },
   {
     title: 'Kampagnen',
@@ -126,8 +126,14 @@ export const BUILDING_BLOCKS: { title: string; desc: string; points: string[] }[
   },
   {
     title: 'Nachfassen',
-    desc: 'Damit keine Anfrage liegen bleibt.',
-    points: ['Sofortige Benachrichtigung', 'Bestätigung an Ihre Interessenten', 'Erinnerungen vor dem Termin', 'Anbindung an Ihr CRM'],
+    desc: 'Damit keine Anfrage liegen bleibt und Sie vorbereitet ins Erstgespräch gehen. KI fasst Anfragen zusammen und bereitet Entwürfe vor. Was hinausgeht, geben Sie frei.',
+    points: [
+      'Sofortige Benachrichtigung mit Zusammenfassung der Anfrage',
+      'Bestätigung an Ihre Interessenten mit einem Text, den Sie einmal freigeben',
+      'Kurze Recherche vor dem Erstgespräch',
+      'Nachfass-Entwürfe, die Sie vor dem Versand prüfen',
+      'Erinnerungen vor dem Termin',
+    ],
   },
 ];
 
@@ -215,7 +221,7 @@ export const PROCESS_STEPS: TextCard[] = [
   },
   {
     title: 'Pilot mit festem Zeitraum',
-    desc: 'Wir bauen auf, was vereinbart ist, und starten die Kampagnen. Vorher legen wir schriftlich fest, woran wir den Pilot messen und wann er endet, wenn das Ziel verfehlt wird.',
+    desc: 'Wir bauen Anfrageweg, Übergabe ins CRM und Kampagnen so auf, wie vereinbart, und starten. Vorher legen wir schriftlich fest, woran wir den Pilot messen und wann er endet, wenn das Ziel verfehlt wird.',
   },
   {
     title: 'Gemeinsame Auswertung',
@@ -275,14 +281,15 @@ export const DONT_DO = [
   'Werbung ist als Werbung erkennbar.',
   'Keine Gesundheitsfragen in Anfrageformularen, keine Vermögens- oder Gesundheitsangaben an Werbeplattformen.',
   'Keine gekauften Adresslisten und keine automatisierten Massenmails.',
+  'Keine KI, die Ihre Interessenten berät oder ihnen selbständig schreibt. Sie fasst intern zusammen und bereitet vor. Die Beratung und jede Freigabe bleiben bei Ihnen.',
   'Keine Rechtsberatung: Die Freigabe von Werbetexten liegt bei Ihnen oder Ihrer Compliance-Stelle.',
 ];
 
 export const DATA_LOCATION =
-  'Wir sagen Ihnen pro Projekt schriftlich, welche Systeme wir einsetzen und wo sie betrieben werden: Website, Formular, Automatisierung, CRM und Werbeplattformen. Auf Wunsch wählen wir Anbieter mit Standort Schweiz oder EU, soweit verfügbar.';
+  'Wir sagen Ihnen pro Projekt schriftlich, welche Systeme wir einsetzen und wo sie betrieben werden: Website, Formular, Automatisierung, Sprachmodelle, CRM und Werbeplattformen. Ob und welche Angaben aus Anfragen ein Sprachmodell verarbeiten darf, legen wir mit Ihnen fest. Auf Wunsch wählen wir Anbieter mit Standort Schweiz oder EU, soweit verfügbar.';
 
 export const CONTACT_PERSON_TEXT =
-  'Sie sprechen direkt mit mir, nicht mit einem Account Manager. Ich habe für Beratungsfirmen aus Hypothek, Vorsorge und Versicherung Anfrageseiten, Kampagnen und Messkonzepte aufgebaut, auch auf Italienisch für das Tessin. Mir ist wichtig, dass Sie am Ende wissen, was funktioniert, und nicht nur, was wir gemacht haben.';
+  'Sie sprechen direkt mit mir, nicht mit einem Account Manager. Ich habe für Beratungsfirmen aus Hypothek, Vorsorge und Versicherung Anfrageseiten, Kampagnen und Messkonzepte aufgebaut, auch auf Italienisch für das Tessin. Im eigenen Betrieb laufen Anfragen automatisch geprüft ins System, und vor Erstgesprächen recherchiert ein Agent für mich. Was hinausgeht, gebe ich selbst frei. Mir ist wichtig, dass Sie am Ende wissen, was funktioniert, und nicht nur, was wir gemacht haben.';
 
 export const FIT = {
   good: 'Beratungsfirmen in der Schweiz mit 1 bis 50 Mitarbeitenden, Schwerpunkt Hypothek, Vorsorge, Finanzplanung oder Versicherung, mit eigener Website und dem Ziel, mehr neue Mandate zu gewinnen.',
@@ -333,6 +340,10 @@ const FAQ = {
     q: 'Brauche ich einen Cookie-Banner auf meiner Website?',
     a: 'Wenn Sie Werbe- und Analysewerkzeuge einsetzen, informieren Sie Ihre Besucher darüber und geben ihnen die Möglichkeit, abzulehnen. Bei Werbe-Tracking über mehrere Websites empfehlen wir eine ausdrückliche Einwilligung. Wir richten das als Teil der Messung ein.',
   },
+  ki: {
+    q: 'Setzen Sie KI ein, und spricht sie mit meinen Interessenten?',
+    a: 'KI arbeitet bei uns im Hintergrund, nie im Kundenkontakt. Feste Regeln übernehmen die Übergabe ins CRM, die Bestätigung und die Erinnerungen. Ein Sprachmodell fasst Anfragen zusammen, ordnet sie Ihrem Beratungsthema zu und stellt vor dem Erstgespräch eine kurze Recherche bereit. Es berät niemanden und schreibt Ihren Interessenten nicht selbständig. Nachfass-Entwürfe gehen erst hinaus, wenn Sie oder Ihr Team sie freigegeben haben.',
+  },
   agentur: {
     q: 'Wir haben schon eine Agentur oder einen Webdesigner. Geht das trotzdem?',
     a: 'Ja. Oft beginnen wir mit der Messung und arbeiten mit Ihrer bestehenden Website. Wir stimmen uns mit Ihrem Webdesigner oder Ihrer IT ab, damit niemand doppelt arbeitet.',
@@ -376,6 +387,7 @@ export const FINANCE_PAGES: Record<FinanceSlug, FinancePage> = {
       FAQ.daten,
       FAQ.regulierung,
       FAQ.cookies,
+      FAQ.ki,
       FAQ.agentur,
       FAQ.budget,
       FAQ.start,
@@ -409,7 +421,7 @@ export const FINANCE_PAGES: Record<FinanceSlug, FinancePage> = {
         'Tragbarkeit nach Pensionierung oder Selbständigkeit',
       ],
       build:
-        'Anfrageseite «Eigenheim-Check» mit wenigen Fragen (Vorhaben, Zeitpunkt, Objekt gefunden ja/nein); Kampagnen auf Suchbegriffe rund um Kauf und Verlängerung; Messung bis zum Termin.',
+        'Anfrageseite «Eigenheim-Check» mit wenigen Fragen (Vorhaben, Zeitpunkt, Objekt gefunden ja/nein); Kampagnen auf Suchbegriffe rund um Kauf und Verlängerung; Anfragen landen nach Anlass sortiert und zusammengefasst im CRM; Messung bis zum Termin.',
       avoid: ['Mit dem «tiefsten Zins» werben. Beratung, Tragbarkeit und Begleitung stehen im Vordergrund.'],
     },
     references: ['mission13', 'cuira'],
@@ -446,7 +458,7 @@ export const FINANCE_PAGES: Record<FinanceSlug, FinancePage> = {
       heading: 'Was wir für Vorsorgeberatungen aufbauen',
       occasions: ['Pensionierung in 5–10 Jahren', 'Entscheid Kapital oder Rente', 'Säule 3a und Steuern'],
       build:
-        '«Pensionscheck» mit wenigen Fragen vor der Terminbuchung; Rechner nur mit amtlichen Parametern und sichtbaren Annahmen; Hinweis «ersetzt keine Beratung».',
+        '«Pensionscheck» mit wenigen Fragen vor der Terminbuchung; Rechner nur mit amtlichen Parametern und sichtbaren Annahmen; Hinweis «ersetzt keine Beratung». Die Antworten aus dem Pensionscheck werden für Sie zusammengefasst, beraten wird erst im Gespräch.',
       avoid: ['Steuer- oder Renditezahlen ohne Beispielrechnung und Annahmen.', 'Gesundheitsfragen im Formular.'],
     },
     references: ['cuira', 'ostschweiz'],
@@ -488,7 +500,7 @@ export const FINANCE_PAGES: Record<FinanceSlug, FinancePage> = {
         'Umzug in die Region',
       ],
       build:
-        'Anfrageseiten pro Sparte, auf Wunsch mehrsprachig; Online-Terminbuchung; Kampagnen im Einzugsgebiet; bei Generalagenturen eine Messung, die die Vorgaben Ihres Versicherers einhält.',
+        'Anfrageseiten pro Sparte, auf Wunsch mehrsprachig; Online-Terminbuchung; Anfragen werden der Sparte zugeordnet und an die zuständige Person weitergeleitet; Kampagnen im Einzugsgebiet; bei Generalagenturen eine Messung, die die Vorgaben Ihres Versicherers einhält.',
       avoid: [
         'Telefonische Kaltakquise für Krankenzusatzversicherungen (seit 1.9.2024 durch eine allgemeinverbindliche Branchenvereinbarung eingeschränkt).',
         'Die Bezeichnung «unabhängig» für gebundene Vermittler.',

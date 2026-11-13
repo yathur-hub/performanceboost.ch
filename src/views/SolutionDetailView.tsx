@@ -104,7 +104,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             Typische Hürden in der Branche {sector.title}
           </h2>
           <p className="text-xs text-slate-500 font-semibold max-w-sm mx-auto">
-            Woran die Neukundengewinnung in dieser Branche oft scheitert.
+            Wo in dieser Branche heute Zeit und Aufträge verloren gehen.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <div className="text-center space-y-2">
             <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir für Sie aufbauen</h2>
             <p className="text-body-sm text-slate-300 font-medium max-w-md mx-auto">
-              In drei Schritten, abgestimmt auf Ihre Branche und Ihren Markt in der Schweiz.
+              Drei Bausteine von der Anfrage bis zum Auftrag. Bei jedem ist festgelegt, was automatisch läuft und wo Ihr Team entscheidet.
             </p>
           </div>
 

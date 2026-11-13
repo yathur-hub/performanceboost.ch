@@ -45,7 +45,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
     {
       icon: Cpu,
       title: 'Technik, die mitarbeitet',
-      desc: 'CRM, Tracking, Automatisierung und KI-Werkzeuge setzen wir dort ein, wo sie Ihnen Arbeit abnehmen, nicht um ihrer selbst willen.'
+      desc: 'Wir planen Abläufe so, dass Automatisierung und KI von Anfang an Teil davon sind. Eingesetzt wird, was Ihnen verlässlich Arbeit abnimmt, oft eine einfache Regel und wo es sich lohnt ein Agent.'
     }
   ];
 
@@ -87,7 +87,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             Viele KMU investieren in Werbung, eine neue Website, ein CRM oder KI-Tools, aber die Teile arbeiten nicht zusammen. Die Agentur optimiert Klicks, das CRM bildet den Verkauf nicht ab, Daten werden von Hand übertragen und Anfragen zu spät beantwortet. Am Ende weiss niemand, was die Investitionen tatsächlich gebracht haben.
           </p>
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
-            Deshalb schaut performanceboost auf die ganze Kette: Strategie, Systeme, Abläufe, Marketing, Vertrieb und Messung. Erst wenn das zusammen funktioniert, lohnt es sich, mehr Budget oder neue Tools einzusetzen.
+            Deshalb schaut performanceboost auf die ganze Kette: Strategie, Systeme, Abläufe, Marketing, Vertrieb und Messung. Erst wenn das zusammen funktioniert, lohnt es sich, mehr Budget, neue Tools oder KI-Agenten einzusetzen.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
-              Ich bin Marketer und baue die Technik dahinter selbst. Angefangen habe ich im Performance Marketing, mit Search, Shopping, Performance Max, Video und Social Ads. Heute arbeite ich vor allem dort, wo Marketing auf Technologie trifft, also an CRM-Datenmodellen, Tracking im Browser und auf dem Server, Integrationen über APIs und Workflows, Webentwicklung und KI-Agenten, die ganze Abläufe übernehmen.
+              Ich bin Marketer und baue die Technik dahinter selbst. Angefangen habe ich im Performance Marketing, mit Search, Shopping, Performance Max, Video und Social Ads. Heute arbeite ich vor allem dort, wo Marketing auf Technologie trifft, also an CRM-Datenmodellen, Tracking im Browser und auf dem Server, Integrationen über APIs und Workflows, Webentwicklung und KI-Agenten, die mit klaren Rechten Schritte in Abläufen übernehmen.
             </p>
             <p>
               In vielen Unternehmen sind diese Aufgaben auf mehrere Dienstleister verteilt, und an den Übergaben geht Wissen verloren. Bei mir liegen sie bei einer Person, und ich setze sie selbst um. Was ich empfehle, habe ich meistens zuerst selbst gebaut und betrieben, vom eigenen ERP bis zum Lead-Eingang ohne Abtippen. Gemessen wird die Arbeit an Anfragen, Aufträgen und eingesparten Stunden. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.

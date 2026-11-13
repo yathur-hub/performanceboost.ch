@@ -28,7 +28,7 @@ const ORGANIZATION = {
   image: SITE.portraitUrl,
   slogan: 'Boost your performance through agentic marketing, sales & processes.',
   description:
-    'Business Performance Partner für Schweizer KMU. Wir verbessern Marketing, Sales und Geschäftsprozesse als ein System: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten mit klaren Freigaben.',
+    'Business Performance Partner für Schweizer KMU. Wir konzipieren, bauen und optimieren Marketing, Sales und Geschäftsprozesse als ein System, in dem KI von Anfang an Teil der Architektur ist: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten mit klaren Freigaben.',
   knowsAbout: [
     'Wachstumsstrategie',
     'Digitalstrategie',
@@ -113,7 +113,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'home': {
       const title = 'performanceboost: Agentic Marketing, Sales & Processes für Schweizer KMU';
       const description =
-        'Wir verbinden Marketing, Vertrieb und Abläufe von Schweizer KMU, damit passende Anfragen schneller zu Aufträgen werden. KI-Agenten übernehmen Teilaufgaben, Ihr Team gibt frei.';
+        'Marketing, Vertrieb und Abläufe für Schweizer KMU als ein System, mit Automatisierung und KI-Agenten von Anfang an mitgedacht. Ihr Team gibt frei und entscheidet.';
       return {
         ...base,
         title,
@@ -392,7 +392,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'ansatz': {
       const title = 'Unser Ansatz: von der Analyse zur laufenden Optimierung | performanceboost';
       const description =
-        'Architecture & Setup, Roll-out & Hypercare, Enablement und Iteration: so verbessern wir Marketing, Vertrieb und Prozesse. Einstieg dort, wo Ihr Unternehmen heute steht.';
+        'Architecture & Setup, Roll-out & Hypercare, Enablement und Iteration: so bauen wir Marketing, Vertrieb und Prozesse mit Automatisierung und KI-Agenten. Einstieg dort, wo Sie stehen.';
       return {
         ...base,
         title,

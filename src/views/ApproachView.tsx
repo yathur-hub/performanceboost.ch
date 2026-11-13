@@ -19,7 +19,11 @@ const FAQ = [
   },
   {
     q: 'Was bedeutet Hypercare?',
-    a: 'Die ersten Wochen nach dem Start einer neuen Lösung. In dieser Zeit beobachten wir Abläufe, Daten und Fehlermeldungen besonders eng, beheben Probleme schnell und passen an, was sich im Alltag anders zeigt als im Test.',
+    a: 'Die ersten Wochen nach dem Start einer neuen Lösung. In dieser Zeit beobachten wir Abläufe, Daten und Fehlermeldungen besonders eng, prüfen bei Agenten Stichproben der Ergebnisse, beheben Probleme schnell und passen an, was sich im Alltag anders zeigt als im Test.',
+  },
+  {
+    q: 'Wie prüfen Sie einen KI-Agenten, bevor er in Betrieb geht?',
+    a: 'Mit echten Fällen aus Ihrem Alltag, deren richtiges Ergebnis bekannt ist. Wir messen, wie oft der Agent richtig liegt, was ein Fall kostet und welche Fälle er an einen Menschen weitergibt. Erst wenn das Ergebnis zu den vereinbarten Kriterien passt, geht er live, zuerst mit Freigabe jedes Schritts.',
   },
   {
     q: 'Wie lange dauert ein Vorhaben?',
@@ -44,9 +48,9 @@ export default function ApproachView() {
                 Vier Phasen, die sich nach Ihrer Ausgangslage richten.
               </h1>
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
-                Wir verbessern Agentic Marketing, Sales und Processes nach einem klaren Vorgehen: Zielbild festlegen, umsetzen und stabil in Betrieb
-                nehmen, Ihr Team befähigen und laufend optimieren. Nicht jedes Vorhaben braucht alle vier Phasen. Wir steigen dort ein, wo
-                Ihr Unternehmen heute steht.
+                Wir planen Marketing, Vertrieb und Abläufe so, als wären Automatisierung und KI-Agenten von Anfang an Teil der Architektur.
+                Wir legen Zielbild und Architektur fest, setzen um und prüfen mit echten Fällen, befähigen Ihr Team und verbessern
+                laufend. Nicht jedes Vorhaben braucht alle vier Phasen. Wir steigen dort ein, wo Ihr Unternehmen heute steht.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <CtaButton label="Mit einer Performance-Analyse starten" location="ansatz_hero" pageSlug="ansatz" />
@@ -107,7 +111,7 @@ export default function ApproachView() {
         <Container className="space-y-8">
           <SectionHeading
             title="Damit es nach dem Start hält"
-            intro="Bei den meisten Lösungen zeigen sich die Schwierigkeiten erst im Betrieb. Deshalb klären wir in Roll-out & Hypercare und im Enablement vor dem Start, welche Aufgaben danach anfallen und wer sie mit Namen übernimmt."
+            intro="Bei Workflows und Agenten zeigen sich die Schwierigkeiten meist erst im Betrieb. Deshalb klären wir in Roll-out & Hypercare und im Enablement vor dem Start, wer Protokolle prüft, wer einen Agenten abstellen kann, wer bei Fehlern entscheidet und wer diese Aufgaben mit Namen übernimmt."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10 max-w-4xl">
             <BrandVisual
@@ -168,7 +172,7 @@ export default function ApproachView() {
         <Container className="space-y-8">
           <SectionHeading
             title="Dasselbe Vorgehen in jedem Bereich"
-            intro="Die Phasen bleiben gleich, ob es um Kampagnen, ein CRM oder einen KI-Agenten geht. Was in ihnen passiert, unterscheidet sich."
+            intro="Die Phasen bleiben gleich, ob es um Kampagnen, ein CRM oder einen Ablauf mit KI-Agenten geht. Welche Daten, Regeln und Freigaben es braucht, unterscheidet sich."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {AREAS.map((a) => (

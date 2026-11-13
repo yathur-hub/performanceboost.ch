@@ -35,11 +35,15 @@ const DIFFERENCES = [
 const FAQ = [
   {
     q: 'Was heisst «agentic marketing, sales & processes»?',
-    a: 'Marketing, Vertrieb und die Abläufe dahinter arbeiten als ein System statt als drei getrennte Bereiche. Dort, wo es verlässlich funktioniert, übernehmen KI-Agenten Teilaufgaben, zum Beispiel recherchieren, vorqualifizieren oder Entwürfe vorbereiten. Ihr Team gibt frei und entscheidet.',
+    a: 'Wir gestalten Marketing, Vertrieb und die Abläufe dahinter als ein System und planen Automatisierung und KI von Anfang an mit. Feste Regeln übernehmen, was immer gleich abläuft. KI-Agenten bearbeiten Aufgaben über mehrere Schritte, etwa recherchieren, vorqualifizieren oder Entwürfe vorbereiten, mit klar begrenzten Rechten. Ihr Team gibt frei und entscheidet.',
   },
   {
     q: 'Sind Sie eine KI-Agentur?',
-    a: 'Nein. Wir verbessern Marketing, Vertrieb und Geschäftsprozesse und messen die Arbeit an Ihren Geschäftszahlen. KI und Automatisierung setzen wir ein, wenn sie dafür das beste Mittel sind. Oft reicht eine einfache Regel.',
+    a: 'Nein. Wir konzipieren, bauen und verbessern Systeme für Marketing, Vertrieb und Prozesse, in denen KI von Anfang an Teil der Architektur ist. Gemessen wird an Ihren Geschäftszahlen, nicht an der Zahl der Agenten. Wo eine einfache Regel verlässlicher ist, empfehlen wir die Regel.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen Automatisierung und einem KI-Agenten?',
+    a: 'Eine Automatisierung folgt festen Regeln und läuft immer gleich ab, zum Beispiel wenn eine Anfrage ins CRM übernommen wird. Ein KI-Agent bearbeitet eine Aufgabe über mehrere Schritte und wählt innerhalb eines festen Rahmens selbst den nächsten Schritt, zum Beispiel wenn er ein Unternehmen recherchiert und eine Gesprächsvorbereitung schreibt. In der Praxis werden beide kombiniert.',
   },
   {
     q: 'Für welche Unternehmen eignet sich performanceboost?',
@@ -74,8 +78,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>
               </h1>
               <p className="text-slate-600 lg:text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl">
-                Wir verbinden Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter zu einem System. KI-Agenten übernehmen dabei klar
-                umrissene Aufgaben, die Entscheidungen bleiben bei Ihrem Team.
+                Wir gestalten Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter als ein System, in dem Automatisierung und KI-Agenten
+                von Anfang an mitgedacht sind. Agenten übernehmen klar umrissene Aufgaben, die Entscheidungen bleiben bei Ihrem Team.
               </p>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 justify-start items-stretch sm:items-center lg:pt-1">
                 <CtaButton label="Ausgangslage besprechen" location="home_hero" pageSlug="home" />
@@ -138,7 +142,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               />
               <p className="text-body-sm text-slate-500 leading-relaxed max-w-2xl">
                 Sichtbar wird oft nur das Symptom: zu wenige Anfragen, liegengebliebene Offerten, Zahlen, die nicht stimmen. Die Ursachen
-                liegen meist tiefer, in Abläufen, Unterlagen und Übergaben, die niemand verantwortet. Dort setzen wir an.
+                liegen meist tiefer, in Abläufen, Daten und Übergaben, die niemand verantwortet. Dort setzen wir an, denn erst wenn Ablauf und
+                Daten stimmen, lohnt es sich, Teile davon zu automatisieren oder einem Agenten zu übergeben.
               </p>
             </div>
             <div className="hidden lg:block lg:col-span-4">
@@ -170,7 +175,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
             <SectionHeading
               title="Drei Bereiche, ein System"
-              intro="Agentic Marketing gewinnt Nachfrage, Agentic Sales macht daraus Aufträge, und Agentic Processes verbinden beides. In allen drei Bereichen arbeiten KI-Agenten mit klar begrenzten Rechten mit. Wir verbessern die Bereiche gemeinsam, weil ein Engpass in einem auch die anderen bremst."
+              intro="Agentic Marketing gewinnt Nachfrage, Agentic Sales macht daraus Aufträge, und Agentic Processes verbinden beides. Alle drei teilen dieselbe Datenbasis, auf der Regeln, KI und Agenten mit klar begrenzten Rechten arbeiten. Wir verbessern die Bereiche gemeinsam, weil ein Engpass in einem auch die anderen bremst."
             />
             <Link href="/leistungen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
               Alle Leistungen ansehen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -224,7 +229,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <p className="text-body text-slate-700 leading-relaxed">
                 Marketing und Vertrieb hängen voneinander ab. Der Vertrieb kann nur abschliessen, was das Marketing an passenden Anfragen
                 bringt, und das Marketing wird nur besser, wenn es erfährt, welche Anfragen zu Aufträgen werden. Getragen wird beides von
-                Systemen, Daten und Abläufen.
+                Systemen, Daten und Abläufen. Auf genau dieser Grundlage arbeiten auch die Agenten.
               </p>
               <p className="text-body-sm text-slate-500 leading-relaxed">
                 Wenn ein Glied dieser Kette schwach ist, bringt mehr Werbebudget oder eine neue Software wenig. Deshalb schauen wir uns das
@@ -242,7 +247,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <SectionHeading
                 as="h3"
                 title="Agenten arbeiten, Ihr Team entscheidet"
-                intro="Nicht jede Aufgabe braucht KI. Wir wählen pro Ablauf die einfachste Lösung, die verlässlich funktioniert, und legen fest, wo ein Mensch freigibt."
+                intro="Nicht jede Aufgabe braucht KI. Wir legen pro Schritt fest, ob eine Regel, ein Modell oder ein Agent ihn übernimmt, welche Rechte er erhält und wo ein Mensch freigibt."
               />
               <Link href="/leistungen/ki-im-unternehmen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
                 Governance für KI-Agenten <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -272,7 +277,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <SectionHeading
               title="Wie wir vorgehen"
-              intro="Vier Phasen, die je nach Ausgangslage unterschiedlich gewichtet werden. Sie steigen dort ein, wo Ihr Unternehmen heute steht. Enablement und Optimierung wiederholen sich, solange wir zusammenarbeiten."
+              intro="Vier Phasen für Systeme mit Automatisierung und KI-Agenten, je nach Ausgangslage unterschiedlich gewichtet. Sie steigen dort ein, wo Ihr Unternehmen heute steht. Enablement und Optimierung wiederholen sich, solange wir zusammenarbeiten."
             />
             <Link href="/ansatz" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
               Mehr zum Ansatz <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -327,7 +332,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <p className="text-body text-slate-600 leading-relaxed">
                 performanceboost ist inhabergeführt und in Graubünden zu Hause. Yathur Nathan verbindet Marketing, Vertrieb, Daten,
                 Systemintegration und KI-Agenten, also Aufgaben, die sonst oft auf mehrere Dienstleister verteilt sind. Was wir Ihnen
-                empfehlen, betreiben wir im eigenen Unternehmen.
+                empfehlen, betreiben wir im eigenen Unternehmen, von automatisch geprüften Website-Anfragen bis zum Agenten, der
+                Erstgespräche vorbereitet.
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {DIFFERENCES.map((d) => (

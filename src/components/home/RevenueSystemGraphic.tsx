@@ -60,7 +60,7 @@ const NODES: Record<NodeId, NodeInfo> = {
     title: 'Agentic Processes',
     sub: 'Systeme · Daten · Automatisierung',
     what: 'Website, CRM, E-Mail, Offerte und Reporting sind verbunden. Daten werden nur einmal erfasst, Übergaben laufen automatisch, und alle arbeiten mit denselben Zahlen.',
-    agent: 'Daten nach festen Regeln übertragen, Ausnahmen prüfen, Berichte erstellen.',
+    agent: 'Daten nach festen Regeln übertragen, Dokumente lesen und einordnen, unklare Fälle vorbereiten und an eine Person geben.',
     human: 'Was nach aussen geht, Geld kostet oder Daten löscht, gibt ein Mensch frei.',
     href: '/leistungen/prozesse',
     linkText: 'Zu Agentic Processes',

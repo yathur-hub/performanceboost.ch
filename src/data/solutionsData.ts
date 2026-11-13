@@ -34,12 +34,17 @@ export interface RelatedLink {
   linkText: string;
 }
 
+/*
+ * Texte nach AI-First-Leitfaden (docs/agentic-positioning/08-ai-first-leitfaden.md):
+ * Anwendungsfälle sind Leistungen oder als «Ein Beispiel» gekennzeichnet, keine Kundenprojekte.
+ * Stufen korrekt benennen (feste Regel, KI-Vorschlag, Agent), Freigabe bei allem, was nach aussen geht.
+ */
 export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
   'finanzdienstleister': {
     slug: 'finanzdienstleister',
     title: 'Finanzdienstleister',
     subtitle: 'Mehr qualifizierte Erstgespräche für Hypotheken-, Vorsorge- und Versicherungsberatungen',
-    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz bauen wir Kampagnen, Landingpage und Terminweg für Ihren Beratungsanlass auf und messen bis zum vereinbarten Termin.',
+    heroDesc: 'Für Hypotheken-, Vorsorge- und Versicherungsberatungen in der Schweiz bauen wir den Weg vom Beratungsanlass bis zum Termin so auf, dass Ihr Team vor allem die Gespräche führt, die passen. Kampagnen und Vorqualifizierung führen zu einem vorbereiteten Gespräch, und jede Aussage nach aussen geben Sie bzw. Ihre Compliance frei.',
     calculatorComponent: 'BeratungsPipelineRechner',
     problems: [
       {
@@ -47,36 +52,36 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
         desc: 'Weiterempfehlungen bleiben wichtig, kommen aber unregelmässig und meist aus dem bestehenden Umfeld. Klassische Inserate lassen sich kaum messen.'
       },
       {
-        title: 'Online-Anfragen passen oft nicht',
-        desc: 'Ein Teil der Anfragen bringt nicht das Vermögen oder die Erwartungen mit, die zu Ihrem Angebot passen. Das kostet Beratungszeit.'
+        title: 'Die Einordnung passiert zu spät',
+        desc: 'Ob eine Anfrage zu Ihrem Angebot passt, zeigt sich oft erst im Erstgespräch. Bis dahin hat Ihr Team Zeit in Rückrufe und Terminabstimmung investiert.'
       },
       {
         title: 'Strenge Regeln für Werbung (FIDLEG)',
-        desc: 'Werbung für Finanzdienstleistungen muss als solche erkennbar sein und darf keine falschen Erwartungen wecken. Schon eine unbedachte Rendite- oder Garantieaussage in einer Anzeige kann zum Problem werden.'
+        desc: 'Werbung für Finanzdienstleistungen muss als solche erkennbar sein und darf keine falschen Erwartungen wecken. Schon eine unbedachte Rendite- oder Garantieaussage kann zum Problem werden, auch in einem Text, den ein Sprachmodell entworfen hat.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Klare Positionierung',
-        desc: 'Wir schärfen Ihre Spezialisierung, etwa Pensionierungsplanung oder Vermögen von Unternehmern, und formulieren ein verständliches Nutzenversprechen.'
+        title: 'Kampagnen zu Beratungsanlässen',
+        desc: 'Wir richten Kampagnen auf LinkedIn und Google an konkreten Anlässen aus, etwa Pensionierung oder auslaufende Festhypothek. Texte, Hinweise und Disclaimer stimmen wir mit Ihnen bzw. Ihrer Compliance ab, auch wenn ein Entwurf KI-unterstützt entstanden ist.'
       },
       {
         step: '02',
-        title: 'Anfrageprozess mit Vorqualifizierung',
-        desc: 'Interessenten beantworten vor dem Erstgespräch einige diskrete Fragen, zum Beispiel zu Anlagehorizont und Vermögensgrösse. So wissen Sie vorab, ob ein Gespräch passt.'
+        title: 'Vorqualifizierung mit klaren Regeln',
+        desc: 'Interessenten beantworten vor dem Erstgespräch einige diskrete Fragen, zum Beispiel zu Anlagehorizont und Vermögensgrösse. Feste Regeln ordnen die Anfrage ein und legen sie im CRM an. Wo eine Regel genügt, braucht es kein Sprachmodell.'
       },
       {
         step: '03',
-        title: 'Kampagnen auf LinkedIn und Google',
-        desc: 'Wir setzen sachliche Kampagnen zu konkreten Anlässen auf, etwa Pensionierung oder auslaufende Festhypothek. Texte, Hinweise und Disclaimer stimmen wir mit Ihnen bzw. Ihrer Compliance ab.'
+        title: 'Vorbereitete Erstgespräche',
+        desc: 'Ein Beispiel: Vor dem Termin fasst ein Agent die Angaben aus dem Formular und den bisherigen Kontakt zu einer kurzen Gesprächsnotiz zusammen. Die Beratung und jede Empfehlung bleiben bei Ihnen.'
       }
     ],
     benefits: [
       'Anfragen für Erstgespräche, die nicht nur über Empfehlungen kommen',
       'Weniger Beratungszeit für Interessenten, die nicht zu Ihnen passen',
-      'Anzeigentexte ohne Rendite- oder Garantieversprechen',
-      'Mehr Sichtbarkeit als Ansprechperson in Ihrer Region'
+      'Anzeigen und Entwürfe ohne Rendite- oder Garantieversprechen, freigegeben durch Sie bzw. Ihre Compliance',
+      'Erstgespräche, die mit den wichtigsten Angaben beginnen'
     ],
     faqs: [
       {
@@ -86,6 +91,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Wie gehen Sie mit FIDLEG und den Werbevorschriften um?',
         a: 'Wir prüfen Texte, Formulare und Disclaimer auf Werbekennzeichnung und Renditeaussagen und stimmen alles mit Ihnen ab. Die rechtliche Freigabe liegt bei Ihnen bzw. Ihrer Compliance-Stelle; eine Rechtsberatung ersetzen wir nicht.'
+      },
+      {
+        q: 'Wo setzen Sie in der Finanzberatung KI ein und wo nicht?',
+        a: 'Bei der Vorarbeit, etwa beim Vorbereiten von Gesprächsnotizen oder beim Entwerfen von Inhalten. Beratung und Produktempfehlungen bleiben bei Ihnen, und kein Text geht ohne Freigabe hinaus. Personendaten bearbeiten wir nach dem Schweizer Datenschutzgesetz (DSG), mit geregelten Zugriffsrechten und protokollierten Abläufen.'
       }
     ]
   },
@@ -93,7 +102,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'saas-software',
     title: 'SaaS & Software',
     subtitle: 'Mehr qualifizierte Demo-Anfragen für Schweizer Softwarefirmen',
-    heroDesc: 'Wir verbinden Kampagnen, Website und CRM. So sehen Sie, aus welchen Kanälen Ihre Abschlüsse tatsächlich stammen, und setzen das Marketingbudget dort ein, wo es Umsatz bringt.',
+    heroDesc: 'Für Schweizer Softwarefirmen verbinden wir Kampagnen, Website, Produktnutzung und CRM. So sehen Sie, aus welchen Kanälen Ihre Abschlüsse stammen, und Ihr Vertrieb weiss vor jeder Demo, was der Interessent im Produkt schon ausprobiert hat.',
     calculatorComponent: 'SaasRevenueLeckRechner',
     problems: [
       {
@@ -102,7 +111,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Hohe Kosten pro Neukunde',
-        desc: 'Neukunden zu gewinnen ist teuer. Das lohnt sich nur, wenn Kunden lange bleiben. Ohne gutes Onboarding kündigen sie früher als nötig.'
+        desc: 'Neukunden zu gewinnen ist teuer. Das lohnt sich nur, wenn Testnutzer tatsächlich einsteigen und Kunden bleiben. Die Signale dafür liegen im Produkt, erreichen den Vertrieb aber selten.'
       },
       {
         title: 'Lange Entscheidungswege',
@@ -113,23 +122,23 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Durchgehende Messung bis zum Abschluss',
-        desc: 'Wir verbinden Website-Tracking und CRM, damit Sie Anfragen, Verkaufschancen und Umsatz an einem Ort sehen.'
+        desc: 'Wir verbinden Website-Tracking, Produktnutzung und CRM, damit Sie Anfragen, Verkaufschancen und Umsatz an einem Ort sehen. Diese Daten sind die Grundlage für alles, was später automatisch läuft.'
       },
       {
         step: '02',
-        title: 'Unterlagen für alle Entscheider',
-        desc: 'Wir erstellen Material wie Nutzenrechnungen oder Sicherheitsübersichten, mit dem Ihr Ansprechpartner beim Kunden intern überzeugen kann.'
+        title: 'Vorbereitete Demos',
+        desc: 'Ein Beispiel: Vor einer Demo stellt ein Agent aus CRM, Website und Produktnutzung zusammen, wer teilnimmt, was die Firma macht und welche Funktionen schon getestet wurden. Ihr Vertrieb geht mit Kontext ins Gespräch.'
       },
       {
         step: '03',
-        title: 'Automatische Begleitung von Interessenten',
-        desc: 'Testnutzer und Demo-Anfragen erhalten passende E-Mails je nach ihrem Verhalten, damit mehr von ihnen das Produkt tatsächlich nutzen.'
+        title: 'Begleitung nach Verhalten',
+        desc: 'Testnutzer erhalten Nachrichten je nachdem, was sie im Produkt tun oder auslassen. Standardschritte laufen als feste Abläufe, persönliche Nachfassmails entwirft KI, und versendet werden sie nach Freigabe.'
       }
     ],
     benefits: [
       'Klare Sicht, welche Kanäle zu Abschlüssen führen',
       'Marketingbudget nach Umsatz statt nach Klicks steuern',
-      'Mehr Testnutzer, die das Produkt aktiv verwenden',
+      'Demos, die mit Kontext beginnen statt mit Grundfragen',
       'Marketing und Vertrieb arbeiten mit denselben Zahlen'
     ],
     faqs: [
@@ -140,6 +149,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Mit welchen CRM- und Analyse-Tools arbeiten Sie?',
         a: 'Unter anderem mit HubSpot, Salesforce, Pipedrive und Google Analytics 4. Wenn Sie andere Tools einsetzen, prüfen wir die Anbindung im Einzelfall.'
+      },
+      {
+        q: 'Kann ein Agent Testnutzer selbständig anschreiben?',
+        a: 'Technisch ja, wir empfehlen es aber nur in eng gefassten Fällen. Standardnachrichten laufen als fester Ablauf, der zuverlässig und günstig ist. Persönliche Nachrichten entwirft ein Agent, versendet werden sie nach Freigabe. Welche Daten er dafür lesen darf, legen wir mit Ihnen fest.'
       }
     ]
   },
@@ -147,7 +160,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'immobilien',
     title: 'Immobilien',
     subtitle: 'Passende Miet- und Kaufinteressenten für Ihre Immobilien',
-    heroDesc: 'Für Projektentwickler, Makler und Verwaltungen gewinnen wir Interessenten für Neubauprojekte, Gewerbeflächen und Bestandsobjekte. Dazu gehören eigene Projektseiten, regionale Kampagnen und eine Vorqualifizierung, die Ihrem Team unpassende Anfragen erspart.',
+    heroDesc: 'Für Projektentwickler, Makler und Verwaltungen gewinnen wir Miet- und Kaufinteressenten für Neubauprojekte, Gewerbeflächen und Bestandsobjekte. Projektseiten und regionale Kampagnen bringen die Anfragen. Vorqualifizierung und vorgeprüfte Dossiers entlasten Ihr Team bei der Bearbeitung.',
     calculatorComponent: 'LeerstandskostenRechner',
     problems: [
       {
@@ -159,32 +172,32 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
         desc: 'Viele fordern nur das Exposé an, ohne konkrete Absicht oder passende Finanzierung. Das bindet Zeit im Vertrieb.'
       },
       {
-        title: 'Aufwendige Besichtigungen',
-        desc: 'Termine werden von Hand abgestimmt, Interessenten sind unentschlossen und Bewerbungsunterlagen kommen unvollständig an.'
+        title: 'Aufwendige Besichtigungen und Dossiers',
+        desc: 'Termine werden von Hand abgestimmt, und Bewerbungsunterlagen kommen unvollständig an. Wer jedes fehlende Dokument einzeln nachfordert, verliert Zeit bei jedem Objekt.'
       }
     ],
     approach: [
       {
         step: '01',
-        title: 'Eigene Projektseiten',
-        desc: 'Wir erstellen Landingpages pro Projekt mit Grundrissen, Bildern, auf Wunsch virtuellem Rundgang und einfacher Kontakt- oder Reservationsmöglichkeit.'
+        title: 'Projektseiten und regionale Kampagnen',
+        desc: 'Wir erstellen Landingpages pro Projekt mit Grundrissen, Bildern und einfacher Kontakt- oder Reservationsmöglichkeit. Über Google Ads und Social Media erreichen wir Personen und Firmen, die in Ihrer Region eine Wohnung, ein Haus oder eine Gewerbefläche suchen.'
       },
       {
         step: '02',
         title: 'Vorqualifizierung online',
-        desc: 'Interessenten geben vorab Budget, gewünschten Einzugstermin und weitere relevante Angaben an. Sie sehen auf einen Blick, wer passt.'
+        desc: 'Interessenten geben vorab Budget, gewünschten Einzugstermin und weitere relevante Angaben an. Feste Regeln sortieren die Anfragen, und passende Personen erhalten automatisch eine Einladung zur Besichtigung.'
       },
       {
         step: '03',
-        title: 'Regionale Kampagnen',
-        desc: 'Über Google Ads und Social Media erreichen wir Personen und Firmen, die in Ihrer Region eine Wohnung, ein Haus oder eine Gewerbefläche suchen.'
+        title: 'Vorgeprüfte Dossiers',
+        desc: 'Ein Beispiel: Eingereichte Bewerbungsunterlagen werden KI-unterstützt auf Vollständigkeit geprüft, und für fehlende Dokumente liegt ein Entwurf der Nachforderung bereit. Über Zusage oder Absage entscheidet Ihr Team.'
       }
     ],
     benefits: [
       'Mehr passende Interessenten pro Objekt',
       'Budget und Einzugstermin liegen vor, bevor jemand zurückruft',
       'Automatische Einladungen zu Besichtigungen per E-Mail oder SMS',
-      'Ein digitaler Auftritt, der Sie bei Eigentümern als kompetenten Makler zeigt'
+      'Vollständige Dossiers, ohne jedes Dokument von Hand nachzufragen'
     ],
     related: [
       {
@@ -214,6 +227,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Lässt sich bestehende Immobiliensoftware wie FlowFact oder CAS anbinden?',
         a: 'In vielen Fällen ja, über vorhandene Schnittstellen. Wir prüfen im Erstgespräch, was mit Ihrer Software möglich ist.'
+      },
+      {
+        q: 'Wie gehen Sie mit den Daten von Mietinteressenten um?',
+        a: 'Bewerbungsunterlagen enthalten sensible Angaben wie Betreibungsauszug oder Lohnnachweis. Wir legen mit Ihnen fest, welches System welche Daten lesen darf, wie lange sie gespeichert bleiben und wer Zugriff hat, nach den Vorgaben des Schweizer Datenschutzgesetzes. Die Prüfung ist Vorarbeit, entschieden wird von Menschen.'
       }
     ]
   },
@@ -221,7 +238,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'treuhand-unternehmensberatung',
     title: 'Treuhand & Unternehmensberatung',
     subtitle: 'Mehr Mandatsanfragen für Treuhand- und Beratungsbüros',
-    heroDesc: 'Wir schärfen das Profil Ihres Büros und bauen einen Anfrageweg, der Umsatz, Mitarbeiterzahl und Buchhaltungssoftware schon vor dem Erstgespräch erfasst. Ziel sind KMU-Mandate, die fachlich und wirtschaftlich zu Ihnen passen.',
+    heroDesc: 'Für Treuhand- und Beratungsbüros bauen wir einen Anfrageweg, der Umsatz, Mitarbeiterzahl und Buchhaltungssoftware schon vor dem Erstgespräch erfasst. Dahinter richten wir Abläufe ein, in denen Mandantenunterlagen vorsortiert ankommen, bevor Ihr Team sie prüft.',
     calculatorComponent: 'KanzleiWachstumsCheck',
     problems: [
       {
@@ -234,30 +251,30 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Unvollständige Unterlagen von Mandanten',
-        desc: 'Belege kommen ungeordnet, unvollständig oder zu spät. Das erzeugt Druck vor Abschlüssen und Fristen.'
+        desc: 'Belege kommen ungeordnet, unvollständig oder zu spät. Bevor jemand bucht, wird erst einmal sortiert, und das erzeugt Druck vor Abschlüssen und Fristen.'
       }
     ],
     approach: [
       {
         step: '01',
         title: 'Klares Profil für Ihr Büro',
-        desc: 'Wir schärfen Ihre Zielgruppe, zum Beispiel Arztpraxen oder KMU ab einer bestimmten Grösse, und stellen Ihre Beratungskompetenz in den Vordergrund.'
+        desc: 'Wir schärfen Ihre Zielgruppe, zum Beispiel Arztpraxen oder KMU ab einer bestimmten Grösse, und machen Partner und Inhaber auf LinkedIn als Fachleute für Steuern, Vorsorge und Nachfolge sichtbar.'
       },
       {
         step: '02',
         title: 'Vorqualifizierung neuer Mandate',
-        desc: 'Ein kurzer Online-Fragebogen erfasst vor dem Erstgespräch Eckdaten wie Umsatzgrösse, Mitarbeiterzahl und eingesetzte Buchhaltungssoftware.'
+        desc: 'Ein kurzer Online-Fragebogen erfasst vor dem Erstgespräch Eckdaten wie Umsatzgrösse, Mitarbeiterzahl und eingesetzte Buchhaltungssoftware. Die Angaben landen direkt im CRM, und das Gespräch beginnt nicht bei null.'
       },
       {
         step: '03',
-        title: 'Sichtbarkeit auf LinkedIn',
-        desc: 'Wir machen Ihre Partner und Inhaber als Fachleute für Steuern, Vorsorge und Nachfolge sichtbar.'
+        title: 'Belege, die vorsortiert ankommen',
+        desc: 'Ein Beispiel: Mandanten laden Unterlagen hoch, ein Modell erkennt die Dokumentart und liest Felder wie Datum, Betrag und Lieferant aus. Ihr Team prüft den Vorschlag und bucht. Unklare Belege landen in einer eigenen Liste statt im Stapel.'
       }
     ],
     benefits: [
       'Anfragen von Mandanten, die fachlich zu Ihrem Büro passen',
       'Erstgespräche, in denen die Eckdaten bereits vorliegen',
-      'Ein geordneter, teilweise automatisierter Ablauf für neue Mandate',
+      'Belege, die klassifiziert und mit erkannten Feldern zur Prüfung bereitliegen',
       'Mehr Zeit im Team für anspruchsvolle Beratungsmandate'
     ],
     related: {
@@ -272,6 +289,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
         a: 'Ja, wenn es Ihr Fachwissen zeigt statt laut zu werben. Fachbeiträge, verständliche Erklärungen und ein klares Profil schaffen online genau dieses Vertrauen.'
       },
       {
+        q: 'Bucht die KI dann selbständig?',
+        a: 'Nein. Die Software schlägt Dokumentart und Werte vor, die Buchung und jede fachliche Beurteilung bleiben bei Ihrem Team. Wir legen fest, wo die Daten verarbeitet werden, wer Zugriff hat und wie jeder Schritt protokolliert wird. Das ist die Grundlage für die Vertraulichkeit Ihrer Mandantendaten und für den Datenschutz nach DSG.'
+      },
+      {
         q: 'Unterstützen Sie Büros auch bei der Suche nach Fachkräften?',
         a: 'Ja. Mit denselben Mitteln, also Kampagnen und einfachen Bewerbungsseiten, erreichen wir auch Treuhänderinnen und Sachbearbeiter.'
       }
@@ -281,7 +302,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'b2b-industrie-kmu',
     title: 'Industrie & KMU',
     subtitle: 'Mehr qualifizierte Anfragen für Industrie- und B2B-Unternehmen',
-    heroDesc: 'Viele Einkäufer und Techniker informieren sich online über Lieferanten, lange bevor sie eine Offerte anfragen. Wir sorgen dafür, dass sie Ihr Unternehmen finden, und richten ein Nachfassen ein, das jede Offerte bis zum Entscheid begleitet.',
+    heroDesc: 'Viele Einkäufer und Techniker informieren sich online über Lieferanten, lange bevor sie eine Offerte anfragen. Wir sorgen dafür, dass sie Ihr Unternehmen finden, und gestalten den Weg bis zur Offerte so, dass Ihr Innendienst nicht bei null beginnt und keine Offerte ohne Nachfassen bleibt.',
     calculatorComponent: 'AngebotsPipelineRechner',
     problems: [
       {
@@ -294,30 +315,30 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Offerten versanden',
-        desc: 'Offerten werden aufwendig kalkuliert und dann nicht nachgefasst, weil ein fester Ablauf dafür fehlt.'
+        desc: 'Anfragen kommen unvollständig an und müssen zuerst geklärt werden. Danach werden Offerten aufwendig kalkuliert und nicht nachgefasst, weil ein fester Ablauf dafür fehlt.'
       }
     ],
     approach: [
       {
         step: '01',
         title: 'Verständliche Produktseiten',
-        desc: 'Wir strukturieren Ihre Produkte und Leistungen so, dass Einkäufer schnell erkennen, welchen Nutzen sie haben.'
+        desc: 'Wir strukturieren Ihre Produkte und Leistungen so, dass Einkäufer schnell erkennen, welchen Nutzen sie haben. Klar aufgebaute Seiten helfen auch Suchmaschinen und KI-Assistenten, Ihr Angebot richtig einzuordnen.'
       },
       {
         step: '02',
-        title: 'Anfrage mit Konfigurator oder Check',
-        desc: 'Interessenten geben ihre Anforderungen online strukturiert ein. Sie erhalten Anfragen mit den Angaben, die Sie für eine Offerte brauchen.'
+        title: 'Anfragen, die vorbereitet ankommen',
+        desc: 'Interessenten geben ihre Anforderungen online strukturiert ein. Ein Beispiel für den nächsten Schritt: Ein Modell fasst Anfrage und Anhänge zusammen, markiert fehlende Angaben wie Stückzahl oder Material und schlägt passende Artikel aus Ihrem Sortiment vor. Kalkuliert und offeriert wird von Ihrem Team.'
       },
       {
         step: '03',
         title: 'Nachfassen im CRM',
-        desc: 'Wir richten klare Verkaufsphasen und automatische Wiedervorlagen für Offerten ein, damit keine offene Offerte vergessen geht.'
+        desc: 'Wir richten klare Verkaufsphasen und automatische Wiedervorlagen für Offerten ein. Zur Wiedervorlage liegt ein Entwurf für die Nachfassmail bereit, den der Verkäufer anpasst und selbst versendet.'
       }
     ],
     benefits: [
       'Anfragen von Einkäufern und Technikern, auch ohne Messe',
+      'Weniger Rückfragen, bevor eine Offerte kalkuliert werden kann',
       'Weniger Offerten ohne Rückmeldung dank systematischem Nachfassen',
-      'Entlastung des Aussendiensts bei der Neukundensuche',
       'Alle offenen Offerten und Verkaufschancen übersichtlich im CRM'
     ],
     faqs: [
@@ -328,6 +349,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Wie binden wir den bestehenden Aussendienst ein?',
         a: 'Wir richten das CRM so ein, dass Ihr Aussendienst sieht, welche Firmen sich für welche Produkte interessiert haben, und schulen das Team in der Nutzung.'
+      },
+      {
+        q: 'Lässt sich das an unser ERP anbinden?',
+        a: 'In vielen Fällen ja, über die Schnittstellen Ihres ERP oder eine Automatisierungsplattform. Artikeldaten liest ein Modell nur, soweit das für den Vorschlag nötig ist. Schreibende Zugriffe auf das ERP richten wir nur dort ein, wo feste Regeln greifen.'
       }
     ]
   },
@@ -335,7 +360,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'it-dienstleister-msps',
     title: 'IT-Dienstleister & MSPs',
     subtitle: 'Mehr Anfragen für Managed Services von Schweizer KMU',
-    heroDesc: 'Für IT-Dienstleister gewinnen wir Anfragen von Schweizer KMU zu Managed Services, IT-Sicherheit und Cloud-Projekten. Ziel sind laufende Serviceverträge statt einzelner Einsätze auf Abruf.',
+    heroDesc: 'Für IT-Dienstleister gewinnen wir Anfragen von Schweizer KMU zu Managed Services, IT-Sicherheit und Cloud-Projekten. Ziel sind laufende Serviceverträge statt einzelner Einsätze auf Abruf. Auf Wunsch nutzen wir dafür auch die Daten, die in Ihrem Ticketsystem bereits liegen.',
     calculatorComponent: 'RecurringRevenuePotenzialRechner',
     problems: [
       {
@@ -355,24 +380,24 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Klare Servicepakete',
-        desc: 'Wir bündeln mit Ihnen Ihre Leistungen in verständliche Pakete mit festen Preisen und Servicezeiten, deren Nutzen ein Geschäftsführer sofort versteht.'
+        desc: 'Wir bündeln mit Ihnen Ihre Leistungen in verständliche Pakete mit klarem Umfang und Servicezeiten. Auf LinkedIn sprechen wir Geschäftsführer und Finanzverantwortliche in ihrer Sprache an, mit planbaren Kosten und Ausfallsicherheit statt Technik.'
       },
       {
         step: '02',
         title: 'Online-Check zu Sicherheit und Infrastruktur',
-        desc: 'Ein kurzer Online-Check zu Datenschutz, IT-Sicherheit und Backups zeigt KMU, wo sie handeln sollten. Sie erhalten Anfragen mit konkretem Bedarf.'
+        desc: 'Ein kurzer Online-Check zu Datenschutz, IT-Sicherheit und Backups zeigt KMU, wo sie handeln sollten. Aus den Antworten entsteht eine Zusammenfassung für das Erstgespräch, die Ihr Techniker vorab durchsieht.'
       },
       {
         step: '03',
-        title: 'LinkedIn-Kampagnen für Entscheider',
-        desc: 'Wir sprechen Geschäftsführer und Finanzverantwortliche in ihrer Sprache an: planbare Kosten, Ausfallsicherheit und ein Team, das ungestört arbeiten kann.'
+        title: 'Servicebedarf bei Bestandskunden erkennen',
+        desc: 'Ein Beispiel: Ein Agent wertet Tickets und Einsätze der letzten Monate aus und zeigt, welche Kunden regelmässig Hilfe auf Abruf brauchen. Ob und wie Sie ihnen einen Vertrag anbieten, entscheidet Ihr Team.'
       }
     ],
     benefits: [
       'Mehr Anfragen für laufende Serviceverträge',
       'Positionierung als IT-Partner statt als austauschbarer Lieferant',
-      'Regelmässige Anfragen für Sicherheitsberatungen',
-      'Personal lässt sich besser planen, wenn mehr Umsatz aus Verträgen kommt'
+      'Erstgespräche zur IT-Sicherheit, die mit dem konkreten Bedarf beginnen',
+      'Bestandskunden mit Servicebedarf, die im Tagesgeschäft sonst untergehen'
     ],
     faqs: [
       {
@@ -382,6 +407,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Helfen Sie uns, bestehende Projektkunden in Serviceverträge zu überführen?',
         a: 'Ja. Wir entwickeln mit Ihnen ein Vorgehen und passende Argumente, um Projektkunden schrittweise für einen laufenden Vertrag zu gewinnen.'
+      },
+      {
+        q: 'Dürfen Agenten auf unser Ticketsystem und Kundendaten zugreifen?',
+        a: 'Nur lesend und nur auf das, was für die Auswertung nötig ist. Wir richten eigene Zugänge mit eng gefassten Rechten ein, protokollieren die Abfragen und klären mit Ihnen, welche Kundendaten ein Sprachmodell überhaupt sehen darf. Den Rahmen setzen Ihre Kundenverträge und das Datenschutzgesetz.'
       }
     ]
   },
@@ -389,7 +418,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'ingenieur-planungsbuero',
     title: 'Ingenieur- & Planungsbüros',
     subtitle: 'Mehr private Aufträge und Bewerbungen für Ihr Planungsbüro',
-    heroDesc: 'Viele Ingenieur- und Planungsbüros leben von Ausschreibungen. Wir bauen einen zweiten Weg zu privaten Bauherren und Gewerbekunden auf und machen Ihr Büro für Bauingenieure, Zeichnerinnen und Projektleiter als Arbeitgeber sichtbar.',
+    heroDesc: 'Viele Ingenieur- und Planungsbüros leben von Ausschreibungen. Wir bauen einen zweiten Weg zu privaten Bauherren und Gewerbekunden auf, verkürzen die Suche nach passenden Projekten und machen Ihr Büro für Bauingenieure, Zeichnerinnen und Projektleiter als Arbeitgeber sichtbar.',
     calculatorComponent: 'ProjektpipelineCheck',
     problems: [
       {
@@ -398,7 +427,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Warten auf Ausschreibungen',
-        desc: 'Viele Büros warten auf Ausschreibungen. Direktaufträge von Industrie- und Gewerbebauherren gehen so an andere.'
+        desc: 'Viele Büros warten auf Ausschreibungen, und das Durchsehen von Publikationen und Baugesuchen kostet jede Woche Zeit. Direktaufträge von Industrie- und Gewerbebauherren gehen so an andere.'
       },
       {
         title: 'Fachkräfte sind knapp',
@@ -408,13 +437,13 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     approach: [
       {
         step: '01',
-        title: 'Referenzprojekte sichtbar machen',
-        desc: 'Wir bereiten Ihre wichtigsten Projekte als verständliche Fallbeispiele auf, die Ihre Kompetenz und Zuverlässigkeit zeigen.'
+        title: 'Referenzen für private Bauherren',
+        desc: 'Wir bereiten Ihre wichtigsten Projekte als verständliche Fallbeispiele auf und erreichen über LinkedIn und Google Ads Verantwortliche für Bau- und Erweiterungsprojekte. Entwürfe aus Projektunterlagen prüfen Ihre Projektleiter fachlich, bevor etwas veröffentlicht wird.'
       },
       {
         step: '02',
-        title: 'Private und gewerbliche Bauherren ansprechen',
-        desc: 'Über LinkedIn und Google Ads erreichen wir Verantwortliche für Bau- und Erweiterungsprojekte in Unternehmen sowie Investoren.'
+        title: 'Passende Projekte früh sehen',
+        desc: 'Ein Beispiel: Ein Agent sichtet öffentliche Ausschreibungen und Baugesuche, ordnet sie nach Ihren Schwerpunkten und Regionen und fasst die relevanten einmal pro Woche zusammen. Ob Sie sich bewerben oder einen Bauherrn ansprechen, entscheiden Sie.'
       },
       {
         step: '03',
@@ -426,12 +455,16 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Neue Kontakte zu privaten Industrie- und Gewerbebauherren',
       'Breiter abgestützte Auftragslage mit weniger Abhängigkeit von einzelnen Kunden',
       'Mehr Bewerbungen von qualifizierten Fachkräften',
-      'Ein zeitgemässer Auftritt als Planungsbüro in Ihrer Region'
+      'Weniger Zeit für das Durchsehen von Ausschreibungen und Baugesuchen'
     ],
     faqs: [
       {
         q: 'Passt aktive Kundengewinnung zu einem Ingenieurbüro?',
         a: 'Ja, solange sie sachlich bleibt. Wir stellen Ihre technische Kompetenz, Referenzen und Themen wie Energieeffizienz in den Vordergrund, nicht laute Werbung.'
+      },
+      {
+        q: 'Woher kommen die Daten zu Ausschreibungen und Baugesuchen?',
+        a: 'Aus öffentlich zugänglichen Quellen, etwa den Plattformen für öffentliche Beschaffungen und den amtlichen Baupublikationen von Kantonen und Gemeinden. Welche Quellen sich für Ihre Region technisch und rechtlich sauber anbinden lassen, prüfen wir vorab.'
       },
       {
         q: 'Wie funktioniert eine einfache Bewerbung für Ingenieure?',
@@ -443,7 +476,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'personalvermittler-recruiting',
     title: 'Personalvermittler & Recruiting',
     subtitle: 'Mehr Suchmandate und passende Kandidaten für Ihre Vermittlung',
-    heroDesc: 'Für Personalvermittler gewinnen wir Suchaufträge von Arbeitgebern und erreichen die Fachkräfte, die zu diesen Stellen passen. So arbeiten Sie seltener auf gut Glück und besetzen schneller.',
+    heroDesc: 'Für Personalvermittler gewinnen wir Suchaufträge von Arbeitgebern und erreichen die Fachkräfte, die zu diesen Stellen passen. Dahinter steht eine Kandidatendatenbank, die Lebensläufe strukturiert erfasst und zu jedem Auftrag passende Profile vorschlägt, damit Sie schneller besetzen.',
     calculatorComponent: 'PlacementEffizienzRechner',
     problems: [
       {
@@ -452,7 +485,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Zu wenige passende Kandidaten',
-        desc: 'Stellenportale liefern immer weniger brauchbare Bewerbungen. Gute Kandidaten suchen meist nicht aktiv und sind dort kaum zu finden.'
+        desc: 'Stellenportale liefern immer weniger brauchbare Bewerbungen. Gute Kandidaten suchen meist nicht aktiv, und wer schon in Ihrer Datenbank ist, wird oft übersehen.'
       },
       {
         title: 'Langsamer Besetzungsprozess',
@@ -462,30 +495,34 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     approach: [
       {
         step: '01',
-        title: 'Klare Spezialisierung',
-        desc: 'Wir stellen Ihre Spezialisierung in den Vordergrund, damit Arbeitgeber Sie als Anlaufstelle für ihre Branche oder ihr Berufsfeld wahrnehmen.'
+        title: 'Spezialisierung und zwei Anfragewege',
+        desc: 'Wir stellen Ihre Spezialisierung in den Vordergrund und bauen zwei getrennte Wege auf, einen für Suchaufträge von HR-Verantwortlichen und einen für wechselbereite Fachkräfte.'
       },
       {
         step: '02',
-        title: 'Zwei getrennte Anfragewege',
-        desc: 'Wir bauen zwei parallele Wege auf: einen für Suchaufträge von HR-Verantwortlichen, einen für wechselbereite Fachkräfte.'
+        title: 'Lebensläufe strukturiert erfassen',
+        desc: 'Eingehende Bewerbungen werden KI-unterstützt ausgelesen. Fähigkeiten, Erfahrung, Region und Verfügbarkeit stehen danach als Felder in Ihrem System statt in einem PDF. Ihr Team prüft und ergänzt die Angaben.'
       },
       {
         step: '03',
-        title: 'Kandidaten in Kontakt halten',
-        desc: 'Kandidaten in Ihrer Datenbank erhalten regelmässig nützliche Informationen zum Arbeitsmarkt, damit Sie im richtigen Moment präsent sind.'
+        title: 'Vorschläge für das Matching',
+        desc: 'Ein Beispiel: Zu einem neuen Suchauftrag schlägt das System passende Kandidaten aus Ihrer Datenbank vor und begründet jeden Vorschlag. Wen Sie ansprechen und dem Kunden vorstellen, entscheiden Ihre Beraterinnen und Berater.'
       }
     ],
     benefits: [
       'Mehr Suchaufträge mit Exklusivität oder Anzahlung',
       'Regelmässige Bewerbungen wechselbereiter Fachkräfte über Social Ads',
-      'Kürzere Wege von der Anfrage bis zur Besetzung',
-      'Längerfristige Zusammenarbeit mit Ihren Arbeitgeberkunden'
+      'Passende Kandidaten aus der eigenen Datenbank, die sonst übersehen würden',
+      'Kürzere Wege von der Anfrage bis zur Besetzung'
     ],
     faqs: [
       {
         q: 'Wie sprechen wir passive Kandidaten an, ohne unseriös zu wirken?',
-        a: 'Mit einem professionellen Auftritt und nützlichen Inhalten, zum Beispiel Lohnvergleichen oder Marktberichten. Diskretion steht dabei an erster Stelle.'
+        a: 'Mit einem professionellen Auftritt und nützlichen Inhalten, zum Beispiel Lohnvergleichen oder Marktberichten. Kandidaten in Ihrer Datenbank erhalten regelmässig solche Informationen, damit Sie im richtigen Moment präsent sind. Diskretion steht dabei an erster Stelle.'
+      },
+      {
+        q: 'Entscheidet die KI, wer weiterkommt?',
+        a: 'Nein. Das System macht Vorschläge mit Begründung, die Auswahl treffen Ihre Beraterinnen und Berater. Die Kriterien legen Sie fest, Merkmale wie Alter oder Herkunft gehören nicht dazu. Wir prüfen die Vorschläge mit echten Fällen, damit sie nachvollziehbar bleiben. Kandidatendaten bearbeiten wir nach dem Datenschutzgesetz, mit klaren Zugriffsrechten und Löschfristen.'
       },
       {
         q: 'Funktioniert das auch für Executive Search?',
@@ -497,7 +534,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'bildung-weiterbildung',
     title: 'Bildung & Weiterbildung',
     subtitle: 'Mehr Anmeldungen für Ihre Lehrgänge, Kurse und Seminare',
-    heroDesc: 'Lehrgänge, Seminare und CAS-Studiengänge füllen sich, wenn Kampagnen die passenden Personen erreichen und die Anmeldung ohne Umwege funktioniert. Beides bauen wir für Akademien, Institute und Weiterbildungsanbieter auf.',
+    heroDesc: 'Lehrgänge, Seminare und CAS-Studiengänge füllen sich, wenn Kampagnen die passenden Personen erreichen und die Anmeldung ohne Umwege funktioniert. Für Akademien, Institute und Weiterbildungsanbieter bauen wir beides auf und entlasten das Sekretariat bei wiederkehrenden Fragen zu Zulassung und Ablauf.',
     calculatorComponent: 'KursFunnelRechner',
     problems: [
       {
@@ -506,7 +543,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Viel Beratungsaufwand im Vorfeld',
-        desc: 'Das Sekretariat führt viele Gespräche mit Personen, die die Zulassungsvoraussetzungen am Ende nicht erfüllen.'
+        desc: 'Das Sekretariat beantwortet immer wieder dieselben Fragen und führt viele Gespräche mit Personen, die die Zulassungsvoraussetzungen am Ende nicht erfüllen.'
       },
       {
         title: 'Interessenten springen auf der Kursseite ab',
@@ -517,22 +554,22 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '01',
         title: 'Online-Check zur Eignung',
-        desc: 'Interessenten prüfen in wenigen Schritten selbst, ob sie die Voraussetzungen für den Lehrgang erfüllen.'
+        desc: 'Interessenten prüfen in wenigen Schritten selbst, ob sie die Voraussetzungen für den Lehrgang erfüllen. Die Antworten gehen mit der Anfrage ins CRM.'
       },
       {
         step: '02',
-        title: 'Automatische Erinnerungen zum Infoabend',
-        desc: 'Wer sich für einen Infoabend anmeldet, erhält automatisch Erinnerungen und vorbereitende Informationen. So erscheinen mehr Angemeldete tatsächlich.'
+        title: 'Antworten auf Zulassungsfragen',
+        desc: 'Ein Beispiel: Fragen per E-Mail oder Formular werden eingeordnet, und auf Basis Ihrer Reglemente und Kursdaten entsteht ein Antwortentwurf. Das Sekretariat prüft und versendet. Heikle Fälle wie Ausnahmen bei der Zulassung gehen direkt an die Studienleitung.'
       },
       {
         step: '03',
-        title: 'Anzeigen für frühere Besucher',
-        desc: 'Wer die Kursdetails angesehen, sich aber nicht angemeldet hat, sieht später Anzeigen, etwa mit Erfahrungsberichten von Absolventinnen und Absolventen.'
+        title: 'Erinnerungen und Anzeigen',
+        desc: 'Wer sich für einen Infoabend anmeldet, erhält automatisch Erinnerungen und vorbereitende Informationen. Wer die Kursdetails angesehen hat, ohne sich anzumelden, sieht später Anzeigen, etwa mit Erfahrungsberichten von Absolventinnen und Absolventen.'
       }
     ],
     benefits: [
       'Bessere Auslastung Ihrer Kurse, Lehrgänge und Studiengänge',
-      'Weniger Beratungsgespräche mit Personen, die die Voraussetzungen nicht erfüllen',
+      'Weniger Zeit im Sekretariat für wiederkehrende Zulassungsfragen',
       'Mehr Angemeldete, die am Infoabend tatsächlich erscheinen',
       'Klare Sicht auf die Werbekosten pro Anmeldung'
     ],
@@ -540,6 +577,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Lässt sich unser bestehendes Kursverwaltungs- oder Lernsystem anbinden?',
         a: 'In den meisten Fällen ja. Wir verbinden die Anfrageformulare mit gängigen Systemen, damit Kursdaten und Teilnehmerlisten übereinstimmen. Die Details prüfen wir im Erstgespräch.'
+      },
+      {
+        q: 'Beantwortet dann ein Chatbot unsere Interessenten?',
+        a: 'Nur wenn Sie das möchten und die Fragen klar abgegrenzt sind, etwa zu Daten, Ort und Anmeldeschluss. Bei Zulassung und Anrechnung empfehlen wir Entwürfe, die das Sekretariat freigibt. Die Antworten stützen sich auf Ihre eigenen Dokumente und werden mit echten Anfragen getestet, bevor sie im Einsatz sind.'
       },
       {
         q: 'Wir bieten Nischenkurse an. Finden wir online genug Teilnehmende?',
@@ -551,7 +592,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'gesundheitswesen',
     title: 'Gesundheitswesen',
     subtitle: 'Mehr Neupatienten für Ihre Praxis oder Fachklinik',
-    heroDesc: 'Spezialpraxen und Fachkliniken machen wir mit sachlicher Patienteninformation online auffindbar, etwa für Selbstzahler-Leistungen. Die Werbevorschriften für Gesundheitsberufe beachten wir von Anfang an.',
+    heroDesc: 'Spezialpraxen und Fachkliniken machen wir mit sachlicher Patienteninformation online auffindbar, etwa für Selbstzahler-Leistungen. Terminanfrage und Aufnahme richten wir so ein, dass Ihr Praxisteam weniger abtippt. Die Werbevorschriften für Gesundheitsberufe und den Schutz von Gesundheitsdaten beachten wir von Anfang an.',
     calculatorComponent: 'NeupatientenPotenzialCheck',
     problems: [
       {
@@ -564,7 +605,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         title: 'Aufwendige Terminvergabe und Aufnahme',
-        desc: 'Telefonische Terminschleifen und fehlende Angaben vor dem ersten Termin kosten das Praxisteam viel Zeit.'
+        desc: 'Telefonische Terminschleifen, fehlende Angaben vor dem ersten Termin und von Hand abgetippte Zuweisungen kosten das Praxisteam viel Zeit.'
       }
     ],
     approach: [
@@ -575,25 +616,29 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         step: '02',
-        title: 'Kurzer Vorab-Fragebogen',
-        desc: 'Patienten beantworten vor der Terminanfrage einige Fragen, etwa zu Beschwerden und bisherigen Behandlungen. Das erleichtert die Vorbereitung auf das Erstgespräch.'
+        title: 'Vorab-Fragebogen und Online-Termin',
+        desc: 'Patienten beantworten vor der Terminanfrage einige Fragen, etwa zum Anliegen und zur Versicherung, und buchen Erst- und Beratungstermine online. Die Angaben gehen strukturiert an die Praxis, ohne dass jemand sie aus einer E-Mail abschreibt.'
       },
       {
         step: '03',
-        title: 'Online-Terminbuchung',
-        desc: 'Wir binden Ihren Kalender an, damit Erst- und Beratungstermine jederzeit online gebucht werden können.'
+        title: 'Zuweisungen vorbereitet',
+        desc: 'Ein Beispiel: Bei Zuweisungsschreiben liest ein Modell administrative Angaben wie Zuweiser, Versicherung und gewünschten Fachbereich aus und legt sie zur Kontrolle bereit. Medizinische Einschätzungen bleiben vollständig bei Ihrem Fachpersonal.'
       }
     ],
     benefits: [
       'Mehr Anfragen für Ihre Schwerpunkte und Selbstzahler-Leistungen',
       'Sachliche Patienteninformation statt Werbeversprechen',
-      'Weniger Telefonaufwand für das Praxisteam bei der Terminvergabe',
+      'Weniger Telefon- und Abtipparbeit für das Praxisteam',
       'Besser informierte Patientinnen und Patienten schon vor dem ersten Termin'
     ],
     faqs: [
       {
         q: 'Ist Werbung für Ärztinnen und Ärzte in der Schweiz nicht stark eingeschränkt?',
         a: 'Ja, es gelten enge Regeln, etwa aus den kantonalen Gesundheitsgesetzen, den Standesregeln und dem Heilmittelwerberecht. Wir setzen deshalb auf sachliche Patienteninformation statt auf Werbeversprechen. Die abschliessende Prüfung liegt bei Ihnen; eine Rechtsberatung ersetzen wir nicht.'
+      },
+      {
+        q: 'Dürfen Gesundheitsdaten überhaupt durch KI-Systeme laufen?',
+        a: 'Gesundheitsdaten gelten nach dem Datenschutzgesetz als besonders schützenswert, und es gilt das Berufsgeheimnis. Wir prüfen deshalb für jeden Schritt, ob eine feste Regel genügt, wo die Daten verarbeitet werden und wer Zugriff hat. Solange Verarbeitungsort, Zugriffsrechte und Vertrag mit dem Anbieter nicht geklärt sind, setzen wir kein Sprachmodell ein. Die abschliessende Beurteilung liegt bei Ihnen.'
       },
       {
         q: 'Unterstützen Sie auch die Suche nach Fachpersonal (MPA, Pflege)?',
@@ -605,7 +650,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'handwerk',
     title: 'Handwerk & Bauwesen',
     subtitle: 'Mehr Direktaufträge aus Ihrer Region für Ihren Handwerksbetrieb',
-    heroDesc: 'Für Handwerks- und Baubetriebe gewinnen wir Aufträge von Privat- und Gewerbekunden aus der eigenen Region. Die Anfragen kommen mit den nötigen Angaben an, damit die Offerte schneller steht.',
+    heroDesc: 'Für Handwerks- und Baubetriebe gewinnen wir Aufträge von Privat- und Gewerbekunden aus der eigenen Region. Anfragen kommen mit den nötigen Angaben an, und für die Offerte liegen eine Zusammenfassung und ein erster Entwurf bereit.',
     calculatorComponent: 'AuftragsPipelineRechner',
     problems: [
       {
@@ -629,18 +674,18 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         step: '02',
-        title: 'Strukturierte Online-Anfrage',
-        desc: 'Bauherren beschreiben ihr Vorhaben, zum Beispiel Badsanierung, PV-Anlage oder Holzanbau, mit allen wichtigen Eckdaten direkt über Ihre Website.'
+        title: 'Alle Anfragen an einem Ort',
+        desc: 'Bauherren beschreiben ihr Vorhaben, zum Beispiel Badsanierung, PV-Anlage oder Holzanbau, mit den wichtigen Eckdaten und Fotos direkt über Ihre Website. Anfragen per E-Mail landen am selben Ort.'
       },
       {
         step: '03',
-        title: 'Weniger Büroarbeit dank CRM',
-        desc: 'Wir richten einfache Abläufe für die Erfassung von Anfragen ein und automatische Erinnerungen für offene Offerten.'
+        title: 'Offerte vorbereitet',
+        desc: 'Ein Beispiel: Ein Modell fasst die Anfrage zusammen, markiert fehlende Angaben und erstellt aus Ihren Standardpositionen einen ersten Offertentwurf. Sie prüfen, ergänzen und versenden. Wiedervorlagen für offene Offerten laufen automatisch im CRM.'
       }
     ],
     benefits: [
       'Mehr Direktaufträge von Bauherren aus Ihrer Region',
-      'Schnellere Offerten, weil die Angaben vollständig vorliegen',
+      'Schnellere Offerten, weil Angaben und Entwurf bereitliegen',
       'Offerten werden nachgefasst, ohne dass jemand daran denken muss',
       'Ein sichtbarer Auftritt als Arbeitgeber für Monteure und Poliere'
     ],
@@ -648,6 +693,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Müssen wir dafür unsere Software umstellen?',
         a: 'In der Regel nicht. Wir prüfen, wie sich Ihre bestehende Software, etwa Abacus, Bexio oder SORBA, über Schnittstellen anbinden lässt.'
+      },
+      {
+        q: 'Schreibt die KI dann unsere Offerten?',
+        a: 'Sie bereitet sie vor. Der Entwurf stützt sich auf Ihre eigenen Positionen und Ansätze, die Kalkulation prüfen und verantworten Sie. Versendet wird nur, was jemand im Betrieb freigegeben hat.'
       },
       {
         q: 'Lohnt sich das auch für kleinere Familienbetriebe?',
@@ -659,7 +708,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'rechtsanwaelte',
     title: 'Rechtsanwälte',
     subtitle: 'Mehr passende Mandatsanfragen für Anwaltskanzleien',
-    heroDesc: 'Wir machen die Fachgebiete Ihrer Kanzlei online sichtbar und sortieren unpassende Anfragen vor dem Erstgespräch aus. Den Rahmen setzen die Standes- und Werberegeln für Anwältinnen und Anwälte.',
+    heroDesc: 'Wir machen die Fachgebiete Ihrer Kanzlei online sichtbar und gestalten die Mandatsaufnahme so, dass Rechtsgebiet, Gegenpartei und Sachverhalt vor dem Erstgespräch geordnet vorliegen. Den Rahmen setzen die Standes- und Werberegeln für Anwältinnen und Anwälte und das Berufsgeheimnis.',
     calculatorComponent: 'KanzleiAuslastungsCheck',
     problems: [
       {
@@ -684,24 +733,24 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         step: '02',
         title: 'Vorab-Fragebogen für neue Mandate',
-        desc: 'Ein diskreter Online-Fragebogen erfasst vorab Rechtsgebiet, Gegenpartei für die Konfliktprüfung und eine allfällige Rechtsschutzversicherung.'
+        desc: 'Ein diskreter Online-Fragebogen erfasst vorab Rechtsgebiet, Gegenpartei und eine allfällige Rechtsschutzversicherung. Die Gegenpartei wird nach festen Regeln mit Ihrer Mandatsliste abgeglichen, damit mögliche Interessenkonflikte früh sichtbar werden.'
       },
       {
         step: '03',
-        title: 'Automatische Anforderung von Unterlagen',
-        desc: 'Nach dem Erstkontakt werden die nötigen Unterlagen automatisch angefordert, damit Ihr Team gut vorbereitet ins Mandat startet.'
+        title: 'Sachverhalt vorbereitet',
+        desc: 'Ein Beispiel: Aus der Schilderung im Formular und den hochgeladenen Unterlagen entsteht eine kurze, geordnete Zusammenfassung für die zuständige Anwältin oder den Anwalt. Fehlende Unterlagen werden automatisch angefordert. Die rechtliche Einschätzung bleibt bei Ihnen.'
       }
     ],
     benefits: [
       'Mehr Anfragen in Ihren Fachgebieten',
-      'Rechtsgebiet und Gegenpartei bekannt, bevor jemand zurückruft',
+      'Rechtsgebiet, Gegenpartei und Sachverhalt bekannt, bevor jemand zurückruft',
       'Auftritt, der die Standes- und Werberegeln berücksichtigt',
       'Kontakt zu Unternehmen, die eine längerfristige Begleitung suchen'
     ],
     faqs: [
       {
         q: 'Wie passt das zum Berufsgeheimnis bei Online-Formularen?',
-        a: 'Wir fragen im Erstkontakt nur das Nötigste ab, nutzen verschlüsselte Übertragung und wählen Tools mit Datenhaltung in der Schweiz oder der EU, soweit möglich. Die Einzelheiten legen wir mit Ihnen fest.'
+        a: 'Wir fragen im Erstkontakt nur das Nötigste ab, nutzen verschlüsselte Übertragung und wählen Tools mit Datenhaltung in der Schweiz oder der EU, soweit möglich. Bei Sprachmodellen klären wir vorab, wo die Daten verarbeitet werden und ob der Anbieter sie speichert oder weiterverwendet. Die Einzelheiten legen wir mit Ihnen fest.'
       },
       {
         q: 'Dürfen Anwältinnen und Anwälte in der Schweiz werben?',
@@ -713,7 +762,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'logistik-transport',
     title: 'Logistik & Transport',
     subtitle: 'Mehr Direktkunden und weniger Leerfahrten für Ihr Transportunternehmen',
-    heroDesc: 'Für Transport- und Logistikunternehmen gewinnen wir Direktkunden aus Industrie und Handel entlang der eigenen Stammstrecken. Je mehr feste Frachten Sie haben, desto weniger sind Sie auf Frachtenbörsen angewiesen.',
+    heroDesc: 'Für Transport- und Logistikunternehmen gewinnen wir Direktkunden aus Industrie und Handel entlang der eigenen Stammstrecken. Transportanfragen kommen so an, dass die Disposition direkt offerieren kann. Je mehr feste Frachten Sie haben, desto weniger sind Sie auf Frachtenbörsen angewiesen.',
     calculatorComponent: 'FlottenauslastungsRechner',
     problems: [
       {
@@ -737,8 +786,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         step: '02',
-        title: 'Einfache Transportanfrage',
-        desc: 'Handels- und Industriefirmen geben Frachtvolumen, Rhythmus und Termine mit wenigen Klicks an. Sie erhalten Anfragen, die Sie direkt offerieren können.'
+        title: 'Transportanfragen ohne Abtippen',
+        desc: 'Handels- und Industriefirmen geben Frachtvolumen, Rhythmus und Termine mit wenigen Klicks an. Ein Beispiel für Anfragen per E-Mail: Ein Modell liest Abholort, Ziel, Gewicht und Wunschtermin aus und legt sie der Disposition als Entwurf vor. Offeriert wird von Ihrem Team.'
       },
       {
         step: '03',
@@ -750,12 +799,16 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       'Weniger Leerfahrten auf Ihren Stammstrecken',
       'Bessere Margen durch direkten Kontakt zu Versendern',
       'Bewerbungen von Chauffeuren der Kategorie C/CE',
-      'Weniger Abhängigkeit von Frachtenbörsen'
+      'Transportanfragen, die schneller offeriert werden können'
     ],
     faqs: [
       {
         q: 'Unterstützen Sie uns auch bei der Kundengewinnung im Ausland?',
         a: 'Ja. Wir können Kampagnen entlang Ihrer Transitrouten ausrichten, zum Beispiel Schweiz–Deutschland–Italien, um Rückfahrten besser auszulasten.'
+      },
+      {
+        q: 'Kann ein System passende Frachten für Rückfahrten vorschlagen?',
+        a: 'Ja, als Vorschlag. Wenn Touren und Anfragen im selben System liegen, lässt sich prüfen, welche Anfrage zu einer geplanten Rückfahrt passt. Das ist zuerst eine Frage sauberer Daten und fester Regeln, ein Sprachmodell braucht es dafür oft nicht. Die Disposition entscheidet.'
       },
       {
         q: 'Wo erreichen wir Berufschauffeure am besten?',
@@ -767,7 +820,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     slug: 'hospitality',
     title: 'Hospitality',
     subtitle: 'Mehr Direktbuchungen für Ihr Hotel, weniger Provisionen',
-    heroDesc: 'Wir richten Website und Kampagnen Ihres Hotels so aus, dass mehr Gäste direkt bei Ihnen buchen statt über Buchungsplattformen. Bei jeder Direktbuchung entfällt die Provision, und der Kontakt zum Gast bleibt bei Ihnen.',
+    heroDesc: 'Wir richten Website und Kampagnen Ihres Hotels so aus, dass mehr Gäste direkt bei Ihnen buchen statt über Buchungsplattformen. Bei jeder Direktbuchung entfällt die Provision, und der Kontakt zum Gast bleibt bei Ihnen. Anfragen per E-Mail beantwortet Ihr Team mit vorbereiteten Entwürfen schneller.',
     calculatorComponent: 'DirektbuchungsRechner',
     problems: [
       {
@@ -791,8 +844,8 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       },
       {
         step: '02',
-        title: 'Einfacher buchen auf der Website',
-        desc: 'Wir gestalten Ihre Website so, dass eine Direktbuchung mindestens so einfach ist wie auf einer Plattform.'
+        title: 'Einfacher buchen, schneller antworten',
+        desc: 'Wir gestalten Ihre Website so, dass eine Direktbuchung mindestens so einfach ist wie auf einer Plattform. Ein Beispiel für Anfragen per E-Mail: Zu einer Gruppen- oder Seminaranfrage entsteht ein Antwortentwurf mit Verfügbarkeiten aus Ihrem Hotelsystem, den die Rezeption prüft und versendet.'
       },
       {
         step: '03',
@@ -803,7 +856,7 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
     benefits: [
       'Weniger Provisionen an Buchungsplattformen',
       'Direkter Kontakt zum Gast ab der Buchung',
-      'Mehr Umsatz pro Aufenthalt durch passende Zusatzangebote',
+      'Schnellere Antworten auf Gruppen- und Seminaranfragen',
       'Mehr wiederkehrende Gäste dank direkter Ansprache'
     ],
     faqs: [
@@ -814,6 +867,10 @@ export const SOLUTIONS_SECTORS: { [key: string]: SolutionSector } = {
       {
         q: 'Können wir unser Hotelsystem (PMS) wie Protel oder Mews anbinden?',
         a: 'In der Regel ja. Wir binden die Buchungsmaschine Ihres Hauses so ein, dass Verfügbarkeiten und Preise aktuell bleiben. Die Details hängen von Ihrem System ab.'
+      },
+      {
+        q: 'Antwortet dann eine KI unseren Gästen?',
+        a: 'Nicht ohne Ihr Team. Entwürfe entstehen aus Ihren eigenen Angaben zu Zimmern, Paketen und Preisen und gehen erst nach Prüfung hinaus. Standardnachrichten wie Buchungsbestätigungen laufen weiterhin als feste Abläufe aus Ihrem System.'
       }
     ]
   }

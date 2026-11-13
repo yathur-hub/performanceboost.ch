@@ -29,22 +29,22 @@ interface ServicesViewProps {
 const RESULT_PACKAGES = [
   {
     title: 'KI-Einführung',
-    desc: 'Standortbestimmung, Einrichtung der wichtigsten Anwendungen, Schulung des Teams und schriftliche Regeln für Daten und Tools.',
+    desc: 'Standortbestimmung, Einrichtung der wichtigsten Anwendungen mit Rechten und Freigaben, Schulung des Teams und schriftliche Regeln für Daten und Tools.',
     result: 'Drei bis fünf KI-Anwendungen sind im Alltag im Einsatz, das Team ist geschult, die Regeln sind verabschiedet.',
     href: '/leistungen/ki-im-unternehmen',
     linkText: 'Governance',
   },
   {
     title: 'Stack aufräumen',
-    desc: 'Inventur aller Tools, Zielbild, Umbau und Verbindung von CRM, Website, E-Mail und Tracking.',
+    desc: 'Inventur aller Tools, Zielbild, Umbau und Verbindung von CRM, Website, E-Mail und Tracking, mit Schnittstellen, über die auch Agenten mit klaren Rechten arbeiten können.',
     result: 'Weniger Lizenzen, Daten werden nur einmal erfasst, jede Anfrage ist bis zum Auftrag nachvollziehbar.',
     href: '/leistungen/martech-stack',
     linkText: 'MarTech-Stack',
   },
   {
     title: 'Lead-System',
-    desc: 'Angebot und Botschaft schärfen, Landingpage, Formular mit Vorqualifizierung, Messung bis ins CRM und die passenden Kampagnen.',
-    result: 'Jede Anfrage wird mit Quelle im CRM erfasst, und Sie kennen die Kosten pro qualifizierter Anfrage.',
+    desc: 'Angebot und Botschaft schärfen, Landingpage, Formular mit automatischer Vorqualifizierung, Messung bis ins CRM und die passenden Kampagnen.',
+    result: 'Neue Anfragen kommen eingeordnet und mit Quelle im CRM an, und Sie kennen die Kosten pro qualifizierter Anfrage.',
     href: '/leistungen/marketing',
     linkText: 'Marketing',
   },
@@ -74,55 +74,55 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
   const servicesCopyOverride: { [key: string]: { benefit: string, desc: string } } = {
     'growth-strategy': {
       benefit: 'Sie wissen, wen Sie ansprechen und womit.',
-      desc: 'Wir legen mit Ihnen fest, wer Ihre Wunschkunden sind, wie Sie sich positionieren und über welche Kanäle Sie diese erreichen. Daraus entsteht ein Plan, mit dem Ihr Team arbeiten kann.'
+      desc: 'Wir legen mit Ihnen Wunschkunden, Positionierung und Kanäle fest. Markt- und Wettbewerbsrecherche bereitet ein agentischer Ablauf vor, die Entscheide treffen Sie. Daraus entsteht ein Plan, mit dem Team und Systeme arbeiten können.'
     },
     'demand-generation': {
       benefit: 'Regelmässig passende Anfragen für Ihren Vertrieb.',
-      desc: 'Kampagnen auf Google, LinkedIn und Meta, abgestimmt mit Inhalten und E-Mail. Wir messen den Erfolg an Anfragen, nicht an Klicks.'
+      desc: 'Kampagnen auf Google, LinkedIn und Meta, die mit Daten aus dem CRM auf Anfragen und Aufträge optimieren. Ein Agent überwacht täglich, Budget und Gebote gibt ein Mensch frei.'
     },
     'lead-generation': {
-      benefit: 'Aus Website-Besuchern werden Anfragen.',
-      desc: 'Inhalte und SEO, die bei Google gefunden werden, Landingpages, die Anfragen erfassen, und eine Bewertung, die zeigt, welche Anfragen Vorrang haben.'
+      benefit: 'Aus Besuchern bei Google und in KI-Antworten werden Anfragen.',
+      desc: 'SEO und GEO, Landingpages, die Anfragen erfassen, und eine Bewertung, die zeigt, welche Anfragen Vorrang haben. KI-Entwürfe für Inhalte prüfen wir mit Ihrem Fachwissen.'
     },
     'marketing-automation': {
       benefit: 'Weniger Handarbeit, keine vergessenen Anfragen.',
-      desc: 'Automatische Abläufe, die Interessenten weiterbegleiten und zur richtigen Zeit an den Vertrieb übergeben. Dazu ein CRM, das Ihr Team gerne nutzt.'
+      desc: 'Ein CRM als gemeinsame Datenbasis und automatische Abläufe, die Interessenten weiterbegleiten. Regeln übernehmen Übergabe und Zuweisung, KI fasst Anfragen zusammen und entwirft Folge-E-Mails zur Freigabe.'
     },
     'sales-enablement': {
       benefit: 'Ihr Vertrieb geht besser vorbereitet ins Gespräch.',
-      desc: 'Marketing und Vertrieb arbeiten mit denselben Kriterien. Wir erarbeiten Übergaben, Verkaufsunterlagen und Leitfäden, die im Alltag genutzt werden.'
+      desc: 'Eine Wissensbasis mit Unterlagen, Argumenten und Antworten, die Ihr Team und ein Agent gleichermassen nutzen. Vor dem Termin liegt eine Recherche bereit, danach eine Zusammenfassung im CRM.'
     },
     'revenue-operations': {
       benefit: 'Marketing, Vertrieb und Kundenbetreuung arbeiten mit denselben Zahlen.',
-      desc: 'Wenn Ihre Teams mit unterschiedlichen Daten arbeiten, geht Umsatz verloren. Wir ordnen Abläufe, Daten und Tools so, dass alle auf dasselbe Ziel hinarbeiten.'
+      desc: 'Gemeinsame Definitionen, saubere CRM-Daten und eine Pipeline, auf die Verlass ist. Regeln und Agenten prüfen Datenqualität und stehende Verkaufschancen, Korrekturen gibt Ihr Team frei.'
     },
     'ai-automation': {
       benefit: 'Ihr Team arbeitet sicher und wirksam mit KI.',
-      desc: 'Standortbestimmung, Einführung in die bestehenden Abläufe, Schulung mit eigenen Beispielen und klare Regeln, welche Daten in welches Tool dürfen.'
+      desc: 'Standortbestimmung, Einführung in die bestehenden Abläufe und Schulung mit eigenen Beispielen. Pro Aufgabe legen wir fest, was eine Regel erledigt, was KI entwirft und wer freigibt.'
     },
     'ki-agenten': {
-      benefit: 'Ganze Abläufe laufen, Ihr Team gibt frei.',
-      desc: 'KI-Agenten prüfen Anfragen, recherchieren, tragen ins CRM ein und bereiten Antworten vor. Nach aussen geht nichts ohne Freigabe.'
+      benefit: 'Agenten übernehmen Schritte, Ihr Team gibt frei.',
+      desc: 'Agenten recherchieren, ordnen Anfragen ein, ergänzen das CRM und bereiten Antworten vor, mit eigenen Rechten, Protokollen und Tests an echten Fällen. Nach aussen geht nichts ohne Freigabe.'
     },
     'martech-stack': {
       benefit: 'Weniger Tools, die zusammenarbeiten.',
-      desc: 'Stack-Check, Aufräumen und Verbinden von CRM, Website, E-Mail und Tracking. Weniger Lizenzen, weniger Handarbeit, klare Zahlen.'
+      desc: 'Stack-Check, Aufräumen und Verbinden von CRM, Website, E-Mail und Tracking. Pro Datentyp ein führendes System und Schnittstellen, über die auch Agenten mit klaren Rechten arbeiten.'
     },
     'data-analytics': {
       benefit: 'Sie sehen, was funktioniert und wo Budget verloren geht.',
-      desc: 'Datenschutzkonformes Tracking, Dashboards und Berichte, damit Sie nach Zahlen entscheiden. Wir messen die Website und ordnen den Umsatz den Kanälen zu, aus denen er kommt.'
+      desc: 'Datenschutzkonformes Tracking bis zum Auftrag, Dashboards und Daten, die an die Werbeplattformen zurückfliessen. Regeln prüfen die Messung täglich, ein Modell erklärt Abweichungen.'
     },
     'dtc-growth-acquisition': {
       benefit: 'Kundengewinnung, deren Kosten Sie kennen.',
-      desc: 'Viele Schweizer Online-Marken haben ein starkes Produkt, aber keine verlässliche Kundengewinnung. Wir ordnen Ihre Kampagnen, verbessern den Shop und messen Kosten pro Kunde und Kundenwert.'
+      desc: 'Wir ordnen Ihre Kampagnen, verbessern den Shop und messen jede Woche Kosten pro Neukunde und Kundenwert. Ein Agent meldet nachlassende Anzeigen, neue Varianten geben Sie frei.'
     },
     'customer-retention': {
       benefit: 'Bestehende Kunden halten und Inaktive zurückholen.',
-      desc: 'Einen Kunden zu halten ist meist günstiger, als einen neuen zu gewinnen. Wir bauen automatische E-Mails nach dem Kauf, Rückgewinnungsstrecken und Treueprogramme auf.'
+      desc: 'Automatische E-Mails nach dem Kauf, Rückgewinnungsstrecken und Treueprogramme, ausgelöst durch das Verhalten Ihrer Kunden. KI hilft bei Entwürfen und Segmenten, versendet wird nach Ihren Regeln.'
     },
     'paid-social-ecommerce': {
       benefit: 'Anzeigen nach Deckungsbeitrag statt nur nach ROAS.',
-      desc: 'Viele Shops steuern ihre Werbung nach Umsatz. Wir beziehen Marge, Versand und Retouren ein und steuern Meta und TikTok nach dem, was am Ende übrig bleibt.'
+      desc: 'Wir beziehen Marge, Versand und Retouren ein, übermitteln die Werte an Meta und TikTok und prüfen täglich gegen den Break-even. Was am Ende übrig bleibt, steuert das Budget.'
     }
   };
 
@@ -509,7 +509,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             Agentic Marketing, Sales und Processes als ein System.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-2xl mx-auto leading-relaxed font-medium">
-            Wir verbessern die drei Bereiche, in denen Schweizer KMU heute am meisten Umsatz und Zeit verlieren, und setzen KI-Agenten dort ein, wo sie verlässlich arbeiten. Jede Leistung gehört zu einem Bereich, das Vorgehen ist in allen gleich. Inhaber Yathur Nathan setzt sie persönlich um.
+            Wir konzipieren und bauen Marketing, Vertrieb und Abläufe so, dass Automatisierung und KI-Agenten von Anfang an Teil der Architektur sind, und setzen Agenten dort ein, wo sie verlässlich arbeiten. Jede Leistung gehört zu einem Bereich, das Vorgehen ist in allen gleich. Inhaber Yathur Nathan setzt sie persönlich um.
           </p>
         </div>
       </section>

@@ -15,112 +15,113 @@ export interface PageDiagram {
 export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   'growth-strategy': {
     title: 'Vom Ist-Zustand zum umsetzbaren Plan',
-    text: 'Wir beginnen bei Ihren Zahlen und Kunden, nicht bei Kanälen. Erst wenn klar ist, wen Sie mit welcher Botschaft gewinnen wollen, legen wir Kanäle und Budget fest.',
+    text: 'Wir beginnen bei Ihren Zahlen und Kunden, nicht bei Kanälen. Recherche und Auswertung laufen KI-gestützt, die Entscheide fallen im Workshop. Am Ende steht ein Plan, mit dem Ihr Team und Ihre Systeme arbeiten können.',
     spec: {
       type: 'flow',
       nodes: [
-        { title: 'Bestandsaufnahme', sub: 'Kanäle, Anfragen, Kunden, Zahlen', icon: 'Search' },
+        { title: 'Recherche & Daten', sub: 'Markt, Mitbewerber, eigene Anfragen', icon: 'Search' },
         { title: 'Zielkunden & Positionierung', sub: 'Wen gewinnen, mit welchem Versprechen', icon: 'Target' },
         { title: 'Kanäle & Budget', sub: 'Was eine Anfrage kosten darf', icon: 'PiggyBank' },
-        { title: 'Plan für 12 Monate', sub: 'Prioritäten, Verantwortung, Kennzahlen', icon: 'Calendar' },
+        { title: 'Kriterien für Systeme', sub: 'Lead-Scoring, Kampagnenziele, Kennzahlen', icon: 'Filter' },
+        { title: 'Plan für 12 Monate', sub: 'Prioritäten, Verantwortung, Automatisierung', icon: 'Calendar' },
       ],
     },
   },
   'demand-generation': {
-    title: 'Vom ersten Kontakt bis zur Anfrage',
-    text: 'Viele künftige Kunden suchen heute noch nicht aktiv. Deshalb kombinieren wir Kanäle, die Bekanntheit aufbauen, mit Kanälen, die bestehende Nachfrage abholen.',
+    title: 'Kampagnen, die aus Aufträgen lernen',
+    text: 'Die Werbeplattformen optimieren auf das, was man ihnen meldet. Deshalb fliessen qualifizierte Anfragen aus dem CRM zurück in die Werbekonten. Ein Agent überwacht täglich, und über Budget und Gebote entscheidet ein Mensch.',
     spec: {
       type: 'funnel',
       nodes: [
         { title: 'Zielgruppe erreichen', sub: 'LinkedIn, Meta, Inhalte', icon: 'Megaphone' },
-        { title: 'Interesse festigen', sub: 'Retargeting, Fallbeispiele', icon: 'Repeat' },
         { title: 'Suchende abholen', sub: 'Google Ads, Suchbegriffe', icon: 'Search' },
         { title: 'Anfrage', sub: 'Landingpage mit klarem Angebot', icon: 'MousePointerClick' },
-        { title: 'Übergabe an den Vertrieb', sub: 'Mit Quelle im CRM', icon: 'Handshake' },
+        { title: 'Im CRM bewertet', sub: 'Mit Quelle, zurück an die Werbekonten', icon: 'Repeat' },
+        { title: 'Übergabe an den Vertrieb', sub: 'Budget und Gebote gibt ein Mensch frei', icon: 'Handshake' },
       ],
     },
   },
   'lead-generation': {
     title: 'Ihre Website als Zentrum der Anfragen',
-    text: 'Interessenten kommen über Google, Inhalte oder die Direktansprache auf Ihre Website. Wir sorgen dafür, dass sie dort einfach und mit dem passenden Angebot anfragen können.',
+    text: 'Interessenten finden Sie über Google, KI-Assistenten, Inhalte oder die Direktansprache. Auf der Website fragen sie einfach an, und jede Anfrage kommt angereichert und bewertet beim Vertrieb an.',
     spec: {
       type: 'hub',
       center: { title: 'Ihre Website', sub: 'Klares Angebot, einfacher Weg zur Anfrage', icon: 'Globe' },
       nodes: [
         { title: 'SEO & GEO', sub: 'Bei Google und in KI-Antworten', icon: 'Search' },
-        { title: 'Inhalte', sub: 'Fachwissen zeigen', icon: 'FileText' },
-        { title: 'Direktansprache', sub: 'LinkedIn, E-Mail', icon: 'Send' },
+        { title: 'Inhalte', sub: 'KI-Entwurf, Fachwissen von Ihnen', icon: 'FileText' },
+        { title: 'Direktansprache', sub: 'Recherchiert, nach Freigabe versendet', icon: 'Send' },
         { title: 'Landingpages', sub: 'Pro Angebot eine Seite', icon: 'MousePointerClick' },
-        { title: 'Formulare', sub: 'Kurz und klar', icon: 'MessageSquare' },
-        { title: 'Lead-Bewertung', sub: 'Wer passt am besten', icon: 'Star' },
+        { title: 'Anreicherung', sub: 'Firmendaten automatisch ergänzt', icon: 'Database' },
+        { title: 'Lead-Scoring', sub: 'Nachvollziehbare Punkte', icon: 'Star' },
       ],
     },
   },
   'marketing-automation': {
     title: 'Was nach einer Anfrage automatisch passiert',
-    text: 'Eine Anfrage bleibt nicht im Posteingang liegen. Sie landet mit Quelle im CRM, wird bewertet, zugewiesen und begleitet, bis der Vertrieb übernimmt.',
+    text: 'Erfassung und Zuweisung laufen nach festen Regeln, weil sie dort am verlässlichsten sind. KI fasst zusammen und bereitet Entwürfe vor. Was persönlich an Kunden geht, gibt Ihr Team frei.',
     spec: {
       type: 'flow',
       nodes: [
         { title: 'Anfrage geht ein', sub: 'Website, Formular, Kampagne', icon: 'Mail' },
-        { title: 'Automatisch im CRM', sub: 'Mit Quelle und Angaben', icon: 'Database' },
-        { title: 'Bewertung & Zuweisung', sub: 'Passung, Dringlichkeit, Zuständigkeit', icon: 'Filter' },
-        { title: 'Nachfass-Strecke', sub: 'E-Mails und Erinnerungen', icon: 'Repeat' },
+        { title: 'Automatisch im CRM', sub: 'Regel: mit Quelle, zugewiesen', icon: 'Database' },
+        { title: 'Zusammenfassung & Bewertung', sub: 'KI fasst zusammen, Scoring ordnet ein', icon: 'Sparkles' },
+        { title: 'Nachfass-Strecke', sub: 'E-Mails aus freigegebenen Bausteinen', icon: 'Repeat' },
         { title: 'Übergabe an den Vertrieb', sub: 'Zum richtigen Zeitpunkt', icon: 'Handshake' },
       ],
     },
   },
   'sales-enablement': {
-    title: 'Für jede Verkaufsphase das passende Werkzeug',
-    text: 'Für jede Phase hat Ihr Vertrieb Leitfäden, Unterlagen und Vorlagen zur Hand. Sie werden im Alltag genutzt und liegen nicht ungelesen in einem Ordner.',
+    title: 'Vorbereitet in jedes Gespräch',
+    text: 'Verkaufswissen liegt an einem Ort, auf den Ihr Team und ein Agent zugreifen. Der Agent bereitet vor und fasst nach, das Gespräch und die Offerte bleiben bei Ihrem Vertrieb.',
     spec: {
       type: 'flow',
       nodes: [
-        { title: 'Erstkontakt', sub: 'Gesprächsleitfaden, Kurzprofil', icon: 'Phone' },
-        { title: 'Bedarfsanalyse', sub: 'Fragenkatalog, Qualifizierung', icon: 'Search' },
-        { title: 'Angebot', sub: 'Vorlagen, Fallbeispiele, Nutzenargumente', icon: 'FileText' },
-        { title: 'Nachfassen', sub: 'Erinnerungen und Textbausteine', icon: 'Repeat' },
-        { title: 'Abschluss', sub: 'Klarer nächster Schritt', icon: 'Handshake' },
+        { title: 'Termin im CRM', sub: 'Löst die Vorbereitung aus', icon: 'Calendar' },
+        { title: 'Recherche', sub: 'Firma, Personen, Verlauf, Referenzen', icon: 'Bot' },
+        { title: 'Gespräch', sub: 'Ihr Vertrieb führt', icon: 'Phone' },
+        { title: 'Nachbereitung', sub: 'Notizen, Aufgaben, Nachfass-Entwurf', icon: 'FileText' },
+        { title: 'Freigabe & Abschluss', sub: 'Offerte und Versand durch Ihr Team', icon: 'Handshake' },
       ],
     },
   },
   'revenue-operations': {
     title: 'Ein gemeinsames Fundament für alle Teams',
-    text: 'Wenn Marketing, Vertrieb und Kundenbetreuung mit unterschiedlichen Zahlen arbeiten, geht Umsatz verloren. Revenue Operations (RevOps) sorgt dafür, dass alle mit denselben Daten, Abläufen und Zielen arbeiten.',
+    text: 'Revenue Operations (RevOps) sorgt dafür, dass Marketing, Vertrieb und Kundenbetreuung mit denselben Daten, Definitionen und Zielen arbeiten. Auf diesem Fundament prüfen Regeln und Agenten laufend Datenqualität und Pipeline.',
     spec: {
       type: 'hub',
-      center: { title: 'Gemeinsame Daten & Ziele', sub: 'Alle sehen dieselben Zahlen', icon: 'Target' },
+      center: { title: 'Gemeinsame Daten & Definitionen', sub: 'Alle sehen dieselben Zahlen', icon: 'Target' },
       nodes: [
         { title: 'Marketing', sub: 'Anfragen mit Quelle', icon: 'Megaphone' },
         { title: 'Vertrieb', sub: 'Verkaufschancen', icon: 'Handshake' },
         { title: 'Kundenbetreuung', sub: 'Bestandskunden', icon: 'Users' },
-        { title: 'CRM', sub: 'Saubere Daten', icon: 'Database' },
-        { title: 'Abläufe', sub: 'Klare Übergaben', icon: 'Settings' },
+        { title: 'CRM', sub: 'Saubere, geprüfte Daten', icon: 'Database' },
+        { title: 'Prüfungen & Agenten', sub: 'Datenqualität, stehende Deals', icon: 'Bot' },
         { title: 'Reporting', sub: 'Gemeinsame Kennzahlen', icon: 'BarChart3' },
       ],
     },
   },
   'ai-automation': {
-    title: 'KI braucht ein solides Fundament',
-    text: 'KI bringt erst dann etwas, wenn Daten und Abläufe stimmen. Wir bauen von unten nach oben auf, und die Entscheidung bleibt bei Ihrem Team.',
+    title: 'Für jeden Schritt die passende Stufe',
+    text: 'KI bringt erst dann etwas, wenn Daten und Abläufe stimmen. Wir bauen von unten nach oben auf und wählen pro Schritt die einfachste Lösung, die verlässlich funktioniert. Die Entscheidung bleibt bei Ihrem Team.',
     spec: {
       type: 'layers',
       nodes: [
-        { title: 'Ihr Team entscheidet', sub: 'Mensch prüft und gibt frei', icon: 'UserCheck' },
+        { title: 'Ihr Team entscheidet', sub: 'Prüft, gibt frei, spricht mit Kunden', icon: 'UserCheck' },
         { title: 'KI-Unterstützung', sub: 'Recherche, Entwürfe, Zusammenfassungen', icon: 'Sparkles' },
-        { title: 'Automatisierte Abläufe', sub: 'Wiederkehrende Schritte laufen allein', icon: 'Settings' },
-        { title: 'Saubere Daten & klare Prozesse', sub: 'Die Grundlage für alles darüber', icon: 'Database' },
+        { title: 'Feste Regeln', sub: 'Wiederkehrende Schritte laufen allein', icon: 'Settings' },
+        { title: 'Saubere Daten & klare Regeln', sub: 'Was in welches Tool darf', icon: 'Database' },
       ],
     },
   },
   'ki-agenten': {
     title: 'Ein Ablauf, den ein Agent übernimmt',
-    text: 'Der Agent erledigt die Schritte zwischen den Systemen. Bevor etwas nach aussen geht, prüft und entscheidet Ihr Team.',
+    text: 'Eine feste Regel filtert den offensichtlichen Rest, der Agent erledigt die Schritte zwischen den Systemen. Bevor etwas nach aussen geht, prüft und entscheidet Ihr Team.',
     spec: {
       type: 'flow',
       nodes: [
         { title: 'Neue Anfrage', sub: 'Formular oder E-Mail, auch am Wochenende', icon: 'Mail' },
-        { title: 'Prüfen und einordnen', sub: 'Vollständigkeit, Spam, Ihre Kriterien', icon: 'Filter' },
+        { title: 'Prüfen und einordnen', sub: 'Regel für Spam, Agent für den Rest', icon: 'Filter' },
         { title: 'Recherche und CRM', sub: 'Firma, Kontakt, Anfrage angelegt', icon: 'Database' },
         { title: 'Antwortentwurf', sub: 'In Ihrem Stil vorbereitet', icon: 'Bot' },
         { title: 'Freigabe', sub: 'Ihr Team prüft und sendet', icon: 'UserCheck' },
@@ -129,77 +130,77 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'martech-stack': {
     title: 'Vom Tool-Wildwuchs zum verbundenen Stack',
-    text: 'Zuerst wissen, was da ist und was es kostet. Dann entscheiden, was bleibt, und die Systeme so verbinden, dass Daten nur einmal erfasst werden.',
+    text: 'Zuerst wissen, was da ist und was es kostet. Dann festlegen, welches System führend ist, die Tools verbinden und Zugänge mit klaren Rechten einrichten, damit Automatisierungen und Agenten verlässlich darauf arbeiten.',
     spec: {
       type: 'flow',
       nodes: [
-        { title: 'Inventur', sub: 'Tools, Kosten, Nutzung, Datenflüsse', icon: 'Search' },
-        { title: 'Zielbild', sub: 'Was bleibt, was weg kann, was fehlt', icon: 'Target' },
+        { title: 'Inventur', sub: 'Tools, Kosten, Datenflüsse, Schnittstellen', icon: 'Search' },
+        { title: 'Zielbild', sub: 'Führende Systeme, was bleibt, was weg kann', icon: 'Target' },
         { title: 'Verbinden', sub: 'Daten nur einmal erfassen', icon: 'Layers' },
-        { title: 'Klare Zahlen', sub: 'Von der Anfrage bis zum Auftrag', icon: 'BarChart3' },
-        { title: 'Laufend sauber', sub: 'Neue Tools erst nach Prüfung', icon: 'RefreshCw' },
+        { title: 'Rechte & Protokolle', sub: 'Eigener Zugang pro Workflow und Agent', icon: 'UserCheck' },
+        { title: 'Laufend überwacht', sub: 'Schnittstellen, Kosten, neue Tools', icon: 'RefreshCw' },
       ],
     },
   },
   'data-analytics': {
-    title: 'Vom Klick bis zum Umsatz nachvollziehbar',
-    text: 'Wir verbinden Website-Messung mit den Daten aus Ihrem CRM. So sehen Sie, welcher Kanal Anfragen und Aufträge bringt und welcher nur Klicks.',
+    title: 'Vom Klick bis zum Umsatz, und zurück an die Werbekonten',
+    text: 'Wir verbinden Website-Messung mit den Daten aus Ihrem CRM. So sehen Sie, welcher Kanal Aufträge bringt, und die Gebotsalgorithmen der Werbeplattformen lernen aus denselben Daten.',
     spec: {
       type: 'flow',
       nodes: [
-        { title: 'Sauberes Tracking', sub: 'Google Analytics, Tag Manager, DSG-konform', icon: 'MousePointerClick' },
-        { title: 'Zuordnung', sub: 'Welcher Kanal bringt welche Anfrage', icon: 'Filter' },
+        { title: 'Sauberes Tracking', sub: 'Tag Manager, auch serverseitig, DSG-konform', icon: 'MousePointerClick' },
         { title: 'Verknüpfung mit dem CRM', sub: 'Anfrage, Angebot, Auftrag', icon: 'Database' },
-        { title: 'Dashboard', sub: 'Wenige Kennzahlen, die zählen', icon: 'BarChart3' },
+        { title: 'Rückmeldung', sub: 'Aufträge an Google, Meta, LinkedIn', icon: 'Repeat' },
+        { title: 'Tägliche Prüfung', sub: 'Regeln prüfen, ein Modell ordnet ein', icon: 'Zap' },
         { title: 'Bessere Entscheidungen', sub: 'Budget dorthin, wo Aufträge entstehen', icon: 'LineChart' },
       ],
     },
   },
   'ecommerce-performance': {
     title: 'Wo Ihr Shop Käufer verliert',
-    text: 'Wir untersuchen jede Stufe vom Besuch bis zum Kauf, finden die grössten Abbrüche und verbessern sie mit überprüfbaren Tests.',
+    text: 'Wir untersuchen jede Stufe vom Besuch bis zum Kauf, finden die grössten Abbrüche und verbessern sie mit überprüfbaren Tests. Feste Prüfungen beobachten die Stufen täglich, damit ein Einbruch nicht erst im Monatsbericht auffällt.',
     spec: {
       type: 'funnel',
       nodes: [
-        { title: 'Besuch', sub: 'Kampagnen, Suche, Direkt', icon: 'Globe' },
-        { title: 'Produktansicht', sub: 'Bilder, Nutzen, Vertrauen', icon: 'Search' },
+        { title: 'Besuch', sub: 'Kampagnen nach Marge, Suche, Direkt', icon: 'Globe' },
+        { title: 'Produktansicht', sub: 'Texte, Feed, Vertrauen', icon: 'Search' },
         { title: 'Warenkorb', sub: 'Versand, Preise, Hürden', icon: 'ShoppingCart' },
-        { title: 'Checkout', sub: 'Zahlungsarten, Formular', icon: 'Wallet' },
+        { title: 'Checkout', sub: 'Zahlungsarten, Formular, Ausfälle', icon: 'Wallet' },
         { title: 'Kauf', sub: 'Und der Weg zum Wiederkauf', icon: 'CheckCircle2' },
       ],
     },
   },
   'dtc-growth-acquisition': {
     title: 'Der Kreislauf profitabler Kundengewinnung',
-    text: 'Ein günstiger Erstkauf allein sagt wenig. Wichtiger ist, was ein Kunde über die Zeit einbringt, und daran richten wir Budget und Kampagnen aus.',
+    text: 'Ein günstiger Erstkauf allein sagt wenig. Wichtiger ist, was ein Kunde über die Zeit einbringt. Diese Zahlen berechnet ein fester Ablauf jede Woche neu, und danach richten wir Budget und Kampagnen aus.',
     spec: {
       type: 'cycle',
       center: 'Profitables Wachstum',
       nodes: [
-        { title: 'Kunden gewinnen', sub: 'Kosten pro Neukunde kennen', icon: 'Target' },
+        { title: 'Kunden gewinnen', sub: 'Algorithmen suchen Neukunden', icon: 'Target' },
         { title: 'Erstkauf', sub: 'Shop, Angebot, Vertrauen', icon: 'ShoppingCart' },
         { title: 'Wiederkauf', sub: 'Kundenwert steigern', icon: 'Repeat' },
-        { title: 'Budget reinvestieren', sub: 'Dort, wo es sich rechnet', icon: 'PiggyBank' },
+        { title: 'Budget reinvestieren', sub: 'Nach wöchentlich berechnetem Kundenwert', icon: 'PiggyBank' },
       ],
     },
   },
   'customer-retention': {
     title: 'Aus Erstkäufern werden Stammkunden',
-    text: 'Automatische E-Mails und Angebote begleiten Ihre Kunden nach dem Kauf, holen sie zurück und machen aus einmaligen Käufern wiederkehrende.',
+    text: 'Die Abläufe reagieren auf das Verhalten einzelner Kunden statt auf den Kalender. Feste Regeln lösen aus, KI bereitet Texte und Vorschläge vor, und Angebote legt Ihr Team fest.',
     spec: {
       type: 'cycle',
       center: 'Stammkunden',
       nodes: [
         { title: 'Erstkauf', sub: 'Der Anfang der Beziehung', icon: 'ShoppingCart' },
         { title: 'Willkommensstrecke', sub: 'Danke, Tipps, Vertrauen', icon: 'Mail' },
-        { title: 'Wiederkauf-Impulse', sub: 'Zur richtigen Zeit', icon: 'Zap' },
+        { title: 'Signale', sub: 'Nachkaufzeitpunkt, Nutzung, Pause', icon: 'Zap' },
         { title: 'Rückgewinnung', sub: 'Inaktive Kunden zurückholen', icon: 'RefreshCw' },
       ],
     },
   },
   'paid-social-ecommerce': {
     title: 'Vom Umsatz zum tatsächlichen Gewinn',
-    text: 'Ein guter ROAS heisst noch nicht, dass Sie verdienen. Wir steuern Meta und TikTok nach dem, was nach allen Kosten übrig bleibt.',
+    text: 'Ein guter ROAS heisst noch nicht, dass Sie verdienen. Wir steuern Meta und TikTok nach dem, was nach allen Kosten übrig bleibt, und melden den Plattformen genau diesen Wert zurück.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -207,7 +208,7 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
         { title: 'Abzüglich Warenkosten', sub: 'Einkauf, Produktion', icon: 'ShoppingCart' },
         { title: 'Abzüglich Versand & Retouren', sub: 'Logistik, Rücksendungen', icon: 'RefreshCw' },
         { title: 'Abzüglich Werbekosten', sub: 'Mediabudget', icon: 'Megaphone' },
-        { title: 'Deckungsbeitrag', sub: 'Danach steuern wir', icon: 'Wallet' },
+        { title: 'Deckungsbeitrag', sub: 'Danach steuern die Algorithmen', icon: 'Wallet' },
       ],
     },
   },
@@ -216,22 +217,22 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
 /** Hubs /leistungen/<feld> */
 export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
   'ki-im-unternehmen': {
-    title: 'So führen wir KI ein',
-    text: 'Zuerst klären, wo KI etwas bringt. Dann einführen und schulen, Regeln festlegen und erst danach Agenten ganze Abläufe übernehmen lassen. Die Entscheidung bleibt bei Ihrem Team.',
+    title: 'So bleibt der Einsatz von Agenten kontrollierbar',
+    text: 'Bevor ein Agent arbeitet, steht fest, welche Stufe die Aufgabe braucht, welche Rechte und Daten er erhält und wer freigibt. Im Betrieb zeigen Protokolle, Fehlerquote und Kosten pro Fall, ob er sich bewährt.',
     spec: {
       type: 'flow',
       nodes: [
-        { title: 'Standortbestimmung', sub: 'Wo KI heute genutzt wird und was sich lohnt', icon: 'Search' },
-        { title: 'Einführung und Schulung', sub: 'Mit Ihren eigenen Abläufen', icon: 'Users' },
-        { title: 'Regeln', sub: 'Daten, Tools und Freigaben', icon: 'CheckCircle2' },
-        { title: 'KI-Agenten', sub: 'Ganze Abläufe mit Freigabe', icon: 'Bot' },
-        { title: 'Begleitung', sub: 'Messen, anpassen, ausbauen', icon: 'RefreshCw' },
+        { title: 'Stufe wählen', sub: 'Regel, KI-Unterstützung oder Agent', icon: 'Filter' },
+        { title: 'Rechte & Daten', sub: 'Nur was die Aufgabe braucht, DSG geklärt', icon: 'Database' },
+        { title: 'Mit echten Fällen testen', sub: 'Ergebnisse und Kosten pro Fall', icon: 'CheckCircle2' },
+        { title: 'Freigaben & Protokolle', sub: 'Mensch entscheidet, alles nachvollziehbar', icon: 'UserCheck' },
+        { title: 'Überwachen', sub: 'Fehler melden, an Menschen übergeben', icon: 'RefreshCw' },
       ],
     },
   },
   prozesse: {
     title: 'Ihre Systeme, verbunden statt verstreut',
-    text: 'Im Zentrum stehen saubere Kundendaten. Darum herum verbinden wir die Tools, die Sie heute nutzen, damit Daten nur einmal erfasst werden.',
+    text: 'Im Zentrum stehen saubere Kundendaten. Darum herum verbinden wir die Tools, die Sie heute nutzen. Feste Workflows übertragen die Daten, Agenten übernehmen die Ausnahmen, jeweils mit eigenem Zugang und Protokoll.',
     spec: {
       type: 'hub',
       center: { title: 'Zentrale Kundendaten', sub: 'CRM als gemeinsame Basis', icon: 'Database' },
@@ -239,36 +240,36 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
         { title: 'Website & Formulare', icon: 'Globe' },
         { title: 'E-Mail & Kalender', icon: 'Mail' },
         { title: 'Offerte & Buchhaltung', icon: 'FileText' },
-        { title: 'Projekte & Aufgaben', icon: 'Briefcase' },
+        { title: 'Feste Workflows', icon: 'Settings' },
         { title: 'Reporting', icon: 'BarChart3' },
-        { title: 'KI-Assistenz', icon: 'Sparkles' },
+        { title: 'Agenten mit Rechten', icon: 'Bot' },
       ],
     },
   },
   marketing: {
     title: 'Marketing entlang der ganzen Strecke',
-    text: 'Wir verbessern den ganzen Weg vom ersten Kontakt bis zum Auftrag. An jeder Stufe messen wir, wo Interessenten abspringen, und geben die Zahlen an den Vertrieb weiter.',
+    text: 'Wir verbessern den ganzen Weg vom ersten Kontakt bis zum Auftrag. An jeder Stufe messen wir, wo Interessenten abspringen, und spielen die Ergebnisse aus dem CRM an die Werbekonten zurück.',
     spec: {
       type: 'funnel',
       nodes: [
-        { title: 'Sichtbarkeit', sub: 'Google, LinkedIn, Meta, SEO', icon: 'Megaphone' },
+        { title: 'Sichtbarkeit', sub: 'Google, LinkedIn, Meta, SEO, GEO', icon: 'Megaphone' },
         { title: 'Besuch', sub: 'Landingpages mit klarem Angebot', icon: 'Globe' },
         { title: 'Anfrage', sub: 'Conversion-Optimierung', icon: 'MousePointerClick' },
-        { title: 'Erstgespräch', sub: 'Schnelle Reaktion, Vorqualifizierung', icon: 'Phone' },
+        { title: 'Erstgespräch', sub: 'Angereichert, bewertet, schnell beantwortet', icon: 'Phone' },
         { title: 'Auftrag', sub: 'Messbar bis zum Umsatz', icon: 'Handshake' },
       ],
     },
   },
   sales: {
     title: 'Eine Pipeline, die zeigt, wo Umsatz entsteht',
-    text: 'Klare Phasen, Zuständigkeiten und Übergaben im CRM machen sichtbar, wo Verkaufschancen stehen und wo sie verloren gehen.',
+    text: 'Klare Phasen, Zuständigkeiten und Übergaben im CRM machen sichtbar, wo Verkaufschancen stehen. Agenten übernehmen Recherche und Vorarbeit, Gespräch und Offerte bleiben bei Ihrem Vertrieb.',
     spec: {
       type: 'flow',
       nodes: [
         { title: 'Neue Anfrage', sub: 'Automatisch erfasst und zugewiesen', icon: 'Mail' },
-        { title: 'Qualifiziert', sub: 'Gemeinsame Definition mit Marketing', icon: 'Filter' },
-        { title: 'Angebot', sub: 'Vorlagen und Nachfass-Erinnerungen', icon: 'FileText' },
-        { title: 'Verhandlung', sub: 'Nächste Schritte im Blick', icon: 'MessageSquare' },
+        { title: 'Qualifiziert', sub: 'Gemeinsame Kriterien, vorgeprüft', icon: 'Filter' },
+        { title: 'Gespräch', sub: 'Vorbereitet durch Recherche', icon: 'Phone' },
+        { title: 'Angebot', sub: 'Entwurf aus Vorlagen, Nachfassen vorbereitet', icon: 'FileText' },
         { title: 'Auftrag', sub: 'Mit Quelle bis zum Umsatz', icon: 'Handshake' },
       ],
     },
@@ -279,13 +280,13 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
 export const CHALLENGE_DIAGRAMS: Record<string, PageDiagram> = {
   prozessautomatisierung: {
     title: 'Ein Beispiel: eine Anfrage ohne Handarbeit',
-    text: 'So kann ein typischer Ablauf aussehen, wenn Ihre Systeme verbunden sind. Jeder Schritt, der heute von Hand passiert, läuft automatisch.',
+    text: 'So kann ein typischer Ablauf aussehen, wenn Ihre Systeme verbunden sind. Die meisten Schritte erledigen feste Regeln. Nur wo gelesen und eingeordnet werden muss, kommt KI dazu, und was nach aussen geht, prüft ein Mensch.',
     spec: {
       type: 'flow',
       nodes: [
         { title: 'Anfrage auf der Website', sub: 'Formular oder E-Mail', icon: 'Globe' },
-        { title: 'Automatisch im CRM', sub: 'Kontakt, Firma, Quelle', icon: 'Database' },
-        { title: 'Aufgabe & Info ans Team', sub: 'Zuständige Person wird benachrichtigt', icon: 'Users' },
+        { title: 'Automatisch im CRM', sub: 'Regel: Kontakt, Firma, Quelle', icon: 'Database' },
+        { title: 'Einordnen & Entwurf', sub: 'KI fasst zusammen, Team prüft', icon: 'Sparkles' },
         { title: 'Daten an Offerte & Buchhaltung', sub: 'Ohne erneutes Abtippen', icon: 'FileText' },
         { title: 'Bericht an die Geschäftsleitung', sub: 'Regelmässig und automatisch', icon: 'BarChart3' },
       ],
@@ -293,7 +294,7 @@ export const CHALLENGE_DIAGRAMS: Record<string, PageDiagram> = {
   },
   'vertrieb-optimieren': {
     title: 'Wo im Vertrieb Umsatz verloren geht',
-    text: 'Zwischen Anfrage und Auftrag liegen mehrere Stufen. An jeder kann ein Interessent verloren gehen, meist ohne dass es jemand merkt.',
+    text: 'Zwischen Anfrage und Auftrag liegen mehrere Stufen. An jeder kann ein Interessent verloren gehen, meist ohne dass es jemand merkt. Automatische Erfassung, Fristen und vorbereitetes Nachfassen schliessen die Lücken.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -328,14 +329,14 @@ export function sectorDiagram(slug: string, sectorTitle: string): PageDiagram {
   const g = SECTOR_GOAL[slug] ?? { goal: 'Auftrag', sub: 'Neue Kundin, neuer Kunde', first: 'Google, LinkedIn, Meta' };
   return {
     title: `So entstehen Anfragen für ${sectorTitle}`,
-    text: 'Wir kümmern uns um den ganzen Weg vom ersten Kontakt bis zum Abschluss und messen, wie viele Interessenten von einer Stufe zur nächsten kommen.',
+    text: 'Wir kümmern uns um den ganzen Weg vom ersten Kontakt bis zum Abschluss und messen, wie viele Interessenten von einer Stufe zur nächsten kommen. Erfassung und Nachfassen laufen automatisch, damit keine Anfrage liegen bleibt.',
     spec: {
       type: 'flow',
       nodes: [
-        { title: 'Gefunden werden', sub: g.first, icon: 'Search' },
+        { title: 'Gefunden werden', sub: `${g.first}, KI-Assistenten`, icon: 'Search' },
         { title: 'Vertrauen aufbauen', sub: 'Klare Website, Referenzen, Inhalte', icon: 'Star' },
         { title: 'Anfrage', sub: 'Einfacher Weg per Formular oder E-Mail', icon: 'MousePointerClick' },
-        { title: 'Schnelle Reaktion', sub: 'Im CRM erfasst, nachgefasst', icon: 'Zap' },
+        { title: 'Schnelle Reaktion', sub: 'Automatisch im CRM, Antwort vorbereitet', icon: 'Zap' },
         { title: g.goal, sub: g.sub, icon: 'Handshake' },
       ],
     },

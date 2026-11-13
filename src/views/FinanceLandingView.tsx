@@ -240,7 +240,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                 Was wir für Sie aufbauen und betreiben
               </h2>
               <p className="text-slate-300">
-                Vier Bausteine, die ineinandergreifen. Je nach Ausgangslage beginnen wir mit der Messung oder mit den Kampagnen.
+                Vier Bausteine, die ineinandergreifen. Feste Abläufe übernehmen das Wiederkehrende, KI hilft beim Zusammenfassen und Vorbereiten. Texte an Ihre Interessenten geben Sie frei, wiederkehrende einmal als Vorlage, alle anderen vor dem Versand. Je nach Ausgangslage beginnen wir mit der Messung oder mit den Kampagnen.
               </p>
             </div>
             <ol className="grid grid-cols-1 gap-8 border-t border-white/10 pt-8 md:grid-cols-2 lg:grid-cols-4">
