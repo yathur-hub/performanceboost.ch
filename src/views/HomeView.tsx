@@ -8,7 +8,7 @@
  */
 import { Visual3D, VISUAL_BY_AREA } from '../components/Visual3D';
 import React, { useState, lazy, Suspense } from 'react';
-import { ArrowRight, Check, RotateCcw } from 'lucide-react';
+import { ArrowRight, RotateCcw } from 'lucide-react';
 import { AnimatePresence } from 'motion/react';
 const ProblemFinder = lazy(() => import('../components/home/ProblemFinder'));
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
@@ -25,8 +25,6 @@ interface HomeViewProps {
   onNavigate: (path: string) => void;
 }
 
-
-const HERO_OUTCOMES = ['Anfragen, die zu Ihrem Angebot passen', 'Kürzere Wege vom Erstkontakt zur Offerte', 'Weniger Abtippen und Nachfassen von Hand'];
 
 const DIFFERENCES = [
   { title: 'Wer plant, setzt auch um', desc: 'Die Person, die mit Ihnen die Prioritäten festlegt, baut danach auch Kampagnen, CRM und Automatisierungen.' },
@@ -82,16 +80,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Wir verbinden Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter zu einem System. KI-Agenten übernehmen dabei klar
                 umrissene Aufgaben, die Entscheidungen bleiben bei Ihrem Team.
               </p>
-              <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-3.5 sm:gap-y-2.5 justify-start text-left max-w-2xl">
-                {HERO_OUTCOMES.map((o) => (
-                  <li key={o} className="flex items-center gap-2.5 sm:gap-2 text-sm sm:text-[15px] font-semibold text-slate-900">
-                    <span className="w-5 h-5 rounded-full bg-[#686CFA]/12 text-[#686CFA] flex items-center justify-center shrink-0">
-                      <Check className="w-3.5 h-3.5" aria-hidden="true" />
-                    </span>
-                    {o}
-                  </li>
-                ))}
-              </ul>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 justify-start items-stretch sm:items-center lg:pt-1">
                 <CtaButton label="Ausgangslage besprechen" location="home_hero" pageSlug="home" />
                 <button
