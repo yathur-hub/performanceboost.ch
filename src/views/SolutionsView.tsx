@@ -29,7 +29,6 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
     onNavigate('/kontakt');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleFaq = (index: number) => {
@@ -241,11 +240,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       </section>
 
       {/* POSITIONIERUNGS-SEKTION */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-120px" }}
-        transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+      <section 
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
@@ -258,31 +253,22 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             Darum beginnen wir mit einer Analyse Ihrer Situation, nicht mit einem Pauschalangebot.
           </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* WACHSTUMSBEREICHE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="text-center space-y-3"
         >
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Leistungsbereiche</h2>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+        <div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {WACHSTUMSBEREICHE.map((item) => (
             <motion.div 
               key={item.num} 
-              variants={staggeredChildVariants}
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.35)" }}
               className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition-all duration-300 group"
             >
@@ -317,37 +303,28 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       {/* COMBINATIONS SECTION */}
       <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+          <div 
             className="text-center space-y-3"
           >
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
             <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
               Jede Leistung funktioniert auch allein. Kombiniert bringen Leistungen oft mehr, etwa wenn Kampagnen ins CRM laufen.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+          <div 
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {COMBINATIONS.map((c, idx) => (
               <motion.div 
                 key={idx} 
-                variants={staggeredChildVariants}
                 whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.2)" }}
                 className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] transition-all duration-300"
               >
@@ -365,28 +342,20 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
         </div>
       </section>
 
       {/* FAQ SECTION */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="text-center space-y-3"
         >
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Häufig gestellte Fragen</h2>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 md:p-10 space-y-4 shadow-[var(--shadow-premium-sm)]"
         >
           {FAQS.map((faq, index) => (
@@ -417,7 +386,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               </AnimatePresence>
             </div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       <LeadCtaSection formLocation="loesungen" title="Welche Lösung passt zu Ihrem Unternehmen?" />

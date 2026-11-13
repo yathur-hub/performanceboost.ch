@@ -8,8 +8,9 @@
  * Informationsarchitektur unverändert: Marketing · Sales · Processes (mit Leistungen) · Ansatz · Agentic AI · Wissen · Unternehmen · Kontakt.
  */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Menu, X, ArrowRight, TrendingUp, Handshake, Cpu, Mail, Plus, Sparkles, Layers } from 'lucide-react';
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import { ArrowRight, TrendingUp, Handshake, Cpu, Mail, Plus, Sparkles, Layers } from 'lucide-react';
+import { motion, AnimatePresence, useReducedMotion, type Variants } from 'motion/react';
+import { EASE_OUT, EASE_EXIT, DURATIONS } from '../lib/motion';
 import { SITE } from '../config/site';
 import { AREAS, menuServicesOf } from '../data/serviceAreas';
 import { useContactModal } from '../context/ContactModalContext';
@@ -161,13 +162,24 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const linkState = (href: string) =>
     isCurrent(href) ? 'text-[#4f54d6] font-semibold' : 'text-slate-700 hover:text-[#4f54d6]';
 
-  const panelMotion = reduceMotion
-    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0.12 } }
+  // Mega-Menü: Container gleitet ein, danach erscheinen die Gruppen gestaffelt. Schliessen kürzer und ohne Staffel.
+  const panelVariants: Variants = reduceMotion
+    ? { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.12 } }, exit: { opacity: 0, transition: { duration: 0.12 } } }
     : {
-        initial: { opacity: 0, y: -12 },
-        animate: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: -8 },
-        transition: { duration: 0.32, ease: [0.16, 1, 0.3, 1] as const },
+        hidden: { opacity: 0, y: -14, clipPath: 'inset(0 0 12% 0 round 0 0 32px 32px)' },
+        visible: {
+          opacity: 1,
+          y: 0,
+          clipPath: 'inset(0 0 0% 0 round 0 0 32px 32px)',
+          transition: { duration: 0.42, ease: EASE_OUT, staggerChildren: 0.06, delayChildren: 0.1 },
+        },
+        exit: { opacity: 0, y: -10, transition: { duration: DURATIONS.menuExit, ease: EASE_EXIT } },
+      };
+  const groupVariants: Variants = reduceMotion
+    ? { hidden: { opacity: 1 }, visible: { opacity: 1 } }
+    : {
+        hidden: { opacity: 0, y: 12 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.46, ease: EASE_OUT } },
       };
 
   return (
@@ -208,7 +220,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               href="/kontakt"
               onClick={(e) => openCta('header', e)}
               data-cta="header"
-              className="hidden sm:inline-flex items-center gap-2 min-h-11 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
+              className="btn-press hidden sm:inline-flex items-center gap-2 min-h-11 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
             >
               Gespräch anfragen
             </a>
@@ -224,9 +236,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 isOpen ? 'bg-slate-950 border-slate-950 text-white' : 'bg-white border-slate-200/80 text-slate-900 hover:border-[#686CFA]/40 hover:text-[#4f54d6]'
               }`}
             >
-              <span className="relative w-4.5 h-4.5" aria-hidden="true">
-                <Menu className={`absolute inset-0 w-4.5 h-4.5 transition-all duration-300 ${isOpen ? 'opacity-0 rotate-90 scale-75' : 'opacity-100'}`} />
-                <X className={`absolute inset-0 w-4.5 h-4.5 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 -rotate-90 scale-75'}`} />
+              <span className="menu-icon" aria-hidden="true">
+                <span />
+                <span />
+                <span />
               </span>
               <span>{isOpen ? 'Schliessen' : 'Menü'}</span>
             </button>
@@ -241,9 +254,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              animate={{ opacity: 1, transition: { duration: 0.36, ease: EASE_OUT } }}
+              exit={{ opacity: 0, transition: { duration: DURATIONS.menuExit, ease: EASE_EXIT } }}
               className="fixed inset-x-0 bottom-0 bg-slate-950/35 backdrop-blur-[2px]"
               style={{ top: headerHeight }}
               onClick={() => close(false)}
@@ -257,7 +269,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               role="dialog"
               aria-modal="true"
               aria-label="Hauptmenü"
-              {...panelMotion}
+              variants={panelVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
               className="absolute inset-x-0 top-full overflow-y-auto overscroll-contain bg-white border-b border-[#E0E0E0] shadow-[0_40px_80px_-40px_rgba(15,23,42,0.35)] rounded-b-[2rem]"
               style={{ maxHeight: `calc(100dvh - ${headerHeight}px)` }}
             >
@@ -274,7 +289,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           const hub = `/leistungen/${area.id}`;
                           const expanded = openArea === area.id;
                           return (
-                            <div key={area.id} className="rounded-2xl border border-[#E0E0E0] md:border-0 md:rounded-none p-4 md:p-0">
+                            <motion.div key={area.id} variants={groupVariants} className="rounded-2xl border border-[#E0E0E0] md:border-0 md:rounded-none p-4 md:p-0">
                               {/* Mobil: Akkordeon-Kopf */}
                               <button
                                 type="button"
@@ -315,7 +330,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                             aria-current={isCurrent(href) ? 'page' : undefined}
                                             className={`block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(href)}`}
                                           >
-                                            {s.title}
+                                            <span className="link-underline">{s.title}</span>
                                           </a>
                                         </li>
                                       );
@@ -326,13 +341,13 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                   </a>
                                 </div>
                               </div>
-                            </div>
+                            </motion.div>
                           );
                         })}
                       </nav>
                     </div>
 
-                    <nav aria-label="Vorgehen" className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-6 md:border-t md:border-slate-100">
+                    <motion.nav variants={groupVariants} aria-label="Vorgehen" className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-6 md:border-t md:border-slate-100">
                       {APPROACH_LINKS.map((l) => {
                         const Icon = l.icon;
                         return (
@@ -354,12 +369,12 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           </a>
                         );
                       })}
-                    </nav>
+                    </motion.nav>
                   </div>
 
                   {/* RECHTS: Wissen, Unternehmen, Kontakt */}
                   <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-8 lg:border-l lg:border-slate-100 lg:pl-10">
-                    <div className="grid grid-cols-2 gap-6 sm:col-span-1">
+                    <motion.div variants={groupVariants} className="grid grid-cols-2 gap-6 sm:col-span-1">
                       {[
                         { label: 'Wissen', links: KNOWLEDGE_LINKS },
                         { label: 'Unternehmen', links: COMPANY_LINKS },
@@ -375,16 +390,16 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                   aria-current={isCurrent(l.href) ? 'page' : undefined}
                                   className={`block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(l.href)}`}
                                 >
-                                  {l.label}
+                                  <span className="link-underline">{l.label}</span>
                                 </a>
                               </li>
                             ))}
                           </ul>
                         </nav>
                       ))}
-                    </div>
+                    </motion.div>
 
-                    <div className="relative overflow-hidden rounded-3xl bg-slate-950 text-white p-6">
+                    <motion.div variants={groupVariants} className="relative overflow-hidden rounded-3xl bg-slate-950 text-white p-6">
                       <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#686CFA]/30 blur-3xl pointer-events-none" aria-hidden="true" />
                       <div className="relative flex items-center gap-3">
                         <img src={SITE.portraitUrl} alt="" width={48} height={48} loading="lazy" className="w-12 h-12 rounded-2xl object-cover border border-white/15" referrerPolicy="no-referrer" />
@@ -400,14 +415,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                         href="/kontakt"
                         onClick={(e) => openCta('mega_menu', e)}
                         id="mega-menu-cta"
-                        className="relative mt-5 w-full inline-flex items-center justify-center gap-2 min-h-12 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold px-6 py-3 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
+                        className="btn-press relative mt-5 w-full inline-flex items-center justify-center gap-2 min-h-12 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold px-6 py-3 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
                       >
                         Gespräch anfragen <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </a>
                       <a href={`mailto:${SITE.email}`} className="relative mt-4 flex justify-center items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors">
                         <Mail className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.email}
                       </a>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>

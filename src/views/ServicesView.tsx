@@ -617,11 +617,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       </section>
 
       {/* BRANCHENLOESUNGEN CARDS SECTION */}
-      <motion.section 
-        initial={{ opacity: 0, y: 35 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-120px" }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      <section 
         className="bg-[#fcfcfc] border-y border-[#E2E8F0]/30 py-16 md:py-32"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -770,7 +766,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             })}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       <LeadCtaSection formLocation="leistungen" title="Welche Leistung passt zu Ihrem Unternehmen?" />
 

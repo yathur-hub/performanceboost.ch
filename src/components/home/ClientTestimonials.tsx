@@ -168,11 +168,7 @@ export function ClientTestimonials() {
     .slice(0, 2);
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: PREMIUM_EASE }}
+    <section
       className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10"
       id="kundenreferenzen"
     >
@@ -325,6 +321,6 @@ export function ClientTestimonials() {
           </motion.div>
         </AnimatePresence>
       </div>
-    </motion.section>
+    </section>
   );
 }

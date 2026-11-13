@@ -133,7 +133,7 @@ export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { l
         trackEvent('cta_click', { cta_location: location, cta_target: 'overlay' });
         openContactModal();
       }}
-      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-8 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
+      className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-8 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
     >
       {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
     </button>
@@ -171,7 +171,7 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string 
             trackEvent('cta_click', { cta_location: 'sticky_mobile', cta_target: 'overlay' });
             onFallback();
           }}
-          className="flex-1 inline-flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap"
+          className="btn-press flex-1 inline-flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap"
         >
           {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </button>

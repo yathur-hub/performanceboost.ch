@@ -1,103 +1,77 @@
 /**
- * @license
- * SPDX-License-Identifier: Apache-2.0
+ * Motion-Tokens für JavaScript-Animationen (motion/react). Spiegeln die CSS-Tokens in src/index.css
+ * (Abschnitt MOTION-SYSTEM). Werte immer an beiden Stellen gemeinsam ändern.
+ * Doku: docs/agentic-positioning/04-motion.md
  */
+import type { Variants } from 'motion/react';
 
-import { Variants } from 'motion/react';
+/** Hauptkurve für Reveals, Öffnen und Hover: schneller Start, langes weiches Auslaufen. */
+export const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
+/** Für Schliessen und Ausblenden: kurz und kontrolliert. */
+export const EASE_EXIT: [number, number, number, number] = [0.4, 0, 1, 1];
+export const EASE_IN_OUT: [number, number, number, number] = [0.65, 0, 0.35, 1];
 
-// Bespoke premium ease-out cubic-bezier curve – reminiscent of luxury SaaS interfaces
-export const PREMIUM_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+/** Rückwärtskompatibel: bestehende Komponenten nutzen PREMIUM_EASE. */
+export const PREMIUM_EASE = EASE_OUT;
 
+/** Dauern in Sekunden (CSS: --dur-*). */
 export const DURATIONS = {
-  fast: 0.2,       // Micro-interactions, hover transitions
-  medium: 0.45,    // Standard card reveals, layout shifts
-  slow: 0.7,       // Large page sections, visual entryways
-  deliberate: 1.0  // Complete stage reveals
+  press: 0.12,
+  fast: 0.2, // Buttons, Farbwechsel
+  link: 0.24,
+  card: 0.3,
+  accordion: 0.34,
+  medium: 0.46, // Menü öffnen, Overlays
+  menuExit: 0.3,
+  slow: 0.72, // Scroll-Reveals
+  deliberate: 1.0, // Hero
 };
 
-// Standard Page Transition
+export const STAGGER = 0.08;
+
+export const MOTION = { EASE_OUT, EASE_EXIT, EASE_IN_OUT, DURATIONS, STAGGER } as const;
+
+/** Seitenübergang für Browser ohne View Transitions (CSS übernimmt sonst). */
 export const pageTransitionVariants: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: 12 
-  },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { 
-      duration: DURATIONS.medium, 
-      ease: PREMIUM_EASE 
-    }
-  },
-  exit: { 
-    opacity: 0, 
-    y: -8,
-    transition: { 
-      duration: DURATIONS.fast, 
-      ease: PREMIUM_EASE 
-    }
-  }
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.38, ease: EASE_OUT } },
+  exit: { opacity: 0, transition: { duration: 0.18, ease: EASE_EXIT } },
 };
 
-// Staggered layout reveals for list or grid elements
 export const staggerContainer: Variants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.05
-    }
-  }
+  visible: { opacity: 1, transition: { staggerChildren: STAGGER, delayChildren: 0.05 } },
 };
 
-// Single element within a staggered list reveal
 export const staggeredChildVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: DURATIONS.slow, ease: PREMIUM_EASE }
-  }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT } },
 };
 
-// Delicate scale + fade-in animation for modal overlaps or key card states
 export const scaleUpVariants: Variants = {
   hidden: { opacity: 0, scale: 0.97 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: DURATIONS.medium, ease: PREMIUM_EASE }
-  }
+  visible: { opacity: 1, scale: 1, transition: { duration: DURATIONS.medium, ease: EASE_OUT } },
 };
 
-// Header Sticky Transition Variant
-export const navHeaderVariants: Variants = {
-  top: { 
-    y: 0,
-    backgroundColor: 'rgba(246, 246, 246, 0.0)',
-    backdropFilter: 'blur(0px)',
-    boxShadow: '0 0 0 rgba(0,0,0,0)'
-  },
-  sticky: { 
-    y: 0,
-    backgroundColor: 'rgba(246, 246, 246, 0.85)',
-    backdropFilter: 'blur(16px)',
-    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.02)',
-    borderBottom: '1px solid rgba(226, 232, 240, 0.3)'
-  }
+/** Overlays und Modals: Hintergrund und Inhalt. */
+export const overlayBackdrop = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.32, ease: EASE_OUT } },
+  exit: { opacity: 0, transition: { duration: 0.24, ease: EASE_EXIT } },
+};
+export const overlayPanel = {
+  initial: { opacity: 0, y: 18, scale: 0.985 },
+  animate: { opacity: 1, y: 0, scale: 1, transition: { duration: DURATIONS.medium, ease: EASE_OUT } },
+  exit: { opacity: 0, y: 10, scale: 0.99, transition: { duration: 0.22, ease: EASE_EXIT } },
 };
 
-// Premium Button Press State
+/** Buttons: kein Hochspringen, nur ein kurzes Press-Feedback. */
 export const buttonPressProps = {
-  whileTap: { scale: 0.985 },
-  whileHover: { y: -1, scale: 1.005 }
+  whileTap: { scale: 0.98 },
+  transition: { duration: DURATIONS.press, ease: EASE_OUT },
 };
 
-// Hover Lift effects for product pricing cards or system modules
+/** Karten: kleine, ruhige Anhebung. */
 export const hoverLiftProps = {
-  whileHover: { 
-    y: -5, 
-    transition: { duration: DURATIONS.fast, ease: PREMIUM_EASE } 
-  }
+  whileHover: { y: -3, transition: { duration: DURATIONS.card, ease: EASE_OUT } },
 };

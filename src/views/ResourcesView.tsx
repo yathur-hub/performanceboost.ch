@@ -260,17 +260,12 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
 
         {/* Resources Grid layout */}
         {filteredItems.length > 0 ? (
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+          <div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filteredItems.map((item) => (
               <motion.div 
                 key={item.id}
-                variants={staggeredChildVariants}
                 whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
                 className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 group shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)]"
               >
@@ -313,7 +308,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         ) : (
           <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl text-slate-400 space-y-3 bg-[#f6f6f6]/50">
             <AlertCircle className="w-10 h-10 text-slate-300 mx-auto" />

@@ -6,6 +6,7 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { X, Clock, ShieldCheck, UserCheck, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { overlayBackdrop, overlayPanel } from '../lib/motion';
 import LeadFunnel from './LeadFunnel';
 import { SITE } from '../config/site';
 import { resolveFlow } from '../data/leadFlows';
@@ -51,10 +52,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       {isOpen && (
         <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:p-6">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            {...overlayBackdrop}
             onClick={onClose}
             className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm"
             aria-hidden="true"
@@ -65,10 +63,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="lead-modal-title"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 24 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            {...overlayPanel}
             className="relative z-[10000] w-full sm:max-w-4xl h-[100dvh] sm:h-auto sm:max-h-[92vh] bg-white sm:rounded-3xl shadow-2xl flex flex-col sm:flex-row overflow-hidden outline-none"
           >
             {/* Seitenleiste (ab sm): Ansprechperson und Versprechen */}

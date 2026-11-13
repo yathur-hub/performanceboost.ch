@@ -32,9 +32,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
 
   const sector = SOLUTIONS_SECTORS[slug];
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [slug]);
+  // Scroll-Position steuert App.tsx (oben bei neuer Seite, gemerkt bei Zurück).
 
   if (!sector) {
     return (

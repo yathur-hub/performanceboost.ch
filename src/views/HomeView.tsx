@@ -9,7 +9,7 @@
 import { Visual3D, VISUAL_BY_AREA } from '../components/Visual3D';
 import React, { useState, lazy, Suspense } from 'react';
 import { ArrowRight, Check, RotateCcw } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { AnimatePresence } from 'motion/react';
 const ProblemFinder = lazy(() => import('../components/home/ProblemFinder'));
 import { RevenueSystemGraphic } from '../components/home/RevenueSystemGraphic';
 import { ClientTestimonials } from '../components/home/ClientTestimonials';
@@ -25,12 +25,6 @@ interface HomeViewProps {
   onNavigate: (path: string) => void;
 }
 
-const reveal = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
-  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-};
 
 const HERO_OUTCOMES = ['Mehr passende Anfragen', 'Schneller vom Erstkontakt zum Auftrag', 'Weniger Handarbeit in Vertrieb und Administration'];
 
@@ -81,8 +75,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Business Performance Partner für Schweizer KMU
               </p>
               <h1 lang="en" className="text-[2.1rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08] text-balance">
-                Boost your performance{' '}
-                <span className="text-[#686CFA] italic font-serif">through agentic marketing, sales &amp; processes.</span>
+                <span className="hero-line"><span>Boost your performance</span></span>{' '}
+                <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>
               </h1>
               <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Wir verbinden Ihr Marketing, Ihren Vertrieb und die Abläufe dahinter zu einem System. KI-Agenten übernehmen dabei klar
@@ -115,7 +109,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
 
             {/* Rakete in zwei Ebenen: Rauch statisch, Rakete animiert */}
-            <div className="hidden lg:col-span-5 lg:flex justify-end">
+            <div className="hidden lg:col-span-5 lg:flex justify-end hero-parallax">
               <div className="relative w-[260px] sm:w-[320px] lg:w-[400px] aspect-[650/1024] select-none">
                 <img
                   src="/images/hero-smoke-650.webp"
@@ -152,7 +146,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section>
         <Container className="space-y-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-            <motion.div {...reveal} className="lg:col-span-8 space-y-5">
+            <div className="lg:col-span-8 space-y-5">
               <SectionHeading
                 title="Wo KMU heute Umsatz und Zeit verlieren"
                 intro="Selten liegt es an einem einzelnen Kanal oder Tool. Meist greifen Marketing, Vertrieb und Abläufe nicht sauber ineinander."
@@ -161,7 +155,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Sichtbar wird oft nur das Symptom: zu wenige Anfragen, liegengebliebene Offerten, Zahlen, die nicht stimmen. Die Ursachen
                 liegen meist tiefer, in Abläufen, Unterlagen und Übergaben, die niemand verantwortet. Dort setzen wir an.
               </p>
-            </motion.div>
+            </div>
             <div className="hidden lg:block lg:col-span-4">
               <BrandVisual id="ursachen-unter-der-oberflaeche" sizes="(min-width: 1280px) 400px, 30vw" className="max-w-[340px] ml-auto" />
             </div>
@@ -238,7 +232,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-28">
         <Container className="space-y-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            <motion.div {...reveal} className="lg:col-span-5 space-y-5 lg:sticky lg:top-32">
+            <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-32">
               <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight text-balance">
                 Zuerst der Engpass, dann das nächste Tool.
               </h2>
@@ -252,7 +246,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 ganze System an und beginnen dort, wo heute am meisten verloren geht. Typische Engpässe sind Anfragen, die tagelang liegen
                 bleiben, Kampagnen ohne Messung bis zum Auftrag oder Daten, die von Hand zwischen Systemen übertragen werden.
               </p>
-            </motion.div>
+            </div>
             <div className="lg:col-span-7 min-w-0">
               <RevenueSystemGraphic />
             </div>

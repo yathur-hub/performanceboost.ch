@@ -80,11 +80,7 @@ export default function ContactView() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* Form column (5 cols) */}
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="lg:col-span-12 xl:col-span-7 bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl space-y-8 shadow-[var(--shadow-premium-lg)]"
           id="contact-form-container"
         >
@@ -96,17 +92,13 @@ export default function ContactView() {
           </div>
 
           <LeadFunnel flow={LEAD_FLOWS.general} formLocation="kontakt_seite" />
-        </motion.div>
+        </div>
 
         {/* Info Column (5 cols) */}
         <div className="lg:col-span-12 xl:col-span-5 space-y-8" id="contact-info-panel">
           
           {/* Direct channels card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+          <div 
             className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
             <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686CFA] pl-4">Direkter Kontakt</h3>
@@ -133,14 +125,10 @@ export default function ContactView() {
                 );
               })}
             </div>
-          </motion.div>
+          </div>
 
           {/* Quick FAQ / Next Step timeline card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+          <div 
             className="bg-slate-950 text-white border border-slate-900 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
             <h3 className="text-sm font-bold text-white border-l-3 border-[#686CFA] pl-4 font-display">So geht es weiter</h3>
@@ -158,7 +146,7 @@ export default function ContactView() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </section>

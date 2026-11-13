@@ -3,24 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-const SkillsDirectory = lazy(() => import('./components/skills/SkillsDirectory'));
-const SolutionsView = lazy(() => import('./views/SolutionsView'));
-const ServicesView = lazy(() => import('./views/ServicesView'));
-const ResourcesView = lazy(() => import('./views/ResourcesView'));
-const AboutView = lazy(() => import('./views/AboutView'));
-const ContactView = lazy(() => import('./views/ContactView'));
-const LegalView = lazy(() => import('./views/LegalView'));
-const SolutionDetailView = lazy(() => import('./views/SolutionDetailView'));
-const FinanceLandingView = lazy(() => import('./views/FinanceLandingView'));
-const ServiceAreaView = lazy(() => import('./views/ServiceAreaView'));
-const ChallengeView = lazy(() => import('./views/ChallengeView'));
-const RealEstateLandingView = lazy(() => import('./views/RealEstateLandingView'));
-const ReferencesView = lazy(() => import('./views/ReferencesView'));
-const MartechView = lazy(() => import('./views/MartechView'));
-const ToolsView = lazy(() => import('./views/ToolsView'));
-const LabView = lazy(() => import('./views/LabView'));
-const ApproachView = lazy(() => import('./views/ApproachView'));
+import React, { useState, useEffect, Suspense } from 'react';
+import { lazyView } from './lib/lazyView';
+const SkillsDirectory = lazyView(() => import('./components/skills/SkillsDirectory'));
+const SolutionsView = lazyView(() => import('./views/SolutionsView'));
+const ServicesView = lazyView(() => import('./views/ServicesView'));
+const ResourcesView = lazyView(() => import('./views/ResourcesView'));
+const AboutView = lazyView(() => import('./views/AboutView'));
+const ContactView = lazyView(() => import('./views/ContactView'));
+const LegalView = lazyView(() => import('./views/LegalView'));
+const SolutionDetailView = lazyView(() => import('./views/SolutionDetailView'));
+const FinanceLandingView = lazyView(() => import('./views/FinanceLandingView'));
+const ServiceAreaView = lazyView(() => import('./views/ServiceAreaView'));
+const ChallengeView = lazyView(() => import('./views/ChallengeView'));
+const RealEstateLandingView = lazyView(() => import('./views/RealEstateLandingView'));
+const ReferencesView = lazyView(() => import('./views/ReferencesView'));
+const MartechView = lazyView(() => import('./views/MartechView'));
+const ToolsView = lazyView(() => import('./views/ToolsView'));
+const LabView = lazyView(() => import('./views/LabView'));
+const ApproachView = lazyView(() => import('./views/ApproachView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeView from './views/HomeView';
@@ -34,9 +35,88 @@ import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
 import { StickyMobileCta } from './components/bp/Conversion';
 import { useScrollReveal } from './lib/useScrollReveal';
-import { motion, AnimatePresence } from 'motion/react';
-import { pageTransitionVariants } from './lib/motion';
+import { flushSync } from 'react-dom';
 import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
+
+/** Code der Zielseite vorladen (verhindert den Suspense-Platzhalter und damit Layoutsprünge). */
+const VIEW_PRELOAD: Partial<Record<string, () => Promise<void>>> = {
+  skills: SkillsDirectory.preload,
+  loesungen: SolutionsView.preload,
+  loesungen_detail: SolutionDetailView.preload,
+  finanz: FinanceLandingView.preload,
+  leistungsfeld: ServiceAreaView.preload,
+  loesung_herausforderung: ChallengeView.preload,
+  immobilien_landing: RealEstateLandingView.preload,
+  referenzen: ReferencesView.preload,
+  martech: MartechView.preload,
+  werkzeuge: ToolsView.preload,
+  labor: LabView.preload,
+  ansatz: ApproachView.preload,
+  leistungen: ServicesView.preload,
+  ressourcen: ResourcesView.preload,
+  about: AboutView.preload,
+  kontakt: ContactView.preload,
+  impressum: LegalView.preload,
+  datenschutz: LegalView.preload,
+};
+export function preloadRoute(pathname: string): Promise<void> {
+  const fn = VIEW_PRELOAD[parseRoute(pathname).view];
+  return fn ? fn().catch(() => undefined) : Promise.resolve();
+}
+/** Im Leerlauf alle Seiten vorladen, damit spätere Seitenwechsel ohne Wartezeit laufen. */
+function prefetchAllViews() {
+  const run = () => Object.values(VIEW_PRELOAD).forEach((fn) => fn?.().catch(() => undefined));
+  const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number };
+  if (w.requestIdleCallback) w.requestIdleCallback(run, { timeout: 4000 });
+  else window.setTimeout(run, 2500);
+}
+
+/*
+ * Seitenwechsel (Motion-System): View Transitions API, wo verfügbar (Chrome, Edge, Safari 18+), sonst eine kurze
+ * CSS-Einblendung (.page-enter). Kein Warten auf eine Exit-Animation, der Inhalt wechselt sofort.
+ * Scroll-Positionen werden pro History-Eintrag gemerkt und bei Zurück/Vor wiederhergestellt.
+ */
+const SCROLL_STORE = 'pb-scroll-positions';
+const readScroll = (): Record<string, number> => {
+  try {
+    return JSON.parse(sessionStorage.getItem(SCROLL_STORE) || '{}');
+  } catch {
+    return {};
+  }
+};
+const saveScroll = (key: string | undefined) => {
+  if (!key) return;
+  try {
+    const all = readScroll();
+    all[key] = window.scrollY;
+    sessionStorage.setItem(SCROLL_STORE, JSON.stringify(all));
+  } catch {
+    /* privater Modus: ohne Wiederherstellung weiter */
+  }
+};
+const newKey = () => Math.random().toString(36).slice(2, 10);
+const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/** Führt den Seitenwechsel aus, mit View Transition, wenn möglich. Gibt zurück, ob sie genutzt wurde. */
+function runPageTransition(update: () => void): boolean {
+  const doc = document as Document & { startViewTransition?: (cb: () => void) => unknown };
+  if (typeof doc.startViewTransition !== 'function' || reducedMotion()) {
+    update();
+    return false;
+  }
+  doc.startViewTransition(() => flushSync(update));
+  return true;
+}
+
+/** Scroll-Position wiederherstellen, auch wenn die Seite (lazy) erst nachlädt. */
+function restoreScroll(y: number) {
+  const start = performance.now();
+  const attempt = () => {
+    window.scrollTo({ top: y, behavior: 'instant' });
+    if (Math.abs(window.scrollY - y) > 2 && performance.now() - start < 1500) requestAnimationFrame(attempt);
+  };
+  attempt();
+}
 
 function AppContent() {
   const { openContactModal } = useContactModal();
@@ -48,10 +128,39 @@ function AppContent() {
     captureAttribution();
   }, []);
 
+  const historyKey = React.useRef<string | undefined>(undefined);
+  const usedViewTransition = React.useRef(false);
+  const firstRender = React.useRef(true);
+
   useEffect(() => {
-    // Listen to back/forward navigation
-    const handlePopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+    if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
+    prefetchAllViews();
+    const state = window.history.state as { k?: string } | null;
+    if (!state?.k) window.history.replaceState({ ...(state || {}), k: newKey() }, '');
+    historyKey.current = (window.history.state as { k?: string }).k;
+    const onHide = () => saveScroll(historyKey.current);
+    window.addEventListener('pagehide', onHide);
+    const saved = readScroll()[historyKey.current!];
+    if (saved) restoreScroll(saved);
+    return () => window.removeEventListener('pagehide', onHide);
+  }, []);
+
+  useEffect(() => {
+    firstRender.current = false;
+  }, [currentPath]);
+
+  useEffect(() => {
+    // Zurück/Vor: alte Position merken, neue wiederherstellen
+    const handlePopState = (e: PopStateEvent) => {
+      saveScroll(historyKey.current);
+      const key = (e.state as { k?: string } | null)?.k;
+      historyKey.current = key;
+      const y = (key && readScroll()[key]) || 0;
+      const target = window.location.pathname || '/';
+      preloadRoute(target).then(() => {
+        usedViewTransition.current = runPageTransition(() => setCurrentPath(target));
+        restoreScroll(y);
+      });
     };
     window.addEventListener('popstate', handlePopState);
     
@@ -87,9 +196,21 @@ function AppContent() {
       openContactModal();
       return;
     }
-    window.history.pushState(null, '', path);
-    setCurrentPath(path);
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (path === window.location.pathname) {
+      window.scrollTo({ top: 0, behavior: reducedMotion() ? 'instant' : 'smooth' });
+      return;
+    }
+    saveScroll(historyKey.current);
+    const key = newKey();
+    historyKey.current = key;
+    window.history.pushState({ k: key }, '', path);
+    preloadRoute(path).then(() => {
+      if (window.location.pathname !== path) return; // inzwischen weiternavigiert
+      usedViewTransition.current = runPageTransition(() => {
+        setCurrentPath(path);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      });
+    });
   };
 
   const parsed = React.useMemo(() => parseRoute(currentPath), [currentPath]);
@@ -105,14 +226,9 @@ function AppContent() {
       {/* Main responsive viewport routing */}
       <main className="flex-grow overflow-hidden relative">
         <Suspense fallback={<div className="min-h-[80vh]" aria-busy="true" />}>
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
+          <div
             key={parsed.view + (parsed.slug || '') + (parsed.subSection || '')}
-            variants={pageTransitionVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="w-full flex flex-col"
+            className={`w-full flex flex-col ${!firstRender.current && !usedViewTransition.current ? 'page-enter' : ''}`}
           >
             {parsed.view === 'home' && (
               <HomeView onNavigate={handleNavigate} />
@@ -165,8 +281,7 @@ function AppContent() {
             {parsed.view === 'not_found' && (
               <NotFoundView onNavigate={handleNavigate} />
             )}
-          </motion.div>
-        </AnimatePresence>
+          </div>
         </Suspense>
       </main>
 

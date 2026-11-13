@@ -24,7 +24,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
     onNavigate('/kontakt');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const CORE_VALUES = [
@@ -80,11 +79,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
       {/* WARUM PERFORMANCEBOOST? */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="space-y-6"
         >
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Zwischen Strategie, Systemen und Auftrag geht zu viel verloren.</h2>
@@ -94,13 +89,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <p className="text-xs text-slate-550 leading-relaxed font-semibold">
             Deshalb schaut performanceboost auf die ganze Kette: Strategie, Systeme, Abläufe, Marketing, Vertrieb und Messung. Erst wenn das zusammen funktioniert, lohnt es sich, mehr Budget oder neue Tools einzusetzen.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl space-y-6 shadow-[var(--shadow-premium-md)]"
         >
           <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686CFA] pl-4">Auf einen Blick</h3>
@@ -126,16 +117,12 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <span className="text-xs font-mono font-bold text-emerald-600">Analyse, Umsetzung, laufende Auswertung</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* PERSÖNLICHE VISION */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="md:col-span-5 relative group"
         >
           <div className="absolute -inset-2 bg-[#686CFA]/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
@@ -145,13 +132,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             className="w-full h-auto aspect-[4/5] object-cover rounded-3xl border border-[#E0E0E0]/65 shadow-[var(--shadow-premium-md)] relative z-10"
             referrerPolicy="no-referrer"
           />
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
+        <div 
           className="md:col-span-7 space-y-6 text-left"
         >
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
@@ -177,32 +160,23 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <a href="/labor" onClick={(e) => { e.preventDefault(); onNavigate('/labor'); }} className="text-[#686CFA] hover:text-[#4f54d6]">Labor →</a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* WAS UNS UNTERSCHEIDET */}
       <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+          <div 
             className="text-center space-y-3"
           >
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Was performanceboost unterscheidet</h2>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+          <div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             <motion.div 
-              variants={staggeredChildVariants}
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
               className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
@@ -216,7 +190,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             </motion.div>
 
             <motion.div 
-              variants={staggeredChildVariants}
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
               className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
@@ -230,7 +203,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             </motion.div>
 
             <motion.div 
-              variants={staggeredChildVariants}
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
               className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
@@ -242,49 +214,37 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 Reichweite, Klicks oder ein neues Tool sind kein Ziel an sich. Wir messen unsere Arbeit an dem, was für Ihr Unternehmen zählt: Anfragen, Aufträge, Reaktionszeiten oder eingesparte Stunden.
               </p>
             </motion.div>
-          </motion.div>
+          </div>
 
         </div>
       </section>
 
       {/* ARBEITSPHILOSOPHIE */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="text-center space-y-3"
         >
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir vorgehen</h2>
-        </motion.div>
+        </div>
 
         <div className="space-y-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+          <div 
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
             <span className="text-xs font-mono font-bold text-[#686CFA]">Grundsatz 1: Erst verstehen, dann handeln</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
               Bevor wir Massnahmen oder Tools empfehlen, verstehen wir Ihr Geschäft: Wer sind Ihre besten Kunden, was ist ein Auftrag wert, wie laufen Verkauf und Abläufe heute? Software wählen wir erst, wenn klar ist, was sie abbilden soll.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
+          <div 
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
             <span className="text-xs font-mono font-bold text-[#686CFA]">Grundsatz 2: Aufbauen, was bleibt</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
               Eine einzelne Kampagne läuft irgendwann aus. Wir bauen deshalb auch auf, was Ihnen langfristig bleibt: saubere Daten, CRM-Abläufe, Automatisierungen, Landingpages und Auswertungen. Alles ist dokumentiert, damit Ihr Team damit weiterarbeiten kann.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -292,21 +252,13 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       <section className="bg-slate-950 text-white border-y border-slate-900 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+          <div 
             className="text-center space-y-3 animate-fadeIn"
           >
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold tracking-tight text-white">Worauf Sie sich verlassen können</h2>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+          <div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {CORE_VALUES.map((val, k) => {
@@ -314,7 +266,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               return (
                 <motion.div 
                   key={k} 
-                  variants={staggeredChildVariants}
                   whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.55)" }}
                   className="bg-slate-900 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-md"
                 >
@@ -326,7 +277,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 </motion.div>
               );
             })}
-          </motion.div>
+          </div>
 
         </div>
       </section>

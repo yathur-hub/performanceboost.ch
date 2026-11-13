@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  /* Motion: Standard für alle transition-* Klassen (siehe Motion-System unten) */
+  --default-transition-duration: 220ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
@@ -58,7 +61,6 @@
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     font-weight: 400;
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -182,7 +184,7 @@
   50% { transform: translate3d(2px, -8px, 0); }
 }
 .animate-rocket {
-  animation: rocketHover 3.2s ease-in-out infinite;
+  animation: rocketHover 4.8s cubic-bezier(0.65, 0, 0.35, 1) 1.5s infinite;
   will-change: transform;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -192,107 +194,222 @@
 /* 3D-Visuals (src/components/Visual3D.tsx): Bodenschatten per CSS statt im Bild */
 .visual-3d-shadow { filter: drop-shadow(0 24px 32px rgb(26 26 46 / 0.16)); }
 .visual-3d-shadow-dark { filter: drop-shadow(0 18px 36px rgb(105 110 239 / 0.28)); }
-@keyframes visualFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-.animate-float { animation: visualFloat 6s ease-in-out infinite; will-change: transform; }
-@media (prefers-reduced-motion: reduce) {
-  .animate-float { animation: none; }
-}
+/* .animate-float: bewusst ohne Dauerbewegung (Motion-System 13.11.2026). Nur die Hero-Rakete schwebt. */
+.animate-float { }
 
 /* =========================================================================
- * Animationssystem (06.11.2026)
- * - .hero-enter: Kinder des Hero-Inhalts erscheinen beim Laden gestaffelt (reines CSS, auch im Prerender)
- * - .reveal / .reveal-item: Abschnitte und ihre Karten beim ersten Sichtkontakt (src/lib/useScrollReveal.ts)
- * - .diagram-enter: Knoten der Themengrafiken erscheinen nacheinander (--d = Index)
- * - .menu-accordion: weiches Auf-/Zuklappen im mobilen Mega-Menü
- * - FAQ (<details>): weiches Öffnen/Schliessen, wo der Browser es unterstützt
- * Alles deaktiviert bei prefers-reduced-motion.
+ * MOTION-SYSTEM (13.11.2026) · Doku: docs/agentic-positioning/04-motion.md
+ * Eine Bewegungssprache für die ganze Website. Werte nur hier und in src/lib/motion.ts ändern.
+ *
+ * Varianten (vergeben automatisch durch src/lib/useScrollReveal.ts):
+ *   .rv-fade   Abschnitt oder Block: Fade-up
+ *   .rv-mask   Abschnittsüberschrift: maskierter Reveal von unten
+ *   .rv-item   Karte/Listeneintrag in Rastern: gestaffelt (--i)
+ *   .rv-image  Bild/Figur: Masken-Reveal mit leichtem Scale-out des Bildes
+ *   .rv-scale  dunkle CTA-Flächen und Kontaktblöcke: dezentes Scale-in
+ * Hero: .hero-enter (Kinder gestaffelt, H1 maskiert), .hero-line für mehrzeilige H1 der Startseite.
+ * Alles nur mit transform, opacity und clip-path. Ohne JavaScript bleibt alles sichtbar,
+ * weil die Reveal-Klassen erst im Browser gesetzt werden. Bei reduzierter Bewegung: keine Bewegung.
  * ========================================================================= */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);      /* Reveals, Öffnen, Hover */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);   /* Ein-/Ausblenden gleichzeitig */
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);          /* Schliessen: kurz und kontrolliert */
+
+  --dur-press: 120ms;
+  --dur-button: 200ms;
+  --dur-link: 240ms;
+  --dur-card: 300ms;
+  --dur-accordion: 340ms;
+  --dur-menu: 460ms;
+  --dur-menu-exit: 300ms;
+  --dur-page-out: 180ms;
+  --dur-page-in: 380ms;
+  --dur-reveal: 720ms;
+  --dur-hero: 1000ms;
+
+  --stagger: 80ms;
+  --dist-reveal: 24px;
+  --dist-item: 16px;
+  --dist-hero: 28px;
+  --scale-in: 0.97;
+}
+@media (max-width: 639px) {
+  :root { --dist-reveal: 16px; --dist-item: 12px; --dist-hero: 18px; --stagger: 60ms; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ---------- Hero ---------- */
 @keyframes enterUp {
-  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  from { opacity: 0; transform: translate3d(0, var(--dist-hero), 0); }
   to { opacity: 1; transform: none; }
 }
-.hero-enter > * { animation: enterUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.hero-enter > *:nth-child(2) { animation-delay: 0.08s; }
-.hero-enter > *:nth-child(3) { animation-delay: 0.16s; }
-.hero-enter > *:nth-child(4) { animation-delay: 0.24s; }
-.hero-enter > *:nth-child(5) { animation-delay: 0.32s; }
-.hero-enter > *:nth-child(n + 6) { animation-delay: 0.4s; }
-
-.reveal {
-  opacity: 0;
-  transform: translate3d(0, 28px, 0);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* Maskierter Reveal: Text steigt von unten in eine feste Maske (Unterkante zuerst) */
+@keyframes maskUp {
+  from { clip-path: inset(100% 0 -0.3em 0); transform: translate3d(0, 0.45em, 0); }
+  to { clip-path: inset(-0.2em 0 -0.3em 0); transform: none; }
 }
-.reveal.is-visible { opacity: 1; transform: none; }
-.reveal .reveal-item {
-  opacity: 0;
-  transform: translate3d(0, 16px, 0);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: calc(var(--i, 0) * 70ms + 120ms);
-}
-.reveal.is-visible .reveal-item { opacity: 1; transform: none; }
-
-.diagram-enter [style*='--d'] {
-  animation: enterUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: calc(var(--d, 0) * 90ms + 250ms);
-}
-.reveal:not(.is-visible) .diagram-enter [style*='--d'] { animation-play-state: paused; }
-
-@keyframes rocketIn {
-  from { transform: translate3d(-28px, 70px, 0); }
+@keyframes lineUp {
+  from { transform: translate3d(0, 108%, 0); }
   to { transform: none; }
 }
-.rocket-in { animation: rocketIn 1.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
-@keyframes smokeIn {
-  from { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.97); }
+.hero-enter > * { animation: enterUp var(--dur-reveal) var(--ease-out) both; }
+.hero-enter > *:nth-child(1) { animation-delay: 0ms; }
+.hero-enter > *:nth-child(2) { animation-delay: 80ms; }
+.hero-enter > *:nth-child(3) { animation-delay: 300ms; }
+.hero-enter > *:nth-child(4) { animation-delay: 380ms; }
+.hero-enter > *:nth-child(5) { animation-delay: 460ms; }
+.hero-enter > *:nth-child(n + 6) { animation-delay: 540ms; }
+/* H1 in jedem Hero: maskierter Reveal statt Fade */
+.hero-enter > h1 { animation: maskUp var(--dur-hero) var(--ease-out) both; }
+.hero-enter > *:nth-child(1):is(h1) { animation-delay: 80ms; }
+/* Mehrzeilige H1 (Startseite): Zeilen einzeln maskiert, die H1 selbst bewegt sich nicht */
+.hero-enter > h1:has(.hero-line) { animation: none; }
+.hero-line { display: inline-block; overflow: hidden; padding-bottom: 0.14em; margin-bottom: -0.14em; vertical-align: top; }
+.hero-line > span { display: inline-block; animation: lineUp var(--dur-hero) var(--ease-out) both; }
+.hero-line:nth-child(1) > span { animation-delay: 60ms; }
+.hero-line:nth-child(2) > span { animation-delay: 170ms; }
+
+@keyframes rocketIn {
+  from { opacity: 0; transform: translate3d(-36px, 90px, 0) scale(0.96); }
   to { opacity: 1; transform: none; }
 }
-.smoke-in { animation: smokeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; transform-origin: 50% 100%; }
+.rocket-in { animation: rocketIn 1300ms var(--ease-out) 200ms both; }
+@keyframes smokeIn {
+  from { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+.smoke-in { animation: smokeIn 1400ms var(--ease-out) 260ms both; transform-origin: 50% 100%; }
+/* Dezente Parallax der Rakete beim Wegscrollen (nur Browser mit Scroll-Timelines, ab Tablet, ohne JS-Handler) */
+@supports (animation-timeline: scroll()) {
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    @keyframes heroParallax { to { translate: 0 -72px; } }
+    .hero-parallax { animation: heroParallax linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+  }
+}
 
+/* ---------- Scroll-Reveals ---------- */
+.rv-fade { opacity: 0; transform: translate3d(0, var(--dist-reveal), 0); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); }
+.rv-mask { clip-path: inset(100% 0 -0.3em 0); transform: translate3d(0, 0.45em, 0); transition: clip-path var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); }
+.rv-item { opacity: 0; transform: translate3d(0, var(--dist-item), 0); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); transition-delay: calc(var(--i, 0) * var(--stagger) + 120ms); }
+.rv-image { clip-path: inset(6% 6% 6% 6% round 24px); opacity: 0; transition: clip-path 900ms var(--ease-out), opacity 500ms var(--ease-out); }
+.rv-image img { transform: scale(1.06); transition: transform 1100ms var(--ease-out); }
+.rv-scale { opacity: 0; transform: scale(var(--scale-in)); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); }
+.is-visible.rv-fade, .is-visible .rv-fade, .is-visible.rv-item, .is-visible .rv-item, .is-visible.rv-scale, .is-visible .rv-scale { opacity: 1; transform: none; }
+.is-visible.rv-mask, .is-visible .rv-mask { clip-path: inset(-0.2em 0 -0.3em 0); transform: none; }
+.is-visible.rv-image, .is-visible .rv-image { clip-path: inset(0 0 0 0 round 0); opacity: 1; }
+.is-visible.rv-image img, .is-visible .rv-image img { transform: none; }
+/* Verzögerung innerhalb eines Abschnitts: Überschrift zuerst, dann Text, dann Inhalt */
+.rv-delay-1 { transition-delay: 90ms; }
+.rv-delay-2 { transition-delay: 180ms; }
+
+/* ---------- Seitenübergang (View Transitions API, Fallback .page-enter) ---------- */
+@keyframes pageOut { to { opacity: 0; } }
+@keyframes pageIn { from { opacity: 0; transform: translate3d(0, 10px, 0); } }
+::view-transition-old(root) { animation: pageOut var(--dur-page-out) var(--ease-exit) both; }
+::view-transition-new(root) { animation: pageIn var(--dur-page-in) var(--ease-out) both; }
+#main-navigation { view-transition-name: site-header; }
+::view-transition-group(site-header) { animation: none; z-index: 10; }
+::view-transition-old(site-header), ::view-transition-new(site-header) { animation: none; }
+.page-enter { animation: pageIn var(--dur-page-in) var(--ease-out) both; }
+
+/* ---------- Micro-Interactions ---------- */
+/* Pfeile in Links und Buttons rücken beim Hover leicht nach */
+a svg.lucide-arrow-right, button svg.lucide-arrow-right, a svg.lucide-arrow-up-right { transition: transform var(--dur-link) var(--ease-out); }
+a:hover svg.lucide-arrow-right, button:hover svg.lucide-arrow-right, a:focus-visible svg.lucide-arrow-right { transform: translate3d(3px, 0, 0); }
+a:hover svg.lucide-arrow-up-right { transform: translate3d(2px, -2px, 0); }
+/* Buttons: kurzes Press-Feedback */
+.btn-press { transition: background-color var(--dur-button) var(--ease-out), color var(--dur-button) var(--ease-out), border-color var(--dur-button) var(--ease-out), box-shadow var(--dur-button) var(--ease-out), transform var(--dur-press) var(--ease-out); }
+.btn-press:hover { box-shadow: 0 10px 24px -12px rgb(84 88 224 / 0.55); }
+.btn-press:active { transform: scale(0.98); }
+/* Textlinks: Unterstrich wächst von links */
+.link-underline { background-image: linear-gradient(currentColor, currentColor); background-size: 0% 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size var(--dur-link) var(--ease-out), color var(--dur-link) var(--ease-out); }
+.link-underline:hover, .link-underline:focus-visible, .link-underline[aria-current='page'] { background-size: 100% 1px; }
+a:hover > .link-underline, a:focus-visible > .link-underline, a[aria-current='page'] > .link-underline { background-size: 100% 1px; }
+/* Fokus erscheint weich, nicht schlagartig */
+:where(a, button, summary, [tabindex]):focus-visible { transition: box-shadow var(--dur-button) var(--ease-out), outline-color var(--dur-button) var(--ease-out); }
+/* Karten-Hover: gleiche Dauer und Kurve überall */
+:where(a, li, article, div).transition-all { transition-duration: var(--dur-card); transition-timing-function: var(--ease-out); }
+/* Szenische Bilder: dezenter Zoom beim Hover */
+.visual-zoom { overflow: hidden; }
+.visual-zoom img { transition: transform 900ms var(--ease-out); }
+.visual-zoom:hover img { transform: scale(1.025); }
+/* Inhalte, die sich bei Interaktion austauschen (Diagramm-Detail, Tabs) */
+@keyframes swapIn { from { opacity: 0; transform: translate3d(0, 6px, 0); } }
+.motion-swap { animation: swapIn var(--dur-card) var(--ease-out) both; }
+
+/* ---------- Mega-Menü: Hamburger zu X ---------- */
+.menu-icon { position: relative; width: 18px; height: 12px; display: inline-block; }
+.menu-icon > span { position: absolute; left: 0; right: 0; height: 1.75px; border-radius: 2px; background: currentColor; transition: transform var(--dur-menu) var(--ease-out), opacity var(--dur-button) var(--ease-out), top var(--dur-menu) var(--ease-out); }
+.menu-icon > span:nth-child(1) { top: 0; }
+.menu-icon > span:nth-child(2) { top: 5.1px; }
+.menu-icon > span:nth-child(3) { top: 10.25px; }
+[aria-expanded='true'] .menu-icon > span:nth-child(1) { top: 5.1px; transform: rotate(45deg); }
+[aria-expanded='true'] .menu-icon > span:nth-child(2) { opacity: 0; transform: scaleX(0.3); }
+[aria-expanded='true'] .menu-icon > span:nth-child(3) { top: 5.1px; transform: rotate(-45deg); }
+
+/* ---------- Accordions (Mega-Menü mobil) ---------- */
 .menu-accordion {
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
-  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  transition: grid-template-rows var(--dur-accordion) var(--ease-out), opacity 240ms var(--ease-out);
 }
 .menu-accordion.is-open { grid-template-rows: 1fr; opacity: 1; }
 .menu-accordion > * { min-height: 0; overflow: hidden; }
-.menu-accordion:not(.is-open) > * { visibility: hidden; transition: visibility 0s linear 0.35s; }
+.menu-accordion:not(.is-open) > * { visibility: hidden; transition: visibility 0s linear var(--dur-accordion); }
 .menu-accordion.is-open > * { visibility: visible; }
 @media (min-width: 768px) {
   .menu-accordion { grid-template-rows: 1fr; opacity: 1; }
   .menu-accordion > * { overflow: visible; visibility: visible !important; }
 }
 
-details[open] > :not(summary) { animation: enterUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+/* ---------- FAQ (<details>) ---------- */
+details > summary { transition: color var(--dur-link) var(--ease-out); }
+details[open] > :not(summary) { animation: swapIn var(--dur-accordion) var(--ease-out) both; }
 @supports (interpolate-size: allow-keywords) {
   details { interpolate-size: allow-keywords; }
   details::details-content {
     height: 0;
     overflow: clip;
-    transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), content-visibility 0.35s allow-discrete;
+    transition: height var(--dur-accordion) var(--ease-out), content-visibility var(--dur-accordion) allow-discrete;
   }
   details[open]::details-content { height: auto; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-enter > *, .diagram-enter [style*='--d'], .rocket-in, .smoke-in, details[open] > :not(summary) { animation: none !important; }
-  .reveal, .reveal .reveal-item { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .menu-accordion { transition: none; }
-  details::details-content { transition: none !important; }
+/* ---------- Themengrafiken (Diagram.tsx) ---------- */
+.diagram-enter [style*='--d'] {
+  animation: enterUp 600ms var(--ease-out) both;
+  animation-delay: calc(var(--d, 0) * 90ms + 200ms);
 }
+.rv-fade:not(.is-visible) .diagram-enter [style*='--d'] { animation-play-state: paused; }
 
-/* Systemdiagramm Startseite (RevenueSystemGraphic): Datenfluss auf den Speichen, Puls der Agenten */
+/* ---------- Systemdiagramm Startseite (RevenueSystemGraphic) ---------- */
+.sys-node { opacity: 0; transform: translate3d(0, 10px, 0) scale(0.97); transform-box: fill-box; transform-origin: center; transition: opacity 600ms var(--ease-out), transform 700ms var(--ease-out); }
+.sys-edge { stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset 900ms var(--ease-out), opacity 400ms var(--ease-out); }
+.sys-label { opacity: 0; transition: opacity 500ms var(--ease-out); }
+.sys-drawn .sys-node, .sys-drawn .sys-label { opacity: 1; transform: none; }
+.sys-drawn .sys-edge { stroke-dashoffset: 0; opacity: 1; }
 @keyframes flowDash { to { stroke-dashoffset: -20; } }
-.flow-dash { stroke-dasharray: 3 7; animation: flowDash 1.4s linear infinite; }
-@keyframes agentPulse {
-  0%, 100% { opacity: 0.35; transform: scale(1); }
-  50% { opacity: 0; transform: scale(1.9); }
+.flow-dash { stroke-dasharray: 3 7; }
+.flow-dash.is-lit { animation: flowDash 1.4s linear infinite; }
+@keyframes agentPing {
+  0% { opacity: 0.45; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.2); }
 }
-.agent-pulse { transform-box: fill-box; transform-origin: center; animation: agentPulse 2.8s ease-out infinite; }
+.agent-ping { transform-box: fill-box; transform-origin: center; opacity: 0; }
+.agent-ping.is-lit { animation: agentPing 1100ms var(--ease-out) 2; }
+
+/* ---------- Reduzierte Bewegung: Inhalte sofort sichtbar, nur Farb- und Zustandswechsel ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .flow-dash, .agent-pulse { animation: none !important; }
+  .hero-enter > *, .hero-line > span, .diagram-enter [style*='--d'], .rocket-in, .smoke-in, details[open] > :not(summary), .page-enter, .motion-swap { animation: none !important; }
+  .rv-fade, .rv-mask, .rv-item, .rv-image, .rv-image img, .rv-scale, .sys-node, .sys-edge, .sys-label { opacity: 1 !important; transform: none !important; clip-path: none !important; stroke-dashoffset: 0 !important; transition: none !important; }
+  .flow-dash.is-lit, .agent-ping.is-lit { animation: none !important; }
+  .menu-accordion, .menu-icon > span { transition: none; }
+  details::details-content { transition: none !important; }
+  .btn-press:active { transform: none; }
+  .visual-zoom:hover img, a:hover svg.lucide-arrow-right { transform: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }

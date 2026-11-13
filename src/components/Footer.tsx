@@ -40,7 +40,7 @@ export default function Footer({ onNavigate }: FooterProps) {
     if (path !== '/kontakt') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const linkClass = 'text-sm text-slate-600 hover:text-[#4f54d6] transition-colors';
+  const linkClass = 'link-underline text-sm text-slate-600 hover:text-[#4f54d6]';
   const headingClass = 'text-sm font-display font-semibold text-slate-900';
 
   return (

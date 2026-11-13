@@ -21,6 +21,7 @@ export function BrandVisual({
   const v = VISUALS[id];
   return (
     <figure className={`w-full ${className}`}>
+      <div className={`rounded-3xl ${v.kind === 'scene' ? 'visual-zoom shadow-[var(--shadow-premium-md)]' : 'shadow-[var(--shadow-premium-sm)]'}`}>
       <img
         src={`/images/visuals/${id}-800.webp`}
         srcSet={`/images/visuals/${id}-480.webp 480w, /images/visuals/${id}-800.webp 800w`}
@@ -31,8 +32,9 @@ export function BrandVisual({
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         fetchPriority={priority ? 'high' : undefined}
-        className={`w-full h-auto rounded-3xl border border-[#E0E0E0]/80 bg-white ${v.kind === 'scene' ? 'shadow-[var(--shadow-premium-md)]' : 'shadow-[var(--shadow-premium-sm)]'}`}
+        className="w-full h-auto rounded-3xl border border-[#E0E0E0]/80 bg-white"
       />
+      </div>
       {caption && <figcaption className="mt-3 text-xs text-slate-500 leading-relaxed">{caption}</figcaption>}
     </figure>
   );
