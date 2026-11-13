@@ -262,7 +262,7 @@
 .menu-accordion > * { min-height: 0; overflow: hidden; }
 .menu-accordion:not(.is-open) > * { visibility: hidden; transition: visibility 0s linear 0.35s; }
 .menu-accordion.is-open > * { visibility: visible; }
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .menu-accordion { grid-template-rows: 1fr; opacity: 1; }
   .menu-accordion > * { overflow: visible; visibility: visible !important; }
 }

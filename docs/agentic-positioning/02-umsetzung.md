@@ -13,15 +13,16 @@ Freigabe Phase 1 durch den Inhaber am 13.11.2026, mit Präzisierungen. Die Umset
 - **Drei Kompetenzbereiche:** `/leistungen/marketing`, `/leistungen/sales` und `/leistungen/prozesse` (Label «Processes»).
 - **Agentic AI:** `/leistungen/ki-im-unternehmen` ist die übergreifende Seite für Agentic AI (`kind: 'capability'`). Die URL bleibt.
 - **Neue Seite `/ansatz`:** die vier Phasen, die Grundsätze, die drei Arbeitsformen und Fragen zum Vorgehen.
-- **Header ab 1024 px:** Marketing · Sales · Processes · Ansatz · Wissen, dazu der CTA «Gespräch anfragen».
-  - Die drei Bereiche haben je ein kompaktes Panel, das bei Hover und bei Tastaturfokus aufgeht (`:focus-within`, ohne zusätzliches JavaScript). Es zeigt die 3–4 Kernleistungen mit Kurzbeschreibung und den Link «Alles zu …».
-  - Damit sind die 14 Leistungen erreichbar, und der Header bleibt bei fünf Wörtern. Die Bereiche dominieren, die Leistungen sind untergeordnet.
-  - Escape schliesst das Panel.
-- **Overlay-Menü (☰), auf Mobile die Hauptnavigation:**
-  - drei Bereichskarten, mobil als Akkordeon
-  - Ansatz und Agentic AI als eigene Zeile
-  - Wissen und Unternehmen als Listen
-  - Kontaktkarte
+- **Navigation ausschliesslich im Mega-Menü** (Vorgabe des Inhabers vom 13.11.2026, ersetzt die zwischenzeitlich sichtbaren Header-Links):
+  - Der Header ist auf allen Breiten minimal: Logo links, rechts «Gespräch anfragen» (ab 640 px) und der Menü-Button mit Icon und Beschriftung «Menü» bzw. «Schliessen».
+  - Das Mega-Menü öffnet sich per Klick als Panel direkt unter dem Header, darunter liegt ein abgedunkelter Hintergrund.
+  - Desktop: links die drei Bereiche als Spalten mit ihren Kernleistungen und «Alles zu …», darunter Unser Ansatz und Agentic AI. Rechts Wissen, Unternehmen und eine Kontaktkarte mit CTA.
+  - Tablet: drei Bereichsspalten, Wissen, Unternehmen und Kontakt darunter.
+  - Mobile (unter 768 px): Bereiche als Akkordeon, das Panel ist scrollbar.
+  - Bedienung: Ein erneuter Klick auf den Button, Escape, ein Klick auf den Hintergrund oder ein Seitenwechsel schliessen das Menü. Beim Öffnen springt der Fokus auf den ersten Eintrag, Tab bleibt im Menü (einschliesslich des Buttons), beim Schliessen kehrt der Fokus zum Button zurück. Dazu `aria-expanded`, `aria-controls`, `role="dialog"` und `aria-current` auf der aktuellen Seite.
+  - Kein Layoutsprung: Header-Abstand bleibt gleich, Scrollbar-Breite wird beim Sperren des Hintergrunds ausgeglichen, Button mit fester Mindestbreite. Animationen sind kurz, bei `prefers-reduced-motion` nur eine Überblendung.
+  - Geprüft auf 1440, 820 und 390 px: keine Konsolenfehler, kein horizontaler Überlauf, Fokus verlässt das Menü in 60 Tab-Schritten nie.
+  - Die Shop-Leistungen bleiben ausserhalb des Menüs, erreichbar über die Marketing-Seite und /leistungen.
 - **Footer:** Claim, dazu die Spalten Leistungen (3 Bereiche, Ansatz, Agentic AI, Lösungen), Wissen und Unternehmen.
 - **Shop-Leistungen:** Die 4 Seiten stehen nicht in Navigation und Startseite. Sie bleiben auf dem Marketing-Hub (Gruppe «Für Onlineshops»), auf `/leistungen` und in den Querverweisen.
 
