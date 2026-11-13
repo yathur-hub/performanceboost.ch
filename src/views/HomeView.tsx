@@ -15,6 +15,9 @@ import Link from '../components/Link';
 import { Container, CtaButton, FaqList, SectionHeading, TeaserCard } from '../components/bp/Blocks';
 import { PILLARS, SERVICE_AREAS, menuServicesOf } from '../data/serviceAreas';
 import { CHALLENGE_CARDS } from '../data/challenges';
+import { MARTECH_TOPICS } from '../data/martechWissen';
+
+const HOME_TOPICS = ['server-side-tagging', 'mcp-berechtigungen', 'integration-ist-keine-architektur'];
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -271,6 +274,31 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </Link>
               </article>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 4b MARTECH-WISSEN: Fachkompetenz sichtbar machen */}
+      <section>
+        <Container className="space-y-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
+            <SectionHeading
+              title="MarTech-Wissen aus der Praxis"
+              intro="Wie Marketing-Systeme gebaut sind, wie sie zusammenarbeiten und wo KI-Agenten dazugehören. Für Leitungen Marketing, Vertrieb und Marketing Ops, mit Quellen und ohne Werbung für Anbieter."
+            />
+            <Link href="/martech" className="text-xs font-bold text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
+              Zur MarTech-Landkarte <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {HOME_TOPICS.map((slug) => {
+              const t = MARTECH_TOPICS.find((x) => x.slug === slug)!;
+              return <TeaserCard key={t.slug} href={`/martech/${t.slug}`} title={t.title} desc={t.teaser} linkText="Thema lesen" />;
+            })}
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold">
+            <Link href="/werkzeuge" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Werkzeuge, mit denen ich arbeite <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link>
+            <Link href="/labor" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Labor: was ich selbst baue <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link>
           </div>
         </Container>
       </section>

@@ -10,6 +10,7 @@ import { isAreaId, getArea, primaryAreaOf, servicesOf } from '../data/serviceAre
 import { CHALLENGE_PAGES, isChallengeSlug } from '../data/challenges';
 import { REAL_ESTATE_PAGES, isRealEstateSlug } from '../data/realEstateLanding';
 import { EXTENDED_SERVICES_DATA } from '../data/servicesExtendedData';
+import { getTopic, MARTECH_TOPICS } from '../data/martechWissen';
 
 interface SEOHeadProps {
   route: ParsedRoute;
@@ -282,7 +283,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'about': {
       const title = 'Über uns: Yathur Nathan & performanceboost | performanceboost';
       const description =
-        'performanceboost ist der Business Performance Partner für Schweizer KMU, inhabergeführt aus Fläsch (GR). Strategie und Umsetzung aus einer Hand, direkt mit Yathur Nathan.';
+        'Yathur Nathan: Marketingfachmann mit eidg. Fachausweis und Experte für MarTech und KI in Marketing und Growth. Inhaber von performanceboost in Fläsch (GR).';
       return {
         ...base,
         title,
@@ -332,6 +333,61 @@ export function buildMeta(route: ParsedRoute): Meta {
         ? 'Welche Tools ein Schweizer KMU für Marketing und Vertrieb braucht, wie sie zusammenarbeiten, Open Source oder Lizenz und wo KI in den Stack gehört.'
         : 'Praxisbeiträge zu Wachstum, Vertrieb, KI, MarTech, Automatisierung, Tracking und Datenschutz für Schweizer KMU.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
+    }
+    case 'martech': {
+      const topic = route.slug ? getTopic(route.slug) : undefined;
+      if (topic) {
+        const title = `${topic.title} | MarTech-Wissen | performanceboost`;
+        const description = truncate(topic.management);
+        return {
+          ...base,
+          ogType: 'article',
+          title,
+          description,
+          schema: {
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'TechArticle',
+                '@id': `${url}#article`,
+                url,
+                headline: topic.title,
+                description: topic.teaser,
+                author: { '@type': 'Person', name: SITE.owner, url: `${SITE.baseUrl}/ueber-uns`, sameAs: [SITE.linkedinPerson] },
+                publisher: { '@id': ORG_ID },
+                inLanguage: 'de-CH',
+                citation: topic.sources.map((s) => s.url),
+              },
+              crumbList([HOME_CRUMB, { name: 'MarTech-Wissen', url: `${SITE.baseUrl}/martech` }, { name: topic.title, url }]),
+            ],
+          },
+        };
+      }
+      const title = 'MarTech-Wissen: Landkarte, Daten, Integration und KI-Agenten | performanceboost';
+      const description =
+        'MarTech aus der Praxis: wie Marketing-Systeme gebaut sind, wie sie zusammenarbeiten, was sie kosten und wo KI-Agenten dazugehören. Von Yathur Nathan.';
+      return {
+        ...base,
+        title,
+        description,
+        schema: {
+          ...webPage('CollectionPage', url, title, description),
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: MARTECH_TOPICS.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.title, url: `${SITE.baseUrl}/martech/${t.slug}` })),
+          },
+        },
+      };
+    }
+    case 'werkzeuge': {
+      const title = 'Werkzeuge: MarTech, Daten und KI im Einsatz | performanceboost';
+      const description = 'Die Werkzeuge, mit denen Yathur Nathan arbeitet, von HubSpot, Google Ads und GA4 über Server-Side Tagging bis zu n8n, Windmill und KI-Agenten.';
+      return { ...base, title, description, schema: webPage('WebPage', url, title, description) };
+    }
+    case 'labor': {
+      const title = 'Labor: eigene Experimente mit KI-Agenten und Automation | performanceboost';
+      const description = 'Was Yathur Nathan selbst baut und betreibt: eigenes ERP, Lead-Eingang ohne Abtippen, Veröffentlichung mit Freigabe, Agenten für Recherche, mit ehrlichem Reifegrad.';
+      return { ...base, title, description, schema: webPage('WebPage', url, title, description) };
     }
     case 'not_found':
     default:

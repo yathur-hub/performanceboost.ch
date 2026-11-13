@@ -274,5 +274,7 @@ export function resolveFlow(pathname: string): LeadFlow {
   let id = 'general';
   if (section === 'leistungen' && slug) id = SERVICE_FLOW[slug] ?? AREA_FLOW[slug] ?? 'general';
   else if (section === 'loesungen' && slug) id = CHALLENGE_FLOW[slug] ?? 'branch';
+  else if (section === 'martech' || section === 'werkzeuge') id = 'stack';
+  else if (section === 'labor') id = 'ai';
   return LEAD_FLOWS[id];
 }

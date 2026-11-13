@@ -17,6 +17,9 @@ const ServiceAreaView = lazy(() => import('./views/ServiceAreaView'));
 const ChallengeView = lazy(() => import('./views/ChallengeView'));
 const RealEstateLandingView = lazy(() => import('./views/RealEstateLandingView'));
 const ReferencesView = lazy(() => import('./views/ReferencesView'));
+const MartechView = lazy(() => import('./views/MartechView'));
+const ToolsView = lazy(() => import('./views/ToolsView'));
+const LabView = lazy(() => import('./views/LabView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeView from './views/HomeView';
@@ -135,6 +138,9 @@ function AppContent() {
               <RealEstateLandingView slug={parsed.slug as RealEstateSlug} />
             )}
             {parsed.view === 'referenzen' && <ReferencesView />}
+            {parsed.view === 'martech' && <MartechView slug={parsed.slug} />}
+            {parsed.view === 'werkzeuge' && <ToolsView />}
+            {parsed.view === 'labor' && <LabView />}
             {parsed.view === 'leistungen' && (
               <ServicesView currentSlug={parsed.slug} onNavigate={handleNavigate} />
             )}

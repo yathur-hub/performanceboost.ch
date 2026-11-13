@@ -13,6 +13,9 @@ interface FooterProps {
 }
 
 const COMPANY_LINKS = [
+  { href: '/martech', label: 'MarTech-Wissen' },
+  { href: '/werkzeuge', label: 'Werkzeuge' },
+  { href: '/labor', label: 'Labor' },
   { href: '/loesungen', label: 'Lösungen' },
   { href: '/referenzen', label: 'Referenzen' },
   { href: '/ueber-uns', label: 'Über uns' },

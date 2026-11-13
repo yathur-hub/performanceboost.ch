@@ -14,6 +14,8 @@ const AREA_ICONS = {
 } as const;
 
 const COMPANY_LINKS = [
+  { href: '/martech', label: 'MarTech-Wissen', desc: 'Landkarte, Architektur, Daten und KI-Agenten' },
+  { href: '/labor', label: 'Labor', desc: 'Eigene Experimente mit KI und Automation' },
   { href: '/loesungen', label: 'Lösungen', desc: 'Nach Herausforderung und Branche' },
   { href: '/referenzen', label: 'Referenzen', desc: 'Was Kundinnen und Kunden sagen' },
   { href: '/ueber-uns', label: 'Über uns', desc: 'Wer hinter performanceboost steht' },
