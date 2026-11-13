@@ -4,7 +4,7 @@ import { SERVICES } from '../data/services';
 import { 
   TrendingUp, Megaphone, Users, Cpu, Layers, Sparkles, PieChart, ShieldAlert,
   ArrowRight, ArrowLeft, Check, CheckCircle2, Award, ChevronDown, ChevronUp, HelpCircle,
-  ShoppingCart, RefreshCcw,
+  ShoppingCart, RefreshCcw, Bot,
   PiggyBank, Cloud, Home, Briefcase, Factory, Compass, GraduationCap, Stethoscope, Hammer, Scale, Truck, Hotel
 } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -33,12 +33,37 @@ const WORK_MODES = [
   {
     title: 'Umsetzungsprojekt',
     forWhom: 'Für ein klar umrissenes Vorhaben',
-    desc: 'Zum Beispiel ein CRM mit sauberen Abläufen, eine Kampagne mit Landingpage und Messung oder eine Automatisierung zwischen zwei Systemen. Umfang, Termin und Kosten stehen vor dem Start fest.',
+    desc: 'Zum Beispiel eine KI-Einführung mit Schulung, ein aufgeräumter MarTech-Stack oder ein Lead-System von der Landingpage bis ins CRM. Umfang, Termin, Festpreis und das Ergebnis, an dem wir die Arbeit abnehmen, stehen vor dem Start fest.',
   },
   {
     title: 'Laufende Begleitung',
     forWhom: 'Wenn Ihr Unternehmen dauerhaft besser werden soll',
-    desc: 'Wir betreuen Kampagnen, Systeme und Auswertungen fortlaufend und legen einmal im Monat anhand der Zahlen die nächsten Schritte fest. Sie haben einen festen Ansprechpartner und einen planbaren monatlichen Aufwand.',
+    desc: 'Wir übernehmen die Verantwortung für eine vereinbarte Kennzahl, etwa qualifizierte Anfragen pro Monat, und legen jeden Monat anhand der Zahlen fest, was als Nächstes kommt. Sie haben einen festen Ansprechpartner und einen festen Monatspreis.',
+  },
+];
+
+/** Ergebnis-Pakete auf /leistungen (Preise werden nicht öffentlich genannt). */
+const RESULT_PACKAGES = [
+  {
+    title: 'KI-Einführung',
+    desc: 'Standortbestimmung, Einrichtung der wichtigsten Anwendungen, Schulung des Teams und schriftliche Regeln für Daten und Tools.',
+    result: 'Drei bis fünf KI-Anwendungen sind im Alltag im Einsatz, das Team ist geschult, die Regeln sind verabschiedet.',
+    href: '/leistungen/ki-im-unternehmen',
+    linkText: 'KI im Unternehmen',
+  },
+  {
+    title: 'Stack aufräumen',
+    desc: 'Inventur aller Tools, Zielbild, Umbau und Verbindung von CRM, Website, E-Mail und Tracking.',
+    result: 'Weniger Lizenzen, Daten werden nur einmal erfasst, jede Anfrage ist bis zum Auftrag nachvollziehbar.',
+    href: '/leistungen/martech-stack',
+    linkText: 'MarTech-Stack',
+  },
+  {
+    title: 'Lead-System',
+    desc: 'Angebot und Botschaft schärfen, Landingpage, Formular mit Vorqualifizierung, Messung bis ins CRM und die passenden Kampagnen.',
+    result: 'Jede Anfrage wird mit Quelle im CRM erfasst, und Sie kennen die Kosten pro qualifizierter Anfrage.',
+    href: '/leistungen/wachstum-marketing',
+    linkText: 'Wachstum & Marketing',
   },
 ];
 
@@ -54,6 +79,8 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     'sales-enablement': ShieldAlert,
     'revenue-operations': Layers,
     'ai-automation': Sparkles,
+    'ki-agenten': Bot,
+    'martech-stack': Layers,
     'data-analytics': PieChart,
     'ecommerce-performance': ShoppingCart,
     'dtc-growth-acquisition': TrendingUp,
@@ -87,8 +114,16 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       desc: 'Wenn Ihre Teams mit unterschiedlichen Daten arbeiten, geht Umsatz verloren. Wir ordnen Abläufe, Daten und Tools so, dass alle auf dasselbe Ziel hinarbeiten.'
     },
     'ai-automation': {
-      benefit: 'Weniger Routinearbeit im Vertrieb und Marketing.',
-      desc: 'KI-gestützte Abläufe für Recherche, Texte, Personalisierung und Auswertungen. Wir setzen KI dort ein, wo sie Ihrem Team nachweisbar Zeit spart.'
+      benefit: 'Ihr Team arbeitet sicher und wirksam mit KI.',
+      desc: 'Standortbestimmung, Einführung in die bestehenden Abläufe, Schulung mit eigenen Beispielen und klare Regeln, welche Daten in welches Tool dürfen.'
+    },
+    'ki-agenten': {
+      benefit: 'Ganze Abläufe laufen, Ihr Team gibt frei.',
+      desc: 'KI-Agenten prüfen Anfragen, recherchieren, tragen ins CRM ein und bereiten Antworten vor. Nach aussen geht nichts ohne Freigabe.'
+    },
+    'martech-stack': {
+      benefit: 'Weniger Tools, die zusammenarbeiten.',
+      desc: 'Stack-Check, Aufräumen und Verbinden von CRM, Website, E-Mail und Tracking. Weniger Lizenzen, weniger Handarbeit, klare Zahlen.'
     },
     'data-analytics': {
       benefit: 'Sie sehen, was funktioniert und wo Budget verloren geht.',
@@ -491,7 +526,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             Strategie, Technologie und Wachstum aus einer Hand.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium">
-            performanceboost setzt dort an, wo Schweizer KMU heute am meisten Umsatz und Zeit verlieren: bei Strategie, Systemen und Abläufen, Marketing und Vertrieb. Die Leistungen sind in vier Felder gegliedert, die aufeinander aufbauen. Inhaber Yathur Nathan setzt sie persönlich um.
+            performanceboost setzt dort an, wo Schweizer KMU heute am meisten Umsatz und Zeit verlieren: bei Strategie, KI, Systemen und Abläufen, Marketing und Vertrieb. Die Leistungen sind in fünf Felder gegliedert, die aufeinander aufbauen, mit KI im Unternehmen als Schwerpunkt. Inhaber Yathur Nathan setzt sie persönlich um.
           </p>
         </div>
       </section>
@@ -536,8 +571,11 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </Link>
               </div>
+              {(area.serviceGroups ?? [{ label: '', services: areaServices.map((x) => x.slug) }]).map((g) => (
+              <div key={g.label || 'all'} className="space-y-4">
+              {g.label && <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 font-display">{g.label}</h3>}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {areaServices.map((s) => {
+                {g.services.map((slug) => areaServices.find((x) => x.slug === slug)).filter((x): x is (typeof SERVICES)[number] => Boolean(x)).map((s) => {
                   const IconComp = servicesIcons[s.slug] || TrendingUp;
                   const localized = servicesCopyOverride[s.slug] || { benefit: s.shortDesc, desc: s.description };
                   return (
@@ -559,81 +597,37 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   );
                 })}
               </div>
+              </div>
+              ))}
             </div>
           );
         })}
       </section>
 
-      {/* HOW WE COMBINE SERVICES */}
+      {/* ERGEBNIS-PAKETE (statt Kombinationen von Tätigkeiten) */}
       <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32 animate-fadeIn">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-center">
-          
           <div className="space-y-3">
-            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Wie wir Leistungen kombinieren</h2>
-            <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed font-semibold">
-              Einzelne Leistungen bringen schon viel. Am meisten erreichen Sie, wenn Kampagnen, Website, Tracking und Vertrieb aufeinander abgestimmt sind.
+            <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Pakete mit einem klaren Ergebnis</h2>
+            <p className="text-body-sm text-slate-500 max-w-xl mx-auto leading-relaxed font-medium">
+              Sie kaufen keine Stunden und keine einzelnen Tätigkeiten, sondern ein Ergebnis, das vor dem Start feststeht. Jedes Paket hat einen Festpreis, den Sie nach dem Erstgespräch schriftlich erhalten.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Combo 1 */}
-            <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
-              <div className="space-y-4">
-                <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Lead-Generierung</h3>
-                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Google Ads bringen ab den ersten Wochen Anfragen, belastbare Daten liegen meist nach 4–8 Wochen vor. SEO und Inhalte bauen parallel Sichtbarkeit auf, die über mehrere Monate wächst.
-                </p>
+            {RESULT_PACKAGES.map((pkg) => (
+              <div key={pkg.title} className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col">
+                <div className="space-y-4">
+                  <h3 className="text-base font-bold text-slate-900 leading-tight">{pkg.title}</h3>
+                  <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{pkg.desc}</p>
+                  <p className="text-body-sm text-slate-800 leading-relaxed">
+                    <span className="font-bold text-[#686DF4]">Ergebnis:</span> {pkg.result}
+                  </p>
+                </div>
+                <Link href={pkg.href} className="mt-auto pt-2 text-xs text-[#686DF4] font-bold w-fit inline-flex items-center gap-1.5 hover:text-[#4f54d6]">
+                  {pkg.linkText} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
               </div>
-              <button 
-                onClick={() => {
-                  onNavigate('/leistungen');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="text-xs text-[#686DF4] font-bold w-fit mt-5 inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/80"
-              >
-                Kombinationen ansehen <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-
-            {/* Combo 2 */}
-            <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
-              <div className="space-y-4">
-                <h3 className="text-base font-bold text-slate-900 leading-tight">Online-Werbung + Automation + CRM</h3>
-                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Kampagnen bringen neue Kontakte, automatische E-Mails begleiten sie weiter, und das CRM übergibt sie zur richtigen Zeit an Ihren Vertrieb. So geht unterwegs keine Anfrage verloren.
-                </p>
-              </div>
-              <button 
-                onClick={() => {
-                  onNavigate('/leistungen');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="text-xs text-[#686DF4] font-bold w-fit mt-5 inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/80"
-              >
-                Kombinationen ansehen <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-
-            {/* Combo 3 */}
-            <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col justify-between hover:border-[#686DF4]/10 transition-colors duration-300">
-              <div className="space-y-4">
-                <h3 className="text-base font-bold text-slate-900 leading-tight">RevOps + Vertriebsunterstützung + Tracking</h3>
-                <p className="text-body-sm text-slate-500 leading-relaxed font-medium">
-                  Marketing und Vertrieb arbeiten mit gemeinsamen Zielen und denselben Daten. Ein gemeinsames Dashboard zeigt allen, woher Anfragen kommen und was daraus wird.
-                </p>
-              </div>
-              <button 
-                onClick={() => {
-                  onNavigate('/leistungen');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="text-xs text-[#686DF4] font-bold w-fit mt-5 inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/80"
-              >
-                Kombinationen ansehen <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>

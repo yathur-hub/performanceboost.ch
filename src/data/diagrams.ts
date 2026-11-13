@@ -113,6 +113,34 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
       ],
     },
   },
+  'ki-agenten': {
+    title: 'Ein Ablauf, den ein Agent übernimmt',
+    text: 'Der Agent erledigt die Schritte zwischen den Systemen. Bevor etwas nach aussen geht, prüft und entscheidet Ihr Team.',
+    spec: {
+      type: 'flow',
+      nodes: [
+        { title: 'Neue Anfrage', sub: 'Formular oder E-Mail, auch am Wochenende', icon: 'Mail' },
+        { title: 'Prüfen und einordnen', sub: 'Vollständigkeit, Spam, Ihre Kriterien', icon: 'Filter' },
+        { title: 'Recherche und CRM', sub: 'Firma, Kontakt, Anfrage angelegt', icon: 'Database' },
+        { title: 'Antwortentwurf', sub: 'In Ihrem Stil vorbereitet', icon: 'Bot' },
+        { title: 'Freigabe', sub: 'Ihr Team prüft und sendet', icon: 'UserCheck' },
+      ],
+    },
+  },
+  'martech-stack': {
+    title: 'Vom Tool-Wildwuchs zum verbundenen Stack',
+    text: 'Zuerst wissen, was da ist und was es kostet. Dann entscheiden, was bleibt, und die Systeme so verbinden, dass Daten nur einmal erfasst werden.',
+    spec: {
+      type: 'flow',
+      nodes: [
+        { title: 'Inventur', sub: 'Tools, Kosten, Nutzung, Datenflüsse', icon: 'Search' },
+        { title: 'Zielbild', sub: 'Was bleibt, was weg kann, was fehlt', icon: 'Target' },
+        { title: 'Verbinden', sub: 'Daten nur einmal erfassen', icon: 'Layers' },
+        { title: 'Klare Zahlen', sub: 'Von der Anfrage bis zum Auftrag', icon: 'BarChart3' },
+        { title: 'Laufend sauber', sub: 'Neue Tools erst nach Prüfung', icon: 'RefreshCw' },
+      ],
+    },
+  },
   'data-analytics': {
     title: 'Vom Klick bis zum Umsatz nachvollziehbar',
     text: 'Wir verbinden Website-Messung mit den Daten aus Ihrem CRM. So sehen Sie, welcher Kanal Anfragen und Aufträge bringt und welcher nur Klicks.',
@@ -198,6 +226,20 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
         { title: 'Strategie', sub: 'Wachstum, Digitalisierung, Technologie', icon: 'Compass' },
         { title: 'Umsetzung', sub: 'Selbst umgesetzt oder begleitet', icon: 'Settings' },
         { title: 'Messbare Wirkung', sub: 'Kennzahlen, die alle verstehen', icon: 'LineChart' },
+      ],
+    },
+  },
+  'ki-im-unternehmen': {
+    title: 'In fünf Schritten zu KI, die im Alltag wirkt',
+    text: 'Zuerst klären, wo KI etwas bringt. Dann einführen und schulen, Regeln festlegen und laufend verbessern. Die Entscheidung bleibt bei Ihrem Team.',
+    spec: {
+      type: 'flow',
+      nodes: [
+        { title: 'Standortbestimmung', sub: 'Wo KI heute genutzt wird und was sich lohnt', icon: 'Search' },
+        { title: 'Einführung und Schulung', sub: 'Mit Ihren eigenen Abläufen', icon: 'Users' },
+        { title: 'Regeln', sub: 'Daten, Tools und Freigaben', icon: 'CheckCircle2' },
+        { title: 'KI-Agenten', sub: 'Ganze Abläufe mit Freigabe', icon: 'Bot' },
+        { title: 'Begleitung', sub: 'Messen, anpassen, ausbauen', icon: 'RefreshCw' },
       ],
     },
   },

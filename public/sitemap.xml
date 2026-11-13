@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://performanceboost.ch/</loc></url>
   <url><loc>https://performanceboost.ch/leistungen</loc></url>
+  <url><loc>https://performanceboost.ch/leistungen/ki-im-unternehmen</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/strategie</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/technologie-automation</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/wachstum-marketing</loc></url>
@@ -13,6 +14,8 @@
   <url><loc>https://performanceboost.ch/leistungen/sales-enablement</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/revenue-operations</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/ai-automation</loc></url>
+  <url><loc>https://performanceboost.ch/leistungen/ki-agenten</loc></url>
+  <url><loc>https://performanceboost.ch/leistungen/martech-stack</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/data-analytics</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/ecommerce-performance</loc></url>
   <url><loc>https://performanceboost.ch/leistungen/dtc-growth-acquisition</loc></url>
@@ -41,6 +44,12 @@
   <url><loc>https://performanceboost.ch/loesungen/vorsorgeberatung</loc></url>
   <url><loc>https://performanceboost.ch/loesungen/versicherungsbroker</loc></url>
   <url><loc>https://performanceboost.ch/ressourcen</loc></url>
+  <url><loc>https://performanceboost.ch/ressourcen/martech</loc></url>
+  <url><loc>https://performanceboost.ch/ressourcen/martech-stack-inventur</loc></url>
+  <url><loc>https://performanceboost.ch/ressourcen/martech-welches-crm</loc></url>
+  <url><loc>https://performanceboost.ch/ressourcen/martech-open-source-oder-lizenz</loc></url>
+  <url><loc>https://performanceboost.ch/ressourcen/martech-daten-nur-einmal-erfassen</loc></url>
+  <url><loc>https://performanceboost.ch/ressourcen/martech-ki-im-stack</loc></url>
   <url><loc>https://performanceboost.ch/ressourcen/b2b-gtm-playbook-dach</loc></url>
   <url><loc>https://performanceboost.ch/ressourcen/ai-automation-b2b-sales</loc></url>
   <url><loc>https://performanceboost.ch/ressourcen/why-b2b-lead-gen-is-dead</loc></url>

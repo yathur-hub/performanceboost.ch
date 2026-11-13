@@ -48,6 +48,7 @@ export type VisualId = keyof typeof VISUALS;
 
 /** Leitobjekt pro Leistungsfeld (Startseite, Hub-Hero). */
 export const VISUAL_BY_AREA: Record<string, VisualId> = {
+  'ki-im-unternehmen': 'energy-core',
   strategie: 'chess-knight',
   'technologie-automation': 'gears',
   'wachstum-marketing': 'turbine',
@@ -70,6 +71,8 @@ export const VISUAL_BY_SERVICE: Record<string, VisualId> = {
   'sales-enablement': 'helmet',
   'revenue-operations': 'watch',
   'ai-automation': 'ai-chip',
+  'ki-agenten': 'robotic-arm',
+  'martech-stack': 'tech-cube',
   'data-analytics': 'server',
   'ecommerce-performance': 'f1-car',
   'dtc-growth-acquisition': 'hypercar',

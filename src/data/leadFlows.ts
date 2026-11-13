@@ -46,7 +46,7 @@ export const LEAD_FLOWS: Record<string, LeadFlow> = {
       label: 'Wo möchten Sie Ihr Unternehmen voranbringen?',
       hint: 'Mehrfachauswahl möglich',
       multi: true,
-      options: ['Mehr passende Kunden gewinnen', 'Vertrieb und CRM verbessern', 'Abläufe automatisieren', 'KI sinnvoll einsetzen', 'Daten und Reporting', 'Strategie und Prioritäten'],
+      options: ['Mehr passende Kunden gewinnen', 'Vertrieb und CRM verbessern', 'Abläufe automatisieren', 'KI sinnvoll einsetzen', 'Tools aufräumen und verbinden', 'Daten und Reporting', 'Strategie und Prioritäten'],
     },
     {
       id: 'situation',
@@ -129,6 +129,21 @@ export const LEAD_FLOWS: Record<string, LeadFlow> = {
       hint: 'Mehrfachauswahl möglich',
       multi: true,
       options: ['Marketing und Texte', 'Vertrieb und Recherche', 'Kundenanfragen und Service', 'Interne Abläufe und Dokumente', 'Auswertungen'],
+    },
+  ]),
+  stack: flow('stack', 'Systeme besprechen', [
+    {
+      id: 'tools',
+      label: 'Wie viele Tools nutzen Sie in Marketing und Vertrieb?',
+      hint: 'CRM, E-Mail, Formulare, Werbekonten, Tracking, Tabellen',
+      options: ['Bis 5', '6–10', '11–20', 'Mehr als 20', 'Weiss ich nicht genau'],
+    },
+    {
+      id: 'problem',
+      label: 'Was stört heute am meisten?',
+      hint: 'Mehrfachauswahl möglich',
+      multi: true,
+      options: ['Daten werden von Hand übertragen', 'Zahlen widersprechen sich', 'Hohe Lizenzkosten', 'Unklar, wer welches Tool nutzt', 'Das CRM wird kaum genutzt'],
     },
   ]),
   data: flow('data', 'Daten & Reporting besprechen', [
@@ -228,6 +243,8 @@ const SERVICE_FLOW: Record<string, string> = {
   'sales-enablement': 'sales',
   'revenue-operations': 'sales',
   'ai-automation': 'ai',
+  'ki-agenten': 'ai',
+  'martech-stack': 'stack',
   'data-analytics': 'data',
   'ecommerce-performance': 'ecommerce',
   'dtc-growth-acquisition': 'ecommerce',
@@ -236,8 +253,9 @@ const SERVICE_FLOW: Record<string, string> = {
 };
 
 const AREA_FLOW: Record<string, string> = {
+  'ki-im-unternehmen': 'ai',
   strategie: 'strategy',
-  'technologie-automation': 'automation',
+  'technologie-automation': 'stack',
   'wachstum-marketing': 'marketing',
   'sales-revenue-operations': 'sales',
 };

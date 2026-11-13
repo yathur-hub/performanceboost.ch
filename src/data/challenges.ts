@@ -34,15 +34,15 @@ export const CHALLENGE_CARDS: ChallengeCard[] = [
   },
   {
     title: 'KI sinnvoll einsetzen',
-    desc: 'Einzelne nutzen ChatGPT, aber in den eigentlichen Abläufen hat KI noch nichts verändert.',
-    href: '/leistungen/ai-automation',
-    linkText: 'Zu KI & Automatisierung',
+    desc: 'Einzelne nutzen ChatGPT, aber ohne Regeln, und in den eigentlichen Abläufen hat KI noch nichts verändert.',
+    href: '/leistungen/ki-im-unternehmen',
+    linkText: 'Zu KI im Unternehmen',
   },
   {
-    title: 'Daten und Reporting verbessern',
-    desc: 'Zahlen widersprechen sich, Berichte kosten Zeit und Entscheidungen fallen trotzdem aus dem Bauch.',
-    href: '/leistungen/data-analytics',
-    linkText: 'Zu Tracking, Analyse & Reporting',
+    title: 'Tools aufräumen und verbinden',
+    desc: 'Viele Programme und Lizenzen, und trotzdem werden Daten von Hand übertragen und Zahlen widersprechen sich.',
+    href: '/leistungen/martech-stack',
+    linkText: 'Zum MarTech-Stack',
   },
   {
     title: 'Marketing und Vertrieb verbinden',

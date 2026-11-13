@@ -34,7 +34,7 @@ export interface ParsedRoute {
   pageType: string;
 }
 
-const RESOURCE_SECTIONS = ['blog', 'guides'];
+const RESOURCE_SECTIONS = ['blog', 'guides', 'martech'];
 const SOLUTION_SLUGS = Object.values(SOLUTIONS_SECTORS).map((s) => s.slug);
 
 export function normalizePath(pathname: string): string {
@@ -106,6 +106,7 @@ export function indexablePaths(): string[] {
     ...REAL_ESTATE_SLUGS.map((slug) => `/loesungen/${slug}`),
     ...FINANCE_SLUGS.filter((slug) => !SOLUTION_SLUGS.includes(slug)).map((slug) => `/loesungen/${slug}`),
     '/ressourcen',
+    '/ressourcen/martech',
     ...RESOURCES_DATA.filter((r) => r.type !== 'case-study').map((r) => `/ressourcen/${r.slug}`),
     '/referenzen',
     '/ueber-uns',

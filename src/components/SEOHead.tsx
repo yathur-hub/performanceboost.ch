@@ -107,7 +107,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'home': {
       const title = 'Business Performance Partner für Schweizer KMU | performanceboost';
       const description =
-        'Wir verbessern Marketing, Vertrieb und Abläufe von Schweizer KMU. Strategie, Technologie und Umsetzung aus einer Hand, persönlich betreut vom Inhaber.';
+        'Wir verbessern Marketing, Vertrieb und Abläufe von Schweizer KMU und führen KI so ein, dass sie im Alltag wirkt. Strategie, KI und Umsetzung aus einer Hand.';
       return {
         ...base,
         title,
@@ -326,9 +326,11 @@ export function buildMeta(route: ParsedRoute): Meta {
           },
         };
       }
-      const section = route.subSection === 'blog' ? 'Fachbeiträge' : route.subSection === 'guides' ? 'Leitfäden' : 'Ratgeber & Fachbeiträge';
+      const section = route.subSection === 'blog' ? 'Fachbeiträge' : route.subSection === 'guides' ? 'Leitfäden' : route.subSection === 'martech' ? 'MarTech für KMU' : 'Ratgeber & Fachbeiträge';
       const title = `${section} | performanceboost`;
-      const description = 'Praxisbeiträge zu Wachstum, Vertrieb, Automatisierung, KI, Tracking und Datenschutz für Schweizer KMU.';
+      const description = route.subSection === 'martech'
+        ? 'Welche Tools ein Schweizer KMU für Marketing und Vertrieb braucht, wie sie zusammenarbeiten, Open Source oder Lizenz und wo KI in den Stack gehört.'
+        : 'Praxisbeiträge zu Wachstum, Vertrieb, KI, MarTech, Automatisierung, Tracking und Datenschutz für Schweizer KMU.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'not_found':

@@ -14,16 +14,16 @@ import { AnimatedGroup, AnimatedChild } from '../ui/animated-group';
 import { SKILLS as skills, type Skill } from '../../data/skills';
 
 const categories = [
-  { value: 'alle', label: 'Alle', count: 36 },
-  { value: 'strategie', label: 'Strategie', count: 4 },
-  { value: 'nachfragegenerierung', label: 'Nachfrage aufbauen', count: 4 },
-  { value: 'revenue-operations', label: 'Prozesse & Daten', count: 5 },
-  { value: 'marketing-automation', label: 'Marketing Automation', count: 4 },
-  { value: 'vertrieb', label: 'Vertrieb', count: 4 },
-  { value: 'ki-automatisierung', label: 'KI & Automatisierung', count: 4 },
-  { value: 'daten-analytics', label: 'Daten & Analytics', count: 4 },
-  { value: 'wachstum', label: 'Wachstum', count: 4 },
-  { value: 'ecommerce', label: 'E-Commerce', count: 3 },
+  { value: 'alle', label: 'Alle', count: skills.length },
+  { value: 'strategie', label: 'Strategie', count: skills.filter((x) => x.category === 'strategie').length },
+  { value: 'nachfragegenerierung', label: 'Nachfrage aufbauen', count: skills.filter((x) => x.category === 'nachfragegenerierung').length },
+  { value: 'revenue-operations', label: 'Prozesse & Daten', count: skills.filter((x) => x.category === 'revenue-operations').length },
+  { value: 'marketing-automation', label: 'Marketing Automation', count: skills.filter((x) => x.category === 'marketing-automation').length },
+  { value: 'vertrieb', label: 'Vertrieb', count: skills.filter((x) => x.category === 'vertrieb').length },
+  { value: 'ki-automatisierung', label: 'KI & Automatisierung', count: skills.filter((x) => x.category === 'ki-automatisierung').length },
+  { value: 'daten-analytics', label: 'Daten & Analytics', count: skills.filter((x) => x.category === 'daten-analytics').length },
+  { value: 'wachstum', label: 'Wachstum', count: skills.filter((x) => x.category === 'wachstum').length },
+  { value: 'ecommerce', label: 'E-Commerce', count: skills.filter((x) => x.category === 'ecommerce').length },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -89,12 +89,12 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
           </h1>
           
           <p className="text-[#505050] text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-            36 strukturierte Checklisten, mit denen Sie Engpässe in Marketing, Vertrieb und Daten selbst prüfen können. Gedacht für Geschäftsführer und Verantwortliche, die Probleme an der Ursache lösen wollen, statt nach Gefühl zu entscheiden.
+            {skills.length} strukturierte Checklisten, mit denen Sie Engpässe in Marketing, Vertrieb und Daten selbst prüfen können. Gedacht für Geschäftsführer und Verantwortliche, die Probleme an der Ursache lösen wollen, statt nach Gefühl zu entscheiden.
           </p>
 
           <div className="flex items-center justify-center gap-10 pt-4 pb-2">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-extrabold text-[#686DF4]">36</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-[#686DF4]">{skills.length}</div>
               <div className="text-xs text-[#505050] font-bold mt-1 uppercase tracking-wider font-mono">Checklisten</div>
             </div>
             <div className="h-10 w-px bg-slate-300"></div>
