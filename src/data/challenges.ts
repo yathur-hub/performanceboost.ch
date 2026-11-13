@@ -8,7 +8,7 @@
 
 export interface ChallengeCard {
   /** Bereich, in dem die Herausforderung entsteht (Startseite: Label auf der Karte). */
-  area: 'Marketing' | 'Sales' | 'Processes';
+  area: 'Marketing' | 'Sales' | 'Prozesse';
   title: string;
   desc: string;
   href: string;
@@ -31,21 +31,21 @@ export const CHALLENGE_CARDS: ChallengeCard[] = [
     linkText: 'Vertrieb optimieren',
   },
   {
-    area: 'Processes',
+    area: 'Prozesse',
     title: 'Geschäftsprozesse automatisieren',
     desc: 'Ihr Team verliert Zeit mit Abtippen, Excel-Listen und manuellen Übergaben zwischen Systemen.',
     href: '/loesungen/prozessautomatisierung',
     linkText: 'Prozesse automatisieren',
   },
   {
-    area: 'Processes',
+    area: 'Prozesse',
     title: 'KI sinnvoll einsetzen',
     desc: 'Einzelne nutzen ChatGPT, aber ohne Regeln, und in den eigentlichen Abläufen hat KI noch nichts verändert.',
     href: '/leistungen/ki-im-unternehmen',
     linkText: 'Zu Agentic AI',
   },
   {
-    area: 'Processes',
+    area: 'Prozesse',
     title: 'Tools aufräumen und verbinden',
     desc: 'Viele Programme und Lizenzen, und trotzdem werden Daten von Hand übertragen und Zahlen widersprechen sich.',
     href: '/leistungen/martech-stack',

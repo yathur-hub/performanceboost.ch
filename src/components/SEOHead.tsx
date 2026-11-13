@@ -191,7 +191,7 @@ export function buildMeta(route: ParsedRoute): Meta {
           },
         };
       }
-      const title = 'Leistungen: Marketing, Sales & Processes für KMU | performanceboost';
+      const title = 'Leistungen: Marketing, Sales & Prozesse für KMU | performanceboost';
       const description =
         'Alle Leistungen von performanceboost im Überblick: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };

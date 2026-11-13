@@ -5,7 +5,7 @@
  * Mega-Menü: Panel direkt unter dem Header, öffnet und schliesst per Klick auf den Menü-Button,
  * schliesst mit Escape, Klick auf den abgedunkelten Hintergrund und bei Seitenwechsel.
  * Fokus springt beim Öffnen ins Menü, bleibt darin (Tab-Schleife inkl. Menü-Button) und kehrt beim Schliessen zurück.
- * Informationsarchitektur unverändert: Marketing · Sales · Processes (mit Leistungen) · Ansatz · Agentic AI · Wissen · Unternehmen · Kontakt.
+ * Informationsarchitektur unverändert: Marketing · Sales · Prozesse (mit Leistungen) · Ansatz · Agentic AI · Wissen · Unternehmen · Kontakt.
  */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowRight, TrendingUp, Handshake, Cpu, Mail, Plus, Sparkles, Layers } from 'lucide-react';
@@ -337,7 +337,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                     })}
                                   </ul>
                                   <a href={hub} onClick={(e) => go(hub, e)} className="mt-1 md:mt-3 inline-flex items-center gap-1.5 min-h-11 md:min-h-0 text-[13px] font-semibold text-[#686CFA] hover:text-[#4f54d6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] rounded">
-                                    Alles zu {area.label} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                                    Alles zu {area.labelZu} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                                   </a>
                                 </div>
                               </div>

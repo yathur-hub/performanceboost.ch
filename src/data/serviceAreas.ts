@@ -2,7 +2,7 @@
  * Kompetenzbereiche (Positionierung «Boost your performance through agentic marketing, sales & processes.»).
  *
  * Drei Ebenen, strikt getrennt (docs/agentic-positioning/01):
- * - Was wir verbessern: die drei Bereiche Marketing, Sales, Processes (`kind: 'area'`).
+ * - Was wir verbessern: die drei Bereiche Marketing, Sales, Prozesse (`kind: 'area'`).
  * - Was wir konkret leisten: die Leistungen in `services` (Detailseiten aus services.ts).
  * - Wie wir vorgehen: die vier Phasen in src/data/approach.ts (kein Bereich, keine Leistung).
  * Agentic AI ist der Enabler in allen drei Bereichen und hat eine übergreifende Seite (`kind: 'capability'`).
@@ -19,10 +19,12 @@ export interface ServiceArea {
   id: AreaId;
   /** 'area' = einer der drei Kompetenzbereiche, 'capability' = übergreifende Seite (Agentic AI). */
   kind: 'area' | 'capability';
-  /** Markenbegriff in Navigation und Karten («Marketing», «Sales», «Processes»). */
+  /** Markenbegriff in Navigation und Karten («Marketing», «Sales», «Prozesse»). */
   label: string;
   /** Name in Breadcrumbs und Fliesstext. */
   shortLabel: string;
+  /** Form nach «zu» («Alles zu Prozessen», «Fragen zu Marketing»). */
+  labelZu: string;
   /** Deutsche Unterzeile zum Markenbegriff, z. B. «Nachfrage gewinnen». */
   subtitle: string;
   /** Rolle im Gesamtsystem (ein Satz). */
@@ -68,7 +70,7 @@ export interface ServiceArea {
   faq: { q: string; a: string }[];
 }
 
-/** Vom Inhaber bestätigte Abläufe aus dem eigenen Betrieb (Processes und Agentic AI). */
+/** Vom Inhaber bestätigte Abläufe aus dem eigenen Betrieb (Prozesse und Agentic AI). */
 const OWN_PRACTICE: ServiceArea['practice'] = {
   title: 'So arbeiten wir selbst',
   intro: 'Bei performanceboost laufen dieselben Werkzeuge, die wir Ihnen empfehlen. Einige Beispiele aus dem eigenen Betrieb:',
@@ -86,6 +88,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     kind: 'area',
     label: 'Marketing',
     shortLabel: 'Marketing',
+    labelZu: 'Marketing',
     subtitle: 'Nachfrage gewinnen',
     role: 'Marketing erzeugt Nachfrage und entwickelt sie, bis ein Unternehmen anfragt.',
     headline: 'Nachfrage, die zu Ihrem Angebot passt, gemessen bis zum Auftrag.',
@@ -161,6 +164,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     kind: 'area',
     label: 'Sales',
     shortLabel: 'Sales',
+    labelZu: 'Sales',
     subtitle: 'Aufträge gewinnen',
     role: 'Sales qualifiziert die Nachfrage, bearbeitet sie und macht daraus Aufträge.',
     headline: 'Aus Anfragen werden planbar Aufträge.',
@@ -224,10 +228,11 @@ export const SERVICE_AREAS: ServiceArea[] = [
   {
     id: 'prozesse',
     kind: 'area',
-    label: 'Processes',
-    shortLabel: 'Processes',
+    label: 'Prozesse',
+    shortLabel: 'Prozesse',
+    labelZu: 'Prozessen',
     subtitle: 'Abläufe verbinden und automatisieren',
-    role: 'Processes verbinden Marketing und Vertrieb mit den Systemen und Abläufen dahinter und automatisieren, was sich verlässlich automatisieren lässt.',
+    role: 'Prozesse verbinden Marketing und Vertrieb mit den Systemen und Abläufen dahinter und automatisieren, was sich verlässlich automatisieren lässt.',
     headline: 'Systeme, die zusammenspielen, und Abläufe ohne Handarbeit.',
     definition:
       'Wir nehmen Ihre Abläufe in Marketing, Vertrieb und Administration auf, legen fest, wie Daten zwischen den Systemen fliessen, und automatisieren, was häufig vorkommt und klar geregelt ist. Wo eine Aufgabe mehrere Schritte und Urteilsvermögen braucht, setzen wir KI-Agenten mit festgelegten Rechten und Freigaben ein.',
@@ -298,6 +303,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     kind: 'capability',
     label: 'Agentic AI',
     shortLabel: 'Agentic AI',
+    labelZu: 'Agentic AI',
     subtitle: 'KI im Unternehmen',
     role: 'Agentic AI bereitet in allen drei Bereichen Entscheidungen vor und erledigt klar umrissene Aufgaben selbständig.',
     headline: 'KI-Agenten, die mitarbeiten, und ein Team, das entscheidet.',
@@ -401,7 +407,7 @@ export function primaryAreaOf(serviceSlug: string): ServiceArea | undefined {
 
 /**
  * Passende Leistungen für eine Detailseite. Bewusst über Bereichsgrenzen hinweg,
- * weil Marketing, Sales und Processes als ein System gedacht sind. E-Commerce und B2B werden nicht gemischt.
+ * weil Marketing, Sales und Prozesse als ein System gedacht sind. E-Commerce und B2B werden nicht gemischt.
  */
 const CROSS_LINKS: Record<string, string[]> = {
   'growth-strategy': ['demand-generation', 'revenue-operations', 'data-analytics'],

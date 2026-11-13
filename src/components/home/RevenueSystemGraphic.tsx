@@ -1,6 +1,6 @@
 /**
  * Systemdiagramm der Startseite: Marketing, Sales und Ergebnis bilden einen Kreislauf,
- * Processes (Systeme, Daten, Automatisierung) ist der Kern, der alle drei verbindet.
+ * Prozesse (Systeme, Daten, Automatisierung) ist der Kern, der alle drei verbindet.
  * Agenten arbeiten auf den Verbindungen zwischen Kern und Bereichen, ein Mensch gibt frei.
  *
  * Konzept: docs/agentic-positioning/01, Kapitel 6. Desktop als skalierendes SVG, mobil als gestapelte Karten
@@ -57,13 +57,13 @@ const NODES: Record<NodeId, NodeInfo> = {
   },
   prozesse: {
     id: 'prozesse',
-    title: 'Processes',
+    title: 'Prozesse',
     sub: 'Systeme · Daten · Automatisierung',
     what: 'Website, CRM, E-Mail, Offerte und Reporting sind verbunden. Daten werden nur einmal erfasst, Übergaben laufen automatisch, und alle arbeiten mit denselben Zahlen.',
     agent: 'Daten nach festen Regeln übertragen, Ausnahmen prüfen, Berichte erstellen.',
     human: 'Was nach aussen geht, Geld kostet oder Daten löscht, gibt ein Mensch frei.',
     href: '/leistungen/prozesse',
-    linkText: 'Zu Processes',
+    linkText: 'Zu den Prozessen',
   },
 };
 
@@ -127,7 +127,7 @@ export function RevenueSystemGraphic() {
     <figure className="w-full min-w-0 space-y-5">
       {/* DESKTOP UND TABLET: SVG skaliert mit der Breite */}
       <div ref={svgWrap} className={`hidden sm:block ${drawn ? 'sys-drawn' : ''}`}>
-        <svg viewBox="0 0 600 500" className="w-full h-auto select-none" role="group" aria-label="Marketing, Sales und Processes als ein System">
+        <svg viewBox="0 0 600 500" className="w-full h-auto select-none" role="group" aria-label="Marketing, Sales und Prozesse als ein System">
           <defs>
             <marker id="sys-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M 0 1 L 9 5 L 0 9 z" fill={ACCENT} />
@@ -185,10 +185,10 @@ export function RevenueSystemGraphic() {
             </g>
           ))}
 
-          {/* Kern: Processes */}
+          {/* Kern: Prozesse */}
           <g {...nodeProps('prozesse')} style={delay(80)}>
             <circle cx="300" cy="255" r="78" fill="url(#sys-core)" stroke={ACCENT} strokeWidth={selected === 'prozesse' ? 2.5 : 1.25} className="transition-all duration-300" />
-            <text x="300" y="242" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="19" fontWeight="700" fill="#1e1e2a">Processes</text>
+            <text x="300" y="242" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="19" fontWeight="700" fill="#1e1e2a">Prozesse</text>
             <text x="300" y="262" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={TEXT}>Systeme · Daten</text>
             <text x="300" y="277" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={TEXT}>Automatisierung</text>
           </g>
@@ -227,12 +227,12 @@ export function RevenueSystemGraphic() {
         </svg>
       </div>
 
-      {/* MOBIL: gestapelte Karten, Processes als durchgehende Schiene */}
+      {/* MOBIL: gestapelte Karten, Prozesse als durchgehende Schiene */}
       <div className="sm:hidden">
         <div className="relative pl-12">
           <div className="absolute left-0 top-0 bottom-0 w-9 rounded-2xl bg-[#CBCBFC]/45 border border-[#686CFA]/30 flex items-center justify-center" aria-hidden="true">
             <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-[#4f54d6]">
-              Processes · Daten · Agenten
+              Prozesse · Daten · Agenten
             </span>
           </div>
           <ol className="space-y-2">
@@ -282,7 +282,7 @@ export function RevenueSystemGraphic() {
             aria-pressed={selected === 'prozesse'}
             className={`mt-3 w-full text-left rounded-2xl border px-4 py-3 transition-all ${selected === 'prozesse' ? 'bg-white border-[#686CFA]' : 'bg-[#CBCBFC]/25 border-[#CBCBFC]'}`}
           >
-            <span className="block font-display font-semibold text-slate-900">Processes</span>
+            <span className="block font-display font-semibold text-slate-900">Prozesse</span>
             <span className="block text-xs text-slate-500">Verbindet alle Stufen: Systeme, Daten, Automatisierung</span>
           </button>
         </div>

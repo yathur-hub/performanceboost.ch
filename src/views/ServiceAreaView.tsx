@@ -233,7 +233,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             </ol>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
               {SERVICE_AREAS.filter((a) => a.kind === 'area').map((a) => (
-                <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.agentic?.title ?? a.label} desc={a.agentic?.intro} linkText={`Zu ${a.label}`} />
+                <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.agentic?.title ?? a.label} desc={a.agentic?.intro} linkText={`Zu ${a.labelZu}`} />
               ))}
             </div>
           </Container>
@@ -352,7 +352,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* FAQ */}
       <section>
         <Container className="max-w-4xl space-y-8">
-          <SectionHeading title={`Fragen zu ${area.label}`} />
+          <SectionHeading title={`Fragen zu ${area.labelZu}`} />
           <FaqList items={area.faq} />
         </Container>
       </section>
@@ -362,7 +362,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         <Container className="space-y-8">
           <SectionHeading
             title={isArea ? 'Ein System, drei Bereiche' : 'Die drei Bereiche'}
-            intro="Marketing, Sales und Processes hängen voneinander ab. Am meisten bringt es, wenn man sie zusammen betrachtet und den grössten Engpass zuerst angeht."
+            intro="Marketing, Sales und Prozesse hängen voneinander ab. Am meisten bringt es, wenn man sie zusammen betrachtet und den grössten Engpass zuerst angeht."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {others.map((o) => (

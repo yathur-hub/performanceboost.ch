@@ -506,7 +506,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
         <div className="absolute top-0 left-10 w-80 h-80 bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
-            Marketing, Sales und Processes als ein System.
+            Marketing, Sales und Prozesse als ein System.
           </h1>
           <p className="text-slate-500 text-body-lg max-w-2xl mx-auto leading-relaxed font-medium">
             Wir verbessern die drei Bereiche, in denen Schweizer KMU heute am meisten Umsatz und Zeit verlieren, und setzen KI-Agenten dort ein, wo sie verlässlich arbeiten. Jede Leistung gehört zu einem Bereich, das Vorgehen ist in allen gleich. Inhaber Yathur Nathan setzt sie persönlich um.
@@ -552,7 +552,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   <p className="text-body-sm text-slate-600 leading-relaxed">{area.teaser}</p>
                 </div>
                 <Link href={`/leistungen/${area.id}`} className="text-xs font-bold text-[#686CFA] inline-flex items-center gap-1.5 shrink-0">
-                  Alles zu {area.label} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  Alles zu {area.labelZu} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </Link>
               </div>
               {(area.serviceGroups ?? [{ label: '', services: areaServices.map((x) => x.slug) }]).map((g) => (

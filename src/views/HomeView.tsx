@@ -204,7 +204,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     <span className="font-bold text-[#686CFA]">Ergebnis:</span> {a.outcome}
                   </span>
                   <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA]">
-                    Zu {a.label} <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    Zu {a.labelZu} <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </span>
                 </Link>
               </li>
