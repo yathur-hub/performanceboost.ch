@@ -21,7 +21,7 @@ const TOOL = 'problem_finder';
 const TOTAL_STEPS = 3;
 
 const optionClass =
-  'w-full min-h-14 text-left px-5 py-4 rounded-2xl border border-slate-200 bg-white hover:border-[#686DF4] hover:bg-[#686DF4]/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30 transition-colors cursor-pointer';
+  'w-full min-h-14 text-left px-5 py-4 rounded-2xl border border-slate-200 bg-white hover:border-[#686CFA] hover:bg-[#686CFA]/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 transition-colors cursor-pointer';
 
 export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProps) {
   const [step, setStep] = useState(0);
@@ -103,7 +103,7 @@ export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProp
             </p>
             <div className="mt-2 h-1.5 rounded-full bg-slate-100 overflow-hidden" aria-hidden="true">
               <div
-                className="h-full bg-[#686DF4] transition-all duration-300"
+                className="h-full bg-[#686CFA] transition-all duration-300"
                 style={{ width: `${(Math.min(step, TOTAL_STEPS) / TOTAL_STEPS) * 100}%` }}
               />
             </div>
@@ -200,7 +200,7 @@ export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProp
                   <p className="text-sm text-slate-600">
                     Ihre Angabe: <span className="font-semibold text-slate-900">«{result.problemLabel}»</span>
                   </p>
-                  <div className="rounded-2xl border border-[#686DF4]/30 bg-[#686DF4]/5 p-5 space-y-3">
+                  <div className="rounded-2xl border border-[#686CFA]/30 bg-[#686CFA]/5 p-5 space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-wide text-[#4f54d6]">Empfohlene Leistung</p>
                     <h3 className="text-lg font-display font-semibold text-slate-950">{service.title}</h3>
                     <p className="text-sm text-slate-700 leading-relaxed">{result.reason}</p>
@@ -208,7 +208,7 @@ export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProp
                       type="button"
                       data-autofocus=""
                       onClick={goToService}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-6 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-semibold text-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-6 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-semibold text-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
                     >
                       Zur Lösung <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </button>

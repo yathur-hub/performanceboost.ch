@@ -26,15 +26,17 @@ const ORGANIZATION = {
   url: SITE.baseUrl,
   logo: SITE.logoUrl,
   image: SITE.portraitUrl,
-  slogan: 'We boost business performance.',
+  slogan: 'Boost your performance through agentic marketing, sales & processes.',
   description:
-    'Business Performance Partner für Schweizer KMU. Strategie, Technologie und Umsetzung aus einer Hand: Wachstums- und Digitalstrategie, Automatisierung und KI, CRM und Revenue Operations, Performance Marketing und SEO.',
+    'Business Performance Partner für Schweizer KMU. Wir verbessern Marketing, Sales und Geschäftsprozesse als ein System: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten mit klaren Freigaben.',
   knowsAbout: [
     'Wachstumsstrategie',
     'Digitalstrategie',
     'Prozessautomatisierung',
     'Systemintegration',
     'Künstliche Intelligenz',
+    'KI-Agenten',
+    'Agentic AI',
     'CRM',
     'Marketing Automation',
     'Revenue Operations',
@@ -106,9 +108,9 @@ export function buildMeta(route: ParsedRoute): Meta {
 
   switch (route.view) {
     case 'home': {
-      const title = 'Business Performance Partner für Schweizer KMU | performanceboost';
+      const title = 'performanceboost: Marketing, Vertrieb & Prozesse mit KI-Agenten für KMU';
       const description =
-        'Wir verbessern Marketing, Vertrieb und Abläufe von Schweizer KMU und führen KI so ein, dass sie im Alltag wirkt. Strategie, KI und Umsetzung aus einer Hand.';
+        'Wir verbinden Marketing, Vertrieb und Abläufe von Schweizer KMU zu einem System: mehr passende Anfragen, schnellere Aufträge, weniger Handarbeit. Mit KI-Agenten und klaren Freigaben.';
       return {
         ...base,
         title,
@@ -189,9 +191,9 @@ export function buildMeta(route: ParsedRoute): Meta {
           },
         };
       }
-      const title = 'Leistungen: Strategie, Technologie, Wachstum, Vertrieb | performanceboost';
+      const title = 'Leistungen: Marketing, Sales & Processes für KMU | performanceboost';
       const description =
-        'Alle Leistungen von performanceboost für Schweizer KMU im Überblick: Wachstumsstrategie, KI und Automatisierung, Kampagnen, CRM und Vertrieb.';
+        'Alle Leistungen von performanceboost im Überblick: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'loesungen': {
@@ -383,6 +385,23 @@ export function buildMeta(route: ParsedRoute): Meta {
       const title = 'Werkzeuge: MarTech, Daten und KI im Einsatz | performanceboost';
       const description = 'Die Werkzeuge, mit denen Yathur Nathan arbeitet, von HubSpot, Google Ads und GA4 über Server-Side Tagging bis zu n8n, Windmill und KI-Agenten.';
       return { ...base, title, description, schema: webPage('WebPage', url, title, description) };
+    }
+    case 'ansatz': {
+      const title = 'Unser Ansatz: von der Analyse zur laufenden Optimierung | performanceboost';
+      const description =
+        'Architecture & Setup, Roll-out & Hypercare, Enablement und Iteration: so verbessern wir Marketing, Vertrieb und Prozesse. Einstieg dort, wo Ihr Unternehmen heute steht.';
+      return {
+        ...base,
+        title,
+        description,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            { ...webPage('WebPage', url, title, description), '@context': undefined },
+            crumbList([HOME_CRUMB, { name: 'Ansatz', url }]),
+          ],
+        },
+      };
     }
     case 'labor': {
       const title = 'Labor: eigene Experimente mit KI-Agenten und Automation | performanceboost';

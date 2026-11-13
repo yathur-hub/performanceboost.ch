@@ -58,7 +58,7 @@ export default function ReferencesView() {
                       className="w-14 h-14 rounded-full object-cover border border-slate-200"
                     />
                   ) : (
-                    <span className="w-14 h-14 rounded-full bg-[#686DF4]/10 text-[#4f54d6] font-display font-bold flex items-center justify-center" aria-hidden="true">
+                    <span className="w-14 h-14 rounded-full bg-[#686CFA]/10 text-[#4f54d6] font-display font-bold flex items-center justify-center" aria-hidden="true">
                       {t.name.split(' ').map((p) => p[0]).join('').slice(0, 2)}
                     </span>
                   )}
@@ -88,7 +88,7 @@ export default function ReferencesView() {
           <SectionHeading title="Woran wir mit unseren Kunden arbeiten" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICE_AREAS.map((a) => (
-              <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.shortLabel} desc={a.teaser} />
+              <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.label} desc={a.teaser} />
             ))}
           </div>
         </Container>

@@ -55,7 +55,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       
       {/* HERO SECTION */}
       <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           
           <motion.h1 
@@ -73,7 +73,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            Hinter performanceboost steht Yathur Nathan: Marketingfachmann mit eidgenössischem Fachausweis und Experte für MarTech und KI in Marketing und Growth. Kampagnen, Daten, Systeme und KI-Agenten baut er selbst. performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. We boost business performance.
+            Hinter performanceboost steht Yathur Nathan: Marketingfachmann mit eidgenössischem Fachausweis und Experte für MarTech und KI in Marketing und Growth. Kampagnen, Daten, Systeme und KI-Agenten baut er selbst. performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. Boost your performance through agentic marketing, sales & processes.
           </motion.p>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl space-y-6 shadow-[var(--shadow-premium-md)]"
         >
-          <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686DF4] pl-4">Auf einen Blick</h3>
+          <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686CFA] pl-4">Auf einen Blick</h3>
           
           <div className="space-y-5">
             <div className="pb-4 border-b border-slate-100 flex justify-between items-center">
@@ -118,7 +118,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
             <div className="pb-4 border-b border-slate-100 flex justify-between items-center">
               <span className="text-xs text-slate-500 font-semibold">Schwerpunkt</span>
-              <span className="text-xs font-mono font-bold text-[#686DF4] text-right">MarTech · KI in Marketing & Growth</span>
+              <span className="text-xs font-mono font-bold text-[#686CFA] text-right">MarTech · KI in Marketing & Growth</span>
             </div>
 
             <div className="flex justify-between items-center">
@@ -138,7 +138,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
           className="md:col-span-5 relative group"
         >
-          <div className="absolute -inset-2 bg-[#686DF4]/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+          <div className="absolute -inset-2 bg-[#686CFA]/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
           <img loading="lazy" decoding="async" 
             src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
             alt="Yathur Nathan" 
@@ -172,9 +172,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               </ul>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs font-bold">
-              <a href="/martech" onClick={(e) => { e.preventDefault(); onNavigate('/martech'); }} className="text-[#686DF4] hover:text-[#4f54d6]">MarTech-Wissen →</a>
-              <a href="/werkzeuge" onClick={(e) => { e.preventDefault(); onNavigate('/werkzeuge'); }} className="text-[#686DF4] hover:text-[#4f54d6]">Werkzeuge →</a>
-              <a href="/labor" onClick={(e) => { e.preventDefault(); onNavigate('/labor'); }} className="text-[#686DF4] hover:text-[#4f54d6]">Labor →</a>
+              <a href="/martech" onClick={(e) => { e.preventDefault(); onNavigate('/martech'); }} className="text-[#686CFA] hover:text-[#4f54d6]">MarTech-Wissen →</a>
+              <a href="/werkzeuge" onClick={(e) => { e.preventDefault(); onNavigate('/werkzeuge'); }} className="text-[#686CFA] hover:text-[#4f54d6]">Werkzeuge →</a>
+              <a href="/labor" onClick={(e) => { e.preventDefault(); onNavigate('/labor'); }} className="text-[#686CFA] hover:text-[#4f54d6]">Labor →</a>
             </div>
           </div>
         </motion.div>
@@ -206,7 +206,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
               className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#CACCFB]/20">
+              <div className="w-10 h-10 rounded-xl bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center border border-[#CBCBFC]/20">
                 <Zap className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900">Klare Etappen statt Pauschale ohne Ergebnis</h3>
@@ -220,7 +220,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
               className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#CACCFB]/20">
+              <div className="w-10 h-10 rounded-xl bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center border border-[#CBCBFC]/20">
                 <Cpu className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900">Strategie und Umsetzung aus einer Hand</h3>
@@ -234,7 +234,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
               className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#686DF4]/5 text-[#686DF4] flex items-center justify-center border border-[#CACCFB]/20">
+              <div className="w-10 h-10 rounded-xl bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center border border-[#CBCBFC]/20">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900">Gemessen an Ihren Geschäftszahlen</h3>
@@ -267,7 +267,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
-            <span className="text-xs font-mono font-bold text-[#686DF4]">Grundsatz 1: Erst verstehen, dann handeln</span>
+            <span className="text-xs font-mono font-bold text-[#686CFA]">Grundsatz 1: Erst verstehen, dann handeln</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
               Bevor wir Massnahmen oder Tools empfehlen, verstehen wir Ihr Geschäft: Wer sind Ihre besten Kunden, was ist ein Auftrag wert, wie laufen Verkauf und Abläufe heute? Software wählen wir erst, wenn klar ist, was sie abbilden soll.
             </p>
@@ -280,7 +280,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
-            <span className="text-xs font-mono font-bold text-[#686DF4]">Grundsatz 2: Aufbauen, was bleibt</span>
+            <span className="text-xs font-mono font-bold text-[#686CFA]">Grundsatz 2: Aufbauen, was bleibt</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
               Eine einzelne Kampagne läuft irgendwann aus. Wir bauen deshalb auch auf, was Ihnen langfristig bleibt: saubere Daten, CRM-Abläufe, Automatisierungen, Landingpages und Auswertungen. Alles ist dokumentiert, damit Ihr Team damit weiterarbeiten kann.
             </p>
@@ -318,7 +318,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                   whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.55)" }}
                   className="bg-slate-900 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-md"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#686DF4]/20 text-[#A0A3F9] flex items-center justify-center border border-slate-700/70">
+                  <div className="w-10 h-10 rounded-xl bg-[#686CFA]/20 text-[#A0A3F9] flex items-center justify-center border border-slate-700/70">
                     <IconComp className="w-5 h-5 text-[#A0A3F9]" />
                   </div>
                   <h3 className="text-base font-bold tracking-tight text-white">{val.title}</h3>

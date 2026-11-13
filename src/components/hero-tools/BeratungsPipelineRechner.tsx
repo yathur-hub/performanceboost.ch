@@ -136,8 +136,8 @@ export default function BeratungsPipelineRechner() {
     wachstum: {
       badge: 'Effizienz: über Richtwert',
       headline: 'Sie liegen über dem Richtwert. Jetzt lohnt sich mehr Volumen.',
-      color: 'text-[#686DF4] bg-[#686DF4]/5 border-[#686DF4]/10',
-      iconColor: 'text-[#686DF4]',
+      color: 'text-[#686CFA] bg-[#686CFA]/5 border-[#686CFA]/10',
+      iconColor: 'text-[#686CFA]',
       btnText: 'Ergebnis besprechen',
       text: `Ihre Abschlussquote und Ihre Anzahl Gespräche liegen über den angenommenen Richtwerten. Damit lohnt es sich, einen zweiten digitalen Kanal für Neukunden aufzubauen: mehr qualifizierte Erstgespräche bei gleich guter Beratung. Grob geschätztes Potenzial bei 10 Prozentpunkten mehr Abschlussquote: ${formatCHF(results.potenzial_optimiert)}.`,
     },
@@ -149,7 +149,7 @@ export default function BeratungsPipelineRechner() {
     <div className="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto">
       <div className="border-b border-slate-100 pb-5">
         <div className="flex items-center gap-2.5">
-          <Calculator className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <Calculator className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Beratungs-Rechner</h3>
         </div>
         <p className="text-xs text-slate-500 mt-1 font-semibold leading-relaxed">
@@ -163,7 +163,7 @@ export default function BeratungsPipelineRechner() {
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-wide flex justify-between">
               <span>Aktive Berater</span>
-              <span className="text-[#686DF4]">{inputs.berater}</span>
+              <span className="text-[#686CFA]">{inputs.berater}</span>
             </label>
             <input aria-label="Aktive Berater"
               type="number"
@@ -171,7 +171,7 @@ export default function BeratungsPipelineRechner() {
               max={50}
               value={inputs.berater}
               onChange={(e) => handleInputChange('berater', parseInt(e.target.value) || 1)}
-              className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686DF4] focus:ring-1 focus:ring-[#686DF4]/30"
+              className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686CFA] focus:ring-1 focus:ring-[#686CFA]/30"
             />
             <p className="text-[11px] text-slate-400 font-medium">Anzahl Berater, die aktiv Kundengespräche führen</p>
           </div>
@@ -179,7 +179,7 @@ export default function BeratungsPipelineRechner() {
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-wide flex justify-between">
               <span>Gespräche / Monat (je Berater)</span>
-              <span className="text-[#686DF4]">{inputs.gespraeche}</span>
+              <span className="text-[#686CFA]">{inputs.gespraeche}</span>
             </label>
             <input aria-label="Gespräche / Monat (je Berater)"
               type="number"
@@ -187,7 +187,7 @@ export default function BeratungsPipelineRechner() {
               max={30}
               value={inputs.gespraeche}
               onChange={(e) => handleInputChange('gespraeche', parseInt(e.target.value) || 1)}
-              className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686DF4] focus:ring-1 focus:ring-[#686DF4]/30"
+              className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686CFA] focus:ring-1 focus:ring-[#686CFA]/30"
             />
             <p className="text-[11px] text-slate-400 font-medium">Durchschnittliche Gespräche pro Berater im Monat</p>
           </div>
@@ -195,7 +195,7 @@ export default function BeratungsPipelineRechner() {
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-wide flex justify-between">
               <span>Abschlussquote</span>
-              <span className="text-[#686DF4] font-mono">{inputs.abschlussquote}%</span>
+              <span className="text-[#686CFA] font-mono">{inputs.abschlussquote}%</span>
             </label>
             <div className="flex items-center gap-4">
               <input aria-label="Abschlussquote"
@@ -204,7 +204,7 @@ export default function BeratungsPipelineRechner() {
                 max={60}
                 value={inputs.abschlussquote}
                 onChange={(e) => handleInputChange('abschlussquote', parseInt(e.target.value) || 5)}
-                className="w-full accent-[#686DF4]"
+                className="w-full accent-[#686CFA]"
               />
             </div>
             <p className="text-[11px] text-slate-400 font-medium">Anteil Gespräche, die zu einem Abschluss führen</p>
@@ -213,7 +213,7 @@ export default function BeratungsPipelineRechner() {
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-wide flex justify-between">
               <span>Ø Jahresvolumen pro Abschluss</span>
-              <span className="text-[#686DF4]">{formatCHF(inputs.jahresvolumen)}</span>
+              <span className="text-[#686CFA]">{formatCHF(inputs.jahresvolumen)}</span>
             </label>
             <input aria-label="Ø Jahresvolumen pro Abschluss"
               type="number"
@@ -222,7 +222,7 @@ export default function BeratungsPipelineRechner() {
               step={5000}
               value={inputs.jahresvolumen}
               onChange={(e) => handleInputChange('jahresvolumen', parseInt(e.target.value) || 5000)}
-              className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686DF4] focus:ring-1 focus:ring-[#686DF4]/30"
+              className="w-full bg-slate-50 border border-slate-250 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-[#686CFA] focus:ring-1 focus:ring-[#686CFA]/30"
             />
             <p className="text-[11px] text-slate-400 font-medium">Jahresprämie oder verwaltetes Volumen eines neuen Mandats</p>
           </div>
@@ -265,7 +265,7 @@ export default function BeratungsPipelineRechner() {
                 <h4 className="text-xl font-bold text-slate-900 leading-none">{results.effizienz_score} / 100</h4>
                 <div className="w-16 bg-slate-200 h-2 rounded-full overflow-hidden shrink-0">
                   <div 
-                    className="bg-[#686DF4] h-full transition-all duration-500" 
+                    className="bg-[#686CFA] h-full transition-all duration-500" 
                     style={{ width: `${results.effizienz_score}%` }} 
                   />
                 </div>
@@ -307,7 +307,7 @@ export default function BeratungsPipelineRechner() {
             });
             window.dispatchEvent(new CustomEvent('open-contact-modal'));
           }}
-          className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer transition-colors shadow-sm border-0"
+          className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer transition-colors shadow-sm border-0"
         >
           {currentStufe.btnText}
         </button>

@@ -98,7 +98,7 @@ export default function RevenuLeakDetector() {
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <Layers className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <Layers className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Umsatz-Check: Wo gehen Aufträge verloren?
           </h3>
@@ -129,7 +129,7 @@ export default function RevenuLeakDetector() {
               placeholder="z. B. 100"
               value={mqlText}
               onChange={e => handleFieldChange('mql', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs animate-fadeIn"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs animate-fadeIn"
             />
             <p className="text-[11px] text-slate-400 font-medium">Anfragen, die das Marketing als bereit für den Vertrieb einstuft.</p>
           </div>
@@ -140,7 +140,7 @@ export default function RevenuLeakDetector() {
             <select aria-label="Anteil Anfragen, aus denen ein Verkaufsgespräch wird (%)"
               value={mqlToOpp}
               onChange={e => handleFieldChange('mqlToOpp', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
               <option value="0.03">Unter 5% (gering)</option>
@@ -158,7 +158,7 @@ export default function RevenuLeakDetector() {
             <select aria-label="Abschlussquote (%)"
               value={oppToClose}
               onChange={e => handleFieldChange('oppToClose', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
               <option value="0.07">Unter 10% (gering)</option>
@@ -179,7 +179,7 @@ export default function RevenuLeakDetector() {
               placeholder="z. B. 8'000"
               value={auftragswert}
               onChange={e => handleFieldChange('auftragswert', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
             />
           </div>
 
@@ -450,7 +450,7 @@ export default function RevenuLeakDetector() {
 
             {/* Diagnostic insights mapping */}
             <div className="text-xs sm:text-sm text-slate-650 leading-relaxed font-semibold text-slate-705 text-slate-600 bg-slate-50 border border-slate-200/50 p-5 rounded-2xl space-y-3">
-              <span className="text-[11px] font-mono text-[#686DF4] font-bold uppercase tracking-widest block leading-none">
+              <span className="text-[11px] font-mono text-[#686CFA] font-bold uppercase tracking-widest block leading-none">
                 Wo Sie ansetzen sollten
               </span>
 
@@ -495,7 +495,7 @@ export default function RevenuLeakDetector() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 Ergebnis besprechen <ArrowRight className="w-4 h-4 text-white" />
               </button>

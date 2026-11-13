@@ -34,7 +34,7 @@ interface ContactFormProps {
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export const inputClass =
-  'w-full bg-white border border-slate-300 focus:border-[#686DF4] focus:ring-3 focus:ring-[#686DF4]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
+  'w-full bg-white border border-slate-300 focus:border-[#686CFA] focus:ring-3 focus:ring-[#686CFA]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
 
 export function Field({
   id,
@@ -56,7 +56,7 @@ export function Field({
       <label htmlFor={id} className="block text-sm font-semibold text-slate-800">
         {label}
         {required ? (
-          <span className="text-[#686DF4] ml-0.5" aria-hidden="true">*</span>
+          <span className="text-[#686CFA] ml-0.5" aria-hidden="true">*</span>
         ) : (
           <span className="ml-1.5 text-xs font-normal text-slate-500">(optional)</span>
         )}
@@ -166,11 +166,11 @@ export default function ContactForm({
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: DURATIONS.medium, ease: PREMIUM_EASE }}
-        className={`rounded-2xl border border-[#686DF4]/25 bg-[#686DF4]/5 p-6 space-y-3 ${className}`}
+        className={`rounded-2xl border border-[#686CFA]/25 bg-[#686CFA]/5 p-6 space-y-3 ${className}`}
         role="status"
         id="form-feedback-success"
       >
-        <CheckCircle2 className="w-6 h-6 text-[#686DF4]" aria-hidden="true" />
+        <CheckCircle2 className="w-6 h-6 text-[#686CFA]" aria-hidden="true" />
         <h3 className="text-lg font-display font-semibold text-slate-950">Danke, Ihre Anfrage ist bei uns angekommen.</h3>
         <p className="text-sm text-slate-700 leading-relaxed">
           Yathur Nathan meldet sich innert eines Arbeitstags persönlich bei Ihnen, per E-Mail oder telefonisch. Im
@@ -257,7 +257,7 @@ export default function ContactForm({
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="w-full min-h-12 bg-[#696EEF] text-white font-semibold text-base sm:text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-wait"
+          className="w-full min-h-12 bg-[#686CFA] text-white font-semibold text-base sm:text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-wait"
         >
           {status === 'submitting' ? (
             <>

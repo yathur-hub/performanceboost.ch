@@ -154,7 +154,7 @@ export default function KursFunnelRechner() {
     },
     primary: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihr Anfrageprozess läuft nach Ihren Angaben sehr gut, mit hohen Quoten bei Anfragen und Buchungen. Jetzt kann es sich lohnen, das Budget gezielt in die Kanäle zu lenken, die sich bereits bewährt haben.',
       rec: 'Kampagnenbudget schrittweise erhöhen, neue Zielgruppen ansprechen und die Marke Ihrer Institution stärken.',
@@ -166,7 +166,7 @@ export default function KursFunnelRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Bildung</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Bildung</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kursbuchungs-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viele Interessenten zwischen Website-Besuch und Kursbuchung verloren gehen. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -179,7 +179,7 @@ export default function KursFunnelRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Website-Besucher / Monat</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.visits.toLocaleString('de-CH')}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.visits.toLocaleString('de-CH')}</span>
             </label>
             <div className="relative">
               <input aria-label="Website-Besucher / Monat"
@@ -199,7 +199,7 @@ export default function KursFunnelRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Anfragequote (Info / Beratung)</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.info_conversion}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.info_conversion}%</span>
             </label>
             <input aria-label="Anfragequote (Info / Beratung)"
               type="range"
@@ -208,7 +208,7 @@ export default function KursFunnelRechner() {
               step={0.1}
               value={inputs.info_conversion}
               onChange={(e) => handleInputChange('info_conversion', parseFloat(e.target.value) || 0.5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert (Annahme): 4.5% fragen Infos an, laden ein Dossier herunter o.ä.</p>
           </div>
@@ -216,7 +216,7 @@ export default function KursFunnelRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Buchungsquote (von Anfrage zu Buchung)</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.booking_rate}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.booking_rate}%</span>
             </label>
             <input aria-label="Buchungsquote (von Anfrage zu Buchung)"
               type="range"
@@ -225,7 +225,7 @@ export default function KursFunnelRechner() {
               step={1}
               value={inputs.booking_rate}
               onChange={(e) => handleInputChange('booking_rate', parseInt(e.target.value) || 5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert (Annahme): 30% der Interessenten buchen den Kurs</p>
           </div>
@@ -233,7 +233,7 @@ export default function KursFunnelRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Kursgebühr pro Person</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.kursgebuehr)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.kursgebuehr)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Kursgebühr pro Person"
@@ -332,7 +332,7 @@ export default function KursFunnelRechner() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

@@ -51,7 +51,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
             <ul className="space-y-3">
               {page.symptoms.map((s) => (
                 <li key={s} className="flex gap-3 text-body-sm text-slate-700 leading-relaxed">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#686DF4] shrink-0 mt-2" aria-hidden="true" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#686CFA] shrink-0 mt-2" aria-hidden="true" />
                   <span>{s}</span>
                 </li>
               ))}
@@ -93,7 +93,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {page.approach.map((a, i) => (
               <li key={a.title} className="bg-[#f6f6f6]/60 border border-[#E0E0E0]/80 rounded-2xl p-6 space-y-3">
-                <span className="text-[11px] font-bold font-mono text-[#686DF4]">0{i + 1}</span>
+                <span className="text-[11px] font-bold font-mono text-[#686CFA]">0{i + 1}</span>
                 <h3 className="font-display font-semibold text-slate-900">{a.title}</h3>
                 <p className="text-body-sm text-slate-600 leading-relaxed">{a.desc}</p>
               </li>
@@ -115,7 +115,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
               ))}
             </dl>
           </div>
-          <div className="lg:col-span-5 bg-[#686DF4]/[0.04] border border-[#CACCFB]/60 rounded-3xl p-7 sm:p-9 space-y-5 self-start">
+          <div className="lg:col-span-5 bg-[#686CFA]/[0.04] border border-[#CBCBFC]/60 rounded-3xl p-7 sm:p-9 space-y-5 self-start">
             <h2 className="text-lg font-display font-semibold text-slate-900">Worauf wir hinarbeiten</h2>
             <CheckList items={page.outcomes} />
           </div>

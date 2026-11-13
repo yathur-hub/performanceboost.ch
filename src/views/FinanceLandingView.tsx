@@ -19,12 +19,12 @@ interface FinanceLandingViewProps {
 
 const TRUST_ICONS = [KeyRound, LineChart, ShieldCheck, UserRound];
 
-const overlineClass = 'text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]';
+const overlineClass = 'text-[11px] font-mono font-bold uppercase tracking-widest text-[#686CFA]';
 const h2Class = 'text-2xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight';
 const primaryBtn =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 text-base sm:text-sm font-semibold text-white hover:bg-[#4f54d6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors cursor-pointer';
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 text-base sm:text-sm font-semibold text-white hover:bg-[#4f54d6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 transition-colors cursor-pointer';
 const secondaryBtn =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base sm:text-sm font-semibold text-slate-900 hover:border-[#686DF4] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30 transition-colors cursor-pointer';
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base sm:text-sm font-semibold text-slate-900 hover:border-[#686CFA] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 transition-colors cursor-pointer';
 
 function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -42,7 +42,7 @@ const ReferenceCardView: React.FC<{ card: ReferenceCard }> = ({ card }) => {
         <ul className="space-y-1.5">
           {card.work.map((w) => (
             <li key={w} className="flex gap-2 text-sm text-slate-700">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#686DF4]" aria-hidden="true" />
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#686CFA]" aria-hidden="true" />
               <span>{w}</span>
             </li>
           ))}
@@ -51,7 +51,7 @@ const ReferenceCardView: React.FC<{ card: ReferenceCard }> = ({ card }) => {
       {card.status && <p className="text-sm text-slate-600">{card.status}</p>}
       {testimonial && (
         <figure className="mt-auto space-y-3 border-t border-slate-100 pt-4">
-          <Quote className="h-5 w-5 text-[#686DF4]/60" aria-hidden="true" />
+          <Quote className="h-5 w-5 text-[#686CFA]/60" aria-hidden="true" />
           <blockquote className={`text-sm leading-relaxed text-slate-700 ${expanded ? '' : 'line-clamp-4'}`}>
             «{testimonial.quote}»
           </blockquote>
@@ -119,7 +119,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
         <div className="mx-auto max-w-7xl space-y-8">
           <Link
             href={isHub ? '/loesungen' : '/loesungen/finanzdienstleister'}
-            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#4f54d6] hover:text-[#686DF4]"
+            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#4f54d6] hover:text-[#686CFA]"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> {isHub ? 'Alle Branchen' : 'Finanzdienstleister'}
           </Link>
@@ -139,7 +139,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                       <li key={c.slug}>
                         <Link
                           href={`/loesungen/${c.slug}`}
-                          className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-900 hover:border-[#686DF4] hover:text-[#4f54d6]"
+                          className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-900 hover:border-[#686CFA] hover:text-[#4f54d6]"
                         >
                           {c.title} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                         </Link>
@@ -171,7 +171,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                   height={112}
                   loading="eager"
                   decoding="async"
-                  className="h-24 w-24 shrink-0 rounded-full border-2 border-[#686DF4]/30 object-cover sm:h-28 sm:w-28"
+                  className="h-24 w-24 shrink-0 rounded-full border-2 border-[#686CFA]/30 object-cover sm:h-28 sm:w-28"
                 />
                 <div className="space-y-1.5">
                   <p className="font-display text-lg font-semibold text-slate-950">Sie sprechen direkt mit Yathur Nathan</p>
@@ -190,7 +190,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
             const Icon = TRUST_ICONS[i];
             return (
               <li key={t} className="flex items-center gap-2.5 text-sm font-medium text-slate-800">
-                <Icon className="h-5 w-5 shrink-0 text-[#686DF4]" aria-hidden="true" />
+                <Icon className="h-5 w-5 shrink-0 text-[#686CFA]" aria-hidden="true" />
                 <span>{t}</span>
               </li>
             );
@@ -223,7 +223,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           <ul className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
             {BENEFITS.map((b) => (
               <li key={b.title} className="flex gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#686DF4]" aria-hidden="true" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#686CFA]" aria-hidden="true" />
                 <p className="text-body-sm leading-relaxed text-slate-700">
                   <strong className="text-slate-950">{b.title}</strong> {b.desc}
                 </p>
@@ -251,7 +251,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                   <ul className="space-y-1">
                     {b.points.map((pt) => (
                       <li key={pt} className="flex gap-2 text-sm text-slate-300">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#CACCFB]" aria-hidden="true" />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#CBCBFC]" aria-hidden="true" />
                         <span>{pt}</span>
                       </li>
                     ))}
@@ -277,7 +277,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                 <li key={c.slug}>
                   <Link
                     href={`/loesungen/${c.slug}`}
-                    className="group flex h-full flex-col gap-3 rounded-3xl border border-slate-200 bg-white p-6 hover:border-[#686DF4]/50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+                    className="group flex h-full flex-col gap-3 rounded-3xl border border-slate-200 bg-white p-6 hover:border-[#686CFA]/50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
                   >
                     <h3 className="font-display text-lg font-semibold text-slate-950 group-hover:text-[#4f54d6]">{c.title}</h3>
                     <p className="text-body-sm leading-relaxed text-slate-600">{c.desc}</p>
@@ -301,7 +301,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                   <ul className="space-y-1.5">
                     {page.icpDetail.occasions.map((o) => (
                       <li key={o} className="flex gap-2 text-sm text-slate-700">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#686DF4]" aria-hidden="true" />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#686CFA]" aria-hidden="true" />
                         <span>{o}</span>
                       </li>
                     ))}
@@ -369,12 +369,12 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           <div className="space-y-3">
             <h2 className={h2Class}>So arbeiten wir zusammen</h2>
           </div>
-          <ol className="relative space-y-6 border-l-2 border-[#CACCFB] pl-8">
+          <ol className="relative space-y-6 border-l-2 border-[#CBCBFC] pl-8">
             {PROCESS_STEPS.map((s, i) => (
               <li key={s.title} className="relative">
                 <span
                   aria-hidden="true"
-                  className="absolute -left-[45px] flex h-8 w-8 items-center justify-center rounded-full bg-[#686DF4] font-mono text-sm font-bold text-white"
+                  className="absolute -left-[45px] flex h-8 w-8 items-center justify-center rounded-full bg-[#686CFA] font-mono text-sm font-bold text-white"
                 >
                   {i + 1}
                 </span>
@@ -397,19 +397,19 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
             {PACKAGES.map((p) => (
               <div
                 key={p.name}
-                className={`flex flex-col gap-4 rounded-3xl border bg-white p-6 ${p.recommended ? 'border-[#686DF4] ring-2 ring-[#686DF4]/15 lg:order-2' : 'border-slate-200'} ${p.name === 'Start' ? 'lg:order-1' : ''} ${p.name === 'Ausbau' ? 'lg:order-3' : ''}`}
+                className={`flex flex-col gap-4 rounded-3xl border bg-white p-6 ${p.recommended ? 'border-[#686CFA] ring-2 ring-[#686CFA]/15 lg:order-2' : 'border-slate-200'} ${p.name === 'Start' ? 'lg:order-1' : ''} ${p.name === 'Ausbau' ? 'lg:order-3' : ''}`}
               >
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="font-display text-xl font-semibold text-slate-950">{p.name}</h3>
                   {p.recommended && (
-                    <span className="rounded-full bg-[#686DF4]/10 px-3 py-1 text-xs font-semibold text-[#4f54d6]">Empfohlen</span>
+                    <span className="rounded-full bg-[#686CFA]/10 px-3 py-1 text-xs font-semibold text-[#4f54d6]">Empfohlen</span>
                   )}
                 </div>
                 <p className="text-sm font-medium text-slate-700">{p.audience}</p>
                 <ul className="space-y-1.5">
                   {p.items.map((it) => (
                     <li key={it} className="flex gap-2 text-sm text-slate-700">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#686DF4]" aria-hidden="true" />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#686CFA]" aria-hidden="true" />
                       <span>{it}</span>
                     </li>
                   ))}
@@ -466,7 +466,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                 height={144}
                 loading="lazy"
                 decoding="async"
-                className="h-32 w-32 rounded-full border-2 border-[#686DF4]/30 object-cover sm:h-36 sm:w-36"
+                className="h-32 w-32 rounded-full border-2 border-[#686CFA]/30 object-cover sm:h-36 sm:w-36"
               />
               <div className="text-center">
                 <p className="font-semibold text-slate-950">Yathur Nathan</p>
@@ -564,7 +564,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                 <ol className="space-y-3">
                   {FORM_EXPECTATIONS.map((e, i) => (
                     <li key={e} className="flex gap-3 text-sm text-slate-200">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#686DF4] font-mono text-xs font-bold">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#686CFA] font-mono text-xs font-bold">
                         {i + 1}
                       </span>
                       <span>{e}</span>

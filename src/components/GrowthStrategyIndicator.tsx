@@ -121,7 +121,7 @@ export default function GrowthStrategyIndicator() {
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100">
         <div className="flex items-center gap-2.5">
-          <TrendingUp className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <TrendingUp className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Check: Wie planbar ist Ihr Wachstum?
           </h3>
@@ -144,7 +144,7 @@ export default function GrowthStrategyIndicator() {
             <label className="text-xs sm:text-sm text-slate-805 font-bold text-slate-800 leading-snug">
               Wie klar ist Ihr Zielkundenprofil definiert?
             </label>
-            <span className="font-extrabold text-[#686DF4] font-mono text-sm bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md border border-[#686DF4]/10 shrink-0">
+            <span className="font-extrabold text-[#686CFA] font-mono text-sm bg-[#686CFA]/5 px-2.5 py-0.5 rounded-md border border-[#686CFA]/10 shrink-0">
               {s1}/5
             </span>
           </div>
@@ -155,7 +155,7 @@ export default function GrowthStrategyIndicator() {
             step="1"
             value={s1}
             onChange={(e) => handleSliderChange(1, Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686CFA]"
           />
           <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
             <span className="max-w-[40%] text-left">Vage Vorstellung</span>
@@ -169,7 +169,7 @@ export default function GrowthStrategyIndicator() {
             <label className="text-xs sm:text-sm text-slate-805 font-bold text-slate-800 leading-snug">
               Wie gut können Sie vorhersagen, woher nächsten Monat Ihre Leads kommen?
             </label>
-            <span className="font-extrabold text-[#686DF4] font-mono text-sm bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md border border-[#686DF4]/10 shrink-0">
+            <span className="font-extrabold text-[#686CFA] font-mono text-sm bg-[#686CFA]/5 px-2.5 py-0.5 rounded-md border border-[#686CFA]/10 shrink-0">
               {s2}/5
             </span>
           </div>
@@ -180,7 +180,7 @@ export default function GrowthStrategyIndicator() {
             step="1"
             value={s2}
             onChange={(e) => handleSliderChange(2, Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686CFA]"
           />
           <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
             <span className="max-w-[40%] text-left">Keine Ahnung</span>
@@ -194,7 +194,7 @@ export default function GrowthStrategyIndicator() {
             <label className="text-xs sm:text-sm text-slate-805 font-bold text-slate-800 leading-snug">
               Wie gut arbeiten Marketing und Vertrieb auf gemeinsame Ziele hin?
             </label>
-            <span className="font-extrabold text-[#686DF4] font-mono text-sm bg-[#686DF4]/5 px-2.5 py-0.5 rounded-md border border-[#686DF4]/10 shrink-0">
+            <span className="font-extrabold text-[#686CFA] font-mono text-sm bg-[#686CFA]/5 px-2.5 py-0.5 rounded-md border border-[#686CFA]/10 shrink-0">
               {s3}/5
             </span>
           </div>
@@ -205,7 +205,7 @@ export default function GrowthStrategyIndicator() {
             step="1"
             value={s3}
             onChange={(e) => handleSliderChange(3, Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686CFA]"
           />
           <div className="flex justify-between text-[11px] text-slate-450 text-slate-400 font-mono leading-tight">
             <span className="max-w-[40%] text-left">Getrennt, kaum Austausch</span>
@@ -290,7 +290,7 @@ export default function GrowthStrategyIndicator() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 Ergebnis besprechen: kostenlos, 30 Min. <ArrowRight className="w-4 h-4 text-white" />
               </button>

@@ -95,7 +95,7 @@ export default function RetentionRevenueRechner() {
   return (
     <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="retention-revenue-rechner">
       <div className="mb-8 border-b border-slate-100 pb-6 flex items-start gap-4">
-        <div className="w-10 h-10 rounded-xl bg-[#686DF4]/10 text-[#686DF4] flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
           <RefreshCcw className="w-5 h-5 animate-spin-slow" />
         </div>
         <div>
@@ -124,7 +124,7 @@ export default function RetentionRevenueRechner() {
                 placeholder="z. B. 800"
                 value={kunden}
                 onChange={(e) => handleInputChange('kunden', e.target.value)}
-                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
+                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 Kunden
@@ -148,7 +148,7 @@ export default function RetentionRevenueRechner() {
                 placeholder="z. B. 450"
                 value={avgUmsatz}
                 onChange={(e) => handleInputChange('umsatz', e.target.value)}
-                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
+                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Jahr
@@ -167,7 +167,7 @@ export default function RetentionRevenueRechner() {
             <select aria-label="Aktuelle Wiederkaufrate"
               value={retentionKey}
               onChange={(e) => handleInputChange('retention', e.target.value)}
-              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 transition-all font-semibold cursor-pointer text-slate-800"
+              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-905 transition-all font-semibold cursor-pointer text-slate-800"
             >
               <option value="">Bitte wählen</option>
               <option value="unter_20">Unter 20%: kaum Stammkunden</option>
@@ -205,7 +205,7 @@ export default function RetentionRevenueRechner() {
                 </div>
 
                 <div className="pt-4 text-center space-y-1.5 self-center w-full">
-                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686CFA] bg-[#686CFA]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" /> Ihre Zahlen eingeben
                   </div>
                   <p className="text-[11px] text-slate-400/90 font-mono">
@@ -304,7 +304,7 @@ export default function RetentionRevenueRechner() {
                       track("hero_tool_cta_click", { page: "customer-retention", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#696EEF] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full text-center bg-[#686CFA] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Ergebnis besprechen: 30 Min., kostenlos</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />

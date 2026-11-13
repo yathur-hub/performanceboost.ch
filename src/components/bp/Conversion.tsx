@@ -23,7 +23,7 @@ export function HeroTrust({ className = '', align = 'left' }: { className?: stri
     <ul className={`flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-600 ${align === 'center' ? 'justify-center' : ''} ${className}`}>
       {items.map(({ icon: Icon, text }) => (
         <li key={text} className="inline-flex items-center gap-1.5">
-          <Icon className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> {text}
+          <Icon className="w-4 h-4 text-[#686CFA]" aria-hidden="true" /> {text}
         </li>
       ))}
     </ul>
@@ -103,7 +103,7 @@ export function LeadCtaSection({
                 { icon: Clock, title: 'Antwort innert eines Arbeitstags', text: 'Mit einer ersten Einschätzung und einem Terminvorschlag.' },
               ].map((s, i) => (
                 <li key={s.title} className="flex gap-4">
-                  <span className="w-10 h-10 rounded-xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0">
+                  <span className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
                     <s.icon className="w-5 h-5" aria-hidden="true" />
                   </span>
                   <span>
@@ -133,7 +133,7 @@ export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { l
         trackEvent('cta_click', { cta_location: location, cta_target: 'overlay' });
         openContactModal();
       }}
-      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-8 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
+      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-8 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
     >
       {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
     </button>
@@ -141,7 +141,7 @@ export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { l
 }
 
 /** Fixierter CTA-Balken auf Mobile. Erscheint nach dem Hero, verschwindet beim Abschluss-Block. */
-export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string }> = ({ onFallback, label = 'Potenzial besprechen' }) => {
+export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string }> = ({ onFallback, label = 'Gespräch anfragen' }) => {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const onScroll = () => {
@@ -171,7 +171,7 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string 
             trackEvent('cta_click', { cta_location: 'sticky_mobile', cta_target: 'overlay' });
             onFallback();
           }}
-          className="flex-1 inline-flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap"
+          className="flex-1 inline-flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap"
         >
           {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </button>

@@ -151,7 +151,7 @@ export default function RecurringRevenuePotenzialRechner() {
     },
     'scale-ready': {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Bereit für Wachstum',
       desc: 'Ihr wiederkehrender Umsatz ist nach Ihren Angaben sehr gut abgestützt: hohe Vertragsquote, wenige Kündigungen. Jetzt lohnt es sich, die Neukundengewinnung deutlich auszubauen.',
       rec: 'Neukundengewinnung ausbauen, Nachfrage gezielt aufbauen und auf LinkedIn als Fachexperte sichtbar werden.',
@@ -163,7 +163,7 @@ export default function RecurringRevenuePotenzialRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner IT-Dienstleister</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner IT-Dienstleister</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Rechner für wiederkehrenden Umsatz</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viel monatlich wiederkehrender Umsatz (MRR) in Ihren bestehenden Kunden steckt. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -176,7 +176,7 @@ export default function RecurringRevenuePotenzialRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Aktive Kunden</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.kunden}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.kunden}</span>
             </label>
             <div className="relative">
               <input aria-label="Aktive Kunden"
@@ -195,7 +195,7 @@ export default function RecurringRevenuePotenzialRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø MRR pro Vertragskunde</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.mrr_pro_kunde)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.mrr_pro_kunde)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø MRR pro Vertragskunde"
@@ -215,7 +215,7 @@ export default function RecurringRevenuePotenzialRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Vertragsquote</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.vertragsanteil}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.vertragsanteil}%</span>
             </label>
             <input aria-label="Vertragsquote"
               type="range"
@@ -224,7 +224,7 @@ export default function RecurringRevenuePotenzialRechner() {
               step={1}
               value={inputs.vertragsanteil}
               onChange={(e) => handleInputChange('vertragsanteil', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Anteil Kunden mit festem Managed-Services-Vertrag</p>
           </div>
@@ -232,7 +232,7 @@ export default function RecurringRevenuePotenzialRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Monatliche Kündigungsrate</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.churn}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.churn}%</span>
             </label>
             <input aria-label="Monatliche Kündigungsrate"
               type="range"
@@ -241,7 +241,7 @@ export default function RecurringRevenuePotenzialRechner() {
               step={0.5}
               value={inputs.churn}
               onChange={(e) => handleInputChange('churn', parseFloat(e.target.value) || 0.5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Anteil wiederkehrender Umsatz, der pro Monat durch Kündigungen wegfällt</p>
           </div>
@@ -328,7 +328,7 @@ export default function RecurringRevenuePotenzialRechner() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

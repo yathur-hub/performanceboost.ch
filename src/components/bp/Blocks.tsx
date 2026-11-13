@@ -46,7 +46,7 @@ export function Breadcrumb({ items }: { items: Crumb[] }) {
         {items.map((c, i) => (
           <li key={c.label} className="flex items-center gap-1.5">
             {c.href ? (
-              <Link href={c.href} className="hover:text-[#686DF4] transition-colors">
+              <Link href={c.href} className="hover:text-[#686CFA] transition-colors">
                 {c.label}
               </Link>
             ) : (
@@ -78,8 +78,8 @@ export function CtaButton({
 }) {
   const { openContactModal } = useContactModal();
   const styles = {
-    dark: 'bg-[#696EEF] hover:bg-[#5a5fe0] text-white',
-    accent: 'bg-[#696EEF] hover:bg-[#5a5fe0] text-white',
+    dark: 'bg-[#686CFA] hover:bg-[#5a5fe0] text-white',
+    accent: 'bg-[#686CFA] hover:bg-[#5a5fe0] text-white',
     light: 'bg-white hover:bg-slate-50 text-slate-900 border border-slate-300',
   }[variant];
   return (
@@ -92,7 +92,7 @@ export function CtaButton({
         trackEvent('cta_click', { cta_location: location, cta_target: 'overlay', page_slug: pageSlug });
         openContactModal();
       }}
-      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold whitespace-nowrap px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40 ${styles} ${className}`}
+      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 font-display font-semibold whitespace-nowrap px-7 py-3.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 ${styles} ${className}`}
     >
       {label} <ArrowRight className="w-5 h-5" aria-hidden="true" />
     </a>
@@ -111,14 +111,14 @@ export const TeaserCard: React.FC<TeaserCardProps> = ({ href, title, desc, linkT
   return (
     <Link
       href={href}
-      className="group flex flex-col h-full bg-white border border-[#E0E0E0]/80 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686DF4]/50 hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+      className="group flex flex-col h-full bg-white border border-[#E0E0E0]/80 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686CFA]/50 hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
     >
       <h3 className="text-base sm:text-lg font-display font-semibold text-slate-900 group-hover:text-[#4f54d6] transition-colors leading-snug">
         {title}
       </h3>
       {desc && <p className="mt-2 text-body-sm text-slate-600 leading-relaxed">{desc}</p>}
       {children}
-      <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold text-[#686DF4]">
+      <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA]">
         {linkText} <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
       </span>
     </Link>
@@ -130,7 +130,7 @@ export function CheckList({ items }: { items: string[] }) {
     <ul className="space-y-3">
       {items.map((it) => (
         <li key={it} className="flex gap-3 text-body-sm text-slate-700 leading-relaxed">
-          <Check className="w-4.5 h-4.5 text-[#686DF4] shrink-0 mt-0.5" aria-hidden="true" />
+          <Check className="w-4.5 h-4.5 text-[#686CFA] shrink-0 mt-0.5" aria-hidden="true" />
           <span>{it}</span>
         </li>
       ))}
@@ -144,7 +144,7 @@ export function FaqList({ items }: { items: { q: string; a: string }[] }) {
     <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl divide-y divide-slate-100 shadow-[var(--shadow-premium-sm)]">
       {items.map((f) => (
         <details key={f.q} className="group px-6 sm:px-8 py-5">
-          <summary className="flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-slate-900 text-sm sm:text-base hover:text-[#686DF4] transition-colors [&::-webkit-details-marker]:hidden">
+          <summary className="flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-slate-900 text-sm sm:text-base hover:text-[#686CFA] transition-colors [&::-webkit-details-marker]:hidden">
             <span>{f.q}</span>
             <ChevronDown className="w-4 h-4 text-slate-400 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
           </summary>
@@ -165,13 +165,13 @@ export function ToolLinks({ ids }: { ids: string[] }) {
         <Link
           key={t.id}
           href="/skills"
-          className="group flex items-start justify-between gap-4 bg-white border border-[#E0E0E0]/80 rounded-2xl px-5 py-4 hover:border-[#686DF4]/50 transition-colors"
+          className="group flex items-start justify-between gap-4 bg-white border border-[#E0E0E0]/80 rounded-2xl px-5 py-4 hover:border-[#686CFA]/50 transition-colors"
         >
           <span>
             <span className="block text-sm font-semibold text-slate-900 group-hover:text-[#4f54d6]">{t.title}</span>
             <span className="block text-xs text-slate-500 mt-1 leading-relaxed">{t.description}</span>
           </span>
-          <ArrowUpRight className="w-4 h-4 text-[#686DF4] shrink-0 mt-0.5" aria-hidden="true" />
+          <ArrowUpRight className="w-4 h-4 text-[#686CFA] shrink-0 mt-0.5" aria-hidden="true" />
         </Link>
       ))}
     </div>
@@ -187,7 +187,7 @@ export function ResourceLinks({ slugs }: { slugs: string[] }) {
       {items.map((r) => (
         <li key={r.slug}>
           <Link href={`/ressourcen/${r.slug}`} className="group inline-flex items-start gap-2 text-sm font-semibold text-slate-800 hover:text-[#4f54d6]">
-            <ArrowRight className="w-4 h-4 text-[#686DF4] mt-0.5 shrink-0" aria-hidden="true" />
+            <ArrowRight className="w-4 h-4 text-[#686CFA] mt-0.5 shrink-0" aria-hidden="true" />
             <span>{r.title}</span>
           </Link>
         </li>
@@ -210,7 +210,7 @@ export function TestimonialQuote({ id, sentences = 2 }: { id: string; sentences?
           <span className="font-semibold text-slate-900">{t.name}</span>
           <span className="text-slate-500">, {t.role}, {t.company}</span>
         </span>
-        <Link href="/referenzen" className="text-xs font-bold text-[#686DF4] inline-flex items-center gap-1">
+        <Link href="/referenzen" className="text-xs font-bold text-[#686CFA] inline-flex items-center gap-1">
           Alle Referenzen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
         </Link>
       </figcaption>

@@ -198,7 +198,7 @@ export function ClientTestimonials() {
             type="button"
             onClick={() => paginate(-1)}
             aria-label="Vorherige Kundenstimme"
-            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686DF4] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
+            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -207,7 +207,7 @@ export function ClientTestimonials() {
             type="button"
             onClick={() => paginate(1)}
             aria-label="Nächste Kundenstimme"
-            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686DF4] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
+            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -231,7 +231,7 @@ export function ClientTestimonials() {
             className="w-full bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-[var(--shadow-premium-md)] relative overflow-hidden"
           >
             {/* Subtle decorative background glow */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#686DF4]/3 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#686CFA]/3 rounded-full blur-2xl pointer-events-none" />
 
             {/* 30-second progress bar line at the top */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100 overflow-hidden">
@@ -243,22 +243,22 @@ export function ClientTestimonials() {
                   duration: AUTOPLAY_INTERVAL_MS / 1000,
                   ease: 'linear'
                 }}
-                className="h-full bg-[#686DF4]/40"
+                className="h-full bg-[#686CFA]/40"
               />
             </div>
 
             <div className="relative z-10 space-y-8 pt-1">
               {/* Header inside Card: Quote mark, Company & Highlight */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
-                <div className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#686DF4] font-display">
-                  <div className="w-8 h-8 rounded-xl bg-[#686DF4]/8 border border-[#686DF4]/20 flex items-center justify-center text-[#686DF4] shrink-0">
-                    <Quote className="w-4 h-4 fill-[#686DF4]/20" />
+                <div className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#686CFA] font-display">
+                  <div className="w-8 h-8 rounded-xl bg-[#686CFA]/8 border border-[#686CFA]/20 flex items-center justify-center text-[#686CFA] shrink-0">
+                    <Quote className="w-4 h-4 fill-[#686CFA]/20" />
                   </div>
                   <span className="text-slate-900 font-semibold">{current.company}</span>
                 </div>
 
                 {current.highlight && (
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-[#686DF4]/6 text-[#686DF4] border border-[#686DF4]/20">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-[#686CFA]/6 text-[#686CFA] border border-[#686CFA]/20">
                     <Sparkles className="w-3 h-3" />
                     <span>{current.highlight}</span>
                   </span>
@@ -284,7 +284,7 @@ export function ClientTestimonials() {
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className="w-full h-full bg-[#686DF4]/10 text-[#686DF4] font-bold font-mono text-sm flex items-center justify-center">
+                      <div className="w-full h-full bg-[#686CFA]/10 text-[#686CFA] font-bold font-mono text-sm flex items-center justify-center">
                         {initials}
                       </div>
                     )}
@@ -298,7 +298,7 @@ export function ClientTestimonials() {
                     <p className="text-xs sm:text-sm text-slate-500 font-medium">
                       {current.role}
                     </p>
-                    <p className="text-xs font-semibold text-[#686DF4]">
+                    <p className="text-xs font-semibold text-[#686CFA]">
                       {current.company}
                     </p>
                   </div>
@@ -314,7 +314,7 @@ export function ClientTestimonials() {
                       aria-label={`Gehe zu Kundenstimme ${dotIdx + 1}`}
                       className={`h-2 rounded-full transition-all cursor-pointer ${
                         dotIdx === currentIndex
-                          ? 'w-6 bg-[#696EEF]'
+                          ? 'w-6 bg-[#686CFA]'
                           : 'w-2 bg-slate-200 hover:bg-slate-350'
                       }`}
                     />

@@ -132,7 +132,7 @@ export default function ShopConversionRechner() {
   return (
     <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="shop-conversion-rechner">
       <div className="mb-8 border-b border-slate-100 pb-6 flex items-start gap-4">
-        <div className="w-10 h-10 rounded-xl bg-[#686DF4]/10 text-[#686DF4] flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
           <ShoppingCart className="w-5 h-5" />
         </div>
         <div>
@@ -161,7 +161,7 @@ export default function ShopConversionRechner() {
                 placeholder="z. B. 8'000"
                 value={besucher}
                 onChange={(e) => handleInputChange('besucher', e.target.value)}
-                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
+                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 Besucher / Mt.
@@ -180,7 +180,7 @@ export default function ShopConversionRechner() {
             <select aria-label="Aktuelle Conversion-Rate"
               value={aktuellerCR}
               onChange={(e) => handleInputChange('cr', e.target.value)}
-              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 text-slate-705 transition-all font-semibold cursor-pointer"
+              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-905 text-slate-705 transition-all font-semibold cursor-pointer"
             >
               <option value="">Bitte wählen</option>
               <option value="0.003">Unter 0.5% (z. B. 0.3%)</option>
@@ -208,7 +208,7 @@ export default function ShopConversionRechner() {
                 placeholder="z. B. 85"
                 value={warenkorbwert}
                 onChange={(e) => handleInputChange('warenkorbwert', e.target.value)}
-                className={`w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold ${
+                className={`w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold ${
                   validationError ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-200'
                 }`}
               />
@@ -264,7 +264,7 @@ export default function ShopConversionRechner() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-200/40 text-center space-y-1.5 self-center w-full">
-                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686CFA] bg-[#686CFA]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" /> Ihre Zahlen eingeben
                   </div>
                   <p className="text-[11px] text-slate-400/90 font-mono">
@@ -299,9 +299,9 @@ export default function ShopConversionRechner() {
                     Eine Conversion-Rate über 3% gilt in vielen Branchen als hoher Wert. Das spricht dafür, dass Vertrauensaufbau, Checkout und mobile Darstellung in Ihrem Shop bereits gut funktionieren.
                   </p>
 
-                  <div className="p-4 rounded-xl bg-[#686DF4]/5 border border-[#686DF4]/10 space-y-2">
+                  <div className="p-4 rounded-xl bg-[#686CFA]/5 border border-[#686CFA]/10 space-y-2">
                     <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block">Ihr nächster Ansatzpunkt:</span>
-                    <p className="text-xs text-[#686DF4] font-bold leading-relaxed">
+                    <p className="text-xs text-[#686CFA] font-bold leading-relaxed">
                       Mehr Potenzial liegt jetzt meist nicht in der Erstbestellung, sondern bei <strong>Wiederholungskäufen (Bestandskunden)</strong> und einem <strong>höheren Warenkorbwert</strong>.
                     </p>
                     <p className="text-[11px] text-slate-500 italic leading-snug font-medium pt-1 border-t border-slate-100/55">
@@ -325,7 +325,7 @@ export default function ShopConversionRechner() {
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full bg-[#696EEF] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full bg-[#686CFA] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Bestandskunden-Potenzial besprechen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
@@ -406,7 +406,7 @@ export default function ShopConversionRechner() {
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#696EEF] hover:bg-slate-905 bg-[#696EEF] text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
+                    className="w-full text-center bg-[#686CFA] hover:bg-slate-905 bg-[#686CFA] text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
                   >
                     <span>Ergebnis besprechen: kostenlos, 30 Min.</span>
                     <ArrowRight className="w-4 h-4 text-white" />

@@ -7,6 +7,8 @@
  */
 
 export interface ChallengeCard {
+  /** Bereich, in dem die Herausforderung entsteht (Startseite: Label auf der Karte). */
+  area: 'Marketing' | 'Sales' | 'Processes';
   title: string;
   desc: string;
   href: string;
@@ -15,36 +17,42 @@ export interface ChallengeCard {
 
 export const CHALLENGE_CARDS: ChallengeCard[] = [
   {
+    area: 'Marketing',
     title: 'Mehr passende Kunden gewinnen',
     desc: 'Das Wachstum stockt, obwohl Sie in Marketing investieren, oder neue Kunden kommen fast nur über Empfehlungen.',
-    href: '/leistungen/wachstum-marketing',
-    linkText: 'Zu Wachstum & Marketing',
+    href: '/leistungen/marketing',
+    linkText: 'Zu Marketing',
   },
   {
+    area: 'Sales',
     title: 'Vertriebsprozesse verbessern',
     desc: 'Anfragen bleiben liegen, das Nachfassen hängt an Einzelnen und niemand sieht, wo Verkaufschancen stehen.',
     href: '/loesungen/vertrieb-optimieren',
     linkText: 'Vertrieb optimieren',
   },
   {
+    area: 'Processes',
     title: 'Geschäftsprozesse automatisieren',
     desc: 'Ihr Team verliert Zeit mit Abtippen, Excel-Listen und manuellen Übergaben zwischen Systemen.',
     href: '/loesungen/prozessautomatisierung',
     linkText: 'Prozesse automatisieren',
   },
   {
+    area: 'Processes',
     title: 'KI sinnvoll einsetzen',
     desc: 'Einzelne nutzen ChatGPT, aber ohne Regeln, und in den eigentlichen Abläufen hat KI noch nichts verändert.',
     href: '/leistungen/ki-im-unternehmen',
-    linkText: 'Zu KI im Unternehmen',
+    linkText: 'Zu Agentic AI',
   },
   {
+    area: 'Processes',
     title: 'Tools aufräumen und verbinden',
     desc: 'Viele Programme und Lizenzen, und trotzdem werden Daten von Hand übertragen und Zahlen widersprechen sich.',
     href: '/leistungen/martech-stack',
     linkText: 'Zum MarTech-Stack',
   },
   {
+    area: 'Sales',
     title: 'Marketing und Vertrieb verbinden',
     desc: 'Marketing liefert Anfragen, der Vertrieb ist unzufrieden, und keiner weiss, was daraus geworden ist.',
     href: '/leistungen/revenue-operations',

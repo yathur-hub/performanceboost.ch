@@ -1,7 +1,7 @@
 /**
  * Themengrafiken für Unterseiten (ersetzen die früheren interaktiven Rechner).
  * Fünf Typen, alle datengetrieben (src/data/diagrams.ts), im Stil der Startseiten-Grafik:
- * weisse Karten, Icon-Kachel, gestrichelte Verbindungen, Abschluss-Knoten in #696EEF.
+ * weisse Karten, Icon-Kachel, gestrichelte Verbindungen, Abschluss-Knoten in #686CFA.
  * Reines HTML/CSS + SVG, vorgerendert, ohne Interaktion.
  */
 import React from 'react';
@@ -38,7 +38,7 @@ function NodeIcon({ name, active }: { name?: IconName; active?: boolean }) {
   return (
     <span
       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-        active ? 'bg-white/20 text-white' : 'bg-[#696EEF]/10 text-[#696EEF]'
+        active ? 'bg-white/20 text-white' : 'bg-[#686CFA]/10 text-[#686CFA]'
       }`}
     >
       <Icon className="w-4.5 h-4.5" aria-hidden="true" />
@@ -51,14 +51,14 @@ const NodeCard: React.FC<{ node: DiagramNode; index?: number; active?: boolean; 
     <div
       className={`relative flex items-start gap-3 rounded-2xl border ${compact ? 'p-3' : 'p-3.5 sm:p-4'} ${
         active
-          ? 'bg-[#696EEF] border-[#696EEF] text-white shadow-[0_12px_30px_-12px_rgba(105,110,239,0.6)]'
+          ? 'bg-[#686CFA] border-[#686CFA] text-white shadow-[0_12px_30px_-12px_rgba(105,110,239,0.6)]'
           : 'bg-white border-slate-200/80 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.12)]'
       }`}
     >
       <NodeIcon name={node.icon} active={active} />
       <span className="min-w-0">
         {index !== undefined && (
-          <span className={`block font-mono text-[10px] font-bold ${active ? 'text-white/70' : 'text-[#696EEF]'}`}>
+          <span className={`block font-mono text-[10px] font-bold ${active ? 'text-white/70' : 'text-[#686CFA]'}`}>
             {String(index + 1).padStart(2, '0')}
           </span>
         )}
@@ -79,7 +79,7 @@ function Flow({ nodes }: { nodes: DiagramNode[] }) {
         <li key={n.title} style={{ ['--d' as string]: i } as React.CSSProperties}>
           <NodeCard node={n} index={i} active={i === nodes.length - 1} />
           {i < nodes.length - 1 && (
-            <span className="flex justify-center py-1.5 text-[#696EEF]/50" aria-hidden="true">
+            <span className="flex justify-center py-1.5 text-[#686CFA]/50" aria-hidden="true">
               <ArrowDown className="w-4 h-4" />
             </span>
           )}
@@ -101,7 +101,7 @@ function Hub({ center, nodes }: { center: DiagramNode; nodes: DiagramNode[] }) {
       <div className="hidden sm:block relative">
         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true">
           {slots.map(([c, r], i) => (
-            <line key={i} x1={150} y1={150} x2={50 + c * 100} y2={50 + r * 100} stroke="#696EEF" strokeOpacity="0.35" strokeWidth="1.2" strokeDasharray="4 4" vectorEffect="non-scaling-stroke" />
+            <line key={i} x1={150} y1={150} x2={50 + c * 100} y2={50 + r * 100} stroke="#686CFA" strokeOpacity="0.35" strokeWidth="1.2" strokeDasharray="4 4" vectorEffect="non-scaling-stroke" />
           ))}
         </svg>
         <div className="relative grid grid-cols-3 grid-rows-3 gap-3 min-h-[360px]">
@@ -139,11 +139,11 @@ function Funnel({ nodes }: { nodes: DiagramNode[] }) {
           <li key={node.title} className="flex flex-col items-center" style={{ ['--d' as string]: i } as React.CSSProperties}>
             <div
               className={`flex items-center gap-3 rounded-2xl px-4 py-3 border transition-colors ${
-                active ? 'bg-[#696EEF] border-[#696EEF] text-white' : 'bg-white border-slate-200/80'
+                active ? 'bg-[#686CFA] border-[#686CFA] text-white' : 'bg-white border-slate-200/80'
               }`}
               style={{ width: `${width}%`, backgroundColor: active ? undefined : `rgba(105,110,239,${0.04 + i * 0.05})` }}
             >
-              <Icon className={`w-4.5 h-4.5 shrink-0 ${active ? 'text-white' : 'text-[#696EEF]'}`} aria-hidden="true" />
+              <Icon className={`w-4.5 h-4.5 shrink-0 ${active ? 'text-white' : 'text-[#686CFA]'}`} aria-hidden="true" />
               <span className="min-w-0">
                 <span className={`block text-sm font-display font-semibold leading-snug ${active ? 'text-white' : 'text-slate-900'}`}>{node.title}</span>
                 {node.sub && <span className={`block text-xs leading-snug ${active ? 'text-white/80' : 'text-slate-500'}`}>{node.sub}</span>}
@@ -181,7 +181,7 @@ function Cycle({ center, nodes }: { center: string; nodes: DiagramNode[] }) {
   return (
     <div className="relative">
       <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
-        <ellipse cx="100" cy="100" rx="62" ry="58" fill="none" stroke="#696EEF" strokeOpacity="0.35" strokeWidth="1.2" strokeDasharray="5 5" vectorEffect="non-scaling-stroke" />
+        <ellipse cx="100" cy="100" rx="62" ry="58" fill="none" stroke="#686CFA" strokeOpacity="0.35" strokeWidth="1.2" strokeDasharray="5 5" vectorEffect="non-scaling-stroke" />
       </svg>
       <div className="relative grid grid-cols-2 gap-x-3 gap-y-16 sm:gap-y-20">
         {[items[0], items[1], items[3], items[2]].map((node, i) =>
@@ -193,7 +193,7 @@ function Cycle({ center, nodes }: { center: string; nodes: DiagramNode[] }) {
         )}
       </div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <span className="inline-flex items-center gap-2 rounded-full bg-[#696EEF] text-white text-xs font-semibold px-4 py-2 shadow-[0_10px_24px_-10px_rgba(105,110,239,0.7)]">
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#686CFA] text-white text-xs font-semibold px-4 py-2 shadow-[0_10px_24px_-10px_rgba(105,110,239,0.7)]">
           <RefreshCw className="w-3.5 h-3.5" aria-hidden="true" /> {center}
         </span>
       </div>

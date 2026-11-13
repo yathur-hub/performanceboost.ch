@@ -254,10 +254,9 @@ const SERVICE_FLOW: Record<string, string> = {
 
 const AREA_FLOW: Record<string, string> = {
   'ki-im-unternehmen': 'ai',
-  strategie: 'strategy',
-  'technologie-automation': 'stack',
-  'wachstum-marketing': 'marketing',
-  'sales-revenue-operations': 'sales',
+  marketing: 'marketing',
+  sales: 'sales',
+  prozesse: 'automation',
 };
 
 const CHALLENGE_FLOW: Record<string, string> = {

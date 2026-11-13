@@ -5,9 +5,9 @@
   --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-font: #505050;
-  --color-brand-primary: #686DF4;
-  --color-brand-accent2: #CACCFB;
+  --color-brand-font: #4F4F4F;
+  --color-brand-primary: #686CFA;
+  --color-brand-accent2: #CBCBFC;
   --color-brand-accent3: #E0E0E0;
   --color-brand-white1: #ffffff;
   --color-brand-white2: #f6f6f6;
@@ -16,7 +16,7 @@
   --color-slate-50: #f6f6f6;
   --color-slate-100: #E0E0E0;
   --color-slate-200: #E0E0E0;
-  --color-slate-300: #CACCFB;
+  --color-slate-300: #CBCBFC;
   --color-slate-400: #505050;
   --color-slate-500: #505050;
   --color-slate-600: #505050;
@@ -154,20 +154,20 @@
 
 /*
  * Barrierefreiheit (WCAG 2.2 AA, 4.5:1 für Fliesstext):
- * Die Markenfarbe #686DF4 erreicht als Textfarbe auf Weiss nur 4.1:1 und als Hintergrund
+ * Die Markenfarbe #686CFA erreicht als Textfarbe auf Weiss nur 4.1:1 und als Hintergrund
  * für weisse Schrift ebenfalls 4.1:1. Für Text und Buttons wird deshalb eine dunklere
  * Abstufung derselben Farbe verwendet, auf dunklen Flächen eine hellere.
- * Dekorative Flächen, Rahmen und Icons behalten #686DF4.
+ * Dekorative Flächen, Rahmen und Icons behalten #686CFA.
  */
-.text-\[\#686DF4\] {
+.text-\[\#686CFA\] {
   color: #4f54d6;
 }
-.bg-slate-950 .text-\[\#686DF4\],
-.bg-slate-905 .text-\[\#686DF4\],
-.bg-\[\#1a1a1a\] .text-\[\#686DF4\] {
+.bg-slate-950 .text-\[\#686CFA\],
+.bg-slate-905 .text-\[\#686CFA\],
+.bg-\[\#1a1a1a\] .text-\[\#686CFA\] {
   color: #a0a3f9;
 }
-.bg-\[\#686DF4\] {
+.bg-\[\#686CFA\] {
   background-color: #5458e0;
 }
 /* Graue Hilfstexte (slate-400 = #505050) sind auf dunklen Flächen unlesbar. */
@@ -283,4 +283,16 @@ details[open] > :not(summary) { animation: enterUp 0.35s cubic-bezier(0.16, 1, 0
   .reveal, .reveal .reveal-item { opacity: 1 !important; transform: none !important; transition: none !important; }
   .menu-accordion { transition: none; }
   details::details-content { transition: none !important; }
+}
+
+/* Systemdiagramm Startseite (RevenueSystemGraphic): Datenfluss auf den Speichen, Puls der Agenten */
+@keyframes flowDash { to { stroke-dashoffset: -20; } }
+.flow-dash { stroke-dasharray: 3 7; animation: flowDash 1.4s linear infinite; }
+@keyframes agentPulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0; transform: scale(1.9); }
+}
+.agent-pulse { transform-box: fill-box; transform-origin: center; animation: agentPulse 2.8s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .flow-dash, .agent-pulse { animation: none !important; }
 }

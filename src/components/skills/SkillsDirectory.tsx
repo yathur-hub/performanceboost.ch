@@ -80,12 +80,12 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
       {/* 1. Hero Section */}
       <AnimatedSection className="bg-[#F6F6F6] border-b border-slate-200/60 pt-36 pb-16 md:pt-44 md:pb-24 relative overflow-hidden">
         {/* Ambient background decoration */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
           <Visual3D id="energy-core" priority sizes="160px" className="mx-auto h-28 sm:h-36 w-auto animate-float" />
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1A1A2E] tracking-tight leading-tight">
-            <span className="block text-[#696EEF]">Skill-Factory</span> Erst prüfen, dann richtig ansetzen.
+            <span className="block text-[#686CFA]">Skill-Factory</span> Erst prüfen, dann richtig ansetzen.
           </h1>
           
           <p className="text-[#505050] text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
@@ -94,12 +94,12 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
 
           <div className="flex items-center justify-center gap-10 pt-4 pb-2">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-extrabold text-[#686DF4]">{skills.length}</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-[#686CFA]">{skills.length}</div>
               <div className="text-xs text-[#505050] font-bold mt-1 uppercase tracking-wider font-mono">Checklisten</div>
             </div>
             <div className="h-10 w-px bg-slate-300"></div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-extrabold text-[#686DF4]">9</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-[#686CFA]">9</div>
               <div className="text-xs text-[#505050] font-bold mt-1 uppercase tracking-wider font-mono">Kategorien</div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Checkliste suchen, z. B. «CRM», «Tracking» oder «KI» …"
-                className="w-full text-slate-800 text-xs text-slate-800 rounded-xl border border-slate-200/80 bg-slate-50/50 px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#686DF4] focus:border-[#686DF4] focus:bg-white transition-all font-medium placeholder:text-slate-400/80 shadow-[0_2px_4px_rgba(0,0,0,0.01)]"
+                className="w-full text-slate-800 text-xs text-slate-800 rounded-xl border border-slate-200/80 bg-slate-50/50 px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#686CFA] focus:border-[#686CFA] focus:bg-white transition-all font-medium placeholder:text-slate-400/80 shadow-[0_2px_4px_rgba(0,0,0,0.01)]"
                 aria-label="Checkliste suchen"
               />
             </div>
@@ -149,8 +149,8 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                   aria-selected={isActive}
                   className={`rounded-full px-4 py-2 text-xs font-bold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer select-none ${
                     isActive
-                      ? 'bg-[#696EEF] text-white border-[#686DF4] shadow-[0_2px_8px_rgba(104,109,244,0.3)] scale-[1.02]'
-                      : 'bg-white text-[#505050] border-slate-200 hover:border-[#686DF4] hover:text-[#686DF4] hover:bg-[#5a5fe0]/[0.02] shadow-xs'
+                      ? 'bg-[#686CFA] text-white border-[#686CFA] shadow-[0_2px_8px_rgba(104,109,244,0.3)] scale-[1.02]'
+                      : 'bg-white text-[#505050] border-slate-200 hover:border-[#686CFA] hover:text-[#686CFA] hover:bg-[#5a5fe0]/[0.02] shadow-xs'
                   }`}
                 >
                   <span>{cat.label}</span>
@@ -206,7 +206,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
 
                       {/* Content block */}
                       <div className="space-y-1.5">
-                        <h3 className="text-slate-900 font-bold text-sm tracking-tight leading-snug group-hover:text-[#686DF4] transition-colors line-clamp-1">
+                        <h3 className="text-slate-900 font-bold text-sm tracking-tight leading-snug group-hover:text-[#686CFA] transition-colors line-clamp-1">
                           {skill.title}
                         </h3>
                         <p className="text-xs text-slate-500 font-medium leading-relaxed line-clamp-2 min-h-[36px]">
@@ -220,7 +220,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                           href={skill.github} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="w-full flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white px-4 py-2.5 text-xs font-bold text-[#505050] hover:border-[#686DF4] hover:text-[#686DF4] transition-all hover:shadow-xs group/item"
+                          className="w-full flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white px-4 py-2.5 text-xs font-bold text-[#505050] hover:border-[#686CFA] hover:text-[#686CFA] transition-all hover:shadow-xs group/item"
                         >
                           <ExternalLink className="w-3.5 h-3.5 transition-transform duration-200 group-hover/item:scale-110" />
                           Auf GitHub öffnen
@@ -250,7 +250,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
               </p>
               <button
                 onClick={() => { setSearchQuery(''); setActiveCategory('alle'); }}
-                className="text-[#686DF4] font-bold hover:underline text-xs inline-flex items-center gap-1 cursor-pointer"
+                className="text-[#686CFA] font-bold hover:underline text-xs inline-flex items-center gap-1 cursor-pointer"
               >
                 Zurücksetzen und alle anzeigen <ArrowRight className="w-3.5 h-3.5" />
               </button>
@@ -262,7 +262,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
       {/* 4. Final CTA Section (Ende der Seite) */}
       <section className="bg-[#1A1A2E] py-20 relative overflow-hidden text-center text-white" id="skills-cta-bottom">
         {/* Visual lighting background grids */}
-        <div className="absolute top-0 right-1/4 w-[350px] h-[350px] bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-0 right-1/4 w-[350px] h-[350px] bg-[#686CFA]/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-slate-800/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-3xl mx-auto px-4 relative z-10 space-y-6">
@@ -278,7 +278,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
             <a 
               href="/kontakt"
               onClick={handleBookMeeting}
-              className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5558e0] text-white rounded-xl px-6 py-3 text-xs font-extrabold tracking-wide uppercase shadow-[0_4px_14px_rgba(104,109,244,0.4)] transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer select-none"
+              className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5558e0] text-white rounded-xl px-6 py-3 text-xs font-extrabold tracking-wide uppercase shadow-[0_4px_14px_rgba(104,109,244,0.4)] transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer select-none"
             >
               Potenzial besprechen
             </a>

@@ -1,10 +1,14 @@
 /**
- * Hub-Seite eines Leistungsfelds (/leistungen/ki-im-unternehmen, /strategie, /technologie-automation,
- * /wachstum-marketing, /sales-revenue-operations). Inhalte aus src/data/serviceAreas.ts.
+ * Bereichsseite (/leistungen/marketing, /sales, /prozesse) und übergreifende Seite Agentic AI
+ * (/leistungen/ki-im-unternehmen). Inhalte aus src/data/serviceAreas.ts, Phasen aus src/data/approach.ts.
+ * Reihenfolge: Hero · Grafik · Ausgangslage/Ziele · Leistungen + Kompetenzfelder · Agenten (bzw. Stufen) ·
+ * So gehen wir vor · eigene Praxis · Branchen (Marketing) · Referenz · Checks/Lösungen/Ratgeber · FAQ · andere Bereiche · CTA.
  */
 import { Visual3D, VISUAL_BY_AREA } from '../components/Visual3D';
 import React from 'react';
-import { getArea, servicesOf, SERVICE_AREAS, type AreaId } from '../data/serviceAreas';
+import { Bot, ShieldCheck, RotateCcw, ArrowRight } from 'lucide-react';
+import { getArea, servicesOf, SERVICE_AREAS, AGENTIC_LEVELS, type AreaId } from '../data/serviceAreas';
+import { PHASES } from '../data/approach';
 import { SERVICES } from '../data/services';
 import {
   Breadcrumb,
@@ -27,19 +31,19 @@ import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import Link from '../components/Link';
 
 
-/** Passende Kundenstimme je Feld (nur bestehende, wörtliche Zitate). KI im Unternehmen: Systembau bei CarlaCares. */
+/** Passende Kundenstimme je Bereich (nur bestehende, wörtliche Zitate). Agentic AI: Systembau bei CarlaCares. */
 const AREA_TESTIMONIAL: Record<AreaId, string> = {
+  marketing: 'ibrahim-akyol',
+  sales: 'simon-karrica',
+  prozesse: 'kathirsan-kathirgamanathan',
   'ki-im-unternehmen': 'carla-carcaiso',
-  strategie: 'tiago-garcia',
-  'technologie-automation': 'kathirsan-kathirgamanathan',
-  'wachstum-marketing': 'ibrahim-akyol',
-  'sales-revenue-operations': 'simon-karrica',
 };
 
 export default function ServiceAreaView({ id }: { id: AreaId }) {
   const area = getArea(id);
   const services = servicesOf(area);
   const others = SERVICE_AREAS.filter((a) => a.id !== id);
+  const isArea = area.kind === 'area';
   const groups = area.serviceGroups ?? [{ label: '', services: area.services }];
 
   return (
@@ -50,6 +54,9 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Leistungen', href: '/leistungen' }, { label: area.shortLabel }]} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="hero-enter lg:col-span-8 max-w-4xl space-y-6">
+            <p className="text-xs sm:text-[13px] font-mono font-bold uppercase tracking-[0.18em] text-[#686CFA]">
+              {area.label} <span className="text-slate-400">·</span> {area.subtitle}
+            </p>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               {area.headline}
             </h1>
@@ -90,13 +97,13 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             <ul className="space-y-3">
               {area.challenges.map((c) => (
                 <li key={c} className="flex gap-3 text-body-sm text-slate-700 leading-relaxed">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#686DF4] shrink-0 mt-2" aria-hidden="true" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#686CFA] shrink-0 mt-2" aria-hidden="true" />
                   <span>{c}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-[#686DF4]/[0.04] border border-[#CACCFB]/60 rounded-3xl p-7 sm:p-10 space-y-6">
+          <div className="bg-[#686CFA]/[0.04] border border-[#CBCBFC]/60 rounded-3xl p-7 sm:p-10 space-y-6">
             <SectionHeading title="Ziele der Zusammenarbeit" />
             <CheckList items={area.outcomes} />
             <p className="text-xs text-slate-500 leading-relaxed">
@@ -109,7 +116,10 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* LEISTUNGEN */}
       <section>
         <Container className="space-y-10">
-          <SectionHeading title={`Leistungen im Bereich ${area.shortLabel}`} />
+          <SectionHeading
+            title={isArea ? `Leistungen im Bereich ${area.label}` : 'Passende Leistungen'}
+            intro={isArea ? area.role : undefined}
+          />
           {groups.map((g) => (
             <div key={g.label || 'all'} className="space-y-4">
               {g.label && <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 font-display">{g.label}</h3>}
@@ -125,7 +135,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
           ))}
           {area.topics.length > 0 && (
             <div className="space-y-4 pt-2">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 font-display">Weitere Themen in diesem Bereich</h3>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 font-display">{isArea ? 'Weitere Kompetenzfelder' : 'Was dazugehört'}</h3>
               <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10">
                 {area.topics.map((t) => (
                   <div key={t.title}>
@@ -139,6 +149,88 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         </Container>
       </section>
 
+
+      {/* AGENTEN IM BEREICH bzw. STUFEN (Agentic-AI-Seite) */}
+      {area.agentic && (
+        <section className="bg-white border-y border-[#E2E8F0]/40 py-16 md:py-24">
+          <Container className="space-y-8">
+            <SectionHeading title={area.agentic.title} intro={area.agentic.intro} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {area.agentic.items.map((it) => (
+                <div key={it.task} className="rounded-3xl border border-[#E0E0E0]/80 bg-[#f6f6f6]/50 p-7 flex flex-col">
+                  <span className="w-9 h-9 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center">
+                    <Bot className="w-4.5 h-4.5" aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-4 font-display font-semibold text-slate-900">{it.task}</h3>
+                  <p className="mt-2 text-body-sm text-slate-600 leading-relaxed">{it.desc}</p>
+                  <p className="mt-auto pt-4 flex gap-2 text-xs font-semibold text-slate-800 leading-relaxed">
+                    <ShieldCheck className="w-4 h-4 text-[#686CFA] shrink-0" aria-hidden="true" /> {it.human}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <Link href="/leistungen/ki-im-unternehmen" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#4f54d6]">
+              Regel, KI oder Agent: wie wir entscheiden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </Link>
+          </Container>
+        </section>
+      )}
+      {!isArea && (
+        <section className="bg-white border-y border-[#E2E8F0]/40 py-16 md:py-24">
+          <Container className="space-y-8">
+            <SectionHeading
+              title="Von der Regel bis zum Agenten"
+              intro="Für jeden Ablauf wählen wir die einfachste Lösung, die verlässlich funktioniert. Oft ist das eine feste Regel und kein Agent. Die menschliche Steuerung gilt auf jeder Stufe."
+            />
+            <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {AGENTIC_LEVELS.map((l, i) => (
+                <li key={l.title} className={`rounded-3xl border p-6 flex flex-col ${i === 3 ? 'bg-slate-950 border-slate-950 text-white' : 'bg-[#f6f6f6]/60 border-[#E0E0E0]/80'}`}>
+                  <span className={`text-[10px] font-mono font-bold uppercase tracking-widest ${i === 3 ? 'text-[#CBCBFC]' : 'text-[#686CFA]'}`}>{l.label}</span>
+                  <h3 className={`mt-2 font-display font-semibold leading-snug ${i === 3 ? 'text-white' : 'text-slate-900'}`}>{l.title}</h3>
+                  <p className={`mt-2 text-body-sm leading-relaxed ${i === 3 ? 'text-slate-300' : 'text-slate-600'}`}>{l.desc}</p>
+                  <p className={`mt-3 text-xs leading-relaxed ${i === 3 ? 'text-slate-400' : 'text-slate-500'}`}>{l.example}</p>
+                  <p className={`mt-auto pt-4 text-xs font-bold ${i === 3 ? 'text-[#CBCBFC]' : 'text-[#4f54d6]'}`}>{l.decides}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+              {SERVICE_AREAS.filter((a) => a.kind === 'area').map((a) => (
+                <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.agentic?.title ?? a.label} desc={a.agentic?.intro} linkText={`Zu ${a.label}`} />
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* SO GEHEN WIR VOR (vier Phasen, bereichsspezifisch) */}
+      {area.phaseExamples && (
+        <section>
+          <Container className="space-y-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+              <SectionHeading
+                title={`So gehen wir im Bereich ${area.label} vor`}
+                intro="Wir steigen in der Phase ein, die zu Ihrer Ausgangslage passt. Nicht jedes Vorhaben braucht alle vier."
+              />
+              <Link href="/ansatz" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
+                Mehr zum Ansatz <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </Link>
+            </div>
+            <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {PHASES.map((p, i) => (
+                <li key={p.label} className="rounded-3xl border border-[#E0E0E0]/80 bg-white p-6">
+                  <span className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold font-mono text-[#686CFA]">0{i + 1}</span>
+                    {i >= 2 && <RotateCcw className="w-4 h-4 text-[#686CFA]/70" aria-label="wiederkehrend" />}
+                  </span>
+                  <p lang="en" className="mt-3 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">{p.label}</p>
+                  <h3 className="mt-1 font-display font-semibold text-slate-900 leading-snug">{p.title}</h3>
+                  <p className="mt-2 text-body-sm text-slate-600 leading-relaxed">{area.phaseExamples![i]}</p>
+                </li>
+              ))}
+            </ol>
+          </Container>
+        </section>
+      )}
 
       {/* EIGENE PRAXIS (z. B. KI im Unternehmen): bestätigte Abläufe aus dem eigenen Betrieb */}
       {area.practice && (
@@ -158,7 +250,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       )}
 
       {/* BRANCHEN (nur Growth): bestehende Branchenseiten */}
-      {id === 'wachstum-marketing' && (
+      {id === 'marketing' && (
         <section>
           <Container className="space-y-6">
             <SectionHeading title="Kundengewinnung für Ihre Branche" intro="Wie Neukundengewinnung in Ihrer Branche funktioniert: typische Hürden, unser Vorgehen und ein passender Rechner." />
@@ -167,7 +259,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
                 <li key={sector.slug}>
                   <Link
                     href={`/loesungen/${sector.slug}`}
-                    className="inline-block text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-full px-4 py-2 hover:border-[#686DF4]/50 hover:text-[#4f54d6] transition-colors"
+                    className="inline-block text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-full px-4 py-2 hover:border-[#686CFA]/50 hover:text-[#4f54d6] transition-colors"
                   >
                     {sector.title}
                   </Link>
@@ -222,7 +314,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* FAQ */}
       <section>
         <Container className="max-w-4xl space-y-8">
-          <SectionHeading title={`Fragen zu ${area.shortLabel}`} />
+          <SectionHeading title={`Fragen zu ${area.label}`} />
           <FaqList items={area.faq} />
         </Container>
       </section>
@@ -230,16 +322,19 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* ANDERE FELDER */}
       <section>
         <Container className="space-y-8">
-          <SectionHeading title="Die anderen Leistungsfelder" intro="Die besten Ergebnisse entstehen, wenn Strategie, KI, Systeme, Marketing und Vertrieb aufeinander abgestimmt sind." />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <SectionHeading
+            title={isArea ? 'Ein System, drei Bereiche' : 'Die drei Bereiche'}
+            intro="Marketing, Sales und Processes hängen voneinander ab. Die besten Ergebnisse entstehen, wenn sie gemeinsam verbessert werden."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {others.map((o) => (
-              <TeaserCard key={o.id} href={`/leistungen/${o.id}`} title={o.shortLabel} desc={o.teaser} />
+              <TeaserCard key={o.id} href={`/leistungen/${o.id}`} title={o.label} desc={o.teaser} />
             ))}
           </div>
         </Container>
       </section>
 
-      <LeadCtaSection formLocation={`hub_${id}`} />
+      <LeadCtaSection formLocation={`hub_${id}`} ctaLabel={area.ctaLabel} />
     </div>
   );
 }

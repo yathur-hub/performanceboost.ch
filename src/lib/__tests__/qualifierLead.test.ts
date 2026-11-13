@@ -12,7 +12,7 @@ describe('Formularstrecken', () => {
   it('ordnet Seiten der passenden Strecke zu', () => {
     expect(resolveFlow('/').id).toBe('general');
     expect(resolveFlow('/leistungen/marketing-automation').id).toBe('automation');
-    expect(resolveFlow('/leistungen/wachstum-marketing').id).toBe('marketing');
+    expect(resolveFlow('/leistungen/marketing').id).toBe('marketing');
     expect(resolveFlow('/leistungen/paid-social-ecommerce').id).toBe('ecommerce');
     expect(resolveFlow('/loesungen/vertrieb-optimieren').id).toBe('sales');
     expect(resolveFlow('/loesungen/handwerk').id).toBe('branch');

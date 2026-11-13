@@ -215,23 +215,9 @@ export const SERVICE_DIAGRAMS: Record<string, PageDiagram> = {
 
 /** Hubs /leistungen/<feld> */
 export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
-  strategie: {
-    title: 'Unser Weg von der Analyse zur Wirkung',
-    text: 'Bei uns landet eine Strategie nicht in der Schublade, sie ist der erste Schritt der Umsetzung. Jede Phase baut auf der vorherigen auf, und wir messen, was sie bewirkt.',
-    spec: {
-      type: 'flow',
-      nodes: [
-        { title: 'Analyse', sub: 'Zahlen, Kunden, Abläufe, Systeme', icon: 'Search' },
-        { title: 'Prioritäten', sub: 'Was am meisten bringt', icon: 'Filter' },
-        { title: 'Strategie', sub: 'Wachstum, Digitalisierung, Technologie', icon: 'Compass' },
-        { title: 'Umsetzung', sub: 'Selbst umgesetzt oder begleitet', icon: 'Settings' },
-        { title: 'Messbare Wirkung', sub: 'Kennzahlen, die alle verstehen', icon: 'LineChart' },
-      ],
-    },
-  },
   'ki-im-unternehmen': {
-    title: 'In fünf Schritten zu KI, die im Alltag wirkt',
-    text: 'Zuerst klären, wo KI etwas bringt. Dann einführen und schulen, Regeln festlegen und laufend verbessern. Die Entscheidung bleibt bei Ihrem Team.',
+    title: 'So führen wir KI ein',
+    text: 'Zuerst klären, wo KI etwas bringt. Dann einführen und schulen, Regeln festlegen und erst danach Agenten ganze Abläufe übernehmen lassen. Die Entscheidung bleibt bei Ihrem Team.',
     spec: {
       type: 'flow',
       nodes: [
@@ -243,7 +229,7 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
       ],
     },
   },
-  'technologie-automation': {
+  prozesse: {
     title: 'Ihre Systeme, verbunden statt verstreut',
     text: 'Im Zentrum stehen saubere Kundendaten. Darum herum verbinden wir die Tools, die Sie heute nutzen, damit Daten nur einmal erfasst werden.',
     spec: {
@@ -259,9 +245,9 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
       ],
     },
   },
-  'wachstum-marketing': {
-    title: 'Wachstum entlang der ganzen Strecke',
-    text: 'Wir verbessern den ganzen Weg vom ersten Kontakt bis zum Auftrag, nicht nur einzelne Kampagnen. An jeder Stufe messen wir, wo Interessenten abspringen.',
+  marketing: {
+    title: 'Marketing entlang der ganzen Strecke',
+    text: 'Wir verbessern den Weg vom ersten Kontakt bis zum Auftrag, nicht nur einzelne Kampagnen. An jeder Stufe messen wir, wo Interessenten abspringen, und geben die Zahlen an den Vertrieb weiter.',
     spec: {
       type: 'funnel',
       nodes: [
@@ -273,7 +259,7 @@ export const AREA_DIAGRAMS: Record<string, PageDiagram> = {
       ],
     },
   },
-  'sales-revenue-operations': {
+  sales: {
     title: 'Eine Pipeline, die zeigt, wo Umsatz entsteht',
     text: 'Klare Phasen, Zuständigkeiten und Übergaben im CRM machen sichtbar, wo Verkaufschancen stehen und wo sie verloren gehen.',
     spec: {

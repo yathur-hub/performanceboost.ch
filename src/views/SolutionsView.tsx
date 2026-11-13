@@ -154,7 +154,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       
       {/* HERO SECTION */}
       <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
@@ -181,7 +181,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             <motion.button
               {...buttonPressProps}
               onClick={() => onNavigate('/kontakt')}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
             >
               Potenzial besprechen
             </motion.button>
@@ -227,13 +227,13 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                   e.preventDefault();
                   onNavigate(`/loesungen/${sector.slug}`);
                 }}
-                className="group flex h-full items-start justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#686DF4]/50 hover:shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+                className="group flex h-full items-start justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#686CFA]/50 hover:shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
               >
                 <span className="space-y-1">
                   <span className="block font-display font-semibold text-slate-950 group-hover:text-[#4f54d6]">{sector.title}</span>
                   <span className="block text-sm text-slate-600 leading-snug">{sector.subtitle}</span>
                 </span>
-                <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-slate-400 group-hover:text-[#686DF4]" aria-hidden="true" />
+                <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-slate-400 group-hover:text-[#686CFA]" aria-hidden="true" />
               </a>
             </li>
           ))}
@@ -249,8 +249,8 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
-          <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] uppercase">Zuerst die Analyse</span>
+          <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686CFA]/10 rounded-full blur-3xl pointer-events-none" />
+          <span className="text-[11px] font-mono font-bold tracking-widest text-[#686CFA] uppercase">Zuerst die Analyse</span>
           <blockquote className="text-body-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
             «Viele Unternehmen fragen zuerst nach dem richtigen Kanal oder Tool. Wichtiger ist, wo heute passende Anfragen verloren gehen, warum Interessenten nicht zu Kunden werden und wie Wachstum planbar wird.»
           </blockquote>
@@ -288,7 +288,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             >
               <div className="space-y-5">
                 <div className="flex justify-between items-center">
-                  <span className="text-[11px] font-mono font-bold bg-[#f6f6f6] text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686DF4]/5 group-hover:text-[#686DF4] group-hover:border-[#686DF4]/20 transition-all duration-300">
+                  <span className="text-[11px] font-mono font-bold bg-[#f6f6f6] text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686CFA]/5 group-hover:text-[#686CFA] group-hover:border-[#686CFA]/20 transition-all duration-300">
                     {item.num}
                   </span>
                   <button 
@@ -296,12 +296,12 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                       onNavigate(`/leistungen/${item.path}`);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="text-[11px] text-[#686DF4] hover:text-[#686DF4]/80 font-bold tracking-wide transition-colors cursor-pointer bg-transparent border-none"
+                    className="text-[11px] text-[#686CFA] hover:text-[#686CFA]/80 font-bold tracking-wide transition-colors cursor-pointer bg-transparent border-none"
                   >
                     Details →
                   </button>
                 </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">{item.title}</h3>
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686CFA] transition-colors">{item.title}</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
               </div>
 
@@ -312,7 +312,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                 </div>
                 <div className="text-[11px]">
                   <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">Sondern:</span>
-                  <span className="text-[#686DF4] font-bold block bg-[#686DF4]/5 px-2 py-1 rounded border border-[#CACCFB]/20">{item.butText}</span>
+                  <span className="text-[#686CFA] font-bold block bg-[#686CFA]/5 px-2 py-1 rounded border border-[#CBCBFC]/20">{item.butText}</span>
                 </div>
               </div>
             </motion.div>
@@ -393,12 +393,12 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             <div key={index} className="border-b border-slate-100 last:border-0 pb-4 last:pb-0 pt-4 first:pt-4">
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer"
+                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-sm sm:text-base hover:text-[#686CFA] transition-colors cursor-pointer"
               >
                 <span className="flex items-center gap-2.5">
-                  <HelpCircle className="w-4.5 h-4.5 text-[#686DF4] shrink-0" /> {faq.q}
+                  <HelpCircle className="w-4.5 h-4.5 text-[#686CFA] shrink-0" /> {faq.q}
                 </span>
-                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-[#686DF4]' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-[#686CFA]' : ''}`} />
               </button>
               <AnimatePresence initial={false}>
                 {openFaq === index && (

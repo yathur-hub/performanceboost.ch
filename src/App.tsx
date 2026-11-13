@@ -20,6 +20,7 @@ const ReferencesView = lazy(() => import('./views/ReferencesView'));
 const MartechView = lazy(() => import('./views/MartechView'));
 const ToolsView = lazy(() => import('./views/ToolsView'));
 const LabView = lazy(() => import('./views/LabView'));
+const ApproachView = lazy(() => import('./views/ApproachView'));
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeView from './views/HomeView';
@@ -95,7 +96,7 @@ function AppContent() {
   useScrollReveal(parsed.path);
 
   return (
-    <div className="min-h-screen bg-[#f6f6f6] text-[#505050] flex flex-col justify-between selection:bg-[#686DF4] selection:text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#f6f6f6] text-[#505050] flex flex-col justify-between selection:bg-[#686CFA] selection:text-white font-sans antialiased">
       <SEOHead route={parsed} />
       
       {/* Main Responsive Header */}
@@ -141,6 +142,7 @@ function AppContent() {
             {parsed.view === 'martech' && <MartechView slug={parsed.slug} />}
             {parsed.view === 'werkzeuge' && <ToolsView />}
             {parsed.view === 'labor' && <LabView />}
+            {parsed.view === 'ansatz' && <ApproachView />}
             {parsed.view === 'leistungen' && (
               <ServicesView currentSlug={parsed.slug} onNavigate={handleNavigate} />
             )}

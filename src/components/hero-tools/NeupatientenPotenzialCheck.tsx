@@ -151,7 +151,7 @@ export default function NeupatientenPotenzialCheck() {
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Der Weg von der Website zum Termin funktioniert nach Ihren Angaben sehr gut, mit vielen Online-Buchungen. Jetzt können Sie die Auslastung gezielt steuern und mehr Patienten für Ihre Behandlungsschwerpunkte gewinnen.',
       rec: 'Spezialisierte Leistungen (z.B. Implantologie, Ästhetik) online gezielt bekannt machen.',
@@ -163,7 +163,7 @@ export default function NeupatientenPotenzialCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Praxen</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Praxen</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Neupatienten-Potenzial-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viele zusätzliche Patienten Ihre Arzt- oder Zahnarztpraxis über die Website gewinnen könnte. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -176,7 +176,7 @@ export default function NeupatientenPotenzialCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Web-Besucher pro Monat</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.visits.toLocaleString('de-CH')}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.visits.toLocaleString('de-CH')}</span>
             </label>
             <input aria-label="Web-Besucher pro Monat"
               type="number"
@@ -193,7 +193,7 @@ export default function NeupatientenPotenzialCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Neupatienten pro Monat (Schnitt)</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.anfragen}</span>
             </label>
             <input aria-label="Neupatienten pro Monat (Schnitt)"
               type="number"
@@ -209,7 +209,7 @@ export default function NeupatientenPotenzialCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Anteil Online-Terminbuchungen</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.online_quote}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.online_quote}%</span>
             </label>
             <input aria-label="Anteil Online-Terminbuchungen"
               type="range"
@@ -218,7 +218,7 @@ export default function NeupatientenPotenzialCheck() {
               step={5}
               value={inputs.online_quote}
               onChange={(e) => handleInputChange('online_quote', parseInt(e.target.value) || 0)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Wie viel % buchen direkt online statt per Telefon/E-Mail?</p>
           </div>
@@ -226,7 +226,7 @@ export default function NeupatientenPotenzialCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Patientenwert / Jahr (CHF)</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.patient_wert)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.patient_wert)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Patientenwert / Jahr (CHF)"
@@ -328,7 +328,7 @@ export default function NeupatientenPotenzialCheck() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

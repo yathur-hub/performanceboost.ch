@@ -7,3 +7,9 @@
 /references /referenzen 301
 /referenz   /referenzen 301
 /solutions  /loesungen  301
+
+# Positionierung «agentic marketing, sales & processes» (2026-11): Bereiche statt Leistungsfelder.
+/leistungen/wachstum-marketing        /leistungen/marketing   301
+/leistungen/sales-revenue-operations  /leistungen/sales       301
+/leistungen/technologie-automation    /leistungen/prozesse    301
+/leistungen/strategie                 /ansatz                 301

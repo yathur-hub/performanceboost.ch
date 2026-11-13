@@ -151,7 +151,7 @@ export default function ProjektpipelineCheck() {
     },
     primary: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihr Büro ist nach Ihren Angaben sehr gut aufgestellt, mit hoher Zuschlagsquote und breiter Auftraggeberbasis. Weiteres Wachstum kommt jetzt vor allem über mehr Anfragen.',
       rec: 'Mehr Anfragen gewinnen und auf LinkedIn gezielt Wunschauftraggeber ansprechen.',
@@ -163,7 +163,7 @@ export default function ProjektpipelineCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Planungsbüros</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Planungsbüros</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Auftragseingangs-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie stabil Ihr Auftragseingang ist und was eine höhere Zuschlagsquote bringen könnte. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -176,7 +176,7 @@ export default function ProjektpipelineCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Projektanfragen pro Jahr</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.anfragen}</span>
             </label>
             <div className="relative">
               <input aria-label="Projektanfragen pro Jahr"
@@ -195,7 +195,7 @@ export default function ProjektpipelineCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Zuschlagsquote</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.win_rate}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.win_rate}%</span>
             </label>
             <input aria-label="Zuschlagsquote"
               type="range"
@@ -204,7 +204,7 @@ export default function ProjektpipelineCheck() {
               step={1}
               value={inputs.win_rate}
               onChange={(e) => handleInputChange('win_rate', parseInt(e.target.value) || 5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Anteil gewonnener Projekte an allen Anfragen</p>
           </div>
@@ -212,7 +212,7 @@ export default function ProjektpipelineCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Projektvolumen (Honorar)</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.projektvolumen)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.projektvolumen)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Projektvolumen (Honorar)"
@@ -231,7 +231,7 @@ export default function ProjektpipelineCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Anteil Top-3-Auftraggeber</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.top3_anteil}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.top3_anteil}%</span>
             </label>
             <input aria-label="Anteil Top-3-Auftraggeber"
               type="range"
@@ -240,7 +240,7 @@ export default function ProjektpipelineCheck() {
               step={5}
               value={inputs.top3_anteil}
               onChange={(e) => handleInputChange('top3_anteil', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Wie viel Umsatz hängt an Ihren 3 grössten Bauherren bzw. GU?</p>
           </div>
@@ -328,7 +328,7 @@ export default function ProjektpipelineCheck() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

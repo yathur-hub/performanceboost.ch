@@ -3,7 +3,7 @@ import { ServiceDetail, SolutionArea } from '../types';
 export const SERVICES: ServiceDetail[] = [
   {
     id: 'growth-strategy',
-    title: 'Wachstumsstrategie & Beratung',
+    title: 'Marketing- & Wachstumsstrategie',
     slug: 'growth-strategy',
     shortDesc: 'Klarer Plan für die Neukundengewinnung: Wunschkunden, Positionierung, Kanäle und Budget.',
     description: 'Planbares Wachstum beginnt mit klaren Entscheidungen. Wir schauen uns Ihren Markt und Ihre bestehenden Kunden an, beschreiben Ihre Wunschkunden und legen fest, über welche Kanäle und mit welchen Botschaften Sie diese erreichen. So fliesst Ihr Budget dorthin, wo Anfragen entstehen.',
@@ -30,7 +30,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'demand-generation',
-    title: 'Online-Werbung & Nachfrageaufbau',
+    title: 'Performance Marketing & Online-Werbung',
     slug: 'demand-generation',
     shortDesc: 'Kampagnen auf Google, Meta und LinkedIn für die Firmen und Personen, die Sie gewinnen wollen.',
     description: 'Viele Ihrer künftigen Kunden suchen heute noch nicht aktiv. Mit Kampagnen auf LinkedIn, Google und Meta sorgen wir dafür, dass Ihr Unternehmen bekannt ist, wenn der Bedarf entsteht, und dass Interessenten, die bereits suchen, bei Ihnen landen. Anzeigen, Inhalte und Landingpages stimmen wir aufeinander ab.',
@@ -84,7 +84,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'marketing-automation',
-    title: 'Marketing Automation & CRM',
+    title: 'CRM & Marketing Automation',
     slug: 'marketing-automation',
     shortDesc: 'Automatische Folge-E-Mails und ein CRM, in dem keine Anfrage mehr verloren geht.',
     description: 'Nicht jeder Interessent ist sofort kaufbereit. Mit automatisierten Abläufen in HubSpot, ActiveCampaign oder Salesforce begleiten wir Kontakte weiter, bis ein Gespräch sinnvoll ist. Ihr Vertrieb sieht im CRM, wer sich wofür interessiert, und muss nicht jedem Kontakt manuell nachgehen.',
@@ -113,7 +113,7 @@ export const SERVICES: ServiceDetail[] = [
     id: 'sales-enablement',
     title: 'Vertriebsunterstützung & Leitfäden',
     slug: 'sales-enablement',
-    shortDesc: 'Argumentarien, Präsentationen und Unterlagen, mit denen Ihr Vertrieb besser vorbereitet ins Gespräch geht.',
+    shortDesc: 'Argumentarien, Unterlagen und Gesprächsvorbereitung, damit Ihr Vertrieb besser vorbereitet ins Gespräch geht, auf Wunsch mit Recherche durch einen KI-Agenten.',
     description: 'Gutes Marketing verpufft, wenn im Verkaufsgespräch improvisiert wird. Wir erarbeiten mit Ihrem Team Referenzbeispiele, Antworten auf häufige Einwände, Preisrechner und Präsentationen. So treten alle Verkäufer einheitlich auf und neue Mitarbeitende finden sich schneller zurecht.',
     benefits: [
       'Neue Mitarbeitende im Verkauf werden schneller sicher',
@@ -246,7 +246,7 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'data-analytics',
-    title: 'Tracking, Analyse & Reporting',
+    title: 'Tracking, Attribution & Reporting',
     slug: 'data-analytics',
     shortDesc: 'Datenschutzkonformes Tracking und Berichte, die zeigen, welche Kanäle Kunden bringen.',
     description: 'Sie sollen wissen, woher Ihre Kunden kommen. Wir richten datenschutzkonformes Tracking ein (DSG und DSGVO), etwa mit serverseitigem Tagging (die Messdaten laufen über Ihren eigenen Server), Google Analytics 4 oder Matomo, und verbinden die Daten mit Ihrem CRM. So sehen Sie, über welche Kanäle Ihre wertvollsten Kunden gekommen sind.',

@@ -39,7 +39,7 @@ export default function LabView() {
                   <span className={`shrink-0 text-[11px] font-bold rounded-full border px-2.5 py-1 ${STATUS_STYLE[it.status]}`}>{it.status}</span>
                 </div>
                 <p className="text-body-sm text-slate-700 leading-relaxed">{it.desc}</p>
-                <p className="text-body-sm text-slate-600 leading-relaxed border-l-2 border-[#686DF4] pl-4">
+                <p className="text-body-sm text-slate-600 leading-relaxed border-l-2 border-[#686CFA] pl-4">
                   <span className="font-semibold text-slate-900">Gelernt: </span>
                   {it.learning}
                 </p>
@@ -61,7 +61,7 @@ export default function LabView() {
           <SectionHeading title="Vom Labor in Ihr Unternehmen" intro="Was sich im eigenen Betrieb bewährt, biete ich als Leistung an, mit Festpreis und klar definiertem Ergebnis." />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <TeaserCard href="/leistungen/ki-agenten" title="KI-Agenten für Marketing & Vertrieb" desc="Agenten, die ganze Abläufe übernehmen, mit Freigabe durch Ihr Team." linkText="Zur Leistung" />
-            <TeaserCard href="/leistungen/ki-im-unternehmen" title="KI im Unternehmen" desc="Standortbestimmung, Schulung, Regeln und Begleitung." linkText="Zum Leistungsfeld" />
+            <TeaserCard href="/leistungen/ki-im-unternehmen" title="Agentic AI im Unternehmen" desc="Wann eine Regel reicht, wann KI hilft und wann ein Agent arbeitet." linkText="Mehr erfahren" />
             <TeaserCard href="/werkzeuge" title="Werkzeuge" desc="Womit ich arbeite, nach Schicht geordnet." linkText="Werkzeuge ansehen" />
           </div>
         </Container>

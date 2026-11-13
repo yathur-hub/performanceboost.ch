@@ -158,7 +158,7 @@ export default function LeadGenerationScore() {
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <Users className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <Users className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Anfrage-Check für Ihre Website
           </h3>
@@ -190,7 +190,7 @@ export default function LeadGenerationScore() {
           <select aria-label="Wie viele Besucher hat Ihre Website pro Monat?"
             value={trafficMid}
             onChange={e => handleFieldSet('traffic', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="250">Unter 500 Besucher / Mt.</option>
@@ -217,7 +217,7 @@ export default function LeadGenerationScore() {
             placeholder="0 wenn keine"
             value={leads}
             onChange={e => handleFieldSet('leads', e.target.value)}
-            className={`w-full px-4 py-3 bg-white border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs ${
+            className={`w-full px-4 py-3 bg-white border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs ${
               hasValidationError ? 'border-red-300 focus:border-red-500' : 'border-slate-200'
             }`}
           />
@@ -247,7 +247,7 @@ export default function LeadGenerationScore() {
           <select aria-label="Wie viele Möglichkeiten zur Kontaktaufnahme bietet Ihre Website?"
             value={leadMagnete}
             onChange={e => handleFieldSet('leadMagnete', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="0">Nur das Standard-Kontaktformular</option>
@@ -387,11 +387,11 @@ export default function LeadGenerationScore() {
                 <div className="border-t border-slate-250 pt-1 pt-4 border-slate-200">
                   <button
                     onClick={toggleDiagnose}
-                    className="w-full flex justify-between items-center py-2 bg-transparent border-none cursor-pointer outline-none font-bold text-xs hover:text-[#686DF4] transition-colors"
+                    className="w-full flex justify-between items-center py-2 bg-transparent border-none cursor-pointer outline-none font-bold text-xs hover:text-[#686CFA] transition-colors"
                   >
                     <span className="font-display font-semibold tracking-tight text-slate-800">Woran liegt das? Mögliche Ursachen anzeigen</span>
                     <span>
-                      {diagnoseOpen ? <ChevronUp className="w-4 h-4 text-[#686DF4]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+                      {diagnoseOpen ? <ChevronUp className="w-4 h-4 text-[#686CFA]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
                     </span>
                   </button>
 
@@ -431,7 +431,7 @@ export default function LeadGenerationScore() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 Ergebnis besprechen <ArrowRight className="w-4 h-4 text-white" />
               </button>

@@ -50,7 +50,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Workflows, Integrationen, Ereignisse',
     desc: 'Die Verbindungen zwischen den Systemen: Workflows, Webhooks, Integrationsplattformen und die Regeln, welches System bei einem Widerspruch recht hat.',
     examples: ['n8n, Make, Zapier, Windmill', 'Webhooks und APIs', 'Synchronisation', 'Event-Routing'],
-    service: { href: '/leistungen/technologie-automation', label: 'MarTech & Automatisierung' },
+    service: { href: '/leistungen/prozesse', label: 'Processes: Systeme und Automatisierung' },
   },
   {
     id: 'daten',
@@ -59,7 +59,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Erfassung, Pipelines, Warehouse',
     desc: 'Wie Ereignisse erfasst, geprüft und gespeichert werden: Tagging im Browser und auf dem Server, Pipelines, Data Warehouse und Customer Data Platform.',
     examples: ['Tag Manager und Server-Side Tagging', 'GA4 und Ereignismodelle', 'Data Warehouse', 'CDP und Reverse ETL'],
-    service: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    service: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     id: 'systeme',
@@ -169,7 +169,7 @@ Dienste wie Stape übernehmen das Hosting des Containers. Wer bemerkt, dass seit
       { label: 'Meta: Pixel- und Server-Events deduplizieren', url: 'https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events' },
       { label: 'Stape: About', url: 'https://stape.io/about-us' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'composable-cdp',
@@ -208,7 +208,7 @@ Die MarTech-Landschaft 2026 von chiefmartec wird unter anderem von Hightouch ges
       { label: 'Fivetran: Übernahme von Census', url: 'https://www.fivetran.com/press/fivetran-signs-agreement-to-acquire-census-delivering-the-first-end-to-end-data-movement-platform-for-the-ai-era' },
       { label: 'chiefmartec: Marketing Technology Landscape 2026', url: 'https://chiefmartec.com/2026-marketing-technology-landscape/' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'integration-ist-keine-architektur',
@@ -281,7 +281,7 @@ Die Formularstrecke dieser Website bestätigt eine Anfrage, sobald sie gespeiche
       { label: 'Stripe: Webhooks', url: 'https://docs.stripe.com/webhooks' },
       { label: 'Meta: Pixel- und Server-Events deduplizieren', url: 'https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events' },
     ],
-    related: { href: '/leistungen/marketing-automation', label: 'Marketing Automation & CRM' },
+    related: { href: '/leistungen/marketing-automation', label: 'CRM & Marketing Automation' },
   },
   {
     slug: 'attribution-inkrementalitaet-mmm',
@@ -329,7 +329,7 @@ Ein MMM lohnt sich erst ab einem gewissen Budget und mehreren Kanälen. Für kle
       { label: 'Google: Meridian, Marketing-Mix-Modell für alle verfügbar', url: 'https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/' },
       { label: 'GitHub: LightweightMMM (archiviert)', url: 'https://github.com/google/lightweight_mmm' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'mcp-berechtigungen',
@@ -446,7 +446,7 @@ Bevor man Sichtbarkeit misst, sollte die Grundlage stimmen: klare, strukturierte
       { label: 'Otterly.AI', url: 'https://otterly.ai' },
       { label: 'SparkToro: AIs are highly inconsistent when recommending brands', url: 'https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/' },
     ],
-    related: { href: '/leistungen/wachstum-marketing', label: 'Wachstum & Marketing (SEO und GEO)' },
+    related: { href: '/leistungen/marketing', label: 'Marketing (SEO und GEO)' },
   },
   {
     slug: 'open-source-lizenzen',

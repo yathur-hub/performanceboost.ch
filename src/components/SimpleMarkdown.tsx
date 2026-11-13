@@ -30,7 +30,7 @@ export function SimpleMarkdown({ text }: { text: string }) {
             <ul key={i} className="space-y-2.5">
               {block.split('\n').map((li, j) => (
                 <li key={j} className="flex gap-3 text-body text-slate-700 leading-relaxed">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#686DF4] shrink-0 mt-2.5" aria-hidden="true" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#686CFA] shrink-0 mt-2.5" aria-hidden="true" />
                   <span>{renderInline(li.replace(/^- /, ''))}</span>
                 </li>
               ))}

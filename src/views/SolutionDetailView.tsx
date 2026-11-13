@@ -45,7 +45,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         </p>
         <button
           onClick={() => onNavigate('/')}
-          className="bg-[#696EEF] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer hover:bg-[#5a5fe0]"
+          className="bg-[#686CFA] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer hover:bg-[#5a5fe0]"
         >
           Zurück zur Startseite
         </button>
@@ -67,7 +67,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         <div className="max-w-7xl mx-auto space-y-6">
           <button
             onClick={() => onNavigate('/loesungen')}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686DF4] hover:text-[#686DF4]/80 transition-colors uppercase tracking-widest cursor-pointer mb-2 bg-transparent border-none"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#686CFA]/80 transition-colors uppercase tracking-widest cursor-pointer mb-2 bg-transparent border-none"
           >
             <ArrowLeft className="w-4 h-4" /> Alle Branchen
           </button>
@@ -136,7 +136,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-8 text-left">
             {sector.approach.map((step, idx) => (
               <div key={idx} className="space-y-3 relative">
-                <span aria-hidden="true" className="absolute -top-3 right-0 text-3xl font-black font-mono text-[#686DF4]/20">
+                <span aria-hidden="true" className="absolute -top-3 right-0 text-3xl font-black font-mono text-[#686CFA]/20">
                   {step.step}
                 </span>
                 <h3 className="text-sm font-bold text-white tracking-tight">{step.title}</h3>
@@ -171,7 +171,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <Link
             key={rel.href}
             href={rel.href}
-            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 shadow-sm text-left hover:border-[#686DF4]/50 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 shadow-sm text-left hover:border-[#686CFA]/50 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
           >
             <div className="space-y-1.5">
               <h2 className="text-lg font-display font-semibold text-slate-900 tracking-tight">{rel.title}</h2>
@@ -196,12 +196,12 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             <div key={idx} className="border-b border-slate-100 last:border-none pb-4 last:pb-0 pt-3">
               <button
                 onClick={() => toggleFaq(idx)}
-                className="w-full flex justify-between items-center text-left font-bold text-slate-900 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer bg-transparent border-none py-1"
+                className="w-full flex justify-between items-center text-left font-bold text-slate-900 text-sm sm:text-base hover:text-[#686CFA] transition-colors cursor-pointer bg-transparent border-none py-1"
               >
                 <span className="flex items-center gap-2.5">
-                  <HelpCircle className="w-4 h-4 text-[#686DF4] shrink-0" /> {faq.q}
+                  <HelpCircle className="w-4 h-4 text-[#686CFA] shrink-0" /> {faq.q}
                 </span>
-                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-[#686DF4]' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-[#686CFA]' : ''}`} />
               </button>
               <AnimatePresence initial={false}>
                 {openFaq === idx && (

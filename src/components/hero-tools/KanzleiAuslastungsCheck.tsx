@@ -151,7 +151,7 @@ export default function KanzleiAuslastungsCheck() {
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihre Kanzlei ist nach Ihren Angaben sehr effizient organisiert, mit wenig administrativem Aufwand. Weiteres Wachstum kommt dann vor allem über zusätzliche Anwältinnen und Anwälte, sofern genug Mandate vorhanden sind.',
       rec: 'Juristische Fachkräfte gezielt ansprechen und die Kanzlei schrittweise vergrössern.',
@@ -163,7 +163,7 @@ export default function KanzleiAuslastungsCheck() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Kanzleien</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Kanzleien</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kanzlei-Auslastungs-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viel Honorarumsatz durch administrative Arbeit in Ihrer Kanzlei verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -176,7 +176,7 @@ export default function KanzleiAuslastungsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Juristen / Partner (Vollzeit)</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.anwaelte}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.anwaelte}</span>
             </label>
             <input aria-label="Juristen / Partner (Vollzeit)"
               type="number"
@@ -192,7 +192,7 @@ export default function KanzleiAuslastungsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø abrechenbare Stunden / Woche</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.billable_stunden}h</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.billable_stunden}h</span>
             </label>
             <input aria-label="Ø abrechenbare Stunden / Woche"
               type="range"
@@ -201,7 +201,7 @@ export default function KanzleiAuslastungsCheck() {
               step={1}
               value={inputs.billable_stunden}
               onChange={(e) => handleInputChange('billable_stunden', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert (Annahme): 32 h abrechenbare Zeit pro Woche und Person</p>
           </div>
@@ -209,7 +209,7 @@ export default function KanzleiAuslastungsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Administration / Woche</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.admin_stunden}h</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.admin_stunden}h</span>
             </label>
             <input aria-label="Ø Administration / Woche"
               type="range"
@@ -218,7 +218,7 @@ export default function KanzleiAuslastungsCheck() {
               step={1}
               value={inputs.admin_stunden}
               onChange={(e) => handleInputChange('admin_stunden', parseInt(e.target.value) || 2)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Nicht abrechenbare Büroarbeiten, Akquise & Organisation</p>
           </div>
@@ -226,7 +226,7 @@ export default function KanzleiAuslastungsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Stundensatz (CHF)</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.stundensatz)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.stundensatz)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Stundensatz (CHF)"
@@ -325,7 +325,7 @@ export default function KanzleiAuslastungsCheck() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

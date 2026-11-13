@@ -217,7 +217,7 @@ export default function DataClarityCheck() {
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <PieChart className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <PieChart className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Daten-Check: Wie gut kennen Sie Ihre Zahlen?
           </h3>
@@ -434,7 +434,7 @@ export default function DataClarityCheck() {
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.2 }}
                               >
-                                <div className="mt-3 p-3.5 bg-blue-50/50 border border-blue-105 border-indigo-150/15 text-xs text-[#686DF4] rounded-xl font-bold leading-relaxed font-sans">
+                                <div className="mt-3 p-3.5 bg-blue-50/50 border border-blue-105 border-indigo-150/15 text-xs text-[#686CFA] rounded-xl font-bold leading-relaxed font-sans">
                                   {bs.naechster_schritt}
                                 </div>
                               </motion.div>
@@ -467,7 +467,7 @@ export default function DataClarityCheck() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 {activeBlindspots.length === 0 ? "Ergebnis besprechen" : "Erstgespräch vereinbaren"} <ArrowRight className="w-4 h-4 text-white" />
               </button>

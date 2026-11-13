@@ -150,7 +150,7 @@ export default function AuftragsPipelineRechner() {
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Sie machen nach Ihren Angaben bereits sehr viel aus Ihren Anfragen. Der nächste Schritt: gezielt mehr Anfragen für die Projekte gewinnen, die Sie am liebsten ausführen.',
       rec: 'Sichtbarkeit gezielt auf lukrative Projekte wie Umbau oder Sanierung ausrichten.',
@@ -162,7 +162,7 @@ export default function AuftragsPipelineRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left font-sans">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Handwerk</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Handwerk</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Auftrags-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viel Umsatz zwischen Anfrage, Offerte und Auftrag verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -175,7 +175,7 @@ export default function AuftragsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Anfragen pro Monat</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.anfragen}</span>
             </label>
             <input aria-label="Anfragen pro Monat"
               type="number"
@@ -191,7 +191,7 @@ export default function AuftragsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Angebotsquote (Offerten / Anfragen)</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.offerten_quote}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.offerten_quote}%</span>
             </label>
             <input aria-label="Angebotsquote (Offerten / Anfragen)"
               type="range"
@@ -200,7 +200,7 @@ export default function AuftragsPipelineRechner() {
               step={5}
               value={inputs.offerten_quote}
               onChange={(e) => handleInputChange('offerten_quote', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert (Annahme): 80% der Anfragen erhalten eine schriftliche Offerte</p>
           </div>
@@ -208,7 +208,7 @@ export default function AuftragsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Zuschlagsquote (Aufträge / Offerten)</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.zuschlag_quote}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.zuschlag_quote}%</span>
             </label>
             <input aria-label="Zuschlagsquote (Aufträge / Offerten)"
               type="range"
@@ -217,7 +217,7 @@ export default function AuftragsPipelineRechner() {
               step={1}
               value={inputs.zuschlag_quote}
               onChange={(e) => handleInputChange('zuschlag_quote', parseInt(e.target.value) || 5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Richtwert (Annahme): 35% der Offerten führen zum Auftrag</p>
           </div>
@@ -225,7 +225,7 @@ export default function AuftragsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Projektwert (CHF)</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.projektwert)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.projektwert)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Projektwert (CHF)"
@@ -324,7 +324,7 @@ export default function AuftragsPipelineRechner() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

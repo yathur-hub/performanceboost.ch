@@ -75,7 +75,7 @@ export default function DemandPipelineGap() {
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <Calculator className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <Calculator className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Rechner: Wie viele Anfragen fehlen Ihnen?
           </h3>
@@ -107,7 +107,7 @@ export default function DemandPipelineGap() {
                 placeholder="z. B. 5"
                 value={neukunden}
                 onChange={e => handleFieldChange('neukunden', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Neukunden / Mt.
@@ -126,7 +126,7 @@ export default function DemandPipelineGap() {
             <select aria-label="Wie hoch ist Ihre Abschlussquote (Lead → Kunde)?"
               value={abschlussrate}
               onChange={e => handleFieldChange('abschlussrate', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-750 text-slate-800 transition-colors cursor-pointer shadow-xs"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-750 text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
               <option value="0.01">1%</option>
@@ -153,7 +153,7 @@ export default function DemandPipelineGap() {
                 placeholder="z. B. 20"
                 value={aktuelleLeads}
                 onChange={e => handleFieldChange('aktuelleLeads', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Leads / Mt.
@@ -174,7 +174,7 @@ export default function DemandPipelineGap() {
                 placeholder="z. B. 5'000"
                 value={auftragswert}
                 onChange={e => handleFieldChange('auftragswert', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 CHF
@@ -302,7 +302,7 @@ export default function DemandPipelineGap() {
               <div className="pt-5 mt-6 border-t border-slate-200/40">
                 <button
                   onClick={handleBooking}
-                  className="w-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-6 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-xs text-[#f6f6f6]"
+                  className="w-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-6 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-xs text-[#f6f6f6]"
                 >
                   {results.istAufKurs ? "Nächste Schritte besprechen: kostenlos, 30 Min." : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
                 </button>

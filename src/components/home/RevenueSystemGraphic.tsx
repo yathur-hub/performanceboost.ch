@@ -1,383 +1,303 @@
 /**
- * @license
- * SPDX-License-Identifier: Apache-2.0
+ * Systemdiagramm der Startseite: Marketing, Sales und Ergebnis bilden einen Kreislauf,
+ * Processes (Systeme, Daten, Automatisierung) ist der Kern, der alle drei verbindet.
+ * Agenten arbeiten auf den Verbindungen zwischen Kern und Bereichen, ein Mensch gibt frei.
+ *
+ * Konzept: docs/agentic-positioning/01, Kapitel 6. Desktop als skalierendes SVG, mobil als gestapelte Karten
+ * mit Prozess-Schiene. Ein Klick (oder Fokus) auf einen Knoten zeigt darunter, was dort passiert,
+ * was Agenten übernehmen und wer entscheidet. Das Detailfeld ist zugleich die Textalternative.
  */
+import React, { useState } from 'react';
+import { ArrowRight, ArrowDown, Bot, ShieldCheck, RotateCcw } from 'lucide-react';
+import Link from '../Link';
 
-'use client';
+type NodeId = 'marketing' | 'sales' | 'ergebnis' | 'prozesse';
 
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useInView } from 'motion/react';
-import { Zap, Target, Settings, Users, TrendingUp } from 'lucide-react';
-
-interface NodeData {
-  id: string;
-  number: string;
+interface NodeInfo {
+  id: NodeId;
   title: string;
   sub: string;
-  icon: React.ComponentType<{ className?: string }>;
-  position: 'center-top' | 'center-mid' | 'left-lower' | 'right-lower' | 'center-bottom';
-  left: number;
-  top: number;
-  width: number;
-  highlight?: boolean;
+  what: string;
+  agent: string;
+  human: string;
+  href: string;
+  linkText: string;
 }
 
-const nodes: NodeData[] = [
-  {
-    id: 'demand',
-    number: '01',
-    title: 'Gefunden werden',
-    sub: 'Google · LinkedIn · SEO · Inhalte',
-    icon: Zap,
-    position: 'center-top',
-    left: 116,
-    top: 13,
-    width: 228,
+const NODES: Record<NodeId, NodeInfo> = {
+  marketing: {
+    id: 'marketing',
+    title: 'Marketing',
+    sub: 'Nachfrage gewinnen',
+    what: 'Ihr Unternehmen wird gefunden, überzeugt und gewinnt Anfragen. Jede Anfrage geht mit Quelle und Kontext an den Vertrieb.',
+    agent: 'Kampagnen überwachen, Inhalte vorbereiten, Anfragen mit Firmendaten anreichern.',
+    human: 'Budget und Veröffentlichungen gibt Ihr Team frei.',
+    href: '/leistungen/marketing',
+    linkText: 'Zu Marketing',
   },
-  {
-    id: 'leads',
-    number: '02',
-    title: 'Anfragen gewinnen',
-    sub: 'Website · Landingpages · Formulare',
-    icon: Target,
-    position: 'center-mid',
-    left: 116,
-    top: 138,
-    width: 228,
-  },
-  {
-    id: 'automation',
-    number: '03',
-    title: 'Aufträge abschliessen',
-    sub: 'CRM · Übergaben · Offerten',
-    icon: Settings,
-    position: 'left-lower',
-    left: 0,
-    top: 268,
-    width: 224,
-  },
-  {
+  sales: {
     id: 'sales',
-    number: '04',
-    title: 'Abwickeln und betreuen',
-    sub: 'Abläufe · Schnittstellen · Kundenbindung',
-    icon: Users,
-    position: 'right-lower',
-    left: 236,
-    top: 268,
-    width: 224,
+    title: 'Sales',
+    sub: 'Qualifizieren und abschliessen',
+    what: 'Anfragen werden eingeordnet, beantwortet und in Offerten und Aufträge verwandelt. Der Vertrieb meldet zurück, welche Anfragen zu Aufträgen werden.',
+    agent: 'Anfragen vorqualifizieren, Gespräche mit Recherche vorbereiten, Nachfassen entwerfen.',
+    human: 'Gespräch, Offerte und Entscheid bleiben beim Vertrieb.',
+    href: '/leistungen/sales',
+    linkText: 'Zu Sales',
   },
-  {
-    id: 'revenue',
-    number: '05',
-    title: 'Steuern',
-    sub: 'Tracking · Dashboards · Kennzahlen',
-    icon: TrendingUp,
-    position: 'center-bottom',
-    left: 116,
-    top: 408,
-    width: 228,
-    highlight: true,
+  ergebnis: {
+    id: 'ergebnis',
+    title: 'Ergebnis',
+    sub: 'Aufträge, Umsatz, Kunden',
+    what: 'Aufträge, Umsatz und Kunden, die bleiben. Die Zahlen fliessen zurück und zeigen, welche Kanäle, Botschaften und Abläufe wirken.',
+    agent: 'Kennzahlen aus allen Systemen zusammenführen und auf Abweichungen hinweisen.',
+    human: 'Prioritäten für den nächsten Schritt setzt die Geschäftsleitung.',
+    href: '/ansatz',
+    linkText: 'Wie wir laufend verbessern',
   },
-];
-
-const connectionLines = [
-  { id: 'l1', d: 'M 230 50 L 230 175', from: 'demand', to: 'leads', delay: 0 },
-  { id: 'l2', d: 'M 230 175 L 112 305', from: 'leads', to: 'automation', delay: 0.5 },
-  { id: 'l3', d: 'M 230 175 L 348 305', from: 'leads', to: 'sales', delay: 1.0 },
-  { id: 'l4', d: 'M 112 305 L 230 445', from: 'automation', to: 'revenue', delay: 1.5 },
-  { id: 'l5', d: 'M 348 305 L 230 445', from: 'sales', to: 'revenue', delay: 2.0 },
-];
-
-const nodeLineConnections: Record<string, string[]> = {
-  demand: ['l1'],
-  leads: ['l1', 'l2', 'l3'],
-  automation: ['l2', 'l4'],
-  sales: ['l3', 'l5'],
-  revenue: ['l4', 'l5'],
+  prozesse: {
+    id: 'prozesse',
+    title: 'Processes',
+    sub: 'Systeme · Daten · Automatisierung',
+    what: 'Website, CRM, E-Mail, Offerte und Reporting sind verbunden. Daten werden nur einmal erfasst, Übergaben laufen automatisch, und alle arbeiten mit denselben Zahlen.',
+    agent: 'Daten nach festen Regeln übertragen, Ausnahmen prüfen, Berichte erstellen.',
+    human: 'Was nach aussen geht, Geld kostet oder Daten löscht, gibt ein Mensch frei.',
+    href: '/leistungen/prozesse',
+    linkText: 'Zu Processes',
+  },
 };
 
-const nodeVariants = {
-  hidden: { opacity: 0, y: 16, scale: 0.97 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: i * 0.12,
-      duration: 0.5,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  }),
+/** Welche Verbindungen beim Auswählen eines Knotens hervorgehoben werden. */
+const EDGES_OF: Record<NodeId, string[]> = {
+  marketing: ['ms', 'sm', 'em', 'spoke-m'],
+  sales: ['ms', 'sm', 'se', 'spoke-s'],
+  ergebnis: ['se', 'em', 'spoke-e'],
+  prozesse: ['spoke-m', 'spoke-s', 'spoke-e'],
 };
+
+const ACCENT = '#686CFA';
+const SOFT = '#CBCBFC';
+const LINE = '#E0E0E0';
+const TEXT = '#4F4F4F';
 
 export function RevenueSystemGraphic() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.15 });
-  const [hoveredNodeId, setHoveredNodeId] = useState<string | null>(null);
-  const [scale, setScale] = useState<number>(1);
+  const [selected, setSelected] = useState<NodeId>('prozesse');
+  const info = NODES[selected];
+  const lit = (edge: string) => EDGES_OF[selected].includes(edge);
 
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const updateScale = () => {
-      if (containerRef.current) {
-        const width = containerRef.current.clientWidth;
-        if (width > 0 && width < 460) {
-          setScale(width / 460);
-        } else {
-          setScale(1);
-        }
+  const nodeProps = (id: NodeId) => ({
+    role: 'button',
+    tabIndex: 0,
+    'aria-pressed': selected === id,
+    'aria-label': `${NODES[id].title}: ${NODES[id].sub}`,
+    onClick: () => setSelected(id),
+    onFocus: () => setSelected(id),
+    onKeyDown: (e: React.KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setSelected(id);
       }
-    };
+    },
+    className: 'cursor-pointer outline-none [&:focus-visible>rect:first-child]:stroke-[3]',
+  });
 
-    updateScale();
-    const observer = new ResizeObserver(updateScale);
-    observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const isLineActive = (lineId: string) => {
-    if (!hoveredNodeId) return false;
-    return nodeLineConnections[hoveredNodeId]?.includes(lineId);
-  };
-
-  const hasAnyHover = hoveredNodeId !== null;
+  const edgeStroke = (edge: string) => (lit(edge) ? ACCENT : '#B9BBF0');
+  const edgeOpacity = (edge: string) => (lit(edge) ? 1 : 0.55);
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full relative select-none flex justify-center items-center overflow-hidden"
-      aria-hidden="true"
-    >
-      {/* 1. Desktop & Tablet Flow Layout (md+) with dynamic auto-scaling */}
-      <div 
-        className="hidden md:block relative shrink-0 transition-all duration-300"
-        style={{ 
-          width: Math.floor(460 * scale),
-          height: Math.floor(520 * scale),
-          contentVisibility: 'auto' 
-        }}
-      >
-        <div 
-          className="relative w-[460px] h-[520px] origin-top-left"
-          style={{ transform: `scale(${scale})` }}
-        >
-          {/* SVG Overlay behind cards */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none"
-            viewBox="0 0 460 520"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Arrow marker definition */}
-            <defs>
-              <marker
-                id="feedback-arrow"
-                viewBox="0 0 10 10"
-                refX="6"
-                refY="5"
-                markerWidth="6"
-                markerHeight="6"
-                orient="auto-start-reverse"
-              >
-                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#686DF4" fillOpacity="0.4" />
-              </marker>
-            </defs>
+    <figure className="w-full min-w-0 space-y-5">
+      {/* DESKTOP UND TABLET: SVG skaliert mit der Breite */}
+      <div className="hidden sm:block">
+        <svg viewBox="0 0 600 500" className="w-full h-auto select-none" role="group" aria-label="Marketing, Sales und Processes als ein System">
+          <defs>
+            <marker id="sys-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9 z" fill={ACCENT} />
+            </marker>
+            <marker id="sys-arrow-soft" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9 z" fill="#B9BBF0" />
+            </marker>
+            <radialGradient id="sys-core" cx="50%" cy="45%" r="60%">
+              <stop offset="0%" stopColor="#FFFFFF" />
+              <stop offset="100%" stopColor={SOFT} stopOpacity="0.55" />
+            </radialGradient>
+          </defs>
 
-            {/* Feedback-Loop (05 -> 01) - geschwungen rechts aussen */}
-            <path
-              d="M 335 445 C 445 445, 445 50, 335 50"
-              stroke="#686DF4"
-              strokeWidth="1.5"
-              strokeDasharray="4 4"
-              strokeOpacity={hasAnyHover ? (hoveredNodeId === 'revenue' || hoveredNodeId === 'demand' ? 0.35 : 0.08) : 0.18}
-              className="transition-all duration-300"
-              markerEnd="url(#feedback-arrow)"
-            />
+          {/* Speichen: Datenflüsse zwischen Kern und Bereichen */}
+          {[
+            { id: 'spoke-m', d: 'M 300 255 L 132 129' },
+            { id: 'spoke-s', d: 'M 300 255 L 468 129' },
+            { id: 'spoke-e', d: 'M 300 255 L 300 411' },
+          ].map((s) => (
+            <path key={s.id} d={s.d} stroke={lit(s.id) ? ACCENT : SOFT} strokeWidth={lit(s.id) ? 2 : 1.5} fill="none" className="flow-dash transition-all duration-300" />
+          ))}
 
-            {/* Connecting lines */}
-            {connectionLines.map((line) => {
-              const active = isLineActive(line.id);
-              return (
-                <path
-                  key={line.id}
-                  d={line.d}
-                  stroke="#686DF4"
-                  strokeWidth={active ? '2' : '1.5'}
-                  strokeOpacity={hasAnyHover ? (active ? 0.65 : 0.08) : 0.22}
+          {/* Kreislauf: Marketing → Sales → Ergebnis → Marketing, plus Rückmeldung Sales → Marketing */}
+          <g fill="none" strokeWidth="1.75" className="transition-all duration-300">
+            <path d="M 194 84 L 404 84" stroke={edgeStroke('ms')} opacity={edgeOpacity('ms')} markerEnd={lit('ms') ? 'url(#sys-arrow)' : 'url(#sys-arrow-soft)'} />
+            <path d="M 406 108 L 196 108" stroke={edgeStroke('sm')} opacity={edgeOpacity('sm')} strokeDasharray="5 5" markerEnd={lit('sm') ? 'url(#sys-arrow)' : 'url(#sys-arrow-soft)'} />
+            <path d="M 500 131 C 505 300, 460 420, 396 444" stroke={edgeStroke('se')} opacity={edgeOpacity('se')} markerEnd={lit('se') ? 'url(#sys-arrow)' : 'url(#sys-arrow-soft)'} />
+            <path d="M 206 446 C 140 420, 95 300, 100 133" stroke={edgeStroke('em')} opacity={edgeOpacity('em')} strokeDasharray="5 5" markerEnd={lit('em') ? 'url(#sys-arrow)' : 'url(#sys-arrow-soft)'} />
+          </g>
+          <g fontFamily="Inter, sans-serif" fontSize="11.5" fill={TEXT}>
+            <text x="300" y="74" textAnchor="middle" fontWeight="600">Anfragen mit Kontext</text>
+            <text x="300" y="127" textAnchor="middle">Rückmeldung: was zu Aufträgen wird</text>
+            <text x="464" y="318" textAnchor="end" fontWeight="600">Aufträge</text>
+            <text x="136" y="312" textAnchor="start" fontWeight="600">Daten &amp;</text>
+            <text x="136" y="327" textAnchor="start" fontWeight="600">Feedback</text>
+          </g>
+
+          {/* Agentic AI: Umlaufbahn um den Kern mit einem Agenten je Verbindung */}
+          <circle cx="300" cy="255" r="110" fill="none" stroke={ACCENT} strokeOpacity="0.35" strokeDasharray="2 5" />
+          <text x="300" y="166" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9.5" fontWeight="700" letterSpacing="1.5" fill={ACCENT}>
+            AGENTIC AI
+          </text>
+          {[
+            { id: 'spoke-m', x: 212, y: 189 },
+            { id: 'spoke-s', x: 388, y: 189 },
+            { id: 'spoke-e', x: 300, y: 365 },
+          ].map((a) => (
+            <g key={a.id} aria-hidden="true">
+              <circle cx={a.x} cy={a.y} r="13" fill={ACCENT} className="agent-pulse" />
+              <circle cx={a.x} cy={a.y} r="12" fill="#FFFFFF" stroke={ACCENT} strokeWidth={lit(a.id) ? 2 : 1.25} />
+              <path
+                d={`M ${a.x} ${a.y - 6.5} L ${a.x + 1.8} ${a.y - 1.8} L ${a.x + 6.5} ${a.y} L ${a.x + 1.8} ${a.y + 1.8} L ${a.x} ${a.y + 6.5} L ${a.x - 1.8} ${a.y + 1.8} L ${a.x - 6.5} ${a.y} L ${a.x - 1.8} ${a.y - 1.8} Z`}
+                fill={ACCENT}
+              />
+            </g>
+          ))}
+
+          {/* Kern: Processes */}
+          <g {...nodeProps('prozesse')}>
+            <circle cx="300" cy="255" r="78" fill="url(#sys-core)" stroke={ACCENT} strokeWidth={selected === 'prozesse' ? 2.5 : 1.25} className="transition-all duration-300" />
+            <text x="300" y="242" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="19" fontWeight="700" fill="#1e1e2a">Processes</text>
+            <text x="300" y="262" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={TEXT}>Systeme · Daten</text>
+            <text x="300" y="277" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={TEXT}>Automatisierung</text>
+          </g>
+
+          {/* Bereiche und Ergebnis */}
+          {[
+            { id: 'marketing' as const, x: 10, y: 63 },
+            { id: 'sales' as const, x: 410, y: 63 },
+            { id: 'ergebnis' as const, x: 210, y: 413 },
+          ].map((n) => {
+            const isResult = n.id === 'ergebnis';
+            const active = selected === n.id;
+            return (
+              <g key={n.id} {...nodeProps(n.id)}>
+                <rect
+                  x={n.x}
+                  y={n.y}
+                  width="180"
+                  height="66"
+                  rx="18"
+                  fill={isResult ? ACCENT : '#FFFFFF'}
+                  stroke={active ? ACCENT : isResult ? ACCENT : LINE}
+                  strokeWidth={active ? 2.5 : 1.25}
                   className="transition-all duration-300"
+                  style={{ filter: active ? 'drop-shadow(0 10px 18px rgba(104,108,250,0.25))' : undefined }}
                 />
-              );
-            })}
+                <text x={n.x + 90} y={n.y + 29} textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="17" fontWeight="700" fill={isResult ? '#FFFFFF' : '#1e1e2a'}>
+                  {NODES[n.id].title}
+                </text>
+                <text x={n.x + 90} y={n.y + 48} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={isResult ? '#EEEEFE' : TEXT}>
+                  {NODES[n.id].sub}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
 
-            {/* Flow Particles along each path using standard SVG animate tags */}
-            {connectionLines.map((line) => {
-              const active = isLineActive(line.id);
+      {/* MOBIL: gestapelte Karten, Processes als durchgehende Schiene */}
+      <div className="sm:hidden">
+        <div className="relative pl-12">
+          <div className="absolute left-0 top-0 bottom-0 w-9 rounded-2xl bg-[#CBCBFC]/45 border border-[#686CFA]/30 flex items-center justify-center" aria-hidden="true">
+            <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-[#4f54d6]">
+              Processes · Daten · Agenten
+            </span>
+          </div>
+          <ol className="space-y-2">
+            {(['marketing', 'sales', 'ergebnis'] as const).map((id, i) => {
+              const n = NODES[id];
+              const active = selected === id;
+              const isResult = id === 'ergebnis';
               return (
-                <circle key={`particle-${line.id}`} r={active ? 3.5 : 2.5} fill="#686DF4">
-                  <animateMotion
-                    dur="2.8s"
-                    repeatCount="indefinite"
-                    path={line.d}
-                    begin={`${line.delay}s`}
-                  />
-                  <animate
-                    attributeName="fill-opacity"
-                    values="0.1;0.9;0.9;0.1"
-                    dur="2.8s"
-                    repeatCount="indefinite"
-                    begin={`${line.delay}s`}
-                  />
-                </circle>
+                <li key={id} className="relative">
+                  <span className="absolute -left-3 top-1/2 w-3 border-t border-dashed border-[#686CFA]/60" aria-hidden="true" />
+                  <button
+                    type="button"
+                    onClick={() => setSelected(id)}
+                    aria-pressed={active}
+                    className={`w-full text-left rounded-2xl border px-4 py-3 transition-all ${
+                      isResult ? 'bg-[#686CFA] border-[#686CFA] text-white' : active ? 'bg-white border-[#686CFA]' : 'bg-white border-[#E0E0E0]'
+                    }`}
+                  >
+                    <span className="flex items-center justify-between gap-3">
+                      <span>
+                        <span className={`block font-display font-semibold ${isResult ? 'text-white' : 'text-slate-900'}`}>{n.title}</span>
+                        <span className={`block text-xs ${isResult ? 'text-white/85' : 'text-slate-500'}`}>{n.sub}</span>
+                      </span>
+                      {!isResult && (
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-[#686CFA] bg-[#686CFA]/10 rounded-full px-2 py-1">
+                          <Bot className="w-3 h-3" aria-hidden="true" /> Agent
+                        </span>
+                      )}
+                    </span>
+                  </button>
+                  {i < 2 && (
+                    <p className="flex items-center gap-1.5 py-1.5 pl-4 text-[11px] font-semibold text-slate-500">
+                      <ArrowDown className="w-3.5 h-3.5 text-[#686CFA]" aria-hidden="true" />
+                      {i === 0 ? 'Anfragen mit Kontext, Rückmeldung zurück' : 'Aufträge'}
+                    </p>
+                  )}
+                </li>
               );
             })}
-          </svg>
-
-          {/* Nodes layer */}
-          {nodes.map((node, index) => {
-            const Icon = node.icon;
-            const isHovered = hoveredNodeId === node.id;
-            const isDimmed = hasAnyHover && !isHovered;
-
-            return (
-              <motion.div
-                key={node.id}
-                custom={index}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-                variants={nodeVariants}
-                whileHover={{ scale: 1.03, y: -2 }}
-                onHoverStart={() => setHoveredNodeId(node.id)}
-                onHoverEnd={() => setHoveredNodeId(null)}
-                className={`absolute transition-all duration-300 rounded-2xl flex items-center p-3 gap-2.5 cursor-default border ${
-                  node.highlight
-                    ? 'bg-[#686DF4] border-transparent text-white shadow-[0_8px_24px_rgba(104,109,244,0.38)]'
-                    : 'bg-white border-slate-200/80 text-slate-805 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#686DF4]/40 hover:shadow-[0_4px_16px_rgba(104,109,244,0.08)]'
-                }`}
-                style={{
-                  left: node.left,
-                  top: node.top,
-                  width: node.width,
-                  opacity: isDimmed ? 0.65 : 1,
-                  zIndex: isHovered ? 30 : 10,
-                }}
-              >
-                {/* Pulse effect wrapper */}
-                {!node.highlight && (
-                  <motion.div
-                    className="absolute inset-0 rounded-2xl border border-[#686DF4]/20 pointer-events-none"
-                    animate={{
-                      scale: [1, 1.04, 1],
-                      opacity: [0.6, 0, 0.6],
-                    }}
-                    transition={{
-                      duration: 3.5,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                      delay: index * 0.7,
-                    }}
-                  />
-                )}
-
-                {/* Icon container */}
-                <div
-                  className={`w-8.5 h-8.5 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                    node.highlight
-                      ? 'bg-white/20 text-white'
-                      : 'bg-[#EEEEFF] text-[#686DF4]'
-                  }`}
-                >
-                  <Icon className="w-4.5 h-4.5" />
-                </div>
-
-                {/* Node texts */}
-                <div className="flex flex-col min-w-0 flex-1">
-                  <span
-                    className={`text-[11px] font-bold tracking-wider uppercase font-mono ${
-                      node.highlight ? 'text-white/70' : 'text-[#686DF4]'
-                    }`}
-                  >
-                    {node.number}
-                  </span>
-                  <span className={`text-[11.5px] font-bold tracking-tight leading-snug mb-0.5 ${
-                    node.highlight ? 'text-white' : 'text-slate-900'
-                  }`}>
-                    {node.title}
-                  </span>
-                  <span
-                    className={`text-[11px] font-medium tracking-normal leading-tight ${
-                      node.highlight ? 'text-white/85' : 'text-slate-500'
-                    }`}
-                  >
-                    {node.sub}
-                  </span>
-                </div>
-              </motion.div>
-            );
-          })}
+          </ol>
+          <p className="mt-2 flex items-center gap-1.5 pl-4 text-[11px] font-semibold text-slate-500">
+            <RotateCcw className="w-3.5 h-3.5 text-[#686CFA]" aria-hidden="true" /> Daten und Feedback fliessen zurück ins Marketing
+          </p>
+          <button
+            type="button"
+            onClick={() => setSelected('prozesse')}
+            aria-pressed={selected === 'prozesse'}
+            className={`mt-3 w-full text-left rounded-2xl border px-4 py-3 transition-all ${selected === 'prozesse' ? 'bg-white border-[#686CFA]' : 'bg-[#CBCBFC]/25 border-[#CBCBFC]'}`}
+          >
+            <span className="block font-display font-semibold text-slate-900">Processes</span>
+            <span className="block text-xs text-slate-500">Verbindet alle Stufen: Systeme, Daten, Automatisierung</span>
+          </button>
         </div>
       </div>
 
-      {/* 2. Mobile Responsive Stacking Layout (<md) */}
-      <div className="block md:hidden w-full max-w-sm px-1 py-2 relative">
-        {/* Simple vertical connection line running behind cards */}
-        <div className="absolute left-[31px] top-8 bottom-8 w-0.5 border-l-2 border-dashed border-[#686DF4]/20 z-0" />
-
-        <div className="space-y-3.5 relative z-10">
-          {nodes.map((node, index) => {
-            const Icon = node.icon;
-            return (
-              <motion.div
-                key={`mobile-${node.id}`}
-                initial={{ opacity: 0, x: -15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.45, delay: index * 0.1 }}
-                className={`flex items-center p-3 gap-2.5 rounded-2xl border ${
-                  node.highlight
-                    ? 'bg-[#686DF4] border-transparent text-white shadow-[0_6px_16px_rgba(104,109,244,0.3)]'
-                    : 'bg-white border-slate-200 text-slate-800 shadow-xs'
-                }`}
-              >
-                <div
-                  className={`w-8.5 h-8.5 rounded-xl flex items-center justify-center shrink-0 ${
-                    node.highlight
-                      ? 'bg-white/20 text-white'
-                      : 'bg-[#EEEEFF] text-[#686DF4]'
-                  }`}
-                >
-                  <Icon className="w-4.5 h-4.5" />
-                </div>
-
-                <div className="flex flex-col min-w-0 flex-1">
-                  <div className="flex items-center gap-1.5 mb-0.5">
-                    <span
-                      className={`text-[11px] font-extrabold tracking-wider font-mono ${
-                        node.highlight ? 'text-white/70' : 'text-[#686DF4]'
-                      }`}
-                    >
-                      {node.number}
-                    </span>
-                    <span className={`text-xs font-bold tracking-tight leading-tight ${
-                      node.highlight ? 'text-white' : 'text-slate-900'
-                    }`}>
-                      {node.title}
-                    </span>
-                  </div>
-                  <span
-                    className={`text-[11px] font-medium leading-tight ${
-                      node.highlight ? 'text-white/85' : 'text-slate-500'
-                    }`}
-                  >
-                    {node.sub}
-                  </span>
-                </div>
-              </motion.div>
-            );
-          })}
+      {/* Detail zum gewählten Knoten (zugleich Textalternative) */}
+      <figcaption aria-live="polite" className="rounded-3xl border border-[#E0E0E0] bg-[#f6f6f6]/60 p-5 sm:p-6">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <p className="font-display font-semibold text-slate-900">
+            {info.title} <span className="font-normal text-slate-500">· {info.sub}</span>
+          </p>
+          <p className="text-[11px] text-slate-400 hidden sm:block">Knoten anklicken für Details</p>
         </div>
-      </div>
-    </div>
+        <p className="mt-2 text-body-sm text-slate-700 leading-relaxed">{info.what}</p>
+        <dl className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="flex gap-2.5">
+            <Bot className="w-4 h-4 text-[#686CFA] shrink-0 mt-0.5" aria-hidden="true" />
+            <div>
+              <dt className="text-xs font-bold text-slate-900">Agenten übernehmen</dt>
+              <dd className="text-xs text-slate-600 leading-relaxed">{info.agent}</dd>
+            </div>
+          </div>
+          <div className="flex gap-2.5">
+            <ShieldCheck className="w-4 h-4 text-[#686CFA] shrink-0 mt-0.5" aria-hidden="true" />
+            <div>
+              <dt className="text-xs font-bold text-slate-900">Ihr Team entscheidet</dt>
+              <dd className="text-xs text-slate-600 leading-relaxed">{info.human}</dd>
+            </div>
+          </div>
+        </dl>
+        <Link href={info.href} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#4f54d6]">
+          {info.linkText} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+        </Link>
+      </figcaption>
+    </figure>
   );
 }
-

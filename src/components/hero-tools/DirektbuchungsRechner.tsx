@@ -143,7 +143,7 @@ export default function DirektbuchungsRechner() {
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Starker Direktvertrieb',
       desc: 'Ihr Anteil an Direktbuchungen ist hoch, die Marge bleibt also grösstenteils im Haus. Der nächste Schritt: den durchschnittlichen Zimmerpreis mit attraktiven Zusatzangeboten weiter anheben.',
       rec: 'Vor der Anreise automatisch Zusatzangebote für Wellness, Kulinarik und Erlebnisse anbieten.',
@@ -155,7 +155,7 @@ export default function DirektbuchungsRechner() {
   return (
     <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Hotellerie</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Hotellerie</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Direktbuchungs-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viel Provision Sie an Buchungsportale zahlen und was mehr Direktbuchungen sparen könnten. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -168,7 +168,7 @@ export default function DirektbuchungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Unterkunfts-Umsatz pro Monat</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.zimmerumsatz)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.zimmerumsatz)}</span>
             </label>
             <div className="relative">
               <input aria-label="Unterkunfts-Umsatz pro Monat"
@@ -188,7 +188,7 @@ export default function DirektbuchungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Anteil Buchungsportale (Booking & Co.)</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.ota_anteil}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.ota_anteil}%</span>
             </label>
             <input aria-label="Anteil Buchungsportale (Booking &amp; Co.)"
               type="range"
@@ -197,7 +197,7 @@ export default function DirektbuchungsRechner() {
               step={1}
               value={inputs.ota_anteil}
               onChange={(e) => handleInputChange('ota_anteil', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Anteil der Buchungen über Portale</p>
           </div>
@@ -205,7 +205,7 @@ export default function DirektbuchungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Portal-Provision</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.commission_fee}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.commission_fee}%</span>
             </label>
             <input aria-label="Portal-Provision"
               type="range"
@@ -214,7 +214,7 @@ export default function DirektbuchungsRechner() {
               step={0.5}
               value={inputs.commission_fee}
               onChange={(e) => handleInputChange('commission_fee', parseFloat(e.target.value) || 5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Beispielwert: häufig rund 15%</p>
           </div>
@@ -222,7 +222,7 @@ export default function DirektbuchungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ziel: Anteil, der direkt bucht</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.direkt_ziel}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.direkt_ziel}%</span>
             </label>
             <input aria-label="Ziel: Anteil, der direkt bucht"
               type="range"
@@ -231,7 +231,7 @@ export default function DirektbuchungsRechner() {
               step={5}
               value={inputs.direkt_ziel}
               onChange={(e) => handleInputChange('direkt_ziel', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Wie viel % der Portal-Gäste sollen künftig direkt buchen?</p>
           </div>
@@ -319,7 +319,7 @@ export default function DirektbuchungsRechner() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

@@ -85,7 +85,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
           </label>
           <div className="flex items-center gap-4">
             <input id="gc-quote" type="range" min={1} max={10} step={1} value={quote}
-              onChange={(e) => setQuote(e.target.value)} className="flex-1 accent-[#686DF4]" aria-describedby="gc-quote-hint" />
+              onChange={(e) => setQuote(e.target.value)} className="flex-1 accent-[#686CFA]" aria-describedby="gc-quote-hint" />
             <output htmlFor="gc-quote" className="w-14 text-right font-mono text-sm font-semibold text-slate-900">{quote} / 10</output>
           </div>
           <p id="gc-quote-hint" className="text-xs text-slate-500">Ihre eigene Schätzung genügt.</p>
@@ -99,7 +99,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
       <div className="bg-slate-950 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between gap-6" aria-live="polite">
         {result ? (
           <div className="space-y-4">
-            <p className="text-[11px] font-mono uppercase tracking-widest text-[#CACCFB]">Ihr Ergebnis</p>
+            <p className="text-[11px] font-mono uppercase tracking-widest text-[#CBCBFC]">Ihr Ergebnis</p>
             <p className="text-lg leading-relaxed">
               Für {result.mandates} zusätzliche Mandate pro Jahr brauchen Sie bei Ihrer Quote rund{' '}
               <strong className="text-white">{result.perMonth} zusätzliche Erstgespräche pro Monat</strong>.
@@ -113,7 +113,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
           </div>
         ) : (
           <div className="space-y-3">
-            <p className="text-[11px] font-mono uppercase tracking-widest text-[#CACCFB]">Ihr Ergebnis</p>
+            <p className="text-[11px] font-mono uppercase tracking-widest text-[#CBCBFC]">Ihr Ergebnis</p>
             <p className="text-slate-300">Geben Sie links die Zahl der Mandate ein, die Sie zusätzlich gewinnen möchten.</p>
           </div>
         )}
@@ -122,7 +122,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
             type="button"
             onClick={handleDiscuss}
             disabled={!result}
-            className="w-full min-h-12 bg-[#696EEF] text-white font-semibold text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full min-h-12 bg-[#686CFA] text-white font-semibold text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Ergebnis in 30 Minuten besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>

@@ -105,7 +105,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="button"
                   onClick={onClose}
                   aria-label="Schliessen"
-                  className="w-9 h-9 shrink-0 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#696EEF]"
+                  className="w-9 h-9 shrink-0 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#686CFA]"
                 >
                   <X className="w-4.5 h-4.5" />
                 </button>
@@ -117,7 +117,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 href={`mailto:${SITE.email}`}
                 className="sm:hidden border-t border-slate-100 px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-sm text-slate-600 inline-flex items-center gap-2"
               >
-                <Mail className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> Lieber per E-Mail? <span className="font-semibold text-slate-900">{SITE.email}</span>
+                <Mail className="w-4 h-4 text-[#686CFA]" aria-hidden="true" /> Lieber per E-Mail? <span className="font-semibold text-slate-900">{SITE.email}</span>
               </a>
             </div>
           </motion.div>
