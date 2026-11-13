@@ -11,6 +11,7 @@
  * Texte: Sie-Form, keine Zahlen oder Ergebnisse ohne belegten Kundenfall.
  */
 import { SERVICES } from './services';
+import type { BrandVisualId } from './visuals';
 
 export type AreaId = 'marketing' | 'sales' | 'prozesse' | 'ki-im-unternehmen';
 
@@ -47,7 +48,9 @@ export interface ServiceArea {
   /** Leistungen in Navigation und auf der Startseite (Standard: `services`). */
   menuServices?: string[];
   /** Was Agenten in diesem Bereich übernehmen und wo ein Mensch entscheidet. */
-  agentic?: { title: string; intro: string; items: { task: string; desc: string; human: string }[] };
+  agentic?: { title: string; intro: string; items: { task: string; desc: string; human: string }[]; visual?: BrandVisualId; visualCaption?: string };
+  /** Eigene Infografik mit kurzer Einordnung, direkt nach Ausgangslage und Zielen. */
+  insight?: { visual: BrandVisualId; title: string; text: string };
   /** Was jede der vier Phasen in diesem Bereich konkret bedeutet (Reihenfolge wie PHASES). */
   phaseExamples?: [string, string, string, string];
   /** Belege aus dem eigenen Betrieb (nur bestätigte Abläufe, keine Kundennamen, keine erfundenen Zahlen). */
@@ -103,6 +106,11 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     // Shop-Seiten bleiben erreichbar (Hub, Übersicht, Footer der Leistungsseiten), stehen aber nicht in Navigation und Startseite.
     menuServices: ['growth-strategy', 'demand-generation', 'lead-generation', 'data-analytics'],
+    insight: {
+      visual: 'messluecke-performance-marketing',
+      title: 'Gemessen wird oft nur bis zum Klick',
+      text: 'Ob eine Anzeige gesehen und angeklickt wurde, zeigt jedes Werbekonto. Ob daraus eine Anfrage oder ein Auftrag wurde, steht dort nicht. Wir verbinden Kampagnen, Website und CRM, damit die letzte Zeile nicht offen bleibt und das Budget dorthin fliesst, wo Aufträge entstehen.',
+    },
     agentic: {
       title: 'Wo Agenten im Marketing mitarbeiten',
       intro: 'Agenten übernehmen im Marketing Vorarbeit, die heute Zeit kostet. Was veröffentlicht wird und wohin das Budget fliesst, entscheidet Ihr Team.',
@@ -175,6 +183,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
         { task: 'Gespräche vorbereiten', desc: 'Vor einem Termin recherchiert ein Agent das Unternehmen und fasst die wichtigsten Informationen zusammen.', human: 'Was davon im Gespräch zählt, entscheidet Ihr Vertrieb.' },
         { task: 'Nachfassen vorbereiten', desc: 'Offene Offerten und ausstehende Rückmeldungen werden erkannt, ein Entwurf für die Nachricht liegt bereit.', human: 'Versendet wird erst nach Freigabe.' },
       ],
+      visual: 'reihenfolge-erst-dann-ki',
+      visualCaption: 'Bei der Bewertung von Anfragen gilt dieselbe Reihenfolge: zuerst klare Kriterien, dann eine einfache Regel und eine wöchentliche Durchsicht. KI kommt erst danach dazu.',
     },
     phaseExamples: [
       'Verkaufsphasen, Zuständigkeiten und die Definition einer qualifizierten Anfrage festlegen.',
@@ -238,6 +248,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
         { task: 'Ausnahmen bearbeiten', desc: 'Unvollständige oder unklare Fälle prüft ein Agent, ergänzt fehlende Angaben und schlägt das weitere Vorgehen vor.', human: 'Was er nicht sicher einordnen kann, geht an eine Person.' },
         { task: 'Berichte erstellen', desc: 'Kennzahlen aus mehreren Quellen werden zusammengeführt, Abweichungen erkannt und kurz erklärt.', human: 'Die Schlüsse zieht die Geschäftsleitung.' },
       ],
+      visual: 'agent-oder-workflow',
+      visualCaption: 'Lässt sich ein Ablauf als Liste aufschreiben, genügt ein fester Workflow. Ein Agent lohnt sich erst, wenn es zu viele Kombinationen gibt, und muss sich an den Kosten pro korrekt erledigtem Fall messen lassen.',
     },
     phaseExamples: [
       'Abläufe aufnehmen, Datenflüsse zeichnen und entscheiden, was automatisiert wird und was nicht.',
@@ -245,6 +257,11 @@ export const SERVICE_AREAS: ServiceArea[] = [
       'Ihr Team weiss, was automatisch passiert, wer bei Fehlern was tut und wie Regeln angepasst werden.',
       'Neue Kandidaten für Automatisierung prüfen, Fehlerquoten auswerten und Werkzeuge aktuell halten.',
     ],
+    insight: {
+      visual: 'was-zuerst-automatisieren',
+      title: 'Was zuerst automatisiert wird',
+      text: 'Wir ordnen jeden Ablauf nach Häufigkeit und nach den Kosten eines Fehlers. Häufige Abläufe mit geringen Fehlerkosten kommen zuerst. Wo ein Fehler teuer ist, automatisieren wir nur mit Freigabe, und seltene, heikle Fälle bleiben bei Ihrem Team.',
+    },
     practice: OWN_PRACTICE,
     topics: [
       { title: 'Prozessarchitektur', desc: 'Wer was wann tut und welche Systeme beteiligt sind, auf einer Seite festgehalten. Erst dann lohnt sich Automatisierung.' },

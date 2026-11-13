@@ -19,6 +19,7 @@ import { Container, CtaButton, FaqList, SectionHeading } from '../components/bp/
 import { AREAS, AGENTIC_LEVELS } from '../data/serviceAreas';
 import { PHASES } from '../data/approach';
 import { CHALLENGE_CARDS } from '../data/challenges';
+import { BrandVisual } from '../components/BrandVisual';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -150,12 +151,21 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 2 HERAUSFORDERUNGEN: Einstieg über das Geschäftsproblem */}
       <section>
         <Container className="space-y-10">
-          <motion.div {...reveal}>
-            <SectionHeading
-              title="Wo KMU heute Umsatz und Zeit verlieren"
-              intro="Selten liegt es an einem einzelnen Kanal oder Tool. Meist greifen Marketing, Vertrieb und Abläufe nicht sauber ineinander."
-            />
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+            <motion.div {...reveal} className="lg:col-span-8 space-y-5">
+              <SectionHeading
+                title="Wo KMU heute Umsatz und Zeit verlieren"
+                intro="Selten liegt es an einem einzelnen Kanal oder Tool. Meist greifen Marketing, Vertrieb und Abläufe nicht sauber ineinander."
+              />
+              <p className="text-body-sm text-slate-500 leading-relaxed max-w-2xl">
+                Sichtbar wird oft nur das Symptom: zu wenige Anfragen, liegengebliebene Offerten, Zahlen, die nicht stimmen. Die Ursachen
+                liegen meist tiefer, in Abläufen, Unterlagen und Übergaben, die niemand verantwortet. Dort setzen wir an.
+              </p>
+            </motion.div>
+            <div className="hidden lg:block lg:col-span-4">
+              <BrandVisual id="ursachen-unter-der-oberflaeche" sizes="(min-width: 1280px) 400px, 30vw" className="max-w-[340px] ml-auto" />
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {CHALLENGE_CARDS.map((c) => (
               <Link

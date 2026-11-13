@@ -94,3 +94,22 @@ describe('Themengrafiken', () => {
     for (const sec of Object.values(SOLUTIONS_SECTORS)) expect(sectorDiagram(sec.slug, sec.title).spec.type).toBe('flow');
   });
 });
+
+import { existsSync } from 'node:fs';
+import { VISUALS } from '../../data/visuals';
+
+describe('Eigene Visuals', () => {
+  it('jedes Visual hat beide Grössen und einen Alt-Text', () => {
+    for (const [id, v] of Object.entries(VISUALS)) {
+      for (const w of [480, 800]) expect(existsSync(`public/images/visuals/${id}-${w}.webp`), `${id}-${w}`).toBe(true);
+      expect(v.alt.length, id).toBeGreaterThan(40);
+    }
+  });
+
+  it('Bereiche verweisen nur auf vorhandene Visuals', () => {
+    for (const a of SERVICE_AREAS) {
+      if (a.insight) expect(VISUALS[a.insight.visual], a.id).toBeDefined();
+      if (a.agentic?.visual) expect(VISUALS[a.agentic.visual], a.id).toBeDefined();
+    }
+  });
+});

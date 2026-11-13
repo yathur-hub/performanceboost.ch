@@ -9,6 +9,7 @@ import React from 'react';
 import { Bot, ShieldCheck, RotateCcw, ArrowRight } from 'lucide-react';
 import { getArea, servicesOf, SERVICE_AREAS, AGENTIC_LEVELS, type AreaId } from '../data/serviceAreas';
 import { PHASES } from '../data/approach';
+import { BrandVisual } from '../components/BrandVisual';
 import { SERVICES } from '../data/services';
 import {
   Breadcrumb,
@@ -113,6 +114,22 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
         </Container>
       </section>
 
+      {/* EINORDNUNG MIT EIGENER INFOGRAFIK */}
+      {area.insight && (
+        <section>
+          <Container className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center">
+            <div className="md:col-span-5 lg:col-span-4 max-w-sm md:max-w-none mx-auto w-full">
+              <BrandVisual id={area.insight.visual} sizes="(min-width: 1024px) 400px, (min-width: 768px) 40vw, 92vw" />
+            </div>
+            <div className="md:col-span-7 lg:col-span-8 space-y-4 max-w-2xl">
+              <SectionHeading title={area.insight.title} />
+              <p className="text-body text-slate-600 leading-relaxed">{area.insight.text}</p>
+              <CtaButton label={area.ctaLabel} location={`hub_${id}_einordnung`} pageSlug={id} variant="light" />
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* LEISTUNGEN */}
       <section>
         <Container className="space-y-10">
@@ -154,7 +171,19 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {area.agentic && (
         <section className="bg-white border-y border-[#E2E8F0]/40 py-16 md:py-24">
           <Container className="space-y-8">
-            <SectionHeading title={area.agentic.title} intro={area.agentic.intro} />
+            {area.agentic.visual ? (
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center">
+                <div className="md:col-span-7 lg:col-span-8 space-y-4">
+                  <SectionHeading title={area.agentic.title} intro={area.agentic.intro} />
+                  {area.agentic.visualCaption && <p className="text-body-sm text-slate-500 leading-relaxed max-w-2xl">{area.agentic.visualCaption}</p>}
+                </div>
+                <div className="md:col-span-5 lg:col-span-4 max-w-sm md:max-w-none mx-auto w-full">
+                  <BrandVisual id={area.agentic.visual} sizes="(min-width: 1024px) 400px, (min-width: 768px) 40vw, 92vw" />
+                </div>
+              </div>
+            ) : (
+              <SectionHeading title={area.agentic.title} intro={area.agentic.intro} />
+            )}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {area.agentic.items.map((it) => (
                 <div key={it.task} className="rounded-3xl border border-[#E0E0E0]/80 bg-[#f6f6f6]/50 p-7 flex flex-col">
@@ -178,10 +207,22 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {!isArea && (
         <section className="bg-white border-y border-[#E2E8F0]/40 py-16 md:py-24">
           <Container className="space-y-8">
-            <SectionHeading
-              title="Von der Regel bis zum Agenten"
-              intro="Für jeden Ablauf wählen wir die einfachste Lösung, die verlässlich funktioniert. Oft ist das eine feste Regel und kein Agent. Die menschliche Steuerung gilt auf jeder Stufe."
-            />
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center">
+              <div className="md:col-span-7 lg:col-span-8 space-y-4">
+                <SectionHeading
+                  title="Von der Regel bis zum Agenten"
+                  intro="Für jeden Ablauf wählen wir die einfachste Lösung, die verlässlich funktioniert. Oft ist das eine feste Regel und kein Agent. Die menschliche Steuerung gilt auf jeder Stufe."
+                />
+                <p className="text-body-sm text-slate-500 leading-relaxed max-w-2xl">
+                  Mehr Spielraum bekommt ein Agent erst, wenn die Stufe davor nachweislich hält: zuerst lesen, dann vorschlagen, dann mit
+                  Freigabe schreiben und erst danach innerhalb fester Limits selbst handeln. Was die nächste Stufe rechtfertigt, legen wir
+                  vorher fest.
+                </p>
+              </div>
+              <div className="md:col-span-5 lg:col-span-4 max-w-sm md:max-w-none mx-auto w-full">
+                <BrandVisual id="autonomie-als-treppe" sizes="(min-width: 1024px) 400px, (min-width: 768px) 40vw, 92vw" />
+              </div>
+            </div>
             <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {AGENTIC_LEVELS.map((l, i) => (
                 <li key={l.title} className={`rounded-3xl border p-6 flex flex-col ${i === 3 ? 'bg-slate-950 border-slate-950 text-white' : 'bg-[#f6f6f6]/60 border-[#E0E0E0]/80'}`}>

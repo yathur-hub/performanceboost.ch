@@ -10,7 +10,7 @@ import { HeroTrust, LeadCtaSection } from '../components/bp/Conversion';
 import { PHASES, PRINCIPLES, WORK_MODES } from '../data/approach';
 import { AREAS } from '../data/serviceAreas';
 import Link from '../components/Link';
-import { Visual3D } from '../components/Visual3D';
+import { BrandVisual } from '../components/BrandVisual';
 
 const FAQ = [
   {
@@ -54,8 +54,8 @@ export default function ApproachView() {
               </div>
               <HeroTrust />
             </div>
-            <div className="hidden lg:flex lg:col-span-4 justify-center rocket-in">
-              <Visual3D id="steps" priority sizes="320px" className="max-h-72 w-auto max-w-full animate-float" />
+            <div className="hidden lg:block lg:col-span-4 rocket-in">
+              <BrandVisual id="route-zum-ziel" sizes="(min-width: 1280px) 380px, 30vw" className="max-w-[360px] ml-auto" />
             </div>
           </div>
         </Container>
@@ -99,6 +99,28 @@ export default function ApproachView() {
                 </ol>
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* NACH DEM START: Hypercare und Enablement konkret */}
+      <section>
+        <Container className="space-y-8">
+          <SectionHeading
+            title="Damit es nach dem Start hält"
+            intro="Die meisten Lösungen scheitern nicht beim Bauen, sondern im Betrieb. Deshalb klären wir in Roll-out & Hypercare und im Enablement zwei Dinge, bevor etwas live geht: welche Aufgaben nach dem Start anfallen und wer sie mit Namen übernimmt."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10 max-w-4xl">
+            <BrandVisual
+              id="kosten-nach-dem-go-live"
+              sizes="(min-width: 1024px) 440px, (min-width: 640px) 45vw, 92vw"
+              caption="Überwachung, Zugänge, Änderungen, Kontrolle und Übergabe gehören in jede Planung, mit Stunden und einer verantwortlichen Person."
+            />
+            <BrandVisual
+              id="vier-namen-vor-dem-start"
+              sizes="(min-width: 1024px) 440px, (min-width: 640px) 45vw, 92vw"
+              caption="Vor dem Start steht fest, wer prüft, wer abstellt, wer bei Fehlern entscheidet und wer vertritt. Bei kleinen Werkzeugen genügt eine Person."
+            />
           </div>
         </Container>
       </section>
