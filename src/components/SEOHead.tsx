@@ -411,6 +411,8 @@ export function buildMeta(route: ParsedRoute): Meta {
       const description = 'Was Yathur Nathan selbst baut und betreibt: eigenes ERP, Lead-Eingang ohne Abtippen, Veröffentlichung mit Freigabe, Agenten für Recherche, mit ehrlichem Reifegrad.';
       return { ...base, title, description, schema: webPage('WebPage', url, title, description) };
     }
+    case 'design':
+      return { title: 'Design-Prototyp | performanceboost', description: '', schema: null, ogType: 'website', indexable: false };
     case 'not_found':
     default:
       return { title: 'Seite nicht gefunden | performanceboost', description: 'Diese Seite existiert nicht.', schema: null, ogType: 'website', indexable: false };
