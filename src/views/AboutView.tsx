@@ -64,7 +64,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]"
           >
-            Ihr Business Performance Partner aus Graubünden.
+            Ein Marketer, der die Technik selbst baut.
           </motion.h1>
           
           <motion.p 
@@ -73,7 +73,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold"
           >
-            performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. Wir helfen Schweizer KMU, mehr aus Marketing, Vertrieb und ihren Abläufen herauszuholen. Dafür planen wir mit Ihnen und setzen selbst um. We boost business performance.
+            Hinter performanceboost steht Yathur Nathan: Marketingfachmann mit eidgenössischem Fachausweis und Experte für MarTech und KI in Marketing und Growth. Kampagnen, Daten, Systeme und KI-Agenten baut er selbst. performanceboost ist inhabergeführt und hat seinen Sitz in Fläsch. We boost business performance.
           </motion.p>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
             <div className="pb-4 border-b border-slate-100 flex justify-between items-center">
               <span className="text-xs text-slate-500 font-semibold">Schwerpunkt</span>
-              <span className="text-xs font-mono font-bold text-[#686DF4]">Strategy · Technology · Growth</span>
+              <span className="text-xs font-mono font-bold text-[#686DF4] text-right">MarTech · KI in Marketing & Growth</span>
             </div>
 
             <div className="flex justify-between items-center">
@@ -157,11 +157,25 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <h2 className="text-2.5xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight leading-snug">Über Yathur Nathan</h2>
           <div className="space-y-4 text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
             <p>
-              Ich helfe Schweizer KMU, mehr passende Kunden zu gewinnen, effizienter zu arbeiten und Zahlen zu haben, auf die man sich verlassen kann. Dafür bringe ich Strategie, Performance Marketing, Webentwicklung, Daten und Automatisierung zusammen. Diese Aufgaben sind sonst oft auf mehrere Dienstleister verteilt, die aneinander vorbeiarbeiten.
+              Ich bin Marketer mit sehr tiefem technischem Können. Ich komme aus dem Performance Marketing, von Search, Shopping, Performance Max und Video bis Social Ads, und bin heute vor allem dort zu Hause, wo Marketing auf Technologie trifft: CRM-Datenmodelle, Tracking im Browser und auf dem Server, Integrationen über APIs und Workflows, Webentwicklung und KI-Agenten, die ganze Abläufe übernehmen.
             </p>
             <p>
-              In den vergangenen Jahren habe ich mit Unternehmen aus unterschiedlichen Branchen gearbeitet, vom Onlineshop über Beratungsunternehmen bis zum Dienstleister, für den ich Website und ERP-System entwickelt habe. Dabei habe ich immer wieder gesehen, dass eine einzelne Kampagne oder ein neues Tool selten reicht. Gute Ergebnisse entstehen, wenn Strategie, Systeme, Abläufe und Messung zusammenpassen. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
+              Diese Aufgaben sind sonst auf mehrere Dienstleister verteilt, die aneinander vorbeiarbeiten. Bei mir kommen sie aus einer Hand, und ich setze sie selbst um. Was ich empfehle, habe ich meistens zuerst selbst gebaut und betrieben, vom eigenen ERP bis zum Lead-Eingang ohne Abtippen. Gemessen wird die Arbeit an Anfragen, Aufträgen und eingesparten Stunden. Als Kunde arbeiten Sie direkt mit mir, vom Erstgespräch bis zur Auswertung.
             </p>
+            <div className="border-t border-slate-200 pt-4">
+              <p className="text-slate-900 font-bold">Ausbildung und Zertifikate</p>
+              <ul className="mt-2 space-y-1.5">
+                <li>Marketingfachmann mit eidgenössischem Fachausweis</li>
+                <li>MBA, Kalaidos Fachhochschule (laufend)</li>
+                <li>CAS Management agiler Projekte, Kalaidos Fachhochschule (laufend)</li>
+                <li>Google-Zertifizierungen Search Ads 360 und Display & Video 360</li>
+              </ul>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs font-bold">
+              <a href="/martech" onClick={(e) => { e.preventDefault(); onNavigate('/martech'); }} className="text-[#686DF4] hover:text-[#4f54d6]">MarTech-Wissen →</a>
+              <a href="/werkzeuge" onClick={(e) => { e.preventDefault(); onNavigate('/werkzeuge'); }} className="text-[#686DF4] hover:text-[#4f54d6]">Werkzeuge →</a>
+              <a href="/labor" onClick={(e) => { e.preventDefault(); onNavigate('/labor'); }} className="text-[#686DF4] hover:text-[#4f54d6]">Labor →</a>
+            </div>
           </div>
         </motion.div>
       </section>

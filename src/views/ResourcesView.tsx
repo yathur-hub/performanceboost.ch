@@ -134,6 +134,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <aside className="mt-12 rounded-3xl border border-[#CACCFB]/60 bg-[#686DF4]/[0.04] p-7 sm:p-9 space-y-4">
               <h2 className="text-lg font-display font-semibold text-slate-900">Weiter zum Thema MarTech</h2>
               <ul className="space-y-2 text-sm font-semibold">
+                <li><Link href="/martech" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">MarTech-Wissen: Landkarte und Fachthemen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
                 <li><Link href="/ressourcen/martech" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Alle Beiträge zu MarTech für KMU <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
                 <li><Link href="/leistungen/martech-stack" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">MarTech-Stack aufräumen und verbinden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
                 <li><Link href="/skills" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Checkliste «Stack-Inventur» in der Skill-Factory <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
@@ -192,6 +193,18 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
           </motion.p>
         </div>
       </section>
+
+      {subSection === 'martech' && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link href="/martech" className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-3xl border border-[#CACCFB]/70 bg-[#686DF4]/[0.05] p-7 sm:p-8 hover:border-[#686DF4]/60 transition-colors">
+            <span className="space-y-1">
+              <span className="block text-lg font-display font-semibold text-slate-900">Tiefer einsteigen: MarTech-Wissen</span>
+              <span className="block text-sm text-slate-600">Die MarTech-Landkarte und Fachthemen zu Server-Side Tagging, Integrationsarchitektur, MCP, Agenten und Lizenzen, mit Quellen.</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686DF4] shrink-0">Zur Landkarte <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
+          </Link>
+        </section>
+      )}
 
       {/* Categories Sub-routing inside hub & Search Bar */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">

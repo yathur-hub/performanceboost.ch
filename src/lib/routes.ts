@@ -5,6 +5,7 @@ import { FINANCE_SLUGS, isFinanceSlug } from '../data/financeLanding';
 import { AREA_IDS, isAreaId } from '../data/serviceAreas';
 import { CHALLENGE_SLUGS, isChallengeSlug } from '../data/challenges';
 import { REAL_ESTATE_SLUGS, isRealEstateSlug } from '../data/realEstateLanding';
+import { TOPIC_SLUGS, isTopicSlug } from '../data/martechWissen';
 
 export type RouteView =
   | 'home'
@@ -22,6 +23,9 @@ export type RouteView =
   | 'datenschutz'
   | 'leistungen'
   | 'ressourcen'
+  | 'martech'
+  | 'werkzeuge'
+  | 'labor'
   | 'not_found';
 
 export interface ParsedRoute {
@@ -53,6 +57,13 @@ export function parseRoute(pathname: string): ParsedRoute {
   if (path === '/kontakt') return { view: 'kontakt', path, pageType: 'kontakt' };
   if (path === '/impressum') return { view: 'impressum', path, pageType: 'rechtliches' };
   if (path === '/datenschutz') return { view: 'datenschutz', path, pageType: 'rechtliches' };
+  if (path === '/martech') return { view: 'martech', path, pageType: 'martech_wissen' };
+  if (path.startsWith('/martech/')) {
+    const slug = path.slice('/martech/'.length);
+    return isTopicSlug(slug) ? { view: 'martech', slug, path, pageType: 'martech_thema' } : notFound;
+  }
+  if (path === '/werkzeuge') return { view: 'werkzeuge', path, pageType: 'werkzeuge' };
+  if (path === '/labor') return { view: 'labor', path, pageType: 'labor' };
 
   if (path.startsWith('/loesungen/')) {
     const slug = path.slice('/loesungen/'.length);
@@ -108,6 +119,10 @@ export function indexablePaths(): string[] {
     '/ressourcen',
     '/ressourcen/martech',
     ...RESOURCES_DATA.filter((r) => r.type !== 'case-study').map((r) => `/ressourcen/${r.slug}`),
+    '/martech',
+    ...TOPIC_SLUGS.map((slug) => `/martech/${slug}`),
+    '/werkzeuge',
+    '/labor',
     '/referenzen',
     '/ueber-uns',
     '/kontakt',
