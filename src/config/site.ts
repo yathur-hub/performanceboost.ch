@@ -12,6 +12,8 @@ export const SITE = {
   linkedinPerson: 'https://www.linkedin.com/in/yathurnathan/',
   logoUrl:
     'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png',
+  /** Social-Sharing-Bild (1200 × 630): Favicon-Marke auf dunklem Grund, public/images/og-image.png */
+  ogImageUrl: 'https://performanceboost.ch/images/og-image.png',
   portraitUrl:
     'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg',
 } as const;
