@@ -172,3 +172,52 @@
   .pbx-step-sub { display: none; }
   .pbx-hero::before { background-size: 18px 18px; mask-image: radial-gradient(ellipse 90% 50% at 60% 70%, #000 10%, transparent 75%); }
 }
+
+/* ---------- Agenten-Netzwerk (Hero) ---------- */
+.pbx-net {
+  --d: 560ms;
+  position: relative; border-radius: 18px; background: var(--pbx-panel); color: var(--pbx-panel-text);
+  border: 1px solid var(--pbx-panel-line);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 40px 80px -30px rgba(0,0,0,0.6);
+  animation: pbx-console-in 1100ms var(--pbx-ease-out) var(--d) both;
+}
+.pbx-net svg text { font-family: var(--font-sans); }
+.pbx-net-spoke { stroke: #3B3E86; stroke-width: 1; fill: none; stroke-dasharray: 3 5; opacity: 0; animation: pbx-fade-in 800ms var(--pbx-ease-out) var(--d) forwards; }
+.pbx-net-edge { stroke: #34354A; stroke-width: 1.25; fill: none; stroke-dasharray: 700; stroke-dashoffset: 700; animation: pbx-draw 1200ms var(--pbx-ease-inout) var(--d) forwards; transition: stroke 300ms var(--pbx-ease-ui), stroke-width 300ms var(--pbx-ease-ui); }
+.pbx-net-edge.on { stroke: var(--pbx-accent); stroke-width: 2; }
+.pbx-net-pulse { fill: #8f92ff; opacity: 0.8; }
+.pbx-net-packet { fill: #fff; filter: drop-shadow(0 0 6px rgba(104,108,250,0.9)); }
+.pbx-net-node { opacity: 0; animation: pbx-rise 700ms var(--pbx-ease-out) calc(var(--d) + 500ms) both; }
+.pbx-net-node rect { fill: #14151C; stroke: #2C2D3A; stroke-width: 1; transition: stroke 300ms var(--pbx-ease-ui), fill 300ms var(--pbx-ease-ui); }
+.pbx-net-node.on rect { stroke: var(--pbx-accent); fill: #1b1c2c; }
+.pbx-net-node.human rect { stroke-dasharray: 3 3; }
+.pbx-net-dot { fill: #4ade80; }
+.pbx-net-node.human .pbx-net-dot { fill: var(--pbx-accent); }
+.pbx-net-node.on .pbx-net-dot { animation: pbx-wait 1.2s var(--pbx-ease-inout) infinite; transform-box: fill-box; transform-origin: center; }
+.pbx-net-name { font-size: 12.5px; font-weight: 600; fill: #f2f2f7; }
+.pbx-net-role { font-size: 11px; fill: #8b8ca3; }
+.pbx-net-short { display: none; font-size: 21px; font-weight: 600; fill: #f2f2f7; }
+.pbx-net-core { opacity: 0; animation: pbx-fade-in 900ms var(--pbx-ease-out) calc(var(--d) + 300ms) forwards; }
+.pbx-net-core-t { font-family: var(--font-display) !important; font-size: 17px; font-weight: 600; fill: #fff; letter-spacing: -0.01em; }
+.pbx-net-core-s { font-family: var(--font-mono) !important; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; fill: #A0A3F9; }
+.pbx-net-ring { fill: none; stroke: #686CFA; stroke-opacity: 0.35; transform-box: fill-box; transform-origin: center; animation: pbx-ring 3.2s var(--pbx-ease-out) 2s infinite; }
+.pbx-net-glow { transform-box: fill-box; transform-origin: center; animation: pbx-breathe 4.8s var(--pbx-ease-inout) 2s infinite; }
+@keyframes pbx-ring { 0% { transform: scale(0.85); stroke-opacity: 0.5; } 100% { transform: scale(1.35); stroke-opacity: 0; } }
+@keyframes pbx-breathe { 0%,100% { opacity: 0.8; } 50% { opacity: 1; } }
+@keyframes pbx-fade-in { to { opacity: 1; } }
+.pbx-net-log { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-top: 1px solid var(--pbx-panel-line); min-height: 50px; }
+.pbx-net-msg { font-size: 13px; color: var(--pbx-panel-text); animation: pbx-msg 500ms var(--pbx-ease-out) both; }
+@keyframes pbx-msg { from { opacity: 0; transform: translateY(4px); filter: blur(3px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .pbx-net, .pbx-net-node, .pbx-net-core, .pbx-net-spoke { opacity: 1 !important; animation: none !important; }
+  .pbx-net-edge { stroke-dashoffset: 0 !important; animation: none !important; }
+  .pbx-net-ring, .pbx-net-glow { animation: none !important; }
+}
+@media (max-width: 640px) {
+  .pbx-net-name, .pbx-net-role { display: none; }
+  .pbx-net-short { display: block; }
+  .pbx-net-core-t { font-size: 22px; }
+  .pbx-net-core-s { font-size: 13px; }
+  .pbx-net-msg { font-size: 12px; }
+  .pbx-net-log { padding: 10px 14px; }
+}

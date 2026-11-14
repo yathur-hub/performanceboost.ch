@@ -119,3 +119,136 @@ export function ComparisonRows({ rows }: { rows: { topic: string; classic: strin
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------------------
+ * AgentNetwork: Netzwerk aus Agenten, die Aufgaben weitergeben. Alles fliesst in das Ergebnis «Performance».
+ * Ein Knoten «Ihr Team» gibt frei (Governance). Eine Nachrichtenzeile zeigt, wer gerade was an wen übergibt.
+ * Beispielhafte Darstellung, keine Kennzahlen.
+ * ------------------------------------------------------------------------------------------- */
+type NodeKey = 'M' | 'R' | 'S' | 'P' | 'T' | 'D';
+const NET_NODES: Record<NodeKey, { x: number; y: number; name: string; role: string; human?: boolean }> = {
+  M: { x: 110, y: 92, name: 'Marketing-Agent', role: 'Kampagnen auswerten' },
+  R: { x: 320, y: 44, name: 'Recherche-Agent', role: 'Firmen recherchieren' },
+  S: { x: 530, y: 92, name: 'Sales-Agent', role: 'Anfragen einordnen' },
+  P: { x: 530, y: 372, name: 'Prozess-Agent', role: 'Offerten vorbereiten' },
+  T: { x: 320, y: 420, name: 'Ihr Team', role: 'Freigeben', human: true },
+  D: { x: 110, y: 372, name: 'Daten-Agent', role: 'CRM synchronisieren' },
+};
+const CENTER = { x: 320, y: 232 };
+const RING: [NodeKey, NodeKey][] = [['M', 'R'], ['R', 'S'], ['S', 'P'], ['P', 'T'], ['T', 'D'], ['D', 'M']];
+const edgeId = (a: NodeKey, b: NodeKey) => `${a}${b}`;
+/** Leicht gebogene Verbindung zwischen zwei Knoten (zur Mitte hin gekrümmt). */
+function curve(a: { x: number; y: number }, b: { x: number; y: number }) {
+  const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+  const cx = mx + (CENTER.x - mx) * 0.28, cy = my + (CENTER.y - my) * 0.28;
+  return `M ${a.x} ${a.y} Q ${cx} ${cy} ${b.x} ${b.y}`;
+}
+const MESSAGES: { from: NodeKey; to: NodeKey; text: string }[] = [
+  { from: 'M', to: 'R', text: 'Neue Anfrage aus der Kampagne · Firma prüfen' },
+  { from: 'R', to: 'S', text: 'Recherche fertig · Gesprächsvorbereitung bereit' },
+  { from: 'S', to: 'P', text: 'Passt zum Angebot · Offerte vorbereiten' },
+  { from: 'P', to: 'T', text: 'Offertentwurf · wartet auf Freigabe' },
+  { from: 'T', to: 'D', text: 'Freigegeben · CRM und Auftrag aktualisieren' },
+  { from: 'D', to: 'M', text: 'Auftrag zurück an die Werbekonten · Budget lernt mit' },
+];
+
+export function AgentNetwork() {
+  const [step, setStep] = React.useState(0);
+  const [reduced, setReduced] = React.useState(false);
+  const packetRef = React.useRef<SVGAnimateMotionElement>(null);
+  React.useEffect(() => {
+    const r = prefersReduced(); setReduced(r);
+    if (r) return;
+    let id = 0;
+    const start = window.setTimeout(() => {
+      id = window.setInterval(() => setStep((s) => (s + 1) % MESSAGES.length), 2200);
+    }, 1800);
+    return () => { window.clearTimeout(start); window.clearInterval(id); };
+  }, []);
+  React.useEffect(() => { try { packetRef.current?.beginElement(); } catch { /* SMIL nicht verfügbar */ } }, [step]);
+
+  const msg = MESSAGES[step];
+  const active = edgeId(msg.from, msg.to);
+  return (
+    <div className="pbx-net w-full max-w-[680px]" role="img" aria-label="Beispiel: Agenten für Marketing, Recherche, Sales, Prozesse und Daten geben Aufgaben weiter, Ihr Team gibt frei, alles fliesst in das Ergebnis Performance">
+      <div className="pbx-console-bar">
+        <span className="pbx-live" aria-hidden="true" />
+        <span>Agenten-Netzwerk · live</span>
+        <span className="ml-auto">Beispiel</span>
+      </div>
+      <svg viewBox="0 0 640 470" className="w-full h-auto block" aria-hidden="true">
+        <defs>
+          <radialGradient id="net-core" cx="50%" cy="45%" r="60%">
+            <stop offset="0%" stopColor="#2a2c5c" />
+            <stop offset="100%" stopColor="#181923" />
+          </radialGradient>
+          <radialGradient id="net-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#686CFA" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#686CFA" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Speichen: jeder Agent liefert in das Ergebnis */}
+        {(Object.keys(NET_NODES) as NodeKey[]).map((k, i) => {
+          const n = NET_NODES[k];
+          const d = `M ${n.x} ${n.y} L ${CENTER.x} ${CENTER.y}`;
+          return (
+            <g key={`sp-${k}`}>
+              <path id={`net-sp-${k}`} d={d} className="pbx-net-spoke" style={{ ['--d' as string]: `${500 + i * 70}ms` }} />
+              {!reduced && (
+                <circle r="2.6" className="pbx-net-pulse">
+                  <animateMotion dur="2.8s" begin={`${1.6 + i * 0.45}s`} repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1">
+                    <mpath href={`#net-sp-${k}`} />
+                  </animateMotion>
+                </circle>
+              )}
+            </g>
+          );
+        })}
+
+        {/* Ring: Übergaben zwischen den Agenten */}
+        {RING.map(([a, b], i) => (
+          <path key={edgeId(a, b)} id={`net-${edgeId(a, b)}`} d={curve(NET_NODES[a], NET_NODES[b])}
+            className={`pbx-net-edge${edgeId(a, b) === active && !reduced ? ' on' : ''}`} style={{ ['--d' as string]: `${700 + i * 90}ms` }} />
+        ))}
+        {!reduced && (
+          <circle r="4.5" className="pbx-net-packet" key={step}>
+            <animateMotion ref={packetRef} dur="1.4s" begin="indefinite" fill="freeze" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.65 0 0.35 1">
+              <mpath href={`#net-${active}`} />
+            </animateMotion>
+          </circle>
+        )}
+
+        {/* Ergebnis in der Mitte */}
+        <g className="pbx-net-core" style={{ ['--d' as string]: '300ms' }}>
+          <circle cx={CENTER.x} cy={CENTER.y} r="96" fill="url(#net-glow)" className="pbx-net-glow" />
+          <circle cx={CENTER.x} cy={CENTER.y} r="70" className="pbx-net-ring" />
+          <circle cx={CENTER.x} cy={CENTER.y} r="58" fill="url(#net-core)" stroke="#686CFA" strokeWidth="1.25" />
+          <text x={CENTER.x} y={CENTER.y - 6} textAnchor="middle" className="pbx-net-core-t">Performance</text>
+          <text x={CENTER.x} y={CENTER.y + 14} textAnchor="middle" className="pbx-net-core-s">Outcome</text>
+        </g>
+
+        {/* Knoten */}
+        {(Object.keys(NET_NODES) as NodeKey[]).map((k, i) => {
+          const n = NET_NODES[k];
+          const isOn = !reduced && (k === msg.from || k === msg.to);
+          return (
+            <g key={k} className={`pbx-net-node${n.human ? ' human' : ''}${isOn ? ' on' : ''}`} style={{ ['--d' as string]: `${150 + i * 90}ms` }}>
+              <rect x={n.x - 78} y={n.y - 24} width="156" height="48" rx="12" />
+              <circle cx={n.x - 62} cy={n.y} r="4" className="pbx-net-dot" />
+              <text x={n.x - 52} y={n.y - 4} className="pbx-net-name">{n.name}</text>
+              <text x={n.x - 52} y={n.y + 12} className="pbx-net-role">{n.role}</text>
+              <text x={n.x - 50} y={n.y + 7} className="pbx-net-short">{n.name.replace('-Agent', '')}</text>
+            </g>
+          );
+        })}
+      </svg>
+      <div className="pbx-net-log" aria-hidden="true">
+        <span className="pbx-kind" data-k={msg.to === 'T' || msg.from === 'T' ? 'mensch' : 'agent'}>
+          {NET_NODES[msg.from].name.replace('-Agent', '')} → {NET_NODES[msg.to].name.replace('-Agent', '')}
+        </span>
+        <span key={step} className="pbx-net-msg">{msg.text}</span>
+      </div>
+    </div>
+  );
+}

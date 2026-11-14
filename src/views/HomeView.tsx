@@ -20,7 +20,7 @@ import { AREAS, AGENTIC_LEVELS } from '../data/serviceAreas';
 import { PHASES } from '../data/approach';
 import { CHALLENGE_CARDS } from '../data/challenges';
 import { BrandVisual } from '../components/BrandVisual';
-import { SystemConsole, ScrollStatement, ComparisonRows } from '../components/system/SystemBlocks';
+import { AgentNetwork, ScrollStatement, ComparisonRows } from '../components/system/SystemBlocks';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -104,7 +104,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </div>
             <div className="lg:col-span-7 flex lg:justify-end">
-              <SystemConsole />
+              <AgentNetwork />
             </div>
           </div>
         </Container>

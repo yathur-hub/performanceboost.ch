@@ -32,6 +32,14 @@ Stand 14.11.2026, Branch `design/premium-directions`. Freigabe des Inhabers: «B
 
 ## Premium-Bausteine (src/styles/system.css, src/components/system/SystemBlocks.tsx)
 - **SystemConsole:** Beispielablauf einer Website-Anfrage (Regel, KI, Agent, Freigabe) als Produkt-Visual im Hero. Eine Choreografie von rund 1,8 s.
+- **AgentNetwork (Hero-Visual seit 14.11., Wunsch des Inhabers):** Netzwerk aus Agenten, die Aufgaben weitergeben.
+  - Knoten: Marketing, Recherche, Sales, Prozess und Daten, dazu «Ihr Team» als Freigabeknoten.
+  - Alle Speichen führen in das Ergebnis «Performance» in der Mitte.
+  - Alle 2,2 s läuft ein Datenpaket über die aktive Übergabe (SVG `animateMotion`), die beteiligten Knoten leuchten, die Nachrichtenzeile zeigt die Übergabe. Ein ständiger Fluss läuft über die Speichen, das Ergebnis pulsiert leise.
+  - Die Ansicht ist als «Beispiel» gekennzeichnet und enthält keine Kennzahlen.
+  - Auf Mobile erscheinen Kurznamen in grösserer Schrift.
+  - Bei reduzierter Bewegung steht die Ansicht statisch.
+  - Hinweis: Die Wissensbasis (`research/05`) rät davon ab, Multi-Agenten-Systeme als Verkaufsargument zu nutzen. Das Netzwerk zeigt deshalb Übergaben mit Freigabe und keine Autonomie.
 - **ScrollStatement:** Die Wörter hellen mit dem Scrollfortschritt auf (rAF, nur Farbe).
 - **ComparisonRows:** Die Vergleichszeilen werden bei 55 % der Bildhöhe aktiv. Die Überschrift ist auf Desktop fixiert.
 - **pbx-link und pbx-btn:** Die Unterstreichung wächst von links, der Pfeil bewegt sich 3 px.
