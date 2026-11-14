@@ -216,14 +216,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           </a>
 
           <div className="flex items-center gap-2.5">
-            <a
-              href="/kontakt"
-              onClick={(e) => openCta('header', e)}
-              data-cta="header"
-              className="btn-press hidden sm:inline-flex items-center gap-2 min-h-11 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
-            >
-              Gespräch anfragen
-            </a>
             <button
               ref={buttonRef}
               id="nav-toggle-button"
@@ -232,7 +224,8 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               aria-expanded={isOpen}
               aria-controls="mega-menu"
               aria-haspopup="dialog"
-              className={`inline-flex items-center justify-center gap-2 min-h-11 sm:min-w-[8.75rem] pl-3.5 pr-4 sm:pr-5 rounded-full border shrink-0 font-display font-semibold text-sm transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 ${
+              aria-label={isOpen ? 'Menü schliessen' : 'Menü öffnen'}
+              className={`inline-flex items-center justify-center w-11 h-11 rounded-full border shrink-0 font-display font-semibold text-sm transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 ${
                 isOpen ? 'bg-deep border-deep text-white' : 'bg-surface border-slate-200/80 text-slate-900 hover:border-[#686CFA]/40 hover:text-accent-strong'
               }`}
             >
@@ -241,7 +234,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 <span />
                 <span />
               </span>
-              <span>{isOpen ? 'Schliessen' : 'Menü'}</span>
             </button>
           </div>
         </div>

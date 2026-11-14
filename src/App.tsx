@@ -30,10 +30,9 @@ import { parseRoute } from './lib/routes';
 import type { FinanceSlug } from './data/financeLanding';
 import type { AreaId } from './data/serviceAreas';
 import type { ChallengeSlug } from './data/challenges';
-import { REAL_ESTATE_PAGES, type RealEstateSlug } from './data/realEstateLanding';
+import { type RealEstateSlug } from './data/realEstateLanding';
 import { captureAttribution } from './lib/attribution';
 import SEOHead from './components/SEOHead';
-import { StickyMobileCta } from './components/bp/Conversion';
 import { useScrollReveal } from './lib/useScrollReveal';
 import { flushSync } from 'react-dom';
 import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
@@ -291,14 +290,7 @@ function AppContent() {
       {/* Global Sitemapped Footer */}
       <Footer onNavigate={handleNavigate} />
 
-      {/* Mobiler Sticky-CTA (nicht auf der Kontaktseite und den Finanz-Landingpages mit eigenem Formular) */}
-      {parsed.view !== 'kontakt' && parsed.view !== 'finanz' && parsed.view !== 'not_found' && (
-        <StickyMobileCta
-          key={parsed.path}
-          onFallback={openContactModal}
-          label={parsed.view === 'immobilien_landing' && parsed.slug ? REAL_ESTATE_PAGES[parsed.slug as RealEstateSlug]?.ctaLabel : undefined}
-        />
-      )}
+
 
     </div>
   );
