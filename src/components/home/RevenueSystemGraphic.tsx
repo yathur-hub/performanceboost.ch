@@ -77,8 +77,10 @@ const EDGES_OF: Record<NodeId, string[]> = {
 
 const ACCENT = '#686CFA';
 const SOFT = '#CBCBFC';
-const LINE = '#E0E0E0';
-const TEXT = '#4F4F4F';
+const LINE = '#2C2D3A';
+const TEXT = '#B9BACB';
+const INK = '#F2F2F7';
+const NODE = '#181923';
 
 export function RevenueSystemGraphic() {
   const [selected, setSelected] = useState<NodeId>('prozesse');
@@ -120,7 +122,7 @@ export function RevenueSystemGraphic() {
     className: 'sys-node cursor-pointer outline-none [&:focus-visible>rect:first-child]:stroke-[3]',
   });
 
-  const edgeStroke = (edge: string) => (lit(edge) ? ACCENT : '#B9BBF0');
+  const edgeStroke = (edge: string) => (lit(edge) ? ACCENT : '#4A4DA8');
   const edgeOpacity = (edge: string) => (lit(edge) ? 1 : 0.55);
 
   return (
@@ -133,11 +135,11 @@ export function RevenueSystemGraphic() {
               <path d="M 0 1 L 9 5 L 0 9 z" fill={ACCENT} />
             </marker>
             <marker id="sys-arrow-soft" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M 0 1 L 9 5 L 0 9 z" fill="#B9BBF0" />
+              <path d="M 0 1 L 9 5 L 0 9 z" fill="#4A4DA8" />
             </marker>
             <radialGradient id="sys-core" cx="50%" cy="45%" r="60%">
-              <stop offset="0%" stopColor="#FFFFFF" />
-              <stop offset="100%" stopColor={SOFT} stopOpacity="0.55" />
+              <stop offset="0%" stopColor="#262848" />
+              <stop offset="100%" stopColor={NODE} />
             </radialGradient>
           </defs>
 
@@ -147,7 +149,7 @@ export function RevenueSystemGraphic() {
             { id: 'spoke-s', d: 'M 300 255 L 468 129' },
             { id: 'spoke-e', d: 'M 300 255 L 300 411' },
           ].map((s) => (
-            <path key={s.id} d={s.d} stroke={lit(s.id) ? ACCENT : SOFT} strokeWidth={lit(s.id) ? 2 : 1.5} fill="none" className={`flow-dash ${lit(s.id) ? 'is-lit' : ''}`} style={{ transition: 'stroke 300ms var(--ease-out), stroke-width 300ms var(--ease-out)' }} />
+            <path key={s.id} d={s.d} stroke={lit(s.id) ? ACCENT : '#3B3E86'} strokeWidth={lit(s.id) ? 2 : 1.5} fill="none" className={`flow-dash ${lit(s.id) ? 'is-lit' : ''}`} style={{ transition: 'stroke 300ms var(--ease-out), stroke-width 300ms var(--ease-out)' }} />
           ))}
 
           {/* Kreislauf: Marketing → Sales → Ergebnis → Marketing, plus Rückmeldung Sales → Marketing */}
@@ -167,7 +169,7 @@ export function RevenueSystemGraphic() {
 
           {/* Agentic AI: Umlaufbahn um den Kern mit einem Agenten je Verbindung */}
           <circle cx="300" cy="255" r="110" className="sys-label" style={delay(380)} fill="none" stroke={ACCENT} strokeOpacity="0.35" strokeDasharray="2 5" />
-          <text x="300" y="166" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9.5" fontWeight="700" letterSpacing="1.5" fill={ACCENT}>
+          <text x="300" y="166" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9.5" fontWeight="700" letterSpacing="1.5" fill="#A0A3F9">
             AGENTIC AI
           </text>
           {[
@@ -177,7 +179,7 @@ export function RevenueSystemGraphic() {
           ].map((a) => (
             <g key={a.id} aria-hidden="true" className="sys-label" style={delay(440)}>
               <circle key={`${a.id}-${selected}`} cx={a.x} cy={a.y} r="13" fill={ACCENT} className={`agent-ping ${lit(a.id) ? 'is-lit' : ''}`} />
-              <circle cx={a.x} cy={a.y} r="12" fill="#FFFFFF" stroke={ACCENT} strokeWidth={lit(a.id) ? 2 : 1.25} />
+              <circle cx={a.x} cy={a.y} r="12" fill={NODE} stroke={ACCENT} strokeWidth={lit(a.id) ? 2 : 1.25} />
               <path
                 d={`M ${a.x} ${a.y - 6.5} L ${a.x + 1.8} ${a.y - 1.8} L ${a.x + 6.5} ${a.y} L ${a.x + 1.8} ${a.y + 1.8} L ${a.x} ${a.y + 6.5} L ${a.x - 1.8} ${a.y + 1.8} L ${a.x - 6.5} ${a.y} L ${a.x - 1.8} ${a.y - 1.8} Z`}
                 fill={ACCENT}
@@ -188,7 +190,7 @@ export function RevenueSystemGraphic() {
           {/* Kern: Prozesse */}
           <g {...nodeProps('prozesse')} style={delay(80)}>
             <circle cx="300" cy="255" r="78" fill="url(#sys-core)" stroke={ACCENT} strokeWidth={selected === 'prozesse' ? 2.5 : 1.25} className="transition-all duration-300" />
-            <text x="300" y="232" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="16" fontWeight="700" fill="#1e1e2a"><tspan x="300">Agentic</tspan><tspan x="300" dy="19">Processes</tspan></text>
+            <text x="300" y="232" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="16" fontWeight="700" fill={INK}><tspan x="300">Agentic</tspan><tspan x="300" dy="19">Processes</tspan></text>
             <text x="300" y="270" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={TEXT}>Systeme · Daten</text>
             <text x="300" y="285" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={TEXT}>Automatisierung</text>
           </g>
@@ -209,13 +211,13 @@ export function RevenueSystemGraphic() {
                   width="180"
                   height="66"
                   rx="18"
-                  fill={isResult ? ACCENT : '#FFFFFF'}
+                  fill={isResult ? ACCENT : NODE}
                   stroke={active ? ACCENT : isResult ? ACCENT : LINE}
                   strokeWidth={active ? 2.5 : 1.25}
                   className="transition-all duration-300"
                   style={{ filter: active ? 'drop-shadow(0 10px 18px rgba(104,108,250,0.25))' : undefined }}
                 />
-                <text x={n.x + 90} y={n.y + 29} textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize={isResult ? 17 : 15.5} fontWeight="700" fill={isResult ? '#FFFFFF' : '#1e1e2a'}>
+                <text x={n.x + 90} y={n.y + 29} textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize={isResult ? 17 : 15.5} fontWeight="700" fill={isResult ? '#FFFFFF' : INK}>
                   {NODES[n.id].title}
                 </text>
                 <text x={n.x + 90} y={n.y + 48} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill={isResult ? '#EEEEFE' : TEXT}>
@@ -231,7 +233,7 @@ export function RevenueSystemGraphic() {
       <div className="sm:hidden">
         <div className="relative pl-12">
           <div className="absolute left-0 top-0 bottom-0 w-9 rounded-2xl bg-[#CBCBFC]/45 border border-[#686CFA]/30 flex items-center justify-center" aria-hidden="true">
-            <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-[#4f54d6]">
+            <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-accent-strong">
               Agentic Processes · Daten
             </span>
           </div>
@@ -248,7 +250,7 @@ export function RevenueSystemGraphic() {
                     onClick={() => setSelected(id)}
                     aria-pressed={active}
                     className={`w-full text-left rounded-2xl border px-4 py-3 transition-all ${
-                      isResult ? 'bg-[#686CFA] border-[#686CFA] text-white' : active ? 'bg-white border-[#686CFA]' : 'bg-white border-[#E0E0E0]'
+                      isResult ? 'bg-[#686CFA] border-[#686CFA] text-white' : active ? 'bg-surface border-[#686CFA]' : 'bg-surface border-line'
                     }`}
                   >
                     <span className="flex items-center justify-between gap-3">
@@ -280,7 +282,7 @@ export function RevenueSystemGraphic() {
             type="button"
             onClick={() => setSelected('prozesse')}
             aria-pressed={selected === 'prozesse'}
-            className={`mt-3 w-full text-left rounded-2xl border px-4 py-3 transition-all ${selected === 'prozesse' ? 'bg-white border-[#686CFA]' : 'bg-[#CBCBFC]/25 border-[#CBCBFC]'}`}
+            className={`mt-3 w-full text-left rounded-2xl border px-4 py-3 transition-all ${selected === 'prozesse' ? 'bg-surface border-[#686CFA]' : 'bg-[#CBCBFC]/25 border-[#CBCBFC]'}`}
           >
             <span className="block font-display font-semibold text-slate-900">Agentic Processes</span>
             <span className="block text-xs text-slate-500">Verbindet alle Stufen: Systeme, Daten, Automatisierung</span>
@@ -289,7 +291,7 @@ export function RevenueSystemGraphic() {
       </div>
 
       {/* Detail zum gewählten Knoten (zugleich Textalternative) */}
-      <figcaption aria-live="polite" className="rounded-3xl border border-[#E0E0E0] bg-[#f6f6f6]/60 p-5 sm:p-6 transition-colors">
+      <figcaption aria-live="polite" className="rounded-3xl border border-line bg-canvas/60 p-5 sm:p-6 transition-colors">
         <div key={selected} className="motion-swap">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
           <p className="font-display font-semibold text-slate-900">
@@ -314,7 +316,7 @@ export function RevenueSystemGraphic() {
             </div>
           </div>
         </dl>
-        <Link href={info.href} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#4f54d6]">
+        <Link href={info.href} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-accent-strong">
           {info.linkText} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
         </Link>
         </div>

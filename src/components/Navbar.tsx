@@ -160,7 +160,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
   const isCurrent = (href: string) => currentPath === href;
   const linkState = (href: string) =>
-    isCurrent(href) ? 'text-[#4f54d6] font-semibold' : 'text-slate-700 hover:text-[#4f54d6]';
+    isCurrent(href) ? 'text-accent-strong font-semibold' : 'text-slate-700 hover:text-accent-strong';
 
   // Mega-Menü: Container gleitet ein, danach erscheinen die Gruppen gestaffelt. Schliessen kürzer und ohne Staffel.
   const panelVariants: Variants = reduceMotion
@@ -189,10 +189,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
         scrolled ? 'py-2.5' : 'py-3.5'
       } ${
         isOpen
-          ? 'bg-white border-b border-[#E0E0E0]'
+          ? 'bg-surface border-b border-line'
           : scrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]'
-            : 'bg-[#f6f6f6]/95 backdrop-blur-sm border-b border-slate-200/25'
+            ? 'bg-surface/95 backdrop-blur-md border-b border-slate-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]'
+            : 'bg-canvas/95 backdrop-blur-sm border-b border-slate-200/25'
       }`}
       id="main-navigation"
     >
@@ -233,7 +233,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               aria-controls="mega-menu"
               aria-haspopup="dialog"
               className={`inline-flex items-center justify-center gap-2 min-h-11 sm:min-w-[8.75rem] pl-3.5 pr-4 sm:pr-5 rounded-full border shrink-0 font-display font-semibold text-sm transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 ${
-                isOpen ? 'bg-slate-950 border-slate-950 text-white' : 'bg-white border-slate-200/80 text-slate-900 hover:border-[#686CFA]/40 hover:text-[#4f54d6]'
+                isOpen ? 'bg-deep border-deep text-white' : 'bg-surface border-slate-200/80 text-slate-900 hover:border-[#686CFA]/40 hover:text-accent-strong'
               }`}
             >
               <span className="menu-icon" aria-hidden="true">
@@ -256,7 +256,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.36, ease: EASE_OUT } }}
               exit={{ opacity: 0, transition: { duration: DURATIONS.menuExit, ease: EASE_EXIT } }}
-              className="fixed inset-x-0 bottom-0 bg-slate-950/35 backdrop-blur-[2px]"
+              className="fixed inset-x-0 bottom-0 bg-deep/35 backdrop-blur-[2px]"
               style={{ top: headerHeight }}
               onClick={() => close(false)}
               aria-hidden="true"
@@ -273,7 +273,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="absolute inset-x-0 top-full overflow-y-auto overscroll-contain bg-white border-b border-[#E0E0E0] shadow-[0_40px_80px_-40px_rgba(15,23,42,0.35)] rounded-b-[2rem]"
+              className="absolute inset-x-0 top-full overflow-y-auto overscroll-contain bg-surface border-b border-line shadow-[0_40px_80px_-40px_rgba(15,23,42,0.35)] rounded-b-[2rem]"
               style={{ maxHeight: `calc(100dvh - ${headerHeight}px)` }}
             >
               <div className="max-w-7xl mx-auto px-4 min-[380px]:px-6 sm:px-8 lg:px-10 pt-5 md:pt-10 pb-[max(2rem,calc(env(safe-area-inset-bottom)+1.5rem))] md:pb-12">
@@ -289,7 +289,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                           const hub = `/leistungen/${area.id}`;
                           const expanded = openArea === area.id;
                           return (
-                            <motion.div key={area.id} variants={groupVariants} className="rounded-2xl border border-[#E0E0E0] md:border-0 md:rounded-none p-4 md:p-0">
+                            <motion.div key={area.id} variants={groupVariants} className="rounded-2xl border border-line md:border-0 md:rounded-none p-4 md:p-0">
                               {/* Mobil: Akkordeon-Kopf */}
                               <button
                                 type="button"
@@ -314,7 +314,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                 <span className="w-10 h-10 rounded-2xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center transition-colors duration-300 group-hover:bg-[#686CFA] group-hover:text-white">
                                   <Icon className="w-5 h-5" aria-hidden="true" />
                                 </span>
-                                <span className={`block mt-4 text-2xl font-display font-semibold group-hover:text-[#4f54d6] transition-colors ${isCurrent(hub) ? 'text-[#4f54d6]' : 'text-slate-900'}`}>{area.label}</span>
+                                <span className={`block mt-4 text-2xl font-display font-semibold group-hover:text-accent-strong transition-colors ${isCurrent(hub) ? 'text-accent-strong' : 'text-slate-900'}`}>{area.label}</span>
                                 <span className="block mt-0.5 text-sm text-slate-500">{area.subtitle}</span>
                               </a>
                               <div id={`menu-area-${area.id}`} className={`menu-accordion ${expanded ? 'is-open' : ''}`}>
@@ -336,7 +336,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                                       );
                                     })}
                                   </ul>
-                                  <a href={hub} onClick={(e) => go(hub, e)} className="mt-1 md:mt-3 inline-flex items-center gap-1.5 min-h-11 md:min-h-0 text-[13px] font-semibold text-[#686CFA] hover:text-[#4f54d6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] rounded">
+                                  <a href={hub} onClick={(e) => go(hub, e)} className="mt-1 md:mt-3 inline-flex items-center gap-1.5 min-h-11 md:min-h-0 text-[13px] font-semibold text-[#686CFA] hover:text-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] rounded">
                                     Alles zu {area.labelZu} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                                   </a>
                                 </div>
@@ -356,13 +356,13 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                             href={l.href}
                             onClick={(e) => go(l.href, e)}
                             aria-current={isCurrent(l.href) ? 'page' : undefined}
-                            className={`group flex items-center gap-4 rounded-2xl border p-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${isCurrent(l.href) ? 'bg-[#686CFA]/10 border-[#CBCBFC]' : 'bg-[#f6f6f6] border-transparent hover:border-[#CBCBFC] hover:bg-white'}`}
+                            className={`group flex items-center gap-4 rounded-2xl border p-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${isCurrent(l.href) ? 'bg-[#686CFA]/10 border-[#CBCBFC]' : 'bg-canvas border-transparent hover:border-[#CBCBFC] hover:bg-surface'}`}
                           >
-                            <span className="w-9 h-9 rounded-xl bg-[#CBCBFC]/60 text-[#4f54d6] flex items-center justify-center shrink-0">
+                            <span className="w-9 h-9 rounded-xl bg-[#CBCBFC]/60 text-accent-strong flex items-center justify-center shrink-0">
                               <Icon className="w-4.5 h-4.5" aria-hidden="true" />
                             </span>
                             <span className="flex-1 min-w-0">
-                              <span className="block font-display font-semibold text-slate-900 group-hover:text-[#4f54d6] transition-colors">{l.label}</span>
+                              <span className="block font-display font-semibold text-slate-900 group-hover:text-accent-strong transition-colors">{l.label}</span>
                               <span className="block text-xs text-slate-500">{l.desc}</span>
                             </span>
                             <ArrowRight className="w-4 h-4 text-slate-300 transition-all group-hover:text-[#686CFA] group-hover:translate-x-0.5" aria-hidden="true" />
@@ -399,7 +399,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                       ))}
                     </motion.div>
 
-                    <motion.div variants={groupVariants} className="relative overflow-hidden rounded-3xl bg-slate-950 text-white p-6">
+                    <motion.div variants={groupVariants} className="relative overflow-hidden rounded-3xl bg-deep text-white p-6">
                       <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#686CFA]/30 blur-3xl pointer-events-none" aria-hidden="true" />
                       <div className="relative flex items-center gap-3">
                         <img src={SITE.portraitUrl} alt="" width={48} height={48} loading="lazy" className="w-12 h-12 rounded-2xl object-cover border border-white/15" referrerPolicy="no-referrer" />

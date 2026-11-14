@@ -20,7 +20,7 @@ const FOCUS: Record<string, string[]> = {
 export default function ReferencesView() {
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="references-view">
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Referenzen' }]} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -44,7 +44,7 @@ export default function ReferencesView() {
         <Container>
           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {TESTIMONIALS_DATA.map((t) => (
-              <li key={t.id} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 flex flex-col gap-6 shadow-[var(--shadow-premium-sm)]">
+              <li key={t.id} className="bg-surface border border-line/80 rounded-3xl p-7 sm:p-9 flex flex-col gap-6 shadow-[var(--shadow-premium-sm)]">
                 <div className="flex items-center gap-4">
                   {t.imageUrl ? (
                     <img
@@ -58,7 +58,7 @@ export default function ReferencesView() {
                       className="w-14 h-14 rounded-full object-cover border border-slate-200"
                     />
                   ) : (
-                    <span className="w-14 h-14 rounded-full bg-[#686CFA]/10 text-[#4f54d6] font-display font-bold flex items-center justify-center" aria-hidden="true">
+                    <span className="w-14 h-14 rounded-full bg-[#686CFA]/10 text-accent-strong font-display font-bold flex items-center justify-center" aria-hidden="true">
                       {t.name.split(' ').map((p) => p[0]).join('').slice(0, 2)}
                     </span>
                   )}

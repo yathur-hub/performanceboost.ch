@@ -34,7 +34,7 @@ interface ContactFormProps {
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export const inputClass =
-  'w-full bg-white border border-slate-300 focus:border-[#686CFA] focus:ring-3 focus:ring-[#686CFA]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
+  'w-full bg-surface border border-slate-300 focus:border-[#686CFA] focus:ring-3 focus:ring-[#686CFA]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
 
 export function Field({
   id,

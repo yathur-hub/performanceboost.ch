@@ -70,7 +70,7 @@ export default function DemandPipelineGap() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-5xl mx-auto text-left" id="demand-pipeline-gap">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-5xl mx-auto text-left" id="demand-pipeline-gap">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
@@ -107,7 +107,7 @@ export default function DemandPipelineGap() {
                 placeholder="z. B. 5"
                 value={neukunden}
                 onChange={e => handleFieldChange('neukunden', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
+                className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Neukunden / Mt.
@@ -126,7 +126,7 @@ export default function DemandPipelineGap() {
             <select aria-label="Wie hoch ist Ihre Abschlussquote (Lead → Kunde)?"
               value={abschlussrate}
               onChange={e => handleFieldChange('abschlussrate', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-750 text-slate-800 transition-colors cursor-pointer shadow-xs"
+              className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-750 text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
               <option value="0.01">1%</option>
@@ -153,7 +153,7 @@ export default function DemandPipelineGap() {
                 placeholder="z. B. 20"
                 value={aktuelleLeads}
                 onChange={e => handleFieldChange('aktuelleLeads', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
+                className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 Leads / Mt.
@@ -174,7 +174,7 @@ export default function DemandPipelineGap() {
                 placeholder="z. B. 5'000"
                 value={auftragswert}
                 onChange={e => handleFieldChange('auftragswert', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
+                className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono uppercase font-bold text-slate-400">
                 CHF
@@ -187,7 +187,7 @@ export default function DemandPipelineGap() {
         {/* Right Spalte: Live-Output-Panel */}
         <div className="lg:col-span-6">
           {!results ? (
-            <div className="bg-[#f6f6f6]/55 border border-slate-200/50 rounded-2xl p-8 text-center h-full flex flex-col justify-center items-center min-h-[300px] shadow-xs">
+            <div className="bg-canvas/55 border border-slate-200/50 rounded-2xl p-8 text-center h-full flex flex-col justify-center items-center min-h-[300px] shadow-xs">
               <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
                 Ihre Auswertung
               </h4>
@@ -247,7 +247,7 @@ export default function DemandPipelineGap() {
                 </div>
 
                 {/* Equation section in tabular visual representation */}
-                <div className="bg-white rounded-xl border border-slate-200/50 p-4 space-y-2.5 shadow-xs">
+                <div className="bg-surface rounded-xl border border-slate-200/50 p-4 space-y-2.5 shadow-xs">
                   <div className="flex justify-between text-xs pt-1">
                     <span className="text-slate-500 font-medium">Ziel:</span>
                     <span className="font-bold text-slate-800 font-mono">{formatNumber(Number(neukunden))} Neukunden / Monat</span>
@@ -331,7 +331,7 @@ function HoverHelp({ text }: { text: string }) {
   return (
     <div className="group relative cursor-help inline-block text-slate-400 hover:text-slate-900 transition-colors">
       <Info className="w-3.5 h-3.5" />
-      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+      <div className="absolute right-0 bottom-full mb-2 w-48 bg-deep text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
         {text}
       </div>
     </div>

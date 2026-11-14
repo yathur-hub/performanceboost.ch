@@ -22,7 +22,7 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id={`immobilien-${slug}`}>
       {/* 1. HERO */}
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb
             items={[
@@ -45,7 +45,7 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
               <Visual3D id={page.visual} priority sizes="320px" className="h-64 w-auto max-w-full" />
             </div>
           </div>
-          <ul aria-label="Grundsätze" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl border border-[#E0E0E0]/80 bg-white p-5">
+          <ul aria-label="Grundsätze" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl border border-line/80 bg-surface p-5">
             {page.trust.map((t, i) => {
               const Icon = TRUST_ICONS[i % TRUST_ICONS.length];
               return (
@@ -65,7 +65,7 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
           <SectionHeading title={page.pain.heading} intro={page.pain.intro} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {page.pain.cards.map((c) => (
-              <div key={c.title} className="flex flex-col gap-3 bg-white border border-[#E0E0E0]/80 rounded-2xl p-6">
+              <div key={c.title} className="flex flex-col gap-3 bg-surface border border-line/80 rounded-2xl p-6">
                 <h3 className="font-display font-semibold text-slate-900">{c.title}</h3>
                 <p className="text-body-sm text-slate-600 leading-relaxed">{c.desc}</p>
                 {c.source && <p className="mt-auto pt-2 text-xs text-slate-500">{c.source}</p>}
@@ -79,7 +79,7 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
       <section>
         <Container className="max-w-4xl space-y-8">
           <SectionHeading title={page.benefitsHeading} />
-          <ul className="space-y-5 rounded-3xl border border-[#E0E0E0]/80 bg-white p-6 sm:p-8">
+          <ul className="space-y-5 rounded-3xl border border-line/80 bg-surface p-6 sm:p-8">
             {page.benefits.map((b) => (
               <li key={b.title} className="flex gap-3">
                 <Check className="mt-1 w-5 h-5 shrink-0 text-[#686CFA]" aria-hidden="true" />
@@ -93,12 +93,12 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
       </section>
 
       {/* 5. VORGEHEN */}
-      <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-24">
+      <section className="bg-surface border-y border-line/40 py-20 md:py-24">
         <Container className="space-y-10">
           <SectionHeading title={page.approachHeading} />
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {page.approach.map((a, i) => (
-              <li key={a.title} className="bg-[#f6f6f6]/60 border border-[#E0E0E0]/80 rounded-2xl p-6 space-y-3">
+              <li key={a.title} className="bg-canvas/60 border border-line/80 rounded-2xl p-6 space-y-3">
                 <span className="text-[11px] font-bold font-mono text-[#686CFA]">0{i + 1}</span>
                 <h3 className="font-display font-semibold text-slate-900">{a.title}</h3>
                 <p className="text-body-sm text-slate-600 leading-relaxed">{a.desc}</p>
@@ -112,7 +112,7 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
       {/* 6. BAUSTEINE */}
       <section>
         <Container>
-          <div className="space-y-10 rounded-3xl bg-slate-950 p-8 text-white sm:p-12">
+          <div className="space-y-10 rounded-3xl bg-deep p-8 text-white sm:p-12">
             <h2 className="max-w-3xl font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
               Was Sie konkret bekommen
             </h2>
@@ -189,13 +189,13 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
         <Container className="max-w-4xl">
           <Link
             href={page.related.href}
-            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-[#E0E0E0]/80 bg-white p-6 hover:border-[#686CFA]/50"
+            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-line/80 bg-surface p-6 hover:border-[#686CFA]/50"
           >
             <span className="space-y-1">
               <span className="block text-lg font-display font-semibold text-slate-900">{page.related.title}</span>
               <span className="block text-body-sm text-slate-600 leading-relaxed">{page.related.desc}</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4f54d6] whitespace-nowrap">
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-strong whitespace-nowrap">
               {page.related.linkText} <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </span>
           </Link>

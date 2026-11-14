@@ -54,8 +54,8 @@ export function LeadCtaSection({
   return (
     <section id="lead-cta" className="scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
-          <div className="lg:col-span-5 bg-slate-950 text-white p-7 sm:p-10 flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-[2rem] border border-slate-200/70 bg-surface shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
+          <div className="lg:col-span-5 bg-deep text-white p-7 sm:p-10 flex flex-col">
             {visual && (
               <div className="h-24 sm:h-32 mb-6 flex items-end">
                 <Visual3D id={visual} shadow="dark" sizes="(min-width: 640px) 200px, 150px" className="h-full w-auto max-w-[220px]" />
@@ -158,7 +158,7 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string 
   }, []);
   return (
     <div
-      className={`lg:hidden fixed inset-x-0 bottom-0 z-40 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 bg-white/95 backdrop-blur border-t border-slate-200 transition-transform duration-300 ${
+      className={`lg:hidden fixed inset-x-0 bottom-0 z-40 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 bg-surface/95 backdrop-blur border-t border-slate-200 transition-transform duration-300 ${
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
       aria-hidden={!visible}

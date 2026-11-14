@@ -80,7 +80,7 @@ export function CtaButton({
   const styles = {
     dark: 'bg-[#686CFA] hover:bg-[#5a5fe0] text-white',
     accent: 'bg-[#686CFA] hover:bg-[#5a5fe0] text-white',
-    light: 'bg-white hover:bg-slate-50 text-slate-900 border border-slate-300',
+    light: 'bg-surface hover:bg-slate-50 text-slate-900 border border-slate-300',
   }[variant];
   return (
     <a
@@ -111,9 +111,9 @@ export const TeaserCard: React.FC<TeaserCardProps> = ({ href, title, desc, linkT
   return (
     <Link
       href={href}
-      className="group flex flex-col h-full bg-white border border-[#E0E0E0]/80 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686CFA]/50 hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+      className="group flex flex-col h-full bg-surface border border-line/80 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686CFA]/50 hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
     >
-      <h3 className="text-base sm:text-lg font-display font-semibold text-slate-900 group-hover:text-[#4f54d6] transition-colors leading-snug">
+      <h3 className="text-base sm:text-lg font-display font-semibold text-slate-900 group-hover:text-accent-strong transition-colors leading-snug">
         {title}
       </h3>
       {desc && <p className="mt-2 text-body-sm text-slate-600 leading-relaxed">{desc}</p>}
@@ -141,7 +141,7 @@ export function CheckList({ items }: { items: string[] }) {
 /** FAQ als native <details>: zugänglich, ohne JS bedienbar, Antworten stehen im HTML (FAQPage-Schema). */
 export function FaqList({ items }: { items: { q: string; a: string }[] }) {
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl divide-y divide-slate-100 shadow-[var(--shadow-premium-sm)]">
+    <div className="bg-surface border border-line/65 rounded-3xl divide-y divide-slate-100 shadow-[var(--shadow-premium-sm)]">
       {items.map((f) => (
         <details key={f.q} className="group px-6 sm:px-8">
           <summary className="flex justify-between items-center gap-4 py-5 min-h-11 cursor-pointer list-none font-semibold text-slate-900 text-sm sm:text-base hover:text-[#686CFA] transition-colors [&::-webkit-details-marker]:hidden">
@@ -165,10 +165,10 @@ export function ToolLinks({ ids }: { ids: string[] }) {
         <Link
           key={t.id}
           href="/skills"
-          className="group flex items-start justify-between gap-4 bg-white border border-[#E0E0E0]/80 rounded-2xl px-5 py-4 hover:border-[#686CFA]/50 transition-colors"
+          className="group flex items-start justify-between gap-4 bg-surface border border-line/80 rounded-2xl px-5 py-4 hover:border-[#686CFA]/50 transition-colors"
         >
           <span>
-            <span className="block text-sm font-semibold text-slate-900 group-hover:text-[#4f54d6]">{t.title}</span>
+            <span className="block text-sm font-semibold text-slate-900 group-hover:text-accent-strong">{t.title}</span>
             <span className="block text-xs text-slate-500 mt-1 leading-relaxed">{t.description}</span>
           </span>
           <ArrowUpRight className="w-4 h-4 text-[#686CFA] shrink-0 mt-0.5" aria-hidden="true" />
@@ -186,7 +186,7 @@ export function ResourceLinks({ slugs }: { slugs: string[] }) {
     <ul className="space-y-3">
       {items.map((r) => (
         <li key={r.slug}>
-          <Link href={`/ressourcen/${r.slug}`} className="group inline-flex items-start gap-2 text-sm font-semibold text-slate-800 hover:text-[#4f54d6]">
+          <Link href={`/ressourcen/${r.slug}`} className="group inline-flex items-start gap-2 text-sm font-semibold text-slate-800 hover:text-accent-strong">
             <ArrowRight className="w-4 h-4 text-[#686CFA] mt-0.5 shrink-0" aria-hidden="true" />
             <span>{r.title}</span>
           </Link>
@@ -203,7 +203,7 @@ export function TestimonialQuote({ id, sentences = 2 }: { id: string; sentences?
   const parts = t.quote.match(/[^.!?]+[.!?]+/g) ?? [t.quote];
   const text = parts.slice(0, sentences).join(' ').trim();
   return (
-    <figure className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 shadow-[var(--shadow-premium-sm)]">
+    <figure className="bg-surface border border-line/80 rounded-3xl p-7 sm:p-9 shadow-[var(--shadow-premium-sm)]">
       <blockquote className="text-body text-slate-700 leading-relaxed">«{text}{parts.length > sentences ? ' …' : ''}»</blockquote>
       <figcaption className="mt-5 flex items-center justify-between gap-4 flex-wrap">
         <span className="text-sm">
@@ -233,7 +233,7 @@ export function FinalCta({
 }) {
   return (
     <Container>
-      <div className="w-full bg-slate-950 text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
+      <div className="w-full bg-deep text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
         <div className="space-y-4 max-w-2xl">
           <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">{title}</h2>
           <p className="text-body text-slate-300 leading-relaxed">{text}</p>

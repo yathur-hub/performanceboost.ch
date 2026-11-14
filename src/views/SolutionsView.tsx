@@ -156,7 +156,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="solutions-view">
       
       {/* HERO SECTION */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-surface pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           <motion.h1 
@@ -230,10 +230,10 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                   e.preventDefault();
                   onNavigate(`/loesungen/${sector.slug}`);
                 }}
-                className="group flex h-full items-start justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#686CFA]/50 hover:shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+                className="group flex h-full items-start justify-between gap-3 rounded-2xl border border-slate-200 bg-surface p-5 hover:border-[#686CFA]/50 hover:shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
               >
                 <span className="space-y-1">
-                  <span className="block font-display font-semibold text-slate-950 group-hover:text-[#4f54d6]">{sector.title}</span>
+                  <span className="block font-display font-semibold text-slate-950 group-hover:text-accent-strong">{sector.title}</span>
                   <span className="block text-sm text-slate-600 leading-snug">{sector.subtitle}</span>
                 </span>
                 <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-slate-400 group-hover:text-[#686CFA]" aria-hidden="true" />
@@ -247,7 +247,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       <section 
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
+        <div className="bg-deep text-white border border-deep rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
           <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686CFA]/10 rounded-full blur-3xl pointer-events-none" />
           <span className="text-[11px] font-mono font-bold tracking-widest text-[#686CFA] uppercase">Zuerst die Analyse</span>
           <blockquote className="text-body-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
@@ -274,11 +274,11 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             <motion.div 
               key={item.num} 
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.35)" }}
-              className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition-all duration-300 group"
+              className="bg-surface border border-line/65 p-8 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition-all duration-300 group"
             >
               <div className="space-y-5">
                 <div className="flex justify-between items-center">
-                  <span className="text-[11px] font-mono font-bold bg-[#f6f6f6] text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686CFA]/5 group-hover:text-[#686CFA] group-hover:border-[#686CFA]/20 transition-all duration-300">
+                  <span className="text-[11px] font-mono font-bold bg-canvas text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686CFA]/5 group-hover:text-[#686CFA] group-hover:border-[#686CFA]/20 transition-all duration-300">
                     {item.num}
                   </span>
                   <button 
@@ -311,7 +311,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       </section>
 
       {/* COMBINATIONS SECTION */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
+      <section className="bg-canvas/50 border-y border-line/30 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div 
@@ -330,12 +330,12 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               <motion.div 
                 key={idx} 
                 whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.2)" }}
-                className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] transition-all duration-300"
+                className="bg-surface border border-line/65 p-8 md:p-10 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] transition-all duration-300"
               >
                 <div className="space-y-5">
                   <div className="space-y-1.5">
                     <h3 className="text-lg font-bold text-slate-900 font-display">{c.title}</h3>
-                    <p className="text-xs font-semibold text-[#4f54d6]">{c.combo}</p>
+                    <p className="text-xs font-semibold text-accent-strong">{c.combo}</p>
                   </div>
                   <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{c.desc}</p>
                 </div>
@@ -360,7 +360,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
         </div>
 
         <div 
-          className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 md:p-10 space-y-4 shadow-[var(--shadow-premium-sm)]"
+          className="bg-surface border border-line/65 rounded-3xl p-6 md:p-10 space-y-4 shadow-[var(--shadow-premium-sm)]"
         >
           {FAQS.map((faq, index) => (
             <div key={index} className="border-b border-slate-100 last:border-0 pb-4 last:pb-0 pt-4 first:pt-4">

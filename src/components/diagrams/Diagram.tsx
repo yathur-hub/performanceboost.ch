@@ -52,7 +52,7 @@ const NodeCard: React.FC<{ node: DiagramNode; index?: number; active?: boolean; 
       className={`relative flex ${stacked ? 'flex-col gap-2 h-full' : 'items-start gap-3'} rounded-2xl border ${compact ? 'p-3' : 'p-3.5 sm:p-4'} ${
         active
           ? 'bg-[#686CFA] border-[#686CFA] text-white shadow-[0_12px_30px_-12px_rgba(105,110,239,0.6)]'
-          : 'bg-white border-slate-200/80 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.12)]'
+          : 'bg-surface border-slate-200/80 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.12)]'
       }`}
     >
       <NodeIcon name={node.icon} active={active} />
@@ -139,7 +139,7 @@ function Funnel({ nodes }: { nodes: DiagramNode[] }) {
           <li key={node.title} className="flex flex-col items-center" style={{ ['--d' as string]: i } as React.CSSProperties}>
             <div
               className={`flex items-center gap-3 rounded-2xl px-4 py-3 border transition-colors ${
-                active ? 'bg-[#686CFA] border-[#686CFA] text-white' : 'bg-white border-slate-200/80'
+                active ? 'bg-[#686CFA] border-[#686CFA] text-white' : 'bg-surface border-slate-200/80'
               }`}
               style={{ width: `${width}%`, backgroundColor: active ? undefined : `rgba(105,110,239,${0.04 + i * 0.05})` }}
             >
@@ -203,7 +203,7 @@ function Cycle({ center, nodes }: { center: string; nodes: DiagramNode[] }) {
 
 export function Diagram({ spec, className = '' }: { spec: DiagramSpec; className?: string }) {
   return (
-    <figure className={`diagram-enter rounded-3xl bg-gradient-to-b from-white to-[#f7f7fe] border border-slate-200/70 p-4 sm:p-6 ${className}`}>
+    <figure className={`diagram-enter rounded-3xl bg-gradient-to-b from-surface to-surface-2 border border-slate-200/70 p-4 sm:p-6 ${className}`}>
       {spec.type === 'flow' && <Flow nodes={spec.nodes} />}
       {spec.type === 'hub' && <Hub center={spec.center} nodes={spec.nodes} />}
       {spec.type === 'funnel' && <Funnel nodes={spec.nodes} />}

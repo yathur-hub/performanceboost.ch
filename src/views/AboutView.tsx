@@ -53,7 +53,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="about-us-view">
       
       {/* HERO SECTION */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-surface pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           
@@ -92,7 +92,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
         </div>
 
         <div 
-          className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl space-y-6 shadow-[var(--shadow-premium-md)]"
+          className="bg-surface border border-line/65 p-8 md:p-10 rounded-3xl space-y-6 shadow-[var(--shadow-premium-md)]"
         >
           <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686CFA] pl-4">Auf einen Blick</h3>
           
@@ -129,7 +129,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <img loading="lazy" decoding="async" 
             src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/main/Yathur%20Office%20Shoot.jpeg" 
             alt="Yathur Nathan" 
-            className="w-full h-auto aspect-[4/5] object-cover rounded-3xl border border-[#E0E0E0]/65 shadow-[var(--shadow-premium-md)] relative z-10"
+            className="w-full h-auto aspect-[4/5] object-cover rounded-3xl border border-line/65 shadow-[var(--shadow-premium-md)] relative z-10"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -155,16 +155,16 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               </ul>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs font-bold">
-              <a href="/martech" onClick={(e) => { e.preventDefault(); onNavigate('/martech'); }} className="text-[#686CFA] hover:text-[#4f54d6]">MarTech-Wissen →</a>
-              <a href="/werkzeuge" onClick={(e) => { e.preventDefault(); onNavigate('/werkzeuge'); }} className="text-[#686CFA] hover:text-[#4f54d6]">Werkzeuge →</a>
-              <a href="/labor" onClick={(e) => { e.preventDefault(); onNavigate('/labor'); }} className="text-[#686CFA] hover:text-[#4f54d6]">Labor →</a>
+              <a href="/martech" onClick={(e) => { e.preventDefault(); onNavigate('/martech'); }} className="text-[#686CFA] hover:text-accent-strong">MarTech-Wissen →</a>
+              <a href="/werkzeuge" onClick={(e) => { e.preventDefault(); onNavigate('/werkzeuge'); }} className="text-[#686CFA] hover:text-accent-strong">Werkzeuge →</a>
+              <a href="/labor" onClick={(e) => { e.preventDefault(); onNavigate('/labor'); }} className="text-[#686CFA] hover:text-accent-strong">Labor →</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* WAS UNS UNTERSCHEIDET */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
+      <section className="bg-canvas/50 border-y border-line/30 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div 
@@ -178,7 +178,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           >
             <motion.div 
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
-              className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
+              className="bg-surface border border-line/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
               <div className="w-10 h-10 rounded-xl bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center border border-[#CBCBFC]/20">
                 <Zap className="w-5 h-5" />
@@ -191,7 +191,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
             <motion.div 
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
-              className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
+              className="bg-surface border border-line/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
               <div className="w-10 h-10 rounded-xl bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center border border-[#CBCBFC]/20">
                 <Cpu className="w-5 h-5" />
@@ -204,7 +204,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
             <motion.div 
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
-              className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
+              className="bg-surface border border-line/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] transition-all duration-300"
             >
               <div className="w-10 h-10 rounded-xl bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center border border-[#CBCBFC]/20">
                 <CheckCircle2 className="w-5 h-5" />
@@ -229,7 +229,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
         <div className="space-y-6">
           <div 
-            className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
+            className="bg-surface border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
             <span className="text-xs font-mono font-bold text-[#686CFA]">Zuerst das Geschäft verstehen, dann Werkzeuge wählen</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
@@ -238,7 +238,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           </div>
 
           <div 
-            className="bg-white border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
+            className="bg-surface border border-slate-100 p-8 rounded-3xl space-y-3 shadow-[var(--shadow-premium-sm)]"
           >
             <span className="text-xs font-mono font-bold text-[#686CFA]">Grundlagen aufbauen, die bleiben</span>
             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
@@ -249,7 +249,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       </section>
 
       {/* CORE GUIDING VALUES */}
-      <section className="bg-slate-950 text-white border-y border-slate-900 py-16 md:py-32">
+      <section className="bg-deep text-white border-y border-deep py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div 
@@ -267,13 +267,13 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 <motion.div 
                   key={k} 
                   whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.55)" }}
-                  className="bg-slate-900 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-md"
+                  className="bg-deep border border-slate-800 p-8 rounded-3xl space-y-4 shadow-md"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#686CFA]/20 text-[#A0A3F9] flex items-center justify-center border border-slate-700/70">
                     <IconComp className="w-5 h-5 text-[#A0A3F9]" />
                   </div>
                   <h3 className="text-base font-bold tracking-tight text-white">{val.title}</h3>
-                  <p className="text-xs text-slate-200 leading-relaxed font-normal">{val.desc}</p>
+                  <p className="text-xs text-slate-300 leading-relaxed font-normal">{val.desc}</p>
                 </motion.div>
               );
             })}

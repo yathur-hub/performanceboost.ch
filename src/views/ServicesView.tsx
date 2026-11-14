@@ -239,7 +239,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </section>
 
           {/* PROBLEM SECTION */}
-          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
+          <section className="bg-canvas/50 border-y border-line/30 py-16 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center animate-fadeIn">
               <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">
                 {extendedContent.problem.title}
@@ -263,7 +263,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {extendedContent.leistet.items.map((item, idx) => (
-                <div key={idx} className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] hover:border-[#686CFA]/25 hover:shadow-[var(--shadow-premium-lg)] transition-all duration-300 group">
+                <div key={idx} className="bg-surface border border-line/65 p-8 rounded-3xl space-y-4 shadow-[var(--shadow-premium-sm)] hover:border-[#686CFA]/25 hover:shadow-[var(--shadow-premium-lg)] transition-all duration-300 group">
                   <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 border border-slate-150 font-mono text-xs font-bold text-slate-400 group-hover:bg-[#686CFA] group-hover:text-white group-hover:border-transparent transition-colors duration-300">
                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                   </div>
@@ -287,7 +287,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {extendedContent.approach.items.map((item, idx) => (
-                <div key={idx} className="bg-[#f6f6f6]/55 border border-[#E0E0E0]/80 p-8 rounded-3xl space-y-4 relative shadow-[var(--shadow-premium-sm)]">
+                <div key={idx} className="bg-canvas/55 border border-line/80 p-8 rounded-3xl space-y-4 relative shadow-[var(--shadow-premium-sm)]">
                   <div className="bg-[#686CFA]/10 text-[#686CFA] text-[11px] tracking-widest font-mono font-bold px-2.5 py-1 rounded-md w-fit border border-[#CBCBFC]/20">
                     PHASE {idx + 1}
                   </div>
@@ -321,7 +321,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 {sec.type === 'grid' && sec.items && (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {sec.items.map((it, iIdx) => (
-                      <div key={iIdx} className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl shadow-[var(--shadow-premium-sm)] space-y-2 text-left">
+                      <div key={iIdx} className="bg-surface border border-line/65 p-6 rounded-3xl shadow-[var(--shadow-premium-sm)] space-y-2 text-left">
                         <h4 className="font-bold text-sm text-slate-900 flex items-center gap-2 leading-tight">
                           <span className="w-1.5 h-1.5 bg-[#686CFA] rounded-full shrink-0" />
                           {it.title}
@@ -343,7 +343,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 )}
 
                 {sec.type === 'list' && sec.bullets && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl bg-[#f6f6f6]/55 border border-[#E0E0E0]/80 p-8 rounded-3xl text-left">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl bg-canvas/55 border border-line/80 p-8 rounded-3xl text-left">
                     {sec.bullets.map((b, bIdx) => (
                       <div key={bIdx} className="flex gap-2.5 items-start">
                         <div className="w-4 h-4 rounded-full bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0 mt-0.5 border border-[#CBCBFC]/25">
@@ -360,7 +360,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 {sec.type === 'investment' && sec.items && (
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
                     {sec.items.map((it, iIdx) => (
-                      <div key={iIdx} className="bg-white border-2 border-slate-100 hover:border-[#686CFA] p-8 rounded-3xl space-y-4 transition-colors flex flex-col justify-between shadow-[var(--shadow-premium-sm)] text-left">
+                      <div key={iIdx} className="bg-surface border-2 border-slate-100 hover:border-[#686CFA] p-8 rounded-3xl space-y-4 transition-colors flex flex-col justify-between shadow-[var(--shadow-premium-sm)] text-left">
                         <div className="space-y-2">
                           <h4 className="font-bold text-slate-900 text-[11px] uppercase tracking-widest pb-2 border-b border-slate-100 font-mono">
                             {it.title}
@@ -390,7 +390,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
               </div>
               <div className="space-y-4 text-left">
                 {service.benefits.map((ben, idx) => (
-                  <div key={idx} className="flex gap-4 bg-[#f6f6f6]/55 p-5 border border-slate-200/50 rounded-2xl shadow-xs">
+                  <div key={idx} className="flex gap-4 bg-canvas/55 p-5 border border-slate-200/50 rounded-2xl shadow-xs">
                     <div className="w-5 h-5 rounded-full bg-[#686CFA]/5 text-[#686CFA] flex items-center justify-center shrink-0 mt-0.5 border border-[#CBCBFC]/25">
                       <Check className="w-3 h-3" />
                     </div>
@@ -402,14 +402,14 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
             {/* Deliverables */}
             <div className="space-y-6">
-              <div className="border-l-4 border-slate-950 pl-4">
+              <div className="border-l-4 border-deep pl-4">
                 <h2 className="text-xl font-display font-semibold tracking-tight text-slate-900 text-left leading-none font-sans">Was Sie erhalten</h2>
                 <p className="text-xs text-slate-400 text-left mt-1.5 font-semibold">Diese Ergebnisse übergeben wir dokumentiert und einsatzbereit.</p>
               </div>
               <div className="space-y-4 text-left">
                 {service.deliverables.map((del, idx) => (
-                  <div key={idx} className="flex gap-4 bg-white p-5 border border-[#E0E0E0]/65 rounded-2xl items-center shadow-xs">
-                    <span className="w-6 h-6 bg-[#f6f6f6] text-slate-400 rounded-lg flex items-center justify-center shrink-0 text-xs font-mono font-bold border border-slate-100">
+                  <div key={idx} className="flex gap-4 bg-surface p-5 border border-line/65 rounded-2xl items-center shadow-xs">
+                    <span className="w-6 h-6 bg-canvas text-slate-400 rounded-lg flex items-center justify-center shrink-0 text-xs font-mono font-bold border border-slate-100">
                       0{idx + 1}
                     </span>
                     <p className="text-body-sm font-semibold text-slate-805 leading-snug">{del}</p>
@@ -420,7 +420,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </section>
 
           {/* FAQ ACCORDION SECTION */}
-          <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
+          <section className="bg-canvas/50 border-y border-line/30 py-16 md:py-32">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="text-center space-y-3">
                 <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">
@@ -432,7 +432,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                 {extendedContent.faq.map((fq, fidx) => {
                   const [isOpen, setIsOpen] = React.useState(false);
                   return (
-                    <div key={fidx} className="bg-white border border-[#E0E0E0]/65 rounded-2xl overflow-hidden shadow-[var(--shadow-premium-sm)] transition-colors">
+                    <div key={fidx} className="bg-surface border border-line/65 rounded-2xl overflow-hidden shadow-[var(--shadow-premium-sm)] transition-colors">
                       <button 
                         onClick={() => setIsOpen(!isOpen)}
                         className="w-full text-left p-5 flex justify-between items-center bg-transparent cursor-pointer border-none outline-none"
@@ -502,7 +502,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="services-overview-page text-center">
       
       {/* Hero section */}
-      <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center animate-fadeIn">
+      <section className="relative bg-surface pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center animate-fadeIn">
         <div className="absolute top-0 left-10 w-80 h-80 bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <h1 className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.1]">
@@ -515,7 +515,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       </section>
 
       {/* Vorgehen (Details auf /ansatz) */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-14 md:py-20 animate-fadeIn" id="zusammenarbeit">
+      <section className="bg-canvas/50 border-y border-line/30 py-14 md:py-20 animate-fadeIn" id="zusammenarbeit">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-2 max-w-3xl">
@@ -528,7 +528,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </div>
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {PHASES.map((p, idx) => (
-              <li key={p.label} className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl">
+              <li key={p.label} className="bg-surface border border-line/65 p-6 rounded-3xl">
                 <span className="text-[11px] font-bold font-mono text-[#686CFA]">0{idx + 1}</span>
                 <p lang="en" className="mt-2 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">{p.label}</p>
                 <h3 className="mt-1 text-base font-bold text-slate-900 leading-tight">{p.title}</h3>
@@ -545,7 +545,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           const areaServices = SERVICES.filter((s) => primaryAreaOf(s.slug)?.id === area.id);
           return (
             <div key={area.id} className="space-y-8" id={`leistungsfeld-${area.id}`}>
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E0E0E0]/80 pb-5">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-line/80 pb-5">
                 <div className="space-y-2 max-w-3xl">
                   <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686CFA]">{area.label} · {area.subtitle}</p>
                   <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 tracking-tight">{area.cardTitle}</h2>
@@ -566,12 +566,12 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     <Link
                       key={s.slug}
                       href={`/leistungen/${s.slug}`}
-                      className="bg-white border border-[#E0E0E0]/65 hover:border-[#686CFA]/40 rounded-3xl p-7 flex flex-col transition-all duration-300 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+                      className="bg-surface border border-line/65 hover:border-[#686CFA]/40 rounded-3xl p-7 flex flex-col transition-all duration-300 shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
                     >
                       <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center shrink-0 group-hover:bg-[#686CFA] group-hover:border-transparent transition-all duration-300">
                         <IconComp className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" aria-hidden="true" />
                       </div>
-                      <h3 className="mt-5 text-base font-bold text-slate-900 group-hover:text-[#4f54d6] transition-colors leading-tight">{s.title}</h3>
+                      <h3 className="mt-5 text-base font-bold text-slate-900 group-hover:text-accent-strong transition-colors leading-tight">{s.title}</h3>
                       <p className="text-[11px] text-[#686CFA] font-bold tracking-widest leading-relaxed mt-3 uppercase font-mono">{localized.benefit}</p>
                       <p className="text-body-sm text-slate-500 leading-relaxed mt-3 line-clamp-4">{localized.desc}</p>
                       <span className="mt-auto pt-6 text-xs text-[#686CFA] font-bold inline-flex items-center gap-1.5">
@@ -589,7 +589,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
       </section>
 
       {/* ERGEBNIS-PAKETE (statt Kombinationen von Tätigkeiten) */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32 animate-fadeIn">
+      <section className="bg-canvas/50 border-y border-line/30 py-16 md:py-32 animate-fadeIn">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-center">
           <div className="space-y-3">
             <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Pakete mit einem klaren Ergebnis</h2>
@@ -599,7 +599,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {RESULT_PACKAGES.map((pkg) => (
-              <div key={pkg.title} className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col">
+              <div key={pkg.title} className="bg-surface border border-line/65 p-8 rounded-3xl space-y-5 shadow-[var(--shadow-premium-sm)] text-left flex flex-col">
                 <div className="space-y-4">
                   <h3 className="text-base font-bold text-slate-900 leading-tight">{pkg.title}</h3>
                   <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{pkg.desc}</p>
@@ -607,7 +607,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                     <span className="font-bold text-[#686CFA]">Ergebnis:</span> {pkg.result}
                   </p>
                 </div>
-                <Link href={pkg.href} className="mt-auto pt-2 text-xs text-[#686CFA] font-bold w-fit inline-flex items-center gap-1.5 hover:text-[#4f54d6]">
+                <Link href={pkg.href} className="mt-auto pt-2 text-xs text-[#686CFA] font-bold w-fit inline-flex items-center gap-1.5 hover:text-accent-strong">
                   {pkg.linkText} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </Link>
               </div>
@@ -618,7 +618,7 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
 
       {/* BRANCHENLOESUNGEN CARDS SECTION */}
       <section 
-        className="bg-[#fcfcfc] border-y border-[#E2E8F0]/30 py-16 md:py-32"
+        className="bg-surface border-y border-line/30 py-16 md:py-32"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-xl mx-auto space-y-3">
@@ -735,11 +735,11 @@ export default function ServicesView({ currentSlug, onNavigate }: ServicesViewPr
                   key={ind.slug}
                   id={`industry-card-${ind.slug}`}
                   href={`/loesungen/${ind.slug}`}
-                  className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:border-[#686CFA]/25 transition-all duration-300 cursor-pointer group"
+                  className="bg-surface border border-line/65 p-6 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] hover:border-[#686CFA]/25 transition-all duration-300 cursor-pointer group"
                 >
                   <div className="space-y-4">
                     <div className="flex justify-between items-start">
-                      <div className="p-2.5 bg-[#f6f6f6] rounded-xl border border-slate-100 group-hover:bg-[#686CFA]/5 group-hover:border-[#686CFA]/25 group-hover:text-[#686CFA] transition-colors">
+                      <div className="p-2.5 bg-canvas rounded-xl border border-slate-100 group-hover:bg-[#686CFA]/5 group-hover:border-[#686CFA]/25 group-hover:text-[#686CFA] transition-colors">
                         <IconComp className="w-5 h-5 text-slate-400 group-hover:text-[#686CFA] transition-colors" />
                       </div>
                     </div>

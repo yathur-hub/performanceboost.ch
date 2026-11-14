@@ -20,6 +20,7 @@ import { AREAS, AGENTIC_LEVELS } from '../data/serviceAreas';
 import { PHASES } from '../data/approach';
 import { CHALLENGE_CARDS } from '../data/challenges';
 import { BrandVisual } from '../components/BrandVisual';
+import { SystemConsole, ScrollStatement, ComparisonRows } from '../components/system/SystemBlocks';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -81,63 +82,39 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="home-view">
-      {/* 1 HERO: Claim, konkreter Nutzen, Rakete wie bisher */}
-      <section className="relative pt-[8.25rem] pb-8 sm:pt-36 sm:pb-14 md:pt-40 md:pb-16 overflow-hidden bg-white">
+      {/* 1 HERO: Claim über die volle Breite, darunter Text und System-Konsole (eine Choreografie, system.css) */}
+      <section className="pbx pbx-hero relative pt-[8.5rem] sm:pt-40 md:pt-44 pb-16 sm:pb-24 overflow-hidden" data-rv-skip>
         <Container className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 items-center">
-            <div className="hero-enter lg:col-span-8 xl:col-span-7 lg:space-y-7 text-left">
-              <h1 lang="en" className="text-[2.1rem] sm:text-5xl lg:text-[2.75rem] xl:text-[3.5rem] font-display font-semibold tracking-tight text-slate-900 leading-[1.08] text-balance">
-                <span className="hero-line"><span>Boost your performance</span></span>{' '}
-                <span className="hero-line text-[#686CFA] italic font-serif"><span>through agentic marketing, sales &amp; processes.</span></span>
-              </h1>
-              <p className="text-slate-600 lg:text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl">
-                performanceboost ist der AI-First-Scaling-Partner für Schweizer KMU. Wir bauen Marketing, Vertrieb und Abläufe als ein System,
-                das auf KI aufbaut, damit Ihr Unternehmen wachsen kann, ohne dass mit jedem Auftrag die Handarbeit mitwächst.
+          <h1 lang="en" className="pbx-h1 max-w-[15ch] lg:max-w-none">
+            <span className="pbx-line"><span style={{ ['--d' as string]: '80ms' }}>Boost your performance</span></span>
+            <span className="pbx-line"><span className="pbx-accent" style={{ ['--d' as string]: '200ms' }}>through agentic marketing,</span></span>
+            <span className="pbx-line"><span className="pbx-accent" style={{ ['--d' as string]: '320ms' }}>sales &amp; processes.</span></span>
+          </h1>
+          <div className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
+            <div className="lg:col-span-5 lg:pt-3">
+              <p className="pbx-lead pbx-seq" style={{ ['--d' as string]: '520ms' }}>
+                performanceboost ist der AI-First-Scaling-Partner für Schweizer KMU. Wir bauen Marketing, Vertrieb und Abläufe als ein
+                System, das auf KI aufbaut, damit Ihr Unternehmen wachsen kann, ohne dass mit jedem Auftrag die Handarbeit mitwächst.
               </p>
-              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 justify-start items-stretch sm:items-center lg:pt-1">
+              <div className="pbx-seq mt-9 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-x-6 sm:gap-y-2" style={{ ['--d' as string]: '640ms' }}>
                 <CtaButton label="Ausgangslage besprechen" location="home_hero" pageSlug="home" />
-                <button
-                  type="button"
-                  onClick={() => setShowProblemFinder(true)}
-                  data-cta="hero_secondary"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 bg-white hover:bg-slate-50 whitespace-nowrap text-slate-900 border border-slate-300 font-display font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 max-sm:min-h-11 max-sm:border-transparent max-sm:bg-transparent max-sm:hover:bg-transparent max-sm:px-0 max-sm:py-2 max-sm:text-[15px] max-sm:font-medium max-sm:text-slate-700 max-sm:active:text-[#4f54d6]"
-                >
-                  Welches Problem möchten Sie lösen? <ArrowRight className="w-4 h-4 shrink-0 sm:hidden" aria-hidden="true" />
+                <button type="button" onClick={() => setShowProblemFinder(true)} data-cta="hero_secondary" className="pbx-link cursor-pointer whitespace-nowrap">
+                  Welches Problem möchten Sie lösen? <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
                 </button>
               </div>
             </div>
-
-            {/* Rakete in zwei Ebenen: Rauch statisch, Rakete animiert */}
-            <div className="lg:col-span-4 xl:col-span-5 flex justify-end hero-parallax -mt-6 sm:-mt-2 lg:mt-0">
-              <div className="relative w-[132px] min-[380px]:w-[150px] sm:w-[190px] lg:w-[280px] xl:w-[400px] aspect-[650/1024] select-none">
-                <img
-                  src="/images/hero-smoke-650.webp"
-                  srcSet="/images/hero-smoke-400.webp 400w, /images/hero-smoke-650.webp 650w"
-                  sizes="(min-width: 1280px) 400px, (min-width: 1024px) 280px, (min-width: 640px) 190px, 150px"
-                  width={650}
-                  height={1024}
-                  alt=""
-                  decoding="async"
-                  draggable={false}
-                  className="smoke-in absolute inset-0 h-full w-full"
-                />
-                <div className="rocket-in absolute inset-0">
-                  <img
-                    src="/images/hero-rocket-650.webp"
-                    srcSet="/images/hero-rocket-400.webp 400w, /images/hero-rocket-650.webp 650w"
-                    sizes="(min-width: 1280px) 400px, (min-width: 1024px) 280px, (min-width: 640px) 190px, 150px"
-                    width={650}
-                    height={1024}
-                    alt="Startende Rakete in den Farben von performanceboost"
-                    fetchPriority="high"
-                    decoding="async"
-                    draggable={false}
-                    className="absolute inset-0 h-full w-full animate-rocket"
-                  />
-                </div>
-              </div>
+            <div className="lg:col-span-7 flex lg:justify-end">
+              <SystemConsole />
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* 1b STATEMENT: Aufhellung beim Scrollen */}
+      <section className="pbx" data-rv-skip>
+        <Container>
+          <div className="h-px mb-16 sm:mb-24 bg-line" />
+          <ScrollStatement className="max-w-5xl" text="In vielen KMU wächst mit jedem Auftrag die Handarbeit mit. Wir bauen Marketing, Vertrieb und Abläufe als ein System, in dem Daten, Automatisierung und Agenten die Vorarbeit übernehmen und Ihr Team dort entscheidet, wo es zählt." />
         </Container>
       </section>
 
@@ -164,9 +141,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <Link
                 key={c.title}
                 href={c.href}
-                className="group flex flex-col h-full bg-white border border-[#E0E0E0]/80 rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686CFA]/45 hover:shadow-[var(--shadow-premium-md)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+                className="group flex flex-col h-full bg-surface border border-line/80 rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686CFA]/45 hover:shadow-[var(--shadow-premium-md)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
               >
-                <span className="w-fit text-[10px] font-mono font-bold uppercase tracking-widest text-[#4f54d6] bg-[#CBCBFC]/40 rounded-full px-2.5 py-1">{c.area}</span>
+                <span className="w-fit text-[10px] font-mono font-bold uppercase tracking-widest text-accent-strong bg-[#CBCBFC]/40 rounded-full px-2.5 py-1">{c.area}</span>
                 <span className="mt-4 text-lg font-display font-semibold text-slate-900 leading-snug">{c.title}</span>
                 <span className="mt-2 text-body-sm text-slate-600 leading-relaxed">{c.desc}</span>
                 <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA]">
@@ -178,34 +155,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </Container>
       </section>
 
-      {/* 2b VERGLEICH: klassisch wachsen vs. AI First */}
-      <section>
-        <Container className="space-y-8">
-          <SectionHeading
-            title="Klassisch wachsen oder AI First"
-            intro="Der Unterschied zeigt sich darin, wie Abläufe, Daten und KI zusammengebaut sind."
-          />
-          <div className="rounded-3xl border border-[#E0E0E0]/80 bg-white overflow-hidden">
-            <div className="hidden md:grid md:grid-cols-12 gap-6 px-8 py-4 border-b border-slate-200/80 bg-[#f6f6f6]/60 text-[11px] font-mono font-bold uppercase tracking-widest">
-              <span className="md:col-span-2 text-slate-400">Thema</span>
-              <span className="md:col-span-5 text-slate-500">Klassisch</span>
-              <span lang="en" className="md:col-span-5 text-[#4f54d6]">AI First</span>
+      {/* 2b VERGLEICH: fixierte Überschrift, Zeilen werden beim Scrollen aktiv */}
+      <section className="pbx" data-rv-skip>
+        <Container className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-32 space-y-5">
+              <h2 className="pbx-h2">Klassisch wachsen oder <span lang="en" className="whitespace-nowrap">AI First</span></h2>
+              <p className="text-body-sm text-slate-600 leading-relaxed max-w-sm">
+                Der Unterschied zeigt sich darin, wie Abläufe, Daten und KI zusammengebaut sind.
+              </p>
             </div>
-            <dl className="divide-y divide-slate-200/80">
-              {COMPARISON.map((row) => (
-                <div key={row.topic} className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 px-6 sm:px-8 py-5">
-                  <dt className="md:col-span-2 font-display font-semibold text-slate-900">{row.topic}</dt>
-                  <dd className="md:col-span-5 text-body-sm text-slate-500 leading-relaxed">
-                    <span className="md:hidden text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">Klassisch</span>
-                    {row.classic}
-                  </dd>
-                  <dd className="md:col-span-5 text-body-sm text-slate-800 leading-relaxed">
-                    <span lang="en" className="md:hidden text-[11px] font-mono font-bold uppercase tracking-widest text-[#4f54d6] block mb-1 mt-2">AI First</span>
-                    {row.aiFirst}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+          </div>
+          <div className="lg:col-span-8">
+            <ComparisonRows rows={COMPARISON} />
           </div>
         </Container>
       </section>
@@ -213,12 +175,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 3 DREI BEREICHE, EIN SYSTEM */}
       <section>
         <Container className="space-y-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#E0E0E0]/80 pb-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-line/80 pb-6">
             <SectionHeading
               title="Drei Bereiche, eine gemeinsame KI-Basis"
               intro="Agentic Marketing, Agentic Sales und Agentic Processes laufen auf derselben Datenbasis, demselben Unternehmenskontext und denselben Regeln für Agenten. Deshalb bauen wir sie als ein System und beginnen dort, wo der Engpass heute am grössten ist."
             />
-            <Link href="/leistungen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
+            <Link href="/leistungen" className="text-xs font-bold text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5 shrink-0">
               Alle Leistungen ansehen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
           </div>
@@ -227,7 +189,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <li key={a.id}>
                 <Link
                   href={`/leistungen/${a.id}`}
-                  className="group flex flex-col h-full rounded-3xl border border-[#E0E0E0]/80 bg-white p-7 sm:p-8 transition-all duration-300 hover:border-[#686CFA]/50 hover:shadow-[var(--shadow-premium-md)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+                  className="group flex flex-col h-full rounded-3xl border border-line/80 bg-surface p-7 sm:p-8 transition-all duration-300 hover:border-[#686CFA]/50 hover:shadow-[var(--shadow-premium-md)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
                 >
                   <span className="flex items-start justify-between gap-4">
                     <span>
@@ -241,7 +203,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   <span className="mt-2 text-body-sm text-slate-600 leading-relaxed">{a.teaser}</span>
                   <ul className="mt-5 flex flex-wrap gap-1.5">
                     {a.fields.map((f) => (
-                      <li key={f} className="text-[12px] font-semibold text-slate-600 bg-[#f6f6f6] border border-[#E0E0E0] rounded-full px-2.5 py-1">
+                      <li key={f} className="text-[12px] font-semibold text-slate-600 bg-canvas border border-line rounded-full px-2.5 py-1">
                         {f}
                       </li>
                     ))}
@@ -260,7 +222,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* 4 ZUSAMMENSPIEL: Systemdiagramm und Stufen von der Regel bis zum Agenten */}
-      <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-28">
+      <section className="bg-surface border-y border-line/40 py-20 md:py-28">
         <Container className="space-y-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-32">
@@ -290,7 +252,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 title="Agenten arbeiten, Ihr Team entscheidet"
                 intro="Wir legen pro Schritt fest, ob eine Regel, ein Modell oder ein Agent ihn übernimmt. Wie viel ein Agent selbst ausführen darf, hängt davon ab, wie teuer ein Fehler wäre und ob er sich rückgängig machen lässt."
               />
-              <Link href="/leistungen/ki-im-unternehmen" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
+              <Link href="/leistungen/ki-im-unternehmen" className="text-xs font-bold text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5 shrink-0">
                 Governance für KI-Agenten <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </div>
@@ -298,13 +260,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {AGENTIC_LEVELS.map((l, i) => (
                 <li
                   key={l.title}
-                  className={`rounded-3xl border p-6 flex flex-col ${i === 3 ? 'bg-slate-950 border-slate-950 text-white' : 'bg-[#f6f6f6]/60 border-[#E0E0E0]/80'}`}
+                  className={`rounded-3xl border p-6 flex flex-col ${i === 3 ? 'bg-deep border-deep text-white' : 'bg-canvas/60 border-line/80'}`}
                 >
                   <span className={`text-[10px] font-mono font-bold uppercase tracking-widest ${i === 3 ? 'text-[#CBCBFC]' : 'text-[#686CFA]'}`}>{l.label}</span>
                   <h4 className={`mt-2 font-display font-semibold leading-snug ${i === 3 ? 'text-white' : 'text-slate-900'}`}>{l.title}</h4>
                   <p className={`mt-2 text-body-sm leading-relaxed ${i === 3 ? 'text-slate-300' : 'text-slate-600'}`}>{l.desc}</p>
                   <p className={`mt-3 text-xs leading-relaxed ${i === 3 ? 'text-slate-400' : 'text-slate-500'}`}>{l.example}</p>
-                  <p className={`mt-auto pt-4 text-xs font-bold ${i === 3 ? 'text-[#CBCBFC]' : 'text-[#4f54d6]'}`}>{l.decides}</p>
+                  <p className={`mt-auto pt-4 text-xs font-bold ${i === 3 ? 'text-[#CBCBFC]' : 'text-accent-strong'}`}>{l.decides}</p>
                 </li>
               ))}
             </ol>
@@ -320,13 +282,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               title="Wie wir vorgehen"
               intro="Vier Phasen für Systeme mit Automatisierung und KI-Agenten, je nach Ausgangslage unterschiedlich gewichtet. Sie steigen dort ein, wo Ihr Unternehmen heute steht. Enablement und Optimierung wiederholen sich, solange wir zusammenarbeiten."
             />
-            <Link href="/ansatz" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
+            <Link href="/ansatz" className="text-xs font-bold text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5 shrink-0">
               Mehr zum Ansatz <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
           </div>
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {PHASES.map((p, idx) => (
-              <li key={p.label} className="relative bg-white border border-[#E0E0E0]/80 p-7 rounded-3xl flex flex-col">
+              <li key={p.label} className="relative bg-surface border border-line/80 p-7 rounded-3xl flex flex-col">
                 <span className="flex items-center justify-between">
                   <span className="text-[11px] font-bold font-mono bg-[#686CFA]/5 text-[#686CFA] px-3 py-1 rounded-lg border border-[#CBCBFC]/40">0{idx + 1}</span>
                   {idx >= 2 && <RotateCcw className="w-4 h-4 text-[#686CFA]/70" aria-label="wiederkehrend" />}
@@ -353,7 +315,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 7 INHABER + WISSEN */}
       <section>
         <Container>
-          <div className="bg-white border border-[#E0E0E0]/65 p-8 md:p-12 rounded-[2rem] grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          <div className="bg-surface border border-line/65 p-8 md:p-12 rounded-[2rem] grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
             <div className="md:col-span-4 flex justify-center md:justify-start">
               <img
                 loading="lazy"
@@ -414,7 +376,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 9 ABSCHLUSS-CTA */}
       <section>
         <Container>
-          <div className="w-full bg-slate-950 text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
+          <div className="w-full bg-deep text-white rounded-3xl p-8 sm:p-12 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-[var(--shadow-premium-lg)]">
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white leading-tight">
                 Wo bremst Handarbeit heute Ihr Wachstum?

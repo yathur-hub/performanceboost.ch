@@ -43,7 +43,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
             <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider font-mono">Offizielle Angaben nach Schweizer Recht.</p>
           </div>
 
-          <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
+          <div className="bg-surface border border-line/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
             
             {/* Anbieter */}
             <div className="space-y-2 pb-5 border-b border-slate-50">
@@ -150,7 +150,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
           <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider font-mono">Datenschutzkonformität nach Schweizer Recht (DSG).</p>
         </div>
 
-        <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
+        <div className="bg-surface border border-line/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
           
           {/* Allgemeines */}
           <div className="space-y-2 pb-5 border-b border-slate-50">

@@ -159,7 +159,7 @@ export default function KanzleiWachstumsCheck() {
   const currentStufe = stufenConfigs[results.stufe];
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
         <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Treuhand & Beratung</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kanzlei-Wachstums-Check</h3>
@@ -244,7 +244,7 @@ export default function KanzleiWachstumsCheck() {
 
         {/* Right Outcomes */}
         <div className="md:col-span-7 space-y-6">
-          <div className="p-5 bg-slate-950 text-white rounded-2xl flex flex-col justify-between space-y-4">
+          <div className="p-5 bg-deep text-white rounded-2xl flex flex-col justify-between space-y-4">
             <div className="flex justify-between items-center pb-2 border-b border-slate-850">
               <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 uppercase">
                 Unabhängigkeit von Empfehlungen

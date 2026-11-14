@@ -76,7 +76,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-5">
+      <div className="bg-surface border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-5">
         {numberField('gc-mandates', 'Wie viele neue Mandate möchten Sie pro Jahr zusätzlich gewinnen?',
           'Zum Beispiel 12, also eines pro Monat.', mandates, setMandates)}
         <div className="space-y-1.5">
@@ -96,7 +96,7 @@ export default function FinanceGrowthCheck({ pageSlug, onDiscuss }: FinanceGrowt
           'Optional. Damit sehen Sie, ob das Ziel in Ihren Kalender passt.', capacity, setCapacity)}
       </div>
 
-      <div className="bg-slate-950 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between gap-6" aria-live="polite">
+      <div className="bg-deep text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between gap-6" aria-live="polite">
         {result ? (
           <div className="space-y-4">
             <p className="text-[11px] font-mono uppercase tracking-widest text-[#CBCBFC]">Ihr Ergebnis</p>

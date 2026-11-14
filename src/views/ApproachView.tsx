@@ -39,7 +39,7 @@ export default function ApproachView() {
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="ansatz">
       {/* HERO */}
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Ansatz' }]} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -76,8 +76,8 @@ export default function ApproachView() {
               { label: 'Projekt', note: 'Einmalig, mit vereinbartem Ergebnis', phases: [0, 1], loop: false },
               { label: 'Laufend', note: 'Wiederkehrend, monatlich ausgewertet', phases: [2, 3], loop: true },
             ].map((block) => (
-              <div key={block.label} className={`rounded-[2rem] border p-5 sm:p-6 ${block.loop ? 'border-[#CBCBFC] bg-[#686CFA]/[0.04]' : 'border-[#E0E0E0]/80 bg-white/60'}`}>
-                <p className="flex items-center gap-2 px-1 text-[11px] font-mono font-bold uppercase tracking-widest text-[#4f54d6]">
+              <div key={block.label} className={`rounded-[2rem] border p-5 sm:p-6 ${block.loop ? 'border-[#CBCBFC] bg-[#686CFA]/[0.04]' : 'border-line/80 bg-surface/60'}`}>
+                <p className="flex items-center gap-2 px-1 text-[11px] font-mono font-bold uppercase tracking-widest text-accent-strong">
                   {block.loop ? <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" /> : <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />}
                   {block.label} <span className="normal-case tracking-normal font-sans font-medium text-slate-500">· {block.note}</span>
                 </p>
@@ -85,7 +85,7 @@ export default function ApproachView() {
                   {block.phases.map((i) => {
                     const p = PHASES[i];
                     return (
-                      <li key={p.label} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-6 flex flex-col">
+                      <li key={p.label} className="bg-surface border border-line/80 rounded-3xl p-6 flex flex-col">
                         <span className="text-[11px] font-bold font-mono text-[#686CFA]">0{i + 1}</span>
                         <p lang="en" className="mt-3 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">{p.label}</p>
                         <h3 className="mt-1 font-display font-semibold text-slate-900 leading-snug">{p.title}</h3>
@@ -129,7 +129,7 @@ export default function ApproachView() {
       </section>
 
       {/* GRUNDSÄTZE */}
-      <section className="bg-white border-y border-[#E2E8F0]/40 py-16 md:py-24">
+      <section className="bg-surface border-y border-line/40 py-16 md:py-24">
         <Container className="space-y-8">
           <SectionHeading title="Was in jeder Phase gilt" />
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -140,7 +140,7 @@ export default function ApproachView() {
               </li>
             ))}
           </ul>
-          <Link href="/leistungen/ki-im-unternehmen" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#4f54d6]">
+          <Link href="/leistungen/ki-im-unternehmen" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-accent-strong">
             Governance für KI-Agenten <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </Link>
         </Container>
@@ -152,10 +152,10 @@ export default function ApproachView() {
           <SectionHeading title="So beginnt eine Zusammenarbeit" intro="Drei Arten, mit uns zu arbeiten. Die meisten Kunden starten mit der Analyse." />
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {WORK_MODES.map((m, idx) => (
-              <li key={m.title} className="bg-white border border-[#E0E0E0]/80 p-7 sm:p-8 rounded-3xl flex flex-col gap-3">
+              <li key={m.title} className="bg-surface border border-line/80 p-7 sm:p-8 rounded-3xl flex flex-col gap-3">
                 <span className="w-fit text-[11px] font-bold font-mono bg-[#686CFA]/5 text-[#686CFA] px-3 py-1 rounded-lg border border-[#CBCBFC]/40">0{idx + 1}</span>
                 <h3 className="text-base font-bold text-slate-900 leading-tight">{m.title}</h3>
-                <p className="text-body-sm text-[#4f54d6] font-semibold leading-relaxed">{m.forWhom}</p>
+                <p className="text-body-sm text-accent-strong font-semibold leading-relaxed">{m.forWhom}</p>
                 <p className="text-body-sm text-slate-600 leading-relaxed">{m.desc}</p>
               </li>
             ))}

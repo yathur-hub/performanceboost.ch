@@ -54,7 +54,7 @@ export default function ContactView() {
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="contact-primary-view">
       
       {/* HERO TITLE BLOCK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-24 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-surface pt-12 pb-16 md:py-24 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <motion.h1 
@@ -81,7 +81,7 @@ export default function ContactView() {
         
         {/* Form column (5 cols) */}
         <div 
-          className="lg:col-span-12 xl:col-span-7 bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl space-y-8 shadow-[var(--shadow-premium-lg)]"
+          className="lg:col-span-12 xl:col-span-7 bg-surface border border-line/65 p-8 md:p-10 rounded-3xl space-y-8 shadow-[var(--shadow-premium-lg)]"
           id="contact-form-container"
         >
           <div className="space-y-2 border-b border-slate-100 pb-5">
@@ -99,7 +99,7 @@ export default function ContactView() {
           
           {/* Direct channels card */}
           <div 
-            className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
+            className="bg-surface border border-line/65 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
             <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686CFA] pl-4">Direkter Kontakt</h3>
             
@@ -114,7 +114,7 @@ export default function ContactView() {
                     rel={ch.external ? "noreferrer" : undefined}
                     className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#686CFA]/20 hover:bg-[#686CFA]/[0.01] transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-550 flex items-center justify-center shrink-0 group-hover:bg-[#686CFA] group-hover:text-white transition-all">
+                    <div className="w-9 h-9 rounded-xl bg-surface border border-slate-200 text-slate-550 flex items-center justify-center shrink-0 group-hover:bg-[#686CFA] group-hover:text-white transition-all">
                       <IconComp className="w-4 h-4" />
                     </div>
                     <div className="space-y-1 min-w-0">
@@ -129,7 +129,7 @@ export default function ContactView() {
 
           {/* Quick FAQ / Next Step timeline card */}
           <div 
-            className="bg-slate-950 text-white border border-slate-900 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
+            className="bg-deep text-white border border-deep p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
             <h3 className="text-sm font-bold text-white border-l-3 border-[#686CFA] pl-4 font-display">So geht es weiter</h3>
             
@@ -137,7 +137,7 @@ export default function ContactView() {
               {NEXT_STEPS.map((ns, idx) => (
                 <div key={idx} className="relative space-y-1.5" id={`next-step-${ns.step}`}>
                   {/* Absolute positioning of step dot badge */}
-                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-slate-950 border-2 border-[#686CFA] rounded-full flex items-center justify-center text-[11px] font-bold text-white font-mono">
+                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-deep border-2 border-[#686CFA] rounded-full flex items-center justify-center text-[11px] font-bold text-white font-mono">
                     {idx + 1}
                   </div>
                   

@@ -22,9 +22,9 @@ const TRUST_ICONS = [KeyRound, LineChart, ShieldCheck, UserRound];
 const overlineClass = 'text-[11px] font-mono font-bold uppercase tracking-widest text-[#686CFA]';
 const h2Class = 'text-2xl sm:text-3xl font-display font-semibold text-slate-950 tracking-tight';
 const primaryBtn =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 text-base sm:text-sm font-semibold text-white hover:bg-[#4f54d6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 transition-colors cursor-pointer';
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-deep px-6 py-3.5 text-base sm:text-sm font-semibold text-white hover:bg-[#4f54d6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 transition-colors cursor-pointer';
 const secondaryBtn =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base sm:text-sm font-semibold text-slate-900 hover:border-[#686CFA] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 transition-colors cursor-pointer';
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-surface px-6 py-3.5 text-base sm:text-sm font-semibold text-slate-900 hover:border-[#686CFA] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 transition-colors cursor-pointer';
 
 function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -34,7 +34,7 @@ const ReferenceCardView: React.FC<{ card: ReferenceCard }> = ({ card }) => {
   const [expanded, setExpanded] = useState(false);
   const testimonial = card.testimonialId ? TESTIMONIALS_DATA.find((t) => t.id === card.testimonialId) : undefined;
   return (
-    <article className="flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-6 sm:p-7">
+    <article className="flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-surface p-6 sm:p-7">
       <h3 className="font-display text-lg font-semibold text-slate-900">{card.label}</h3>
       {card.intro && <p className="text-sm text-slate-700">{card.intro}</p>}
       <div className="space-y-2">
@@ -59,7 +59,7 @@ const ReferenceCardView: React.FC<{ card: ReferenceCard }> = ({ card }) => {
             type="button"
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className="text-sm font-semibold text-[#4f54d6] underline-offset-2 hover:underline cursor-pointer bg-transparent border-0 p-0"
+            className="text-sm font-semibold text-accent-strong underline-offset-2 hover:underline cursor-pointer bg-transparent border-0 p-0"
           >
             {expanded ? 'Weniger anzeigen' : 'Ganzes Zitat lesen'}
           </button>
@@ -113,13 +113,13 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
   };
 
   return (
-    <div className="bg-[#f6f6f6] pb-24 text-slate-800" id="finance-landing">
+    <div className="bg-canvas pb-24 text-slate-800" id="finance-landing">
       {/* 1. HERO */}
-      <section ref={heroRef} className="border-b border-slate-100 bg-white px-4 pb-14 pt-36 sm:px-6 md:pt-40 lg:px-8">
+      <section ref={heroRef} className="border-b border-slate-100 bg-surface px-4 pb-14 pt-36 sm:px-6 md:pt-40 lg:px-8">
         <div className="mx-auto max-w-7xl space-y-8">
           <Link
             href={isHub ? '/loesungen' : '/loesungen/finanzdienstleister'}
-            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#4f54d6] hover:text-[#686CFA]"
+            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-accent-strong hover:text-[#686CFA]"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> {isHub ? 'Alle Branchen' : 'Finanzdienstleister'}
           </Link>
@@ -139,7 +139,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                       <li key={c.slug}>
                         <Link
                           href={`/loesungen/${c.slug}`}
-                          className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-900 hover:border-[#686CFA] hover:text-[#4f54d6]"
+                          className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-900 hover:border-[#686CFA] hover:text-accent-strong"
                         >
                           {c.title} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                         </Link>
@@ -163,7 +163,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
             </div>
 
             <aside className="lg:col-span-5">
-              <div className="flex items-center gap-5 rounded-3xl border border-slate-200 bg-[#fcfcfc] p-6 sm:p-8">
+              <div className="flex items-center gap-5 rounded-3xl border border-slate-200 bg-surface p-6 sm:p-8">
                 <img
                   src={SITE.portraitUrl}
                   alt="Yathur Nathan"
@@ -184,7 +184,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
       </section>
 
       {/* 2. VERTRAUENSLEISTE */}
-      <section aria-label="Grundsätze" className="border-b border-slate-100 bg-white px-4 py-6 sm:px-6 lg:px-8">
+      <section aria-label="Grundsätze" className="border-b border-slate-100 bg-surface px-4 py-6 sm:px-6 lg:px-8">
         <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-4 lg:grid-cols-4">
           {TRUST_POINTS.map((t, i) => {
             const Icon = TRUST_ICONS[i];
@@ -207,7 +207,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {page.pains.map((p) => (
-              <div key={p.title} className="space-y-2 rounded-3xl border border-slate-200 bg-white p-6">
+              <div key={p.title} className="space-y-2 rounded-3xl border border-slate-200 bg-surface p-6">
                 <h3 className="font-semibold text-slate-950">{p.title}</h3>
                 <p className="text-body-sm leading-relaxed text-slate-600">{p.desc}</p>
               </div>
@@ -220,7 +220,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           <div className="space-y-3">
             <h2 className={h2Class}>Was sich für Sie ändert</h2>
           </div>
-          <ul className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
+          <ul className="space-y-5 rounded-3xl border border-slate-200 bg-surface p-6 sm:p-8">
             {BENEFITS.map((b) => (
               <li key={b.title} className="flex gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#686CFA]" aria-hidden="true" />
@@ -234,7 +234,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
 
         {/* 5. LEISTUNGEN */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-10 rounded-3xl bg-slate-950 p-8 text-white sm:p-12">
+          <div className="space-y-10 rounded-3xl bg-deep p-8 text-white sm:p-12">
             <div className="max-w-3xl space-y-3">
               <h2 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                 Was wir für Sie aufbauen und betreiben
@@ -277,11 +277,11 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                 <li key={c.slug}>
                   <Link
                     href={`/loesungen/${c.slug}`}
-                    className="group flex h-full flex-col gap-3 rounded-3xl border border-slate-200 bg-white p-6 hover:border-[#686CFA]/50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+                    className="group flex h-full flex-col gap-3 rounded-3xl border border-slate-200 bg-surface p-6 hover:border-[#686CFA]/50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
                   >
-                    <h3 className="font-display text-lg font-semibold text-slate-950 group-hover:text-[#4f54d6]">{c.title}</h3>
+                    <h3 className="font-display text-lg font-semibold text-slate-950 group-hover:text-accent-strong">{c.title}</h3>
                     <p className="text-body-sm leading-relaxed text-slate-600">{c.desc}</p>
-                    <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-[#4f54d6]">
+                    <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-accent-strong">
                       {c.linkText} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </Link>
@@ -296,7 +296,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                 <h2 className={h2Class}>{page.icpDetail.heading}</h2>
               </div>
               <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-                <div className="space-y-3 rounded-3xl border border-slate-200 bg-white p-6">
+                <div className="space-y-3 rounded-3xl border border-slate-200 bg-surface p-6">
                   <h3 className="font-semibold text-slate-950">Typische Anlässe</h3>
                   <ul className="space-y-1.5">
                     {page.icpDetail.occasions.map((o) => (
@@ -307,12 +307,12 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                     ))}
                   </ul>
                 </div>
-                <div className="space-y-3 rounded-3xl border border-slate-200 bg-white p-6">
+                <div className="space-y-3 rounded-3xl border border-slate-200 bg-surface p-6">
                   <h3 className="font-semibold text-slate-950">Was wir bauen</h3>
                   <p className="text-sm leading-relaxed text-slate-700">{page.icpDetail.build}</p>
                   {page.icpDetail.note && <p className="text-sm leading-relaxed text-slate-600">{page.icpDetail.note}</p>}
                 </div>
-                <div className="space-y-3 rounded-3xl border border-slate-200 bg-white p-6">
+                <div className="space-y-3 rounded-3xl border border-slate-200 bg-surface p-6">
                   <h3 className="font-semibold text-slate-950">Was wir bewusst nicht tun</h3>
                   <ul className="space-y-1.5">
                     {page.icpDetail.avoid.map((a) => (
@@ -327,11 +327,11 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
               <nav aria-label="Weitere Schwerpunkte" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
                 <span className="font-semibold text-slate-950">Auch interessant:</span>
                 {ICP_CARDS.filter((c) => c.slug !== slug).map((c) => (
-                  <Link key={c.slug} href={`/loesungen/${c.slug}`} className="inline-flex items-center gap-1.5 font-semibold text-[#4f54d6] hover:underline">
+                  <Link key={c.slug} href={`/loesungen/${c.slug}`} className="inline-flex items-center gap-1.5 font-semibold text-accent-strong hover:underline">
                     {c.title} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 ))}
-                <Link href="/loesungen/finanzdienstleister" className="inline-flex items-center gap-1.5 font-semibold text-[#4f54d6] hover:underline">
+                <Link href="/loesungen/finanzdienstleister" className="inline-flex items-center gap-1.5 font-semibold text-accent-strong hover:underline">
                   Übersicht Finanzdienstleister <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </nav>
@@ -397,12 +397,12 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
             {PACKAGES.map((p) => (
               <div
                 key={p.name}
-                className={`flex flex-col gap-4 rounded-3xl border bg-white p-6 ${p.recommended ? 'border-[#686CFA] ring-2 ring-[#686CFA]/15 lg:order-2' : 'border-slate-200'} ${p.name === 'Start' ? 'lg:order-1' : ''} ${p.name === 'Ausbau' ? 'lg:order-3' : ''}`}
+                className={`flex flex-col gap-4 rounded-3xl border bg-surface p-6 ${p.recommended ? 'border-[#686CFA] ring-2 ring-[#686CFA]/15 lg:order-2' : 'border-slate-200'} ${p.name === 'Start' ? 'lg:order-1' : ''} ${p.name === 'Ausbau' ? 'lg:order-3' : ''}`}
               >
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="font-display text-xl font-semibold text-slate-950">{p.name}</h3>
                   {p.recommended && (
-                    <span className="rounded-full bg-[#686CFA]/10 px-3 py-1 text-xs font-semibold text-[#4f54d6]">Empfohlen</span>
+                    <span className="rounded-full bg-[#686CFA]/10 px-3 py-1 text-xs font-semibold text-accent-strong">Empfohlen</span>
                   )}
                 </div>
                 <p className="text-sm font-medium text-slate-700">{p.audience}</p>
@@ -422,7 +422,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
               <li key={n}>{n}</li>
             ))}
           </ul>
-          <details className="rounded-2xl border border-slate-200 bg-white p-5 text-sm">
+          <details className="rounded-2xl border border-slate-200 bg-surface p-5 text-sm">
             <summary className="cursor-pointer font-semibold text-slate-900">
               Optionen wie CRM-Einführung, zusätzliche Landingpages oder Zweitsprache
             </summary>
@@ -436,7 +436,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
 
         {/* 11. REGULIERUNG & DATENSCHUTZ */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 rounded-3xl border border-slate-200 bg-surface p-6 sm:p-10 md:grid-cols-2">
             <div className="space-y-4">
               <h2 className={h2Class}>Was wir bewusst nicht tun</h2>
               <ul className="space-y-2">
@@ -457,7 +457,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
 
         {/* 12. ANSPRECHPERSON */}
         <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-8 rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 md:grid-cols-12">
+          <div className="grid grid-cols-1 items-center gap-8 rounded-3xl border border-slate-200 bg-surface p-8 sm:p-10 md:grid-cols-12">
             <div className="flex flex-col items-center gap-3 md:col-span-4">
               <img
                 src={SITE.portraitUrl}
@@ -498,7 +498,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           <div className="space-y-3">
             <h2 className={h2Class}>Häufige Fragen</h2>
           </div>
-          <div className="divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-white px-5 sm:px-8">
+          <div className="divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-surface px-5 sm:px-8">
             {page.faqs.map((faq, idx) => {
               const open = openFaq === idx;
               return (
@@ -510,7 +510,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                       aria-expanded={open}
                       aria-controls={`faq-panel-${idx}`}
                       id={`faq-button-${idx}`}
-                      className="flex w-full items-center justify-between gap-4 bg-transparent py-1 text-left font-semibold text-slate-950 hover:text-[#4f54d6] cursor-pointer border-0"
+                      className="flex w-full items-center justify-between gap-4 bg-transparent py-1 text-left font-semibold text-slate-950 hover:text-accent-strong cursor-pointer border-0"
                     >
                       <span>{faq.q}</span>
                       <ChevronDown
@@ -547,7 +547,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
           className="mx-auto max-w-6xl scroll-mt-24 px-4 sm:px-6 lg:px-8"
         >
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-            <div className="space-y-6 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 lg:col-span-7">
+            <div className="space-y-6 rounded-3xl border border-slate-200 bg-surface p-6 sm:p-8 lg:col-span-7">
               <div className="space-y-2">
                 <h2 className={h2Class}>Anfrage-Check anfragen</h2>
                 <p className="text-slate-600">
@@ -559,12 +559,12 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
             </div>
 
             <aside className="space-y-6 lg:col-span-5">
-              <div className="space-y-4 rounded-3xl bg-slate-950 p-6 text-white sm:p-8">
+              <div className="space-y-4 rounded-3xl bg-deep p-6 text-white sm:p-8">
                 <h3 className="font-display text-lg font-semibold">Was Sie erwartet</h3>
                 <ol className="space-y-3">
                   {FORM_EXPECTATIONS.map((e, i) => (
-                    <li key={e} className="flex gap-3 text-sm text-slate-200">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#686CFA] font-mono text-xs font-bold">
+                    <li key={e} className="flex gap-3 text-sm text-slate-300">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#686CFA] text-white font-mono text-xs font-bold">
                         {i + 1}
                       </span>
                       <span>{e}</span>
@@ -572,7 +572,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
                   ))}
                 </ol>
               </div>
-              <div className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
+              <div className="space-y-4 rounded-3xl border border-slate-200 bg-surface p-6 sm:p-8">
                 <h3 className="font-display text-lg font-semibold text-slate-950">Passt das zu Ihnen?</h3>
                 <div className="space-y-1">
                   <p className="text-sm font-semibold text-slate-900">Gut passend</p>
@@ -595,7 +595,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
             initial={{ y: 80 }}
             animate={{ y: 0 }}
             exit={{ y: 80 }}
-            className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 p-3 backdrop-blur lg:hidden"
+            className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-surface/95 p-3 backdrop-blur lg:hidden"
           >
             <button type="button" className={`${primaryBtn} w-full`} onClick={() => ctaClick('sticky_mobile', 'anfrage')}>
               Anfrage-Check anfragen <ArrowRight className="h-4 w-4" aria-hidden="true" />

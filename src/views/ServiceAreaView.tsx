@@ -50,7 +50,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id={`area-${id}`}>
       {/* HERO */}
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Leistungen', href: '/leistungen' }, { label: area.shortLabel }]} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -91,7 +91,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
       {/* AUSGANGSLAGE + ERGEBNISSE */}
       <section>
         <Container className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10 space-y-6">
+          <div className="bg-surface border border-line/80 rounded-3xl p-7 sm:p-10 space-y-6">
             <SectionHeading title="Typische Ausgangslagen" />
             <ul className="space-y-3">
               {area.challenges.map((c) => (
@@ -151,7 +151,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
           {area.topics.length > 0 && (
             <div className="space-y-4 pt-2">
               <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 font-display">{isArea ? 'Weitere Kompetenzfelder' : 'Was dazugehört'}</h3>
-              <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10">
+              <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 bg-surface border border-line/80 rounded-3xl p-7 sm:p-10">
                 {area.topics.map((t) => (
                   <div key={t.title}>
                     <dt className="font-display font-semibold text-slate-900">{t.title}</dt>
@@ -167,7 +167,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
 
       {/* AGENTEN IM BEREICH bzw. STUFEN (Agentic-AI-Seite) */}
       {area.agentic && (
-        <section className="bg-white border-y border-[#E2E8F0]/40 py-16 md:py-24">
+        <section className="bg-surface border-y border-line/40 py-16 md:py-24">
           <Container className="space-y-8">
             {area.agentic.visual ? (
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center">
@@ -184,7 +184,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             )}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {area.agentic.items.map((it) => (
-                <div key={it.task} className="rounded-3xl border border-[#E0E0E0]/80 bg-[#f6f6f6]/50 p-7 flex flex-col">
+                <div key={it.task} className="rounded-3xl border border-line/80 bg-canvas/50 p-7 flex flex-col">
                   <span className="w-9 h-9 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center">
                     <Bot className="w-4.5 h-4.5" aria-hidden="true" />
                   </span>
@@ -196,14 +196,14 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
                 </div>
               ))}
             </div>
-            <Link href="/leistungen/ki-im-unternehmen" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#4f54d6]">
+            <Link href="/leistungen/ki-im-unternehmen" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-accent-strong">
               Regel, KI oder Agent: wie wir entscheiden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
           </Container>
         </section>
       )}
       {!isArea && (
-        <section className="bg-white border-y border-[#E2E8F0]/40 py-16 md:py-24">
+        <section className="bg-surface border-y border-line/40 py-16 md:py-24">
           <Container className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center">
               <div className="md:col-span-7 lg:col-span-8 space-y-4">
@@ -223,12 +223,12 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             </div>
             <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {AGENTIC_LEVELS.map((l, i) => (
-                <li key={l.title} className={`rounded-3xl border p-6 flex flex-col ${i === 3 ? 'bg-slate-950 border-slate-950 text-white' : 'bg-[#f6f6f6]/60 border-[#E0E0E0]/80'}`}>
+                <li key={l.title} className={`rounded-3xl border p-6 flex flex-col ${i === 3 ? 'bg-deep border-deep text-white' : 'bg-canvas/60 border-line/80'}`}>
                   <span className={`text-[10px] font-mono font-bold uppercase tracking-widest ${i === 3 ? 'text-[#CBCBFC]' : 'text-[#686CFA]'}`}>{l.label}</span>
                   <h3 className={`mt-2 font-display font-semibold leading-snug ${i === 3 ? 'text-white' : 'text-slate-900'}`}>{l.title}</h3>
                   <p className={`mt-2 text-body-sm leading-relaxed ${i === 3 ? 'text-slate-300' : 'text-slate-600'}`}>{l.desc}</p>
                   <p className={`mt-3 text-xs leading-relaxed ${i === 3 ? 'text-slate-400' : 'text-slate-500'}`}>{l.example}</p>
-                  <p className={`mt-auto pt-4 text-xs font-bold ${i === 3 ? 'text-[#CBCBFC]' : 'text-[#4f54d6]'}`}>{l.decides}</p>
+                  <p className={`mt-auto pt-4 text-xs font-bold ${i === 3 ? 'text-[#CBCBFC]' : 'text-accent-strong'}`}>{l.decides}</p>
                 </li>
               ))}
             </ol>
@@ -250,13 +250,13 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
                 title={`So gehen wir im Bereich ${area.label} vor`}
                 intro="Wir steigen in der Phase ein, die zu Ihrer Ausgangslage passt. Nicht jedes Vorhaben braucht alle vier."
               />
-              <Link href="/ansatz" className="text-xs font-bold text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5 shrink-0">
+              <Link href="/ansatz" className="text-xs font-bold text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5 shrink-0">
                 Mehr zum Ansatz <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </div>
             <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {PHASES.map((p, i) => (
-                <li key={p.label} className="rounded-3xl border border-[#E0E0E0]/80 bg-white p-6">
+                <li key={p.label} className="rounded-3xl border border-line/80 bg-surface p-6">
                   <span className="flex items-center justify-between">
                     <span className="text-[11px] font-bold font-mono text-[#686CFA]">0{i + 1}</span>
                     {i >= 2 && <RotateCcw className="w-4 h-4 text-[#686CFA]/70" aria-label="wiederkehrend" />}
@@ -278,7 +278,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
             <SectionHeading title={area.practice.title} intro={area.practice.intro} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {area.practice.items.map((it) => (
-                <div key={it.title} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-8 space-y-2">
+                <div key={it.title} className="bg-surface border border-line/80 rounded-3xl p-7 sm:p-8 space-y-2">
                   <h3 className="font-display font-semibold text-slate-900">{it.title}</h3>
                   <p className="text-body-sm text-slate-600 leading-relaxed">{it.desc}</p>
                 </div>
@@ -298,7 +298,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
                 <li key={sector.slug}>
                   <Link
                     href={`/loesungen/${sector.slug}`}
-                    className="inline-block text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-full px-4 py-2 hover:border-[#686CFA]/50 hover:text-[#4f54d6] transition-colors"
+                    className="inline-block text-sm font-semibold text-slate-700 bg-surface border border-slate-200 rounded-full px-4 py-2 hover:border-[#686CFA]/50 hover:text-accent-strong transition-colors"
                   >
                     {sector.title}
                   </Link>

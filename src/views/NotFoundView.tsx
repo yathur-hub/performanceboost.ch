@@ -36,7 +36,7 @@ export default function NotFoundView({ onNavigate }: NotFoundViewProps) {
               key={l.href}
               href={l.href}
               onClick={go(l.href)}
-              className="inline-flex items-center gap-1.5 min-h-11 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-900 hover:border-[#686CFA] hover:text-[#686CFA] transition-colors"
+              className="inline-flex items-center gap-1.5 min-h-11 px-4 rounded-xl border border-slate-200 bg-surface text-sm font-semibold text-slate-900 hover:border-[#686CFA] hover:text-[#686CFA] transition-colors"
             >
               {l.label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>

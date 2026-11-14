@@ -93,7 +93,7 @@ export default function RevenuLeakDetector() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-5xl mx-auto text-left" id="revenue-leak-detector">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-5xl mx-auto text-left" id="revenue-leak-detector">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
@@ -129,7 +129,7 @@ export default function RevenuLeakDetector() {
               placeholder="z. B. 100"
               value={mqlText}
               onChange={e => handleFieldChange('mql', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs animate-fadeIn"
+              className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs animate-fadeIn"
             />
             <p className="text-[11px] text-slate-400 font-medium">Anfragen, die das Marketing als bereit für den Vertrieb einstuft.</p>
           </div>
@@ -140,7 +140,7 @@ export default function RevenuLeakDetector() {
             <select aria-label="Anteil Anfragen, aus denen ein Verkaufsgespräch wird (%)"
               value={mqlToOpp}
               onChange={e => handleFieldChange('mqlToOpp', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
+              className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
               <option value="0.03">Unter 5% (gering)</option>
@@ -158,7 +158,7 @@ export default function RevenuLeakDetector() {
             <select aria-label="Abschlussquote (%)"
               value={oppToClose}
               onChange={e => handleFieldChange('oppToClose', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
+              className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
             >
               <option value="">Bitte wählen...</option>
               <option value="0.07">Unter 10% (gering)</option>
@@ -179,7 +179,7 @@ export default function RevenuLeakDetector() {
               placeholder="z. B. 8'000"
               value={auftragswert}
               onChange={e => handleFieldChange('auftragswert', e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
+              className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
             />
           </div>
 
@@ -188,7 +188,7 @@ export default function RevenuLeakDetector() {
         {/* Right Side: Funnel visualization */}
         <div className="lg:col-span-6 flex flex-col justify-center">
           {!results ? (
-            <div className="bg-[#f6f6f6]/55 border border-slate-200/50 rounded-2xl p-8 text-center min-h-[340px] flex flex-col justify-center items-center shadow-xs">
+            <div className="bg-canvas/55 border border-slate-200/50 rounded-2xl p-8 text-center min-h-[340px] flex flex-col justify-center items-center shadow-xs">
               <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
                 Vorschau
               </h4>
@@ -309,14 +309,14 @@ export default function RevenuLeakDetector() {
                 </svg>
 
                 {/* Vertical rate arrows badges (left: actual, right: BIC in gray) */}
-                <div className="absolute left-1 top-[42%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
+                <div className="absolute left-1 top-[42%] translate-y-1 bg-surface border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   Ist: <strong className={results.uberBenchmark ? "text-emerald-500" : "text-amber-500"}>{Math.round(results.mToOppSelected * 100)}%</strong>
                 </div>
                 <div className="absolute right-1 top-[42%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   Richtwert: <strong>35%</strong>
                 </div>
 
-                <div className="absolute left-1 bottom-[16%] translate-y-1 bg-white border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
+                <div className="absolute left-1 bottom-[16%] translate-y-1 bg-surface border border-slate-200 shadow-3xs rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
                   Ist: <strong className={results.uberBenchmark ? "text-emerald-500" : "text-amber-500"}>{Math.round(results.oToCloseSelected * 100)}%</strong>
                 </div>
                 <div className="absolute right-1 bottom-[16%] translate-y-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-md px-1.5 py-0.5 text-[11px] font-mono leading-none">
@@ -400,7 +400,7 @@ export default function RevenuLeakDetector() {
                 Vergleich mit Richtwerten (Annahmen)
               </span>
 
-              <div className="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-3xs">
+              <div className="overflow-x-auto border border-slate-200 rounded-xl bg-surface shadow-3xs">
                 <table className="w-full text-left text-xs text-slate-650 font-semibold border-collapse">
                   <thead>
                     <tr className="bg-slate-50 border-b border-slate-200 text-slate-405 text-slate-400 text-[11px] font-mono uppercase tracking-wider">

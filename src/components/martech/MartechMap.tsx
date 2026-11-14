@@ -26,7 +26,7 @@ export function MartechMap({ initial = 'daten' }: { initial?: LayerId }) {
               className={`w-full text-left flex items-center gap-4 rounded-2xl border px-5 py-4 transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 ${
                 on
                   ? 'bg-[#686CFA] border-[#686CFA] text-white shadow-[0_12px_40px_-12px_rgba(105,110,239,0.55)]'
-                  : 'bg-white border-[#E0E0E0]/80 text-slate-900 hover:border-[#686CFA]/50'
+                  : 'bg-surface border-line/80 text-slate-900 hover:border-[#686CFA]/50'
               }`}
             >
               <span className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 font-mono text-sm font-bold ${on ? 'bg-white/15 text-white' : 'bg-[#686CFA]/10 text-[#686CFA]'}`}>
@@ -41,7 +41,7 @@ export function MartechMap({ initial = 'daten' }: { initial?: LayerId }) {
         })}
       </div>
 
-      <div className="lg:col-span-7 bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 space-y-6" aria-live="polite">
+      <div className="lg:col-span-7 bg-surface border border-line/80 rounded-3xl p-7 sm:p-9 space-y-6" aria-live="polite">
         <div className="space-y-3">
           <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686CFA]">Schicht {layer.nr}</p>
           <h3 className="text-2xl font-display font-semibold text-slate-900">{layer.title}</h3>
@@ -60,7 +60,7 @@ export function MartechMap({ initial = 'daten' }: { initial?: LayerId }) {
             <ul className="space-y-1.5">
               {topics.map((t) => (
                 <li key={t.slug}>
-                  <Link href={`/martech/${t.slug}`} className="group inline-flex items-start gap-2 text-sm font-semibold text-[#4f54d6] hover:text-[#686CFA]">
+                  <Link href={`/martech/${t.slug}`} className="group inline-flex items-start gap-2 text-sm font-semibold text-accent-strong hover:text-[#686CFA]">
                     <ArrowRight className="w-3.5 h-3.5 mt-1 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                     {t.title}
                   </Link>
@@ -69,7 +69,7 @@ export function MartechMap({ initial = 'daten' }: { initial?: LayerId }) {
             </ul>
           </div>
         )}
-        <Link href={layer.service.href} className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#4f54d6]">
+        <Link href={layer.service.href} className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-accent-strong">
           Passende Leistung: {layer.service.label} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
         </Link>
       </div>

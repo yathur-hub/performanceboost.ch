@@ -340,13 +340,13 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
   }, [recommendation?.slug]);
 
   const cardContent = (
-    <div className={`bg-white border border-[#E0E0E0] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[var(--shadow-premium-md)] max-w-4xl mx-auto relative overflow-hidden ${isModal ? 'w-full max-h-[88vh] overflow-y-auto' : ''}`}>
+    <div className={`bg-surface border border-line rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[var(--shadow-premium-md)] max-w-4xl mx-auto relative overflow-hidden ${isModal ? 'w-full max-h-[88vh] overflow-y-auto' : ''}`}>
       {/* Subtle Decorative Ambient Layer */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#686CFA]/4 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#CBCBFC]/20 rounded-full blur-2xl pointer-events-none" />
 
       {/* CARD TOP BAR: Back Navigation + Progress Indicator + Modal Close */}
-      <div className="flex items-center justify-between gap-4 pb-6 mb-6 border-b border-[#E0E0E0]/80 relative z-10">
+      <div className="flex items-center justify-between gap-4 pb-6 mb-6 border-b border-line/80 relative z-10">
         <div className="flex items-center gap-3">
           {currentStep > 1 ? (
             <button
@@ -447,7 +447,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                       className={`group relative text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-start gap-4 outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] focus-visible:ring-offset-2 ${
                         isSelected
                           ? 'border-[#686CFA] bg-[#686CFA]/6 shadow-sm ring-1 ring-[#686CFA]/30'
-                          : 'border-[#E0E0E0] bg-white hover:border-[#686CFA]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
+                          : 'border-line bg-surface hover:border-[#686CFA]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
                       }`}
                     >
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
@@ -506,7 +506,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                       className={`group w-full text-left p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] focus-visible:ring-offset-2 ${
                         isSelected
                           ? 'border-[#686CFA] bg-[#686CFA]/6 shadow-sm ring-1 ring-[#686CFA]/30'
-                          : 'border-[#E0E0E0] bg-white hover:border-[#686CFA]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
+                          : 'border-line bg-surface hover:border-[#686CFA]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
                       }`}
                     >
                       <div className="flex items-start gap-4">
@@ -554,7 +554,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
               </div>
 
               {/* Main Recommendation Feature Box */}
-              <div className="bg-slate-50/80 border border-[#E0E0E0] rounded-2xl p-6 sm:p-7 space-y-4 relative overflow-hidden">
+              <div className="bg-slate-50/80 border border-line rounded-2xl p-6 sm:p-7 space-y-4 relative overflow-hidden">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-3.5">
                     <div className="w-12 h-12 rounded-xl bg-[#686CFA] text-white flex items-center justify-center shrink-0 shadow-sm">
@@ -576,7 +576,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 </div>
 
                 {/* Tailored Reasoning */}
-                <div className="space-y-2 pt-2 border-t border-[#E0E0E0]/70">
+                <div className="space-y-2 pt-2 border-t border-line/70">
                   <p className="text-slate-800 text-body font-medium leading-relaxed">
                     {recommendation.reasoning}
                   </p>
@@ -600,7 +600,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 <button
                   type="button"
                   onClick={() => { trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'gespraech_buchen', result_label: recommendation.slug }); navigateTo('/kontakt') }}
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-semibold px-6 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-surface hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-semibold px-6 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
                 >
                   <span>Erstgespräch vereinbaren</span>
                 </button>
@@ -638,7 +638,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
           onClick={onClose}
-          className="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-40 cursor-pointer" 
+          className="fixed inset-0 bg-deep/60 backdrop-blur-md z-40 cursor-pointer" 
           id="revenue-navigator-backdrop"
         />
 

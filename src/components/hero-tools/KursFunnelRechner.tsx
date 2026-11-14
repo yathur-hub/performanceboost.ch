@@ -164,7 +164,7 @@ export default function KursFunnelRechner() {
   const currentStufe = results ? stufeConfigs[results.score_stufe] : stufeConfigs.orange;
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
         <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Bildung</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kursbuchungs-Rechner</h3>

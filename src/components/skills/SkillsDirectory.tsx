@@ -76,42 +76,42 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
   };
 
   return (
-    <div className="bg-[#f6f6f6] min-h-screen text-slate-850" id="skills-directory-root">
+    <div className="bg-canvas min-h-screen text-slate-850" id="skills-directory-root">
       {/* 1. Hero Section */}
-      <AnimatedSection className="bg-[#F6F6F6] border-b border-slate-200/60 pt-36 pb-16 md:pt-44 md:pb-24 relative overflow-hidden">
+      <AnimatedSection className="bg-canvas border-b border-slate-200/60 pt-36 pb-16 md:pt-44 md:pb-24 relative overflow-hidden">
         {/* Ambient background decoration */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
           <Visual3D id="energy-core" priority sizes="160px" className="mx-auto h-28 sm:h-36 w-auto animate-float" />
-          <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1A1A2E] tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
             <span className="block text-[#686CFA]">Skill-Factory</span> Erst prüfen, dann richtig ansetzen.
           </h1>
           
-          <p className="text-[#505050] text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-slate-700 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
             {skills.length} strukturierte Checklisten, mit denen Sie Engpässe in Marketing, Vertrieb und Daten selbst prüfen können. Gedacht für Geschäftsführer und Verantwortliche, die Probleme an der Ursache lösen wollen, statt nach Gefühl zu entscheiden.
           </p>
 
           <div className="flex items-center justify-center gap-10 pt-4 pb-2">
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-extrabold text-[#686CFA]">{skills.length}</div>
-              <div className="text-xs text-[#505050] font-bold mt-1 uppercase tracking-wider font-mono">Checklisten</div>
+              <div className="text-xs text-slate-700 font-bold mt-1 uppercase tracking-wider font-mono">Checklisten</div>
             </div>
             <div className="h-10 w-px bg-slate-300"></div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-extrabold text-[#686CFA]">9</div>
-              <div className="text-xs text-[#505050] font-bold mt-1 uppercase tracking-wider font-mono">Kategorien</div>
+              <div className="text-xs text-slate-700 font-bold mt-1 uppercase tracking-wider font-mono">Kategorien</div>
             </div>
           </div>
 
-          <p className="text-xs text-slate-400 font-semibold bg-white/70 backdrop-blur-xs px-4 py-2 rounded-xl border border-slate-200/55 shadow-[0_2px_8px_rgba(0,0,0,0.01)] inline-block">
+          <p className="text-xs text-slate-400 font-semibold bg-surface/70 backdrop-blur-xs px-4 py-2 rounded-xl border border-slate-200/55 shadow-[0_2px_8px_rgba(0,0,0,0.01)] inline-block">
             Die Checklisten sind kostenlos auf GitHub verfügbar, ohne Anmeldung.
           </p>
         </div>
       </AnimatedSection>
 
       {/* 2. Filter & Suchleiste (Sticky Top-0) */}
-      <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-4">
+      <div className="sticky top-0 z-20 bg-surface/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             
@@ -125,7 +125,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Checkliste suchen, z. B. «CRM», «Tracking» oder «KI» …"
-                className="w-full text-slate-800 text-xs text-slate-800 rounded-xl border border-slate-200/80 bg-slate-50/50 px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#686CFA] focus:border-[#686CFA] focus:bg-white transition-all font-medium placeholder:text-slate-400/80 shadow-[0_2px_4px_rgba(0,0,0,0.01)]"
+                className="w-full text-slate-800 text-xs text-slate-800 rounded-xl border border-slate-200/80 bg-slate-50/50 px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#686CFA] focus:border-[#686CFA] focus:bg-surface transition-all font-medium placeholder:text-slate-400/80 shadow-[0_2px_4px_rgba(0,0,0,0.01)]"
                 aria-label="Checkliste suchen"
               />
             </div>
@@ -150,7 +150,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                   className={`rounded-full px-4 py-2 text-xs font-bold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer select-none ${
                     isActive
                       ? 'bg-[#686CFA] text-white border-[#686CFA] shadow-[0_2px_8px_rgba(104,109,244,0.3)] scale-[1.02]'
-                      : 'bg-white text-[#505050] border-slate-200 hover:border-[#686CFA] hover:text-[#686CFA] hover:bg-[#5a5fe0]/[0.02] shadow-xs'
+                      : 'bg-surface text-slate-700 border-slate-200 hover:border-[#686CFA] hover:text-[#686CFA] hover:bg-[#5a5fe0]/[0.02] shadow-xs'
                   }`}
                 >
                   <span>{cat.label}</span>
@@ -187,7 +187,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
               <AnimatedGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredSkills.map((skill) => (
                   <AnimatedChild key={skill.id} className="h-full">
-                    <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1.5 flex flex-col gap-4 group h-full">
+                    <div className="bg-surface rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1.5 flex flex-col gap-4 group h-full">
                       
                       {/* Badge Row */}
                       <div className="flex items-center justify-between gap-2">
@@ -220,7 +220,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
                           href={skill.github} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="w-full flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white px-4 py-2.5 text-xs font-bold text-[#505050] hover:border-[#686CFA] hover:text-[#686CFA] transition-all hover:shadow-xs group/item"
+                          className="w-full flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-surface px-4 py-2.5 text-xs font-bold text-slate-700 hover:border-[#686CFA] hover:text-[#686CFA] transition-all hover:shadow-xs group/item"
                         >
                           <ExternalLink className="w-3.5 h-3.5 transition-transform duration-200 group-hover/item:scale-110" />
                           Auf GitHub öffnen
@@ -237,12 +237,12 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-center py-24 bg-white rounded-2xl border border-slate-200 shadow-xs max-w-xl mx-auto px-6 space-y-4"
+              className="text-center py-24 bg-surface rounded-2xl border border-slate-200 shadow-xs max-w-xl mx-auto px-6 space-y-4"
             >
               <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto text-slate-400">
                 <SlidersHorizontal className="w-5 h-5" />
               </div>
-              <p className="text-[#505050] text-sm md:text-base font-bold">
+              <p className="text-slate-700 text-sm md:text-base font-bold">
                 Keine Checkliste gefunden für «{searchQuery}».
               </p>
               <p className="text-slate-400 text-xs">
@@ -260,7 +260,7 @@ export default function SkillsDirectory({ onNavigate }: SkillsDirectoryProps) {
       </div>
 
       {/* 4. Final CTA Section (Ende der Seite) */}
-      <section className="bg-[#1A1A2E] py-20 relative overflow-hidden text-center text-white" id="skills-cta-bottom">
+      <section className="bg-deep py-20 relative overflow-hidden text-center text-white" id="skills-cta-bottom">
         {/* Visual lighting background grids */}
         <div className="absolute top-0 right-1/4 w-[350px] h-[350px] bg-[#686CFA]/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-slate-800/20 rounded-full blur-3xl pointer-events-none"></div>

@@ -116,7 +116,7 @@ export default function GrowthStrategyIndicator() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="growth-strategy-indicator">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="growth-strategy-indicator">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100">
@@ -218,7 +218,7 @@ export default function GrowthStrategyIndicator() {
       {/* Reactive Output Section */}
       <div className="mt-10">
         {!hasInteracted ? (
-          <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
+          <div className="bg-canvas/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
             <p className="text-xs text-slate-400 font-medium uppercase tracking-wider font-mono">
               Bewegen Sie die Regler, um Ihre Auswertung zu sehen
             </p>
@@ -275,7 +275,7 @@ export default function GrowthStrategyIndicator() {
               </div>
 
               {/* Recommendation Hebel block */}
-              <div className="bg-white p-5 rounded-xl border border-slate-200/60 shadow-xs space-y-2">
+              <div className="bg-surface p-5 rounded-xl border border-slate-200/60 shadow-xs space-y-2">
                 <h4 className="text-xs font-bold text-slate-900 font-display">
                   {texts.hebelTitle}
                 </h4>

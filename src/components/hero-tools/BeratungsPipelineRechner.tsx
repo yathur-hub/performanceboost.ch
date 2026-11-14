@@ -146,7 +146,7 @@ export default function BeratungsPipelineRechner() {
   const currentStufe = stufenConfig[results.score_stufe];
 
   return (
-    <div className="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto">
+    <div className="bg-surface border border-slate-200/80 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto">
       <div className="border-b border-slate-100 pb-5">
         <div className="flex items-center gap-2.5">
           <Calculator className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />

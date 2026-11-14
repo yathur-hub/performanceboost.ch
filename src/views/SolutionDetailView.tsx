@@ -58,10 +58,10 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
   };
 
   return (
-    <div className="pt-24 pb-16 space-y-20 text-slate-800 bg-[#f6f6f6]" id="solutions-detail-view">
+    <div className="pt-24 pb-16 space-y-20 text-slate-800 bg-canvas" id="solutions-detail-view">
       
       {/* SECTOR HERO HEADER */}
-      <section className="px-4 sm:px-6 lg:px-8 bg-white py-16 border-b border-slate-100">
+      <section className="px-4 sm:px-6 lg:px-8 bg-surface py-16 border-b border-slate-100">
         <div className="max-w-7xl mx-auto space-y-6">
           <button
             onClick={() => onNavigate('/loesungen')}
@@ -110,7 +110,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {sector.problems.map((problem, idx) => (
-            <div key={idx} className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl space-y-3.5 shadow-sm text-center">
+            <div key={idx} className="bg-surface border border-line/65 p-6 rounded-3xl space-y-3.5 shadow-sm text-center">
               <div className="w-8 h-8 rounded-full bg-red-50 text-red-700 flex items-center justify-center font-bold font-mono text-xs mx-auto border border-red-100/40">
                 !
               </div>
@@ -123,7 +123,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
 
       {/* WAS WIR AUFBAUEN SEKTION */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-8 sm:p-12 space-y-12 shadow-[var(--shadow-premium-lg)]">
+        <div className="bg-deep text-white border border-deep rounded-3xl p-8 sm:p-12 space-y-12 shadow-[var(--shadow-premium-lg)]">
           <div className="text-center space-y-2">
             <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir mit Ihnen aufbauen</h2>
             <p className="text-body-sm text-slate-300 font-medium max-w-md mx-auto">
@@ -153,7 +153,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Was Sie davon haben</h2>
         </div>
 
-        <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-5 shadow-sm text-left">
+        <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-5 shadow-sm text-left">
           {sector.benefits.map((benefit, idx) => (
             <div key={idx} className="flex gap-3 items-start">
               <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
@@ -169,13 +169,13 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <Link
             key={rel.href}
             href={rel.href}
-            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 shadow-sm text-left hover:border-[#686CFA]/50 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
+            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface border border-line/65 rounded-3xl p-6 sm:p-8 shadow-sm text-left hover:border-[#686CFA]/50 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
           >
             <div className="space-y-1.5">
               <h2 className="text-lg font-display font-semibold text-slate-900 tracking-tight">{rel.title}</h2>
               <p className="text-body-sm text-slate-600 leading-relaxed">{rel.desc}</p>
             </div>
-            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4f54d6] shrink-0">
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-strong shrink-0">
               {rel.linkText} <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </span>
           </Link>
@@ -189,7 +189,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Häufige Fragen</h2>
         </div>
 
-        <div className="bg-white border border-[#E0E0E0]/65 rounded-2xl p-5 sm:p-8 space-y-3 shadow-sm text-left">
+        <div className="bg-surface border border-line/65 rounded-2xl p-5 sm:p-8 space-y-3 shadow-sm text-left">
           {sector.faqs.map((faq, idx) => (
             <div key={idx} className="border-b border-slate-100 last:border-none pb-4 last:pb-0 pt-3">
               <button

@@ -171,7 +171,7 @@ export default function SaasRevenueLeckRechner() {
   const config = results ? stufeConfigs[results.stufe] : stufeConfigs.aufbauphase;
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800">
       <div className="border-b border-slate-100 pb-5">
         <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Umsatzverlust-Rechner für Software-Anbieter</h3>
         <p className="text-xs text-slate-500 mt-1 font-semibold leading-relaxed">

@@ -139,7 +139,7 @@ export default function TrueROASRechner() {
   const statusStyle = result ? getStatusStyles(result.status) : null;
 
   return (
-    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="paid-social-true-roas-rechner">
+    <div className="bg-surface border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="paid-social-true-roas-rechner">
       <div className="mb-8 border-b border-slate-100 pb-6 flex items-start gap-4">
         <div className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
           <ShoppingCart className="w-5 h-5" />
@@ -256,7 +256,7 @@ export default function TrueROASRechner() {
         </div>
 
         {/* Right column: Live Output Compare */}
-        <div className="lg:col-span-6 bg-[#f6f6f6]/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
+        <div className="lg:col-span-6 bg-canvas/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
           <AnimatePresence mode="wait">
             {!isFormValid ? (
               // PLACEHOLDER STATE
@@ -369,7 +369,7 @@ export default function TrueROASRechner() {
                       track("hero_tool_cta_click", { page: "paid-social-ecommerce", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#686CFA] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full text-center bg-[#686CFA] hover:bg-deep text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Ergebnis besprechen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />

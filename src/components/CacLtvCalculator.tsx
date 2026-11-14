@@ -129,7 +129,7 @@ export default function CacLtvCalculator() {
   const levelStyle = result ? getLevelStyles(result.level) : null;
 
   return (
-    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="dtc-cac-ltv-rechner">
+    <div className="bg-surface border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="dtc-cac-ltv-rechner">
       <div className="mb-8 border-b border-slate-100 pb-6 flex items-start gap-4">
         <div className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
           <Target className="w-5 h-5" />
@@ -242,7 +242,7 @@ export default function CacLtvCalculator() {
         </div>
 
         {/* Right Column: Live Output Panel */}
-        <div className="lg:col-span-6 bg-[#f6f6f6]/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
+        <div className="lg:col-span-6 bg-canvas/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
           <AnimatePresence mode="wait">
             {!isFormValid ? (
               // PLACEHOLDER STATE
@@ -304,7 +304,7 @@ export default function CacLtvCalculator() {
                       <span className={`text-4xl sm:text-5xl font-bold font-display tracking-tight my-1 block ${levelStyle?.text}`}>
                         {result.ratio.toFixed(1)} : 1
                       </span>
-                      <span className={`inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-white border rounded-md ${levelStyle?.badgeText} ${levelStyle?.badgeBg}`}>
+                      <span className={`inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-surface border rounded-md ${levelStyle?.badgeText} ${levelStyle?.badgeBg}`}>
                         {result.level}
                       </span>
                     </div>
@@ -365,7 +365,7 @@ export default function CacLtvCalculator() {
                       track("hero_tool_cta_click", { page: "dtc-growth-acquisition", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#686CFA] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full text-center bg-[#686CFA] hover:bg-deep text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Erstgespräch vereinbaren</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />

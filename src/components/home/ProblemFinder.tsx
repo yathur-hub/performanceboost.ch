@@ -21,7 +21,7 @@ const TOOL = 'problem_finder';
 const TOTAL_STEPS = 3;
 
 const optionClass =
-  'w-full min-h-14 text-left px-5 py-4 rounded-2xl border border-slate-200 bg-white hover:border-[#686CFA] hover:bg-[#686CFA]/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 transition-colors cursor-pointer';
+  'w-full min-h-14 text-left px-5 py-4 rounded-2xl border border-slate-200 bg-surface hover:border-[#686CFA] hover:bg-[#686CFA]/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 transition-colors cursor-pointer';
 
 export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProps) {
   const [step, setStep] = useState(0);
@@ -82,7 +82,7 @@ export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProp
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-deep/60 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -94,9 +94,9 @@ export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProp
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 24 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full sm:max-w-xl max-h-[92vh] overflow-y-auto bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl"
+        className="relative w-full sm:max-w-xl max-h-[92vh] overflow-y-auto bg-surface rounded-t-3xl sm:rounded-3xl shadow-2xl"
       >
-        <div className="sticky top-0 bg-white/95 backdrop-blur px-6 pt-5 pb-4 border-b border-slate-100 flex items-center justify-between gap-4">
+        <div className="sticky top-0 bg-surface/95 backdrop-blur px-6 pt-5 pb-4 border-b border-slate-100 flex items-center justify-between gap-4">
           <div className="flex-1">
             <p className="text-xs font-semibold text-slate-600">
               {step < TOTAL_STEPS ? `Frage ${step + 1} von ${TOTAL_STEPS}` : 'Unsere Empfehlung'}
@@ -201,7 +201,7 @@ export default function ProblemFinder({ onClose, onNavigate }: ProblemFinderProp
                     Ihre Angabe: <span className="font-semibold text-slate-900">«{result.problemLabel}»</span>
                   </p>
                   <div className="rounded-2xl border border-[#686CFA]/30 bg-[#686CFA]/5 p-5 space-y-3">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[#4f54d6]">Empfohlene Leistung</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-accent-strong">Empfohlene Leistung</p>
                     <h3 className="text-lg font-display font-semibold text-slate-950">{service.title}</h3>
                     <p className="text-sm text-slate-700 leading-relaxed">{result.reason}</p>
                     <button

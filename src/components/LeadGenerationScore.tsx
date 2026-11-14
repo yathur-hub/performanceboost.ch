@@ -153,7 +153,7 @@ export default function LeadGenerationScore() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="lead-generation-score">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="lead-generation-score">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
@@ -190,7 +190,7 @@ export default function LeadGenerationScore() {
           <select aria-label="Wie viele Besucher hat Ihre Website pro Monat?"
             value={trafficMid}
             onChange={e => handleFieldSet('traffic', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
+            className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="250">Unter 500 Besucher / Mt.</option>
@@ -217,7 +217,7 @@ export default function LeadGenerationScore() {
             placeholder="0 wenn keine"
             value={leads}
             onChange={e => handleFieldSet('leads', e.target.value)}
-            className={`w-full px-4 py-3 bg-white border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs ${
+            className={`w-full px-4 py-3 bg-surface border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs ${
               hasValidationError ? 'border-red-300 focus:border-red-500' : 'border-slate-200'
             }`}
           />
@@ -247,7 +247,7 @@ export default function LeadGenerationScore() {
           <select aria-label="Wie viele Möglichkeiten zur Kontaktaufnahme bietet Ihre Website?"
             value={leadMagnete}
             onChange={e => handleFieldSet('leadMagnete', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
+            className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="0">Nur das Standard-Kontaktformular</option>
@@ -265,7 +265,7 @@ export default function LeadGenerationScore() {
       {/* Output Representation wrapper */}
       <div className="mt-10">
         {!calculatedOutput ? (
-          <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
+          <div className="bg-canvas/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
             <p className="text-xs text-slate-400 font-medium uppercase tracking-wider font-mono">
               Füllen Sie alle Felder aus, um Ihre Bewertung zu sehen
             </p>
@@ -408,7 +408,7 @@ export default function LeadGenerationScore() {
                           const cause = (diagnoseDetails as any)[key];
                           if (!cause) return null;
                           return (
-                            <div key={key} className="p-4 bg-white rounded-xl border border-slate-200/60 shadow-xs space-y-1 animate-fadeIn">
+                            <div key={key} className="p-4 bg-surface rounded-xl border border-slate-200/60 shadow-xs space-y-1 animate-fadeIn">
                               <h5 className="text-xs font-bold text-slate-900 font-display flex items-center gap-1.5 leading-none">
                                 <span className="w-1.5 h-1.5 bg-red-400 rounded-full shrink-0" />
                                 {cause.titel}
@@ -459,7 +459,7 @@ function HoverHelp({ text }: { text: string }) {
   return (
     <div className="group relative cursor-help inline-block text-slate-400 hover:text-slate-900 transition-colors">
       <AlertCircle className="w-3.5 h-3.5" />
-      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+      <div className="absolute right-0 bottom-full mb-2 w-48 bg-deep text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
         {text}
       </div>
     </div>

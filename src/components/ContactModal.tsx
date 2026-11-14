@@ -54,7 +54,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <motion.div
             {...overlayBackdrop}
             onClick={onClose}
-            className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm"
+            className="fixed inset-0 bg-deep/70 backdrop-blur-sm"
             aria-hidden="true"
           />
           <motion.div
@@ -64,10 +64,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             aria-modal="true"
             aria-labelledby="lead-modal-title"
             {...overlayPanel}
-            className="relative z-[10000] w-full sm:max-w-4xl h-[100dvh] sm:h-auto sm:max-h-[92vh] bg-white sm:rounded-3xl shadow-2xl flex flex-col sm:flex-row overflow-hidden outline-none"
+            className="relative z-[10000] w-full sm:max-w-4xl h-[100dvh] sm:h-auto sm:max-h-[92vh] bg-surface sm:rounded-3xl shadow-2xl flex flex-col sm:flex-row overflow-hidden outline-none"
           >
             {/* Seitenleiste (ab sm): Ansprechperson und Versprechen */}
-            <aside className="hidden sm:flex sm:w-[280px] shrink-0 flex-col bg-slate-950 text-white p-7">
+            <aside className="hidden sm:flex sm:w-[280px] shrink-0 flex-col bg-deep text-white p-7">
               <img
                 src={SITE.portraitUrl}
                 alt="Yathur Nathan"

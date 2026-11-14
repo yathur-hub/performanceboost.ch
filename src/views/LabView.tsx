@@ -13,7 +13,7 @@ const STATUS_STYLE: Record<LabStatus, string> = {
 export default function LabView() {
   return (
     <div className="space-y-16 md:space-y-24 pb-24 text-slate-800" id="labor">
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen', href: '/martech' }, { label: 'Labor' }]} />
           <div className="max-w-4xl space-y-6">
@@ -33,7 +33,7 @@ export default function LabView() {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {LAB_ITEMS.map((it) => (
-              <article key={it.title} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-8 flex flex-col gap-4">
+              <article key={it.title} className="bg-surface border border-line/80 rounded-3xl p-7 sm:p-8 flex flex-col gap-4">
                 <div className="flex items-start justify-between gap-4">
                   <h2 className="text-lg sm:text-xl font-display font-semibold text-slate-900 leading-snug">{it.title}</h2>
                   <span className={`shrink-0 text-[11px] font-bold rounded-full border px-2.5 py-1 ${STATUS_STYLE[it.status]}`}>{it.status}</span>

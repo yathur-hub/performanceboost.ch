@@ -28,7 +28,7 @@ import Link from './Link';
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 const inputClass =
-  'w-full bg-white border border-slate-300 focus:border-[#686CFA] focus:ring-3 focus:ring-[#686CFA]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
+  'w-full bg-surface border border-slate-300 focus:border-[#686CFA] focus:ring-3 focus:ring-[#686CFA]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
 
 export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadFlow; formLocation: string; onDone?: () => void }) {
   const total = flow.questions.length + 1;
@@ -138,7 +138,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           Terminvorschlag für das kostenlose Erstgespräch.
         </p>
         {onDone && (
-          <button type="button" onClick={onDone} className="text-sm font-semibold text-[#4f54d6] hover:text-[#686CFA]">
+          <button type="button" onClick={onDone} className="text-sm font-semibold text-accent-strong hover:text-[#686CFA]">
             Schliessen
           </button>
         )}
@@ -193,7 +193,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
                   className={`group flex items-center justify-between gap-3 text-left rounded-2xl border px-4 py-3.5 text-sm font-semibold transition-all min-h-[56px] ${
                     selected
                       ? 'border-[#686CFA] bg-[#686CFA]/8 text-slate-950 shadow-[0_0_0_1px_#686CFA]'
-                      : 'border-slate-200 bg-white text-slate-800 hover:border-[#686CFA]/50 hover:bg-[#686CFA]/[0.03]'
+                      : 'border-slate-200 bg-surface text-slate-800 hover:border-[#686CFA]/50 hover:bg-[#686CFA]/[0.03]'
                   }`}
                 >
                   <span>{opt}</span>
@@ -281,7 +281,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
               <input type="checkbox" name="privacyConsent" checked={values.privacyConsent} onChange={(e) => set('privacyConsent', e.target.checked)} className="mt-0.5 w-4.5 h-4.5 shrink-0 accent-[#686CFA]" {...aria('privacyConsent')} />
               <span>
                 Ich bin damit einverstanden, dass performanceboost meine Angaben zur Bearbeitung meiner Anfrage speichert und verwendet. Details in der{' '}
-                <Link href="/datenschutz" target="_blank" className="underline underline-offset-2 hover:text-[#4f54d6]">Datenschutzerklärung</Link>. <span className="text-[#686CFA]">*</span>
+                <Link href="/datenschutz" target="_blank" className="underline underline-offset-2 hover:text-accent-strong">Datenschutzerklärung</Link>. <span className="text-[#686CFA]">*</span>
               </span>
             </label>
             {err('privacyConsent')}

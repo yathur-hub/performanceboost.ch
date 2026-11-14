@@ -40,11 +40,11 @@ export default function Footer({ onNavigate }: FooterProps) {
     if (path !== '/kontakt') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const linkClass = 'link-underline text-sm text-slate-600 hover:text-[#4f54d6]';
+  const linkClass = 'link-underline text-sm text-slate-600 hover:text-accent-strong';
   const headingClass = 'text-sm font-display font-semibold text-slate-900';
 
   return (
-    <footer className="bg-white border-t border-slate-200 pt-14 pb-10" id="site-footer">
+    <footer className="bg-surface border-t border-slate-200 pt-14 pb-10" id="site-footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-10 pb-10 border-b border-slate-200">
           <div className="col-span-2 lg:col-span-3 space-y-4">
@@ -105,8 +105,8 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} performanceboost</p>
           <div className="flex gap-5">
-            <a href="/impressum" onClick={(e) => go('/impressum', e)} className="hover:text-[#4f54d6] transition-colors">Impressum</a>
-            <a href="/datenschutz" onClick={(e) => go('/datenschutz', e)} className="hover:text-[#4f54d6] transition-colors">Datenschutz</a>
+            <a href="/impressum" onClick={(e) => go('/impressum', e)} className="hover:text-accent-strong transition-colors">Impressum</a>
+            <a href="/datenschutz" onClick={(e) => go('/datenschutz', e)} className="hover:text-accent-strong transition-colors">Datenschutz</a>
           </div>
         </div>
       </div>

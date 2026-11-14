@@ -93,7 +93,7 @@ export default function RetentionRevenueRechner() {
   }, [isFormValid, kunden, avgUmsatz, retentionKey]);
 
   return (
-    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="retention-revenue-rechner">
+    <div className="bg-surface border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="retention-revenue-rechner">
       <div className="mb-8 border-b border-slate-100 pb-6 flex items-start gap-4">
         <div className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
           <RefreshCcw className="w-5 h-5 animate-spin-slow" />
@@ -183,7 +183,7 @@ export default function RetentionRevenueRechner() {
         </div>
 
         {/* Right Column: Live Output Panel */}
-        <div className="lg:col-span-6 bg-[#f6f6f6]/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[320px]">
+        <div className="lg:col-span-6 bg-canvas/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[320px]">
           <AnimatePresence mode="wait">
             {!isFormValid ? (
               // PLACEHOLDER STATE
@@ -304,7 +304,7 @@ export default function RetentionRevenueRechner() {
                       track("hero_tool_cta_click", { page: "customer-retention", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#686CFA] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full text-center bg-[#686CFA] hover:bg-deep text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Ergebnis besprechen: 30 Min., kostenlos</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />

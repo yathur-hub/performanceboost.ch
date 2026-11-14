@@ -1,15 +1,14 @@
 /*
- * Design-Prototypen (Branch design/premium-directions). Nur unter /design/light und /design/dark.
- * Alles ist unter .pbx gekapselt und beeinflusst die übrige Website nicht.
- * Richtung A «Refined Light»: .pbx[data-theme="light"]. Richtung B «Premium Dark / Hybrid»: .pbx[data-theme="dark"].
+ * Premium-Bausteine des dunklen Designsystems (docs/design/02-designsystem-dark.md).
+ * Gekapselt unter .pbx: Hero-Choreografie, System-Konsole, Scroll-Statement, Vergleichszeilen, Links und Buttons.
+ * Abgeleitet aus den freigegebenen Prototypen (Richtung B, 14.11.2026), dunkle Fläche überall.
  */
 
 /* ---------- Tokens ---------- */
 .pbx {
-  /* Bewegung: kurze Reaktionen, kontrollierte Auftritte, keine Federn */
-  --pbx-ease-out: cubic-bezier(0.16, 1, 0.3, 1);      /* Auftritte */
-  --pbx-ease-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Hover, Zustände */
-  --pbx-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);    /* Linien, Fortschritt */
+  --pbx-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pbx-ease-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --pbx-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
   --pbx-t-ui: 160ms;
   --pbx-t-reveal: 900ms;
   --pbx-t-line: 1100ms;
@@ -17,33 +16,18 @@
   --pbx-rise: 14px;
   --pbx-blur: 10px;
 
-  /* Farben, CI: #4F4F4F #686CFA #CBCBFC #E0E0E0 */
   --pbx-accent: #686CFA;
   --pbx-accent-soft: #CBCBFC;
-  --pbx-ink: #16171d;
-  --pbx-text: #4F4F4F;
-  --pbx-muted: #6e6f7a;
-  --pbx-line: #E0E0E0;
-  --pbx-bg: #fbfbfc;
-  --pbx-surface: #ffffff;
-  --pbx-panel: #14151C;
-  --pbx-panel-line: rgba(255, 255, 255, 0.08);
-  --pbx-panel-text: #e9e9f1;
-  --pbx-panel-muted: #8b8ca3;
-
-  background: var(--pbx-bg);
-  color: var(--pbx-text);
-  font-feature-settings: 'cv11', 'ss01';
-}
-.pbx[data-theme='dark'] {
   --pbx-ink: #f4f4f8;
   --pbx-text: #c9c9d6;
-  --pbx-muted: #8b8ca3;
-  --pbx-line: rgba(255, 255, 255, 0.08);
-  --pbx-bg: #101116;
-  --pbx-surface: #14151C;
+  --pbx-muted: #9A9BB0;
+  --pbx-line: #262733;
   --pbx-panel: #181923;
   --pbx-panel-line: rgba(255, 255, 255, 0.09);
+  --pbx-panel-text: #e9e9f1;
+  --pbx-panel-muted: #8b8ca3;
+  color: var(--pbx-text);
+  font-feature-settings: 'cv11', 'ss01';
 }
 
 /* ---------- Typografie ---------- */
@@ -60,9 +44,8 @@
   font-style: italic;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--pbx-accent);
+  color: #9a9dff;
 }
-.pbx[data-theme='dark'] .pbx-h1 .pbx-accent { color: #9a9dff; }
 .pbx-lead { color: var(--pbx-text); font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.2rem); line-height: 1.6; max-width: 36rem; }
 .pbx-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pbx-muted); }
 .pbx-h2 { font-family: var(--font-display); color: var(--pbx-ink); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.4rem); }
@@ -77,7 +60,7 @@
   mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, #000 10%, transparent 75%);
   opacity: 0.55;
 }
-.pbx[data-theme='dark'] .pbx-hero::after {
+.pbx-hero::after {
   /* zurückhaltendes Licht hinter der Konsole */
   content: ''; position: absolute; z-index: -1; pointer-events: none;
   width: 900px; height: 600px; right: -10%; top: 8%;
@@ -121,7 +104,7 @@
 @keyframes pbx-step-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .pbx-step-title { font-size: 13.5px; color: var(--pbx-panel-text); line-height: 1.35; }
 .pbx-step-sub { font-size: 12px; color: var(--pbx-panel-muted); margin-top: 3px; line-height: 1.45; }
-.pbx-kind { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 7px; border-radius: 6px; border: 1px solid var(--pbx-panel-line); color: var(--pbx-panel-muted); white-space: nowrap; }
+.pbx-kind { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 7px; border-radius: 6px; border: 1px solid var(--pbx-panel-line); color: var(--pbx-panel-muted); white-space: nowrap; }
 .pbx-kind[data-k='agent'] { color: #b9bbff; border-color: rgba(104,108,250,0.45); }
 .pbx-kind[data-k='mensch'] { color: #fff; background: rgba(104,108,250,0.18); border-color: rgba(104,108,250,0.6); }
 
@@ -170,15 +153,6 @@
 .pbx-row.on .pbx-classic { opacity: 0.55; }
 .pbx-row .pbx-tick { transform: scaleX(0); transform-origin: left; transition: transform 700ms var(--pbx-ease-inout); }
 .pbx-row.on .pbx-tick { transform: scaleX(1); }
-
-/* Hybrid: Kontrastwechsel dunkel → hell */
-.pbx-light-surface { --pbx-ink: #16171d; --pbx-text: #4F4F4F; --pbx-muted: #6e6f7a; --pbx-line: #E0E0E0; background: #fbfbfc; color: var(--pbx-text); }
-.pbx-edge { height: 120px; background: linear-gradient(to bottom, #101116, #fbfbfc); }
-
-/* ---------- Header in der dunklen Richtung ---------- */
-body.pbx-dark-header #main-navigation:not(.is-open) { background: rgba(16, 17, 22, 0.72) !important; border-color: rgba(255,255,255,0.06) !important; box-shadow: none !important; backdrop-filter: blur(14px) saturate(140%); }
-body.pbx-dark-header #main-navigation #header-brand-logo-link img { filter: brightness(1.15); }
-body.pbx-dark-header #main-navigation button[aria-expanded='false'] { background: rgba(255,255,255,0.06) !important; color: #f4f4f8 !important; border-color: rgba(255,255,255,0.14) !important; }
 
 /* ---------- Reduzierte Bewegung ---------- */
 @media (prefers-reduced-motion: reduce) {

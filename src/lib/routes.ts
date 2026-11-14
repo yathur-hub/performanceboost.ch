@@ -27,7 +27,6 @@ export type RouteView =
   | 'martech'
   | 'werkzeuge'
   | 'labor'
-  | 'design'
   | 'not_found';
 
 export interface ParsedRoute {
@@ -52,8 +51,6 @@ export function parseRoute(pathname: string): ParsedRoute {
   const notFound: ParsedRoute = { view: 'not_found', path, pageType: 'not_found' };
 
   if (path === '/') return { view: 'home', path, pageType: 'home' };
-  // Design-Prototypen (nicht indexiert, nicht in der Sitemap)
-  if (path === '/design/light' || path === '/design/dark') return { view: 'design', slug: path.split('/')[2], path, pageType: 'design' };
   if (path === '/skills') return { view: 'skills', path, pageType: 'tools' };
   if (path === '/loesungen') return { view: 'loesungen', path, pageType: 'loesungen' };
   if (path === '/ueber-uns') return { view: 'about', path, pageType: 'ueber_uns' };

@@ -218,7 +218,7 @@ export default function AIReadinessCheck() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="ai-readiness-check">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="ai-readiness-check">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
@@ -230,7 +230,7 @@ export default function AIReadinessCheck() {
         </div>
         <button
           onClick={handleReset}
-          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-canvas/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
@@ -362,7 +362,7 @@ export default function AIReadinessCheck() {
           <select aria-label="Was ist Ihr wichtigstes Ziel für die nächsten 6 Monate?"
             value={f5}
             onChange={e => handleFieldSet('f5', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
+            className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="leads">Mehr passende Anfragen gewinnen</option>
@@ -402,7 +402,7 @@ export default function AIReadinessCheck() {
       {/* Recommended Use-Cases on complete survey state */}
       <div className="mt-10">
         {!isComplete ? (
-          <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
+          <div className="bg-canvas/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
             <p className="text-xs text-slate-405 text-slate-400 font-semibold uppercase tracking-wider font-mono">
               Füllen Sie alle 5 Felder aus, um passende Einsatzmöglichkeiten zu sehen
             </p>
@@ -427,7 +427,7 @@ export default function AIReadinessCheck() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 * index, duration: 0.4 }}
-                    className="bg-white border border-slate-200 hover:border-[#686CFA]/25 shadow-xs hover:shadow-sm rounded-2xl p-6 text-left transition-all duration-350"
+                    className="bg-surface border border-slate-200 hover:border-[#686CFA]/25 shadow-xs hover:shadow-sm rounded-2xl p-6 text-left transition-all duration-350"
                   >
                     <div className="flex gap-4 items-start pb-4 border-b border-slate-100 mb-4">
                       {/* Counter Index number */}

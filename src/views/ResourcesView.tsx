@@ -134,10 +134,10 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <aside className="mt-12 rounded-3xl border border-[#CBCBFC]/60 bg-[#686CFA]/[0.04] p-7 sm:p-9 space-y-4">
               <h2 className="text-lg font-display font-semibold text-slate-900">Weiter zum Thema MarTech</h2>
               <ul className="space-y-2 text-sm font-semibold">
-                <li><Link href="/martech" className="text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5">MarTech-Wissen: Landkarte und Fachthemen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
-                <li><Link href="/ressourcen/martech" className="text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Alle Beiträge zu MarTech für KMU <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
-                <li><Link href="/leistungen/martech-stack" className="text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5">MarTech-Stack aufräumen und verbinden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
-                <li><Link href="/skills" className="text-[#686CFA] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Checkliste «Stack-Inventur» in der Skill-Factory <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/martech" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">MarTech-Wissen: Landkarte und Fachthemen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/ressourcen/martech" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">Alle Beiträge zu MarTech für KMU <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/leistungen/martech-stack" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">MarTech-Stack aufräumen und verbinden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/skills" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">Checkliste «Stack-Inventur» in der Skill-Factory <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
               </ul>
             </aside>
           )}
@@ -169,7 +169,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="resources-hub">
       
       {/* Header section with subtitle */}
-      <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
+      <section className="relative bg-surface pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
         <div className="absolute top-0 right-10 w-96 h-96 bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10 animate-fadeIn">
           <Visual3D id="satellite" priority sizes="240px" className="mx-auto h-24 sm:h-32 w-auto animate-float" />
@@ -253,7 +253,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Stichwort suchen …"
-              className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-3 pl-11 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686CFA] focus:bg-white transition-all font-semibold"
+              className="w-full bg-canvas/60 border border-slate-205 rounded-xl py-3 pl-11 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686CFA] focus:bg-surface transition-all font-semibold"
             />
           </div>
         </div>
@@ -267,7 +267,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
               <motion.div 
                 key={item.id}
                 whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
-                className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 group shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)]"
+                className="bg-surface border border-line/65 rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 group shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)]"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -287,7 +287,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                   {/* Category tags */}
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {item.tags.map((tag, idx) => (
-                      <span key={idx} className="text-[11px] font-bold bg-[#f6f6f6] border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
+                      <span key={idx} className="text-[11px] font-bold bg-canvas border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
                         #{tag}
                       </span>
                     ))}
@@ -310,7 +310,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl text-slate-400 space-y-3 bg-[#f6f6f6]/50">
+          <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl text-slate-400 space-y-3 bg-canvas/50">
             <AlertCircle className="w-10 h-10 text-slate-300 mx-auto" />
             <p className="text-xs font-semibold text-slate-500">Keine Beiträge für Ihre Suche gefunden.</p>
             <button 

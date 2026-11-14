@@ -212,7 +212,7 @@ export default function DataClarityCheck() {
   const percentageOffset = circumference - (score / 100) * circumference;
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="data-clarity-check">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="data-clarity-check">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
@@ -224,7 +224,7 @@ export default function DataClarityCheck() {
         </div>
         <button
           onClick={handleReset}
-          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-canvas/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
@@ -391,7 +391,7 @@ export default function DataClarityCheck() {
                   return (
                     <div 
                       key={bs.key}
-                      className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs relative text-left transition-all hover:border-slate-300"
+                      className="bg-surface border border-slate-200 rounded-2xl overflow-hidden shadow-xs relative text-left transition-all hover:border-slate-300"
                       style={{ borderLeftWidth: '5px', borderLeftColor: bs.severity_color }}
                     >
                       <div className="p-5 space-y-3">

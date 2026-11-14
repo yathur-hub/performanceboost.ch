@@ -123,7 +123,7 @@ export default function InteractiveGrowthCalculator() {
     .join(', ');
 
   return (
-    <div className="bg-white border border-[#E2E8F0]/65 rounded-3xl p-6 md:p-10 text-slate-800 relative overflow-hidden shadow-[var(--shadow-premium-lg)]" id="growth-calculator">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 md:p-10 text-slate-800 relative overflow-hidden shadow-[var(--shadow-premium-lg)]" id="growth-calculator">
       {/* Soft branding glow background */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -233,7 +233,7 @@ export default function InteractiveGrowthCalculator() {
               </div>
 
               {/* Resulting aggregate Traffic Display */}
-              <div className="bg-slate-900 text-white rounded-2xl p-4 flex justify-between items-center shadow-xs">
+              <div className="bg-deep text-white rounded-2xl p-4 flex justify-between items-center shadow-xs">
                 <div className="space-y-0.5">
                   <span className="text-[11px] text-[#686CFA] font-mono font-bold uppercase tracking-wider block">Besuche pro Monat (berechnet)</span>
                   <p className="text-[11px] text-slate-400 font-semibold leading-relaxed">
@@ -344,7 +344,7 @@ export default function InteractiveGrowthCalculator() {
         </div>
 
         {/* Right Side: Boosted Results Output */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-between bg-[#f8fafc]/75 border border-[#E2E8F0] rounded-3xl p-6 sm:p-8 relative shadow-[var(--shadow-premium-sm)]">
+        <div className="w-full lg:w-1/2 flex flex-col justify-between bg-surface/75 border border-line rounded-3xl p-6 sm:p-8 relative shadow-[var(--shadow-premium-sm)]">
           
           <div className="space-y-6">
             <span className="inline-flex items-center gap-1.5 bg-[#686CFA]/5 text-[#686CFA] text-[11px] font-bold px-3.5 py-1 rounded-full border border-[#CBCBFC]/25 uppercase tracking-widest font-mono">
@@ -405,7 +405,7 @@ export default function InteractiveGrowthCalculator() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Box Current */}
-              <div className="bg-white p-5 rounded-2xl border border-slate-200">
+              <div className="bg-surface p-5 rounded-2xl border border-slate-200">
                 <p className="text-[11px] text-slate-400 tracking-widest uppercase mb-2 font-bold font-mono">Heute (pro Monat)</p>
                 <div className="space-y-2">
                   <div className="text-lg sm:text-xl font-bold text-slate-800 font-display">
@@ -436,7 +436,7 @@ export default function InteractiveGrowthCalculator() {
             </div>
 
             {/* Total Uplift representation */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center shadow-xs">
+            <div className="bg-surface p-6 rounded-2xl border border-slate-200 text-center shadow-xs">
               <p className="text-[11px] text-slate-400 mb-1.5 font-bold uppercase tracking-widest font-mono">Möglicher Mehrumsatz pro Jahr</p>
               <div className="text-2xl sm:text-3.5xl font-display font-extrabold text-[#686CFA] tracking-tight">
                 +{formattedValue((boostedMetrics.monthlyRevenue - currentMetrics.monthlyRevenue) * 12)}

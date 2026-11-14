@@ -144,7 +144,7 @@ export default function SalesAlignmentCheck() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="sales-alignment-check">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="sales-alignment-check">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
@@ -156,7 +156,7 @@ export default function SalesAlignmentCheck() {
         </div>
         <button
           onClick={handleReset}
-          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-canvas/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
@@ -282,7 +282,7 @@ export default function SalesAlignmentCheck() {
       {/* Audit Output Result card */}
       <div className="mt-10">
         {!allSet ? (
-          <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
+          <div className="bg-canvas/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
               Auswertung folgt
             </h4>
@@ -345,7 +345,7 @@ export default function SalesAlignmentCheck() {
                   const friction = (frictionDetails as any)[key];
                   if (!friction) return null;
                   return (
-                    <div key={key} className="bg-white border border-slate-200 rounded-xl p-5 relative shadow-xs flex gap-5 items-start">
+                    <div key={key} className="bg-surface border border-slate-200 rounded-xl p-5 relative shadow-xs flex gap-5 items-start">
                       {/* Counter circle left top corner */}
                       <div className="w-7 h-7 rounded-lg bg-red-50 text-[#E63946] border border-red-100 flex items-center justify-center shrink-0 font-display font-medium text-xs mt-0.5 shadow-2xs">
                         {index + 1}

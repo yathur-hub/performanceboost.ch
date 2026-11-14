@@ -194,7 +194,7 @@ export function ClientTestimonials() {
             type="button"
             onClick={() => paginate(-1)}
             aria-label="Vorherige Kundenstimme"
-            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
+            className="w-11 h-11 rounded-full bg-surface hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -203,7 +203,7 @@ export function ClientTestimonials() {
             type="button"
             onClick={() => paginate(1)}
             aria-label="Nächste Kundenstimme"
-            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
+            className="w-11 h-11 rounded-full bg-surface hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -224,7 +224,7 @@ export function ClientTestimonials() {
             initial="enter"
             animate="center"
             exit="exit"
-            className="w-full bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-[var(--shadow-premium-md)] relative overflow-hidden"
+            className="w-full bg-surface border border-line/80 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-[var(--shadow-premium-md)] relative overflow-hidden"
           >
             {/* Subtle decorative background glow */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-[#686CFA]/3 rounded-full blur-2xl pointer-events-none" />

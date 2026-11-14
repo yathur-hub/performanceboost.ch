@@ -19,7 +19,7 @@ const ITEM_CONTAINERS = ':scope .grid, :scope ol, :scope ul, :scope div:has(> de
 const DONE = 'data-rv';
 
 function isDarkPanel(el: Element) {
-  return el.classList.contains('bg-slate-950') && /rounded-(3xl|\[2rem\])/.test(el.className);
+  return el.classList.contains('bg-deep') && /rounded-(3xl|\[2rem\])/.test(el.className);
 }
 
 function prepareSection(section: HTMLElement) {
@@ -27,7 +27,7 @@ function prepareSection(section: HTMLElement) {
   let assigned = false;
 
   const heading = section.querySelector<HTMLElement>('h2');
-  if (heading && !heading.closest('.bg-slate-950')) {
+  if (heading && !heading.closest('.bg-deep')) {
     heading.classList.add('rv-mask');
     const intro = heading.nextElementSibling;
     if (intro && intro.tagName === 'P') intro.classList.add('rv-fade', 'rv-delay-1');
@@ -35,7 +35,7 @@ function prepareSection(section: HTMLElement) {
   }
 
   section.querySelectorAll<HTMLElement>(ITEM_CONTAINERS).forEach((container) => {
-    if (container.closest('.diagram-enter, .rv-item, [role="dialog"], nav, figure')) return;
+    if (container.closest('.diagram-enter, .rv-item, [role="dialog"], nav, figure, [data-rv-skip]')) return;
     const kids = Array.from(container.children) as HTMLElement[];
     if (kids.length < 2 || kids.length > 16) return;
     kids.forEach((kid, i) => {
@@ -64,7 +64,7 @@ function prepareSection(section: HTMLElement) {
     return;
   }
   section.querySelectorAll<HTMLElement>('p, dl, a[href], button').forEach((el) => {
-    if (el.closest('.rv-item, .rv-fade, .rv-scale, .rv-image, .rv-mask, [role="dialog"]')) return;
+    if (el.closest('.rv-item, .rv-fade, .rv-scale, .rv-image, .rv-mask, [role="dialog"], [data-rv-skip]')) return;
     el.classList.add('rv-fade', 'rv-delay-2');
   });
 }

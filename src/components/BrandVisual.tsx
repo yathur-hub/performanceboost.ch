@@ -32,7 +32,7 @@ export function BrandVisual({
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         fetchPriority={priority ? 'high' : undefined}
-        className="w-full h-auto rounded-3xl border border-[#E0E0E0]/80 bg-white"
+        className="w-full h-auto rounded-3xl border border-line/80 bg-surface"
       />
       </div>
       {caption && <figcaption className="mt-3 text-xs text-slate-500 leading-relaxed">{caption}</figcaption>}

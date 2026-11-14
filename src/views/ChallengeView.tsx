@@ -32,7 +32,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
 
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id={`challenge-${slug}`}>
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Lösungen', href: '/loesungen' }, { label: page.label }]} />
           <div className="hero-enter max-w-4xl space-y-6">
@@ -61,7 +61,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
             <SectionHeading title="Warum das in vielen KMU so ist" />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {page.causes.map((c) => (
-                <div key={c.title} className="bg-white border border-[#E0E0E0]/80 rounded-2xl p-5">
+                <div key={c.title} className="bg-surface border border-line/80 rounded-2xl p-5">
                   <h3 className="font-display font-semibold text-slate-900 text-sm">{c.title}</h3>
                   <p className="mt-2 text-xs text-slate-600 leading-relaxed">{c.desc}</p>
                 </div>
@@ -87,12 +87,12 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
         </section>
       )}
 
-      <section className="bg-white border-y border-[#E2E8F0]/40 py-20 md:py-24">
+      <section className="bg-surface border-y border-line/40 py-20 md:py-24">
         <Container className="space-y-10">
           <SectionHeading title="So bauen wir das System auf" />
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {page.approach.map((a, i) => (
-              <li key={a.title} className="bg-[#f6f6f6]/60 border border-[#E0E0E0]/80 rounded-2xl p-6 space-y-3">
+              <li key={a.title} className="bg-canvas/60 border border-line/80 rounded-2xl p-6 space-y-3">
                 <span className="text-[11px] font-bold font-mono text-[#686CFA]">0{i + 1}</span>
                 <h3 className="font-display font-semibold text-slate-900">{a.title}</h3>
                 <p className="text-body-sm text-slate-600 leading-relaxed">{a.desc}</p>
