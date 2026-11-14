@@ -22,6 +22,7 @@ export type RouteView =
   | 'impressum'
   | 'datenschutz'
   | 'leistungen'
+  | 'ansatz'
   | 'ressourcen'
   | 'martech'
   | 'werkzeuge'
@@ -54,6 +55,7 @@ export function parseRoute(pathname: string): ParsedRoute {
   if (path === '/loesungen') return { view: 'loesungen', path, pageType: 'loesungen' };
   if (path === '/ueber-uns') return { view: 'about', path, pageType: 'ueber_uns' };
   if (path === '/referenzen') return { view: 'referenzen', path, pageType: 'referenzen' };
+  if (path === '/ansatz') return { view: 'ansatz', path, pageType: 'ansatz' };
   if (path === '/kontakt') return { view: 'kontakt', path, pageType: 'kontakt' };
   if (path === '/impressum') return { view: 'impressum', path, pageType: 'rechtliches' };
   if (path === '/datenschutz') return { view: 'datenschutz', path, pageType: 'rechtliches' };
@@ -109,6 +111,7 @@ export function indexablePaths(): string[] {
   return [
     '/',
     '/leistungen',
+    '/ansatz',
     ...AREA_IDS.map((id) => `/leistungen/${id}`),
     ...SERVICES.map((s) => `/leistungen/${s.slug}`),
     '/loesungen',

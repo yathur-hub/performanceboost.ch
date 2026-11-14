@@ -23,7 +23,7 @@ export function HeroTrust({ className = '', align = 'left' }: { className?: stri
     <ul className={`flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-600 ${align === 'center' ? 'justify-center' : ''} ${className}`}>
       {items.map(({ icon: Icon, text }) => (
         <li key={text} className="inline-flex items-center gap-1.5">
-          <Icon className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> {text}
+          <Icon className="w-4 h-4 text-[#686CFA]" aria-hidden="true" /> {text}
         </li>
       ))}
     </ul>
@@ -31,13 +31,13 @@ export function HeroTrust({ className = '', align = 'left' }: { className?: stri
 }
 
 export function LeadCtaSection({
-  title = 'Lassen Sie uns über Ihre Ziele sprechen.',
+  title = 'Sprechen wir über Ihre Ausgangslage.',
   intro = 'Schildern Sie kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort und einen Terminvorschlag für ein kostenloses Erstgespräch.',
   formLocation,
   points = [
     'Wir schauen uns Ihre heutige Situation und Ihre Ziele an.',
     'Sie erfahren, wo wir den grössten Hebel sehen, und ob wir der richtige Partner sind.',
-    'Danach entscheiden Sie in Ruhe. Kein Verkaufsdruck, keine Verpflichtung.',
+    'Danach entscheiden Sie in Ruhe, ob und wie es weitergeht. Es entsteht keine Verpflichtung.',
   ],
   visual,
   ctaLabel,
@@ -48,14 +48,14 @@ export function LeadCtaSection({
   points?: string[];
   /** Dekoratives 3D-Objekt oben in der dunklen Spalte. */
   visual?: VisualId;
-  /** Beschriftung des Buttons, Standard «Potenzial besprechen». */
+  /** Beschriftung des Buttons, Standard «Erstgespräch vereinbaren». */
   ctaLabel?: string;
 }) {
   return (
     <section id="lead-cta" className="scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
-          <div className="lg:col-span-5 bg-slate-950 text-white p-7 sm:p-10 flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-[2rem] border border-slate-200/70 bg-surface shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
+          <div className="lg:col-span-5 bg-deep text-white p-7 sm:p-10 flex flex-col">
             {visual && (
               <div className="h-24 sm:h-32 mb-6 flex items-end">
                 <Visual3D id={visual} shadow="dark" sizes="(min-width: 640px) 200px, 150px" className="h-full w-auto max-w-[220px]" />
@@ -103,7 +103,7 @@ export function LeadCtaSection({
                 { icon: Clock, title: 'Antwort innert eines Arbeitstags', text: 'Mit einer ersten Einschätzung und einem Terminvorschlag.' },
               ].map((s, i) => (
                 <li key={s.title} className="flex gap-4">
-                  <span className="w-10 h-10 rounded-xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0">
+                  <span className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
                     <s.icon className="w-5 h-5" aria-hidden="true" />
                   </span>
                   <span>
@@ -124,7 +124,7 @@ export function LeadCtaSection({
 }
 
 /** Öffnet das Overlay mit der Formularstrecke der aktuellen Seite. */
-export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { location: string; label?: string }) {
+export function OpenLeadButton({ location, label = 'Erstgespräch vereinbaren' }: { location: string; label?: string }) {
   const { openContactModal } = useContactModal();
   return (
     <button
@@ -133,7 +133,7 @@ export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { l
         trackEvent('cta_click', { cta_location: location, cta_target: 'overlay' });
         openContactModal();
       }}
-      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-8 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
+      className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-8 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
     >
       {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
     </button>
@@ -141,7 +141,7 @@ export function OpenLeadButton({ location, label = 'Potenzial besprechen' }: { l
 }
 
 /** Fixierter CTA-Balken auf Mobile. Erscheint nach dem Hero, verschwindet beim Abschluss-Block. */
-export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string }> = ({ onFallback, label = 'Potenzial besprechen' }) => {
+export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string }> = ({ onFallback, label = 'Gespräch anfragen' }) => {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const onScroll = () => {
@@ -158,7 +158,7 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string 
   }, []);
   return (
     <div
-      className={`lg:hidden fixed inset-x-0 bottom-0 z-40 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 bg-white/95 backdrop-blur border-t border-slate-200 transition-transform duration-300 ${
+      className={`lg:hidden fixed inset-x-0 bottom-0 z-40 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 bg-surface/95 backdrop-blur border-t border-slate-200 transition-transform duration-300 ${
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
       aria-hidden={!visible}
@@ -171,7 +171,7 @@ export const StickyMobileCta: React.FC<{ onFallback: () => void; label?: string 
             trackEvent('cta_click', { cta_location: 'sticky_mobile', cta_target: 'overlay' });
             onFallback();
           }}
-          className="flex-1 inline-flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap"
+          className="btn-press flex-1 inline-flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold whitespace-nowrap"
         >
           {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </button>

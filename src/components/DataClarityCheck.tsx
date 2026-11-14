@@ -212,19 +212,19 @@ export default function DataClarityCheck() {
   const percentageOffset = circumference - (score / 100) * circumference;
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="data-clarity-check">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="data-clarity-check">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <PieChart className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <PieChart className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Daten-Check: Wie gut kennen Sie Ihre Zahlen?
           </h3>
         </div>
         <button
           onClick={handleReset}
-          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-canvas/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
@@ -391,7 +391,7 @@ export default function DataClarityCheck() {
                   return (
                     <div 
                       key={bs.key}
-                      className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs relative text-left transition-all hover:border-slate-300"
+                      className="bg-surface border border-slate-200 rounded-2xl overflow-hidden shadow-xs relative text-left transition-all hover:border-slate-300"
                       style={{ borderLeftWidth: '5px', borderLeftColor: bs.severity_color }}
                     >
                       <div className="p-5 space-y-3">
@@ -434,7 +434,7 @@ export default function DataClarityCheck() {
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.2 }}
                               >
-                                <div className="mt-3 p-3.5 bg-blue-50/50 border border-blue-105 border-indigo-150/15 text-xs text-[#686DF4] rounded-xl font-bold leading-relaxed font-sans">
+                                <div className="mt-3 p-3.5 bg-blue-50/50 border border-blue-105 border-indigo-150/15 text-xs text-[#686CFA] rounded-xl font-bold leading-relaxed font-sans">
                                   {bs.naechster_schritt}
                                 </div>
                               </motion.div>
@@ -457,7 +457,7 @@ export default function DataClarityCheck() {
                     Keine Lücken gefunden
                   </h5>
                   <p className="text-xs text-emerald-700 leading-relaxed font-semibold mt-1">
-                    Nach Ihren Angaben ist Ihre Datenbasis vollständig. Damit können Sie Marketing und Vertrieb gezielt nach Zahlen steuern.
+                    Nach Ihren Angaben ist Ihre Datenbasis vollständig. Damit können Sie Marketing und Vertrieb anhand Ihrer Zahlen steuern.
                   </p>
                 </div>
               </div>
@@ -467,7 +467,7 @@ export default function DataClarityCheck() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 {activeBlindspots.length === 0 ? "Ergebnis besprechen" : "Erstgespräch vereinbaren"} <ArrowRight className="w-4 h-4 text-white" />
               </button>

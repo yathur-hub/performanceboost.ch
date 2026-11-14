@@ -1,64 +1,107 @@
 @import "tailwindcss";
+@import "./styles/system.css";
 
 @theme {
+  /* Motion: Standard für alle transition-* Klassen (siehe Motion-System unten) */
+  --default-transition-duration: 220ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-font: #505050;
-  --color-brand-primary: #686DF4;
-  --color-brand-accent2: #CACCFB;
-  --color-brand-accent3: #E0E0E0;
-  --color-brand-white1: #ffffff;
-  --color-brand-white2: #f6f6f6;
+  /*
+   * Dunkles Designsystem (Richtung B, 14.11.2026, docs/design/02-designsystem-dark.md).
+   * Flächen: canvas (Seite) → surface (Karten, Panels) → surface-2 (erhöht) → deep (Kontrastboxen).
+   * CI bleibt: #686CFA Akzent, #CBCBFC Akzent hell, #E0E0E0 und #4F4F4F als Ursprung der Neutralen.
+   */
+  --color-canvas: #101116;
+  --color-surface: #14151C;
+  --color-surface-2: #181923;
+  --color-deep: #1C1D2A;
+  --color-line: #262733;
+  --color-line-strong: #34354A;
+  --color-accent-strong: #A0A3F9;
 
-  /* Map standard slate colors to enforce the exact palette across all elements */
-  --color-slate-50: #f6f6f6;
-  --color-slate-100: #E0E0E0;
-  --color-slate-200: #E0E0E0;
-  --color-slate-300: #CACCFB;
-  --color-slate-400: #505050;
-  --color-slate-500: #505050;
-  --color-slate-600: #505050;
-  --color-slate-700: #505050;
-  --color-slate-750: #505050;
-  --color-slate-800: #505050;
-  --color-slate-805: #505050;
-  --color-slate-850: #505050;
-  --color-slate-900: #505050;
-  --color-slate-905: #202020;
-  --color-slate-950: #1a1a1a;
-  
-  /* Additional custom properties to prevent direct arbitrary text-color leaks */
-  --color-slate-650: #505050;
-  --color-slate-450: #505050;
-  --color-slate-455: #505050;
-  --color-slate-550: #505050;
-  
+  --color-brand-font: #C9C9D6;
+  --color-brand-primary: #686CFA;
+  --color-brand-accent2: #CBCBFC;
+  --color-brand-accent3: #262733;
+  --color-brand-white1: #14151C;
+  --color-brand-white2: #101116;
+
+  /* Neutrale Skala für dunkle Flächen: niedrige Stufen = Flächen und Linien, hohe Stufen = Text */
+  --color-slate-50: #171821;
+  --color-slate-100: #23242F;
+  --color-slate-150: #262733;
+  --color-slate-200: #262733;
+  --color-slate-205: #262733;
+  --color-slate-250: #2C2D3A;
+  --color-slate-300: #B4B5C8;
+  --color-slate-350: #3A3B4C;
+  --color-slate-400: #9A9BB0;
+  --color-slate-405: #9A9BB0;
+  --color-slate-450: #9A9BB0;
+  --color-slate-455: #9A9BB0;
+  --color-slate-500: #9A9BB0;
+  --color-slate-550: #B4B5C8;
+  --color-slate-600: #B9BACB;
+  --color-slate-650: #B9BACB;
+  --color-slate-700: #C9C9D6;
+  --color-slate-750: #C9C9D6;
+  --color-slate-800: #D6D6E1;
+  --color-slate-805: #D6D6E1;
+  --color-slate-850: #E6E6EE;
+  --color-slate-900: #EEEEF4;
+  --color-slate-905: #F2F2F7;
+  --color-slate-950: #F6F6FA;
+
   /* Premium Shadow Utilities using CSS Variables */
-  --shadow-premium-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
-  --shadow-premium-md: 0 10px 30px -10px rgba(104, 109, 244, 0.06), 0 1px 4px 0 rgba(0, 0, 0, 0.01);
-  --shadow-premium-lg: 0 20px 50px -16px rgba(104, 109, 244, 0.08), 0 1px 10px 0 rgba(0, 0, 0, 0.01);
+  /* Farbpaletten für dunkle Flächen: niedrige Stufen = Tönungen, hohe Stufen = helle Schrift */
+  --color-red-50: oklch(0.23 0.04 25); --color-red-100: oklch(0.27 0.06 25); --color-red-200: oklch(0.33 0.08 25); --color-red-300: oklch(0.62 0.12 25); --color-red-400: oklch(0.72 0.15 25); --color-red-500: oklch(0.74 0.16 25); --color-red-600: oklch(0.78 0.14 25); --color-red-700: oklch(0.81 0.12 25); --color-red-800: oklch(0.85 0.09 25); --color-red-900: oklch(0.89 0.06 25); --color-red-950: oklch(0.93 0.04 25);
+  --color-orange-50: oklch(0.23 0.04 47); --color-orange-100: oklch(0.27 0.06 47); --color-orange-200: oklch(0.33 0.08 47); --color-orange-300: oklch(0.62 0.12 47); --color-orange-400: oklch(0.72 0.15 47); --color-orange-500: oklch(0.74 0.16 47); --color-orange-600: oklch(0.78 0.14 47); --color-orange-700: oklch(0.81 0.12 47); --color-orange-800: oklch(0.85 0.09 47); --color-orange-900: oklch(0.89 0.06 47); --color-orange-950: oklch(0.93 0.04 47);
+  --color-amber-50: oklch(0.23 0.04 70); --color-amber-100: oklch(0.27 0.06 70); --color-amber-200: oklch(0.33 0.08 70); --color-amber-300: oklch(0.62 0.12 70); --color-amber-400: oklch(0.72 0.15 70); --color-amber-500: oklch(0.74 0.16 70); --color-amber-600: oklch(0.78 0.14 70); --color-amber-700: oklch(0.81 0.12 70); --color-amber-800: oklch(0.85 0.09 70); --color-amber-900: oklch(0.89 0.06 70); --color-amber-950: oklch(0.93 0.04 70);
+  --color-yellow-50: oklch(0.23 0.04 95); --color-yellow-100: oklch(0.27 0.06 95); --color-yellow-200: oklch(0.33 0.08 95); --color-yellow-300: oklch(0.62 0.12 95); --color-yellow-400: oklch(0.72 0.15 95); --color-yellow-500: oklch(0.74 0.16 95); --color-yellow-600: oklch(0.78 0.14 95); --color-yellow-700: oklch(0.81 0.12 95); --color-yellow-800: oklch(0.85 0.09 95); --color-yellow-900: oklch(0.89 0.06 95); --color-yellow-950: oklch(0.93 0.04 95);
+  --color-lime-50: oklch(0.23 0.04 130); --color-lime-100: oklch(0.27 0.06 130); --color-lime-200: oklch(0.33 0.08 130); --color-lime-300: oklch(0.62 0.12 130); --color-lime-400: oklch(0.72 0.15 130); --color-lime-500: oklch(0.74 0.16 130); --color-lime-600: oklch(0.78 0.14 130); --color-lime-700: oklch(0.81 0.12 130); --color-lime-800: oklch(0.85 0.09 130); --color-lime-900: oklch(0.89 0.06 130); --color-lime-950: oklch(0.93 0.04 130);
+  --color-green-50: oklch(0.23 0.04 150); --color-green-100: oklch(0.27 0.06 150); --color-green-200: oklch(0.33 0.08 150); --color-green-300: oklch(0.62 0.12 150); --color-green-400: oklch(0.72 0.15 150); --color-green-500: oklch(0.74 0.16 150); --color-green-600: oklch(0.78 0.14 150); --color-green-700: oklch(0.81 0.12 150); --color-green-800: oklch(0.85 0.09 150); --color-green-900: oklch(0.89 0.06 150); --color-green-950: oklch(0.93 0.04 150);
+  --color-emerald-50: oklch(0.23 0.04 163); --color-emerald-100: oklch(0.27 0.06 163); --color-emerald-200: oklch(0.33 0.08 163); --color-emerald-300: oklch(0.62 0.12 163); --color-emerald-400: oklch(0.72 0.15 163); --color-emerald-500: oklch(0.74 0.16 163); --color-emerald-600: oklch(0.78 0.14 163); --color-emerald-700: oklch(0.81 0.12 163); --color-emerald-800: oklch(0.85 0.09 163); --color-emerald-900: oklch(0.89 0.06 163); --color-emerald-950: oklch(0.93 0.04 163);
+  --color-teal-50: oklch(0.23 0.04 182); --color-teal-100: oklch(0.27 0.06 182); --color-teal-200: oklch(0.33 0.08 182); --color-teal-300: oklch(0.62 0.12 182); --color-teal-400: oklch(0.72 0.15 182); --color-teal-500: oklch(0.74 0.16 182); --color-teal-600: oklch(0.78 0.14 182); --color-teal-700: oklch(0.81 0.12 182); --color-teal-800: oklch(0.85 0.09 182); --color-teal-900: oklch(0.89 0.06 182); --color-teal-950: oklch(0.93 0.04 182);
+  --color-cyan-50: oklch(0.23 0.04 215); --color-cyan-100: oklch(0.27 0.06 215); --color-cyan-200: oklch(0.33 0.08 215); --color-cyan-300: oklch(0.62 0.12 215); --color-cyan-400: oklch(0.72 0.15 215); --color-cyan-500: oklch(0.74 0.16 215); --color-cyan-600: oklch(0.78 0.14 215); --color-cyan-700: oklch(0.81 0.12 215); --color-cyan-800: oklch(0.85 0.09 215); --color-cyan-900: oklch(0.89 0.06 215); --color-cyan-950: oklch(0.93 0.04 215);
+  --color-sky-50: oklch(0.23 0.04 237); --color-sky-100: oklch(0.27 0.06 237); --color-sky-200: oklch(0.33 0.08 237); --color-sky-300: oklch(0.62 0.12 237); --color-sky-400: oklch(0.72 0.15 237); --color-sky-500: oklch(0.74 0.16 237); --color-sky-600: oklch(0.78 0.14 237); --color-sky-700: oklch(0.81 0.12 237); --color-sky-800: oklch(0.85 0.09 237); --color-sky-900: oklch(0.89 0.06 237); --color-sky-950: oklch(0.93 0.04 237);
+  --color-blue-50: oklch(0.23 0.04 260); --color-blue-100: oklch(0.27 0.06 260); --color-blue-200: oklch(0.33 0.08 260); --color-blue-300: oklch(0.62 0.12 260); --color-blue-400: oklch(0.72 0.15 260); --color-blue-500: oklch(0.74 0.16 260); --color-blue-600: oklch(0.78 0.14 260); --color-blue-700: oklch(0.81 0.12 260); --color-blue-800: oklch(0.85 0.09 260); --color-blue-900: oklch(0.89 0.06 260); --color-blue-950: oklch(0.93 0.04 260);
+  --color-indigo-50: oklch(0.23 0.04 277); --color-indigo-100: oklch(0.27 0.06 277); --color-indigo-200: oklch(0.33 0.08 277); --color-indigo-300: oklch(0.62 0.12 277); --color-indigo-400: oklch(0.72 0.15 277); --color-indigo-500: oklch(0.74 0.16 277); --color-indigo-600: oklch(0.78 0.14 277); --color-indigo-700: oklch(0.81 0.12 277); --color-indigo-800: oklch(0.85 0.09 277); --color-indigo-900: oklch(0.89 0.06 277); --color-indigo-950: oklch(0.93 0.04 277);
+  --color-violet-50: oklch(0.23 0.04 293); --color-violet-100: oklch(0.27 0.06 293); --color-violet-200: oklch(0.33 0.08 293); --color-violet-300: oklch(0.62 0.12 293); --color-violet-400: oklch(0.72 0.15 293); --color-violet-500: oklch(0.74 0.16 293); --color-violet-600: oklch(0.78 0.14 293); --color-violet-700: oklch(0.81 0.12 293); --color-violet-800: oklch(0.85 0.09 293); --color-violet-900: oklch(0.89 0.06 293); --color-violet-950: oklch(0.93 0.04 293);
+  --color-purple-50: oklch(0.23 0.04 304); --color-purple-100: oklch(0.27 0.06 304); --color-purple-200: oklch(0.33 0.08 304); --color-purple-300: oklch(0.62 0.12 304); --color-purple-400: oklch(0.72 0.15 304); --color-purple-500: oklch(0.74 0.16 304); --color-purple-600: oklch(0.78 0.14 304); --color-purple-700: oklch(0.81 0.12 304); --color-purple-800: oklch(0.85 0.09 304); --color-purple-900: oklch(0.89 0.06 304); --color-purple-950: oklch(0.93 0.04 304);
+  --color-fuchsia-50: oklch(0.23 0.04 322); --color-fuchsia-100: oklch(0.27 0.06 322); --color-fuchsia-200: oklch(0.33 0.08 322); --color-fuchsia-300: oklch(0.62 0.12 322); --color-fuchsia-400: oklch(0.72 0.15 322); --color-fuchsia-500: oklch(0.74 0.16 322); --color-fuchsia-600: oklch(0.78 0.14 322); --color-fuchsia-700: oklch(0.81 0.12 322); --color-fuchsia-800: oklch(0.85 0.09 322); --color-fuchsia-900: oklch(0.89 0.06 322); --color-fuchsia-950: oklch(0.93 0.04 322);
+  --color-pink-50: oklch(0.23 0.04 354); --color-pink-100: oklch(0.27 0.06 354); --color-pink-200: oklch(0.33 0.08 354); --color-pink-300: oklch(0.62 0.12 354); --color-pink-400: oklch(0.72 0.15 354); --color-pink-500: oklch(0.74 0.16 354); --color-pink-600: oklch(0.78 0.14 354); --color-pink-700: oklch(0.81 0.12 354); --color-pink-800: oklch(0.85 0.09 354); --color-pink-900: oklch(0.89 0.06 354); --color-pink-950: oklch(0.93 0.04 354);
+  --color-rose-50: oklch(0.23 0.04 16); --color-rose-100: oklch(0.27 0.06 16); --color-rose-200: oklch(0.33 0.08 16); --color-rose-300: oklch(0.62 0.12 16); --color-rose-400: oklch(0.72 0.15 16); --color-rose-500: oklch(0.74 0.16 16); --color-rose-600: oklch(0.78 0.14 16); --color-rose-700: oklch(0.81 0.12 16); --color-rose-800: oklch(0.85 0.09 16); --color-rose-900: oklch(0.89 0.06 16); --color-rose-950: oklch(0.93 0.04 16);
+
+  /* Tiefe auf Dunkel: Innenkante oben plus weicher Schatten nach unten */
+  --shadow-premium-sm: 0 1px 0 0 rgba(255, 255, 255, 0.04) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-premium-md: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset, 0 18px 40px -18px rgba(0, 0, 0, 0.6);
+  --shadow-premium-lg: 0 1px 0 0 rgba(255, 255, 255, 0.06) inset, 0 30px 70px -24px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(104, 108, 250, 0.06);
 }
 
 :root {
-  --font-size-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-body: clamp(0.9375rem, 0.86rem + 0.4vw, 1.125rem);
   --font-size-body-sm: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
-  --font-size-body-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --font-size-body-lg: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
   --line-height-body: 1.65;
   --line-height-relaxed: 1.7;
   --content-reading-width: 68ch;
 }
 
 @layer base {
+  /* rem-Basis bleibt auf der bisherigen Skala, damit Abstände und 44-px-Ziele nicht mitschrumpfen */
+  html { font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); }
   html, body {
     font-family: var(--font-sans);
     background-color: var(--color-brand-white2);
     color: var(--color-brand-font);
+  }
+  body {
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     font-weight: 400;
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -76,7 +119,7 @@
 
 /* Custom typography classes for running copy & cards */
 .text-body {
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem) !important;
+  font-size: clamp(0.9375rem, 0.86rem + 0.4vw, 1.125rem) !important;
   line-height: 1.65 !important;
 }
 
@@ -86,7 +129,7 @@
 }
 
 .text-body-lg {
-  font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem) !important;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem) !important;
   line-height: 1.6 !important;
 }
 
@@ -154,26 +197,16 @@
 
 /*
  * Barrierefreiheit (WCAG 2.2 AA, 4.5:1 für Fliesstext):
- * Die Markenfarbe #686DF4 erreicht als Textfarbe auf Weiss nur 4.1:1 und als Hintergrund
+ * Die Markenfarbe #686CFA erreicht als Textfarbe auf Weiss nur 4.1:1 und als Hintergrund
  * für weisse Schrift ebenfalls 4.1:1. Für Text und Buttons wird deshalb eine dunklere
  * Abstufung derselben Farbe verwendet, auf dunklen Flächen eine hellere.
- * Dekorative Flächen, Rahmen und Icons behalten #686DF4.
+ * Dekorative Flächen, Rahmen und Icons behalten #686CFA.
  */
-.text-\[\#686DF4\] {
-  color: #4f54d6;
-}
-.bg-slate-950 .text-\[\#686DF4\],
-.bg-slate-905 .text-\[\#686DF4\],
-.bg-\[\#1a1a1a\] .text-\[\#686DF4\] {
+.text-\[\#686CFA\] {
   color: #a0a3f9;
 }
-.bg-\[\#686DF4\] {
+.bg-\[\#686CFA\] {
   background-color: #5458e0;
-}
-/* Graue Hilfstexte (slate-400 = #505050) sind auf dunklen Flächen unlesbar. */
-.bg-slate-950 .text-slate-400,
-.bg-slate-950 .text-slate-500 {
-  color: #b4b4b4;
 }
 
 /* Hero-Rakete: nur die Rakete schwebt sanft entlang ihrer Flugachse, der Rauch bleibt stehen. */
@@ -182,7 +215,7 @@
   50% { transform: translate3d(2px, -8px, 0); }
 }
 .animate-rocket {
-  animation: rocketHover 3.2s ease-in-out infinite;
+  animation: rocketHover 4.8s cubic-bezier(0.65, 0, 0.35, 1) 1.5s infinite;
   will-change: transform;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -192,95 +225,325 @@
 /* 3D-Visuals (src/components/Visual3D.tsx): Bodenschatten per CSS statt im Bild */
 .visual-3d-shadow { filter: drop-shadow(0 24px 32px rgb(26 26 46 / 0.16)); }
 .visual-3d-shadow-dark { filter: drop-shadow(0 18px 36px rgb(105 110 239 / 0.28)); }
-@keyframes visualFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-.animate-float { animation: visualFloat 6s ease-in-out infinite; will-change: transform; }
-@media (prefers-reduced-motion: reduce) {
-  .animate-float { animation: none; }
-}
+/* .animate-float: bewusst ohne Dauerbewegung (Motion-System 13.11.2026). */
+.animate-float { }
+.animate-rocket { animation: none !important; }
 
 /* =========================================================================
- * Animationssystem (06.11.2026)
- * - .hero-enter: Kinder des Hero-Inhalts erscheinen beim Laden gestaffelt (reines CSS, auch im Prerender)
- * - .reveal / .reveal-item: Abschnitte und ihre Karten beim ersten Sichtkontakt (src/lib/useScrollReveal.ts)
- * - .diagram-enter: Knoten der Themengrafiken erscheinen nacheinander (--d = Index)
- * - .menu-accordion: weiches Auf-/Zuklappen im mobilen Mega-Menü
- * - FAQ (<details>): weiches Öffnen/Schliessen, wo der Browser es unterstützt
- * Alles deaktiviert bei prefers-reduced-motion.
+ * MOTION-SYSTEM (13.11.2026) · Doku: docs/agentic-positioning/04-motion.md
+ * Eine Bewegungssprache für die ganze Website. Werte nur hier und in src/lib/motion.ts ändern.
+ *
+ * Varianten (vergeben automatisch durch src/lib/useScrollReveal.ts):
+ *   .rv-fade   Abschnitt oder Block: Fade-up
+ *   .rv-mask   Abschnittsüberschrift: maskierter Reveal von unten
+ *   .rv-item   Karte/Listeneintrag in Rastern: gestaffelt (--i)
+ *   .rv-image  Bild/Figur: Masken-Reveal mit leichtem Scale-out des Bildes
+ *   .rv-scale  dunkle CTA-Flächen und Kontaktblöcke: dezentes Scale-in
+ * Hero: .hero-enter (Kinder gestaffelt, H1 maskiert), .hero-line für mehrzeilige H1 der Startseite.
+ * Alles nur mit transform, opacity und clip-path. Ohne JavaScript bleibt alles sichtbar,
+ * weil die Reveal-Klassen erst im Browser gesetzt werden. Bei reduzierter Bewegung: keine Bewegung.
  * ========================================================================= */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);      /* Reveals, Öffnen, Hover */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);   /* Ein-/Ausblenden gleichzeitig */
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);          /* Schliessen: kurz und kontrolliert */
+
+  --dur-press: 120ms;
+  --dur-button: 200ms;
+  --dur-link: 240ms;
+  --dur-card: 300ms;
+  --dur-accordion: 340ms;
+  --dur-menu: 460ms;
+  --dur-menu-exit: 300ms;
+  --dur-page-out: 180ms;
+  --dur-page-in: 380ms;
+  --dur-reveal: 720ms;
+  --dur-hero: 1000ms;
+
+  --stagger: 55ms;
+  --dist-reveal: 10px;
+  --dist-item: 6px;
+  --dist-hero: 14px;
+  --scale-in: 0.985;
+  --blur-reveal: 8px;
+  --ease-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media (max-width: 639px) {
+  :root { --dist-reveal: 8px; --dist-item: 4px; --dist-hero: 10px; --stagger: 45ms; --blur-reveal: 5px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ---------- Hero ---------- */
 @keyframes enterUp {
-  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  from { opacity: 0; transform: translate3d(0, var(--dist-hero), 0); filter: blur(4px); }
   to { opacity: 1; transform: none; }
 }
-.hero-enter > * { animation: enterUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.hero-enter > *:nth-child(2) { animation-delay: 0.08s; }
-.hero-enter > *:nth-child(3) { animation-delay: 0.16s; }
-.hero-enter > *:nth-child(4) { animation-delay: 0.24s; }
-.hero-enter > *:nth-child(5) { animation-delay: 0.32s; }
-.hero-enter > *:nth-child(n + 6) { animation-delay: 0.4s; }
-
-.reveal {
-  opacity: 0;
-  transform: translate3d(0, 28px, 0);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* Maskierter Reveal: Text steigt von unten in eine feste Maske (Unterkante zuerst) */
+@keyframes maskUp {
+  from { opacity: 0; filter: blur(var(--blur-reveal)); transform: translate3d(0, 0.25em, 0); }
+  to { opacity: 1; filter: blur(0); transform: none; }
 }
-.reveal.is-visible { opacity: 1; transform: none; }
-.reveal .reveal-item {
-  opacity: 0;
-  transform: translate3d(0, 16px, 0);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: calc(var(--i, 0) * 70ms + 120ms);
+@keyframes lineUp {
+  from { transform: translate3d(0, 105%, 0); filter: blur(var(--blur-reveal)); opacity: 0; }
+  60% { opacity: 1; }
+  to { transform: none; filter: blur(0); opacity: 1; }
 }
-.reveal.is-visible .reveal-item { opacity: 1; transform: none; }
-
-.diagram-enter [style*='--d'] {
-  animation: enterUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: calc(var(--d, 0) * 90ms + 250ms);
+.hero-enter > * { animation: enterUp var(--dur-reveal) var(--ease-out) both; }
+.hero-enter > *:nth-child(1) { animation-delay: 0ms; }
+.hero-enter > *:nth-child(2) { animation-delay: 80ms; }
+.hero-enter > *:nth-child(3) { animation-delay: 300ms; }
+.hero-enter > *:nth-child(4) { animation-delay: 380ms; }
+.hero-enter > *:nth-child(5) { animation-delay: 460ms; }
+.hero-enter > *:nth-child(n + 6) { animation-delay: 540ms; }
+/* Mobile: kürzere Staffel, damit Subheadline und CTA (oft das LCP-Element) früher stehen */
+@media (max-width: 639px) {
+  .hero-enter > *:nth-child(3) { animation-delay: 160ms; }
+  .hero-enter > *:nth-child(4) { animation-delay: 220ms; }
+  .hero-enter > *:nth-child(5) { animation-delay: 280ms; }
+  .hero-enter > *:nth-child(n + 6) { animation-delay: 340ms; }
+  .hero-enter > * { animation-duration: 600ms; }
+  .hero-enter > h1 { animation-duration: 850ms; }
 }
-.reveal:not(.is-visible) .diagram-enter [style*='--d'] { animation-play-state: paused; }
+/* H1 in jedem Hero: maskierter Reveal statt Fade */
+.hero-enter > h1 { animation: maskUp var(--dur-hero) var(--ease-out) both; }
+.hero-enter > *:nth-child(1):is(h1) { animation-delay: 80ms; }
+/* Mehrzeilige H1 (Startseite): Zeilen einzeln maskiert, die H1 selbst bewegt sich nicht */
+.hero-enter > h1:has(.hero-line) { animation: none; }
+.hero-line { display: inline-block; overflow: hidden; padding-bottom: 0.14em; margin-bottom: -0.14em; vertical-align: top; }
+.hero-line > span { display: inline-block; animation: lineUp var(--dur-hero) var(--ease-out) both; }
+.hero-line:nth-child(1) > span { animation-delay: 60ms; }
+.hero-line:nth-child(2) > span { animation-delay: 170ms; }
 
 @keyframes rocketIn {
-  from { transform: translate3d(-28px, 70px, 0); }
-  to { transform: none; }
-}
-.rocket-in { animation: rocketIn 1.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
-@keyframes smokeIn {
-  from { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.97); }
+  from { opacity: 0; transform: translate3d(-36px, 90px, 0) scale(0.96); }
   to { opacity: 1; transform: none; }
 }
-.smoke-in { animation: smokeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; transform-origin: 50% 100%; }
+.rocket-in { animation: rocketIn 1300ms var(--ease-out) 200ms both; }
+@keyframes smokeIn {
+  from { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+.smoke-in { animation: smokeIn 1400ms var(--ease-out) 260ms both; transform-origin: 50% 100%; }
+/* Dezente Parallax der Rakete beim Wegscrollen (nur Browser mit Scroll-Timelines, ab Tablet, ohne JS-Handler) */
+@supports (animation-timeline: scroll()) {
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    @keyframes heroParallax { to { translate: 0 -72px; } }
+    .hero-parallax { animation: heroParallax linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+  }
+}
 
+/* ---------- Scroll-Reveals ---------- */
+/* Premium-Motion (14.11.2026): Überschriften von unscharf zu scharf, Inhalte nur über Deckkraft mit wenigen Pixeln,
+   Bilder weich. Keine Masken-Wipes, keine langen Slide-ups. */
+.rv-fade { opacity: 0; transform: translate3d(0, var(--dist-reveal), 0); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); }
+.rv-mask { opacity: 0; filter: blur(var(--blur-reveal)); transform: translate3d(0, 0.2em, 0); transition: opacity 800ms var(--ease-out), filter 800ms var(--ease-out), transform 800ms var(--ease-out); }
+.rv-item { opacity: 0; transform: translate3d(0, var(--dist-item), 0); transition: opacity 560ms var(--ease-out), transform 560ms var(--ease-out); transition-delay: calc(var(--i, 0) * var(--stagger) + 160ms); }
+.rv-image { opacity: 0; filter: blur(6px); transition: opacity 900ms var(--ease-out), filter 900ms var(--ease-out); }
+.rv-image img { transform: none; }
+.rv-scale { opacity: 0; transform: scale(var(--scale-in)); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); }
+.is-visible.rv-fade, .is-visible .rv-fade, .is-visible.rv-item, .is-visible .rv-item, .is-visible.rv-scale, .is-visible .rv-scale { opacity: 1; transform: none; }
+.is-visible.rv-mask, .is-visible .rv-mask { opacity: 1; filter: blur(0); transform: none; }
+.is-visible.rv-image, .is-visible .rv-image { opacity: 1; filter: blur(0); }
+/* Verzögerung innerhalb eines Abschnitts: Überschrift zuerst, dann Text, dann Inhalt */
+.rv-delay-1 { transition-delay: 90ms; }
+.rv-delay-2 { transition-delay: 180ms; }
+
+/* ---------- Seitenübergang (View Transitions API, Fallback .page-enter) ---------- */
+@keyframes pageOut { to { opacity: 0; } }
+@keyframes pageIn { from { opacity: 0; transform: translate3d(0, 10px, 0); } }
+::view-transition-old(root) { animation: pageOut var(--dur-page-out) var(--ease-exit) both; }
+::view-transition-new(root) { animation: pageIn var(--dur-page-in) var(--ease-out) both; }
+#main-navigation { view-transition-name: site-header; }
+::view-transition-group(site-header) { animation: none; z-index: 10; }
+::view-transition-old(site-header), ::view-transition-new(site-header) { animation: none; }
+.page-enter { animation: pageIn var(--dur-page-in) var(--ease-out) both; }
+
+/* ---------- Micro-Interactions ---------- */
+/* Pfeile in Links und Buttons rücken beim Hover leicht nach */
+a svg.lucide-arrow-right, button svg.lucide-arrow-right, a svg.lucide-arrow-up-right { transition: transform var(--dur-link) var(--ease-out); }
+a:hover svg.lucide-arrow-right, button:hover svg.lucide-arrow-right, a:focus-visible svg.lucide-arrow-right { transform: translate3d(3px, 0, 0); }
+a:hover svg.lucide-arrow-up-right { transform: translate3d(2px, -2px, 0); }
+/* Buttons: kurzes Press-Feedback */
+.btn-press { transition: background-color var(--dur-button) var(--ease-out), color var(--dur-button) var(--ease-out), border-color var(--dur-button) var(--ease-out), box-shadow var(--dur-button) var(--ease-out), transform var(--dur-press) var(--ease-out); }
+.btn-press:hover { box-shadow: 0 10px 24px -12px rgb(84 88 224 / 0.55); }
+.btn-press:active { transform: scale(0.98); }
+/* Textlinks: Unterstrich wächst von links */
+.link-underline { background-image: linear-gradient(currentColor, currentColor); background-size: 0% 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size var(--dur-link) var(--ease-out), color var(--dur-link) var(--ease-out); }
+.link-underline:hover, .link-underline:focus-visible, .link-underline[aria-current='page'] { background-size: 100% 1px; }
+a:hover > .link-underline, a:focus-visible > .link-underline, a[aria-current='page'] > .link-underline { background-size: 100% 1px; }
+/* Fokus erscheint weich, nicht schlagartig */
+:where(a, button, summary, [tabindex]):focus-visible { transition: box-shadow var(--dur-button) var(--ease-out), outline-color var(--dur-button) var(--ease-out); }
+/* Karten-Hover: gleiche Dauer und Kurve überall */
+:where(a, li, article, div).transition-all { transition-duration: var(--dur-card); transition-timing-function: var(--ease-out); }
+/* Szenische Bilder: dezenter Zoom beim Hover */
+.visual-zoom { overflow: hidden; }
+.visual-zoom img { transition: transform 900ms var(--ease-out); }
+.visual-zoom:hover img { transform: scale(1.025); }
+/* Inhalte, die sich bei Interaktion austauschen (Diagramm-Detail, Tabs) */
+@keyframes swapIn { from { opacity: 0; transform: translate3d(0, 6px, 0); } }
+.motion-swap { animation: swapIn var(--dur-card) var(--ease-out) both; }
+
+/* ---------- Mega-Menü: Hamburger zu X ---------- */
+.menu-icon { position: relative; width: 18px; height: 12px; display: inline-block; }
+.menu-icon > span { position: absolute; left: 0; right: 0; height: 1.75px; border-radius: 2px; background: currentColor; transition: transform var(--dur-menu) var(--ease-out), opacity var(--dur-button) var(--ease-out), top var(--dur-menu) var(--ease-out); }
+.menu-icon > span:nth-child(1) { top: 0; }
+.menu-icon > span:nth-child(2) { top: 5.1px; }
+.menu-icon > span:nth-child(3) { top: 10.25px; }
+[aria-expanded='true'] .menu-icon > span:nth-child(1) { top: 5.1px; transform: rotate(45deg); }
+[aria-expanded='true'] .menu-icon > span:nth-child(2) { opacity: 0; transform: scaleX(0.3); }
+[aria-expanded='true'] .menu-icon > span:nth-child(3) { top: 5.1px; transform: rotate(-45deg); }
+
+/* ---------- Accordions (Mega-Menü mobil) ---------- */
 .menu-accordion {
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
-  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  transition: grid-template-rows var(--dur-accordion) var(--ease-out), opacity 240ms var(--ease-out);
 }
 .menu-accordion.is-open { grid-template-rows: 1fr; opacity: 1; }
 .menu-accordion > * { min-height: 0; overflow: hidden; }
-.menu-accordion:not(.is-open) > * { visibility: hidden; transition: visibility 0s linear 0.35s; }
+.menu-accordion:not(.is-open) > * { visibility: hidden; transition: visibility 0s linear var(--dur-accordion); }
 .menu-accordion.is-open > * { visibility: visible; }
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .menu-accordion { grid-template-rows: 1fr; opacity: 1; }
   .menu-accordion > * { overflow: visible; visibility: visible !important; }
 }
 
-details[open] > :not(summary) { animation: enterUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+/* ---------- FAQ (<details>) ---------- */
+details > summary { transition: color var(--dur-link) var(--ease-out); }
+details[open] > :not(summary) { animation: swapIn var(--dur-accordion) var(--ease-out) both; }
 @supports (interpolate-size: allow-keywords) {
   details { interpolate-size: allow-keywords; }
   details::details-content {
     height: 0;
     overflow: clip;
-    transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), content-visibility 0.35s allow-discrete;
+    transition: height var(--dur-accordion) var(--ease-out), content-visibility var(--dur-accordion) allow-discrete;
   }
   details[open]::details-content { height: auto; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-enter > *, .diagram-enter [style*='--d'], .rocket-in, .smoke-in, details[open] > :not(summary) { animation: none !important; }
-  .reveal, .reveal .reveal-item { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .menu-accordion { transition: none; }
-  details::details-content { transition: none !important; }
+/* ---------- Themengrafiken (Diagram.tsx) ---------- */
+.diagram-enter [style*='--d'] {
+  animation: enterUp 600ms var(--ease-out) both;
+  animation-delay: calc(var(--d, 0) * 90ms + 200ms);
 }
+.rv-fade:not(.is-visible) .diagram-enter [style*='--d'] { animation-play-state: paused; }
+
+/* ---------- Systemdiagramm Startseite (RevenueSystemGraphic) ---------- */
+.sys-node { opacity: 0; transform: translate3d(0, 10px, 0) scale(0.97); transform-box: fill-box; transform-origin: center; transition: opacity 600ms var(--ease-out), transform 700ms var(--ease-out); }
+.sys-edge { stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset 900ms var(--ease-out), opacity 400ms var(--ease-out); }
+.sys-label { opacity: 0; transition: opacity 500ms var(--ease-out); }
+.sys-drawn .sys-node, .sys-drawn .sys-label { opacity: 1; transform: none; }
+.sys-drawn .sys-edge { stroke-dashoffset: 0; opacity: 1; }
+@keyframes flowDash { to { stroke-dashoffset: -20; } }
+.flow-dash { stroke-dasharray: 3 7; }
+.flow-dash.is-lit { animation: flowDash 1.4s linear infinite; }
+@keyframes agentPing {
+  0% { opacity: 0.45; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+.agent-ping { transform-box: fill-box; transform-origin: center; opacity: 0; }
+.agent-ping.is-lit { animation: agentPing 1100ms var(--ease-out) 2; }
+
+/* ---------- Reduzierte Bewegung: Inhalte sofort sichtbar, nur Farb- und Zustandswechsel ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter > *, .hero-line > span, .diagram-enter [style*='--d'], .rocket-in, .smoke-in, details[open] > :not(summary), .page-enter, .motion-swap { animation: none !important; }
+  .rv-fade, .rv-mask, .rv-item, .rv-image, .rv-image img, .rv-scale, .sys-node, .sys-edge, .sys-label { opacity: 1 !important; transform: none !important; clip-path: none !important; stroke-dashoffset: 0 !important; transition: none !important; }
+  .flow-dash.is-lit, .agent-ping.is-lit { animation: none !important; }
+  .menu-accordion, .menu-icon > span { transition: none; }
+  details::details-content { transition: none !important; }
+  .btn-press:active { transform: none; }
+  .visual-zoom:hover img, a:hover svg.lucide-arrow-right { transform: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
+}
+
+/* =========================================================================
+ * MOBILE & TOUCH (13.11.2026) · Doku: docs/agentic-positioning/05-mobile.md
+ * Nur für kleine Viewports und grobe Zeiger (Touch). Desktop mit Maus bleibt unverändert.
+ * ========================================================================= */
+/* iOS zoomt bei Eingabefeldern unter 16 px automatisch hinein */
+@media (max-width: 767px), (pointer: coarse) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']), select, textarea { font-size: 16px !important; }
+}
+/* Mikro-Labels (Badges, Mono-Labels) auf kleinen Displays nicht unter 11 px */
+@media (max-width: 639px) {
+  .text-\[10px\] { font-size: 11px; }
+}
+/* Touch-Ziele mindestens 44 px hoch, ohne die Optik zu verändern */
+@media (pointer: coarse) {
+  main a.inline-flex:not(.btn-press):not([class*='min-h-']),
+  main a.flex.w-full:not([class*='min-h-']),
+  main a.inline-block,
+  main button:not([class*='min-h-']):not([class*='h-']):not([role='switch']) { min-height: 44px; }
+  main a.inline-flex:not(.btn-press) { align-items: center; }
+  main a.inline-block { display: inline-flex; align-items: center; }
+  nav[aria-label='Seitenpfad'] a { display: inline-flex; align-items: center; min-height: 44px; }
+  #site-footer ul > li + li { margin-top: 0; }
+  #site-footer li > a, #site-footer a[href^='mailto'], #site-footer a[href='/impressum'], #site-footer a[href='/datenschutz'] { display: inline-flex; align-items: center; min-height: 44px; }
+  /* Kein «klebender» Hover-Zustand nach dem Antippen */
+  .visual-zoom:hover img { transform: none; }
+}
+
+/* =========================================================================
+ * MOBILE RHYTHMUS & TYPOGRAFIE (13.11.2026) · Doku: docs/agentic-positioning/07-mobile-design.md
+ * Gilt nur unter 1024 px (Abstände) bzw. 640 px (Schriftgrössen). Desktop bleibt unverändert.
+ * ========================================================================= */
+:root {
+  /* Seitenrand: 20 px bei 320, 24 px ab 375, bis 28 px bei 430 */
+  --page-gutter: clamp(20px, 6.4vw, 28px);
+  /* Vertikaler Rhythmus im Hero: eng innerhalb einer Gruppe, weit zwischen Gruppen */
+  --hero-gap-eyebrow: 18px;
+  --hero-gap-h1: 26px;
+  --hero-gap-group: 36px;
+  --hero-gap-tight: 16px;
+}
+@media (min-width: 640px) {
+  :root { --page-gutter: 24px; }
+}
+@media (max-width: 639px) {
+  /* Alle Seitencontainer (Container-Baustein und gleich aufgebaute Inline-Container) */
+  .mx-auto.px-4 { padding-left: var(--page-gutter); padding-right: var(--page-gutter); }
+}
+
+@media (max-width: 1023px) {
+  /* Hero: Gruppen statt gleichmässiger Abstände */
+  .hero-enter > * { margin-block-end: 0 !important; margin-block-start: 0; }
+  .hero-enter > * + * { margin-block-start: var(--hero-gap-group); }
+  .hero-enter > h1 { margin-block-start: var(--hero-gap-eyebrow); }
+  .hero-enter > :first-child:is(h1) { margin-block-start: 0; }
+  .hero-enter > h1 + p { margin-block-start: var(--hero-gap-h1); }
+  .hero-enter > div + div, .hero-enter > div + p, .hero-enter > div + ul { margin-block-start: var(--hero-gap-tight); }
+  /* Leistungsseiten: Icon-Kachel über der H1 */
+  .hero-enter > div:first-child + h1 { margin-block-start: 22px; }
+}
+
+@media (max-width: 639px) {
+  /* Headline kräftig, aber nicht bildschirmfüllend; Fliesstext klar leichter als die Überschriften */
+  .hero-enter > h1 { font-size: clamp(1.75rem, 7.7vw, 2.1rem) !important; line-height: 1.12 !important; letter-spacing: -0.02em; }
+  .hero-enter > h1 + p { font-size: 15.5px !important; line-height: 1.65 !important; }
+  .hero-enter > p:first-child { font-size: 11px; letter-spacing: 0.16em; line-height: 1.6; text-wrap: balance; }
+  /* Abschnittsüberschriften: klare Stufe unter der H1 */
+  main h2.text-2xl { font-size: 1.4rem; line-height: 1.25; }
+  main section { scroll-margin-top: 96px; }
+}
+@media (max-width: 639px) {
+  /* Abstand zwischen grossen Sektionen: 80 px statt 64 px (Seiten-Wrapper der Views) */
+  .space-y-16:is(.md\:space-y-28, .md\:space-y-24) > :not(:last-child) { margin-block-end: 5rem; }
+}
+
+/* ---------- Premium Micro-Interactions (14.11.2026) ---------- */
+/* Karten heben sich nicht mehr an, sie reagieren über Rahmen und Fläche (160 ms). */
+.hover\:-translate-y-0\.5:hover, .hover\:-translate-y-1\.5:hover, .group:hover .group-hover\:-translate-y-1\.5, .group:hover .group-hover\:scale-102 { transform: none !important; }
+a.rounded-3xl:hover, a.rounded-2xl:hover, a[class*="rounded-[2rem]"]:hover { background-color: var(--color-surface-2); }
+/* Typografie: Überschriften eng gesetzt, ein Gewicht */
+h1, h2 { letter-spacing: -0.025em; }
+h1.font-display, h2.font-display, .font-display:is(h1, h2) { font-weight: 600; }
+::selection { background: #686CFA; color: #fff; }
+/* Formularfelder auf Dunkel */
+input, select, textarea { color-scheme: dark; }
+
+/* Halbtransparentes Weiss auf dem Akzent reicht nicht für 4.5:1 */
+.bg-\[\#686CFA\] .text-white\/80, .bg-\[\#686CFA\] .text-white\/70, .bg-\[\#686CFA\].text-white\/80 { color: rgba(255,255,255,0.94); }
+.bg-\[\#686CFA\]:disabled { background-color: var(--color-slate-100); }

@@ -38,17 +38,17 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
         </motion.button>
 
         <div className="space-y-8">
-          <div className="border-l-4 border-[#686DF4] pl-4 space-y-1">
+          <div className="border-l-4 border-[#686CFA] pl-4 space-y-1">
             <h1 className="text-3xl font-display font-semibold tracking-tight text-slate-950">Impressum</h1>
             <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider font-mono">Offizielle Angaben nach Schweizer Recht.</p>
           </div>
 
-          <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
+          <div className="bg-surface border border-line/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
             
             {/* Anbieter */}
             <div className="space-y-2 pb-5 border-b border-slate-50">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#686DF4]" />
+                <MapPin className="w-4 h-4 text-[#686CFA]" />
                 <h3 className="font-bold text-slate-900 font-display text-sm sm:text-base">Anbieter</h3>
               </div>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold pl-6">
@@ -62,7 +62,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
             {/* Verantwortliche Person */}
             <div className="space-y-2 pb-5 border-b border-slate-50">
               <div className="flex items-center gap-2">
-                <User className="w-4 h-4 text-[#686DF4]" />
+                <User className="w-4 h-4 text-[#686CFA]" />
                 <h3 className="font-bold text-slate-900 font-display text-sm sm:text-base">Verantwortliche Person</h3>
               </div>
               <p className="text-slate-500 text-xs sm:text-sm font-semibold pl-6">
@@ -74,18 +74,18 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
             {/* Kontakt */}
             <div className="space-y-2 pb-5 border-b border-slate-50">
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#686DF4]" />
+                <Mail className="w-4 h-4 text-[#686CFA]" />
                 <h3 className="font-bold text-slate-900 font-display text-sm sm:text-base">Kontakt</h3>
               </div>
               <p className="text-slate-500 text-xs sm:text-sm font-semibold pl-6">
-                E-Mail: <a href="mailto:hallo@performanceboost.ch" className="text-[#686DF4] font-bold hover:underline">hallo@performanceboost.ch</a>
+                E-Mail: <a href="mailto:hallo@performanceboost.ch" className="text-[#686CFA] font-bold hover:underline">hallo@performanceboost.ch</a>
               </p>
             </div>
 
             {/* Haftungsausschluss */}
             <div className="space-y-2 pb-5 border-b border-slate-50">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-[#686DF4]" />
+                <Shield className="w-4 h-4 text-[#686CFA]" />
                 <h3 className="font-bold text-slate-900 font-display text-sm sm:text-base">Haftungsausschluss</h3>
               </div>
               <div className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold pl-6 space-y-3">
@@ -101,7 +101,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
             {/* Urheberrechte */}
             <div className="space-y-2 pb-5 border-b border-slate-50">
               <div className="flex items-center gap-2">
-                <Info className="w-4 h-4 text-[#686DF4]" />
+                <Info className="w-4 h-4 text-[#686CFA]" />
                 <h3 className="font-bold text-slate-900 font-display text-sm sm:text-base">Urheberrechte</h3>
               </div>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold pl-6">
@@ -112,7 +112,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
             {/* Anwendbares Recht */}
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Scale className="w-4 h-4 text-[#686DF4]" />
+                <Scale className="w-4 h-4 text-[#686CFA]" />
                 <h3 className="font-bold text-slate-900 font-display text-sm sm:text-base">Anwendbares Recht</h3>
               </div>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold pl-6">
@@ -145,12 +145,12 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
       </motion.button>
 
       <div className="space-y-8">
-        <div className="border-l-4 border-[#686DF4] pl-4 space-y-1">
+        <div className="border-l-4 border-[#686CFA] pl-4 space-y-1">
           <h1 className="text-3xl font-display font-semibold tracking-tight text-slate-950">Datenschutzerklärung</h1>
           <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider font-mono">Datenschutzkonformität nach Schweizer Recht (DSG).</p>
         </div>
 
-        <div className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
+        <div className="bg-surface border border-line/65 p-8 rounded-3xl space-y-6 text-xs sm:text-sm leading-relaxed text-slate-500 shadow-[var(--shadow-premium-sm)]">
           
           {/* Allgemeines */}
           <div className="space-y-2 pb-5 border-b border-slate-50">
@@ -177,7 +177,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
               Yathur Nathan
             </p>
             <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
-              E-Mail: <a href="mailto:hallo@performanceboost.ch" className="text-[#686DF4] hover:underline">hallo@performanceboost.ch</a>
+              E-Mail: <a href="mailto:hallo@performanceboost.ch" className="text-[#686CFA] hover:underline">hallo@performanceboost.ch</a>
             </p>
           </div>
 
@@ -352,7 +352,7 @@ export default function LegalView({ type, onNavigate }: LegalViewProps) {
               <li>Widerspruch gegen bestimmte Bearbeitungen</li>
             </ul>
             <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed pt-1.5">
-              Anfragen können jederzeit an <a href="mailto:hallo@performanceboost.ch" className="text-[#686DF4] hover:underline">hallo@performanceboost.ch</a> gerichtet werden.
+              Anfragen können jederzeit an <a href="mailto:hallo@performanceboost.ch" className="text-[#686CFA] hover:underline">hallo@performanceboost.ch</a> gerichtet werden.
             </p>
           </div>
 

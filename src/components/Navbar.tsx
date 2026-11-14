@@ -1,32 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Sparkles, TrendingUp, Layers, Users, Cpu, Megaphone, ShieldAlert, PieChart, Mail, Calendar, MapPin, ChevronRight, ArrowUpRight, CheckCircle2, Clock, ShoppingCart, RefreshCcw, Landmark, Compass, Handshake, Plus } from 'lucide-react';
-import { SERVICES } from '../data/services';
-import { motion, AnimatePresence } from 'motion/react';
+/**
+ * Navigation: minimaler Header (Logo · «Gespräch anfragen» · Menü-Button) auf allen Breiten,
+ * die gesamte Navigation liegt ausschliesslich im Mega-Menü (Entscheid Inhaber, 13.11.2026).
+ *
+ * Mega-Menü: Panel direkt unter dem Header, öffnet und schliesst per Klick auf den Menü-Button,
+ * schliesst mit Escape, Klick auf den abgedunkelten Hintergrund und bei Seitenwechsel.
+ * Fokus springt beim Öffnen ins Menü, bleibt darin (Tab-Schleife inkl. Menü-Button) und kehrt beim Schliessen zurück.
+ * Informationsarchitektur: Agentic Marketing · Agentic Sales · Agentic Processes (mit Leistungen) · Ansatz · Governance · Wissen · Unternehmen · Kontakt.
+ */
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ArrowRight, TrendingUp, Handshake, Cpu, Mail, Plus, ShieldCheck, Layers } from 'lucide-react';
+import { motion, AnimatePresence, useReducedMotion, type Variants } from 'motion/react';
+import { EASE_OUT, EASE_EXIT, DURATIONS } from '../lib/motion';
 import { SITE } from '../config/site';
-import { SERVICE_AREAS, menuServicesOf } from '../data/serviceAreas';
+import { AREAS, menuServicesOf } from '../data/serviceAreas';
+import { useContactModal } from '../context/ContactModalContext';
+import { trackEvent } from '../lib/analytics';
 
-const AREA_ICONS = {
-  'ki-im-unternehmen': Sparkles,
-  strategie: Compass,
-  'technologie-automation': Cpu,
-  'wachstum-marketing': TrendingUp,
-  'sales-revenue-operations': Handshake,
-} as const;
+const AREA_ICONS: Record<string, typeof TrendingUp> = {
+  marketing: TrendingUp,
+  sales: Handshake,
+  prozesse: Cpu,
+};
 
-const COMPANY_LINKS = [
-  { href: '/martech', label: 'MarTech-Wissen', desc: 'Landkarte, Architektur, Daten und KI-Agenten' },
-  { href: '/labor', label: 'Labor', desc: 'Eigene Experimente mit KI und Automation' },
-  { href: '/loesungen', label: 'Lösungen', desc: 'Nach Herausforderung und Branche' },
-  { href: '/referenzen', label: 'Referenzen', desc: 'Was Kundinnen und Kunden sagen' },
-  { href: '/ueber-uns', label: 'Über uns', desc: 'Wer hinter performanceboost steht' },
-  { href: '/skills', label: 'Skill-Factory', desc: 'Checks und Rechner für Ihre Analyse' },
-  { href: '/ressourcen', label: 'Ratgeber', desc: 'Leitfäden und Fachbeiträge' },
+const APPROACH_LINKS = [
+  { href: '/ansatz', label: 'Unser Ansatz', desc: 'Vier Phasen, Einstieg dort, wo Sie stehen', icon: Layers },
+  { href: '/leistungen/ki-im-unternehmen', label: 'Governance', desc: 'Rechte, Freigaben und Kontrolle für KI-Agenten', icon: ShieldCheck },
 ];
 
-const menuItem = {
-  hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const } },
-};
+const KNOWLEDGE_LINKS = [
+  { href: '/martech', label: 'MarTech-Wissen' },
+  { href: '/labor', label: 'Labor' },
+  { href: '/werkzeuge', label: 'Werkzeuge' },
+  { href: '/ressourcen', label: 'Ratgeber' },
+  { href: '/skills', label: 'Skill-Factory' },
+];
+
+const COMPANY_LINKS = [
+  { href: '/leistungen', label: 'Alle Leistungen' },
+  { href: '/loesungen', label: 'Lösungen nach Branche' },
+  { href: '/referenzen', label: 'Referenzen' },
+  { href: '/ueber-uns', label: 'Über uns' },
+];
+
+const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 interface NavbarProps {
   currentPath: string;
@@ -36,309 +52,376 @@ interface NavbarProps {
 export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // Mobil: Leistungsfelder als Akkordeon (nur Titel + Plus), ab sm vollständig sichtbar
+  // Mobil (unter md): Bereiche als Akkordeon
   const [openArea, setOpenArea] = useState<string | null>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { openContactModal } = useContactModal();
 
-  // Scroll listener to style floating header
+  const close = useCallback((restoreFocus = true) => {
+    setIsOpen(false);
+    if (restoreFocus) requestAnimationFrame(() => buttonRef.current?.focus());
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent background scroll when Mega Menu is open
+  // Höhe des Headers messen: Das Panel beginnt direkt darunter und füllt den Rest des Viewports
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+    if (!headerRef.current) return;
+    const ro = new ResizeObserver(([entry]) => setHeaderHeight(Math.round(entry.target.getBoundingClientRect().height)));
+    ro.observe(headerRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  // Hintergrund nicht scrollen, solange das Menü offen ist (Scrollbar-Breite ausgleichen, kein Layoutsprung)
+  useEffect(() => {
+    if (!isOpen) return;
+    const sw = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = 'hidden';
+    if (sw > 0) {
+      document.body.style.paddingRight = `${sw}px`;
+      if (headerRef.current) headerRef.current.style.paddingRight = `${sw}px`;
     }
     return () => {
       document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      if (headerRef.current) headerRef.current.style.paddingRight = '';
     };
   }, [isOpen]);
 
-  // Handle keyboard Accessibility: Close on Escape key
+  // Beim Öffnen: Fokus auf den ersten Link im Menü
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    if (!isOpen) {
+      setOpenArea(null);
+      return;
+    }
+    const t = window.setTimeout(() => {
+      const nodes: HTMLElement[] = panelRef.current ? Array.from(panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE)) : [];
+      const first = nodes.find((el) => el.offsetParent !== null);
+      first?.focus();
+    }, 30);
+    return () => window.clearTimeout(t);
+  }, [isOpen]);
+
+  // Seitenwechsel schliesst das Menü
+  useEffect(() => {
+    setIsOpen(false);
+  }, [currentPath]);
+
+  // Escape schliesst, Tab bleibt innerhalb von Menü-Button und Panel
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setIsOpen(false);
+        e.preventDefault();
+        close();
+        return;
+      }
+      if (e.key !== 'Tab' || !panelRef.current || !buttonRef.current) return;
+      const items = [buttonRef.current, ...Array.from(panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE))].filter(
+        (el) => el.offsetParent !== null || el === buttonRef.current,
+      );
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isOpen, close]);
 
-  useEffect(() => {
-    if (!isOpen) setOpenArea(null);
-  }, [isOpen]);
-
-  const handleLinkClick = (path: string, e: React.MouseEvent) => {
+  const go = (path: string, e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    onNavigate(path);
     setIsOpen(false);
+    onNavigate(path);
   };
 
-  // Mega-Menü nach Leistungsfeldern gruppiert; jede Leistung erscheint nur in ihrem Hauptfeld.
-  // Links pro Leistungsfeld: `menuServices` (ohne Werbe- und Shop-Seiten); Felder mit weniger als 4 Links
-  // werden mit ihren Themen ergänzt (Link auf den Hub), damit die Karten ausgewogen sind.
-  // Das hervorgehobene Feld (KI im Unternehmen) steht zuerst und über die ganze Breite.
-  const navGroups = [...SERVICE_AREAS].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured))).map((area) => {
-    const services = menuServicesOf(area)
-      .map((s) => ({ key: s.slug, title: s.title, href: `/leistungen/${s.slug}` }));
-    const topics = area.topics
-      .filter((t) => !services.some((s) => s.title.split(' ')[0] === t.title.split(' ')[0]))
-      .slice(0, Math.max(0, 4 - services.length))
-      .map((t) => ({ key: t.title, title: t.title, href: `/leistungen/${area.id}` }));
-    return { area, services: [...services, ...topics] };
-  });
+  const openCta = (location: string, e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    trackEvent('cta_click', { cta_location: location, cta_target: 'overlay', page_slug: currentPath });
+    setIsOpen(false);
+    openContactModal();
+  };
+
+  const isCurrent = (href: string) => currentPath === href;
+  const linkState = (href: string) =>
+    isCurrent(href) ? 'text-accent-strong font-semibold' : 'text-slate-700 hover:text-accent-strong';
+
+  // Mega-Menü: Container gleitet ein, danach erscheinen die Gruppen gestaffelt. Schliessen kürzer und ohne Staffel.
+  const panelVariants: Variants = reduceMotion
+    ? { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.12 } }, exit: { opacity: 0, transition: { duration: 0.12 } } }
+    : {
+        hidden: { opacity: 0, y: -14, clipPath: 'inset(0 0 12% 0 round 0 0 32px 32px)' },
+        visible: {
+          opacity: 1,
+          y: 0,
+          clipPath: 'inset(0 0 0% 0 round 0 0 32px 32px)',
+          transition: { duration: 0.42, ease: EASE_OUT, staggerChildren: 0.06, delayChildren: 0.1 },
+        },
+        exit: { opacity: 0, y: -10, transition: { duration: DURATIONS.menuExit, ease: EASE_EXIT } },
+      };
+  const groupVariants: Variants = reduceMotion
+    ? { hidden: { opacity: 1 }, visible: { opacity: 1 } }
+    : {
+        hidden: { opacity: 0, y: 12 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.46, ease: EASE_OUT } },
+      };
 
   return (
-    <>
-      {/* HEADER SECTION */}
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          scrolled 
-            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/50 py-2.5 shadow-[0_4px_30px_rgba(0,0,0,0.03)]' 
-            : 'bg-[#f6f6f6]/95 backdrop-blur-sm border-b border-slate-200/25 py-3.5'
-        }`} 
-        id="main-navigation"
-      >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="flex justify-between items-center">
-            
-            {/* Logo Brand Link */}
-            <a 
-              href="/" 
-              onClick={(e) => handleLinkClick('/', e)}
-              className="flex items-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] rounded-xl"
-              id="header-brand-logo-link"
-              aria-label="performanceboost Startseite"
+    <header
+      ref={headerRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,padding] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        scrolled ? 'py-2.5' : 'py-3.5'
+      } ${
+        isOpen
+          ? 'bg-surface border-b border-line'
+          : scrolled
+            ? 'bg-surface/95 backdrop-blur-md border-b border-slate-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]'
+            : 'bg-canvas/95 backdrop-blur-sm border-b border-slate-200/25'
+      }`}
+      id="main-navigation"
+    >
+      <div className="max-w-7xl mx-auto pl-[max(var(--page-gutter),env(safe-area-inset-left))] pr-[max(var(--page-gutter),env(safe-area-inset-right))] sm:px-8 lg:px-10">
+        <div className="flex justify-between items-center gap-3 min-[380px]:gap-4">
+          <a
+            href="/"
+            onClick={(e) => go('/', e)}
+            className="flex items-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] rounded-xl shrink-0"
+            id="header-brand-logo-link"
+            aria-label="performanceboost Startseite"
+          >
+            <img
+              src={SITE.logoUrl}
+              alt="performanceboost Logo"
+              width={240}
+              height={90}
+              className="h-[60px] min-[380px]:h-[72px] md:h-[90px] w-auto object-contain transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
+              referrerPolicy="no-referrer"
+            />
+          </a>
+
+          <div className="flex items-center gap-2.5">
+            <button
+              ref={buttonRef}
+              id="nav-toggle-button"
+              type="button"
+              onClick={() => (isOpen ? close() : setIsOpen(true))}
+              aria-expanded={isOpen}
+              aria-controls="mega-menu"
+              aria-haspopup="dialog"
+              aria-label={isOpen ? 'Menü schliessen' : 'Menü öffnen'}
+              className={`inline-flex items-center justify-center w-11 h-11 rounded-full border shrink-0 font-display font-semibold text-sm transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30 ${
+                isOpen ? 'bg-deep border-deep text-white' : 'bg-surface border-slate-200/80 text-slate-900 hover:border-[#686CFA]/40 hover:text-accent-strong'
+              }`}
             >
-              <img 
-                src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
-                alt="performanceboost Logo" 
-                className="h-[72px] md:h-[90px] w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-102"
-                referrerPolicy="no-referrer"
-              />
-            </a>
-
-            {/* Menü */}
-            <div className="flex items-center">
-              <button
-                id="nav-toggle-button"
-                onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-3 rounded-full border border-slate-200/80 bg-white hover:border-[#686DF4]/30 hover:bg-slate-50 text-slate-800 hover:text-[#686DF4] focus-visible:ring-2 focus-visible:ring-[#686DF4] focus-visible:outline-none transition-all duration-300 cursor-pointer shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
-                aria-expanded={isOpen}
-                aria-controls="mega-menu"
-                aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
-              >
-                {isOpen ? <X className="w-4.5 h-4.5 text-[#686DF4]" /> : <Menu className="w-4.5 h-4.5" />}
-              </button>
-            </div>
-
+              <span className="menu-icon" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </span>
+            </button>
           </div>
         </div>
-      </header>
+      </div>
 
-      {/* FULLSCREEN OVERLAY MENU */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            id="mega-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Navigation-Dashboard"
-            initial={{ opacity: 0, scale: 0.99, y: -4 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.995, y: -2 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#f6f6f6] flex flex-col overflow-y-auto"
-          >
-            {/* Header Block inside drop overlay to keep alignment perfect */}
-            <div className="border-b border-slate-200/65 py-3.5 px-6 sm:px-8 lg:px-10 bg-white/70 backdrop-blur-md sticky top-0 z-30">
-              <div className="max-w-7xl mx-auto flex justify-between items-center">
-                
-                {/* Brand Logo inside overlay */}
-                <a 
-                  href="/" 
-                  onClick={(e) => handleLinkClick('/', e)}
-                  className="flex items-center gap-1.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] rounded-xl"
-                  id="overlay-brand-logo-link"
-                >
-                  <img 
-                    src="https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/perfromanceboost_logo_transparent-removebg-preview.png" 
-                    alt="performanceboost Logo" 
-                    className="h-[72px] md:h-[90px] w-auto object-contain"
-                    referrerPolicy="no-referrer"
-                  />
-                </a>
+          <>
+            {/* Hintergrund unter dem Header: Klick schliesst */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.36, ease: EASE_OUT } }}
+              exit={{ opacity: 0, transition: { duration: DURATIONS.menuExit, ease: EASE_EXIT } }}
+              className="fixed inset-x-0 bottom-0 bg-deep/35 backdrop-blur-[2px]"
+              style={{ top: headerHeight }}
+              onClick={() => close(false)}
+              aria-hidden="true"
+            />
 
-                {/* Direct Close Button in the upper right row */}
-                <button
-                  id="overlay-close-button"
-                  onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center justify-center gap-1.5 pl-3 pr-4 py-2 rounded-full border border-slate-200 bg-[#696EEF] text-white hover:bg-[#5a5fe0] focus-visible:ring-2 focus-visible:ring-[#686DF4] cursor-pointer transition-all duration-300 shadow-sm"
-                >
-                  <X className="w-3.5 h-3.5" />
-                  <span className="text-[11px] font-mono tracking-widest uppercase font-bold">SCHLIESSEN</span>
-                </button>
+            <motion.div
+              key="panel"
+              ref={panelRef}
+              id="mega-menu"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Hauptmenü"
+              variants={panelVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="absolute inset-x-0 top-full overflow-y-auto overscroll-contain bg-surface border-b border-line shadow-[0_40px_80px_-40px_rgba(15,23,42,0.35)] rounded-b-[2rem]"
+              style={{ maxHeight: `calc(100dvh - ${headerHeight}px)` }}
+            >
+              <div className="max-w-7xl mx-auto px-4 min-[380px]:px-6 sm:px-8 lg:px-10 pt-5 md:pt-10 pb-[max(2rem,calc(env(safe-area-inset-bottom)+1.5rem))] md:pb-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                  {/* LINKS: Was wir verbessern (Bereiche mit Leistungen) und wie wir vorgehen */}
+                  <div className="lg:col-span-8 space-y-8">
+                    <div>
+                      <p className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-slate-400">Leistungen</p>
+                      <nav aria-label="Bereiche und Leistungen" className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
+                        {AREAS.map((area) => {
+                          const Icon = AREA_ICONS[area.id] ?? Cpu;
+                          const services = menuServicesOf(area);
+                          const hub = `/leistungen/${area.id}`;
+                          const expanded = openArea === area.id;
+                          return (
+                            <motion.div key={area.id} variants={groupVariants} className="rounded-2xl border border-line md:border-0 md:rounded-none p-4 md:p-0">
+                              {/* Mobil: Akkordeon-Kopf */}
+                              <button
+                                type="button"
+                                onClick={() => setOpenArea(expanded ? null : area.id)}
+                                aria-expanded={expanded}
+                                aria-controls={`menu-area-${area.id}`}
+                                className="md:hidden w-full flex items-center gap-3 text-left rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA]"
+                              >
+                                <span className="w-9 h-9 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
+                                  <Icon className="w-4.5 h-4.5" aria-hidden="true" />
+                                </span>
+                                <span className="flex-1 min-w-0">
+                                  <span className="block font-display font-semibold text-slate-900">{area.label}</span>
+                                  <span className="block text-xs text-slate-500">{area.subtitle}</span>
+                                </span>
+                                <span className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${expanded ? 'bg-[#686CFA] border-[#686CFA] text-white rotate-45' : 'border-slate-200 text-slate-600'}`}>
+                                  <Plus className="w-4 h-4" aria-hidden="true" />
+                                </span>
+                              </button>
+                              {/* Ab md: Kopf als Link auf die Bereichsseite */}
+                              <a href={hub} onClick={(e) => go(hub, e)} aria-current={isCurrent(hub) ? 'page' : undefined} className="hidden md:block group rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA]">
+                                <span className="w-10 h-10 rounded-2xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center transition-colors duration-300 group-hover:bg-[#686CFA] group-hover:text-white">
+                                  <Icon className="w-5 h-5" aria-hidden="true" />
+                                </span>
+                                <span className={`block mt-4 text-2xl font-display font-semibold group-hover:text-accent-strong transition-colors ${isCurrent(hub) ? 'text-accent-strong' : 'text-slate-900'}`}>{area.label}</span>
+                                <span className="block mt-0.5 text-sm text-slate-500">{area.subtitle}</span>
+                              </a>
+                              <div id={`menu-area-${area.id}`} className={`menu-accordion ${expanded ? 'is-open' : ''}`}>
+                                <div>
+                                  <ul className="mt-4 pt-3 md:mt-5 md:pt-5 border-t border-slate-100 space-y-1">
+                                    {services.map((s) => {
+                                      const href = `/leistungen/${s.slug}`;
+                                      return (
+                                        <li key={s.slug}>
+                                          <a
+                                            href={href}
+                                            onClick={(e) => go(href, e)}
+                                            aria-current={isCurrent(href) ? 'page' : undefined}
+                                            className={`flex items-center min-h-11 md:min-h-0 md:block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(href)}`}
+                                          >
+                                            <span className="link-underline">{s.title}</span>
+                                          </a>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                  <a href={hub} onClick={(e) => go(hub, e)} className="mt-1 md:mt-3 inline-flex items-center gap-1.5 min-h-11 md:min-h-0 text-[13px] font-semibold text-[#686CFA] hover:text-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] rounded">
+                                    Alles zu {area.labelZu} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                                  </a>
+                                </div>
+                              </div>
+                            </motion.div>
+                          );
+                        })}
+                      </nav>
+                    </div>
 
-              </div>
-            </div>
-
-            {/* MENÜ-INHALT: Leistungsfeld-Karten links, Navigation + Kontaktkarte rechts */}
-            <div className="flex-grow max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-10 pt-6 pb-10 lg:pt-8" id="menu-contents">
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } } }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6"
-              >
-                {/* Leistungsfelder */}
-                <nav aria-label="Leistungen" className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
-                  {navGroups.map(({ area, services }) => {
-                    const Icon = AREA_ICONS[area.id];
-                    return (
-                      <motion.div
-                        key={area.id}
-                        variants={menuItem}
-                        className={`${area.featured ? 'sm:col-span-2 ' : ''}group/card flex flex-col rounded-2xl sm:rounded-3xl bg-white border border-slate-200/70 p-4 sm:p-6 transition-all duration-300 hover:border-[#696EEF]/40 hover:shadow-[0_12px_40px_-12px_rgba(105,110,239,0.25)]`}
-                      >
-                        {/* Mobil: Titel mit Plus, öffnet die Unterpunkte */}
-                        <button
-                          type="button"
-                          onClick={() => setOpenArea(openArea === area.id ? null : area.id)}
-                          aria-expanded={openArea === area.id}
-                          aria-controls={`menu-area-${area.id}`}
-                          className="sm:hidden w-full flex items-center gap-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF] rounded-xl"
-                        >
-                          <span className="w-9 h-9 rounded-xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0">
-                            <Icon className="w-4.5 h-4.5" aria-hidden="true" />
-                          </span>
-                          <span className="flex-1 text-base font-display font-semibold text-slate-900">{area.shortLabel}</span>
-                          <span className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openArea === area.id ? 'bg-[#696EEF] border-[#696EEF] text-white rotate-45' : 'border-slate-200 text-slate-600'}`}>
-                            <Plus className="w-4 h-4" aria-hidden="true" />
-                          </span>
-                        </button>
-                        {/* Ab sm: Titel als Link mit Kurzbeschreibung */}
-                        <a
-                          href={`/leistungen/${area.id}`}
-                          onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
-                          className="hidden sm:flex items-start gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#696EEF]"
-                        >
-                          <span className="w-11 h-11 rounded-2xl bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center shrink-0 transition-colors duration-300 group-hover/card:bg-[#696EEF] group-hover/card:text-white">
-                            <Icon className="w-5 h-5" aria-hidden="true" />
-                          </span>
-                          <span className="min-w-0">
-                            <span className="block text-lg font-display font-semibold text-slate-900 leading-tight">{area.shortLabel}</span>
-                            <span className="block mt-1 text-[13px] text-slate-500 leading-snug">{area.teaser}</span>
-                          </span>
-                        </a>
-                        <div id={`menu-area-${area.id}`} className={`menu-accordion flex-1 ${openArea === area.id ? 'is-open' : ''}`}>
-                        <div className="flex flex-col h-full">
-                        <ul className={`mt-4 pt-3 border-t border-slate-100 space-y-0.5 ${area.featured ? 'sm:grid sm:grid-cols-2 sm:gap-x-8 sm:space-y-0' : ''}`}>
-                          {services.map((s) => {
-                            const active = currentPath === s.href && s.href !== `/leistungen/${area.id}`;
-                            return (
-                              <li key={s.key}>
-                                <a
-                                  href={s.href}
-                                  onClick={(e) => handleLinkClick(s.href, e)}
-                                  aria-current={active ? 'page' : undefined}
-                                  className={`group/link flex items-center justify-between gap-3 rounded-xl px-3 py-2 -mx-3 text-sm transition-colors ${
-                                    active ? 'bg-[#696EEF]/10 text-[#4f54d6] font-semibold' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
-                                  }`}
-                                >
-                                  <span>{s.title}</span>
-                                  <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#696EEF] opacity-0 -translate-x-1 transition-all group-hover/link:opacity-100 group-hover/link:translate-x-0" aria-hidden="true" />
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                        <a
-                          href={`/leistungen/${area.id}`}
-                          onClick={(e) => handleLinkClick(`/leistungen/${area.id}`, e)}
-                          className="mt-auto pt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#696EEF] hover:text-[#4f54d6]"
-                        >
-                          Zum Leistungsfeld <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                        </a>
-                        </div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </nav>
-
-                {/* Navigation + Kontakt */}
-                <div className="lg:col-span-4 flex flex-col gap-5">
-                  <motion.nav variants={menuItem} aria-label="Unternehmen" className="rounded-3xl bg-white border border-slate-200/70 p-2">
-                    <ul>
-                      {COMPANY_LINKS.map((l) => {
-                        const active = currentPath === l.href;
+                    <motion.nav variants={groupVariants} aria-label="Vorgehen" className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-6 md:border-t md:border-slate-100">
+                      {APPROACH_LINKS.map((l) => {
+                        const Icon = l.icon;
                         return (
-                          <li key={l.href}>
-                            <a
-                              href={l.href}
-                              onClick={(e) => handleLinkClick(l.href, e)}
-                              aria-current={active ? 'page' : undefined}
-                              className={`group flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors ${active ? 'bg-[#696EEF]/10' : 'hover:bg-slate-50'}`}
-                            >
-                              <span className="flex-1 min-w-0">
-                                <span className={`block font-display font-semibold ${active ? 'text-[#4f54d6]' : 'text-slate-900 group-hover:text-[#4f54d6]'} transition-colors`}>{l.label}</span>
-                                <span className="block text-xs text-slate-500 truncate">{l.desc}</span>
-                              </span>
-                              <ArrowRight className="w-4 h-4 text-slate-300 transition-all group-hover:text-[#696EEF] group-hover:translate-x-0.5" aria-hidden="true" />
-                            </a>
-                          </li>
+                          <a
+                            key={l.href}
+                            href={l.href}
+                            onClick={(e) => go(l.href, e)}
+                            aria-current={isCurrent(l.href) ? 'page' : undefined}
+                            className={`group flex items-center gap-4 rounded-2xl border p-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${isCurrent(l.href) ? 'bg-[#686CFA]/10 border-[#CBCBFC]' : 'bg-canvas border-transparent hover:border-[#CBCBFC] hover:bg-surface'}`}
+                          >
+                            <span className="w-9 h-9 rounded-xl bg-[#CBCBFC]/60 text-accent-strong flex items-center justify-center shrink-0">
+                              <Icon className="w-4.5 h-4.5" aria-hidden="true" />
+                            </span>
+                            <span className="flex-1 min-w-0">
+                              <span className="block font-display font-semibold text-slate-900 group-hover:text-accent-strong transition-colors">{l.label}</span>
+                              <span className="block text-xs text-slate-500">{l.desc}</span>
+                            </span>
+                            <ArrowRight className="w-4 h-4 text-slate-300 transition-all group-hover:text-[#686CFA] group-hover:translate-x-0.5" aria-hidden="true" />
+                          </a>
                         );
                       })}
-                    </ul>
-                  </motion.nav>
+                    </motion.nav>
+                  </div>
 
-                  <motion.div variants={menuItem} className="relative overflow-hidden rounded-3xl bg-slate-950 text-white p-6">
-                    <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#696EEF]/30 blur-3xl pointer-events-none" aria-hidden="true" />
-                    <div className="relative flex items-center gap-3">
-                      <img
-                        src={SITE.portraitUrl}
-                        alt="Yathur Nathan"
-                        width={48}
-                        height={48}
-                        className="w-12 h-12 rounded-2xl object-cover border border-white/15"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div>
-                        <p className="font-display font-semibold leading-tight">Yathur Nathan</p>
-                        <p className="text-xs text-slate-400">Inhaber, Ihr direkter Ansprechpartner</p>
+                  {/* RECHTS: Wissen, Unternehmen, Kontakt */}
+                  <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-8 lg:border-l lg:border-slate-100 lg:pl-10">
+                    <motion.div variants={groupVariants} className="grid grid-cols-2 gap-6 sm:col-span-1">
+                      {[
+                        { label: 'Wissen', links: KNOWLEDGE_LINKS },
+                        { label: 'Unternehmen', links: COMPANY_LINKS },
+                      ].map((g) => (
+                        <nav key={g.label} aria-label={g.label}>
+                          <p className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-slate-400">{g.label}</p>
+                          <ul className="mt-2 md:mt-3 md:space-y-1">
+                            {g.links.map((l) => (
+                              <li key={l.href}>
+                                <a
+                                  href={l.href}
+                                  onClick={(e) => go(l.href, e)}
+                                  aria-current={isCurrent(l.href) ? 'page' : undefined}
+                                  className={`flex items-center min-h-11 md:min-h-0 md:block rounded-lg py-1.5 text-[15px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] ${linkState(l.href)}`}
+                                >
+                                  <span className="link-underline">{l.label}</span>
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </nav>
+                      ))}
+                    </motion.div>
+
+                    <motion.div variants={groupVariants} className="relative overflow-hidden rounded-3xl bg-deep text-white p-6">
+                      <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#686CFA]/30 blur-3xl pointer-events-none" aria-hidden="true" />
+                      <div className="relative flex items-center gap-3">
+                        <img src={SITE.portraitUrl} alt="" width={48} height={48} loading="lazy" className="w-12 h-12 rounded-2xl object-cover border border-white/15" referrerPolicy="no-referrer" />
+                        <div>
+                          <p className="font-display font-semibold leading-tight">Yathur Nathan</p>
+                          <p className="text-xs text-slate-400">Inhaber, Ihr direkter Ansprechpartner</p>
+                        </div>
                       </div>
-                    </div>
-                    <p className="relative mt-4 text-sm text-slate-300 leading-relaxed">
-                      In 30 kostenlosen Minuten schauen wir gemeinsam, wo sich in Ihrem Unternehmen am meisten bewegen lässt.
-                    </p>
-                    <a
-                      href="/kontakt"
-                      onClick={(e) => handleLinkClick('/kontakt', e)}
-                      id="mega-menu-cta"
-                      className="relative mt-5 w-full inline-flex items-center justify-center gap-2 min-h-12 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-semibold px-6 py-3 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#696EEF]/40"
-                    >
-                      Potenzial besprechen <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                    </a>
-                    <div className="relative mt-4 flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs text-slate-400">
-                      <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+                      <p className="relative mt-4 text-sm text-slate-300 leading-relaxed">
+                        In 30 kostenlosen Minuten schauen wir, wo Marketing, Vertrieb oder Abläufe in Ihrem Unternehmen am meisten bremsen.
+                      </p>
+                      <a
+                        href="/kontakt"
+                        onClick={(e) => openCta('mega_menu', e)}
+                        id="mega-menu-cta"
+                        className="btn-press relative mt-5 w-full inline-flex items-center justify-center gap-2 min-h-12 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-semibold px-6 py-3 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40"
+                      >
+                        Gespräch anfragen <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                      </a>
+                      <a href={`mailto:${SITE.email}`} className="relative mt-2 flex justify-center items-center gap-1.5 min-h-11 text-xs text-slate-400 hover:text-white transition-colors">
                         <Mail className="w-3.5 h-3.5" aria-hidden="true" /> {SITE.email}
                       </a>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </div>
                 </div>
-              </motion.div>
-            </div>
-
-          </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 }

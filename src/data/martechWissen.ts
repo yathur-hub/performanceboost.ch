@@ -41,7 +41,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Auswertung, Messmodelle, KI-Agenten',
     desc: 'Dashboards, Attribution und Marketing-Mix-Modelle, dazu KI-Agenten, die auf den Daten arbeiten. Was hier herauskommt, ist nur so gut wie die Schichten darunter.',
     examples: ['BI und Dashboards', 'Attribution und MMM', 'KI-Agenten', 'GEO-Monitoring'],
-    service: { href: '/leistungen/ki-agenten', label: 'KI-Agenten für Marketing & Vertrieb' },
+    service: { href: '/leistungen/ki-agenten', label: 'KI-Agenten & Agentic Automation' },
   },
   {
     id: 'orchestrierung',
@@ -50,7 +50,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Workflows, Integrationen, Ereignisse',
     desc: 'Die Verbindungen zwischen den Systemen: Workflows, Webhooks, Integrationsplattformen und die Regeln, welches System bei einem Widerspruch recht hat.',
     examples: ['n8n, Make, Zapier, Windmill', 'Webhooks und APIs', 'Synchronisation', 'Event-Routing'],
-    service: { href: '/leistungen/technologie-automation', label: 'MarTech & Automatisierung' },
+    service: { href: '/leistungen/prozesse', label: 'Agentic Processes' },
   },
   {
     id: 'daten',
@@ -59,7 +59,7 @@ export const MARTECH_LAYERS: MartechLayer[] = [
     short: 'Erfassung, Pipelines, Warehouse',
     desc: 'Wie Ereignisse erfasst, geprüft und gespeichert werden: Tagging im Browser und auf dem Server, Pipelines, Data Warehouse und Customer Data Platform.',
     examples: ['Tag Manager und Server-Side Tagging', 'GA4 und Ereignismodelle', 'Data Warehouse', 'CDP und Reverse ETL'],
-    service: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    service: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     id: 'systeme',
@@ -130,7 +130,7 @@ Mit sauber definierten Stufen werden Umwandlungsquoten pro Stufe, Durchlaufzeite
 
 Diese Einordnung ist eine fachliche Einschätzung aus der Arbeit mit CRM-Datenstrukturen, keine Studie.`,
     sources: [],
-    related: { href: '/leistungen/revenue-operations', label: 'Marketing, Vertrieb & Daten verbinden (RevOps)' },
+    related: { href: '/leistungen/revenue-operations', label: 'Agentic Revenue Operations (RevOps)' },
   },
   {
     slug: 'server-side-tagging',
@@ -149,7 +149,7 @@ Darin liegt der Gewinn: Felder lassen sich entfernen, ergänzen oder vereinheitl
 
 Google empfiehlt für einen produktiven Container auf Cloud Run mindestens zwei Instanzen, um das Risiko von Datenverlust bei einem Serverausfall zu verringern, und rechnet mit rund 45 US-Dollar pro Server und Monat, ohne Datenverkehr und Logging. Der Betrag ist überschaubar. Wichtiger ist, was der Satz voraussetzt: Ab jetzt betreibt man einen Server, und fällt er aus, fehlen Messdaten.
 
-Dienste wie Stape übernehmen das Hosting des Containers. Wer bemerkt, dass seit drei Tagen keine Kauf-Events mehr ankommen, ist damit noch nicht geklärt.
+Dienste wie Stape übernehmen das Hosting des Containers. Damit ist aber noch nicht geklärt, wer bemerkt, dass seit drei Tagen keine Kauf-Events mehr ankommen.
 
 ## Was sich nicht verschiebt
 
@@ -169,7 +169,7 @@ Dienste wie Stape übernehmen das Hosting des Containers. Wer bemerkt, dass seit
       { label: 'Meta: Pixel- und Server-Events deduplizieren', url: 'https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events' },
       { label: 'Stape: About', url: 'https://stape.io/about-us' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'composable-cdp',
@@ -186,7 +186,7 @@ Eine **composable CDP** dreht das um. Die Quelle ist das eigene Data Warehouse, 
 
 ## Wo die Verantwortung liegt
 
-Bei der composable Variante sind Datenmodell, Zusammenführung von Identitäten, Aktualität und Qualität eigene Aufgaben. Das Werkzeug aktiviert, was im Warehouse steht, auch wenn es falsch ist. Der Vorteil: Es gibt eine Definition pro Kennzahl, keine zusätzliche Kopie der Kundendaten, und der Speicherort ist selbst gewählt.
+Bei der composable Variante sind Datenmodell, Zusammenführung von Identitäten, Aktualität und Qualität eigene Aufgaben. Das Werkzeug aktiviert, was im Warehouse steht, auch wenn es falsch ist. Dafür gibt es eine Definition pro Kennzahl und keine zusätzliche Kopie der Kundendaten, und der Speicherort ist selbst gewählt.
 
 ## Der Markt wächst zusammen
 
@@ -208,7 +208,7 @@ Die MarTech-Landschaft 2026 von chiefmartec wird unter anderem von Hightouch ges
       { label: 'Fivetran: Übernahme von Census', url: 'https://www.fivetran.com/press/fivetran-signs-agreement-to-acquire-census-delivering-the-first-end-to-end-data-movement-platform-for-the-ai-era' },
       { label: 'chiefmartec: Marketing Technology Landscape 2026', url: 'https://chiefmartec.com/2026-marketing-technology-landscape/' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'integration-ist-keine-architektur',
@@ -223,13 +223,13 @@ Zwischen CRM und Marketing-Automatisierung läuft eine Synchronisation, beide Se
 
 ## Was eine Integration nicht regelt
 
-Eine Integration regelt, wie Daten von einem System ins andere kommen. Welches System im Zweifel recht hat, regelt sie nicht. Solange nur eines ein Feld beschreibt, fällt das nicht auf. Sobald zwei Systeme dasselbe Feld schreiben dürfen, etwa Lifecycle-Status, Einwilligung oder zuständige Person, entscheidet eine Einstellung im Sync-Werkzeug, die beim Einrichten jemand gewählt oder einfach übernommen hat.
+Eine Integration regelt, wie Daten von einem System ins andere kommen. Welches System im Zweifel recht hat, regelt sie nicht. Solange nur ein System ein Feld schreibt, fällt das nicht auf. Sobald zwei Systeme dasselbe Feld schreiben dürfen, etwa Lifecycle-Status, Einwilligung oder zuständige Person, entscheidet eine Einstellung im Sync-Werkzeug, die beim Einrichten jemand gewählt oder einfach übernommen hat.
 
-Matthew Niederberger, der mit dem Martech Stack Builder ein Werkzeug für solche Analysen anbietet, rät, beim Aufzeichnen eines Stacks das führende System in die Mitte zu setzen. Erheben zwei Systeme diesen Anspruch, soll man beide hinzeichnen, denn dann habe man die wichtigste Architekturfrage gefunden. Enger gefasst stellt sich die Frage selten für ein ganzes System, fast immer für einzelne Felder. Ein CRM kann für Firmen und Deals führend sein und für die Einwilligung trotzdem nicht.
+Matthew Niederberger, der mit dem Martech Stack Builder ein Werkzeug für solche Analysen anbietet, rät, beim Aufzeichnen eines Stacks das führende System in die Mitte zu setzen. Erheben zwei Systeme diesen Anspruch, soll man beide hinzeichnen, denn dann habe man die wichtigste Architekturfrage gefunden. Genau genommen stellt sich die Frage selten für ein ganzes System und fast immer für einzelne Felder. Ein CRM kann für Firmen und Deals führend sein und für die Einwilligung trotzdem nicht.
 
 ## Die Feldtabelle
 
-Praktisch heisst das eine Tabelle, die es selten gibt. Pro wichtigem Feld:
+In der Praxis braucht es dafür eine Tabelle, die es selten gibt. Pro wichtigem Feld:
 
 - **Führendes System:** wo der gültige Wert entsteht
 - **Schreibrecht:** welche Systeme und Personen ihn ändern dürfen
@@ -244,7 +244,7 @@ Bei den Feldern mit dem grössten Schaden: Einwilligung und Abmeldung, Lifecycle
     sources: [
       { label: 'Martech Stack Builder: Stack Visualization', url: 'https://www.martechstackbuilder.com/solutions/stack-visualization/' },
     ],
-    related: { href: '/leistungen/martech-stack', label: 'MarTech-Stack aufräumen & verbinden' },
+    related: { href: '/leistungen/martech-stack', label: 'KI-fähiger MarTech-Stack' },
   },
   {
     slug: 'idempotenz-webhooks',
@@ -281,13 +281,13 @@ Die Formularstrecke dieser Website bestätigt eine Anfrage, sobald sie gespeiche
       { label: 'Stripe: Webhooks', url: 'https://docs.stripe.com/webhooks' },
       { label: 'Meta: Pixel- und Server-Events deduplizieren', url: 'https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events' },
     ],
-    related: { href: '/leistungen/marketing-automation', label: 'Marketing Automation & CRM' },
+    related: { href: '/leistungen/marketing-automation', label: 'KI-gestütztes CRM & Marketing Automation' },
   },
   {
     slug: 'attribution-inkrementalitaet-mmm',
     layer: 'intelligenz',
     title: 'Attribution, Inkrementalität, Marketing-Mix-Modelle',
-    teaser: 'Drei Ansätze, drei Fragen, drei Arten von Daten. Wer Budget verteilen will, braucht meist mehr als einen.',
+    teaser: 'Die drei Ansätze beantworten unterschiedliche Fragen mit unterschiedlichen Daten. Wer Budget verteilen will, braucht meist mehr als einen.',
     management:
       'Attribution, Inkrementalitätstests und Marketing-Mix-Modelle beantworten unterschiedliche Fragen. Attribution verteilt Conversions auf Kontaktpunkte, ein Test misst, was ohne eine Massnahme gefehlt hätte, und ein Marketing-Mix-Modell schätzt den Beitrag von Kanälen über längere Zeit. Wer Budget verteilen will, braucht meist mehr als eine Methode.',
     content: `## Attribution
@@ -314,7 +314,7 @@ Die Formularstrecke dieser Website bestätigt eine Anfrage, sobald sie gespeiche
 
 **Grenzen:** Ein MMM ist ein statistisches Modell mit Annahmen, etwa zur Nachwirkung von Werbung. Es braucht ausreichend lange Datenreihen und Schwankungen in den Ausgaben, sonst lässt sich der Beitrag eines Kanals nicht vom Rest trennen.
 
-Google stellt mit Meridian seit Januar 2025 ein offenes Marketing-Mix-Modell allgemein zur Verfügung. Das ältere LightweightMMM ist auf GitHub archiviert. Offene Modelle haben einen Vorteil, der über den Preis hinausgeht: Die Annahmen lassen sich lesen.
+Google stellt mit Meridian seit Januar 2025 ein offenes Marketing-Mix-Modell allgemein zur Verfügung. Das ältere LightweightMMM ist auf GitHub archiviert. Offene Modelle haben über den Preis hinaus einen Vorteil, denn ihre Annahmen lassen sich lesen.
 
 ## Was zu welcher Frage passt
 
@@ -329,7 +329,7 @@ Ein MMM lohnt sich erst ab einem gewissen Budget und mehreren Kanälen. Für kle
       { label: 'Google: Meridian, Marketing-Mix-Modell für alle verfügbar', url: 'https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/' },
       { label: 'GitHub: LightweightMMM (archiviert)', url: 'https://github.com/google/lightweight_mmm' },
     ],
-    related: { href: '/leistungen/data-analytics', label: 'Tracking, Analyse & Reporting' },
+    related: { href: '/leistungen/data-analytics', label: 'Tracking, Attribution & Reporting' },
   },
   {
     slug: 'mcp-berechtigungen',
@@ -337,7 +337,7 @@ Ein MMM lohnt sich erst ab einem gewissen Budget und mehreren Kanälen. Für kle
     title: 'MCP: Berechtigung pro Werkzeug',
     teaser: 'Wenn Agenten über MCP auf CRM und Automatisierungen zugreifen, ist die Frage nicht mehr ob, sondern mit welchen Rechten.',
     management:
-      'Mit dem Model Context Protocol (MCP) können KI-Agenten direkt auf Systeme wie CRM, E-Mail oder Automatisierungen zugreifen. Die wichtige Frage ist nicht mehr, ob ein Agent zugreifen kann, sondern welche Werkzeuge er mit welchen Rechten sieht. Wer das vor dem Anschliessen klärt, verhindert, dass ein Agent mehr darf als nötig.',
+      'Mit dem Model Context Protocol (MCP) können KI-Agenten direkt auf Systeme wie CRM, E-Mail oder Automatisierungen zugreifen. Entscheidend ist deshalb, welche Werkzeuge ein Agent mit welchen Rechten sieht. Wer das vor dem Anschliessen klärt, verhindert, dass ein Agent mehr darf als nötig.',
     content: `## Was MCP ist
 
 Das Model Context Protocol ist ein offener Standard, mit dem KI-Anwendungen auf externe Systeme zugreifen. Anthropic hat ihn im November 2024 vorgestellt, im Dezember 2025 ging er an die Agentic AI Foundation über. Ein MCP-Server stellt Werkzeuge bereit, etwa «Kontakt suchen» oder «Deal anlegen», und ein Agent ruft sie auf.
@@ -369,7 +369,7 @@ Das eigene ERP von performanceboost stellt Agenten seine Funktionen über MCP be
       { label: 'HubSpot: MCP Server', url: 'https://developers.hubspot.com/mcp' },
       { label: 'Zapier: MCP', url: 'https://zapier.com/mcp' },
     ],
-    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten für Marketing & Vertrieb' },
+    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten & Agentic Automation' },
   },
   {
     slug: 'agenten-beobachten',
@@ -394,7 +394,7 @@ Ein klassischer Workflow macht bei gleicher Eingabe dasselbe. Ein Agent entschei
 
 - **Kosten pro Lauf und pro erledigtem Fall,** nicht nur pro Monat
 - **Fehlerquote,** getrennt nach technischen Fehlern und falschen Ergebnissen
-- **Freigabequote:** wie oft ein Mensch einen Entwurf unverändert übernimmt. Eine fachliche Einschätzung: Diese Zahl sagt mehr über die Qualität als jede Selbstbewertung des Modells.
+- **Freigabequote:** wie oft ein Mensch einen Entwurf unverändert übernimmt. Nach fachlicher Einschätzung sagt diese Zahl mehr über die Qualität als jede Selbstbewertung des Modells.
 - **Dauer,** vor allem wenn ein Ablauf auf eine Antwort wartet
 
 ## Werkzeuge
@@ -407,7 +407,7 @@ Ein Protokoll enthält, was der Agent verarbeitet hat, also oft Personendaten. A
     sources: [
       { label: 'ClickHouse: Übernahme von Langfuse', url: 'https://clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability' },
     ],
-    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten für Marketing & Vertrieb' },
+    related: { href: '/leistungen/ki-agenten', label: 'KI-Agenten & Agentic Automation' },
   },
   {
     slug: 'geo-monitoring',
@@ -446,7 +446,7 @@ Bevor man Sichtbarkeit misst, sollte die Grundlage stimmen: klare, strukturierte
       { label: 'Otterly.AI', url: 'https://otterly.ai' },
       { label: 'SparkToro: AIs are highly inconsistent when recommending brands', url: 'https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/' },
     ],
-    related: { href: '/leistungen/wachstum-marketing', label: 'Wachstum & Marketing (SEO und GEO)' },
+    related: { href: '/leistungen/marketing', label: 'Marketing (SEO und GEO)' },
   },
   {
     slug: 'open-source-lizenzen',
@@ -484,7 +484,7 @@ Verzeichnisse bilden diese Unterschiede kaum ab. Bei OpenAlternative fehlte am 1
       { label: 'Snowplow: Limited Use License FAQ', url: 'https://docs.snowplow.io/docs/licensing/limited-use-license-faq/' },
       { label: 'OpenAlternative', url: 'https://openalternative.co/' },
     ],
-    related: { href: '/leistungen/martech-stack', label: 'MarTech-Stack aufräumen & verbinden' },
+    related: { href: '/leistungen/martech-stack', label: 'KI-fähiger MarTech-Stack' },
   },
 ];
 
@@ -516,7 +516,7 @@ export const WORK_TOOLS: { layer: LayerId | 'web'; group: string; items: { name:
     items: [
       { name: 'Google Analytics 4', use: 'Ereignisse, Conversions und Auswertungen, verbunden mit Werbekonten und CRM.' },
       { name: 'Google Tag Manager', use: 'Tagging im Browser, sauber versioniert und dokumentiert.' },
-      { name: 'Server-Side Tagging', use: 'Serverseitige Container, damit kontrolliert wird, welche Daten an Dritte gehen.' },
+      { name: 'Server-Side Tagging', use: 'Serverseitige Container, die steuern, welche Daten an Dritte gehen.' },
     ],
   },
   {
@@ -595,7 +595,7 @@ export const LAB_ITEMS: { title: string; status: LabStatus; desc: string; learni
     title: 'Shops per Claude Code',
     status: 'Erkundung',
     desc: 'Kleine Online-Shops mit Zahlung per Karte und TWINT, weitgehend mit Claude Code gebaut.',
-    learning: 'Wie weit sich ein funktionierender Shop ohne klassische Shop-Software bauen lässt, und wo die Grenzen liegen.',
+    learning: 'Noch offen ist, wie weit sich ein funktionierender Shop ohne klassische Shop-Software bauen lässt und wo die Grenzen liegen.',
     stack: ['Claude Code'],
   },
 ];

@@ -13,12 +13,12 @@ const STATUS_STYLE: Record<LabStatus, string> = {
 export default function LabView() {
   return (
     <div className="space-y-16 md:space-y-24 pb-24 text-slate-800" id="labor">
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen', href: '/martech' }, { label: 'Labor' }]} />
           <div className="max-w-4xl space-y-6">
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
-              Das Labor: was ich selbst baue.
+              Was ich im Labor selbst baue.
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
               Bevor ich Ihnen einen Agenten oder eine Automatisierung empfehle, habe ich sie meistens selbst gebaut und betrieben. Hier stehen die eigenen Experimente,
@@ -33,13 +33,13 @@ export default function LabView() {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {LAB_ITEMS.map((it) => (
-              <article key={it.title} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-8 flex flex-col gap-4">
+              <article key={it.title} className="bg-surface border border-line/80 rounded-3xl p-7 sm:p-8 flex flex-col gap-4">
                 <div className="flex items-start justify-between gap-4">
                   <h2 className="text-lg sm:text-xl font-display font-semibold text-slate-900 leading-snug">{it.title}</h2>
                   <span className={`shrink-0 text-[11px] font-bold rounded-full border px-2.5 py-1 ${STATUS_STYLE[it.status]}`}>{it.status}</span>
                 </div>
                 <p className="text-body-sm text-slate-700 leading-relaxed">{it.desc}</p>
-                <p className="text-body-sm text-slate-600 leading-relaxed border-l-2 border-[#686DF4] pl-4">
+                <p className="text-body-sm text-slate-600 leading-relaxed border-l-2 border-[#686CFA] pl-4">
                   <span className="font-semibold text-slate-900">Gelernt: </span>
                   {it.learning}
                 </p>
@@ -60,8 +60,8 @@ export default function LabView() {
         <Container className="space-y-8">
           <SectionHeading title="Vom Labor in Ihr Unternehmen" intro="Was sich im eigenen Betrieb bewährt, biete ich als Leistung an, mit Festpreis und klar definiertem Ergebnis." />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <TeaserCard href="/leistungen/ki-agenten" title="KI-Agenten für Marketing & Vertrieb" desc="Agenten, die ganze Abläufe übernehmen, mit Freigabe durch Ihr Team." linkText="Zur Leistung" />
-            <TeaserCard href="/leistungen/ki-im-unternehmen" title="KI im Unternehmen" desc="Standortbestimmung, Schulung, Regeln und Begleitung." linkText="Zum Leistungsfeld" />
+            <TeaserCard href="/leistungen/ki-agenten" title="KI-Agenten & Agentic Automation" desc="Agenten, die ganze Abläufe übernehmen, mit Freigabe durch Ihr Team." linkText="Zur Leistung" />
+            <TeaserCard href="/leistungen/ki-im-unternehmen" title="Governance für KI-Agenten" desc="Wann eine Regel reicht, wann KI hilft und wann ein Agent arbeitet." linkText="Mehr erfahren" />
             <TeaserCard href="/werkzeuge" title="Werkzeuge" desc="Womit ich arbeite, nach Schicht geordnet." linkText="Werkzeuge ansehen" />
           </div>
         </Container>

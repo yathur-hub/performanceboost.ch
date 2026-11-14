@@ -6,6 +6,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { AgentBand } from '../components/system/SystemBlocks';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import { sectorDiagram } from '../data/diagrams';
 import { Diagram } from '../components/diagrams/Diagram';
@@ -32,9 +33,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
 
   const sector = SOLUTIONS_SECTORS[slug];
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [slug]);
+  // Scroll-Position steuert App.tsx (oben bei neuer Seite, gemerkt bei Zurück).
 
   if (!sector) {
     return (
@@ -45,7 +44,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
         </p>
         <button
           onClick={() => onNavigate('/')}
-          className="bg-[#696EEF] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer hover:bg-[#5a5fe0]"
+          className="bg-[#686CFA] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer hover:bg-[#5a5fe0]"
         >
           Zurück zur Startseite
         </button>
@@ -60,14 +59,14 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
   };
 
   return (
-    <div className="pt-24 pb-16 space-y-20 text-slate-800 bg-[#f6f6f6]" id="solutions-detail-view">
+    <div className="pt-24 pb-16 space-y-20 text-slate-800 bg-canvas" id="solutions-detail-view">
       
       {/* SECTOR HERO HEADER */}
-      <section className="px-4 sm:px-6 lg:px-8 bg-white py-16 border-b border-slate-100">
+      <section className="px-4 sm:px-6 lg:px-8 bg-surface py-16 border-b border-slate-100">
         <div className="max-w-7xl mx-auto space-y-6">
           <button
             onClick={() => onNavigate('/loesungen')}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686DF4] hover:text-[#686DF4]/80 transition-colors uppercase tracking-widest cursor-pointer mb-2 bg-transparent border-none"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-[#686CFA]/80 transition-colors uppercase tracking-widest cursor-pointer mb-2 bg-transparent border-none"
           >
             <ArrowLeft className="w-4 h-4" /> Alle Branchen
           </button>
@@ -106,13 +105,13 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
             Typische Hürden in der Branche {sector.title}
           </h2>
           <p className="text-xs text-slate-500 font-semibold max-w-sm mx-auto">
-            Woran die Neukundengewinnung in dieser Branche oft scheitert.
+            Was Wachstum in dieser Branche heute bremst.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {sector.problems.map((problem, idx) => (
-            <div key={idx} className="bg-white border border-[#E0E0E0]/65 p-6 rounded-3xl space-y-3.5 shadow-sm text-center">
+            <div key={idx} className="bg-surface border border-line/65 p-6 rounded-3xl space-y-3.5 shadow-sm text-center">
               <div className="w-8 h-8 rounded-full bg-red-50 text-red-700 flex items-center justify-center font-bold font-mono text-xs mx-auto border border-red-100/40">
                 !
               </div>
@@ -125,18 +124,18 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
 
       {/* WAS WIR AUFBAUEN SEKTION */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-8 sm:p-12 space-y-12 shadow-[var(--shadow-premium-lg)]">
+        <div className="bg-deep text-white border border-deep rounded-3xl p-8 sm:p-12 space-y-12 shadow-[var(--shadow-premium-lg)]">
           <div className="text-center space-y-2">
-            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir für Sie aufbauen</h2>
+            <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-white tracking-tight">Was wir mit Ihnen aufbauen</h2>
             <p className="text-body-sm text-slate-300 font-medium max-w-md mx-auto">
-              In drei Schritten, abgestimmt auf Ihre Branche und Ihren Markt in der Schweiz.
+              Drei Bausteine von der Anfrage bis zum Auftrag. Bei jedem ist festgelegt, was automatisch läuft und wo Ihr Team entscheidet.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-8 text-left">
             {sector.approach.map((step, idx) => (
               <div key={idx} className="space-y-3 relative">
-                <span aria-hidden="true" className="absolute -top-3 right-0 text-3xl font-black font-mono text-[#686DF4]/20">
+                <span aria-hidden="true" className="absolute -top-3 right-0 text-3xl font-black font-mono text-[#686CFA]/20">
                   {step.step}
                 </span>
                 <h3 className="text-sm font-bold text-white tracking-tight">{step.title}</h3>
@@ -146,6 +145,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               </div>
             ))}
           </div>
+          <AgentBand className="mt-6" text="In jedem Schritt arbeiten KI und Agenten mit. Regeln übernehmen das Wiederkehrende, Agenten bereiten vor, Ihr Team entscheidet und gibt frei. Ergebnisse fliessen zurück, und das System wird laufend nachgeschärft." />
         </div>
       </section>
 
@@ -155,7 +155,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Was Sie davon haben</h2>
         </div>
 
-        <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-5 shadow-sm text-left">
+        <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-5 shadow-sm text-left">
           {sector.benefits.map((benefit, idx) => (
             <div key={idx} className="flex gap-3 items-start">
               <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
@@ -171,13 +171,13 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <Link
             key={rel.href}
             href={rel.href}
-            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-8 shadow-sm text-left hover:border-[#686DF4]/50 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface border border-line/65 rounded-3xl p-6 sm:p-8 shadow-sm text-left hover:border-[#686CFA]/50 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
           >
             <div className="space-y-1.5">
               <h2 className="text-lg font-display font-semibold text-slate-900 tracking-tight">{rel.title}</h2>
               <p className="text-body-sm text-slate-600 leading-relaxed">{rel.desc}</p>
             </div>
-            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4f54d6] shrink-0">
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-strong shrink-0">
               {rel.linkText} <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </span>
           </Link>
@@ -191,17 +191,17 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
           <h2 className="text-xl sm:text-2.5xl font-display font-semibold text-slate-905 tracking-tight">Häufige Fragen</h2>
         </div>
 
-        <div className="bg-white border border-[#E0E0E0]/65 rounded-2xl p-5 sm:p-8 space-y-3 shadow-sm text-left">
+        <div className="bg-surface border border-line/65 rounded-2xl p-5 sm:p-8 space-y-3 shadow-sm text-left">
           {sector.faqs.map((faq, idx) => (
             <div key={idx} className="border-b border-slate-100 last:border-none pb-4 last:pb-0 pt-3">
               <button
                 onClick={() => toggleFaq(idx)}
-                className="w-full flex justify-between items-center text-left font-bold text-slate-900 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer bg-transparent border-none py-1"
+                className="w-full flex justify-between items-center text-left font-bold text-slate-900 text-sm sm:text-base hover:text-[#686CFA] transition-colors cursor-pointer bg-transparent border-none py-1"
               >
                 <span className="flex items-center gap-2.5">
-                  <HelpCircle className="w-4 h-4 text-[#686DF4] shrink-0" /> {faq.q}
+                  <HelpCircle className="w-4 h-4 text-[#686CFA] shrink-0" /> {faq.q}
                 </span>
-                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-[#686DF4]' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-[#686CFA]' : ''}`} />
               </button>
               <AnimatePresence initial={false}>
                 {openFaq === idx && (
@@ -224,7 +224,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
 
       {/* ANFRAGE (eingebettetes Formular) */}
       <LeadCtaSection
-        title={`Mehr passende Anfragen für ${sector.title}?`}
+        title="Wo stehen Sie heute bei der Kundengewinnung?"
         intro="Schildern Sie kurz Ihre Ausgangslage. Sie erhalten innert eines Arbeitstags eine persönliche Antwort und einen Terminvorschlag für ein kostenloses Erstgespräch."
         formLocation={`branche_${slug}`}
       />

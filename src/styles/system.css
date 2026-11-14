@@ -1,0 +1,297 @@
+/*
+ * Premium-Bausteine des dunklen Designsystems (docs/design/02-designsystem-dark.md).
+ * Gekapselt unter .pbx: Hero-Choreografie, System-Konsole, Scroll-Statement, Vergleichszeilen, Links und Buttons.
+ * Abgeleitet aus den freigegebenen Prototypen (Richtung B, 14.11.2026), dunkle Fläche überall.
+ */
+
+/* ---------- Tokens ---------- */
+.pbx {
+  --pbx-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pbx-ease-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --pbx-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --pbx-t-ui: 160ms;
+  --pbx-t-reveal: 900ms;
+  --pbx-t-line: 1100ms;
+  --pbx-stagger: 120ms;
+  --pbx-rise: 14px;
+  --pbx-blur: 10px;
+
+  --pbx-accent: #686CFA;
+  --pbx-accent-soft: #CBCBFC;
+  --pbx-ink: #f4f4f8;
+  --pbx-text: #c9c9d6;
+  --pbx-muted: #9A9BB0;
+  --pbx-line: #262733;
+  --pbx-panel: #181923;
+  --pbx-panel-line: rgba(255, 255, 255, 0.09);
+  --pbx-panel-text: #e9e9f1;
+  --pbx-panel-muted: #8b8ca3;
+  color: var(--pbx-text);
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+/* ---------- Typografie ---------- */
+.pbx-h1 {
+  font-family: var(--font-display);
+  color: var(--pbx-ink);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  font-size: clamp(2.4rem, 0.9rem + 4.3vw, 4.9rem);
+}
+.pbx-h1 .pbx-accent {
+  font-family: ui-serif, Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #9a9dff;
+}
+.pbx-lead { color: var(--pbx-text); font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.2rem); line-height: 1.6; max-width: 36rem; }
+.pbx-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pbx-muted); }
+.pbx-h2 { font-family: var(--font-display); color: var(--pbx-ink); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.4rem); }
+
+/* ---------- Hero-Hintergrund ---------- */
+.pbx-hero { position: relative; isolation: isolate; }
+.pbx-hero::before {
+  /* feines Punktraster, zur Mitte hin ausgeblendet */
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--pbx-ink) 14%, transparent) 1px, transparent 0);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, #000 10%, transparent 75%);
+  opacity: 0.55;
+}
+.pbx-hero::after {
+  /* zurückhaltendes Licht hinter der Konsole */
+  content: ''; position: absolute; z-index: -1; pointer-events: none;
+  width: 900px; height: 600px; right: -10%; top: 8%;
+  background: radial-gradient(closest-side, rgba(104, 108, 250, 0.22), transparent 70%);
+  filter: blur(10px);
+}
+
+/* ---------- Hero-Choreografie: eine Sequenz, ein Zeitstrahl ---------- */
+.pbx-seq { --d: 0ms; animation: pbx-rise var(--pbx-t-reveal) var(--pbx-ease-out) var(--d) both; }
+.pbx-line { display: block; overflow: hidden; padding-bottom: 0.08em; }
+.pbx-line > span { display: inline-block; --d: 0ms; animation: pbx-unmask var(--pbx-t-reveal) var(--pbx-ease-out) var(--d) both; }
+@keyframes pbx-unmask {
+  from { transform: translateY(105%); filter: blur(var(--pbx-blur)); opacity: 0; }
+  60% { opacity: 1; }
+  to { transform: none; filter: blur(0); opacity: 1; }
+}
+@keyframes pbx-rise {
+  from { transform: translateY(var(--pbx-rise)); opacity: 0; filter: blur(4px); }
+  to { transform: none; opacity: 1; filter: blur(0); }
+}
+
+/* ---------- Konsole (Produkt-Visual) ---------- */
+.pbx-console {
+  --d: 560ms;
+  position: relative; border-radius: 18px; background: var(--pbx-panel); color: var(--pbx-panel-text);
+  border: 1px solid var(--pbx-panel-line);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 40px 80px -30px rgba(16, 17, 22, 0.45), 0 12px 24px -12px rgba(16, 17, 22, 0.25);
+  animation: pbx-console-in 1100ms var(--pbx-ease-out) var(--d) both;
+  transform-origin: 50% 100%;
+}
+@keyframes pbx-console-in {
+  from { opacity: 0; transform: translateY(28px) scale(0.975); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+.pbx-console-bar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--pbx-panel-line); font-family: var(--font-mono); font-size: 11px; color: var(--pbx-panel-muted); letter-spacing: 0.04em; }
+.pbx-live { width: 7px; height: 7px; border-radius: 99px; background: #4ade80; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); animation: pbx-live 2.4s ease-out infinite; }
+@keyframes pbx-live { 0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.45); } 70%,100% { box-shadow: 0 0 0 7px rgba(74,222,128,0); } }
+
+.pbx-step { --d: 0ms; display: grid; grid-template-columns: 22px 1fr auto; gap: 12px; align-items: start; padding: 13px 16px; border-bottom: 1px solid var(--pbx-panel-line); opacity: 0; animation: pbx-step-in 600ms var(--pbx-ease-out) var(--d) both; }
+.pbx-step:last-child { border-bottom: 0; }
+@keyframes pbx-step-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.pbx-step-title { font-size: 13.5px; color: var(--pbx-panel-text); line-height: 1.35; }
+.pbx-step-sub { font-size: 12px; color: var(--pbx-panel-muted); margin-top: 3px; line-height: 1.45; }
+.pbx-kind { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 7px; border-radius: 6px; border: 1px solid var(--pbx-panel-line); color: var(--pbx-panel-muted); white-space: nowrap; }
+.pbx-kind[data-k='agent'] { color: #b9bbff; border-color: rgba(104,108,250,0.45); }
+.pbx-kind[data-k='mensch'] { color: #fff; background: rgba(104,108,250,0.18); border-color: rgba(104,108,250,0.6); }
+
+.pbx-dot { width: 18px; height: 18px; border-radius: 99px; margin-top: 1px; display: grid; place-items: center; border: 1px solid var(--pbx-panel-line); position: relative; }
+.pbx-dot svg { width: 11px; height: 11px; stroke: #4ade80; stroke-width: 2.4; fill: none; stroke-dasharray: 16; stroke-dashoffset: 16; animation: pbx-check 420ms var(--pbx-ease-inout) calc(var(--d) + 380ms) forwards; }
+@keyframes pbx-check { to { stroke-dashoffset: 0; } }
+.pbx-dot[data-state='wait'] { border-color: rgba(104,108,250,0.7); }
+.pbx-dot[data-state='wait']::after { content: ''; width: 6px; height: 6px; border-radius: 99px; background: var(--pbx-accent); animation: pbx-wait 1.6s var(--pbx-ease-inout) calc(var(--d) + 300ms) infinite; }
+@keyframes pbx-wait { 0%,100% { opacity: 0.35; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1); } }
+
+/* Lichtstreifen über dem laufenden Agentenschritt */
+.pbx-shimmer { background: linear-gradient(90deg, var(--pbx-panel-muted) 0%, #fff 45%, var(--pbx-panel-muted) 70%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: pbx-shimmer 2.2s linear calc(var(--d) + 200ms) 2 both; }
+@keyframes pbx-shimmer { from { background-position: 120% 0; } to { background-position: -40% 0; } }
+
+/* Verbindungslinie, die sich zeichnet */
+.pbx-wire { stroke: var(--pbx-accent); stroke-width: 1.25; fill: none; stroke-dasharray: 600; stroke-dashoffset: 600; animation: pbx-draw var(--pbx-t-line) var(--pbx-ease-inout) var(--d, 0ms) forwards; }
+@keyframes pbx-draw { to { stroke-dashoffset: 0; } }
+
+/* Freigabe-Aktion */
+.pbx-approve { display: inline-flex; gap: 6px; margin-top: 10px; }
+.pbx-approve span { font-size: 11.5px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--pbx-panel-line); color: var(--pbx-panel-text); transition: background-color var(--pbx-t-ui) var(--pbx-ease-ui), border-color var(--pbx-t-ui) var(--pbx-ease-ui); }
+.pbx-approve span:first-child { background: var(--pbx-accent); border-color: var(--pbx-accent); color: #fff; }
+
+/* ---------- Interaktionen ---------- */
+.pbx-link { position: relative; color: var(--pbx-ink); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+.pbx-link::after { content: ''; position: absolute; left: 0; right: 22px; bottom: 9px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 260ms var(--pbx-ease-out); }
+.pbx-link:hover::after, .pbx-link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.pbx-link svg { transition: transform var(--pbx-t-ui) var(--pbx-ease-ui); }
+.pbx-link:hover svg { transform: translateX(3px); }
+.pbx-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #5b5ff0; color: #fff; font-family: var(--font-display); font-weight: 600; font-size: 15px; transition: background-color var(--pbx-t-ui) var(--pbx-ease-ui), box-shadow var(--pbx-t-ui) var(--pbx-ease-ui); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 8px 20px -10px rgba(104,108,250,0.7); }
+.pbx-btn:hover { background: #4f54d6; }
+.pbx-btn:active { transform: translateY(1px); }
+.pbx-btn svg { transition: transform var(--pbx-t-ui) var(--pbx-ease-ui); }
+.pbx-btn:hover svg { transform: translateX(3px); }
+.pbx-btn:focus-visible, .pbx-link:focus-visible { outline: 2px solid var(--pbx-accent); outline-offset: 3px; border-radius: 999px; }
+
+/* ---------- Statement mit scrollgesteuerter Aufhellung ---------- */
+.pbx-statement .w { transition: color 220ms var(--pbx-ease-ui); color: color-mix(in srgb, var(--pbx-ink) 24%, transparent); }
+.pbx-statement .w.on { color: var(--pbx-ink); }
+
+/* ---------- Vergleich: Zeilen mit Fortschritt ---------- */
+.pbx-row { border-top: 1px solid var(--pbx-line); }
+.pbx-row .pbx-classic { transition: opacity 500ms var(--pbx-ease-out); }
+.pbx-row .pbx-new { transition: opacity 500ms var(--pbx-ease-out), transform 600ms var(--pbx-ease-out); }
+.pbx-row:not(.on) .pbx-new { opacity: 0.18; transform: translateX(-6px); }
+.pbx-row.on .pbx-classic { opacity: 0.55; }
+.pbx-row .pbx-tick { transform: scaleX(0); transform-origin: left; transition: transform 700ms var(--pbx-ease-inout); }
+.pbx-row.on .pbx-tick { transform: scaleX(1); }
+
+/* ---------- Reduzierte Bewegung ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .pbx *, .pbx *::before, .pbx *::after { animation: none !important; transition: none !important; }
+  .pbx .pbx-step, .pbx .pbx-console { opacity: 1 !important; }
+  .pbx .pbx-dot svg { stroke-dashoffset: 0 !important; }
+  .pbx .pbx-wire { stroke-dashoffset: 0 !important; }
+  .pbx .pbx-statement .w { color: var(--pbx-ink) !important; }
+  .pbx .pbx-row .pbx-new { opacity: 1 !important; transform: none !important; }
+  .pbx .pbx-row .pbx-tick { transform: none !important; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .pbx { --pbx-blur: 6px; --pbx-rise: 10px; }
+  .pbx-step { padding: 11px 14px; gap: 10px; }
+  .pbx-step-sub { display: none; }
+  .pbx-hero::before { background-size: 18px 18px; mask-image: radial-gradient(ellipse 90% 50% at 60% 70%, #000 10%, transparent 75%); }
+}
+
+/* ---------- Agenten-Netzwerk (Hero) ---------- */
+.pbx-net {
+  --d: 560ms;
+  position: relative; border-radius: 18px; background: var(--pbx-panel); color: var(--pbx-panel-text);
+  border: 1px solid var(--pbx-panel-line);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 40px 80px -30px rgba(0,0,0,0.6);
+  animation: pbx-console-in 1100ms var(--pbx-ease-out) var(--d) both;
+}
+.pbx-net svg text { font-family: var(--font-sans); }
+.pbx-net-spoke { stroke: #3B3E86; stroke-width: 1; fill: none; stroke-dasharray: 3 5; opacity: 0; animation: pbx-fade-in 800ms var(--pbx-ease-out) var(--d) forwards; }
+.pbx-net-edge { stroke: #34354A; stroke-width: 1.25; fill: none; stroke-dasharray: 700; stroke-dashoffset: 700; animation: pbx-draw 1200ms var(--pbx-ease-inout) var(--d) forwards; transition: stroke 300ms var(--pbx-ease-ui), stroke-width 300ms var(--pbx-ease-ui); }
+.pbx-net-edge.on { stroke: var(--pbx-accent); stroke-width: 2; }
+.pbx-net-pulse { fill: #8f92ff; opacity: 0.8; }
+.pbx-net-packet { fill: #fff; filter: drop-shadow(0 0 6px rgba(104,108,250,0.9)); }
+.pbx-net-node { opacity: 0; animation: pbx-rise 700ms var(--pbx-ease-out) calc(var(--d) + 500ms) both; }
+.pbx-net-node rect { fill: #14151C; stroke: #2C2D3A; stroke-width: 1; transition: stroke 300ms var(--pbx-ease-ui), fill 300ms var(--pbx-ease-ui); }
+.pbx-net-node.on rect { stroke: var(--pbx-accent); fill: #1b1c2c; }
+.pbx-net-node.human rect { stroke-dasharray: 3 3; }
+.pbx-net-dot { fill: #4ade80; }
+.pbx-net-node.human .pbx-net-dot { fill: var(--pbx-accent); }
+.pbx-net-node.on .pbx-net-dot { animation: pbx-wait 1.2s var(--pbx-ease-inout) infinite; transform-box: fill-box; transform-origin: center; }
+.pbx-net-name { font-size: 12.5px; font-weight: 600; fill: #f2f2f7; }
+.pbx-net-role { font-size: 11px; fill: #8b8ca3; }
+.pbx-net-short { display: none; font-size: 21px; font-weight: 600; fill: #f2f2f7; }
+.pbx-net-core { opacity: 0; animation: pbx-fade-in 900ms var(--pbx-ease-out) calc(var(--d) + 300ms) forwards; }
+.pbx-net-core-t { font-family: var(--font-display) !important; font-size: 17px; font-weight: 600; fill: #fff; letter-spacing: -0.01em; }
+.pbx-net-core-s { font-family: var(--font-mono) !important; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; fill: #A0A3F9; }
+.pbx-net-ring { fill: none; stroke: #686CFA; stroke-opacity: 0.35; transform-box: fill-box; transform-origin: center; animation: pbx-ring 3.2s var(--pbx-ease-out) 2s infinite; }
+.pbx-net-glow { transform-box: fill-box; transform-origin: center; animation: pbx-breathe 4.8s var(--pbx-ease-inout) 2s infinite; }
+@keyframes pbx-ring { 0% { transform: scale(0.85); stroke-opacity: 0.5; } 100% { transform: scale(1.35); stroke-opacity: 0; } }
+@keyframes pbx-breathe { 0%,100% { opacity: 0.8; } 50% { opacity: 1; } }
+@keyframes pbx-fade-in { to { opacity: 1; } }
+.pbx-net-log { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-top: 1px solid var(--pbx-panel-line); min-height: 50px; }
+.pbx-net-msg { font-size: 13px; color: var(--pbx-panel-text); animation: pbx-msg 500ms var(--pbx-ease-out) both; }
+@keyframes pbx-msg { from { opacity: 0; transform: translateY(4px); filter: blur(3px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .pbx-net, .pbx-net-node, .pbx-net-core, .pbx-net-spoke { opacity: 1 !important; animation: none !important; }
+  .pbx-net-edge { stroke-dashoffset: 0 !important; animation: none !important; }
+  .pbx-net-ring, .pbx-net-glow { animation: none !important; }
+}
+@media (max-width: 640px) {
+  .pbx-net-name, .pbx-net-role { display: none; }
+  .pbx-net-short { display: block; }
+  .pbx-net-core-t { font-size: 22px; }
+  .pbx-net-core-s { font-size: 13px; }
+  .pbx-net-msg { font-size: 12px; }
+  .pbx-net-log { padding: 10px 14px; }
+}
+
+/* ---------- 3D-Kartenstapel (Startseite, Herausforderungen) ---------- */
+.pbx-deck { display: flex; flex-direction: column; gap: 0; }
+.pbx-card {
+  position: relative; display: block; overflow: hidden; border-radius: 20px;
+  background: linear-gradient(160deg, #1b1c29 0%, #14151C 60%);
+  border: 1px solid #2C2D3A; color: inherit; text-decoration: none;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 24px 40px -24px rgba(0,0,0,0.85);
+  transition: transform 650ms var(--pbx-ease-out), flex-basis 650ms var(--pbx-ease-out), border-color 300ms var(--pbx-ease-ui), background 300ms var(--pbx-ease-ui), box-shadow 650ms var(--pbx-ease-out);
+}
+.pbx-card:focus-visible { outline: 2px solid var(--pbx-accent); outline-offset: 3px; }
+.pbx-card.on { border-color: rgba(104,108,250,0.55); background: linear-gradient(160deg, #20223a 0%, #181923 55%); }
+.pbx-card-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #A0A3F9; }
+.pbx-card-link svg { transition: transform var(--pbx-t-ui) var(--pbx-ease-ui); }
+.pbx-card:hover .pbx-card-link svg { transform: translateX(3px); }
+
+/* Smartphone und Tablet: Stapel untereinander, aktive Karte klappt auf */
+.pbx-card + .pbx-card { margin-top: -10px; }
+.pbx-card-spine { display: flex; align-items: center; gap: 14px; padding: 20px 22px; }
+.pbx-card-spine-t { font-family: var(--font-display); font-weight: 600; color: var(--pbx-ink); font-size: 16px; line-height: 1.3; }
+.pbx-card-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 500ms var(--pbx-ease-out); }
+.pbx-card-inner { min-height: 0; overflow: hidden; padding: 0 22px; opacity: 0; transition: opacity 300ms var(--pbx-ease-ui); }
+.pbx-card.on .pbx-card-body { grid-template-rows: 1fr; }
+.pbx-card.on .pbx-card-inner { opacity: 1; padding-bottom: 24px; transition-delay: 120ms; }
+.pbx-card.on .pbx-card-spine { display: none; }
+.pbx-card.on .pbx-card-inner { padding-top: 22px; }
+
+/* Desktop mit Hover: nebeneinander, überlappend, in 3D */
+@media (hover: hover) and (min-width: 1024px) {
+  .pbx-deck { flex-direction: row; height: 400px; perspective: 2000px; perspective-origin: 40% 50%; padding-right: 28px; }
+  .pbx-card { flex: 0 0 132px; height: 100%; transform-origin: left center; transform: rotateY(-14deg) translateZ(-20px); }
+  .pbx-card + .pbx-card { margin-top: 0; margin-left: -22px; }
+  .pbx-card.on { flex: 1 1 0; transform: rotateY(0deg) translateZ(0); box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 40px 70px -30px rgba(0,0,0,0.9), -30px 0 60px -30px rgba(0,0,0,0.9); }
+  .pbx-card.on ~ .pbx-card { transform: rotateY(-14deg) translateZ(-20px) translateX(14px); }
+  .pbx-card-spine { position: absolute; inset: 0; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 22px 20px 22px 34px; transition: opacity 250ms var(--pbx-ease-ui); }
+  .pbx-card-spine-t { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 17px; max-height: 300px; }
+  .pbx-card.on .pbx-card-spine { display: flex; opacity: 0; pointer-events: none; }
+  .pbx-card-body { display: block; height: 100%; }
+  .pbx-card-inner { position: absolute; top: 0; left: 0; width: 440px; height: 100%; padding: 28px 30px; display: flex; flex-direction: column; opacity: 0; transform: translateX(-12px); transition: opacity 300ms var(--pbx-ease-ui), transform 500ms var(--pbx-ease-out); }
+  .pbx-card.on .pbx-card-inner { opacity: 1; transform: none; padding: 28px 30px; transition-delay: 180ms; }
+  .pbx-card-link { margin-top: auto; }
+  .pbx-card:not(.on):hover { border-color: #3A3B4C; }
+}
+@media (hover: hover) and (min-width: 1024px) and (max-width: 1279px) {
+  .pbx-card { flex-basis: 104px; }
+  .pbx-card-inner { width: 400px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pbx-card, .pbx-card-body, .pbx-card-inner, .pbx-card-spine { transition: none !important; }
+}
+
+/* ---------- Agentische Ebene in allen Themengrafiken (Diagram.tsx) ---------- */
+.dg-agentbar { display: flex; align-items: center; gap: 10px; padding: 11px 18px; border-bottom: 1px solid var(--color-line); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #9A9BB0; background: linear-gradient(90deg, rgba(104,108,250,0.14), rgba(104,108,250,0) 70%); }
+.dg-agentbar .text-slate-900 { color: #e6e6ee; }
+.dg-rail { position: absolute; left: 18px; top: 20px; bottom: 20px; width: 2px; border-radius: 2px; background: linear-gradient(to bottom, rgba(104,108,250,0), rgba(104,108,250,0.55) 12%, rgba(104,108,250,0.55) 88%, rgba(104,108,250,0)); overflow: hidden; }
+@media (min-width: 640px) { .dg-rail { left: 22px; } }
+.dg-rail::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 100%; background: linear-gradient(to bottom, transparent 0%, #ffffff 48%, #A0A3F9 52%, transparent 100%) 0 0 / 100% 38% no-repeat; animation: dg-flow 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+@keyframes dg-flow { from { background-position: 0 -40%; } to { background-position: 0 140%; } }
+.dg-ai { display: flex; align-items: flex-start; gap: 6px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(104,108,250,0.35); font-size: 11.5px; line-height: 1.35; color: #A0A3F9; }
+.dg-ai svg { margin-top: 2px; }
+.dg-ai.is-active { color: #fff; border-top-color: rgba(255,255,255,0.35); }
+.dg-loop { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-top: 1px solid var(--color-line); font-size: 12.5px; line-height: 1.45; color: #B9BACB; }
+.dg-loop-icon { color: #A0A3F9; animation: dg-spin 6s linear infinite; }
+@keyframes dg-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dg-rail::after, .dg-loop-icon { animation: none !important; } }
+
+/* ---------- Agentisches Band unter den vier Phasen ---------- */
+.pbx-phase-rail { margin-top: 18px; border-radius: 20px; border: 1px solid rgba(104,108,250,0.35); background: linear-gradient(180deg, rgba(104,108,250,0.10), rgba(104,108,250,0.03)); overflow: hidden; }
+.pbx-phase-rail-head { display: flex; align-items: center; gap: 10px; padding: 12px 20px 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c9c9d6; }
+.pbx-phase-rail-track { position: relative; height: 2px; margin: 4px 20px 16px; background: rgba(104,108,250,0.35); border-radius: 2px; overflow: hidden; }
+.pbx-phase-rail-track::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, #fff 48%, #A0A3F9 52%, transparent 100%) 0 0 / 22% 100% no-repeat; animation: pbx-rail-x 4s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+@keyframes pbx-rail-x { from { background-position: -30% 0; } to { background-position: 130% 0; } }
+.pbx-phase-rail-dot { width: 7px; height: 7px; margin-top: 5px; border-radius: 99px; background: #686CFA; box-shadow: 0 0 0 3px rgba(104,108,250,0.2); flex-shrink: 0; }
+@media (prefers-reduced-motion: reduce) { .pbx-phase-rail-track::after { animation: none !important; } }

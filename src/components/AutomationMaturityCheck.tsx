@@ -148,7 +148,7 @@ export default function AutomationMaturityCheck() {
         return {
           title: "Stufe 4: Fortgeschritten",
           color: "#57CC99",
-          main: "Sie sind gut aufgestellt, ein wichtiger Punkt fehlt noch. Ihre Abläufe sind klar geregelt. Der letzte offene Punkt ist keine Grundvoraussetzung mehr, bringt aber spürbar mehr Qualität und Effizienz.",
+          main: "Sie sind gut aufgestellt, ein wichtiger Punkt fehlt noch. Ihre Abläufe sind klar geregelt. Der letzte offene Punkt ist keine Grundvoraussetzung mehr, bringt aber mehr Qualität und weniger Handarbeit.",
           context: ""
         };
       default:
@@ -207,19 +207,19 @@ export default function AutomationMaturityCheck() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="automation-maturity-check">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="automation-maturity-check">
       
       {/* Header section with brand info */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <Cpu className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <Cpu className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Check: Wie weit ist Ihre Automatisierung?
           </h3>
         </div>
         <button
           onClick={handleReset}
-          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-canvas/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
           title="Prüfung zurücksetzen"
         >
           <RefreshCw className="w-3 h-3" /> Zurücksetzen
@@ -242,7 +242,7 @@ export default function AutomationMaturityCheck() {
               } flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4`}
             >
               <div className="space-y-1">
-                <span className="text-[11px] text-[#686DF4] font-bold font-mono uppercase tracking-wider block leading-none">
+                <span className="text-[11px] text-[#686CFA] font-bold font-mono uppercase tracking-wider block leading-none">
                   Frage {q.priority}
                 </span>
                 <h4 className="text-xs sm:text-sm font-bold text-slate-800 leading-tight">
@@ -260,7 +260,7 @@ export default function AutomationMaturityCheck() {
                   onClick={() => handleToggle(q.id, true)}
                   className={`flex-1 sm:flex-none text-xs font-bold font-mono tracking-wider uppercase px-4 py-2.5 rounded-xl border transition-all cursor-pointer ${
                     cAns === true
-                      ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
+                      ? 'bg-[#686CFA] text-white border-transparent shadow-xs'
                       : 'bg-transparent text-slate-400 border-slate-200/55 hover:border-slate-350 hover:bg-slate-50'
                   }`}
                 >
@@ -298,10 +298,10 @@ export default function AutomationMaturityCheck() {
                 <div 
                   className={`w-9 h-9 rounded-xl flex items-center justify-center font-mono font-black text-sm transition-all duration-300 ${
                     isCurrent
-                      ? 'bg-[#686DF4] text-white ring-4 ring-indigo-100'
+                      ? 'bg-[#686CFA] text-white ring-4 ring-indigo-100'
                       : isPassed
                       ? 'bg-emerald-700 text-white'
-                      : 'bg-white border border-slate-200 text-slate-400'
+                      : 'bg-surface border border-slate-200 text-slate-400'
                   }`}
                 >
                   {lvl}
@@ -338,7 +338,7 @@ export default function AutomationMaturityCheck() {
                 <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-widest block leading-none">
                   Ihre Auswertung
                 </span>
-                <span className="w-1.5 h-1.5 bg-[#686DF4] rounded-full shrink-0" />
+                <span className="w-1.5 h-1.5 bg-[#686CFA] rounded-full shrink-0" />
                 <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
                   {jaCount} / 5 Ja-Antworten
                 </span>
@@ -366,10 +366,10 @@ export default function AutomationMaturityCheck() {
               {chosenNextStep && (
                 <div className="bg-blue-50 border border-indigo-100 p-5 sm:p-6 rounded-2xl space-y-3 shadow-xs">
                   <div className="flex justify-between items-center pb-2 border-b border-indigo-200/25">
-                    <h5 className="text-xs font-black text-[#686DF4] font-display uppercase tracking-wider">
+                    <h5 className="text-xs font-black text-[#686CFA] font-display uppercase tracking-wider">
                       {chosenNextStep.titel}
                     </h5>
-                    <div className="flex items-center gap-1.5 shrink-0 bg-[#686DF4]/10 text-[#686DF4] text-[11px] font-mono font-bold px-2.5 py-1 rounded-md">
+                    <div className="flex items-center gap-1.5 shrink-0 bg-[#686CFA]/10 text-[#686CFA] text-[11px] font-mono font-bold px-2.5 py-1 rounded-md">
                       <Calendar className="w-3.5 h-3.5" />
                       {chosenNextStep.zeitrahmen}
                     </div>
@@ -386,7 +386,7 @@ export default function AutomationMaturityCheck() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 {stufe === 5 ? "Nächste Schritte besprechen" : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
               </button>

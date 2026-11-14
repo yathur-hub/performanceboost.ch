@@ -54,14 +54,14 @@ export default function ContactView() {
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="contact-primary-view">
       
       {/* HERO TITLE BLOCK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-24 border-b border-slate-100 overflow-hidden text-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-surface pt-12 pb-16 md:py-24 border-b border-slate-100 overflow-hidden text-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.15]"
+            className="text-[clamp(1.85rem,8vw,2.25rem)] sm:text-6xl font-display font-semibold text-slate-950 tracking-tight leading-[1.12] sm:leading-[1.15] text-balance"
           >
             Erzählen Sie uns, wo Sie stehen.
           </motion.h1>
@@ -69,9 +69,9 @@ export default function ContactView() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
-            className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-semibold animate-fadeIn"
+            className="text-slate-600 sm:text-slate-500 text-[15px] sm:text-base max-w-xl mx-auto leading-relaxed font-normal sm:font-semibold animate-fadeIn"
           >
-            Ob es um Wachstum, Vertrieb, Abläufe oder Daten geht: Schildern Sie kurz Ihre Situation. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
+            Schildern Sie kurz Ihre Situation, ob es um Marketing, Vertrieb, Abläufe oder Daten geht. Sie erhalten innert eines Arbeitstags eine persönliche Antwort.
           </motion.p>
         </div>
       </section>
@@ -80,36 +80,28 @@ export default function ContactView() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* Form column (5 cols) */}
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-          className="lg:col-span-12 xl:col-span-7 bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl space-y-8 shadow-[var(--shadow-premium-lg)]"
+        <div 
+          className="lg:col-span-12 xl:col-span-7 bg-surface border border-line/65 p-8 md:p-10 rounded-3xl space-y-8 shadow-[var(--shadow-premium-lg)]"
           id="contact-form-container"
         >
           <div className="space-y-2 border-b border-slate-100 pb-5">
             <h2 className="text-xl font-display font-semibold text-slate-900 flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-[#686DF4]" /> Ihre Anfrage
+              <MessageSquare className="w-5 h-5 text-[#686CFA]" /> Ihre Anfrage
             </h2>
             <p className="text-xs text-slate-450 font-semibold font-mono uppercase tracking-wider">Ihre Nachricht geht direkt an Yathur Nathan.</p>
           </div>
 
           <LeadFunnel flow={LEAD_FLOWS.general} formLocation="kontakt_seite" />
-        </motion.div>
+        </div>
 
         {/* Info Column (5 cols) */}
         <div className="lg:col-span-12 xl:col-span-5 space-y-8" id="contact-info-panel">
           
           {/* Direct channels card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
+          <div 
+            className="bg-surface border border-line/65 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
-            <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686DF4] pl-4">Direkter Kontakt</h3>
+            <h3 className="text-sm font-bold text-slate-900 border-l-3 border-[#686CFA] pl-4">Direkter Kontakt</h3>
             
             <div className="space-y-4">
               {DIRECT_CHANNELS.map((ch, idx) => {
@@ -120,36 +112,32 @@ export default function ContactView() {
                     href={ch.href}
                     target={ch.external ? "_blank" : undefined}
                     rel={ch.external ? "noreferrer" : undefined}
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#686DF4]/20 hover:bg-[#686DF4]/[0.01] transition-all group"
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#686CFA]/20 hover:bg-[#686CFA]/[0.01] transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-550 flex items-center justify-center shrink-0 group-hover:bg-[#686DF4] group-hover:text-white transition-all">
+                    <div className="w-9 h-9 rounded-xl bg-surface border border-slate-200 text-slate-550 flex items-center justify-center shrink-0 group-hover:bg-[#686CFA] group-hover:text-white transition-all">
                       <IconComp className="w-4 h-4" />
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-1 min-w-0">
                       <span className="block text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest">{ch.label}</span>
-                      <span className="block text-xs font-bold text-slate-805 group-hover:text-[#686DF4] transition-colors">{ch.value}</span>
+                      <span className="block text-xs font-bold text-slate-805 group-hover:text-[#686CFA] transition-colors [overflow-wrap:anywhere]">{ch.value.replace('@', '\u200B@')}</span>
                     </div>
                   </a>
                 );
               })}
             </div>
-          </motion.div>
+          </div>
 
           {/* Quick FAQ / Next Step timeline card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-            className="bg-slate-950 text-white border border-slate-900 p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
+          <div 
+            className="bg-deep text-white border border-deep p-8 rounded-3xl space-y-6 shadow-[var(--shadow-premium-sm)]"
           >
-            <h3 className="text-sm font-bold text-white border-l-3 border-[#686DF4] pl-4 font-display">So geht es weiter</h3>
+            <h3 className="text-sm font-bold text-white border-l-3 border-[#686CFA] pl-4 font-display">So geht es weiter</h3>
             
             <div className="space-y-6 relative pl-4 border-l border-slate-800">
               {NEXT_STEPS.map((ns, idx) => (
                 <div key={idx} className="relative space-y-1.5" id={`next-step-${ns.step}`}>
                   {/* Absolute positioning of step dot badge */}
-                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-slate-950 border-2 border-[#686DF4] rounded-full flex items-center justify-center text-[11px] font-bold text-white font-mono">
+                  <div className="absolute -left-[25px] top-1 w-[18px] h-[18px] bg-deep border-2 border-[#686CFA] rounded-full flex items-center justify-center text-[11px] font-bold text-white font-mono">
                     {idx + 1}
                   </div>
                   
@@ -158,7 +146,7 @@ export default function ContactView() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </section>

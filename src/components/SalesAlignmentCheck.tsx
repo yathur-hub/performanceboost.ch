@@ -69,7 +69,7 @@ export default function SalesAlignmentCheck() {
     } else if (score <= 12) {
       return {
         key: "spuerbar",
-        label: "Spürbare Reibung",
+        label: "Deutliche Reibung",
         color: "#F4A261",
         desc: "Marketing und Vertrieb arbeiten zusammen, aber noch nicht als eingespieltes Team. An den Übergaben geht etwas verloren: Anfragen werden zu spät bearbeitet, Unterlagen zu wenig genutzt oder die Übergabe vom Marketing an den Vertrieb ist nicht klar geregelt."
       };
@@ -144,19 +144,19 @@ export default function SalesAlignmentCheck() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="sales-alignment-check">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="sales-alignment-check">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <ShieldAlert className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <ShieldAlert className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Check: Marketing und Vertrieb
           </h3>
         </div>
         <button
           onClick={handleReset}
-          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-canvas/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
@@ -176,7 +176,7 @@ export default function SalesAlignmentCheck() {
               Wie klar ist die gemeinsame Definition eines qualifizierten Leads?
             </label>
             <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded-lg shrink-0 ${
-              touched.s1 ? 'bg-[#686DF4]/5 text-[#686DF4] border border-[#686DF4]/10' : 'bg-slate-100 text-slate-400'
+              touched.s1 ? 'bg-[#686CFA]/5 text-[#686CFA] border border-[#686CFA]/10' : 'bg-slate-100 text-slate-400'
             }`}>
               {s1}/5
             </span>
@@ -188,7 +188,7 @@ export default function SalesAlignmentCheck() {
             step="1"
             value={s1}
             onChange={e => handleSliderChange('s1', Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686CFA]"
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Jeder versteht es anders</span>
@@ -203,7 +203,7 @@ export default function SalesAlignmentCheck() {
               Wie viel des Marketing-Contents wird vom Vertrieb tatsächlich genutzt?
             </label>
             <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded-lg shrink-0 ${
-              touched.s2 ? 'bg-[#686DF4]/5 text-[#686DF4] border border-[#686DF4]/10' : 'bg-slate-100 text-slate-400'
+              touched.s2 ? 'bg-[#686CFA]/5 text-[#686CFA] border border-[#686CFA]/10' : 'bg-slate-100 text-slate-400'
             }`}>
               {s2}/5
             </span>
@@ -215,7 +215,7 @@ export default function SalesAlignmentCheck() {
             step="1"
             value={s2}
             onChange={e => handleSliderChange('s2', Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686CFA]"
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Vertrieb macht eigene Unterlagen</span>
@@ -230,7 +230,7 @@ export default function SalesAlignmentCheck() {
               Haben Marketing und Vertrieb gemeinsame Erfolgskennzahlen?
             </label>
             <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded-lg shrink-0 ${
-              touched.s3 ? 'bg-[#686DF4]/5 text-[#686DF4] border border-[#686DF4]/10' : 'bg-slate-100 text-slate-400'
+              touched.s3 ? 'bg-[#686CFA]/5 text-[#686CFA] border border-[#686CFA]/10' : 'bg-slate-100 text-slate-400'
             }`}>
               {s3}/5
             </span>
@@ -242,7 +242,7 @@ export default function SalesAlignmentCheck() {
             step="1"
             value={s3}
             onChange={e => handleSliderChange('s3', Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686CFA]"
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Verschiedene Kennzahlen</span>
@@ -257,7 +257,7 @@ export default function SalesAlignmentCheck() {
               Wie schnell werden übergebene Leads vom Vertrieb kontaktiert?
             </label>
             <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded-lg shrink-0 ${
-              touched.s4 ? 'bg-[#686DF4]/5 text-[#686DF4] border border-[#686DF4]/10' : 'bg-slate-150 bg-slate-100 text-slate-400'
+              touched.s4 ? 'bg-[#686CFA]/5 text-[#686CFA] border border-[#686CFA]/10' : 'bg-slate-150 bg-slate-100 text-slate-400'
             }`}>
               {s4}/5
             </span>
@@ -269,7 +269,7 @@ export default function SalesAlignmentCheck() {
             step="1"
             value={s4}
             onChange={e => handleSliderChange('s4', Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686DF4]"
+            className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#686CFA]"
           />
           <div className="flex justify-between text-[11px] text-slate-400 font-mono">
             <span>Keine Vorgabe, manchmal Tage</span>
@@ -282,7 +282,7 @@ export default function SalesAlignmentCheck() {
       {/* Audit Output Result card */}
       <div className="mt-10">
         {!allSet ? (
-          <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
+          <div className="bg-canvas/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
               Auswertung folgt
             </h4>
@@ -345,7 +345,7 @@ export default function SalesAlignmentCheck() {
                   const friction = (frictionDetails as any)[key];
                   if (!friction) return null;
                   return (
-                    <div key={key} className="bg-white border border-slate-200 rounded-xl p-5 relative shadow-xs flex gap-5 items-start">
+                    <div key={key} className="bg-surface border border-slate-200 rounded-xl p-5 relative shadow-xs flex gap-5 items-start">
                       {/* Counter circle left top corner */}
                       <div className="w-7 h-7 rounded-lg bg-red-50 text-[#E63946] border border-red-100 flex items-center justify-center shrink-0 font-display font-medium text-xs mt-0.5 shadow-2xs">
                         {index + 1}
@@ -389,7 +389,7 @@ export default function SalesAlignmentCheck() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 {levelInfo.key === 'gut' ? "Nächste Schritte besprechen" : "Ergebnis besprechen: kostenlos, 30 Min."} <ArrowRight className="w-4 h-4 text-white" />
               </button>

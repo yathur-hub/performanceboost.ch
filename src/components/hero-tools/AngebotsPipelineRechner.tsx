@@ -138,27 +138,27 @@ export default function AngebotsPipelineRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben geht zwischen Anfrage und Auftrag deutlich mehr Umsatz verloren als nötig. Oft helfen schon einfache Schritte: Offerten konsequent nachfassen und einen klaren Ablauf für Angebote festlegen. Der grösste Hebel ist meist nicht die bessere Offerte, sondern dass überhaupt nachgefasst wird.',
+      label: 'Viel Umsatz bleibt liegen',
+      desc: 'Nach Ihren Angaben geht zwischen Anfrage und Auftrag deutlich mehr Umsatz verloren als nötig. Oft helfen schon einfache Schritte: Offerten verlässlich nachfassen und einen klaren Ablauf für Angebote festlegen. Oft bringt es mehr, überhaupt nachzufassen, als die Offerte selbst zu verbessern.',
       rec: `CRM einrichten, Ablauf für das Nachfassen festlegen und die Abschlussquote schrittweise von ${inputs.abschlussquote}% Richtung 35% entwickeln.`,
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
-      desc: 'Ihr Weg von der Anfrage zum Auftrag funktioniert, es bleibt aber spürbar Umsatz liegen. Häufige Ursachen sind Lücken beim Nachfassen oder eine unklare erste Einschätzung der Anfragen. Hier lohnt es sich, gezielt anzusetzen.',
-      rec: 'Nachfassen systematisch regeln, Interessenten bei langen Entscheidungszeiten weiterbegleiten und das CRM konsequenter nutzen.',
+      label: 'Umsatz bleibt liegen',
+      desc: 'Ihr Weg von der Anfrage zum Auftrag funktioniert, es bleibt aber Umsatz liegen. Häufige Ursachen sind Lücken beim Nachfassen oder eine unklare erste Einschätzung der Anfragen. Dort lohnt es sich anzusetzen.',
+      rec: 'Nachfassen systematisch regeln, Interessenten bei langen Entscheidungszeiten weiterbegleiten und das CRM im Alltag nutzen.',
     },
     gut: {
       color: 'text-green-700 bg-green-50 border-green-200/60',
       badgeBg: 'bg-green-700 text-white',
       label: 'Gut, aber ausbaufähig',
       desc: 'Ihre Quoten liegen nahe an den angenommenen Richtwerten oder darüber. Das ist eine solide Basis. Als Nächstes geht es darum, mehr passende Anfragen zu gewinnen und die Abschlussquote weiter zu verbessern.',
-      rec: 'Mehr qualifizierte Anfragen gewinnen, Wunschkunden gezielt ansprechen und Interessenten weiterbegleiten.',
+      rec: 'Mehr qualifizierte Anfragen gewinnen, Wunschkunden direkt ansprechen und Interessenten weiterbegleiten.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Sie machen nach Ihren Angaben bereits sehr viel aus Ihren Anfragen. Weiteres Wachstum kommt jetzt vor allem über die Menge: mehr qualifizierte Anfragen bei gleicher Abschlussquote.',
       rec: 'Fokus auf neue Anfragen: mehr Wunschkunden erreichen, die Sie dann zuverlässig abschliessen.',
@@ -168,9 +168,9 @@ export default function AngebotsPipelineRechner() {
   const currentStufe = stufenConfig[results.score_stufe];
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Industrie</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Industrie</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Offerten-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viel Umsatz zwischen Anfrage, Offerte und Auftrag verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -183,7 +183,7 @@ export default function AngebotsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Anfragen pro Monat</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.anfragen}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.anfragen}</span>
             </label>
             <div className="relative">
               <input aria-label="Anfragen pro Monat"
@@ -202,7 +202,7 @@ export default function AngebotsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Angebotsquote</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.angebotsquote}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.angebotsquote}%</span>
             </label>
             <input aria-label="Angebotsquote"
               type="range"
@@ -211,7 +211,7 @@ export default function AngebotsPipelineRechner() {
               step={5}
               value={inputs.angebotsquote}
               onChange={(e) => handleInputChange('angebotsquote', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Richtwert (Annahme): 70% der Anfragen werden zu Offerten</p>
           </div>
@@ -219,7 +219,7 @@ export default function AngebotsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Abschlussquote</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.abschlussquote}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.abschlussquote}%</span>
             </label>
             <input aria-label="Abschlussquote"
               type="range"
@@ -228,7 +228,7 @@ export default function AngebotsPipelineRechner() {
               step={1}
               value={inputs.abschlussquote}
               onChange={(e) => handleInputChange('abschlussquote', parseInt(e.target.value) || 5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Richtwert (Annahme): 35% der Offerten führen zum Auftrag</p>
           </div>
@@ -236,7 +236,7 @@ export default function AngebotsPipelineRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Auftragswert (CHF)</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.auftragswert)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.auftragswert)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Auftragswert (CHF)"
@@ -289,7 +289,7 @@ export default function AngebotsPipelineRechner() {
 
             <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
               <div className="space-y-0.5">
-                <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich durch konsequentes Nachfassen</span>
+                <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich durch regelmässiges Nachfassen</span>
                 <p className="text-[11px] text-slate-450 font-semibold">Geschätztes Plus, wenn die Abschlussquote um 10 Prozentpunkte steigt</p>
               </div>
               <h4 className="text-lg font-black text-green-700 ml-4">+{formatCHF(results.follow_up_potenzial)} / J.</h4>
@@ -325,7 +325,7 @@ export default function AngebotsPipelineRechner() {
               });
               window.dispatchEvent(new CustomEvent('open-contact-modal'));
             }}
-            className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+            className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
           >
             Ergebnis besprechen
           </button>

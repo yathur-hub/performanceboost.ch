@@ -6,6 +6,7 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { X, Clock, ShieldCheck, UserCheck, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { overlayBackdrop, overlayPanel } from '../lib/motion';
 import LeadFunnel from './LeadFunnel';
 import { SITE } from '../config/site';
 import { resolveFlow } from '../data/leadFlows';
@@ -51,12 +52,9 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       {isOpen && (
         <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:p-6">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            {...overlayBackdrop}
             onClick={onClose}
-            className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm"
+            className="fixed inset-0 bg-deep/70 backdrop-blur-sm"
             aria-hidden="true"
           />
           <motion.div
@@ -65,14 +63,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="lead-modal-title"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 24 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-[10000] w-full sm:max-w-4xl h-[100dvh] sm:h-auto sm:max-h-[92vh] bg-white sm:rounded-3xl shadow-2xl flex flex-col sm:flex-row overflow-hidden outline-none"
+            {...overlayPanel}
+            className="relative z-[10000] w-full sm:max-w-4xl h-[100dvh] sm:h-auto sm:max-h-[92vh] bg-surface sm:rounded-3xl shadow-2xl flex flex-col sm:flex-row overflow-hidden outline-none"
           >
             {/* Seitenleiste (ab sm): Ansprechperson und Versprechen */}
-            <aside className="hidden sm:flex sm:w-[280px] shrink-0 flex-col bg-slate-950 text-white p-7">
+            <aside className="hidden sm:flex sm:w-[280px] shrink-0 flex-col bg-deep text-white p-7">
               <img
                 src={SITE.portraitUrl}
                 alt="Yathur Nathan"
@@ -97,7 +92,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </aside>
 
             <div className="flex-1 flex flex-col min-h-0">
-              <div className="flex items-center justify-between gap-4 px-5 sm:px-8 pt-5 sm:pt-7">
+              <div className="flex items-center justify-between gap-4 px-5 sm:px-8 pt-[max(1rem,env(safe-area-inset-top))] sm:pt-7">
                 <h2 id="lead-modal-title" className="text-sm font-semibold text-slate-500">
                   {flow.title} <span className="text-slate-300">·</span> ca. 1 Minute
                 </h2>
@@ -105,7 +100,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="button"
                   onClick={onClose}
                   aria-label="Schliessen"
-                  className="w-9 h-9 shrink-0 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#696EEF]"
+                  className="w-11 h-11 sm:w-9 sm:h-9 shrink-0 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-[#686CFA]"
                 >
                   <X className="w-4.5 h-4.5" />
                 </button>
@@ -115,9 +110,9 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               </div>
               <a
                 href={`mailto:${SITE.email}`}
-                className="sm:hidden border-t border-slate-100 px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-sm text-slate-600 inline-flex items-center gap-2"
+                className="sm:hidden border-t border-slate-100 px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] min-h-11 text-sm text-slate-600 flex flex-wrap items-center gap-x-2 gap-y-0.5"
               >
-                <Mail className="w-4 h-4 text-[#696EEF]" aria-hidden="true" /> Lieber per E-Mail? <span className="font-semibold text-slate-900">{SITE.email}</span>
+                <Mail className="w-4 h-4 text-[#686CFA]" aria-hidden="true" /> <span className="whitespace-nowrap">Lieber per E-Mail?</span> <span className="font-semibold text-slate-900">{SITE.email}</span>
               </a>
             </div>
           </motion.div>

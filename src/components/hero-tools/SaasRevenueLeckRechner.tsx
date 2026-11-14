@@ -141,7 +141,7 @@ export default function SaasRevenueLeckRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-100 text-red-800 border-red-200',
-      label: 'Grosses Potenzial',
+      label: 'Umsatz geht verloren',
       desc: 'Nach Ihren Angaben geht an zwei Stellen Umsatz verloren: bei der Umwandlung von Tests in zahlende Kunden und bei Kündigungen.',
       btnText: 'Ergebnis besprechen',
     },
@@ -149,7 +149,7 @@ export default function SaasRevenueLeckRechner() {
       color: 'text-amber-700 bg-amber-50 border-amber-200/50',
       badgeBg: 'bg-amber-100 text-amber-800 border-amber-200',
       label: 'Aufbauphase',
-      desc: 'Die Grundlagen sind da, es bleibt aber noch spürbar Potenzial.',
+      desc: 'Die Grundlagen sind da, es bleibt aber noch Umsatz liegen.',
       btnText: 'Ergebnis besprechen',
     },
     wachstumsmodus: {
@@ -171,7 +171,7 @@ export default function SaasRevenueLeckRechner() {
   const config = results ? stufeConfigs[results.stufe] : stufeConfigs.aufbauphase;
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800">
       <div className="border-b border-slate-100 pb-5">
         <h3 className="text-lg font-display font-bold text-slate-900 tracking-tight">Umsatzverlust-Rechner für Software-Anbieter</h3>
         <p className="text-xs text-slate-500 mt-1 font-semibold leading-relaxed">
@@ -185,7 +185,7 @@ export default function SaasRevenueLeckRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
               <span>Tests (Trials) / Monat</span>
-              <span className="text-[#686DF4]">{inputs.trials}</span>
+              <span className="text-[#686CFA]">{inputs.trials}</span>
             </label>
             <input aria-label="Tests (Trials) / Monat"
               type="number"
@@ -193,7 +193,7 @@ export default function SaasRevenueLeckRechner() {
               max={2000}
               value={inputs.trials}
               onChange={(e) => handleInputChange('trials', parseInt(e.target.value) || 5)}
-              className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686DF4]"
+              className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Alle Testanmeldungen und Demo-Anfragen zusammen</p>
           </div>
@@ -201,7 +201,7 @@ export default function SaasRevenueLeckRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
               <span>Umwandlung Test → zahlend</span>
-              <span className="text-[#686DF4] font-mono">{inputs.conversion}%</span>
+              <span className="text-[#686CFA] font-mono">{inputs.conversion}%</span>
             </label>
             <input aria-label="Umwandlung Test → zahlend"
               type="range"
@@ -209,18 +209,18 @@ export default function SaasRevenueLeckRechner() {
               max={60}
               value={inputs.conversion}
               onChange={(e) => handleInputChange('conversion', parseInt(e.target.value) || 1)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium flex justify-between">
               <span>Richtwert (Annahme): 18–25%</span>
-              <span className="font-mono text-[#686DF4]/80">Annahme: 22%</span>
+              <span className="font-mono text-[#686CFA]/80">Annahme: 22%</span>
             </p>
           </div>
 
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
               <span>Ø MRR pro Kunde</span>
-              <span className="text-[#686DF4]">{formatCHF(inputs.mrr_pro_account)}</span>
+              <span className="text-[#686CFA]">{formatCHF(inputs.mrr_pro_account)}</span>
             </label>
             <input aria-label="Ø MRR pro Kunde"
               type="number"
@@ -229,7 +229,7 @@ export default function SaasRevenueLeckRechner() {
               step={10}
               value={inputs.mrr_pro_account}
               onChange={(e) => handleInputChange('mrr_pro_account', parseInt(e.target.value) || 50)}
-              className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686DF4]"
+              className="w-full bg-slate-50 border border-slate-250 p-2.5 rounded-xl text-xs font-semibold focus:outline-none focus:border-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Durchschnittlicher monatlicher Umsatz je zahlendem Kunden</p>
           </div>
@@ -237,7 +237,7 @@ export default function SaasRevenueLeckRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-850 uppercase tracking-widest flex justify-between">
               <span>Monatliche Kündigungsrate</span>
-              <span className="text-[#686DF4] font-mono">{inputs.churn}%</span>
+              <span className="text-[#686CFA] font-mono">{inputs.churn}%</span>
             </label>
             <input aria-label="Monatliche Kündigungsrate"
               type="range"
@@ -246,11 +246,11 @@ export default function SaasRevenueLeckRechner() {
               step={0.5}
               value={inputs.churn}
               onChange={(e) => handleInputChange('churn', parseFloat(e.target.value) || 0.5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium flex justify-between">
               <span>Richtwert (Annahme): 1–2%</span>
-              <span className="font-mono text-[#686DF4]/80">Annahme: 2%</span>
+              <span className="font-mono text-[#686CFA]/80">Annahme: 2%</span>
             </p>
           </div>
         </div>
@@ -282,12 +282,12 @@ export default function SaasRevenueLeckRechner() {
                   <h4 className="text-sm font-bold text-red-700 mt-1">{formatCHFKompakt(results.churn_leck_arr)} / Jahr</h4>
                 </div>
 
-                <div className="sm:col-span-2 bg-[#686DF4]/5 border border-[#CACCFB]/40 rounded-xl p-4 flex items-center justify-between">
+                <div className="sm:col-span-2 bg-[#686CFA]/5 border border-[#CBCBFC]/40 rounded-xl p-4 flex items-center justify-between">
                   <div>
-                    <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Mögliches Potenzial pro Jahr</span>
+                    <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-wider block">Möglicher Mehrumsatz pro Jahr</span>
                     <p className="text-[11px] text-slate-400 font-semibold mb-1">Annahme: 22% Umwandlung, 2% Kündigungen</p>
                   </div>
-                  <h4 className="text-xl font-black text-[#686DF4]">{formatCHFKompakt(results.arr_potenzial)} / Jahr</h4>
+                  <h4 className="text-xl font-black text-[#686CFA]">{formatCHFKompakt(results.arr_potenzial)} / Jahr</h4>
                 </div>
               </div>
 
@@ -300,7 +300,7 @@ export default function SaasRevenueLeckRechner() {
                     <span>{inputs.conversion}% <span className="text-slate-400 text-[11px]">(Richtwert 22%)</span></span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                    <div className="bg-[#686DF4] h-full" style={{ width: `${Math.min(100, (inputs.conversion / 22) * 100)}%` }} />
+                    <div className="bg-[#686CFA] h-full" style={{ width: `${Math.min(100, (inputs.conversion / 22) * 100)}%` }} />
                   </div>
                 </div>
                 <div className="space-y-1 text-xs">
@@ -321,7 +321,7 @@ export default function SaasRevenueLeckRechner() {
                 <p className="text-xs text-slate-650 leading-relaxed font-semibold">
                   {results.stufe === 'kritisch' && `Bei ${inputs.conversion}% Umwandlung und ${inputs.churn}% monatlicher Kündigungsrate liegt der jährliche Verlust grob geschätzt bei ${formatCHF(results.total_leck_arr)}. Das deutet auf ein grundsätzliches Problem in der Vermarktung hin. Am meisten bringen meist: Interessenten nach dem Test weiterbegleiten, Anfragen nach Abschlusschance bewerten und ein sauberes CRM.`}
                   {results.stufe === 'aufbauphase' && `Mit den angenommenen Richtwerten wären grob geschätzt ${formatCHFKompakt(results.arr_potenzial)} mehr Jahresumsatz möglich. Ansatzpunkte: E-Mail-Serien, die Testnutzer weiterbegleiten, und eine genaue Analyse der Kündigungen.`}
-                  {results.stufe === 'wachstumsmodus' && `Mit ${inputs.conversion}% Umwandlung und ${inputs.churn}% Kündigungsrate liegen Sie nahe an den angenommenen Richtwerten. Der nächste Schritt: mehr qualifizierte Testanmeldungen, etwa durch gezielte Ansprache von Wunschkunden.`}
+                  {results.stufe === 'wachstumsmodus' && `Mit ${inputs.conversion}% Umwandlung und ${inputs.churn}% Kündigungsrate liegen Sie nahe an den angenommenen Richtwerten. Als Nächstes lohnt es sich, mehr qualifizierte Testanmeldungen zu gewinnen, etwa indem Sie Wunschkunden direkt ansprechen.`}
                   {results.stufe === 'scale_ready' && `Ihre Werte liegen über den angenommenen Richtwerten. Damit kann es sich lohnen, mehr Budget in die Gewinnung neuer Interessenten zu stecken.`}
                 </p>
               </div>
@@ -356,7 +356,7 @@ export default function SaasRevenueLeckRechner() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               {config.btnText}
             </button>

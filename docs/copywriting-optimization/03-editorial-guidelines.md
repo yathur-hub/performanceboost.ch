@@ -1,6 +1,6 @@
 # 03 – Redaktionsleitfaden performanceboost
 
-Stand: 06.11.2026. Gilt für alle Texte auf performanceboost.ch: Website, Metadaten, Formulare und Ratgeber.
+Stand: 06.11.2026, nachgeführt 13.11.2026 (Positionierung agentic marketing, sales & processes). Gilt für alle Texte auf performanceboost.ch: Website, Metadaten, Formulare und Ratgeber.
 
 ## 1. Haltung und Tonalität
 
@@ -15,7 +15,10 @@ Wir schreiben wie ein erfahrener Schweizer Unternehmer, der sein Handwerk verste
 - **Sie-Form**, durchgehend und konsequent. Das ist eine Entscheidung des Inhabers, auch wenn ältere Briefings «Du» nennen.
 - Wir sprechen von «wir» (performanceboost) und «Sie» bzw. «Ihr Unternehmen».
 - Markenname immer klein und zusammen: **performanceboost**. Nie «Performance Boost», «PerformanceBoost» oder «Performance-Boost», auch nicht am Satzanfang, in Alt-Texten oder Metadaten.
-- Feste Markenbegriffe bleiben unverändert: «Business Performance Partner» und «We boost business performance.».
+- Feste Markenbegriffe bleiben unverändert: «AI-First-Scaling-Partner» (Kategorie, seit 14.11.2026, ersetzt «Business Performance Partner») und der Claim «Boost your performance through agentic marketing, sales & processes.» (seit 13.11.2026, ersetzt «We boost business performance.»). Der Claim bleibt englisch und wird mit `lang="en"` ausgezeichnet.
+- Die drei Kompetenzbereiche heissen in Navigation, Überschriften und Karten «Marketing», «Sales» und «Processes». Im Fliesstext dürfen «Vertrieb» und «Abläufe» bzw. «Prozesse» stehen.
+- Die vier Phasen tragen englische Framework-Namen (Architecture & Setup, Roll-out & Hypercare, Enablement, Iteration & Optimization) und immer einen deutschen Titel daneben. Sie sind ein Vorgehen, keine Leistung: nie als Angebot oder Menüpunkt formulieren.
+- Agentic AI ist Mittel, nicht Zweck. Immer sagen, was ein Agent konkret erledigt und wo ein Mensch freigibt. Keine Autonomie versprechen, die sich nicht verlässlich umsetzen lässt. «AI-powered», «revolutionär» und «Gamechanger» werden nicht verwendet.
 
 ## 3. Schweizer Rechtschreibung
 
@@ -67,7 +70,8 @@ Diese Wörter und Muster brauchen einen konkreten Grund, sonst fliegen sie raus:
 
 ## 9. CTAs
 
-- Kurz, aktiv und ehrlich: «Potenzial besprechen», «Erstgespräch vereinbaren», «Leistungen ansehen», «Mehr erfahren», «Kontakt aufnehmen».
+- Kurz, aktiv und ehrlich: «Gespräch anfragen», «Ausgangslage besprechen», «Erstgespräch vereinbaren», «Leistungen ansehen», «Mehr erfahren».
+- CTAs folgen der Absicht der Seite: Header und Sticky-CTA «Gespräch anfragen», Startseite «Ausgangslage besprechen» und «Erstgespräch vereinbaren», Bereichsseiten «Marketing besprechen», «Vertriebsprozess besprechen», «Abläufe besprechen», Agentic AI «KI-Einsatz prüfen lassen», /ansatz «Mit einer Performance-Analyse starten».
 - Der Button sagt, was danach passiert. Keine Fantasie-CTAs wie «Jetzt durchstarten!».
 - Einheitlich halten: Ein Seitentyp nutzt denselben Haupt-CTA.
 

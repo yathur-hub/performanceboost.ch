@@ -26,15 +26,20 @@ const ORGANIZATION = {
   url: SITE.baseUrl,
   logo: SITE.logoUrl,
   image: SITE.portraitUrl,
-  slogan: 'We boost business performance.',
+  slogan: 'Boost your performance through agentic marketing, sales & processes.',
   description:
-    'Business Performance Partner für Schweizer KMU. Strategie, Technologie und Umsetzung aus einer Hand: Wachstums- und Digitalstrategie, Automatisierung und KI, CRM und Revenue Operations, Performance Marketing und SEO.',
+    'AI-First-Scaling-Partner für Schweizer KMU. Wir konzipieren, bauen und optimieren Marketing, Sales und Geschäftsprozesse als ein System, in dem KI von Anfang an Teil der Architektur ist: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten mit klaren Freigaben.',
   knowsAbout: [
     'Wachstumsstrategie',
     'Digitalstrategie',
     'Prozessautomatisierung',
     'Systemintegration',
     'Künstliche Intelligenz',
+    'KI-Agenten',
+    'Agentic AI',
+    'Agentic Marketing',
+    'Agentic Sales',
+    'KI-Governance',
     'CRM',
     'Marketing Automation',
     'Revenue Operations',
@@ -106,9 +111,9 @@ export function buildMeta(route: ParsedRoute): Meta {
 
   switch (route.view) {
     case 'home': {
-      const title = 'Business Performance Partner für Schweizer KMU | performanceboost';
+      const title = 'performanceboost: Agentic Marketing, Sales & Processes für Schweizer KMU';
       const description =
-        'Wir verbessern Marketing, Vertrieb und Abläufe von Schweizer KMU und führen KI so ein, dass sie im Alltag wirkt. Strategie, KI und Umsetzung aus einer Hand.';
+        'Der AI-First-Scaling-Partner für Schweizer KMU. Wir bauen Marketing, Vertrieb und Abläufe als ein System, das auf KI aufbaut, und verbessern es im Betrieb.';
       return {
         ...base,
         title,
@@ -189,9 +194,9 @@ export function buildMeta(route: ParsedRoute): Meta {
           },
         };
       }
-      const title = 'Leistungen: Strategie, Technologie, Wachstum, Vertrieb | performanceboost';
+      const title = 'Leistungen: Agentic Marketing, Sales & Processes für KMU | performanceboost';
       const description =
-        'Alle Leistungen von performanceboost für Schweizer KMU im Überblick: Wachstumsstrategie, KI und Automatisierung, Kampagnen, CRM und Vertrieb.';
+        'Die Bausteine eines Systems, das auf KI aufbaut: Performance Marketing und SEO, CRM und Revenue Operations, Prozessautomatisierung, Systemintegration und KI-Agenten.';
       return { ...base, title, description, schema: webPage('CollectionPage', url, title, description) };
     }
     case 'loesungen': {
@@ -283,7 +288,7 @@ export function buildMeta(route: ParsedRoute): Meta {
     case 'about': {
       const title = 'Über uns: Yathur Nathan & performanceboost | performanceboost';
       const description =
-        'Yathur Nathan: Marketingfachmann mit eidg. Fachausweis und Experte für MarTech und KI in Marketing und Growth. Inhaber von performanceboost in Fläsch (GR).';
+        'performanceboost ist der AI-First-Scaling-Partner für Schweizer KMU. Inhaber Yathur Nathan baut Daten, Systeme und KI-Agenten selbst. Sitz in Fläsch (GR).';
       return {
         ...base,
         title,
@@ -383,6 +388,23 @@ export function buildMeta(route: ParsedRoute): Meta {
       const title = 'Werkzeuge: MarTech, Daten und KI im Einsatz | performanceboost';
       const description = 'Die Werkzeuge, mit denen Yathur Nathan arbeitet, von HubSpot, Google Ads und GA4 über Server-Side Tagging bis zu n8n, Windmill und KI-Agenten.';
       return { ...base, title, description, schema: webPage('WebPage', url, title, description) };
+    }
+    case 'ansatz': {
+      const title = 'Unser Ansatz: von der Analyse zur laufenden Optimierung | performanceboost';
+      const description =
+        'Architecture & Setup, Roll-out & Hypercare, Enablement und Iteration: so bauen wir Marketing, Vertrieb und Prozesse mit Automatisierung und KI-Agenten. Einstieg dort, wo Sie stehen.';
+      return {
+        ...base,
+        title,
+        description,
+        schema: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            { ...webPage('WebPage', url, title, description), '@context': undefined },
+            crumbList([HOME_CRUMB, { name: 'Ansatz', url }]),
+          ],
+        },
+      };
     }
     case 'labor': {
       const title = 'Labor: eigene Experimente mit KI-Agenten und Automation | performanceboost';

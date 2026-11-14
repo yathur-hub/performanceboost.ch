@@ -23,7 +23,7 @@ export default function NotFoundView({ onNavigate }: NotFoundViewProps) {
     <section className="pt-36 pb-24 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto text-center space-y-6">
         <Visual3D id="rocket-alt" priority sizes="260px" className="mx-auto h-32 sm:h-40 w-auto -rotate-6" />
-        <p className="text-xs font-mono font-bold tracking-wider text-[#686DF4]">FEHLER 404</p>
+        <p className="text-xs font-mono font-bold tracking-wider text-[#686CFA]">FEHLER 404</p>
         <h1 className="text-3xl sm:text-4xl font-display font-semibold tracking-tight text-slate-950">
           Diese Seite gibt es nicht (mehr).
         </h1>
@@ -36,7 +36,7 @@ export default function NotFoundView({ onNavigate }: NotFoundViewProps) {
               key={l.href}
               href={l.href}
               onClick={go(l.href)}
-              className="inline-flex items-center gap-1.5 min-h-11 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-900 hover:border-[#686DF4] hover:text-[#686DF4] transition-colors"
+              className="inline-flex items-center gap-1.5 min-h-11 px-4 rounded-xl border border-slate-200 bg-surface text-sm font-semibold text-slate-900 hover:border-[#686CFA] hover:text-[#686CFA] transition-colors"
             >
               {l.label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>

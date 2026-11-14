@@ -32,11 +32,10 @@ export default function MartechView({ slug }: { slug?: string }) {
 function HubPage() {
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="martech-hub">
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen' }]} />
           <div className="max-w-4xl space-y-6">
-            <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">MarTech · Daten · KI-Agenten</p>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">
               MarTech-Wissen aus der Praxis.
             </h1>
@@ -105,12 +104,9 @@ function TopicPage({ slug }: { slug: string }) {
   return (
     <div className="space-y-16 md:space-y-24 pb-24 text-slate-800" id={`martech-${slug}`}>
       <article>
-        <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+        <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
           <Container className="max-w-4xl space-y-7">
             <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen', href: '/martech' }, { label: topic.title }]} />
-            <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">
-              Schicht {layer.nr} · {layer.title}
-            </p>
             <h1 className="text-[2rem] sm:text-5xl font-display font-semibold tracking-tight text-slate-900 leading-[1.1] text-balance">{topic.title}</h1>
             <div className="flex flex-wrap items-center justify-between gap-4">
               <AuthorLine />
@@ -120,8 +116,8 @@ function TopicPage({ slug }: { slug: string }) {
         </section>
 
         <Container className="max-w-4xl space-y-12 pt-10">
-          <aside className="rounded-3xl border border-[#CACCFB]/70 bg-[#686DF4]/[0.05] p-7 sm:p-9 space-y-3">
-            <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#4f54d6]">Für die Geschäftsleitung</p>
+          <aside className="rounded-3xl border border-[#CBCBFC]/70 bg-[#686CFA]/[0.05] p-7 sm:p-9 space-y-3">
+            <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-accent-strong">Für die Geschäftsleitung</p>
             <p className="text-lg text-slate-900 leading-relaxed font-medium">{topic.management}</p>
           </aside>
 
@@ -136,7 +132,7 @@ function TopicPage({ slug }: { slug: string }) {
               <ul className="space-y-2">
                 {topic.sources.map((s) => (
                   <li key={s.url}>
-                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-start gap-2 text-sm text-[#4f54d6] hover:text-[#686DF4] break-words">
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-start gap-2 text-sm text-accent-strong hover:text-[#686CFA] break-words">
                       <ExternalLink className="w-3.5 h-3.5 mt-1 shrink-0" aria-hidden="true" />
                       {s.label}
                     </a>
@@ -151,10 +147,10 @@ function TopicPage({ slug }: { slug: string }) {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-slate-950 text-white p-7 sm:p-9 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="rounded-3xl bg-deep text-white p-7 sm:p-9 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div className="space-y-2">
               <p className="text-lg font-display font-semibold">Das Thema betrifft Ihren Stack?</p>
-              <Link href={topic.related.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#CACCFB] hover:text-white">
+              <Link href={topic.related.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#CBCBFC] hover:text-white">
                 Passende Leistung: {topic.related.label} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </div>
@@ -171,7 +167,7 @@ function TopicPage({ slug }: { slug: string }) {
               <TeaserCard key={t.slug} href={`/martech/${t.slug}`} title={t.title} desc={t.teaser} linkText="Thema lesen" />
             ))}
           </div>
-          <Link href="/martech" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686DF4] hover:text-[#4f54d6]">
+          <Link href="/martech" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] hover:text-accent-strong">
             Zur MarTech-Landkarte <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </Link>
         </Container>

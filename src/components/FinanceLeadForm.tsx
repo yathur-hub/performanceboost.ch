@@ -205,10 +205,10 @@ export default function FinanceLeadForm({ pageSlug, defaultSegment, toolContext 
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: DURATIONS.medium, ease: PREMIUM_EASE }}
-        className="rounded-2xl border border-[#686DF4]/25 bg-[#686DF4]/5 p-6 space-y-3"
+        className="rounded-2xl border border-[#686CFA]/25 bg-[#686CFA]/5 p-6 space-y-3"
         role="status"
       >
-        <CheckCircle2 className="w-6 h-6 text-[#686DF4]" aria-hidden="true" />
+        <CheckCircle2 className="w-6 h-6 text-[#686CFA]" aria-hidden="true" />
         <h3 className="text-lg font-display font-semibold text-slate-950">
           Danke{submittedName ? `, ${submittedName}` : ''}. Ihre Anfrage ist bei uns.
         </h3>
@@ -242,7 +242,7 @@ export default function FinanceLeadForm({ pageSlug, defaultSegment, toolContext 
         </p>
       </div>
       <div className="h-1 rounded-full bg-slate-100 overflow-hidden" aria-hidden="true">
-        <div className={`h-full bg-[#686DF4] transition-all duration-300 ${step === 1 ? 'w-1/2' : 'w-full'}`} />
+        <div className={`h-full bg-[#686CFA] transition-all duration-300 ${step === 1 ? 'w-1/2' : 'w-full'}`} />
       </div>
 
       {step === 1 && (
@@ -263,7 +263,7 @@ export default function FinanceLeadForm({ pageSlug, defaultSegment, toolContext 
           </Field>
           <button
             type="submit"
-            className="w-full min-h-12 bg-[#696EEF] text-white font-semibold text-base sm:text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors cursor-pointer flex items-center justify-center gap-2"
+            className="w-full min-h-12 bg-[#686CFA] text-white font-semibold text-base sm:text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 transition-colors cursor-pointer flex items-center justify-center gap-2"
           >
             <span>Weiter zu Schritt 2</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -276,7 +276,7 @@ export default function FinanceLeadForm({ pageSlug, defaultSegment, toolContext 
         <div className="space-y-4">
           {isLargeFirm(values) && (
             <div className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
-              <Info className="w-5 h-5 shrink-0 text-[#686DF4]" aria-hidden="true" />
+              <Info className="w-5 h-5 shrink-0 text-[#686CFA]" aria-hidden="true" />
               <p>
                 Unser Angebot ist auf Firmen bis 50 Mitarbeitende ausgerichtet. Schreiben Sie uns trotzdem, wenn es um ein
                 einzelnes Team oder einen Standort geht.
@@ -352,7 +352,7 @@ export default function FinanceLeadForm({ pageSlug, defaultSegment, toolContext 
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full min-h-12 bg-[#696EEF] text-white font-semibold text-base sm:text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-wait"
+              className="w-full min-h-12 bg-[#686CFA] text-white font-semibold text-base sm:text-sm py-3.5 px-6 rounded-xl hover:bg-[#5a5fe0] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/40 transition-colors cursor-pointer flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-wait"
             >
               {status === 'submitting' ? (
                 <>

@@ -7,7 +7,7 @@ import { MARTECH_LAYERS, WORK_TOOLS } from '../data/martechWissen';
 export default function ToolsView() {
   return (
     <div className="space-y-16 md:space-y-24 pb-24 text-slate-800" id="werkzeuge">
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'MarTech-Wissen', href: '/martech' }, { label: 'Werkzeuge' }]} />
           <div className="max-w-4xl space-y-6">
@@ -15,7 +15,7 @@ export default function ToolsView() {
               Werkzeuge, mit denen ich arbeite.
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
-              Keine Logo-Wand, sondern die Werkzeuge, die ich selbst einsetze, geordnet nach den Schichten der MarTech-Landkarte und mit einem Satz dazu, wofür.
+              Statt einer Logo-Wand finden Sie hier die Werkzeuge, die ich selbst einsetze, geordnet nach den Schichten der MarTech-Landkarte und mit einem Satz dazu, wofür.
               Welche Werkzeuge in Ihrem Unternehmen passen, entscheiden Ihre Abläufe, nicht diese Liste. Ich bin an keinen Anbieter gebunden.
             </p>
             <p className="text-sm text-slate-500">Yathur Nathan, Inhaber von performanceboost</p>
@@ -34,7 +34,7 @@ export default function ToolsView() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {g.items.map((it) => (
-                    <div key={it.name} className="bg-white border border-[#E0E0E0]/80 rounded-2xl p-6 sm:p-7 space-y-2">
+                    <div key={it.name} className="bg-surface border border-line/80 rounded-2xl p-6 sm:p-7 space-y-2">
                       <h3 className="text-base sm:text-lg font-display font-semibold text-slate-900">{it.name}</h3>
                       <p className="text-body-sm text-slate-600 leading-relaxed">{it.use}</p>
                     </div>

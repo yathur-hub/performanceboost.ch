@@ -138,15 +138,15 @@ export default function PlacementEffizienzRechner() {
     kritisch: {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
-      label: 'Grosses Potenzial',
-      desc: 'Nach Ihren Angaben gibt es deutliche Lücken bei der Vermittlungsquote oder bei der Gewinnung neuer Mandate. Oft helfen schon ein sauber geführtes CRM und konsequentes Nachfassen nach Erstgesprächen, um aus denselben Mandaten mehr Vermittlungen zu machen.',
-      rec: 'Nachfassen automatisieren, offene Mandate im CRM bereinigen und auf LinkedIn gezielt neue Auftraggeber ansprechen.',
+      label: 'Deutliche Lücken',
+      desc: 'Nach Ihren Angaben gibt es deutliche Lücken bei der Vermittlungsquote oder bei der Gewinnung neuer Mandate. Oft helfen schon ein sauber geführtes CRM und verlässliches Nachfassen nach Erstgesprächen, um aus denselben Mandaten mehr Vermittlungen zu machen.',
+      rec: 'Nachfassen automatisieren, offene Mandate im CRM bereinigen und auf LinkedIn neue Auftraggeber direkt ansprechen.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
-      desc: 'Sie haben eine funktionierende Basis, es bleibt aber spürbar Umsatz liegen. Häufig fehlt ein systematisches Nachfassen oder ein Kanal für neue Mandate, der über das persönliche Netzwerk hinausgeht.',
+      label: 'Spielraum vorhanden',
+      desc: 'Sie haben eine funktionierende Basis, es bleibt aber Umsatz liegen. Häufig fehlt ein systematisches Nachfassen oder ein Kanal für neue Mandate, der über das persönliche Netzwerk hinausgeht.',
       rec: 'Nach Offerten systematisch nachfassen, Inhalte aufbauen, die Anfragen bringen, und das CRM einheitlich nutzen.',
     },
     gut: {
@@ -158,19 +158,19 @@ export default function PlacementEffizienzRechner() {
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihre Vermittlungsquote und Mandatsgewinnung sind nach Ihren Angaben sehr gut. Weiteres Wachstum kommt vor allem über mehr qualifizierte Mandate, etwa aus neuen Branchen oder Regionen.',
-      rec: 'Neue Märkte erschliessen, Wunschkunden gezielt ansprechen und Inhalte breiter verteilen.',
+      rec: 'Neue Märkte erschliessen, Wunschkunden direkt ansprechen und Inhalte breiter verteilen.',
     },
   };
 
   const currentStufe = results ? stufeConfigs[results.score_stufe] : stufeConfigs.potenzial;
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Personalvermittlung</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Personalvermittlung</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Placement-Effizienz-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viel Umsatz zwischen Mandat und erfolgreicher Vermittlung verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -183,7 +183,7 @@ export default function PlacementEffizienzRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Aktive Mandate pro Monat</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.mandate}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.mandate}</span>
             </label>
             <div className="relative">
               <input aria-label="Aktive Mandate pro Monat"
@@ -202,7 +202,7 @@ export default function PlacementEffizienzRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Erfolgreiche Vermittlungen / Monat</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.placements}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.placements}</span>
             </label>
             <input aria-label="Erfolgreiche Vermittlungen / Monat"
               type="number"
@@ -222,7 +222,7 @@ export default function PlacementEffizienzRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Provision pro Vermittlung (CHF)</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.provision)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.provision)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Provision pro Vermittlung (CHF)"
@@ -241,7 +241,7 @@ export default function PlacementEffizienzRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Anteil Mandate aus digitalen Kanälen</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.marketing_anteil}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.marketing_anteil}%</span>
             </label>
             <input aria-label="Anteil Mandate aus digitalen Kanälen"
               type="range"
@@ -250,7 +250,7 @@ export default function PlacementEffizienzRechner() {
               step={5}
               value={inputs.marketing_anteil}
               onChange={(e) => handleInputChange('marketing_anteil', parseInt(e.target.value) || 0)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Richtwert (Annahme): 35% über Marketing und Direktansprache</p>
           </div>
@@ -296,7 +296,7 @@ export default function PlacementEffizienzRechner() {
                 <div className="sm:col-span-2 bg-green-50 border border-green-150 rounded-xl p-4 flex items-center justify-between">
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-mono font-bold text-green-700 block uppercase">Möglich bei 10 Prozentpunkten mehr Quote</span>
-                    <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung, z.B. durch konsequentes Nachfassen</p>
+                    <p className="text-[11px] text-slate-500 font-semibold">Grobe Schätzung, z.B. durch regelmässiges Nachfassen</p>
                   </div>
                   <h4 className="text-base font-black text-green-700">+{formatCHF(results.potenzial_jahr)} / J.</h4>
                 </div>
@@ -338,7 +338,7 @@ export default function PlacementEffizienzRechner() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

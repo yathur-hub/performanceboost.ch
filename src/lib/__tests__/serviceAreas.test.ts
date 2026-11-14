@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { SERVICE_AREAS, primaryAreaOf, relatedServices, PILLARS } from '../../data/serviceAreas';
+import { SERVICE_AREAS, AREAS, primaryAreaOf, relatedServices } from '../../data/serviceAreas';
+import { PHASES } from '../../data/approach';
+import { readFileSync } from 'node:fs';
 import { CHALLENGE_CARDS, CHALLENGE_PAGES } from '../../data/challenges';
 import { SERVICES } from '../../data/services';
 import { SKILLS } from '../../data/skills';
@@ -32,7 +34,26 @@ describe('Leistungsfelder', () => {
       expect(parseRoute(`/leistungen/${a.id}`)).toMatchObject({ view: 'leistungsfeld', slug: a.id });
       expect(paths.has(`/leistungen/${a.id}`)).toBe(true);
     }
-    for (const p of PILLARS) expect(paths.has(p.href), p.href).toBe(true);
+  });
+
+  it('genau drei Kompetenzbereiche, jede Leistung hat genau einen Hauptbereich', () => {
+    expect(AREAS.map((a) => a.id)).toEqual(['marketing', 'sales', 'prozesse']);
+    for (const slug of serviceSlugs) expect(AREAS.filter((a) => a.services.includes(slug)), slug).toHaveLength(1);
+    for (const a of AREAS) expect(a.phaseExamples, a.id).toHaveLength(PHASES.length);
+  });
+
+  it('alte Hub-URLs leiten per 301 weiter, Ziele sind indexierbar', () => {
+    const redirects = readFileSync('public/_redirects', 'utf8');
+    for (const [from, to] of [
+      ['/leistungen/wachstum-marketing', '/leistungen/marketing'],
+      ['/leistungen/sales-revenue-operations', '/leistungen/sales'],
+      ['/leistungen/technologie-automation', '/leistungen/prozesse'],
+      ['/leistungen/strategie', '/ansatz'],
+    ]) {
+      expect(redirects).toMatch(new RegExp(`^${from}\\s+${to}\\s+301$`, 'm'));
+      expect(paths.has(to), to).toBe(true);
+      expect(parseRoute(from).view, from).toBe('not_found');
+    }
   });
 
   it('passende Leistungen: 3 Einträge, existierend, nie die Seite selbst', () => {
@@ -71,5 +92,24 @@ describe('Themengrafiken', () => {
     for (const a of SERVICE_AREAS) expect(AREA_DIAGRAMS[a.id], a.id).toBeDefined();
     for (const c of Object.keys(CHALLENGE_PAGES)) expect(CHALLENGE_DIAGRAMS[c], c).toBeDefined();
     for (const sec of Object.values(SOLUTIONS_SECTORS)) expect(sectorDiagram(sec.slug, sec.title).spec.type).toBe('flow');
+  });
+});
+
+import { existsSync } from 'node:fs';
+import { VISUALS } from '../../data/visuals';
+
+describe('Eigene Visuals', () => {
+  it('jedes Visual hat beide Grössen und einen Alt-Text', () => {
+    for (const [id, v] of Object.entries(VISUALS)) {
+      for (const w of [480, 800]) expect(existsSync(`public/images/visuals/${id}-${w}.webp`), `${id}-${w}`).toBe(true);
+      expect(v.alt.length, id).toBeGreaterThan(40);
+    }
+  });
+
+  it('Bereiche verweisen nur auf vorhandene Visuals', () => {
+    for (const a of SERVICE_AREAS) {
+      if (a.insight) expect(VISUALS[a.insight.visual], a.id).toBeDefined();
+      if (a.agentic?.visual) expect(VISUALS[a.agentic.visual], a.id).toBeDefined();
+    }
   });
 });

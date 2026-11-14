@@ -52,7 +52,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
           <p className="text-slate-500">Der Beitrag «{activeItemSlug}» wurde nicht gefunden.</p>
           <button 
             onClick={() => onNavigate('/ressourcen')}
-            className="text-[#686DF4] font-bold hover:underline bg-transparent border-none cursor-pointer"
+            className="text-[#686CFA] font-bold hover:underline bg-transparent border-none cursor-pointer"
           >
             Zurück zur Übersicht
           </button>
@@ -102,7 +102,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             {item.content.split('\n\n').map((paragraph, index) => {
               if (paragraph.startsWith('## ')) {
                 return (
-                  <h2 key={index} className="text-xl font-display font-semibold text-slate-900 pt-6 border-l-4 border-[#686DF4] pl-4">
+                  <h2 key={index} className="text-xl font-display font-semibold text-slate-900 pt-6 border-l-4 border-[#686CFA] pl-4">
                     {paragraph.replace('## ', '')}
                   </h2>
                 );
@@ -131,13 +131,13 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
         </article>
 
           {item.tags.includes(MARTECH_TAG) && (
-            <aside className="mt-12 rounded-3xl border border-[#CACCFB]/60 bg-[#686DF4]/[0.04] p-7 sm:p-9 space-y-4">
+            <aside className="mt-12 rounded-3xl border border-[#CBCBFC]/60 bg-[#686CFA]/[0.04] p-7 sm:p-9 space-y-4">
               <h2 className="text-lg font-display font-semibold text-slate-900">Weiter zum Thema MarTech</h2>
               <ul className="space-y-2 text-sm font-semibold">
-                <li><Link href="/martech" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">MarTech-Wissen: Landkarte und Fachthemen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
-                <li><Link href="/ressourcen/martech" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Alle Beiträge zu MarTech für KMU <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
-                <li><Link href="/leistungen/martech-stack" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">MarTech-Stack aufräumen und verbinden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
-                <li><Link href="/skills" className="text-[#686DF4] hover:text-[#4f54d6] inline-flex items-center gap-1.5">Checkliste «Stack-Inventur» in der Skill-Factory <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/martech" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">MarTech-Wissen: Landkarte und Fachthemen <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/ressourcen/martech" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">Alle Beiträge zu MarTech für KMU <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/leistungen/martech-stack" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">MarTech-Stack aufräumen und verbinden <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
+                <li><Link href="/skills" className="text-[#686CFA] hover:text-accent-strong inline-flex items-center gap-1.5">Checkliste «Stack-Inventur» in der Skill-Factory <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></Link></li>
               </ul>
             </aside>
           )}
@@ -169,8 +169,8 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="resources-hub">
       
       {/* Header section with subtitle */}
-      <section className="relative bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
-        <div className="absolute top-0 right-10 w-96 h-96 bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative bg-surface pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
+        <div className="absolute top-0 right-10 w-96 h-96 bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10 animate-fadeIn">
           <Visual3D id="satellite" priority sizes="240px" className="mx-auto h-24 sm:h-32 w-auto animate-float" />
           <motion.h1 
@@ -196,12 +196,12 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
 
       {subSection === 'martech' && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/martech" className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-3xl border border-[#CACCFB]/70 bg-[#686DF4]/[0.05] p-7 sm:p-8 hover:border-[#686DF4]/60 transition-colors">
+          <Link href="/martech" className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-3xl border border-[#CBCBFC]/70 bg-[#686CFA]/[0.05] p-7 sm:p-8 hover:border-[#686CFA]/60 transition-colors">
             <span className="space-y-1">
               <span className="block text-lg font-display font-semibold text-slate-900">Tiefer einsteigen: MarTech-Wissen</span>
               <span className="block text-sm text-slate-600">Die MarTech-Landkarte und Fachthemen zu Server-Side Tagging, Integrationsarchitektur, MCP, Agenten und Lizenzen, mit Quellen.</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686DF4] shrink-0">Zur Landkarte <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA] shrink-0">Zur Landkarte <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
           </Link>
         </section>
       )}
@@ -214,7 +214,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <button
               onClick={() => onNavigate('/ressourcen')}
               className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                !subSection ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+                !subSection ? 'bg-[#686CFA] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
               Alle Artikel
@@ -222,7 +222,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <button
               onClick={() => onNavigate('/ressourcen/blog')}
               className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                subSection === 'blog' ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+                subSection === 'blog' ? 'bg-[#686CFA] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
               Blog
@@ -230,7 +230,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <button
               onClick={() => onNavigate('/ressourcen/guides')}
               className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                subSection === 'guides' ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+                subSection === 'guides' ? 'bg-[#686CFA] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
               Leitfäden
@@ -238,7 +238,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
             <button
               onClick={() => onNavigate('/ressourcen/martech')}
               className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                subSection === 'martech' ? 'bg-[#696EEF] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
+                subSection === 'martech' ? 'bg-[#686CFA] text-white border border-transparent' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 font-bold'
               }`}
             >
               MarTech für KMU
@@ -253,36 +253,31 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Stichwort suchen …"
-              className="w-full bg-[#f6f6f6]/60 border border-slate-205 rounded-xl py-3 pl-11 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686DF4] focus:bg-white transition-all font-semibold"
+              className="w-full bg-canvas/60 border border-slate-205 rounded-xl py-3 pl-11 pr-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#686CFA] focus:bg-surface transition-all font-semibold"
             />
           </div>
         </div>
 
         {/* Resources Grid layout */}
         {filteredItems.length > 0 ? (
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+          <div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filteredItems.map((item) => (
               <motion.div 
                 key={item.id}
-                variants={staggeredChildVariants}
                 whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.25)" }}
-                className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 group shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)]"
+                className="bg-surface border border-line/65 rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 group shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)]"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-[11px] font-mono font-bold bg-[#686DF4]/5 px-2.5 py-1 rounded-md text-[#686DF4] uppercase tracking-widest border border-[#CACCFB]/20">
+                    <span className="text-[11px] font-mono font-bold bg-[#686CFA]/5 px-2.5 py-1 rounded-md text-[#686CFA] uppercase tracking-widest border border-[#CBCBFC]/20">
                       {item.type === 'guide' ? 'Leitfaden' : 'Blog'}
                     </span>
                     <span className="text-[11px] text-slate-400 font-mono font-semibold">{item.readTime}</span>
                   </div>
 
-                  <h3 className="text-base font-display font-semibold text-slate-905 group-hover:text-[#686DF4] transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-base font-display font-semibold text-slate-905 group-hover:text-[#686CFA] transition-colors line-clamp-2 leading-snug">
                      {item.title}
                   </h3>
                   <p className="text-xs text-slate-500 leading-relaxed line-clamp-3 font-semibold">
@@ -292,7 +287,7 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                   {/* Category tags */}
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {item.tags.map((tag, idx) => (
-                      <span key={idx} className="text-[11px] font-bold bg-[#f6f6f6] border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
+                      <span key={idx} className="text-[11px] font-bold bg-canvas border border-slate-100 text-slate-400 px-2.5 py-0.5 rounded-md font-mono">
                         #{tag}
                       </span>
                     ))}
@@ -306,21 +301,21 @@ export default function ResourcesView({ subSection, onNavigate, activeItemSlug }
                   
                   <Link
                     href={`/ressourcen/${item.slug}`}
-                    className="text-xs text-[#686DF4] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686DF4]/85"
+                    className="text-xs text-[#686CFA] font-bold inline-flex items-center gap-1.5 cursor-pointer hover:text-[#686CFA]/85"
                   >
                     Beitrag lesen <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         ) : (
-          <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl text-slate-400 space-y-3 bg-[#f6f6f6]/50">
+          <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl text-slate-400 space-y-3 bg-canvas/50">
             <AlertCircle className="w-10 h-10 text-slate-300 mx-auto" />
             <p className="text-xs font-semibold text-slate-500">Keine Beiträge für Ihre Suche gefunden.</p>
             <button 
               onClick={() => { setSearchTerm(''); }}
-              className="text-xs text-[#686DF4] underline font-extrabold cursor-pointer bg-transparent border-none"
+              className="text-xs text-[#686CFA] underline font-extrabold cursor-pointer bg-transparent border-none"
             >
               Suche zurücksetzen
             </button>

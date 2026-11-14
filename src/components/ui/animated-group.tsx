@@ -14,15 +14,11 @@ interface AnimatedGroupProps {
 
 export function AnimatedGroup({ children, className = '' }: AnimatedGroupProps) {
   return (
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+    <div
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -35,7 +31,6 @@ interface AnimatedChildProps {
 export function AnimatedChild({ children, className = '' }: AnimatedChildProps) {
   return (
     <motion.div
-      variants={staggeredChildVariants}
       className={className}
     >
       {children}

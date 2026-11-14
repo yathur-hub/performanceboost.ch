@@ -117,14 +117,14 @@ export default function LeerstandskostenRechner() {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
       accent: 'border-red-500',
-      label: 'Grosses Potenzial',
-      desc: `Nach Ihren Angaben liessen sich über ${formatCHF(100000)} pro Jahr an Leerstandskosten einsparen. Eine systematische Vermarktung ist hier ein naheliegender Ansatzpunkt.`,
+      label: 'Hohe Leerstandskosten',
+      desc: `Nach Ihren Angaben liessen sich grob geschätzt über ${formatCHF(100000)} pro Jahr an Leerstandskosten einsparen. Eine systematische Vermarktung ist hier ein naheliegender Ansatzpunkt.`,
     },
     B: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
       accent: 'border-orange-500',
-      label: 'Potenzial vorhanden',
+      label: 'Spielraum vorhanden',
       desc: `Wenn Sie die Vermarktungsdauer um rund ${results?.diff_tage} Tage pro Objekt verkürzen, sind grob geschätzt ${results ? formatCHF(results.einsparung_jahr) : ''} pro Jahr Einsparung möglich.`,
     },
     C: {
@@ -132,12 +132,12 @@ export default function LeerstandskostenRechner() {
       badgeBg: 'bg-green-700 text-white',
       accent: 'border-green-500',
       label: 'Solide Basis',
-      desc: 'Sie sind schon gut aufgestellt. Konsequentes Nachfassen bei Interessenten und eine gute Vorauswahl können das restliche Potenzial noch heben.',
+      desc: 'Sie sind schon gut aufgestellt. Verlässliches Nachfassen bei Interessenten und eine gute Vorauswahl können die Leerstandszeit weiter verkürzen.',
     },
     D: {
-      color: 'text-[#686DF4] bg-[#686DF4]/5 border-[#686DF4]/10',
-      badgeBg: 'bg-[#686DF4] text-white',
-      accent: 'border-[#686DF4]',
+      color: 'text-[#686CFA] bg-[#686CFA]/5 border-[#686CFA]/10',
+      badgeBg: 'bg-[#686CFA] text-white',
+      accent: 'border-[#686CFA]',
       label: 'Bereits effizient',
       desc: 'Ihre Vermarktung läuft bereits zügig. Mehr bringt jetzt eher die Qualität der Anfragen als eine noch kürzere Dauer.',
     },
@@ -146,9 +146,9 @@ export default function LeerstandskostenRechner() {
   const currentStufe = results?.isValid ? stufeConfigs[results.stufe] : null;
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Immobilien</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Immobilien</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Leerstandskosten-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie in wenigen Sekunden, was Leerstand Ihr Immobilienportfolio kostet. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -161,7 +161,7 @@ export default function LeerstandskostenRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Objekte zur Vermarktung pro Jahr</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.objekte}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.objekte}</span>
             </label>
             <input aria-label="Objekte zur Vermarktung pro Jahr"
               type="number"
@@ -177,7 +177,7 @@ export default function LeerstandskostenRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Miete oder Provision pro Objekt</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.miete_pro_monat)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.miete_pro_monat)}</span>
             </label>
             <input aria-label="Ø Miete oder Provision pro Objekt"
               type="number"
@@ -194,7 +194,7 @@ export default function LeerstandskostenRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Aktuelle Vermarktungsdauer</span>
-              <span className="text-[#686DF4] font-semibold">{formatMonate(inputs.vermarktung_aktuell)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatMonate(inputs.vermarktung_aktuell)}</span>
             </label>
             <input aria-label="Aktuelle Vermarktungsdauer"
               type="range"
@@ -203,14 +203,14 @@ export default function LeerstandskostenRechner() {
               step={0.5}
               value={inputs.vermarktung_aktuell}
               onChange={(e) => handleInputChange('vermarktung_aktuell', parseFloat(e.target.value) || 1)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
           </div>
 
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ziel-Vermarktungsdauer</span>
-              <span className="text-[#686DF4] font-semibold">{formatMonate(inputs.vermarktung_ziel)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatMonate(inputs.vermarktung_ziel)}</span>
             </label>
             <input aria-label="Ziel-Vermarktungsdauer"
               type="range"
@@ -219,7 +219,7 @@ export default function LeerstandskostenRechner() {
               step={0.5}
               value={inputs.vermarktung_ziel}
               onChange={(e) => handleInputChange('vermarktung_ziel', parseFloat(e.target.value) || 0.5)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             {inputs.vermarktung_ziel >= inputs.vermarktung_aktuell && (
               <p className="text-red-500 text-[11px] font-bold mt-1">
@@ -257,7 +257,7 @@ export default function LeerstandskostenRechner() {
                 </div>
                 <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden relative">
                   <div 
-                    className="bg-[#686DF4] h-full transition-all duration-700" 
+                    className="bg-[#686CFA] h-full transition-all duration-700" 
                     style={{ width: `${results.score}%` }} 
                   />
                 </div>
@@ -265,7 +265,7 @@ export default function LeerstandskostenRechner() {
 
               {/* Benchmark marker */}
               <div className="text-[11px] text-slate-500 font-semibold flex items-center gap-1.5 pt-1">
-                <Clock className="w-4 h-4 text-[#686DF4]" />
+                <Clock className="w-4 h-4 text-[#686CFA]" />
                 <span>Angenommener Richtwert: 2.8 Monate. Ihr aktueller Schnitt liegt {results.abweichung_pct > 0 ? `${results.abweichung_pct}% über` : `${Math.abs(results.abweichung_pct)}% unter`} diesem Richtwert.</span>
               </div>
 
@@ -303,7 +303,7 @@ export default function LeerstandskostenRechner() {
               });
               window.dispatchEvent(new CustomEvent('open-contact-modal'));
             }}
-            className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors cursor-pointer border-0"
+            className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors cursor-pointer border-0"
           >
             Ergebnis besprechen
           </button>

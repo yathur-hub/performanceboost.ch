@@ -122,17 +122,17 @@ export default function ShopConversionRechner() {
 
   // Diagnose text based on CR
   const getDiagnoseText = (cr: number) => {
-    if (cr <= 0.005) return "Eine Conversion-Rate unter 0.5% deutet meist auf ein grundlegendes Problem hin, etwa beim Vertrauen, bei der mobilen Darstellung oder im Checkout. Hier liegt das grösste Potenzial.";
-    if (cr <= 0.01)  return "In diesem Bereich liegen die Ursachen oft in der Struktur: ein umständlicher Checkout, fehlende Vertrauenselemente oder eine zu komplexe Navigation. Das lässt sich gezielt verbessern.";
-    if (cr <= 0.015) return "Eine solide Basis. Verbesserungen sind jetzt vor allem im Checkout und mit gezielten A/B-Tests auf den meistbesuchten Produktseiten möglich.";
+    if (cr <= 0.005) return "Eine Conversion-Rate unter 0.5% deutet meist auf ein grundlegendes Problem hin, etwa beim Vertrauen, bei der mobilen Darstellung oder im Checkout. Hier lohnt es sich am meisten anzusetzen.";
+    if (cr <= 0.01)  return "In diesem Bereich liegen die Ursachen oft in der Struktur: ein umständlicher Checkout, fehlende Vertrauenselemente oder eine zu komplexe Navigation. Das lässt sich Schritt für Schritt verbessern.";
+    if (cr <= 0.015) return "Eine solide Basis. Verbesserungen sind jetzt vor allem im Checkout und mit A/B-Tests auf den meistbesuchten Produktseiten möglich.";
     if (cr <= 0.02)  return "Ein guter Stand. Als Nächstes lohnt sich der Blick auf die Produktseiten, Kundenbewertungen und die Ladezeit, besonders auf dem Smartphone.";
     return "Ihr Shop konvertiert bereits gut. Weitere Verbesserungen kommen eher aus sauber aufgesetzten Tests als aus offensichtlichen Korrekturen.";
   };
 
   return (
-    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="shop-conversion-rechner">
+    <div className="bg-surface border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="shop-conversion-rechner">
       <div className="mb-8 border-b border-slate-100 pb-6 flex items-start gap-4">
-        <div className="w-10 h-10 rounded-xl bg-[#686DF4]/10 text-[#686DF4] flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
           <ShoppingCart className="w-5 h-5" />
         </div>
         <div>
@@ -161,7 +161,7 @@ export default function ShopConversionRechner() {
                 placeholder="z. B. 8'000"
                 value={besucher}
                 onChange={(e) => handleInputChange('besucher', e.target.value)}
-                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
+                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 Besucher / Mt.
@@ -180,7 +180,7 @@ export default function ShopConversionRechner() {
             <select aria-label="Aktuelle Conversion-Rate"
               value={aktuellerCR}
               onChange={(e) => handleInputChange('cr', e.target.value)}
-              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 text-slate-705 transition-all font-semibold cursor-pointer"
+              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-905 text-slate-705 transition-all font-semibold cursor-pointer"
             >
               <option value="">Bitte wählen</option>
               <option value="0.003">Unter 0.5% (z. B. 0.3%)</option>
@@ -208,7 +208,7 @@ export default function ShopConversionRechner() {
                 placeholder="z. B. 85"
                 value={warenkorbwert}
                 onChange={(e) => handleInputChange('warenkorbwert', e.target.value)}
-                className={`w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold ${
+                className={`w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold ${
                   validationError ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-200'
                 }`}
               />
@@ -229,7 +229,7 @@ export default function ShopConversionRechner() {
         </div>
 
         {/* Right Column: Live Output Panel */}
-        <div className="lg:col-span-6 bg-[#f6f6f6]/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
+        <div className="lg:col-span-6 bg-canvas/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
           
           <AnimatePresence mode="wait">
             {!isFormValid ? (
@@ -264,7 +264,7 @@ export default function ShopConversionRechner() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-200/40 text-center space-y-1.5 self-center w-full">
-                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686CFA] bg-[#686CFA]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" /> Ihre Zahlen eingeben
                   </div>
                   <p className="text-[11px] text-slate-400/90 font-mono">
@@ -299,10 +299,10 @@ export default function ShopConversionRechner() {
                     Eine Conversion-Rate über 3% gilt in vielen Branchen als hoher Wert. Das spricht dafür, dass Vertrauensaufbau, Checkout und mobile Darstellung in Ihrem Shop bereits gut funktionieren.
                   </p>
 
-                  <div className="p-4 rounded-xl bg-[#686DF4]/5 border border-[#686DF4]/10 space-y-2">
+                  <div className="p-4 rounded-xl bg-[#686CFA]/5 border border-[#686CFA]/10 space-y-2">
                     <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block">Ihr nächster Ansatzpunkt:</span>
-                    <p className="text-xs text-[#686DF4] font-bold leading-relaxed">
-                      Mehr Potenzial liegt jetzt meist nicht in der Erstbestellung, sondern bei <strong>Wiederholungskäufen (Bestandskunden)</strong> und einem <strong>höheren Warenkorbwert</strong>.
+                    <p className="text-xs text-[#686CFA] font-bold leading-relaxed">
+                      Mehr Umsatz holen Sie jetzt meist über <strong>Wiederholungskäufe (Bestandskunden)</strong> und einen <strong>höheren Warenkorbwert</strong>, weniger über die Erstbestellung.
                     </p>
                     <p className="text-[11px] text-slate-500 italic leading-snug font-medium pt-1 border-t border-slate-100/55">
                       ↑ Bestehende Kunden zu einem weiteren Kauf zu bewegen, ist in dieser Phase oft einfacher, als die Conversion-Rate nochmals deutlich zu steigern.
@@ -325,9 +325,9 @@ export default function ShopConversionRechner() {
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full bg-[#696EEF] hover:bg-slate-950 text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full bg-[#686CFA] hover:bg-deep text-white font-bold text-xs py-4 px-4 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
-                    <span>Bestandskunden-Potenzial besprechen</span>
+                    <span>Bestandskunden besprechen</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </button>
                 </div>
@@ -347,7 +347,7 @@ export default function ShopConversionRechner() {
                     <div className="bg-red-50 border border-red-200/60 rounded-xl p-3 flex gap-2 items-start shrink-0">
                       <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                       <p className="text-[11px] text-red-700 leading-snug font-bold">
-                        Das ist mehr als eine kleine Optimierung. Eine geschätzte Differenz von {formatCHF(result.mehrUmsatz)} pro Monat zeigt, wie viel Potenzial in Ihrer Conversion-Rate liegen kann.
+                        Das ist mehr als eine kleine Optimierung. Eine geschätzte Differenz von {formatCHF(result.mehrUmsatz)} pro Monat zeigt, wie viel Umsatz an Ihrer Conversion-Rate hängen kann.
                       </p>
                     </div>
                   )}
@@ -406,7 +406,7 @@ export default function ShopConversionRechner() {
                       track("hero_tool_cta_click", { page: "ecommerce-performance", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#696EEF] hover:bg-slate-905 bg-[#696EEF] text-white hover:bg-slate-950 font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
+                    className="w-full text-center bg-[#686CFA] hover:bg-deep bg-[#686CFA] text-white hover:bg-deep font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all shadow-[var(--shadow-premium-md)] hover:-translate-y-0.5 cursor-pointer border-0"
                   >
                     <span>Ergebnis besprechen: kostenlos, 30 Min.</span>
                     <ArrowRight className="w-4 h-4 text-white" />
@@ -428,7 +428,7 @@ export default function ShopConversionRechner() {
           <LeadCaptureForm
             pageId="ecommerce-performance"
             secondaryCTAText="Ausführliche Einschätzung per E-Mail →"
-            danachText="Vielen Dank! Wir senden Ihnen in Kürze eine Einschätzung, wo Ihr Shop am schnellsten besser konvertieren kann."
+            danachText="Vielen Dank. Wir senden Ihnen in Kürze eine Einschätzung, wo Ihr Shop am schnellsten besser konvertieren kann."
             additionalFields={[
               {
                 type: 'select',

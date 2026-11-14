@@ -340,27 +340,27 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
   }, [recommendation?.slug]);
 
   const cardContent = (
-    <div className={`bg-white border border-[#E0E0E0] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[var(--shadow-premium-md)] max-w-4xl mx-auto relative overflow-hidden ${isModal ? 'w-full max-h-[88vh] overflow-y-auto' : ''}`}>
+    <div className={`bg-surface border border-line rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[var(--shadow-premium-md)] max-w-4xl mx-auto relative overflow-hidden ${isModal ? 'w-full max-h-[88vh] overflow-y-auto' : ''}`}>
       {/* Subtle Decorative Ambient Layer */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#686DF4]/4 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#CACCFB]/20 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#686CFA]/4 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#CBCBFC]/20 rounded-full blur-2xl pointer-events-none" />
 
       {/* CARD TOP BAR: Back Navigation + Progress Indicator + Modal Close */}
-      <div className="flex items-center justify-between gap-4 pb-6 mb-6 border-b border-[#E0E0E0]/80 relative z-10">
+      <div className="flex items-center justify-between gap-4 pb-6 mb-6 border-b border-line/80 relative z-10">
         <div className="flex items-center gap-3">
           {currentStep > 1 ? (
             <button
               type="button"
               onClick={handleBack}
               aria-label="Zurück zum vorherigen Schritt"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#686DF4] bg-slate-100/80 hover:bg-[#686DF4]/10 px-3 py-1.5 rounded-full transition-all cursor-pointer select-none"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#686CFA] bg-slate-100/80 hover:bg-[#686CFA]/10 px-3 py-1.5 rounded-full transition-all cursor-pointer select-none"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Zurück</span>
             </button>
           ) : (
             <div className="inline-flex items-center gap-2">
-              <Compass className="w-3.5 h-3.5 text-[#686DF4]" />
+              <Compass className="w-3.5 h-3.5 text-[#686CFA]" />
               <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500">
                 Wegweiser: Wo stehen Sie?
               </span>
@@ -381,9 +381,9 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                     key={stepNumber}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       isActive 
-                        ? 'w-7 bg-[#686DF4]' 
+                        ? 'w-7 bg-[#686CFA]' 
                         : isCompleted 
-                        ? 'w-5 bg-[#686DF4]/60' 
+                        ? 'w-5 bg-[#686CFA]/60' 
                         : 'w-3 bg-slate-200'
                     }`}
                   />
@@ -423,7 +423,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
               className="space-y-6"
             >
               <div className="space-y-1.5">
-                <span className="text-[11.5px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">
+                <span className="text-[11.5px] font-mono font-bold uppercase tracking-widest text-[#686CFA]">
                   Schritt 1 von 2
                 </span>
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 tracking-tight">
@@ -444,21 +444,21 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                       type="button"
                       onClick={() => handleSelectProblem(option.id)}
                       aria-pressed={isSelected}
-                      className={`group relative text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-start gap-4 outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] focus-visible:ring-offset-2 ${
+                      className={`group relative text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-start gap-4 outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] focus-visible:ring-offset-2 ${
                         isSelected
-                          ? 'border-[#686DF4] bg-[#686DF4]/6 shadow-sm ring-1 ring-[#686DF4]/30'
-                          : 'border-[#E0E0E0] bg-white hover:border-[#686DF4]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
+                          ? 'border-[#686CFA] bg-[#686CFA]/6 shadow-sm ring-1 ring-[#686CFA]/30'
+                          : 'border-line bg-surface hover:border-[#686CFA]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
                       }`}
                     >
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                         isSelected 
-                          ? 'bg-[#686DF4] text-white' 
-                          : 'bg-[#686DF4]/10 text-[#686DF4] group-hover:bg-[#686DF4] group-hover:text-white'
+                          ? 'bg-[#686CFA] text-white' 
+                          : 'bg-[#686CFA]/10 text-[#686CFA] group-hover:bg-[#686CFA] group-hover:text-white'
                       }`}>
                         <IconComponent className="w-5 h-5" />
                       </div>
                       <div className="space-y-1 pr-2">
-                        <p className="font-display font-bold text-slate-900 text-sm sm:text-base leading-snug group-hover:text-[#686DF4] transition-colors">
+                        <p className="font-display font-bold text-slate-900 text-sm sm:text-base leading-snug group-hover:text-[#686CFA] transition-colors">
                           {option.label}
                         </p>
                         <p className="text-slate-500 text-xs sm:text-body-sm leading-relaxed">
@@ -483,7 +483,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
               className="space-y-6"
             >
               <div className="space-y-1.5">
-                <span className="text-[11.5px] font-mono font-bold uppercase tracking-widest text-[#686DF4]">
+                <span className="text-[11.5px] font-mono font-bold uppercase tracking-widest text-[#686CFA]">
                   Schritt 2 von 2
                 </span>
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 tracking-tight">
@@ -503,18 +503,18 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                       type="button"
                       onClick={() => handleSelectSetup(option.id)}
                       aria-pressed={isSelected}
-                      className={`group w-full text-left p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-[#686DF4] focus-visible:ring-offset-2 ${
+                      className={`group w-full text-left p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-[#686CFA] focus-visible:ring-offset-2 ${
                         isSelected
-                          ? 'border-[#686DF4] bg-[#686DF4]/6 shadow-sm ring-1 ring-[#686DF4]/30'
-                          : 'border-[#E0E0E0] bg-white hover:border-[#686DF4]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
+                          ? 'border-[#686CFA] bg-[#686CFA]/6 shadow-sm ring-1 ring-[#686CFA]/30'
+                          : 'border-line bg-surface hover:border-[#686CFA]/70 hover:bg-slate-50/70 hover:-translate-y-0.5 hover:shadow-sm'
                       }`}
                     >
                       <div className="flex items-start gap-4">
-                        <span className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-[#686DF4]/10 text-slate-700 group-hover:text-[#686DF4] flex items-center justify-center font-mono font-bold text-xs shrink-0 transition-colors">
+                        <span className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-[#686CFA]/10 text-slate-700 group-hover:text-[#686CFA] flex items-center justify-center font-mono font-bold text-xs shrink-0 transition-colors">
                           0{idx + 1}
                         </span>
                         <div className="space-y-1">
-                          <p className="font-display font-bold text-slate-900 text-sm sm:text-base leading-snug group-hover:text-[#686DF4] transition-colors">
+                          <p className="font-display font-bold text-slate-900 text-sm sm:text-base leading-snug group-hover:text-[#686CFA] transition-colors">
                             {option.label}
                           </p>
                           <p className="text-slate-500 text-xs sm:text-body-sm leading-relaxed">
@@ -522,7 +522,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                           </p>
                         </div>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#686DF4] group-hover:translate-x-0.5 transition-all shrink-0" />
+                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#686CFA] group-hover:translate-x-0.5 transition-all shrink-0" />
                     </button>
                   );
                 })}
@@ -542,9 +542,9 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
             >
               {/* Result Header Badge */}
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#686DF4]/10 border border-[#686DF4]/25">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#686DF4]" />
-                  <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#686CFA]/10 border border-[#686CFA]/25">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#686CFA]" />
+                  <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">
                     Ihre Empfehlung
                   </span>
                 </div>
@@ -554,10 +554,10 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
               </div>
 
               {/* Main Recommendation Feature Box */}
-              <div className="bg-slate-50/80 border border-[#E0E0E0] rounded-2xl p-6 sm:p-7 space-y-4 relative overflow-hidden">
+              <div className="bg-slate-50/80 border border-line rounded-2xl p-6 sm:p-7 space-y-4 relative overflow-hidden">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-xl bg-[#686DF4] text-white flex items-center justify-center shrink-0 shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-[#686CFA] text-white flex items-center justify-center shrink-0 shadow-sm">
                       {recommendation.icon ? (
                         <recommendation.icon className="w-6 h-6" />
                       ) : (
@@ -576,7 +576,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 </div>
 
                 {/* Tailored Reasoning */}
-                <div className="space-y-2 pt-2 border-t border-[#E0E0E0]/70">
+                <div className="space-y-2 pt-2 border-t border-line/70">
                   <p className="text-slate-800 text-body font-medium leading-relaxed">
                     {recommendation.reasoning}
                   </p>
@@ -591,7 +591,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 <button
                   type="button"
                   onClick={() => { trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'mehr_erfahren', result_label: recommendation.slug }); navigateTo(`/leistungen/${recommendation.slug}`) }}
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-display font-bold px-6 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-display font-bold px-6 py-4 rounded-full shadow-[var(--shadow-premium-md)] hover:shadow-[var(--shadow-premium-lg)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
                 >
                   <span>Mehr zu {recommendation.title.split('&')[0].trim()} erfahren</span>
                   <ArrowRight className="w-4 h-4" />
@@ -600,7 +600,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 <button
                   type="button"
                   onClick={() => { trackEvent('tool_cta_click', { tool_name: TOOL_NAME, cta_label: 'gespraech_buchen', result_label: recommendation.slug }); navigateTo('/kontakt') }}
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-semibold px-6 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-surface hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-350 font-display font-semibold px-6 py-4 rounded-full shadow-xs hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer text-center"
                 >
                   <span>Erstgespräch vereinbaren</span>
                 </button>
@@ -611,7 +611,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-[#686DF4] transition-colors cursor-pointer select-none"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-[#686CFA] transition-colors cursor-pointer select-none"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>Neu starten</span>
@@ -638,7 +638,7 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
           onClick={onClose}
-          className="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-40 cursor-pointer" 
+          className="fixed inset-0 bg-deep/60 backdrop-blur-md z-40 cursor-pointer" 
           id="revenue-navigator-backdrop"
         />
 
@@ -662,9 +662,9 @@ export const RevenueNavigator: React.FC<RevenueNavigatorProps> = ({ onNavigate, 
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12" id="revenue-navigator">
       {/* SECTION HEADER */}
       <div className="text-center space-y-3 max-w-3xl mx-auto mb-10 md:mb-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#686DF4]/8 border border-[#686DF4]/20">
-          <Sparkles className="w-3.5 h-3.5 text-[#686DF4]" />
-          <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#686CFA]/8 border border-[#686CFA]/20">
+          <Sparkles className="w-3.5 h-3.5 text-[#686CFA]" />
+          <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">
             Rund 1 Minute
           </span>
         </div>

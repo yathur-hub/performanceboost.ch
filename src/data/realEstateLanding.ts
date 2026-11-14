@@ -105,7 +105,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         title: 'Ihr Team spricht mit den passenden Interessenten.',
-        desc: 'Die Projektseite fragt vorab Einzugstermin, Haushaltsgrösse und Budget ab. Wer nicht passt, erhält eine freundliche Antwort, ohne dass jemand telefonieren muss.',
+        desc: 'Die Projektseite fragt vorab Einzugstermin, Haushaltsgrösse und Budget ab. Feste Regeln prüfen jede Anfrage auf Vollständigkeit und Passung zum Wohnungsangebot. Passende Interessenten erhalten freie Besichtigungstermine zur Auswahl, die anderen eine freundliche Antwort, beides mit Texten, die Sie einmal als Vorlage freigeben. Wer die Wohnung bekommt, entscheiden Sie.',
       },
       {
         title: 'Sie erreichen Menschen, die noch nicht auf den Portalen suchen.',
@@ -124,7 +124,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         title: 'Projektseite und Messung aufbauen',
-        desc: 'Eine eigene Seite pro Projekt mit Grundrissen, Bildern und einem kurzen Anfrageformular. Die Messung richten wir so ein, dass jede Anfrage ihrer Quelle zugeordnet ist.',
+        desc: 'Eine eigene Seite pro Projekt mit Grundrissen, Bildern und einem kurzen Anfrageformular. Anfragen laufen geprüft und mit ihrer Quelle in Ihr Bewerbungstool oder CRM.',
       },
       {
         title: 'Kampagnen starten',
@@ -148,7 +148,9 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
         title: 'Interessenten führen',
         points: [
           'Sofortige Bestätigung an Interessenten',
-          'Benachrichtigung an Ihr Team',
+          'Automatische Prüfung auf Vollständigkeit und Passung',
+          'Besichtigungstermine zur Auswahl für passende Interessenten',
+          'Benachrichtigung an Ihr Team mit kurzer Zusammenfassung',
           'Erinnerung vor der Besichtigung',
           'Übergabe an Ihr Bewerbungstool oder CRM',
         ],
@@ -159,7 +161,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
     ],
     scopeNote:
-      'Das Bewerbungsdossier, die Bonitätsprüfung und den Mietvertrag übernehmen Sie oder Ihre Verwaltung wie bisher. Wir sorgen dafür, dass genug passende Interessenten dort ankommen.',
+      'Das Bewerbungsdossier, die Bonitätsprüfung und den Mietvertrag übernehmen Sie oder Ihre Verwaltung wie bisher. Wir sorgen dafür, dass genug passende Interessenten dort ankommen. Die Prüfung nach festen Regeln sortiert nach Kriterien vor, die Sie festlegen. Wer den Mietvertrag erhält, entscheiden Sie.',
     example: {
       heading: 'Was ein Monat Leerstand kostet',
       text: "Ein Beispiel: Ein Projekt mit 40 Wohnungen und einer durchschnittlichen Miete von CHF 1'800 verliert pro Monat Leerstand über alle Wohnungen CHF 72'000 Mietertrag. Wird das Projekt einen Monat früher voll vermietet, bleibt dieser Betrag beim Eigentümer.",
@@ -173,8 +175,8 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
         desc: 'Reichweite und Klickraten zeigen wir auch, entscheidend sind für uns Besichtigungen und unterschriebene Verträge.',
       },
       {
-        title: 'Strategie und Umsetzung aus einer Hand.',
-        desc: 'Projektseite, Kampagnen, Messung und die Anbindung an Ihre Abläufe kommen von uns. Es gibt keine Lücke zwischen Agentur, Webdesigner und Technik.',
+        title: 'Wir bauen Seite, Kampagnen und Messung.',
+        desc: 'Dazu kommt der Anfrageweg mit automatischer Vorprüfung bis in Ihre Abläufe. Sie müssen nicht zwischen mehreren Dienstleistern koordinieren, damit alles zusammenpasst.',
       },
       { title: 'Persönlich und aus der Region.', desc: SHARED_OWNER },
     ],
@@ -202,6 +204,10 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       {
         q: 'Arbeitet das mit unserem Bewerbungstool oder unserer Verwaltung zusammen?',
         a: 'In vielen Fällen ja. Ob ein bestehendes Tool wie emonitor oder Flatfox direkt angebunden werden kann oder ob wir Anfragen per E-Mail übergeben, prüfen wir im Erstgespräch.',
+      },
+      {
+        q: 'Entscheidet ein System, wer eine Wohnung bekommt?',
+        a: 'Nein. Feste Regeln prüfen, ob eine Anfrage vollständig ist und zu Wohnungsgrösse, Einzugstermin und Budget passt. Ein Sprachmodell fasst Freitext-Angaben für Ihr Team zusammen. Nach welchen Kriterien Besichtigungstermine angeboten werden, legen Sie fest, und wer den Vertrag erhält, entscheiden Sie oder Ihre Verwaltung.',
       },
       {
         q: 'Wir sind eine Verwaltung, kein Entwickler. Passt das trotzdem?',
@@ -281,7 +287,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         title: 'Kein Kontakt geht verloren.',
-        desc: 'Wer heute noch nicht verkaufen will, erhält in grösseren Abständen nützliche Informationen von Ihnen, etwa zur Marktentwicklung in seiner Gemeinde. Wenn der Zeitpunkt kommt, sind Sie die erste Adresse.',
+        desc: 'Wer heute noch nicht verkaufen will, erhält in grösseren Abständen nützliche Informationen von Ihnen, etwa zur Marktentwicklung in seiner Gemeinde. Die Entwürfe bereiten wir vor, versendet wird nur, was Sie freigeben. Wenn der Zeitpunkt kommt, kennt der Eigentümer Sie bereits.',
       },
       {
         title: 'Sie wissen, was ein Mandat kostet.',
@@ -292,7 +298,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
     approach: [
       {
         title: 'Region und Eigentümer klären',
-        desc: 'Welche Gemeinden, welche Objekte, welche Eigentümer: Ferienwohnung, Erbschaft, Pensionierung, Umzug ins Unterland. Wir legen fest, wen Sie erreichen wollen.',
+        desc: 'Wir legen fest, welche Gemeinden und Objekte im Fokus stehen und welche Eigentümer Sie erreichen wollen, etwa bei Ferienwohnung, Erbschaft, Pensionierung oder Umzug ins Unterland.',
       },
       {
         title: 'Anfrageseiten aufbauen',
@@ -300,7 +306,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         title: 'Kampagnen und Begleitung starten',
-        desc: 'Anzeigen auf Google für Suchanfragen von Eigentümern und auf Facebook und Instagram für Eigentümer in und ausserhalb der Region. Wer noch nicht bereit ist, wird in Ihrem CRM weiterbegleitet.',
+        desc: 'Anzeigen auf Google für Suchanfragen von Eigentümern und auf Facebook und Instagram für Eigentümer in und ausserhalb der Region. Jede Eigentümeranfrage landet mit Objekt, Gemeinde und Zeithorizont zusammengefasst in Ihrem CRM. Wer noch nicht bereit ist, wird dort weiterbegleitet.',
       },
       {
         title: 'Messen und nachsteuern',
@@ -322,7 +328,13 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
       {
         title: 'Begleitung im CRM',
-        points: ['Marktinformationen für Eigentümer, die noch warten', 'Erinnerungen für Ihr Team', 'Anbindung an Ihre Maklersoftware, wo möglich'],
+        points: [
+          'Zusammenfassung jeder Eigentümeranfrage',
+          'Kurze Vorbereitung vor dem Rückruf mit Marktdaten zur Gemeinde',
+          'Entwürfe für Marktinformationen, die Sie vor dem Versand freigeben',
+          'Erinnerungen für Ihr Team',
+          'Anbindung an Ihre Maklersoftware, wo möglich',
+        ],
       },
       {
         title: 'Messung',
@@ -330,7 +342,7 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       },
     ],
     scopeNote:
-      'Bewertung, Verkaufsgespräch und Vermarktung des Objekts bleiben bei Ihnen. Wir sorgen dafür, dass mehr passende Eigentümer den Weg zu Ihnen finden.',
+      'Bewertung, Verkaufsgespräch und Vermarktung des Objekts bleiben bei Ihnen. Wir sorgen dafür, dass mehr passende Eigentümer den Weg zu Ihnen finden. Was das System vorbereitet, sind Vorschläge. Die Entscheidung bleibt bei Ihnen.',
     example: {
       heading: 'Was ein zusätzliches Mandat wert ist',
       text: "Ein Beispiel: Bei einer Ferienwohnung mit einem Verkaufspreis von CHF 2 Mio. und einer Provision von 2.5 % beträgt Ihr Honorar CHF 50'000. Schon ein zusätzliches Mandat pro Jahr macht für ein kleineres Maklerbüro einen grossen Teil des Jahresumsatzes aus.",
@@ -373,6 +385,10 @@ export const REAL_ESTATE_PAGES: Record<RealEstateSlug, RealEstatePage> = {
       {
         q: 'Wir sind Lizenznehmer einer grossen Marke. Geht das auch?',
         a: 'Das hängt davon ab, was Ihre Marke an eigenem Marketing erlaubt. Klären Sie das bitte vor dem Gespräch mit Ihrer Zentrale.',
+      },
+      {
+        q: 'Schreibt eine KI in unserem Namen an Eigentümer?',
+        a: 'Nicht ohne Ihre Freigabe. Ein Sprachmodell fasst Anfragen zusammen und entwirft Nachfass-Nachrichten, versendet wird erst, wenn Sie oder Ihr Team den Entwurf geprüft haben. Feste Abläufe wie die Eingangsbestätigung und Erinnerungen laufen automatisch, mit Texten, die Sie einmal als Vorlage freigeben.',
       },
       {
         q: 'Lässt sich unsere Maklersoftware anbinden?',

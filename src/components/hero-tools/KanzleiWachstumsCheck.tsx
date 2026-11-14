@@ -133,11 +133,11 @@ export default function KanzleiWachstumsCheck() {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-100 text-green-800 border-green-250',
       label: 'Ausgewogen, aber ausbaufähig',
-      desc: 'Ihre Mandate kommen bereits aus mehreren Quellen, und der digitale Kanal trägt etwas bei. Hier ist noch Potenzial vorhanden: Wenn Sie den digitalen Kanal systematisch ausbauen, kann sein Anteil weiter wachsen.',
+      desc: 'Ihre Mandate kommen bereits aus mehreren Quellen, und der digitale Kanal trägt etwas bei. Hier gibt es noch Spielraum. Wenn Sie den digitalen Kanal systematisch ausbauen, kann sein Anteil weiter wachsen.',
     },
     diversifiziert: {
-      color: 'text-indigo-700 bg-[#686DF4]/5 border-[#686DF4]/10',
-      badgeBg: 'bg-[#686DF4]/10 text-[#686DF4] border-[#686DF4]/20',
+      color: 'text-indigo-700 bg-[#686CFA]/5 border-[#686CFA]/10',
+      badgeBg: 'bg-[#686CFA]/10 text-[#686CFA] border-[#686CFA]/20',
       label: 'Breit abgestützt',
       desc: 'Ihre neuen Mandate kommen aus mehreren Kanälen. Der nächste Schritt liegt in der Qualität: mehr Anfragen aus den bestehenden Website-Besuchern, LinkedIn für anspruchsvolle Mandate und zusätzliche Leistungen für bestehende Mandanten.',
     },
@@ -159,9 +159,9 @@ export default function KanzleiWachstumsCheck() {
   const currentStufe = stufenConfigs[results.stufe];
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Treuhand & Beratung</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Treuhand & Beratung</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Kanzlei-Wachstums-Check</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie stark Ihre Kanzlei von Empfehlungen abhängt und wie viele Mandate digital dazukommen müssten. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -174,7 +174,7 @@ export default function KanzleiWachstumsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Neue Mandate / 12 Mt.</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.neue_mandate}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.neue_mandate}</span>
             </label>
             <input aria-label="Neue Mandate / 12 Mt."
               type="number"
@@ -190,7 +190,7 @@ export default function KanzleiWachstumsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Empfehlungsanteil</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.empfehlungsanteil}%</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.empfehlungsanteil}%</span>
             </label>
             <input aria-label="Empfehlungsanteil"
               type="range"
@@ -199,7 +199,7 @@ export default function KanzleiWachstumsCheck() {
               step={5}
               value={inputs.empfehlungsanteil}
               onChange={(e) => handleInputChange('empfehlungsanteil', parseInt(e.target.value) || 10)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Anteil Mandate über Empfehlungen und Kontakte</p>
           </div>
@@ -207,7 +207,7 @@ export default function KanzleiWachstumsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Jahresumsatz pro Mandat</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.ø_mandat)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.ø_mandat)}</span>
             </label>
             <input aria-label="Ø Jahresumsatz pro Mandat"
               type="number"
@@ -224,7 +224,7 @@ export default function KanzleiWachstumsCheck() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Wachstumsziel (Mandate)</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.ziel_mandate}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.ziel_mandate}</span>
             </label>
             <input aria-label="Wachstumsziel (Mandate)"
               type="number"
@@ -244,12 +244,12 @@ export default function KanzleiWachstumsCheck() {
 
         {/* Right Outcomes */}
         <div className="md:col-span-7 space-y-6">
-          <div className="p-5 bg-slate-950 text-white rounded-2xl flex flex-col justify-between space-y-4">
+          <div className="p-5 bg-deep text-white rounded-2xl flex flex-col justify-between space-y-4">
             <div className="flex justify-between items-center pb-2 border-b border-slate-850">
               <span className="text-[11px] font-mono font-bold tracking-widest text-slate-400 uppercase">
                 Unabhängigkeit von Empfehlungen
               </span>
-              <span className={`px-2 py-0.5 rounded text-[11px] font-mono font-black ${results.stufe === 'klumpenrisiko' ? 'bg-red-800 text-red-100' : 'bg-[#686DF4] text-white'}`}>
+              <span className={`px-2 py-0.5 rounded text-[11px] font-mono font-black ${results.stufe === 'klumpenrisiko' ? 'bg-red-800 text-red-100' : 'bg-[#686CFA] text-white'}`}>
                 {currentStufe.label}
               </span>
             </div>
@@ -275,8 +275,8 @@ export default function KanzleiWachstumsCheck() {
             </div>
 
             <div className="bg-slate-50/50 border border-slate-200 rounded-xl p-4 space-y-1">
-              <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-wider block">Nötiger digitaler Beitrag</span>
-              <h4 className="text-lg font-bold text-[#686DF4]">{results.notwendiger_digitaler_beitrag_n} Mandat(e)</h4>
+              <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-wider block">Nötiger digitaler Beitrag</span>
+              <h4 className="text-lg font-bold text-[#686CFA]">{results.notwendiger_digitaler_beitrag_n} Mandat(e)</h4>
               <p className="text-[11px] text-slate-450 font-semibold leading-normal pt-1">
                 entspricht rund {formatCHFCompact(results.notwendiger_digitaler_beitrag_chf)} Honorar
               </p>
@@ -302,7 +302,7 @@ export default function KanzleiWachstumsCheck() {
               });
               window.dispatchEvent(new CustomEvent('open-contact-modal'));
             }}
-            className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors cursor-pointer border-0"
+            className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto transition-colors cursor-pointer border-0"
           >
             Ergebnis besprechen
           </button>

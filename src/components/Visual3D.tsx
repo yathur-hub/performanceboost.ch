@@ -48,18 +48,10 @@ export type VisualId = keyof typeof VISUALS;
 
 /** Leitobjekt pro Leistungsfeld (Startseite, Hub-Hero). */
 export const VISUAL_BY_AREA: Record<string, VisualId> = {
+  marketing: 'turbine',
+  sales: 'speedometer',
+  prozesse: 'gears',
   'ki-im-unternehmen': 'energy-core',
-  strategie: 'chess-knight',
-  'technologie-automation': 'gears',
-  'wachstum-marketing': 'turbine',
-  'sales-revenue-operations': 'speedometer',
-};
-
-/** Säulen Strategie · Technologie · Wachstum (Startseite). */
-export const VISUAL_BY_PILLAR: Record<string, VisualId> = {
-  strategy: 'compass',
-  technology: 'tech-cube',
-  growth: 'steps',
 };
 
 /** Eigenes Objekt pro Leistung (Lead-CTA am Seitenende). */

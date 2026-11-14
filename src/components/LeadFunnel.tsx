@@ -28,7 +28,7 @@ import Link from './Link';
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 const inputClass =
-  'w-full bg-white border border-slate-300 focus:border-[#696EEF] focus:ring-3 focus:ring-[#696EEF]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
+  'w-full bg-surface border border-slate-300 focus:border-[#686CFA] focus:ring-3 focus:ring-[#686CFA]/15 rounded-xl py-3 px-3.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 transition-colors outline-none aria-[invalid=true]:border-red-400';
 
 export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadFlow; formLocation: string; onDone?: () => void }) {
   const total = flow.questions.length + 1;
@@ -129,7 +129,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
   if (status === 'success') {
     return (
       <div role="status" className="py-6 text-center space-y-4">
-        <span className="mx-auto w-14 h-14 rounded-full bg-[#696EEF]/10 text-[#696EEF] flex items-center justify-center">
+        <span className="mx-auto w-14 h-14 rounded-full bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center">
           <CheckCircle2 className="w-7 h-7" aria-hidden="true" />
         </span>
         <h3 className="text-xl sm:text-2xl font-display font-semibold text-slate-950">Danke, Ihre Anfrage ist angekommen.</h3>
@@ -138,7 +138,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           Terminvorschlag für das kostenlose Erstgespräch.
         </p>
         {onDone && (
-          <button type="button" onClick={onDone} className="text-sm font-semibold text-[#4f54d6] hover:text-[#696EEF]">
+          <button type="button" onClick={onDone} className="text-sm font-semibold text-accent-strong hover:text-[#686CFA]">
             Schliessen
           </button>
         )}
@@ -164,7 +164,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           )}
         </div>
         <div className="h-1.5 rounded-full bg-slate-100 overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
-          <div className="h-full bg-[#696EEF] transition-all duration-500" style={{ width: `${Math.max(6, progress)}%` }} />
+          <div className="h-full bg-[#686CFA] transition-all duration-500" style={{ width: `${Math.max(6, progress)}%` }} />
         </div>
       </div>
 
@@ -192,14 +192,14 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
                   onClick={() => choose(opt)}
                   className={`group flex items-center justify-between gap-3 text-left rounded-2xl border px-4 py-3.5 text-sm font-semibold transition-all min-h-[56px] ${
                     selected
-                      ? 'border-[#696EEF] bg-[#696EEF]/8 text-slate-950 shadow-[0_0_0_1px_#696EEF]'
-                      : 'border-slate-200 bg-white text-slate-800 hover:border-[#696EEF]/50 hover:bg-[#696EEF]/[0.03]'
+                      ? 'border-[#686CFA] bg-[#686CFA]/8 text-slate-950 shadow-[0_0_0_1px_#686CFA]'
+                      : 'border-slate-200 bg-surface text-slate-800 hover:border-[#686CFA]/50 hover:bg-[#686CFA]/[0.03]'
                   }`}
                 >
                   <span>{opt}</span>
                   <span
                     className={`w-5 h-5 shrink-0 flex items-center justify-center border transition-colors ${question.multi ? 'rounded-md' : 'rounded-full'} ${
-                      selected ? 'bg-[#696EEF] border-[#696EEF] text-white' : 'border-slate-300 text-transparent'
+                      selected ? 'bg-[#686CFA] border-[#686CFA] text-white' : 'border-slate-300 text-transparent'
                     }`}
                     aria-hidden="true"
                   >
@@ -214,7 +214,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
               type="button"
               disabled={!answers[question.id]?.length}
               onClick={() => completeQuestion(question.id)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-7 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] disabled:bg-slate-200 disabled:text-slate-400 text-white font-display font-semibold transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 px-7 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] disabled:bg-slate-200 disabled:text-slate-400 text-white font-display font-semibold transition-colors"
             >
               Weiter <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </button>
@@ -228,10 +228,10 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           </div>
 
           <fieldset>
-            <legend className="block text-sm font-semibold text-slate-800 mb-1.5">Anrede <span className="text-[#696EEF]">*</span></legend>
+            <legend className="block text-sm font-semibold text-slate-800 mb-1.5">Anrede <span className="text-[#686CFA]">*</span></legend>
             <div className="flex gap-2.5" role="radiogroup">
               {(['Frau', 'Herr'] as const).map((s) => (
-                <label key={s} className={`flex-1 sm:flex-none cursor-pointer rounded-xl border px-5 py-2.5 text-sm font-semibold text-center transition-colors ${values.salutation === s ? 'border-[#696EEF] bg-[#696EEF]/8 text-slate-950' : 'border-slate-300 text-slate-700 hover:border-[#696EEF]/50'}`}>
+                <label key={s} className={`flex-1 sm:flex-none cursor-pointer rounded-xl border px-5 py-2.5 text-sm font-semibold text-center transition-colors ${values.salutation === s ? 'border-[#686CFA] bg-[#686CFA]/8 text-slate-950' : 'border-slate-300 text-slate-700 hover:border-[#686CFA]/50'}`}>
                   <input type="radio" name="salutation" value={s} checked={values.salutation === s} onChange={() => set('salutation', s)} className="sr-only" {...aria('salutation')} />
                   {s}
                 </label>
@@ -241,25 +241,25 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           </fieldset>
 
           <div>
-            <label htmlFor="lf-company" className="block text-sm font-semibold text-slate-800 mb-1.5">Unternehmen <span className="text-[#696EEF]">*</span></label>
+            <label htmlFor="lf-company" className="block text-sm font-semibold text-slate-800 mb-1.5">Unternehmen <span className="text-[#686CFA]">*</span></label>
             <input id="lf-company" name="company" autoComplete="organization" className={inputClass} value={values.company} onChange={(e) => set('company', e.target.value)} {...aria('company')} />
             {err('company')}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="lf-firstName" className="block text-sm font-semibold text-slate-800 mb-1.5">Vorname <span className="text-[#696EEF]">*</span></label>
+              <label htmlFor="lf-firstName" className="block text-sm font-semibold text-slate-800 mb-1.5">Vorname <span className="text-[#686CFA]">*</span></label>
               <input id="lf-firstName" name="firstName" autoComplete="given-name" className={inputClass} value={values.firstName} onChange={(e) => set('firstName', e.target.value)} {...aria('firstName')} />
               {err('firstName')}
             </div>
             <div>
-              <label htmlFor="lf-lastName" className="block text-sm font-semibold text-slate-800 mb-1.5">Nachname <span className="text-[#696EEF]">*</span></label>
+              <label htmlFor="lf-lastName" className="block text-sm font-semibold text-slate-800 mb-1.5">Nachname <span className="text-[#686CFA]">*</span></label>
               <input id="lf-lastName" name="lastName" autoComplete="family-name" className={inputClass} value={values.lastName} onChange={(e) => set('lastName', e.target.value)} {...aria('lastName')} />
               {err('lastName')}
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="lf-email" className="block text-sm font-semibold text-slate-800 mb-1.5">E-Mail-Adresse <span className="text-[#696EEF]">*</span></label>
+              <label htmlFor="lf-email" className="block text-sm font-semibold text-slate-800 mb-1.5">E-Mail-Adresse <span className="text-[#686CFA]">*</span></label>
               <input id="lf-email" name="email" type="email" inputMode="email" autoComplete="email" className={inputClass} value={values.email} onChange={(e) => set('email', e.target.value)} {...aria('email')} />
               {err('email')}
             </div>
@@ -278,15 +278,15 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
 
           <div className="space-y-3 pt-1">
             <label className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed cursor-pointer">
-              <input type="checkbox" name="privacyConsent" checked={values.privacyConsent} onChange={(e) => set('privacyConsent', e.target.checked)} className="mt-0.5 w-4.5 h-4.5 shrink-0 accent-[#696EEF]" {...aria('privacyConsent')} />
+              <input type="checkbox" name="privacyConsent" checked={values.privacyConsent} onChange={(e) => set('privacyConsent', e.target.checked)} className="mt-0.5 w-4.5 h-4.5 shrink-0 accent-[#686CFA]" {...aria('privacyConsent')} />
               <span>
                 Ich bin damit einverstanden, dass performanceboost meine Angaben zur Bearbeitung meiner Anfrage speichert und verwendet. Details in der{' '}
-                <Link href="/datenschutz" target="_blank" className="underline underline-offset-2 hover:text-[#4f54d6]">Datenschutzerklärung</Link>. <span className="text-[#696EEF]">*</span>
+                <Link href="/datenschutz" target="_blank" className="underline underline-offset-2 hover:text-accent-strong">Datenschutzerklärung</Link>. <span className="text-[#686CFA]">*</span>
               </span>
             </label>
             {err('privacyConsent')}
             <label className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed cursor-pointer">
-              <input type="checkbox" name="marketingConsent" checked={values.marketingConsent} onChange={(e) => set('marketingConsent', e.target.checked)} className="mt-0.5 w-4.5 h-4.5 shrink-0 accent-[#696EEF]" />
+              <input type="checkbox" name="marketingConsent" checked={values.marketingConsent} onChange={(e) => set('marketingConsent', e.target.checked)} className="mt-0.5 w-4.5 h-4.5 shrink-0 accent-[#686CFA]" />
               <span>{MARKETING_CONSENT_TEXT} <span className="text-slate-400">(optional)</span></span>
             </label>
           </div>
@@ -301,7 +301,7 @@ export default function LeadFunnel({ flow, formLocation, onDone }: { flow: LeadF
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full inline-flex items-center justify-center gap-2 min-h-12 px-7 rounded-full bg-[#696EEF] hover:bg-[#5a5fe0] disabled:opacity-70 text-white font-display font-semibold transition-colors whitespace-nowrap"
+            className="w-full inline-flex items-center justify-center gap-2 min-h-12 px-7 rounded-full bg-[#686CFA] hover:bg-[#5a5fe0] disabled:opacity-70 text-white font-display font-semibold transition-colors whitespace-nowrap"
           >
             {status === 'submitting' ? 'Wird gesendet …' : 'Anfrage senden'} {status !== 'submitting' && <ArrowRight className="w-4 h-4" aria-hidden="true" />}
           </button>

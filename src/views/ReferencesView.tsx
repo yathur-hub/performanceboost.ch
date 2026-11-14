@@ -20,7 +20,7 @@ const FOCUS: Record<string, string[]> = {
 export default function ReferencesView() {
   return (
     <div className="space-y-16 md:space-y-28 pb-24 text-slate-800" id="references-view">
-      <section className="pt-36 md:pt-40 pb-4 bg-white/60">
+      <section className="pt-36 md:pt-40 pb-4 bg-surface/60">
         <Container className="space-y-7">
           <Breadcrumb items={[{ label: 'Startseite', href: '/' }, { label: 'Referenzen' }]} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -29,8 +29,8 @@ export default function ReferencesView() {
               Was unsere Kundinnen und Kunden sagen.
             </h1>
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              Hier lesen Sie, was Unternehmen über die Zusammenarbeit mit performanceboost sagen, ob es um Kampagnen, einen
-              Onlineshop oder ein eigenes ERP-System ging. Alle Aussagen sind unverändert und namentlich gezeichnet.
+              Hier lesen Sie, was Unternehmen über die Zusammenarbeit mit performanceboost sagen, ob wir mit ihnen Kampagnen, einen
+              Onlineshop oder ein eigenes ERP-System aufgebaut haben. Alle Aussagen sind unverändert und namentlich gezeichnet.
             </p>
           </div>
           <div className="hidden lg:flex lg:col-span-4 justify-center rocket-in">
@@ -44,7 +44,7 @@ export default function ReferencesView() {
         <Container>
           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {TESTIMONIALS_DATA.map((t) => (
-              <li key={t.id} className="bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-9 flex flex-col gap-6 shadow-[var(--shadow-premium-sm)]">
+              <li key={t.id} className="bg-surface border border-line/80 rounded-3xl p-7 sm:p-9 flex flex-col gap-6 shadow-[var(--shadow-premium-sm)]">
                 <div className="flex items-center gap-4">
                   {t.imageUrl ? (
                     <img
@@ -58,7 +58,7 @@ export default function ReferencesView() {
                       className="w-14 h-14 rounded-full object-cover border border-slate-200"
                     />
                   ) : (
-                    <span className="w-14 h-14 rounded-full bg-[#686DF4]/10 text-[#4f54d6] font-display font-bold flex items-center justify-center" aria-hidden="true">
+                    <span className="w-14 h-14 rounded-full bg-[#686CFA]/10 text-accent-strong font-display font-bold flex items-center justify-center" aria-hidden="true">
                       {t.name.split(' ').map((p) => p[0]).join('').slice(0, 2)}
                     </span>
                   )}
@@ -85,10 +85,10 @@ export default function ReferencesView() {
 
       <section>
         <Container className="space-y-8">
-          <SectionHeading title="Woran wir mit unseren Kunden arbeiten" />
+          <SectionHeading title="Was wir mit unseren Kunden aufbauen" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICE_AREAS.map((a) => (
-              <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.shortLabel} desc={a.teaser} />
+              <TeaserCard key={a.id} href={`/leistungen/${a.id}`} title={a.label} desc={a.teaser} />
             ))}
           </div>
         </Container>

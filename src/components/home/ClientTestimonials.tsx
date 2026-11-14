@@ -27,7 +27,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Mission13',
     quote: 'Die Zusammenarbeit mit Yathur gibt uns genau die Unterstützung, die wir für den Aufbau unserer digitalen Kundengewinnung brauchen. Er verbindet Performance Marketing, Technologie und Webentwicklung mit einem klaren Verständnis für unser Geschäftsmodell und denkt dabei immer über einzelne Kampagnen hinaus. Gemeinsam bauen wir Strukturen und Prozesse auf, mit denen wir qualifizierte Anfragen planbarer generieren und unsere Marketingaktivitäten laufend weiterentwickeln können, ohne als Geschäftsführer selbst unnötigen mehr Aufwand zu betreiben.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Simon%20Karrica.png',
-    highlight: 'Planbare Kundengewinnung & Entlastung der Geschäftsleitung'
+    highlight: 'Digitale Kundengewinnung, weniger Aufwand für die Geschäftsführung'
   },
   {
     id: 'janis-bloechliger',
@@ -36,7 +36,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Marigin - Zentrum für Tiermedizin',
     quote: 'Yathur unterstützt uns dabei, unseren E-Commerce gezielt weiterzuentwickeln und Marketingmassnahmen konsequent auf Wachstum auszurichten. Besonders wertvoll ist für uns die Kombination aus Performance Marketing, strategischem Sparring und der Entwicklung passender Ad-Visuals. Dadurch entstehen Kampagnen, bei denen Strategie, Umsetzung und kreative Assets aus einer Hand zusammenspielen. Die Zusammenarbeit ist unkompliziert, schnell und immer lösungsorientiert.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Janis%20Blo%CC%88chliger.jpg',
-    highlight: 'Strategie, Ad-Visuals & Performance aus einer Hand'
+    highlight: 'E-Commerce, Kampagnen und Ad-Visuals'
   },
   {
     id: 'tiago-garcia',
@@ -45,7 +45,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'CUIRA Partners',
     quote: 'Mit Yathur haben wir einen Partner, der Marketing nicht isoliert betrachtet, sondern unsere gesamte digitale Kundengewinnung im Blick hat. Von der Strategie über Performance Marketing und Leadgenerierung bis hin zu den technischen Grundlagen bringt er die verschiedenen Disziplinen sinnvoll zusammen. Besonders schätzen wir, dass er unsere Ziele versteht, proaktiv mitdenkt und daraus konkrete Massnahmen ableitet, die uns als Unternehmen weiterbringen.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Tiago%20Garcia.png',
-    highlight: 'Ganzheitliche Leadgenerierung & proaktive Weiterentwicklung'
+    highlight: 'Strategie, Leadgenerierung und technische Grundlagen'
   },
   {
     id: 'kathirsan-kathirgamanathan',
@@ -54,7 +54,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Kathiago',
     quote: 'Yathur unterstützt uns sehr umfassend, von Performance Marketing, MarTech und Webentwicklung bis hin zur Produktion von Videos und Fotos. Dadurch greifen Strategie, Kampagnen, Technologie und Content sauber ineinander, anstatt von verschiedenen Stellen unabhängig voneinander umgesetzt zu werden. Die Zusammenarbeit ist unkompliziert, lösungsorientiert und darauf ausgerichtet, unsere Sichtbarkeit zu erhöhen und kontinuierlich neue Kundenanfragen zu generieren.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Kathirsan%20Kathirgamanathan.png',
-    highlight: 'MarTech, Content & Webentwicklung nahtlos vereint'
+    highlight: 'MarTech, Webentwicklung und Content'
   },
   {
     id: 'sirac-akyol',
@@ -63,7 +63,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'EVIM',
     quote: 'Yathur unterstützt uns dabei, unser Online-Geschäft strukturiert weiterzuentwickeln und Performance Marketing gezielt für weiteres Wachstum einzusetzen. Besonders schätzen wir, dass er nicht nur einzelne Kampagnen betrachtet, sondern auch den Shop, die Customer Journey und die Vermarktung als Ganzes im Blick behält. Die Zusammenarbeit ist unkompliziert, verlässlich und geprägt von konkreten Empfehlungen, die wir direkt umsetzen können.',
     imageUrl: null,
-    highlight: 'Shop-Optimierung & gezieltes Performance Marketing'
+    highlight: 'Onlineshop, Customer Journey und Performance Marketing'
   },
   {
     id: 'ibrahim-akyol',
@@ -72,7 +72,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Carpethouse',
     quote: 'Mit Yathur entwickeln wir die Performance unseres Onlineshops kontinuierlich weiter. Er verbindet Performance Marketing mit einer sehr datengetriebenen Herangehensweise und hilft uns dadurch, schneller zu erkennen, wo Potenzial liegt und welche Massnahmen wirklich relevant sind. Besonders wertvoll ist für uns, dass er nicht nur Zahlen analysiert, sondern daraus konkrete nächste Schritte für Marketing und Shop ableitet. Die Zusammenarbeit ist schnell, pragmatisch und auf nachhaltiges Wachstum ausgerichtet.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Ibrahim%20Akyol%20.jpeg',
-    highlight: 'Datengetriebene Shop-Skalierung & pragmatische Umsetzung'
+    highlight: 'Shop-Performance mit klaren nächsten Schritten'
   },
   {
     id: 'carla-carcaiso',
@@ -81,7 +81,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'CarlaCares',
     quote: 'Die Zusammenarbeit mit Yathur hat unsere internen Abläufe und unseren digitalen Auftritt grundlegend weitergebracht. Er hat für CarlaCares nicht nur die komplette Webseite konzipiert, gestaltet und technisch umgesetzt, sondern auch ein auf unsere Bedürfnisse zugeschnittenes ERP-System entwickelt. Besonders wertvoll ist für uns, dass er unsere Anforderungen schnell versteht und daraus Lösungen entwickelt, die im Alltag wirklich funktionieren. So haben wir heute professionelle digitale Strukturen, die unsere Prozesse vereinfachen und uns eine solide Basis für die weitere Entwicklung von CarlaCares geben.',
     imageUrl: 'https://raw.githubusercontent.com/yathur-hub/performanceboost-brandassets/main/Kundenreferenzen/Portrait%20Carla%20Carcaiso.jpeg',
-    highlight: 'Webauftritt & massgeschneiderte Prozess- und ERP-Lösungen'
+    highlight: 'Website und eigenes ERP-System'
   }
 ];
 
@@ -168,11 +168,7 @@ export function ClientTestimonials() {
     .slice(0, 2);
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: PREMIUM_EASE }}
+    <section
       className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10"
       id="kundenreferenzen"
     >
@@ -181,10 +177,10 @@ export function ClientTestimonials() {
         <div className="space-y-2">
           <h2 className="text-2xl sm:text-3.5xl font-display font-bold text-slate-900 tracking-tight flex items-center gap-4">
             <Visual3D id="trophy" sizes="80px" className="hidden sm:block h-20 w-auto shrink-0" />
-            <span>Was Schweizer Gründer &amp; Führungskräfte sagen</span>
+            <span>Stimmen aus der Zusammenarbeit</span>
           </h2>
           <p className="text-slate-500 text-body-sm leading-relaxed font-medium max-w-2xl">
-            Kundinnen und Kunden erzählen in eigenen Worten, wie die Zusammenarbeit abläuft und was sie ihnen gebracht hat.
+            Unternehmerinnen und Unternehmer beschreiben in eigenen Worten, wie die Zusammenarbeit abläuft und was sie ihnen gebracht hat. Die Zitate sind unverändert.
           </p>
         </div>
 
@@ -198,7 +194,7 @@ export function ClientTestimonials() {
             type="button"
             onClick={() => paginate(-1)}
             aria-label="Vorherige Kundenstimme"
-            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686DF4] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
+            className="w-11 h-11 rounded-full bg-surface hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -207,7 +203,7 @@ export function ClientTestimonials() {
             type="button"
             onClick={() => paginate(1)}
             aria-label="Nächste Kundenstimme"
-            className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686DF4] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
+            className="w-11 h-11 rounded-full bg-surface hover:bg-slate-50 border border-slate-200 hover:border-slate-350 text-slate-700 hover:text-[#686CFA] flex items-center justify-center shadow-xs hover:shadow-sm transition-all cursor-pointer active:scale-95"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -228,10 +224,10 @@ export function ClientTestimonials() {
             initial="enter"
             animate="center"
             exit="exit"
-            className="w-full bg-white border border-[#E0E0E0]/80 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-[var(--shadow-premium-md)] relative overflow-hidden"
+            className="w-full bg-surface border border-line/80 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-[var(--shadow-premium-md)] relative overflow-hidden"
           >
             {/* Subtle decorative background glow */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#686DF4]/3 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#686CFA]/3 rounded-full blur-2xl pointer-events-none" />
 
             {/* 30-second progress bar line at the top */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100 overflow-hidden">
@@ -243,22 +239,22 @@ export function ClientTestimonials() {
                   duration: AUTOPLAY_INTERVAL_MS / 1000,
                   ease: 'linear'
                 }}
-                className="h-full bg-[#686DF4]/40"
+                className="h-full bg-[#686CFA]/40"
               />
             </div>
 
             <div className="relative z-10 space-y-8 pt-1">
               {/* Header inside Card: Quote mark, Company & Highlight */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
-                <div className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#686DF4] font-display">
-                  <div className="w-8 h-8 rounded-xl bg-[#686DF4]/8 border border-[#686DF4]/20 flex items-center justify-center text-[#686DF4] shrink-0">
-                    <Quote className="w-4 h-4 fill-[#686DF4]/20" />
+                <div className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#686CFA] font-display">
+                  <div className="w-8 h-8 rounded-xl bg-[#686CFA]/8 border border-[#686CFA]/20 flex items-center justify-center text-[#686CFA] shrink-0">
+                    <Quote className="w-4 h-4 fill-[#686CFA]/20" />
                   </div>
                   <span className="text-slate-900 font-semibold">{current.company}</span>
                 </div>
 
                 {current.highlight && (
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-[#686DF4]/6 text-[#686DF4] border border-[#686DF4]/20">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-[#686CFA]/6 text-[#686CFA] border border-[#686CFA]/20">
                     <Sparkles className="w-3 h-3" />
                     <span>{current.highlight}</span>
                   </span>
@@ -284,7 +280,7 @@ export function ClientTestimonials() {
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className="w-full h-full bg-[#686DF4]/10 text-[#686DF4] font-bold font-mono text-sm flex items-center justify-center">
+                      <div className="w-full h-full bg-[#686CFA]/10 text-[#686CFA] font-bold font-mono text-sm flex items-center justify-center">
                         {initials}
                       </div>
                     )}
@@ -298,23 +294,23 @@ export function ClientTestimonials() {
                     <p className="text-xs sm:text-sm text-slate-500 font-medium">
                       {current.role}
                     </p>
-                    <p className="text-xs font-semibold text-[#686DF4]">
+                    <p className="text-xs font-semibold text-[#686CFA]">
                       {current.company}
                     </p>
                   </div>
                 </div>
 
                 {/* Micro pagination dots for direct navigation */}
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 [@media(pointer:coarse)]:gap-3.5">
                   {TESTIMONIALS_DATA.map((_, dotIdx) => (
                     <button
                       key={dotIdx}
                       type="button"
                       onClick={() => goToIndex(dotIdx)}
                       aria-label={`Gehe zu Kundenstimme ${dotIdx + 1}`}
-                      className={`h-2 rounded-full transition-all cursor-pointer ${
+                      className={`relative h-2 rounded-full transition-all cursor-pointer before:absolute before:content-[''] before:-inset-y-[18px] before:-inset-x-[7px] ${
                         dotIdx === currentIndex
-                          ? 'w-6 bg-[#696EEF]'
+                          ? 'w-6 bg-[#686CFA]'
                           : 'w-2 bg-slate-200 hover:bg-slate-350'
                       }`}
                     />
@@ -325,6 +321,6 @@ export function ClientTestimonials() {
           </motion.div>
         </AnimatePresence>
       </div>
-    </motion.section>
+    </section>
   );
 }

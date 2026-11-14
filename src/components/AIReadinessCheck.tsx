@@ -56,7 +56,7 @@ const useCaseStore: Record<string, UseCaseData> = {
   personalization_scale: {
     id: "personalization_scale",
     titel: "Personalisierte Ansprache für viele Kontakte",
-    warum: "Die Grundlagen sind vorhanden. Jetzt können Sie Kundengruppen gezielt ansprechen, was von Hand kaum zu bewältigen wäre.",
+    warum: "Die Grundlagen sind vorhanden. Jetzt können Sie einzelne Kundengruppen passend ansprechen, was von Hand kaum zu bewältigen wäre.",
     was: "Personalisierte E-Mail-Strecken, Website-Inhalte, die sich an den Besucher anpassen, und massgeschneiderte B2B-Angebote. Basierend auf aktuellem Verhalten, Unternehmensdaten und bisherigen Kontakten.",
     impact: "Relevantere Kommunikation statt Einheitsbotschaften für alle.",
     zeitrahmen: "Richtwert: erste Abläufe nach ca. 3–4 Wochen"
@@ -99,7 +99,7 @@ export default function AIReadinessCheck() {
         key: "beginner",
         label: "Einstieg",
         color: "#F4A261",
-        desc: "Sie müssen nicht perfekt vorbereitet sein, um mit KI anzufangen. Sinnvoll sind erste Schritte, die schnell einen spürbaren Nutzen bringen und keine grosse technische Infrastruktur brauchen."
+        desc: "Sie müssen nicht perfekt vorbereitet sein, um mit KI anzufangen. Sinnvoll sind erste Schritte, die schnell einen sichtbaren Nutzen bringen und keine grosse technische Infrastruktur brauchen."
       };
     } else if (score <= 4) {
       return {
@@ -218,19 +218,19 @@ export default function AIReadinessCheck() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="ai-readiness-check">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="ai-readiness-check">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <Bot className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <Bot className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             KI-Check: Wo lohnt sich KI bei Ihnen?
           </h3>
         </div>
         <button
           onClick={handleReset}
-          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-[#f6f6f6]/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
+          className="text-[11px] text-slate-400 hover:text-slate-900 flex items-center gap-1 border border-slate-200/50 bg-canvas/60 rounded-lg px-2.5 py-1.5 font-bold uppercase font-mono cursor-pointer transition-colors"
         >
           <RefreshCw className="w-3 h-3" /> Zurücksetzen
         </button>
@@ -260,7 +260,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f1', lvl.val)}
                 className={`text-xs font-bold px-3 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f1 === lvl.val
-                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
+                    ? 'bg-[#686CFA] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -288,7 +288,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f2', lvl.val)}
                 className={`text-xs font-bold px-3 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f2 === lvl.val
-                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
+                    ? 'bg-[#686CFA] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -315,7 +315,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f3', lvl.val)}
                 className={`text-xs font-bold px-3 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f3 === lvl.val
-                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
+                    ? 'bg-[#686CFA] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -323,7 +323,7 @@ export default function AIReadinessCheck() {
               </button>
             ))}
           </div>
-          <p className="text-[11px] text-slate-400 font-medium font-sans">Viel Handarbeit heisst meist: viel Potenzial für Automatisierung.</p>
+          <p className="text-[11px] text-slate-400 font-medium font-sans">Viel Handarbeit heisst meist, dass sich Automatisierung lohnt.</p>
         </div>
 
         {/* F4 */}
@@ -343,7 +343,7 @@ export default function AIReadinessCheck() {
                 onClick={() => handleFieldSet('f4', lvl.val)}
                 className={`text-xs font-bold px-2 py-2.5 rounded-xl border transition-all cursor-pointer ${
                   f4 === lvl.val
-                    ? 'bg-[#696EEF] text-white border-transparent shadow-xs'
+                    ? 'bg-[#686CFA] text-white border-transparent shadow-xs'
                     : 'bg-transparent text-slate-400 border-slate-200/55 hover:bg-slate-50'
                 }`}
               >
@@ -362,7 +362,7 @@ export default function AIReadinessCheck() {
           <select aria-label="Was ist Ihr wichtigstes Ziel für die nächsten 6 Monate?"
             value={f5}
             onChange={e => handleFieldSet('f5', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors cursor-pointer shadow-xs"
+            className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors cursor-pointer shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="leads">Mehr passende Anfragen gewinnen</option>
@@ -402,7 +402,7 @@ export default function AIReadinessCheck() {
       {/* Recommended Use-Cases on complete survey state */}
       <div className="mt-10">
         {!isComplete ? (
-          <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
+          <div className="bg-canvas/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center shadow-xs">
             <p className="text-xs text-slate-405 text-slate-400 font-semibold uppercase tracking-wider font-mono">
               Füllen Sie alle 5 Felder aus, um passende Einsatzmöglichkeiten zu sehen
             </p>
@@ -427,11 +427,11 @@ export default function AIReadinessCheck() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 * index, duration: 0.4 }}
-                    className="bg-white border border-slate-200 hover:border-[#686DF4]/25 shadow-xs hover:shadow-sm rounded-2xl p-6 text-left transition-all duration-350"
+                    className="bg-surface border border-slate-200 hover:border-[#686CFA]/25 shadow-xs hover:shadow-sm rounded-2xl p-6 text-left transition-all duration-350"
                   >
                     <div className="flex gap-4 items-start pb-4 border-b border-slate-100 mb-4">
                       {/* Counter Index number */}
-                      <div className="w-7 h-7 rounded-lg bg-indigo-50 text-[#686DF4] border border-indigo-150 flex items-center justify-center font-display font-bold text-xs shrink-0 shadow-2xs">
+                      <div className="w-7 h-7 rounded-lg bg-indigo-50 text-[#686CFA] border border-indigo-150 flex items-center justify-center font-display font-bold text-xs shrink-0 shadow-2xs">
                         {index + 1}
                       </div>
 
@@ -439,7 +439,7 @@ export default function AIReadinessCheck() {
                         <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
                           {usecase.titel}
                         </h4>
-                        <span className="bg-[#686DF4]/5 text-[#686DF4] text-[11px] font-mono font-black uppercase tracking-wider px-2 py-0.5 rounded-md leading-none border border-[#686DF4]/10">
+                        <span className="bg-[#686CFA]/5 text-[#686CFA] text-[11px] font-mono font-black uppercase tracking-wider px-2 py-0.5 rounded-md leading-none border border-[#686CFA]/10">
                           {usecase.zeitrahmen}
                         </span>
                       </div>
@@ -463,7 +463,7 @@ export default function AIReadinessCheck() {
                         className="text-[11px] font-mono leading-none tracking-wider uppercase text-slate-400 hover:text-slate-950 font-bold bg-transparent border-none cursor-pointer flex items-center gap-1"
                       >
                         {isExpanded ? (
-                          <>Details verbergen <ChevronUp className="w-3 h-3 text-[#686DF4]" /></>
+                          <>Details verbergen <ChevronUp className="w-3 h-3 text-[#686CFA]" /></>
                         ) : (
                           <>Details anzeigen ▼</>
                         )}
@@ -500,7 +500,7 @@ export default function AIReadinessCheck() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 Erstgespräch vereinbaren <ArrowRight className="w-4 h-4 text-white" />
               </button>

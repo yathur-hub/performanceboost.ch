@@ -130,13 +130,13 @@ export default function FlottenauslastungsRechner() {
       color: 'text-red-700 bg-red-50 border-red-200/50',
       badgeBg: 'bg-red-500 text-white',
       label: 'Tiefe Auslastung',
-      desc: 'Ihre Auslastung liegt spürbar unter dem angenommenen Richtwert von 85%. Das heisst: Fahrzeuge verursachen Fixkosten, ohne genug Deckungsbeitrag zu bringen. Mit gezielter digitaler Neukundengewinnung, etwa für Teilladungen oder direkte Geschäftskunden, lässt sich hier ansetzen.',
+      desc: 'Ihre Auslastung liegt deutlich unter dem angenommenen Richtwert von 85%. Ihre Fahrzeuge verursachen also Fixkosten, ohne genug Deckungsbeitrag zu bringen. Mit digitaler Neukundengewinnung, etwa für Teilladungen oder direkte Geschäftskunden, lässt sich hier ansetzen.',
       rec: 'Einen digitalen Kanal für Direktkunden aufbauen, um Leerfahrten und die Abhängigkeit vom Spotmarkt zu senken.',
     },
     potenzial: {
       color: 'text-orange-700 bg-orange-50 border-orange-200/50',
       badgeBg: 'bg-orange-700 text-white',
-      label: 'Potenzial vorhanden',
+      label: 'Auslastung ausbaufähig',
       desc: 'Ihre Flotte läuft ordentlich, es bleibt aber Umsatz liegen. Was schon 5 Prozentpunkte mehr Auslastung bringen könnten, sehen Sie oben in der Schätzung.',
       rec: 'Bei bestehenden Kunden präsent bleiben und freie Kapazitäten regelmässig direkt bei Geschäftskunden anbieten.',
     },
@@ -144,24 +144,24 @@ export default function FlottenauslastungsRechner() {
       color: 'text-green-700 bg-green-50 border-green-200/50',
       badgeBg: 'bg-green-700 text-white',
       label: 'Solide Auslastung',
-      desc: 'Ihre Werte liegen nahe an den angenommenen Richtwerten. Das ist eine gesunde Basis. Weiteres Potenzial liegt bei den Betriebskosten oder einem höheren Frachtsatz pro Kilometer durch eine bessere Tourenplanung.',
+      desc: 'Ihre Werte liegen nahe an den angenommenen Richtwerten. Das ist eine gesunde Basis. Spielraum gibt es noch bei den Betriebskosten oder einem höheren Frachtsatz pro Kilometer durch eine bessere Tourenplanung.',
       rec: 'Mehr margenstarke Direktkunden gewinnen statt nur als Subunternehmer zu fahren.',
     },
     top: {
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200/50',
-      badgeBg: 'bg-[#686DF4] text-white',
+      badgeBg: 'bg-[#686CFA] text-white',
       label: 'Sehr gut aufgestellt',
       desc: 'Ihre Flotte ist nach Ihren Angaben sehr gut ausgelastet, mit wenig Leerlauf. Damit kann es sinnvoll sein, über zusätzliche Fahrzeuge nachzudenken, sofern genug neue Aufträge in Sicht sind.',
-      rec: 'Gezielt Neukunden gewinnen, um eine grössere Flotte und neue Linienverkehre auszulasten.',
+      rec: 'Neukunden gewinnen, um eine grössere Flotte und neue Linienverkehre auszulasten.',
     },
   };
 
   const currentStufe = results ? stufeConfigs[results.score_stufe] : stufeConfigs.potenzial;
 
   return (
-    <div className="bg-white border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
+    <div className="bg-surface border border-slate-205 rounded-3xl p-6 md:p-8 shadow-[var(--shadow-premium-md)] space-y-8 max-w-4xl mx-auto text-slate-800 text-left">
       <div className="border-b border-slate-100 pb-5">
-        <span className="text-[11px] font-mono font-bold text-[#686DF4] uppercase tracking-widest">Rechner Logistik</span>
+        <span className="text-[11px] font-mono font-bold text-[#686CFA] uppercase tracking-widest">Rechner Logistik</span>
         <h3 className="text-lg font-display font-medium text-slate-905 tracking-tight mt-1">Flottenauslastungs-Rechner</h3>
         <p className="text-xs text-slate-400 mt-1 font-semibold">
           Schätzen Sie, wie viel Umsatz durch ungenutzte Ladefläche und Leerfahrten in Ihrer Flotte verloren geht. Grobe Schätzung auf Basis Ihrer Angaben und angenommener Richtwerte, keine Garantie für Ergebnisse.
@@ -174,7 +174,7 @@ export default function FlottenauslastungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Flottengrösse (Fahrzeuge)</span>
-              <span className="text-[#686DF4] font-semibold">{inputs.flottengroesse}</span>
+              <span className="text-[#686CFA] font-semibold">{inputs.flottengroesse}</span>
             </label>
             <input aria-label="Flottengrösse (Fahrzeuge)"
               type="number"
@@ -190,7 +190,7 @@ export default function FlottenauslastungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Ø Umsatz pro Fahrzeug / Monat</span>
-              <span className="text-[#686DF4] font-semibold">{formatCHF(inputs.umsatz_fahrzeug)}</span>
+              <span className="text-[#686CFA] font-semibold">{formatCHF(inputs.umsatz_fahrzeug)}</span>
             </label>
             <div className="relative">
               <input aria-label="Ø Umsatz pro Fahrzeug / Monat"
@@ -210,7 +210,7 @@ export default function FlottenauslastungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Aktuelle Flottenauslastung</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.auslastung}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.auslastung}%</span>
             </label>
             <input aria-label="Aktuelle Flottenauslastung"
               type="range"
@@ -219,7 +219,7 @@ export default function FlottenauslastungsRechner() {
               step={1}
               value={inputs.auslastung}
               onChange={(e) => handleInputChange('auslastung', parseInt(e.target.value) || 40)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium font-mono">Genutztes Ladevolumen bzw. Tourenauslastung im Jahresdurchschnitt</p>
           </div>
@@ -227,7 +227,7 @@ export default function FlottenauslastungsRechner() {
           <div className="space-y-1">
             <label className="text-xs font-bold text-slate-800 uppercase tracking-widest flex justify-between">
               <span>Variable Betriebs- & Dieselkosten</span>
-              <span className="text-[#686DF4] font-semibold font-mono">{inputs.betriebskosten}%</span>
+              <span className="text-[#686CFA] font-semibold font-mono">{inputs.betriebskosten}%</span>
             </label>
             <input aria-label="Variable Betriebs- &amp; Dieselkosten"
               type="range"
@@ -236,7 +236,7 @@ export default function FlottenauslastungsRechner() {
               step={1}
               value={inputs.betriebskosten}
               onChange={(e) => handleInputChange('betriebskosten', parseInt(e.target.value) || 15)}
-              className="w-full accent-[#686DF4]"
+              className="w-full accent-[#686CFA]"
             />
             <p className="text-[11px] text-slate-400 font-medium">Wert in % des Umsatzes</p>
           </div>
@@ -324,7 +324,7 @@ export default function FlottenauslastungsRechner() {
                 });
                 window.dispatchEvent(new CustomEvent('open-contact-modal'));
               }}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-full inline-block text-center shrink-0 w-full sm:w-auto cursor-pointer border-0"
             >
               Ergebnis besprechen
             </button>

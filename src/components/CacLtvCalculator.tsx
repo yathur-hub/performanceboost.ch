@@ -129,9 +129,9 @@ export default function CacLtvCalculator() {
   const levelStyle = result ? getLevelStyles(result.level) : null;
 
   return (
-    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="dtc-cac-ltv-rechner">
+    <div className="bg-surface border border-slate-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[var(--shadow-premium-lg)] text-left" id="dtc-cac-ltv-rechner">
       <div className="mb-8 border-b border-slate-100 pb-6 flex items-start gap-4">
-        <div className="w-10 h-10 rounded-xl bg-[#686DF4]/10 text-[#686DF4] flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-[#686CFA]/10 text-[#686CFA] flex items-center justify-center shrink-0">
           <Target className="w-5 h-5" />
         </div>
         <div>
@@ -160,7 +160,7 @@ export default function CacLtvCalculator() {
                 placeholder="z. B. 3'000"
                 value={adBudget}
                 onChange={(e) => handleInputChange('budget', e.target.value)}
-                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
+                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Monat
@@ -184,7 +184,7 @@ export default function CacLtvCalculator() {
                 placeholder="z. B. 60"
                 value={newCustomers}
                 onChange={(e) => handleInputChange('customers', e.target.value)}
-                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
+                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 Kunden
@@ -208,7 +208,7 @@ export default function CacLtvCalculator() {
                 placeholder="z. B. 85"
                 value={avgOrderValue}
                 onChange={(e) => handleInputChange('aov', e.target.value)}
-                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-950 transition-all font-semibold"
+                className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-950 transition-all font-semibold"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] font-mono text-slate-400 font-bold uppercase select-none">
                 CHF / Bestellung
@@ -227,7 +227,7 @@ export default function CacLtvCalculator() {
             <select aria-label="Wiederkaufrate (in den nächsten 12 Monaten)"
               value={repurchaseRateKey}
               onChange={(e) => handleInputChange('rate', e.target.value)}
-              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-905 transition-all font-semibold cursor-pointer text-slate-800"
+              className="w-full px-4 py-3.5 bg-slate-50 hover:bg-slate-50/50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-905 transition-all font-semibold cursor-pointer text-slate-800"
             >
               <option value="">Bitte wählen</option>
               <option value="unter_5">Unter 5% (Mittelwert 2.5%)</option>
@@ -242,7 +242,7 @@ export default function CacLtvCalculator() {
         </div>
 
         {/* Right Column: Live Output Panel */}
-        <div className="lg:col-span-6 bg-[#f6f6f6]/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
+        <div className="lg:col-span-6 bg-canvas/60 border border-slate-200/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between self-stretch relative min-h-[300px]">
           <AnimatePresence mode="wait">
             {!isFormValid ? (
               // PLACEHOLDER STATE
@@ -271,7 +271,7 @@ export default function CacLtvCalculator() {
                 </div>
 
                 <div className="pt-4 text-center space-y-1.5 self-center w-full">
-                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686DF4] bg-[#686DF4]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#686CFA] bg-[#686CFA]/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" /> Ihre Zahlen eingeben
                   </div>
                   <p className="text-[11px] text-slate-400/90 font-mono">
@@ -304,7 +304,7 @@ export default function CacLtvCalculator() {
                       <span className={`text-4xl sm:text-5xl font-bold font-display tracking-tight my-1 block ${levelStyle?.text}`}>
                         {result.ratio.toFixed(1)} : 1
                       </span>
-                      <span className={`inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-white border rounded-md ${levelStyle?.badgeText} ${levelStyle?.badgeBg}`}>
+                      <span className={`inline-flex px-3 py-1 text-[11px] font-bold font-mono uppercase bg-surface border rounded-md ${levelStyle?.badgeText} ${levelStyle?.badgeBg}`}>
                         {result.level}
                       </span>
                     </div>
@@ -365,7 +365,7 @@ export default function CacLtvCalculator() {
                       track("hero_tool_cta_click", { page: "dtc-growth-acquisition", variant: "booking" });
                       window.dispatchEvent(new CustomEvent('open-contact-modal'));
                     }}
-                    className="w-full text-center bg-[#696EEF] hover:bg-slate-950 text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
+                    className="w-full text-center bg-[#686CFA] hover:bg-deep text-white font-bold text-xs py-4 px-5 rounded-xl uppercase tracking-wider inline-flex items-center justify-between transition-all cursor-pointer border-0"
                   >
                     <span>Erstgespräch vereinbaren</span>
                     <ArrowRight className="w-4 h-4 text-white shrink-0" />
@@ -386,7 +386,7 @@ export default function CacLtvCalculator() {
           <LeadCaptureForm
             pageId="dtc-growth-acquisition"
             secondaryCTAText="Wie senken Sie Ihre Akquisekosten? Einschätzung per E-Mail →"
-            danachText="Vielen Dank! Wir senden Ihnen in Kürze eine Einschätzung, wie Sie das Verhältnis von Kundenwert zu Akquisekosten verbessern können."
+            danachText="Vielen Dank. Wir senden Ihnen in Kürze eine Einschätzung, wie Sie das Verhältnis von Kundenwert zu Akquisekosten verbessern können."
             additionalFields={[
               {
                 type: 'select',

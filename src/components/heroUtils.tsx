@@ -64,7 +64,7 @@ export function LeadCaptureForm({
       <button
         type="button"
         onClick={openContact}
-        className="text-sm text-slate-700 hover:text-[#4f54d6] inline-flex items-center justify-center gap-1.5 mx-auto bg-transparent border-none min-h-11 px-2 cursor-pointer font-semibold transition-colors"
+        className="text-sm text-slate-700 hover:text-accent-strong inline-flex items-center justify-center gap-1.5 mx-auto bg-transparent border-none min-h-11 px-2 cursor-pointer font-semibold transition-colors"
       >
         {secondaryCTAText} <ChevronRight className="w-4 h-4" aria-hidden="true" />
       </button>

@@ -79,16 +79,16 @@ export default function LeadGenerationScore() {
       note = "B";
       color = "#57CC99"; // Hellgrün
       title = "Über dem Richtwert, mit Luft nach oben.";
-      benefitText = "Ihre Website liegt über dem angenommenen Richtwert. Mit gezielten Verbesserungen ist oft noch mehr möglich.";
+      benefitText = "Ihre Website liegt über dem angenommenen Richtwert. Mit einzelnen Verbesserungen ist oft noch mehr möglich.";
     } else if (cr >= 0.01) {
       note = "C";
       color = "#F4A261"; // Orange
-      title = "Im Mittelfeld, mit ungenutztem Potenzial.";
+      title = "Im Mittelfeld, mit Luft nach oben.";
       benefitText = "Sie liegen im Bereich des Richtwerts. Das heisst aber auch: Jeden Monat gehen Besucher verloren, die mit dem passenden Angebot angefragt hätten.";
     } else if (cr >= 0.005) {
       note = "D";
       color = "#E9C46A"; // Gelb-Orange
-      title = "Unter dem Richtwert, viel Potenzial ungenutzt.";
+      title = "Unter dem Richtwert, hier bleiben Anfragen liegen.";
       benefitText = "Fast alle Besucher verlassen Ihre Website, ohne einen nächsten Schritt zu machen. Das liegt meist weniger an zu wenigen Besuchern als daran, wie Anfragen auf der Website ermöglicht werden.";
     } else {
       note = "F";
@@ -153,12 +153,12 @@ export default function LeadGenerationScore() {
   };
 
   return (
-    <div className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="lead-generation-score">
+    <div className="bg-surface border border-line/65 rounded-3xl p-6 sm:p-10 text-slate-800 shadow-[var(--shadow-premium-md)] max-w-[760px] mx-auto text-left" id="lead-generation-score">
       
       {/* Brand Header */}
       <div className="flex justify-between items-center pb-5 border-b border-slate-100 mb-8">
         <div className="flex items-center gap-2.5">
-          <Users className="w-5.5 h-5.5 text-[#686DF4] shrink-0" />
+          <Users className="w-5.5 h-5.5 text-[#686CFA] shrink-0" />
           <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight font-display">
             Anfrage-Check für Ihre Website
           </h3>
@@ -190,7 +190,7 @@ export default function LeadGenerationScore() {
           <select aria-label="Wie viele Besucher hat Ihre Website pro Monat?"
             value={trafficMid}
             onChange={e => handleFieldSet('traffic', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+            className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="250">Unter 500 Besucher / Mt.</option>
@@ -217,7 +217,7 @@ export default function LeadGenerationScore() {
             placeholder="0 wenn keine"
             value={leads}
             onChange={e => handleFieldSet('leads', e.target.value)}
-            className={`w-full px-4 py-3 bg-white border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs ${
+            className={`w-full px-4 py-3 bg-surface border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs ${
               hasValidationError ? 'border-red-300 focus:border-red-500' : 'border-slate-200'
             }`}
           />
@@ -247,7 +247,7 @@ export default function LeadGenerationScore() {
           <select aria-label="Wie viele Möglichkeiten zur Kontaktaufnahme bietet Ihre Website?"
             value={leadMagnete}
             onChange={e => handleFieldSet('leadMagnete', e.target.value)}
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686DF4] text-slate-800 transition-colors shadow-xs"
+            className="w-full px-4 py-3 bg-surface border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#686CFA] text-slate-800 transition-colors shadow-xs"
           >
             <option value="">Bitte wählen...</option>
             <option value="0">Nur das Standard-Kontaktformular</option>
@@ -265,7 +265,7 @@ export default function LeadGenerationScore() {
       {/* Output Representation wrapper */}
       <div className="mt-10">
         {!calculatedOutput ? (
-          <div className="bg-[#f6f6f6]/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
+          <div className="bg-canvas/55 border border-dashed border-slate-200 rounded-2xl p-8 text-center">
             <p className="text-xs text-slate-400 font-medium uppercase tracking-wider font-mono">
               Füllen Sie alle Felder aus, um Ihre Bewertung zu sehen
             </p>
@@ -371,7 +371,7 @@ export default function LeadGenerationScore() {
               {calculatedOutput.verloreneLeads_median > 0 && (
                 <div className="bg-red-50 p-5 rounded-xl border border-red-100/30 text-left space-y-1">
                   <p className="text-[11px] text-[#E63946] font-bold uppercase tracking-widest font-mono">
-                    Mögliches Potenzial gegenüber dem Richtwert
+                    Abstand zum Richtwert
                   </p>
                   <div className="text-2xl sm:text-3xl font-black font-display text-[#E63946]">
                     ca. {formatNumber(calculatedOutput.verloreneLeads_median)} Anfragen / Monat möglich
@@ -387,11 +387,11 @@ export default function LeadGenerationScore() {
                 <div className="border-t border-slate-250 pt-1 pt-4 border-slate-200">
                   <button
                     onClick={toggleDiagnose}
-                    className="w-full flex justify-between items-center py-2 bg-transparent border-none cursor-pointer outline-none font-bold text-xs hover:text-[#686DF4] transition-colors"
+                    className="w-full flex justify-between items-center py-2 bg-transparent border-none cursor-pointer outline-none font-bold text-xs hover:text-[#686CFA] transition-colors"
                   >
                     <span className="font-display font-semibold tracking-tight text-slate-800">Woran liegt das? Mögliche Ursachen anzeigen</span>
                     <span>
-                      {diagnoseOpen ? <ChevronUp className="w-4 h-4 text-[#686DF4]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+                      {diagnoseOpen ? <ChevronUp className="w-4 h-4 text-[#686CFA]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
                     </span>
                   </button>
 
@@ -408,7 +408,7 @@ export default function LeadGenerationScore() {
                           const cause = (diagnoseDetails as any)[key];
                           if (!cause) return null;
                           return (
-                            <div key={key} className="p-4 bg-white rounded-xl border border-slate-200/60 shadow-xs space-y-1 animate-fadeIn">
+                            <div key={key} className="p-4 bg-surface rounded-xl border border-slate-200/60 shadow-xs space-y-1 animate-fadeIn">
                               <h5 className="text-xs font-bold text-slate-900 font-display flex items-center gap-1.5 leading-none">
                                 <span className="w-1.5 h-1.5 bg-red-400 rounded-full shrink-0" />
                                 {cause.titel}
@@ -431,7 +431,7 @@ export default function LeadGenerationScore() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <button
                 onClick={handleBooking}
-                className="w-full sm:w-auto bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
+                className="w-full sm:w-auto bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-xl uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm text-[#f6f6f6]"
               >
                 Ergebnis besprechen <ArrowRight className="w-4 h-4 text-white" />
               </button>
@@ -459,7 +459,7 @@ function HoverHelp({ text }: { text: string }) {
   return (
     <div className="group relative cursor-help inline-block text-slate-400 hover:text-slate-900 transition-colors">
       <AlertCircle className="w-3.5 h-3.5" />
-      <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+      <div className="absolute right-0 bottom-full mb-2 w-48 bg-deep text-white text-[11px] font-medium leading-relaxed p-2.5 rounded-lg shadow-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
         {text}
       </div>
     </div>

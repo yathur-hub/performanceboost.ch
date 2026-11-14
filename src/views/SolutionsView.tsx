@@ -29,7 +29,6 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
     onNavigate('/kontakt');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleFaq = (index: number) => {
@@ -40,9 +39,9 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '01',
       title: 'Wachstumsstrategie',
-      desc: 'Bevor wir Massnahmen umsetzen, legen wir die Richtung fest: über welche Kanäle, bei welchen Zielkunden und mit welchem Angebot Ihre neuen Kunden kommen sollen.',
+      desc: 'Bevor wir bauen, legen wir die Richtung fest: über welche Kanäle, bei welchen Zielkunden und mit welchem Angebot Ihr Unternehmen wachsen soll.',
       notText: '«Wir machen eine Kampagne.»',
-      butText: '«Das ist Ihr Plan für die Vermarktung in den nächsten 12 Monaten.»',
+      butText: '«Das ist Ihr Plan für Wachstum und System in den nächsten 12 Monaten.»',
       path: 'growth-strategy'
     },
     {
@@ -50,7 +49,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       title: 'Nachfrage aufbauen',
       desc: 'Ihre Zielkunden sollen Sie kennen, bevor der Vertrieb anruft. Wir machen Ihr Angebot über mehrere Kanäle sichtbar und begleiten Interessenten bis zur Anfrage.',
       notText: '«Wir schalten Anzeigen.»',
-      butText: '«Wir sorgen für einen stetigen Eingang passender Anfragen.»',
+      butText: '«Kampagnen und CRM bilden ein System für passende Anfragen.»',
       path: 'demand-generation'
     },
     {
@@ -72,9 +71,9 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '05',
       title: 'Vertriebsunterstützung',
-      desc: 'Vertrieb und Marketing müssen zusammenarbeiten. Wir schaffen gemeinsame Kennzahlen, eine klare Übergabe von Anfragen und Unterlagen für jede Phase des Verkaufs.',
+      desc: 'Zwischen Marketing und Vertrieb gehen oft Anfragen verloren. Wir schaffen gemeinsame Kennzahlen, eine klare Übergabe von Anfragen und Unterlagen für jede Phase des Verkaufs.',
       notText: '«Wir schreiben Verkaufsunterlagen.»',
-      butText: '«Ihr Vertrieb erhält vorbereitete Anfragen und die Unterlagen, die er im Gespräch braucht.»',
+      butText: '«Ihr Vertrieb erhält vorqualifizierte Anfragen und geht vorbereitet ins Gespräch.»',
       path: 'sales-enablement'
     },
     {
@@ -88,15 +87,15 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       num: '07',
       title: 'KI & Automatisierung',
-      desc: 'Richtig eingesetzt spart KI Ihrem Team Zeit. Wir richten KI-gestützte Abläufe für Recherche, Personalisierung, Texte und Auswertungen dort ein, wo sie sich lohnen.',
+      desc: 'Wir richten feste Workflows, KI-unterstützte Verarbeitung und agentische Abläufe für Recherche, Entwürfe und Auswertungen dort ein, wo sie sich lohnen. Was nach aussen geht, gibt Ihr Team frei.',
       notText: '«Wir nutzen ChatGPT.»',
-      butText: '«Wir setzen KI dort ein, wo sie Ihrem Geschäft messbar hilft.»',
+      butText: '«Wir setzen KI dort ein, wo sie Ihrem Geschäft messbar hilft, und eine einfache Regel dort, wo sie genügt.»',
       path: 'ai-automation'
     },
     {
       num: '08',
       title: 'Daten & Auswertung',
-      desc: 'Sie sollen nach Zahlen entscheiden können, nicht nach Bauchgefühl. Wir richten Tracking, Dashboards und Berichte ein, die Ihnen zeigen, was funktioniert und wo Umsatz verloren geht.',
+      desc: 'Damit Sie Budget nach Zahlen verteilen können, richten wir Tracking, Dashboards und Berichte ein. Sie zeigen, was funktioniert und wo Umsatz verloren geht.',
       notText: '«Wir erstellen Berichte.»',
       butText: '«Sie sehen, welche Massnahmen Anfragen und Umsatz bringen.»',
       path: 'data-analytics'
@@ -113,7 +112,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       title: 'Anfragen gewinnen und weiterbegleiten',
       combo: 'Nachfrage aufbauen + Marketing-Automation + CRM',
-      desc: 'Nachfrage aufbauen, Interessenten weiterbegleiten, automatisch bewerten und an den Vertrieb übergeben.',
+      desc: 'Nachfrage aufbauen, Interessenten weiterbegleiten, nach festen Kriterien bewerten und an den Vertrieb übergeben.',
       timeline: 'Richtwert: Aufbau in rund 8–12 Wochen.'
     },
     {
@@ -123,9 +122,9 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       timeline: 'Richtwert: Grundstruktur in rund 6–8 Wochen, danach laufende Optimierung.'
     },
     {
-      title: 'Gesamte Vermarktung aus einer Hand',
+      title: 'Strategie und Umsetzung zusammen',
       combo: 'Wachstumsstrategie + die passenden Leistungen',
-      desc: 'Wir analysieren, planen, setzen um und betreuen Ihre Vermarktung danach laufend.',
+      desc: 'Wir analysieren, bauen das System mit Ihnen auf und verbessern es im laufenden Betrieb.',
       timeline: 'Richtwert: Zusammenarbeit über 12 Monate oder länger.'
     }
   ];
@@ -138,6 +137,10 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     {
       q: 'Wie lange dauert es, bis wir Resultate sehen?',
       a: 'Das hängt von der Leistung ab. Bei bezahlten Kampagnen sehen Sie meist nach 2–4 Wochen erste Daten und nach 4–8 Wochen belastbare Zahlen. Automatisierung und CRM-Aufbau brauchen in der Regel 6–12 Wochen, bis sie ihre Wirkung zeigen.'
+    },
+    {
+      q: 'Setzen Sie in jedem Projekt KI ein?',
+      a: 'Nein. Wir prüfen bei jedem Ablauf, ob eine feste Regel, eine KI-Unterstützung oder ein Agent am meisten bringt. Oft ist die Regel zuverlässiger und günstiger. KI kommt dort dazu, wo Inhalte gelesen, eingeordnet oder entworfen werden müssen.'
     },
     {
       q: 'Arbeiten Sie mit unseren bestehenden Tools?',
@@ -153,8 +156,8 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
     <div className="pt-24 pb-16 space-y-16 md:space-y-28 text-slate-800" id="solutions-view">
       
       {/* HERO SECTION */}
-      <section className="relative px-4 sm:px-6 lg:px-8 bg-white pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686DF4]/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative px-4 sm:px-6 lg:px-8 bg-surface pt-12 pb-16 md:py-28 border-b border-slate-100 overflow-hidden text-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#686CFA]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
@@ -170,7 +173,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE, delay: 0.2 }}
             className="text-slate-500 text-body-lg max-w-xl mx-auto leading-relaxed font-medium"
           >
-            Sie müssen sich nicht zuerst für ein Tool oder einen Kanal entscheiden. Starten Sie bei Ihrer Herausforderung oder Ihrer Branche. Wir stellen dann die Leistungen zusammen, die in Ihrem Fall etwas bringen.
+            Starten Sie bei Ihrer Herausforderung oder Ihrer Branche. Wir entwerfen mit Ihnen ein System für Marketing, Vertrieb und Abläufe, das auf KI aufbaut, damit Ihr Unternehmen wachsen kann, ohne dass die Handarbeit im gleichen Mass mitwächst. Wir bauen und betreiben, was sich in Ihrem Fall lohnt.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -181,7 +184,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             <motion.button
               {...buttonPressProps}
               onClick={() => onNavigate('/kontakt')}
-              className="bg-[#696EEF] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
+              className="bg-[#686CFA] hover:bg-[#5a5fe0] text-white font-bold text-xs px-8 py-4 rounded-full uppercase tracking-widest transition-all cursor-pointer shadow-md inline-block text-center border-0"
             >
               Potenzial besprechen
             </motion.button>
@@ -196,7 +199,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             Nach Herausforderung
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Wo drückt der Schuh? Wählen Sie die Situation, die am ehesten auf Ihr Unternehmen zutrifft.
+            Wo bremst heute Ihr Wachstum? Wählen Sie die Situation, die am ehesten auf Ihr Unternehmen zutrifft.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -213,8 +216,8 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
             Nach Branche
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Neukundengewinnung funktioniert in einer Treuhandkanzlei anders als in einem Handwerksbetrieb. Wählen Sie Ihre Branche,
-            um typische Hürden, unser Vorgehen und Ihren Nutzen zu sehen.
+            Eine Treuhandkanzlei wächst anders als ein Handwerksbetrieb, und KI arbeitet dort an anderen Stellen mit. Wählen Sie
+            Ihre Branche, um typische Hürden, konkrete Beispiele und das passende System zu sehen.
           </p>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -227,13 +230,13 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                   e.preventDefault();
                   onNavigate(`/loesungen/${sector.slug}`);
                 }}
-                className="group flex h-full items-start justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#686DF4]/50 hover:shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686DF4]/30"
+                className="group flex h-full items-start justify-between gap-3 rounded-2xl border border-slate-200 bg-surface p-5 hover:border-[#686CFA]/50 hover:shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
               >
                 <span className="space-y-1">
-                  <span className="block font-display font-semibold text-slate-950 group-hover:text-[#4f54d6]">{sector.title}</span>
+                  <span className="block font-display font-semibold text-slate-950 group-hover:text-accent-strong">{sector.title}</span>
                   <span className="block text-sm text-slate-600 leading-snug">{sector.subtitle}</span>
                 </span>
-                <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-slate-400 group-hover:text-[#686DF4]" aria-hidden="true" />
+                <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-slate-400 group-hover:text-[#686CFA]" aria-hidden="true" />
               </a>
             </li>
           ))}
@@ -241,54 +244,41 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
       </section>
 
       {/* POSITIONIERUNGS-SEKTION */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-120px" }}
-        transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+      <section 
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="bg-slate-950 text-white border border-slate-900 rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
-          <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686DF4]/10 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-[11px] font-mono font-bold tracking-widest text-[#686DF4] uppercase">Zuerst die Analyse</span>
+        <div className="bg-deep text-white border border-deep rounded-3xl p-10 md:p-14 relative overflow-hidden space-y-6 text-center shadow-[var(--shadow-premium-lg)]">
+          <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#686CFA]/10 rounded-full blur-3xl pointer-events-none" />
+          <span className="text-[11px] font-mono font-bold tracking-widest text-[#686CFA] uppercase">Zuerst die Analyse</span>
           <blockquote className="text-body-lg sm:text-xl font-bold leading-relaxed max-w-2xl mx-auto italic opacity-95">
-            «Viele Unternehmen fragen zuerst nach dem richtigen Kanal oder Tool. Wichtiger ist, wo heute passende Anfragen verloren gehen, warum Interessenten nicht zu Kunden werden und wie Wachstum planbar wird.»
+            «Viele Unternehmen fragen zuerst nach dem richtigen Kanal, Tool oder KI-Agenten. Wichtiger ist, wo heute passende Anfragen verloren gehen und welche Schritte bis zum Auftrag noch Handarbeit sind.»
           </blockquote>
           <p className="text-[11px] text-slate-400 font-mono tracking-wide uppercase">
-            Darum beginnen wir mit einer Analyse Ihrer Situation, nicht mit einem Pauschalangebot.
+            Darum beginnen wir mit einer Analyse Ihrer Situation.
           </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* WACHSTUMSBEREICHE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="text-center space-y-3"
         >
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Unsere Leistungsbereiche</h2>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+        <div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {WACHSTUMSBEREICHE.map((item) => (
             <motion.div 
               key={item.num} 
-              variants={staggeredChildVariants}
               whileHover={{ y: -5, borderColor: "rgba(104, 109, 244, 0.35)" }}
-              className="bg-white border border-[#E0E0E0]/65 p-8 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition-all duration-300 group"
+              className="bg-surface border border-line/65 p-8 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-lg)] transition-all duration-300 group"
             >
               <div className="space-y-5">
                 <div className="flex justify-between items-center">
-                  <span className="text-[11px] font-mono font-bold bg-[#f6f6f6] text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686DF4]/5 group-hover:text-[#686DF4] group-hover:border-[#686DF4]/20 transition-all duration-300">
+                  <span className="text-[11px] font-mono font-bold bg-canvas text-slate-400 px-3 py-1 rounded-lg border border-slate-200/50 group-hover:bg-[#686CFA]/5 group-hover:text-[#686CFA] group-hover:border-[#686CFA]/20 transition-all duration-300">
                     {item.num}
                   </span>
                   <button 
@@ -296,12 +286,12 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                       onNavigate(`/leistungen/${item.path}`);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="text-[11px] text-[#686DF4] hover:text-[#686DF4]/80 font-bold tracking-wide transition-colors cursor-pointer bg-transparent border-none"
+                    className="text-[11px] text-[#686CFA] hover:text-[#686CFA]/80 font-bold tracking-wide transition-colors cursor-pointer bg-transparent border-none"
                   >
                     Details →
                   </button>
                 </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686DF4] transition-colors">{item.title}</h3>
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#686CFA] transition-colors">{item.title}</h3>
                 <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
               </div>
 
@@ -312,49 +302,40 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                 </div>
                 <div className="text-[11px]">
                   <span className="block text-slate-400 font-bold uppercase tracking-widest leading-none mb-1.5 font-mono">Sondern:</span>
-                  <span className="text-[#686DF4] font-bold block bg-[#686DF4]/5 px-2 py-1 rounded border border-[#CACCFB]/20">{item.butText}</span>
+                  <span className="text-[#686CFA] font-bold block bg-[#686CFA]/5 px-2 py-1 rounded border border-[#CBCBFC]/20">{item.butText}</span>
                 </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       {/* COMBINATIONS SECTION */}
-      <section className="bg-[#f6f6f6]/50 border-y border-[#E0E0E0]/30 py-16 md:py-32">
+      <section className="bg-canvas/50 border-y border-line/30 py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+          <div 
             className="text-center space-y-3"
           >
             <h2 className="text-2xl sm:text-3.5xl font-display font-medium text-slate-900 tracking-tight">Kombinationen, die funktionieren</h2>
             <p className="text-body-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-medium">
-              Jede Leistung funktioniert auch allein. Kombiniert bringen Leistungen oft mehr, etwa wenn Kampagnen ins CRM laufen.
+              Jede Leistung funktioniert auch allein. Als Teile eines Systems bringen sie oft mehr, etwa wenn Kampagnen ins CRM laufen.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+          <div 
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {COMBINATIONS.map((c, idx) => (
               <motion.div 
                 key={idx} 
-                variants={staggeredChildVariants}
                 whileHover={{ y: -4, borderColor: "rgba(104, 109, 244, 0.2)" }}
-                className="bg-white border border-[#E0E0E0]/65 p-8 md:p-10 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] transition-all duration-300"
+                className="bg-surface border border-line/65 p-8 md:p-10 rounded-3xl flex flex-col justify-between shadow-[var(--shadow-premium-sm)] hover:shadow-[var(--shadow-premium-md)] transition-all duration-300"
               >
                 <div className="space-y-5">
                   <div className="space-y-1.5">
                     <h3 className="text-lg font-bold text-slate-900 font-display">{c.title}</h3>
-                    <p className="text-xs font-semibold text-[#4f54d6]">{c.combo}</p>
+                    <p className="text-xs font-semibold text-accent-strong">{c.combo}</p>
                   </div>
                   <p className="text-body-sm text-slate-500 leading-relaxed font-medium">{c.desc}</p>
                 </div>
@@ -365,40 +346,32 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
         </div>
       </section>
 
       {/* FAQ SECTION */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
+        <div 
           className="text-center space-y-3"
         >
           <h2 className="text-2xl sm:text-3.5xl font-display font-semibold text-slate-900 tracking-tight">Häufig gestellte Fragen</h2>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: DURATIONS.slow, ease: PREMIUM_EASE }}
-          className="bg-white border border-[#E0E0E0]/65 rounded-3xl p-6 md:p-10 space-y-4 shadow-[var(--shadow-premium-sm)]"
+        <div 
+          className="bg-surface border border-line/65 rounded-3xl p-6 md:p-10 space-y-4 shadow-[var(--shadow-premium-sm)]"
         >
           {FAQS.map((faq, index) => (
             <div key={index} className="border-b border-slate-100 last:border-0 pb-4 last:pb-0 pt-4 first:pt-4">
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-sm sm:text-base hover:text-[#686DF4] transition-colors cursor-pointer"
+                className="w-full flex justify-between items-center text-left py-2 font-bold text-slate-805 text-sm sm:text-base hover:text-[#686CFA] transition-colors cursor-pointer"
               >
                 <span className="flex items-center gap-2.5">
-                  <HelpCircle className="w-4.5 h-4.5 text-[#686DF4] shrink-0" /> {faq.q}
+                  <HelpCircle className="w-4.5 h-4.5 text-[#686CFA] shrink-0" /> {faq.q}
                 </span>
-                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-[#686DF4]' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-[#686CFA]' : ''}`} />
               </button>
               <AnimatePresence initial={false}>
                 {openFaq === index && (
@@ -417,7 +390,7 @@ export default function SolutionsView({ onNavigate }: SolutionsViewProps) {
               </AnimatePresence>
             </div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       <LeadCtaSection formLocation="loesungen" title="Welche Lösung passt zu Ihrem Unternehmen?" />
