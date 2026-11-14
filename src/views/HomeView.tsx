@@ -20,7 +20,7 @@ import { AREAS, AGENTIC_LEVELS } from '../data/serviceAreas';
 import { PHASES } from '../data/approach';
 import { CHALLENGE_CARDS } from '../data/challenges';
 import { BrandVisual } from '../components/BrandVisual';
-import { AgentNetwork, ScrollStatement, ComparisonRows } from '../components/system/SystemBlocks';
+import { AgentNetwork, ScrollStatement, ComparisonRows, CardDeck } from '../components/system/SystemBlocks';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -136,22 +136,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <BrandVisual id="ursachen-unter-der-oberflaeche" sizes="(min-width: 1280px) 400px, 30vw" className="max-w-[340px] ml-auto" />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {CHALLENGE_CARDS.map((c) => (
-              <Link
-                key={c.title}
-                href={c.href}
-                className="group flex flex-col h-full bg-surface border border-line/80 rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:border-[#686CFA]/45 hover:shadow-[var(--shadow-premium-md)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#686CFA]/30"
-              >
-                <span className="w-fit text-[10px] font-mono font-bold uppercase tracking-widest text-accent-strong bg-[#CBCBFC]/40 rounded-full px-2.5 py-1">{c.area}</span>
-                <span className="mt-4 text-lg font-display font-semibold text-slate-900 leading-snug">{c.title}</span>
-                <span className="mt-2 text-body-sm text-slate-600 leading-relaxed">{c.desc}</span>
-                <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold text-[#686CFA]">
-                  {c.linkText} <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
-          </div>
+          <CardDeck items={CHALLENGE_CARDS} />
         </Container>
       </section>
 

@@ -6,6 +6,7 @@
  * Alle respektieren prefers-reduced-motion (Endzustand sofort sichtbar).
  */
 import React from 'react';
+import Link from '../Link';
 
 const STEPS: { kind: 'regel' | 'ki' | 'agent' | 'mensch'; label: string; title: string; sub: string; state: 'done' | 'wait'; shimmer?: boolean }[] = [
   { kind: 'regel', label: 'Regel', title: 'Anfrage übernommen, Kontakt und Firma im CRM angelegt', sub: 'Formular → Workflow → CRM · Bestätigung an die anfragende Person', state: 'done' },
@@ -249,6 +250,61 @@ export function AgentNetwork() {
         </span>
         <span key={step} className="pbx-net-msg">{msg.text}</span>
       </div>
+    </div>
+  );
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * CardDeck: überlappende Karten in 3D. Desktop: nebeneinander, leicht in die Tiefe gedreht. Hover oder Fokus
+ * dreht die Karte nach vorne, sie erweitert sich nach rechts und zeigt den Inhalt.
+ * Touch und schmale Bildschirme: Stapel untereinander, erster Tipp öffnet, zweiter Tipp folgt dem Link.
+ * ------------------------------------------------------------------------------------------- */
+export function CardDeck({ items }: { items: { area: string; title: string; desc: string; href: string; linkText: string }[] }) {
+  const [active, setActive] = React.useState(0);
+  // Zustand beim Berühren merken: Der Fokus öffnet die Karte sonst schon vor dem Klick
+  const wasOpenAtPress = React.useRef<boolean | null>(null);
+  const canHover = () => typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (min-width: 1024px)').matches;
+  return (
+    <div className="pbx pbx-deck" data-rv-skip>
+      {items.map((c, i) => {
+        const on = i === active;
+        return (
+          <Link
+            key={c.title}
+            href={c.href}
+            className={`pbx-card${on ? ' on' : ''}`}
+            style={{ ['--i' as string]: i, zIndex: on ? 50 : i + 1 }}
+            onMouseEnter={() => setActive(i)}
+            onFocus={() => setActive(i)}
+            onPointerDown={() => { wasOpenAtPress.current = on; }}
+            onClick={(e) => {
+              // Touch: erster Tipp öffnet die Karte, zweiter Tipp folgt dem Link
+              const wasOpen = wasOpenAtPress.current ?? on;
+              wasOpenAtPress.current = null;
+              if (!wasOpen && !canHover()) { e.preventDefault(); setActive(i); }
+            }}
+          >
+            <span className="pbx-card-spine" aria-hidden={on}>
+              <span className="pbx-label">0{i + 1}</span>
+              <span className="pbx-card-spine-t">{c.title}</span>
+            </span>
+            <span className="pbx-card-body">
+              <span className="pbx-card-inner">
+                <span className="flex items-center gap-3">
+                  <span className="pbx-label">0{i + 1}</span>
+                  <span className="pbx-label" style={{ color: '#A0A3F9' }}>{c.area}</span>
+                </span>
+                <span className="block mt-5 font-display font-semibold text-xl leading-snug" style={{ color: 'var(--pbx-ink)' }}>{c.title}</span>
+                <span className="block mt-3 text-body-sm leading-relaxed" style={{ color: 'var(--pbx-text)' }}>{c.desc}</span>
+                <span className="pbx-card-link mt-6">
+                  {c.linkText}
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </span>
+              </span>
+            </span>
+          </Link>
+        );
+      })}
     </div>
   );
 }
