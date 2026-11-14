@@ -6,6 +6,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { AgentBand } from '../components/system/SystemBlocks';
 import { SOLUTIONS_SECTORS } from '../data/solutionsData';
 import { sectorDiagram } from '../data/diagrams';
 import { Diagram } from '../components/diagrams/Diagram';
@@ -144,6 +145,7 @@ export default function SolutionDetailView({ slug, onNavigate }: SolutionDetailV
               </div>
             ))}
           </div>
+          <AgentBand className="mt-6" text="In jedem Schritt arbeiten KI und Agenten mit. Regeln übernehmen das Wiederkehrende, Agenten bereiten vor, Ihr Team entscheidet und gibt frei. Ergebnisse fliessen zurück, und das System wird laufend nachgeschärft." />
         </div>
       </section>
 

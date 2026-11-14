@@ -1,7 +1,7 @@
 /**
  * Themengrafiken für Unterseiten (ersetzen die früheren interaktiven Rechner).
  * Fünf Typen, alle datengetrieben (src/data/diagrams.ts), im Stil der Startseiten-Grafik:
- * weisse Karten, Icon-Kachel, gestrichelte Verbindungen, Abschluss-Knoten in #686CFA.
+ * Karten, Icon-Kachel, gestrichelte Verbindungen, Abschluss-Knoten in #686CFA, dazu die agentische Ebene.
  * Reines HTML/CSS + SVG, vorgerendert, ohne Interaktion.
  */
 import React from 'react';
@@ -24,6 +24,18 @@ export interface DiagramNode {
   title: string;
   sub?: string;
   icon?: IconName;
+  /** Was KI oder ein Agent in diesem Schritt beiträgt (Stufe gemäss Glossar, research/05). */
+  ai?: string;
+}
+
+/** Zeile pro Schritt: Beitrag von KI und Agenten. */
+function AiLine({ text, active }: { text: string; active?: boolean }) {
+  return (
+    <span className={`dg-ai ${active ? 'is-active' : ''}`}>
+      <Sparkles className="w-3 h-3 shrink-0" aria-hidden="true" />
+      <span>{text}</span>
+    </span>
+  );
 }
 
 export type DiagramSpec =
@@ -65,7 +77,8 @@ const NodeCard: React.FC<{ node: DiagramNode; index?: number; active?: boolean; 
         <span className={`block text-sm font-display font-semibold leading-snug [overflow-wrap:anywhere] hyphens-auto ${active ? 'text-white' : 'text-slate-900'}`}>
           {node.title}
         </span>
-        {node.sub && <span className={`block mt-0.5 text-xs leading-snug ${active ? 'text-white/80' : 'text-slate-500'}`}>{node.sub}</span>}
+        {node.sub && <span className={`block mt-0.5 text-xs leading-snug ${active ? 'text-white/90' : 'text-slate-500'}`}>{node.sub}</span>}
+        {node.ai && <AiLine text={node.ai} active={active} />}
       </span>
     </div>
   );
@@ -132,7 +145,7 @@ function Funnel({ nodes }: { nodes: DiagramNode[] }) {
   return (
     <ol className="space-y-2">
       {nodes.map((node, i) => {
-        const width = 100 - (i * 40) / Math.max(1, n - 1);
+        const width = 100 - (i * 24) / Math.max(1, n - 1);
         const active = i === n - 1;
         const Icon = ICONS[node.icon ?? 'CheckCircle2'];
         return (
@@ -146,7 +159,8 @@ function Funnel({ nodes }: { nodes: DiagramNode[] }) {
               <Icon className={`w-4.5 h-4.5 shrink-0 ${active ? 'text-white' : 'text-[#686CFA]'}`} aria-hidden="true" />
               <span className="min-w-0">
                 <span className={`block text-sm font-display font-semibold leading-snug ${active ? 'text-white' : 'text-slate-900'}`}>{node.title}</span>
-                {node.sub && <span className={`block text-xs leading-snug ${active ? 'text-white/80' : 'text-slate-500'}`}>{node.sub}</span>}
+                {node.sub && <span className={`block text-xs leading-snug ${active ? 'text-white/90' : 'text-slate-500'}`}>{node.sub}</span>}
+                {node.ai && <AiLine text={node.ai} active={active} />}
               </span>
             </div>
           </li>
@@ -201,15 +215,32 @@ function Cycle({ center, nodes }: { center: string; nodes: DiagramNode[] }) {
   );
 }
 
+/**
+ * Jede Grafik zeigt die agentische Ebene: Kopfzeile, eine durchgehende Schiene durch alle Schritte
+ * (Ablauf, Trichter, Ebenen), eine KI-Zeile pro Schritt und den laufenden Verbesserungskreis als Fusszeile.
+ */
 export function Diagram({ spec, className = '' }: { spec: DiagramSpec; className?: string }) {
+  const linear = spec.type === 'flow' || spec.type === 'funnel' || spec.type === 'layers';
   return (
-    <figure className={`diagram-enter rounded-3xl bg-gradient-to-b from-surface to-surface-2 border border-slate-200/70 p-4 sm:p-6 ${className}`}>
-      {spec.type === 'flow' && <Flow nodes={spec.nodes} />}
-      {spec.type === 'hub' && <Hub center={spec.center} nodes={spec.nodes} />}
-      {spec.type === 'funnel' && <Funnel nodes={spec.nodes} />}
-      {spec.type === 'layers' && <LayersDiagram nodes={spec.nodes} />}
-      {spec.type === 'cycle' && <Cycle center={spec.center} nodes={spec.nodes} />}
-      {spec.caption && <figcaption className="mt-4 text-center text-xs text-slate-500">{spec.caption}</figcaption>}
+    <figure className={`diagram-enter dg-agentic rounded-3xl bg-gradient-to-b from-surface to-surface-2 border border-slate-200/70 overflow-hidden ${className}`}>
+      <div className="dg-agentbar">
+        <span className="pbx-live" aria-hidden="true" />
+        <span className="text-slate-900 font-semibold">KI- und Agenten-Ebene</span>
+        <span className="ml-auto hidden sm:inline">in jeden Schritt integriert</span>
+      </div>
+      <div className={`relative p-4 sm:p-6 ${linear ? 'pl-9 sm:pl-11' : ''}`}>
+        {linear && <span className="dg-rail" aria-hidden="true" />}
+        {spec.type === 'flow' && <Flow nodes={spec.nodes} />}
+        {spec.type === 'hub' && <Hub center={spec.center} nodes={spec.nodes} />}
+        {spec.type === 'funnel' && <Funnel nodes={spec.nodes} />}
+        {spec.type === 'layers' && <LayersDiagram nodes={spec.nodes} />}
+        {spec.type === 'cycle' && <Cycle center={spec.center} nodes={spec.nodes} />}
+      </div>
+      <div className="dg-loop">
+        <RefreshCw className="w-3.5 h-3.5 shrink-0 dg-loop-icon" aria-hidden="true" />
+        <span>Laufend iteriert: Agenten werten Ergebnisse aus, Regeln und Anweisungen werden nachgeschärft, Ihr Team gibt frei.</span>
+      </div>
+      {spec.caption && <figcaption className="px-4 pb-4 -mt-1 text-center text-xs text-slate-500">{spec.caption}</figcaption>}
     </figure>
   );
 }

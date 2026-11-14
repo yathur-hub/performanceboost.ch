@@ -10,6 +10,7 @@ import { Bot, ShieldCheck, RotateCcw, ArrowRight } from 'lucide-react';
 import { getArea, servicesOf, SERVICE_AREAS, AGENTIC_LEVELS, type AreaId } from '../data/serviceAreas';
 import { PHASES } from '../data/approach';
 import { BrandVisual } from '../components/BrandVisual';
+import { PhaseAgentRail } from '../components/system/SystemBlocks';
 import { SERVICES } from '../data/services';
 import {
   Breadcrumb,
@@ -267,6 +268,7 @@ export default function ServiceAreaView({ id }: { id: AreaId }) {
                 </li>
               ))}
             </ol>
+            <PhaseAgentRail />
           </Container>
         </section>
       )}

@@ -1,5 +1,6 @@
 /** Problemorientierte Lösungsseite (/loesungen/prozessautomatisierung, /loesungen/vertrieb-optimieren). */
 import { VISUAL_BY_CHALLENGE } from '../components/Visual3D';
+import { AgentBand } from '../components/system/SystemBlocks';
 import React from 'react';
 import { CHALLENGE_PAGES, type ChallengeSlug } from '../data/challenges';
 import { CHALLENGE_DIAGRAMS } from '../data/diagrams';
@@ -99,6 +100,7 @@ export default function ChallengeView({ slug }: { slug: ChallengeSlug }) {
               </li>
             ))}
           </ol>
+            <AgentBand className="mt-6" text="Durch alle Schritte läuft dieselbe Ebene aus festen Workflows für das Wiederkehrende, KI für Einordnung und Entwürfe, Agenten für mehrstufige Vorarbeit, und Ihr Team gibt frei. Jeder Ablauf wird im Betrieb gemessen und laufend nachgeschärft." />
         </Container>
       </section>
 

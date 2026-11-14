@@ -271,3 +271,27 @@
 @media (prefers-reduced-motion: reduce) {
   .pbx-card, .pbx-card-body, .pbx-card-inner, .pbx-card-spine { transition: none !important; }
 }
+
+/* ---------- Agentische Ebene in allen Themengrafiken (Diagram.tsx) ---------- */
+.dg-agentbar { display: flex; align-items: center; gap: 10px; padding: 11px 18px; border-bottom: 1px solid var(--color-line); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #9A9BB0; background: linear-gradient(90deg, rgba(104,108,250,0.14), rgba(104,108,250,0) 70%); }
+.dg-agentbar .text-slate-900 { color: #e6e6ee; }
+.dg-rail { position: absolute; left: 18px; top: 20px; bottom: 20px; width: 2px; border-radius: 2px; background: linear-gradient(to bottom, rgba(104,108,250,0), rgba(104,108,250,0.55) 12%, rgba(104,108,250,0.55) 88%, rgba(104,108,250,0)); overflow: hidden; }
+@media (min-width: 640px) { .dg-rail { left: 22px; } }
+.dg-rail::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 100%; background: linear-gradient(to bottom, transparent 0%, #ffffff 48%, #A0A3F9 52%, transparent 100%) 0 0 / 100% 38% no-repeat; animation: dg-flow 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+@keyframes dg-flow { from { background-position: 0 -40%; } to { background-position: 0 140%; } }
+.dg-ai { display: flex; align-items: flex-start; gap: 6px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(104,108,250,0.35); font-size: 11.5px; line-height: 1.35; color: #A0A3F9; }
+.dg-ai svg { margin-top: 2px; }
+.dg-ai.is-active { color: #fff; border-top-color: rgba(255,255,255,0.35); }
+.dg-loop { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-top: 1px solid var(--color-line); font-size: 12.5px; line-height: 1.45; color: #B9BACB; }
+.dg-loop-icon { color: #A0A3F9; animation: dg-spin 6s linear infinite; }
+@keyframes dg-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dg-rail::after, .dg-loop-icon { animation: none !important; } }
+
+/* ---------- Agentisches Band unter den vier Phasen ---------- */
+.pbx-phase-rail { margin-top: 18px; border-radius: 20px; border: 1px solid rgba(104,108,250,0.35); background: linear-gradient(180deg, rgba(104,108,250,0.10), rgba(104,108,250,0.03)); overflow: hidden; }
+.pbx-phase-rail-head { display: flex; align-items: center; gap: 10px; padding: 12px 20px 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c9c9d6; }
+.pbx-phase-rail-track { position: relative; height: 2px; margin: 4px 20px 16px; background: rgba(104,108,250,0.35); border-radius: 2px; overflow: hidden; }
+.pbx-phase-rail-track::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, #fff 48%, #A0A3F9 52%, transparent 100%) 0 0 / 22% 100% no-repeat; animation: pbx-rail-x 4s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+@keyframes pbx-rail-x { from { background-position: -30% 0; } to { background-position: 130% 0; } }
+.pbx-phase-rail-dot { width: 7px; height: 7px; margin-top: 5px; border-radius: 99px; background: #686CFA; box-shadow: 0 0 0 3px rgba(104,108,250,0.2); flex-shrink: 0; }
+@media (prefers-reduced-motion: reduce) { .pbx-phase-rail-track::after { animation: none !important; } }

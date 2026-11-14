@@ -5,6 +5,7 @@
  * Alle CTAs öffnen das Overlay; die Formularstrecke wird über den Pfad gewählt (src/data/leadFlows.ts).
  */
 import React from 'react';
+import { AgentBand } from '../components/system/SystemBlocks';
 import { ArrowUpRight, Check, KeyRound, LineChart, ShieldCheck, UserRound } from 'lucide-react';
 import Link from '../components/Link';
 import { Visual3D } from '../components/Visual3D';
@@ -105,6 +106,7 @@ export default function RealEstateLandingView({ slug }: { slug: RealEstateSlug }
               </li>
             ))}
           </ol>
+          <AgentBand className="mt-6" text="Durch alle Schritte laufen Automatisierung und KI. Anfragen werden automatisch auf Vollständigkeit und Passung geprüft, zusammengefasst und an Ihr Team übergeben. Wer die Wohnung oder das Mandat erhält, entscheiden Sie. Das System wird mit jedem Projekt nachgeschärft." />
           <CtaButton label={page.ctaLabel} location={loc('vorgehen')} pageSlug={slug} variant="light" />
         </Container>
       </section>

@@ -308,3 +308,49 @@ export function CardDeck({ items }: { items: { area: string; title: string; desc
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------------------
+ * PhaseAgentRail: durchgehendes Band unter den vier Phasen. Zeigt, was KI und Agenten in jeder Phase beitragen,
+ * mit einer Lichtspur, die durch alle Phasen läuft.
+ * ------------------------------------------------------------------------------------------- */
+const PHASE_AI = [
+  'Agenten-Architektur, Rechte, Kontext und Testset entwerfen',
+  'Agenten mit echten Fällen testen, zuerst nur mit Vorschlägen',
+  'Team prüft Vorschläge, gibt frei und kann jederzeit stoppen',
+  'Agenten werten aus, Spielraum wächst mit belegter Zuverlässigkeit',
+];
+export function PhaseAgentRail({ className = '' }: { className?: string }) {
+  return (
+    <div className={`pbx-phase-rail ${className}`} data-rv-skip>
+      <div className="pbx-phase-rail-head">
+        <span className="pbx-live" aria-hidden="true" />
+        <span>KI- und Agenten-Ebene · durch alle Phasen</span>
+        <span className="ml-auto hidden sm:inline">laufend iteriert</span>
+      </div>
+      <div className="pbx-phase-rail-track" aria-hidden="true" />
+      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 px-5 pb-5">
+        {PHASE_AI.map((t, i) => (
+          <li key={t} className="flex items-start gap-2.5 text-[13px] leading-snug text-slate-700">
+            <span className="pbx-phase-rail-dot" aria-hidden="true" />
+            <span><span className="pbx-label mr-1.5">0{i + 1}</span>{t}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+/** Schmales Band unter Schrittfolgen: zeigt die agentische Ebene, die durch alle Schritte läuft. */
+export function AgentBand({ text, className = '' }: { text: string; className?: string }) {
+  return (
+    <div className={`pbx-phase-rail ${className}`} data-rv-skip>
+      <div className="pbx-phase-rail-head">
+        <span className="pbx-live" aria-hidden="true" />
+        <span>KI- und Agenten-Ebene · durch alle Schritte</span>
+        <span className="ml-auto hidden sm:inline">laufend iteriert</span>
+      </div>
+      <div className="pbx-phase-rail-track" aria-hidden="true" />
+      <p className="px-5 pb-5 text-[13.5px] leading-relaxed text-slate-700">{text}</p>
+    </div>
+  );
+}

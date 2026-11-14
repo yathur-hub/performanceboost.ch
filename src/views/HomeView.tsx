@@ -20,7 +20,7 @@ import { AREAS, AGENTIC_LEVELS } from '../data/serviceAreas';
 import { PHASES } from '../data/approach';
 import { CHALLENGE_CARDS } from '../data/challenges';
 import { BrandVisual } from '../components/BrandVisual';
-import { AgentNetwork, ScrollStatement, ComparisonRows, CardDeck } from '../components/system/SystemBlocks';
+import { AgentNetwork, ScrollStatement, ComparisonRows, CardDeck, PhaseAgentRail } from '../components/system/SystemBlocks';
 
 interface HomeViewProps {
   onNavigate: (path: string) => void;
@@ -287,6 +287,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </li>
             ))}
           </ol>
+          <PhaseAgentRail />
           <p className="text-body-sm text-slate-500 leading-relaxed max-w-3xl">
             Viele Kunden beginnen mit einer Performance-Analyse von zwei bis drei Wochen. Sie ist ein eigener, abgeschlossener Auftrag.
             Ob und wie es danach weitergeht, entscheiden Sie auf Basis der Ergebnisse.

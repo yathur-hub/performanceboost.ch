@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { AgentBand } from '../components/system/SystemBlocks';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ArrowRight, Check, CheckCircle2, ChevronDown, KeyRound, LineChart, Quote, ShieldCheck, UserRound, X, Mail } from 'lucide-react';
 import Link from '../components/Link';
@@ -386,6 +387,7 @@ export default function FinanceLandingView({ slug }: FinanceLandingViewProps) {
               </li>
             ))}
           </ol>
+          <AgentBand text="Durch alle Schritte laufen Automatisierung und KI. Anfragen gehen automatisch ins CRM, KI fasst sie zusammen und ordnet sie dem Beratungsthema zu, ein Agent bereitet das Erstgespräch vor. Beraten wird nur von Ihnen, und was hinausgeht, geben Sie frei. Das System wird laufend nachgeschärft." />
         </section>
 
         {/* 10. PAKETE (ohne Preise, Entscheid D3) */}

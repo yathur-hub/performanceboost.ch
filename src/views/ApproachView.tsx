@@ -11,6 +11,7 @@ import { PHASES, PRINCIPLES, WORK_MODES } from '../data/approach';
 import { AREAS } from '../data/serviceAreas';
 import Link from '../components/Link';
 import { BrandVisual } from '../components/BrandVisual';
+import { PhaseAgentRail } from '../components/system/SystemBlocks';
 
 const FAQ = [
   {
@@ -103,6 +104,7 @@ export default function ApproachView() {
               </div>
             ))}
           </div>
+          <PhaseAgentRail />
         </Container>
       </section>
 
