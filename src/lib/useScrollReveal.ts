@@ -71,17 +71,21 @@ function prepareSection(section: HTMLElement) {
 
 const RV_CLASSES = ['rv-fade', 'rv-mask', 'rv-item', 'rv-image', 'rv-scale', 'rv-delay-1', 'rv-delay-2'];
 
+function stripReveal(target: HTMLElement) {
+  const els = [target, ...Array.from(target.querySelectorAll<HTMLElement>(RV_CLASSES.map((c) => '.' + c).join(',')))];
+  els.forEach((el) => {
+    el.classList.remove(...RV_CLASSES);
+    el.style.removeProperty('--i');
+  });
+}
+
 /**
  * Nach dem Reveal die Klassen entfernen: Der Endzustand ist identisch mit dem Normalzustand, und die
  * eigenen Hover-Übergänge der Elemente (Farbe, Anheben) greifen danach wieder ohne Verzögerung.
  */
 function cleanupLater(target: HTMLElement) {
   window.setTimeout(() => {
-    const els = [target, ...Array.from(target.querySelectorAll<HTMLElement>(RV_CLASSES.map((c) => '.' + c).join(',')))];
-    els.forEach((el) => {
-      el.classList.remove(...RV_CLASSES);
-      el.style.removeProperty('--i');
-    });
+    stripReveal(target);
     target.classList.remove('is-visible');
   }, 2000);
 }
@@ -93,12 +97,17 @@ export function useScrollReveal(routeKey: string) {
     const main = document.querySelector('main');
     if (!main) return;
 
+    // Vorbereitet, aber noch nicht eingeblendet. Beim Seitenwechsel werden diese Elemente zurückgesetzt,
+    // sonst bleiben DOM-Knoten, die den Wechsel überleben (Footer, wiederverwendete Abschnitte), unsichtbar.
+    const pending = new Set<HTMLElement>();
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (!e.isIntersecting) continue;
           e.target.classList.add('is-visible');
           io.unobserve(e.target);
+          pending.delete(e.target as HTMLElement);
           cleanupLater(e.target as HTMLElement);
         }
       },
@@ -126,6 +135,7 @@ export function useScrollReveal(routeKey: string) {
           return;
         }
         prepareSection(section);
+        pending.add(section);
         io.observe(section);
       });
     };
@@ -146,6 +156,11 @@ export function useScrollReveal(routeKey: string) {
       window.clearTimeout(stopMo);
       mo.disconnect();
       io.disconnect();
+      pending.forEach((section) => {
+        stripReveal(section);
+        section.removeAttribute(DONE);
+      });
+      pending.clear();
     };
   }, [routeKey]);
 }
